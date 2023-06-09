@@ -60,6 +60,7 @@ description: |
         sdm845
         sdx55
         sdx65
+        sdx75
         sm4250
         sm6115
         sm6125
@@ -737,6 +738,11 @@ properties:
           - enum:
               - qcom,sdx65-mtp
           - const: qcom,sdx65
+
+      - items:
+          - enum:
+              - qcom,sdx75-idp
+          - const: qcom,sdx75
 
       - items:
           - enum:
