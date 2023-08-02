@@ -76,6 +76,13 @@ GDSC Oxili Regulators:
 - vddcx-supply:			Phandle for vddcx regulator device node.
 - vdd-supply:			Phandle for vdd regulator device node.
 
+Power Domains:
+- power-domains:		List of PM domain specifiers that reference each power-domain
+				used by the GPU
+- power-domain-names:		List of names that represent each of the specifiers in the
+				'power-domains' property. Includes 'gpu_cx' and 'gpu_gx' which
+				represent the power-domains for CX and GX GDSC, respectively.
+
 IOMMU Data:
 - iommu:			Phandle for the KGSL IOMMU device node
 
