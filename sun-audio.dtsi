@@ -162,7 +162,6 @@
 
 		clock-names = "lpass_audio_hw_vote";
 		clocks = <&lpass_audio_hw_vote 0>;
-		wcd939x-i2c-handle = <&wcd_usbss>;
 	};
 };
 
