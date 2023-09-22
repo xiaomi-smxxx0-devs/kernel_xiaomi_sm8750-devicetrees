@@ -151,6 +151,12 @@
 		};
 	};
 
+	lpass_bt_swr: lpass_bt_swr@6CA0000 {
+		compatible = "qcom,lpass-bt-swr";
+		swr4: bt_swr_mstr {
+		};
+	};
+
 	sun_snd: sound {
 		compatible = "qcom,sun-asoc-snd";
 		qcom,mi2s-audio-intf = <1>;
@@ -170,4 +176,5 @@
 	swr1 = "/soc/spf_core_platform/lpass-cdc/rx-macro@6AC0000/rx_swr_master";
 	swr2 = "/soc/spf_core_platform/lpass-cdc/va-macro@6D44000/va_swr_master";
 	swr3 = "/soc/spf_core_platform/lpass-cdc/wsa2-macro@6AA0000/wsa2_swr_master";
+	swr4 = "/soc/spf_core_platform/lpass_bt_swr/bt_swr_mstr";
 };
