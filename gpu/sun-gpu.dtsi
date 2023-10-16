@@ -15,7 +15,7 @@
 
 &msm_gpu {
 	compatible = "qcom,adreno-gpu-gen8-0-0", "qcom,kgsl-3d0";
-	status = "disabled";
+	status = "ok";
 	reg = <0x3d00000 0x40000>, <0x3d50000 0x10000>,
 		<0x3d61000 0x3000>, <0x3d9e000 0x2000>,
 		<0x10900000 0x80000>, <0x10048000 0x8000>,
@@ -173,5 +173,7 @@
 
 		iommus = <&kgsl_smmu 0x5 0x000>;
 		qcom,iommu-dma = "disabled";
+
+		qcom,ipc-core = <0x00400000 0x140000>;
 	};
 };
