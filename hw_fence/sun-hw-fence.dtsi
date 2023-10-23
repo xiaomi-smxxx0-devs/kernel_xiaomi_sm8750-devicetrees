@@ -3,10 +3,19 @@
  * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
+#include <dt-bindings/interrupt-controller/arm-gic.h>
+
 &soc {
 	msm_hw_fence: qcom,hw-fence {
 		compatible = "qcom,msm-hw-fence";
 		status = "ok";
+
+		/* SOCCP properties */
+		interrupts = <GIC_SPI 70 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-controller;
+		#interrupt-cells = <1>;
+		iommus = <&apps_smmu 0x562 0x1>;
+		soccp_controller = <&soccp_pas>;
 
 		qcom,hw-fence-table-entries = <8192>;
 		qcom,hw-fence-queue-entries = <800>;
