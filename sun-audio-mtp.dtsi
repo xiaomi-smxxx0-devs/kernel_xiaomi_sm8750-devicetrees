@@ -82,6 +82,7 @@
 };
 
 &sun_snd {
+	qcom,model = "sun-mtp-wsa883x-snd-card";
 	qcom,sec-mi2s-gpios = <&fm_i2s1_gpios>;
 	asoc-codec  = <&stub_codec>, <&lpass_cdc>,
 			<&wcd939x_codec>, <&swr_haptics>,
