@@ -87,6 +87,11 @@
 	asoc-codec  = <&stub_codec>, <&lpass_cdc>,
 			<&wcd939x_codec>, <&swr_haptics>,
 			<&wsa883x_0221>, <&wsa883x_0222>;
+
+	qcom,msm-mbhc-usbc-audio-supported = <1>;
+	qcom,msm-mbhc-hphl-swh = <0>;
+	qcom,msm-mbhc-gnd-swh = <0>;
+	qcom,wcd-disable-legacy-surge;
 };
 
 &wsa884x_0220 {
