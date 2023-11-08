@@ -1614,9 +1614,28 @@
 		camnoc-axi-clk-bw-margin-perc = <20>;
 		domain-id = <CAM_CPAS_SECURE_DOMAIN 16>,
 			<CAM_CPAS_NON_SECURE_DOMAIN 0>;
-		interconnect-names = "cam_ahb";
-		interconnects =<&gem_noc MASTER_APPSS_PROC
-			&config_noc SLAVE_CAMERA_CFG>;
+		cam-icc-path-names = "cam_ahb";
+		interconnect-names = "cam_ahb",
+			"cam_hf_0",
+			"cam_ife_0_drv",
+			"cam_ife_1_drv",
+			"cam_ife_2_drv",
+			"cam_sf_0",
+			"cam_sf_icp";
+		interconnects = <&gem_noc MASTER_APPSS_PROC
+				&config_noc SLAVE_CAMERA_CFG>,
+			<&mmss_noc MASTER_CAMNOC_HF
+				&mc_virt SLAVE_EBI1>,
+			<&mmss_noc MASTER_CAMNOC_HF_CAM_IFE_0
+				&mc_virt SLAVE_EBI1_CAM_IFE_0>,
+			<&mmss_noc MASTER_CAMNOC_HF_CAM_IFE_1
+				&mc_virt SLAVE_EBI1_CAM_IFE_1>,
+			<&mmss_noc MASTER_CAMNOC_HF_CAM_IFE_2
+				&mc_virt SLAVE_EBI1_CAM_IFE_2>,
+			<&mmss_noc MASTER_CAMNOC_SF
+				&mc_virt SLAVE_EBI1>,
+			<&mmss_noc MASTER_CAMNOC_ICP
+				&mc_virt SLAVE_EBI1>;
 		rpmh-bcm-info = <13 0x4 0x800 0 4>;
 		cam-ahb-num-cases = <8>;
 		cam-ahb-bw-KBps =
@@ -1673,19 +1692,10 @@
 					ib-bw-voting-needed;
 					rt-axi-port;
 					qcom,axi-port-mnoc {
-						interconnect-names = "cam_hf_0",
+						cam-icc-path-names = "cam_hf_0",
 							"cam_ife_0_drv",
 							"cam_ife_1_drv",
 							"cam_ife_2_drv";
-						interconnects =
-						<&mmss_noc MASTER_CAMNOC_HF
-							&mc_virt SLAVE_EBI1>,
-							<&mmss_noc MASTER_CAMNOC_HF_CAM_IFE_0
-							&mc_virt SLAVE_EBI1_CAM_IFE_0>,
-							<&mmss_noc MASTER_CAMNOC_HF_CAM_IFE_1
-							&mc_virt SLAVE_EBI1_CAM_IFE_1>,
-							<&mmss_noc MASTER_CAMNOC_HF_CAM_IFE_2
-							&mc_virt SLAVE_EBI1_CAM_IFE_2>;
 					};
 				};
 
@@ -1695,10 +1705,7 @@
 					traffic-merge-type =
 					<CAM_CPAS_TRAFFIC_MERGE_SUM>;
 					qcom,axi-port-mnoc {
-						interconnect-names = "cam_sf_0";
-						interconnects =
-						<&mmss_noc MASTER_CAMNOC_SF
-						&mc_virt SLAVE_EBI1>;
+						cam-icc-path-names = "cam_sf_0";
 					};
 				};
 
@@ -1708,11 +1715,8 @@
 					traffic-merge-type =
 					<CAM_CPAS_TRAFFIC_MERGE_SUM>;
 					qcom,axi-port-mnoc {
-						interconnect-names =
+						cam-icc-path-names =
 							"cam_sf_icp";
-						interconnects =
-						<&mmss_noc MASTER_CAMNOC_ICP
-						&mc_virt SLAVE_EBI1>;
 					};
 				};
 			};
