@@ -127,7 +127,7 @@
 			compatible = "qcom,lpass-cdc-clk-rsc-mngr";
 		};
 
-		va_macro: va-macro@6D44000 {
+		va_macro: va-macro@7660000 {
 			swr2: va_swr_master {
 			};
 		};
@@ -174,7 +174,7 @@
 &aliases {
 	swr0 = "/soc/spf_core_platform/lpass-cdc/wsa-macro@6B00000/wsa_swr_master";
 	swr1 = "/soc/spf_core_platform/lpass-cdc/rx-macro@6AC0000/rx_swr_master";
-	swr2 = "/soc/spf_core_platform/lpass-cdc/va-macro@6D44000/va_swr_master";
+	swr2 = "/soc/spf_core_platform/lpass-cdc/va-macro@7660000/va_swr_master";
 	swr3 = "/soc/spf_core_platform/lpass-cdc/wsa2-macro@6AA0000/wsa2_swr_master";
 	swr4 = "/soc/spf_core_platform/lpass_bt_swr/bt_swr_mstr";
 };
