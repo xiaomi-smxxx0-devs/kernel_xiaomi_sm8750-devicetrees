@@ -66,11 +66,11 @@
 		compatible = "qcom,msm-audio-ion-cma";
 	};
 
-	lpi_tlmm: lpi_pinctrl@6E80000 {
+	lpi_tlmm: lpi_pinctrl@07760000 {
 		compatible = "qcom,lpi-pinctrl";
-		reg = <0x6E80000 0x0>;
+		reg = <0x07760000 0x0>;
 		qcom,gpios-count = <23>;
-		qcom,slew-reg = <0x6E80000 0x0>;
+		qcom,slew-reg = <0x07760000 0x0>;
 		gpio-controller;
 		#gpio-cells = <2>;
 		qcom,lpi-offset-tbl = <0x00000000>, <0x00001000>,
@@ -98,18 +98,18 @@
 						<0x0000000B>, <0x0000000B>,
 						<0x0000000B>;
 
-		qcom,lpi-slew-base-tbl = <0x6E80000>, <0x6E81000>,
-						<0x6E82000>, <0x6E83000>,
-						<0x6E84000>, <0x6E85000>,
-						<0x6E86000>, <0x6E87000>,
-						<0x6E88000>, <0x6E89000>,
-						<0x6E8A000>, <0x6E8B000>,
-						<0x6E8C000>, <0x6E8D000>,
-						<0x6E8E000>, <0x6E8F000>,
-						<0x6E90000>, <0x6E91000>,
-						<0x6E92000>, <0x6E93000>,
-						<0x6E94000>, <0x6E95000>,
-						<0x6E96000>;
+		qcom,lpi-slew-base-tbl = <0x7760000>, <0x7761000>,
+						<0x7762000>, <0x7763000>,
+						<0x7764000>, <0x7765000>,
+						<0x7766000>, <0x7767000>,
+						<0x7768000>, <0x7769000>,
+						<0x776A000>, <0x776B000>,
+						<0x776C000>, <0x776D000>,
+						<0x776E000>, <0x776F000>,
+						<0x7770000>, <0x7771000>,
+						<0x7772000>, <0x7773000>,
+						<0x7774000>, <0x7775000>,
+						<0x7776000>;
 
 		clock-names = "lpass_core_hw_vote",
 				"lpass_audio_hw_vote";
