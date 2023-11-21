@@ -73,8 +73,8 @@
 };
 
 &wsa_spkr_en13 {
-	pinctrl-0 = <&lpi_spkr_13_sd_n_sleep>;
-	pinctrl-1 = <&lpi_spkr_13_sd_n_active>;
+	pinctrl-0 = <&lpi_spkr_13_sd_n_active>;
+	pinctrl-1 = <&lpi_spkr_13_sd_n_sleep>;
 };
 
 &fm_i2s1_gpios {
@@ -92,6 +92,7 @@
 	qcom,msm-mbhc-hphl-swh = <0>;
 	qcom,msm-mbhc-gnd-swh = <0>;
 	qcom,wcd-disable-legacy-surge;
+	wcd939x-i2c-handle = <&wcd_usbss>;
 };
 
 &wsa884x_0220 {
