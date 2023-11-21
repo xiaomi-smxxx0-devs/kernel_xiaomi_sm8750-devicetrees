@@ -147,6 +147,7 @@
 		qcom,cdc-vdd-1p8-current = <20000>;
 		qcom,cdc-static-supplies = "cdc-vdd-1p8";
 		sound-name-prefix = "Spkr2Left";
+		status = "disabled";
 	};
 
 	wsa883x_2_0222: wsa883x@02170222 {
@@ -159,6 +160,7 @@
 		qcom,cdc-vdd-1p8-current = <20000>;
 		qcom,cdc-static-supplies = "cdc-vdd-1p8";
 		sound-name-prefix = "Spkr2Right";
+		status = "disabled";
 	};
 };
 
