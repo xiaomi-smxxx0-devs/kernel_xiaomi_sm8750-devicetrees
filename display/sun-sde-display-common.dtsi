@@ -71,7 +71,7 @@
 			qcom,supply-name = "vci";
 			qcom,supply-min-voltage = <3000000>;
 			qcom,supply-max-voltage = <3000000>;
-			qcom,supply-enable-load = <1000>;
+			qcom,supply-enable-load = <10000>;
 			qcom,supply-disable-load = <300>;
 			qcom,supply-post-on-sleep = <0>;
 		};
