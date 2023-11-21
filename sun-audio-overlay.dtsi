@@ -10,7 +10,7 @@
 #include "sun-lpi.dtsi"
 
 &lpass_cdc {
-	qcom,num-macros = <4>;
+	qcom,num-macros = <5>;
 	qcom,lpass-cdc-version = <7>;
 	#address-cells = <1>;
 	#size-cells = <1>;
@@ -53,8 +53,8 @@
 			qcom,mipi-sdw-block-packing-mode = <1>;
 			swrm-io-base = <0x7630000 0x0>;
 			interrupts =
-				<GIC_SPI 496 IRQ_TYPE_LEVEL_HIGH>,
-				<GIC_SPI 520 IRQ_TYPE_LEVEL_HIGH>;
+				<GIC_SPI 761 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 785 IRQ_TYPE_LEVEL_HIGH>;
 			interrupt-names = "swr_master_irq", "swr_wake_irq";
 			qcom,swr-wakeup-required = <1>;
 			qcom,swr-num-ports = <5>;
@@ -118,14 +118,6 @@
 				<10 HPTH 0x03>, <11 CMPT 0x03>, <12 IPCM 0x03>;
 			qcom,swr-num-dev = <2>;
 			qcom,swr-clock-stop-mode0 = <1>;
-			swr_haptics: swr_haptics@f0170220 {
-				compatible = "qcom,pm8550b-swr-haptics";
-				reg = <0x02 0xf0170220>;
-				// Temporarily commented out to avoid compilation error
-				// swr-slave-supply = <&hap_swr_slave_reg>;
-				qcom,rx_swr_ch_map = <0 0x01 0x01 0 PCM_OUT1>;
-			};
-
 			wcd939x_rx_slave: wcd939x-rx-slave {
 				compatible = "qcom,wcd939x-slave";
 				reg = <0x0E 0x01170224>;
@@ -223,7 +215,6 @@
 		qcom,thermal-max-state = <11>;
 		qcom,noise-gate-mode = <2>;
 		#cooling-cells = <2>;
-		status = "disabled";
 		swr3: wsa2_swr_master {
 			compatible = "qcom,swr-mstr";
 			#address-cells = <2>;
@@ -249,6 +240,7 @@
 			qcom,swr-num-dev = <2>;
 			qcom,dynamic-port-map-supported = <0>;
 			wsa884x_2_0220: wsa884x@02170220 {
+				status = "disabled";
 				compatible = "qcom,wsa884x_2";
 				reg = <0x4 0x2170220>;
 				qcom,spkr-sd-n-node = <&wsa_spkr_en02>;
@@ -268,6 +260,7 @@
 			};
 
 			wsa884x_2_0221: wsa884x@02170221 {
+				status = "disabled";
 				compatible = "qcom,wsa884x_2";
 				reg = <0x4 0x2170221>;
 				qcom,spkr-sd-n-node = <&wsa_spkr_en13>;
@@ -284,6 +277,15 @@
 				qcom,cdc-vdd-1p8-lpm-supported = <1>;
 				qcom,cdc-static-supplies = "cdc-vdd-1p8";
 				sound-name-prefix = "Spkr2Right";
+			};
+
+			swr_haptics: swr_haptics@f0170220 {
+				status = "disabled";
+				compatible = "qcom,pm8750b-swr-haptics";
+				reg = <0x02 0xf0170220>;
+				// Temporarily commented out to avoid compilation error
+				// swr-slave-supply = <&hap_swr_slave_reg>;
+				qcom,rx_swr_ch_map = <0 0x01 0x01 0 PCM_OUT1>;
 			};
 		};
 	};
@@ -390,10 +392,11 @@
 &spf_core_platform  {
 	sun_snd: sound {
 		qcom,model = "sun-mtp-snd-card";
+		swr-haptics-unsupported;
 		qcom,msm-mi2s-master = <1>, <1>, <1>, <1>, <1>, <1>, <1>;
 		qcom,mi2s-tdm-is-hw-vote-needed = <1>, <0>, <1>, <0>, <1>, <0>, <0>;
-		qcom,wcn-bt = <1>;
-		qcom,ext-disp-audio-rx = <1>;
+		qcom,wcn-bt = <0>;
+		qcom,ext-disp-audio-rx = <0>;
 		qcom,tdm-max-slots = <8>;
 		qcom,tdm-clk-attribute = <0x1>, <0x1>, <0x1>, <0x1>, <0x1>, <0x1>, <0x1>;
 		qcom,mi2s-clk-attribute = <0x1>, <0x1>, <0x1>, <0x1>, <0x1>, <0x1>, <0x1>;
@@ -430,7 +433,6 @@
 			"IN1_HPHL", "HPHL_OUT",
 			"IN2_HPHR", "HPHR_OUT",
 			"IN3_EAR", "AUX_OUT",
-			"HAP_IN", "PCM_OUT",
 			"WSA SRC0_INP", "SRC0",
 			"WSA_TX DEC0_INP", "TX DEC0 MUX",
 			"WSA_TX DEC1_INP", "TX DEC1 MUX",
