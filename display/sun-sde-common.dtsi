@@ -192,8 +192,8 @@
 		qcom,sde-dspp-spr-version = <0x00020000>;
 
 		qcom,sde-dspp-demura-off = <0x15600 0x14600 0x13600 0x12600>;
-		qcom,sde-dspp-demura-size = <0xe4>;
-		qcom,sde-dspp-demura-version = <0x00020000>;
+		qcom,sde-dspp-demura-size = <0x150>;
+		qcom,sde-dspp-demura-version = <0x00030000>;
 
 		qcom,sde-dspp-aiqe-off = <0x39000 0xffffffff 0x3a000 0xffffffff>;
 		qcom,sde-dspp-aiqe-version = <0x00010000>;
