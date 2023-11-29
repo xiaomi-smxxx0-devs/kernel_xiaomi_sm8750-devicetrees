@@ -74,6 +74,7 @@
 	vddio-supply = <&L12B>;
 	vci-supply = <&L13B>;
 	vdd-supply = <&L11B>;
+	tvdd-supply = <&L4B>;
 };
 
 &sde_dsi1 {
@@ -102,6 +103,7 @@
 	vddio-supply = <&L12B>;
 	vci-supply = <&L13B>;
 	vdd-supply = <&L11B>;
+	tvdd-supply = <&L4B>;
 };
 
 &mdss_mdp {
