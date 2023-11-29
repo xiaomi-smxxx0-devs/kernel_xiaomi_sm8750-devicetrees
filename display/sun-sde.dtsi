@@ -9,6 +9,7 @@
 #include <dt-bindings/interconnect/qcom,sun.h>
 #include <dt-bindings/clock/qcom,rpmh.h>
 #include <dt-bindings/clock/qcom,tcsrcc-sun.h>
+#include <dt-bindings/arm/msm/qti-smmu-proxy-dt-ids.h>
 #include "sun-sde-common.dtsi"
 
 &soc {
@@ -46,6 +47,8 @@
 
 	vdd-supply = <&disp_cc_mdss_core_gdsc>;
 	mmcx-supply = <&VDD_MMCX_LEVEL>;
+
+	qti,smmu-proxy-cb-id = <QTI_SMMU_PROXY_DISPLAY_CB>;
 
 	qcom,sde-vm-exclude-reg-names = "ipcc_reg";
 
