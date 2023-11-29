@@ -1353,10 +1353,11 @@
 		compatible = "qcom,cam-cpas";
 		label = "cpas";
 		arch-compat = "cpas_top";
-		reg-names = "cam_cpas_top", "cam_camnoc";
+		reg-names = "cam_cpas_top", "cam_camnoc", "cam_cpas_secure";
 		reg = <0xac13000 0x1000>,
-			<0xac19000 0xac80>;
-		reg-cam-base = <0x13000 0x19000>;
+			<0xac19000 0xac80>,
+			<0xac10000 0xFF0>;
+		reg-cam-base = <0x13000 0x19000 0x10000>;
 		interrupt-names = "cpas_camnoc";
 		interrupts = <GIC_SPI 459 IRQ_TYPE_EDGE_RISING>;
 		camnoc-axi-min-ib-bw = <3000000000>;
@@ -2377,10 +2378,11 @@
 	cam_csid0: qcom,csid0@acb7000 {
 		cell-index = <0>;
 		compatible = "qcom,csid880";
-		reg-names = "csid", "csid_top";
+		reg-names = "csid", "csid_top", "csid_sec";
 		reg = <0xacb8000 0xd00>,
-			<0xacb6000 0x1000>;
-		reg-cam-base = <0xb8000 0xb6000>;
+			<0xacb6000 0x1000>,
+			<0xacb7000 0x30>;
+		reg-cam-base = <0xb8000 0xb6000 0xb7000>;
 		rt-wrapper-base = <0x62000>;
 		interrupt-names = "csid0";
 		interrupts = <GIC_SPI 601 IRQ_TYPE_EDGE_RISING>;
@@ -2409,10 +2411,11 @@
 	cam_csid1: qcom,csid1@acb9000 {
 		cell-index = <1>;
 		compatible = "qcom,csid880";
-		reg-names = "csid", "csid_top";
+		reg-names = "csid", "csid_top", "csid_sec";
 		reg = <0xacba000 0xd00>,
-			<0xacb6000 0x1000>;
-		reg-cam-base = <0xba000 0xb6000>;
+			<0xacb6000 0x1000>,
+			<0xacb9000 0x30>;
+		reg-cam-base = <0xba000 0xb6000 0xb9000>;
 		rt-wrapper-base = <0x62000>;
 		interrupt-names = "csid1";
 		interrupts = <GIC_SPI 603 IRQ_TYPE_EDGE_RISING>;
@@ -2441,10 +2444,11 @@
 	cam_csid2: qcom,csid2@acbb000 {
 		cell-index = <2>;
 		compatible = "qcom,csid880";
-		reg-names = "csid", "csid_top";
+		reg-names = "csid", "csid_top", "csid_sec";
 		reg = <0xacbc000 0xd00>,
-			<0xacb6000 0x1000>;
-		reg-cam-base = <0xbc000 0xb6000>;
+			<0xacb6000 0x1000>,
+			<0xacbb000 0x30>;
+		reg-cam-base = <0xbc000 0xb6000 0xbb000>;
 		rt-wrapper-base = <0x62000>;
 		interrupt-names = "csid2";
 		interrupts = <GIC_SPI 431 IRQ_TYPE_EDGE_RISING>;
