@@ -7,6 +7,18 @@
 #include "sun-sde-display-common.dtsi"
 #include <dt-bindings/clock/qcom,dispcc-sun.h>
 
+&pm8550_gpios {
+	display_panel_avdd_default: display_panel_avdd_default {
+		pins = "gpio11";
+		function = "normal";
+		input-disable;
+		output-enable;
+		bias-disable;
+		power-source = <1>;
+		qcom,drive-strength = <3>;
+	};
+};
+
 &soc {
 	sde_wb1: qcom,wb-display@1 {
 		compatible = "qcom,wb-display";
@@ -27,6 +39,7 @@
 		regulator-min-microvolt = <5500000>;
 		regulator-max-microvolt = <5500000>;
 		regulator-enable-ramp-delay = <233>;
+		gpio = <&pm8550_gpios 11 0>;
 		enable-active-high;
 		regulator-boot-on;
 		proxy-supply = <&display_panel_avdd>;
