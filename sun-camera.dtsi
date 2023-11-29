@@ -881,12 +881,12 @@
 		interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
 		regulator-names = "gdscr", "csi-vdd-1p2", "csi-vdd-0p9";
 		gdscr-supply = <&cam_cc_titan_top_gdsc>;
-		csi-vdd-1p2-supply = <&L3I>;
-		csi-vdd-0p9-supply = <&L2I>;
+		csi-vdd-1p2-supply = <&L3G>;
+		csi-vdd-0p9-supply = <&L1F>;
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <0 1200000 880000>;
-		rgltr-max-voltage = <0 1200000 912000>;
-		rgltr-load-current = <0 18000 32000>;
+		rgltr-max-voltage = <0 1256000 920000>;
+		rgltr-load-current = <0 6200 88200>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy0_clk",
@@ -906,7 +906,7 @@
 
 	cam_csiphy1: qcom,csiphy1@adab000 {
 		cell-index = <1>;
-		compatible = "qcom,csiphy-v2.2.0", "qcom,csiphy";
+		compatible = "qcom,csiphy-v2.3.0", "qcom,csiphy";
 		reg = <0xadab000 0x2000>;
 		reg-names = "csiphy";
 		reg-cam-base = <0xab000>;
@@ -914,12 +914,12 @@
 		interrupts = <GIC_SPI 478 IRQ_TYPE_EDGE_RISING>;
 		regulator-names = "gdscr", "csi-vdd-1p2", "csi-vdd-0p9";
 		gdscr-supply = <&cam_cc_titan_top_gdsc>;
-		csi-vdd-1p2-supply = <&L3I>;
-		csi-vdd-0p9-supply = <&L2I>;
+		csi-vdd-1p2-supply = <&L3G>;
+		csi-vdd-0p9-supply = <&L1F>;
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <0 1200000 880000>;
-		rgltr-max-voltage = <0 1200000 912000>;
-		rgltr-load-current = <0 18000 32200>;
+		rgltr-max-voltage = <0 1256000 920000>;
+		rgltr-load-current = <0 6200 88200>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy1_clk",
@@ -939,7 +939,7 @@
 
 	cam_csiphy2: qcom,csiphy2@adad000 {
 		cell-index = <2>;
-		compatible = "qcom,csiphy-v2.2.0", "qcom,csiphy";
+		compatible = "qcom,csiphy-v2.3.0", "qcom,csiphy";
 		reg = <0xadad000 0x2000>;
 		reg-names = "csiphy";
 		reg-cam-base = <0xad000>;
@@ -947,12 +947,12 @@
 		interrupts = <GIC_SPI 479 IRQ_TYPE_EDGE_RISING>;
 		regulator-names = "gdscr", "csi-vdd-1p2", "csi-vdd-0p9";
 		gdscr-supply = <&cam_cc_titan_top_gdsc>;
-		csi-vdd-1p2-supply = <&L3I>;
-		csi-vdd-0p9-supply = <&L2I>;
+		csi-vdd-1p2-supply = <&L3G>;
+		csi-vdd-0p9-supply = <&L3I>;
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <0 1200000 880000>;
-		rgltr-max-voltage = <0 1200000 912000>;
-		rgltr-load-current = <0 18000 32200>;
+		rgltr-max-voltage = <0 1256000 912000>;
+		rgltr-load-current = <0 6200 88200>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy2_clk",
@@ -972,7 +972,7 @@
 
 	cam_csiphy3: qcom,csiphy3@adaf000 {
 		cell-index = <3>;
-		compatible = "qcom,csiphy-v2.2.0", "qcom,csiphy";
+		compatible = "qcom,csiphy-v2.3.0", "qcom,csiphy";
 		reg = <0xadaf000 0x2000>;
 		reg-names = "csiphy";
 		reg-cam-base = <0xaf000>;
@@ -980,12 +980,12 @@
 		interrupts = <GIC_SPI 448 IRQ_TYPE_EDGE_RISING>;
 		regulator-names = "gdscr", "csi-vdd-1p2", "csi-vdd-0p9";
 		gdscr-supply = <&cam_cc_titan_top_gdsc>;
-		csi-vdd-1p2-supply = <&L3I>;
-		csi-vdd-0p9-supply = <&L2I>;
+		csi-vdd-1p2-supply = <&L3G>;
+		csi-vdd-0p9-supply = <&L1F>;
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <0 1200000 880000>;
-		rgltr-max-voltage = <0 1200000 912000>;
-		rgltr-load-current = <0 18000 32200>;
+		rgltr-max-voltage = <0 1256000 920000>;
+		rgltr-load-current = <0 6200 88200>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy3_clk",
@@ -1005,7 +1005,7 @@
 
 	cam_csiphy4: qcom,csiphy4@adb1000 {
 		cell-index = <4>;
-		compatible = "qcom,csiphy-v2.2.0", "qcom,csiphy";
+		compatible = "qcom,csiphy-v2.3.0", "qcom,csiphy";
 		reg = <0xadb1000 0x2000>;
 		reg-names = "csiphy";
 		reg-cam-base = <0xb1000>;
@@ -1013,12 +1013,12 @@
 		interrupts = <GIC_SPI 122 IRQ_TYPE_EDGE_RISING>;
 		regulator-names = "gdscr", "csi-vdd-1p2", "csi-vdd-0p9";
 		gdscr-supply = <&cam_cc_titan_top_gdsc>;
-		csi-vdd-1p2-supply = <&L3I>;
-		csi-vdd-0p9-supply = <&L2I>;
+		csi-vdd-1p2-supply = <&L3G>;
+		csi-vdd-0p9-supply = <&L3I>;
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <0 1200000 880000>;
-		rgltr-max-voltage = <0 1200000 912000>;
-		rgltr-load-current = <0 18600 37900>;
+		rgltr-max-voltage = <0 1256000 912000>;
+		rgltr-load-current = <0 6200 88200>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy4_clk",
@@ -1038,7 +1038,7 @@
 
 	cam_csiphy5: qcom,csiphy5@adb3000 {
 		cell-index = <5>;
-		compatible = "qcom,csiphy-v2.2.0", "qcom,csiphy";
+		compatible = "qcom,csiphy-v2.3.0", "qcom,csiphy";
 		reg = <0xadb3000 0x2000>;
 		reg-names = "csiphy";
 		reg-cam-base = <0xb3000>;
@@ -1046,12 +1046,12 @@
 		interrupts = <GIC_SPI 89 IRQ_TYPE_EDGE_RISING>;
 		regulator-names = "gdscr", "csi-vdd-1p2", "csi-vdd-0p9";
 		gdscr-supply = <&cam_cc_titan_top_gdsc>;
-		csi-vdd-1p2-supply = <&L3I>;
-		csi-vdd-0p9-supply = <&L2I>;
+		csi-vdd-1p2-supply = <&L3G>;
+		csi-vdd-0p9-supply = <&L1F>;
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <0 1200000 880000>;
-		rgltr-max-voltage = <0 1200000 912000>;
-		rgltr-load-current = <0 18000 32200>;
+		rgltr-max-voltage = <0 1256000 920000>;
+		rgltr-load-current = <0 6200 88200>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy5_clk",

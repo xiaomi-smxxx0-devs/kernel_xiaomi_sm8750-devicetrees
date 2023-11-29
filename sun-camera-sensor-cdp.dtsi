@@ -123,7 +123,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK0",
 					"CAM_RESET0";
 		cci-master = <CCI_MASTER_0>;
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK0_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK0_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -159,7 +159,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK0",
 					"CAM_RESET0";
 		cci-master = <CCI_MASTER_0>;
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK0_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK0_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -195,7 +195,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK1",
 					"CAM_RESET1";
 		cci-master = <CCI_MASTER_1>;
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK1_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK1_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -236,7 +236,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK0",
 					"CAM_RESET0";
 		cci-master = <CCI_MASTER_0>;
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK0_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK0_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -280,7 +280,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK1",
 					"CAM_RESET1";
 		cci-master = <CCI_MASTER_1>;
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK1_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK1_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -323,7 +323,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK0",
 					"CAM_RESET0";
 		cci-master = <CCI_MASTER_0>;
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK0_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK0_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -374,7 +374,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK3",
 					"CAM_RESET3";
 		cci-master = <CCI_MASTER_0>;
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK3_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK3_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -416,7 +416,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK3",
 					"CAM_RESET3";
 		cci-master = <CCI_MASTER_0>;
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK3_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK3_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -455,7 +455,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK5",
 			"CAM_RESET5";
 		cci-master = <CCI_MASTER_1>;
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK5_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK5_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -496,7 +496,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK5",
 					"CAM_RESET5";
 		cci-master = <CCI_MASTER_1>;
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK5_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK5_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -537,7 +537,7 @@
 		gpio-req-tbl-flags = <1 0>;
 		gpio-req-tbl-label = "CAMIF_MCLK4",
 					"CAM_RESET4";
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK4_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK4_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -576,7 +576,7 @@
 		gpio-req-tbl-flags = <1 0>;
 		gpio-req-tbl-label = "CAMIF_MCLK4",
 					"CAM_RESET4";
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK4_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK4_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -634,7 +634,7 @@
 		gpio-req-tbl-flags = <1 0>;
 		gpio-req-tbl-label = "CAMIF_MCLK2",
 					"CAM_RESET2";
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -669,7 +669,7 @@
 		gpio-req-tbl-flags = <1 0>;
 		gpio-req-tbl-label = "CAMIF_MCLK2",
 					"CAM_RESET2";
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -718,7 +718,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK2",
 					"CAM_RESET2",
 					"CAM_I3CSELECT";
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
@@ -767,7 +767,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK2",
 					"CAM_RESET2",
 					"CAM_STANDBY";
-		clocks = <&camcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
+		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
