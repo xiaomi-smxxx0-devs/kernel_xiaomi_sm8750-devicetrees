@@ -347,6 +347,7 @@
 
 &dsi_nt37801_amoled_cmd {
 	qcom,dsi-select-clocks = "pll_byte_clk0", "pll_dsi_clk0";
+	qcom,dsi-select-sec-clocks = "pll_byte_clk1", "pll_dsi_clk1";
 
 	qcom,mdss-dsi-display-timings {
 		timing@0 {
@@ -386,6 +387,7 @@
 
 &dsi_nt37801_amoled_video {
 	qcom,dsi-select-clocks = "pll_byte_clk0", "pll_dsi_clk0";
+	qcom,dsi-select-sec-clocks = "pll_byte_clk1", "pll_dsi_clk1";
 
 	qcom,mdss-dsi-display-timings {
 		timing@0 {
