@@ -2394,7 +2394,8 @@
 					<CAM_CPAS_PATH_DATA_OFE_WR_DC4
 					CAM_CPAS_PATH_DATA_OFE_WR_AI
 					CAM_CPAS_PATH_DATA_OFE_WR_PDI
-					CAM_CPAS_PATH_DATA_OFE_WR_IDEALRAW>;
+					CAM_CPAS_PATH_DATA_OFE_WR_IDEALRAW
+					CAM_CPAS_PATH_DATA_OFE_WR_STATS>;
 					parent-node = <&level1_nrt2_wr>;
 				};
 
@@ -2407,8 +2408,9 @@
 					traffic-transaction-type =
 					<CAM_CPAS_TRANSACTION_READ>;
 					constituent-paths =
-					<CAM_CPAS_PATH_DATA_OFE_WR_HDR_LTM
-					CAM_CPAS_PATH_DATA_OFE_RD_INT_PDI>;
+					<CAM_CPAS_PATH_DATA_OFE_RD_EXT
+					CAM_CPAS_PATH_DATA_OFE_RD_INT_PDI
+					CAM_CPAS_PATH_DATA_OFE_RD_INT_HDR>;
 					parent-node = <&level1_nrt4_rd>;
 				};
 
@@ -2423,7 +2425,8 @@
 					constituent-paths =
 					<CAM_CPAS_PATH_DATA_OFE_WR_VID
 					CAM_CPAS_PATH_DATA_OFE_WR_DISP
-					CAM_CPAS_PATH_DATA_OFE_WR_IR>;
+					CAM_CPAS_PATH_DATA_OFE_WR_IR
+					CAM_CPAS_PATH_DATA_OFE_WR_HDR_LTM>;
 					parent-node = <&level1_nrt3_wr>;
 				};
 			};
