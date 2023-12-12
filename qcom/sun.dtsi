@@ -3468,6 +3468,7 @@
 		reg = <0x240B3400 0x300>, <0x240B3300 0x200>;
 		reg-names = "base", "global_base";
 		interrupts = <GIC_SPI 581 IRQ_TYPE_LEVEL_HIGH>;
+		qcom,map-ne;
 		qcom,mport = <0>;
 		qcom,hw-timer-hz = <19200000>;
 		qcom,count-unit = <0x10000>;
