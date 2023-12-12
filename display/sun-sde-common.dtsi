@@ -193,6 +193,23 @@
 		qcom,sde-dspp-demura-size = <0xe4>;
 		qcom,sde-dspp-demura-version = <0x00020000>;
 
+		qcom,sde-dspp-aiqe-off = <0x39000 0xffffffff 0x3a000 0xffffffff>;
+		qcom,sde-dspp-aiqe-version = <0x00010000>;
+		qcom,sde-dspp-aiqe-size = <0x3fc>;
+
+		qcom,sde-dspp-aiqe-dither-off = <0x39700 0xffffffff 0x3a700 0xffffffff>;
+		qcom,sde-dspp-aiqe-dither-version = <0x00010000>;
+		qcom,sde-dspp-aiqe-dither-size = <0x20>;
+
+		qcom,sde-dspp-aiqe-wrapper-off = <0x39780 0xffffffff 0x3a780 0xffffffff>;
+		qcom,sde-dspp-aiqe-wrapper-version = <0x00010000>;
+		qcom,sde-dspp-aiqe-wrapper-size = <0x1c>;
+
+		qcom,sde-aiqe-has-feature-mdnie;
+		qcom,sde-aiqe-has-feature-abc;
+		qcom,sde-aiqe-has-feature-ssrc;
+		qcom,sde-aiqe-has-feature-copr;
+
 		qcom,sde-lm-noise-off = <0x320>;
 		qcom,sde-lm-noise-version = <0x00010000>;
 
