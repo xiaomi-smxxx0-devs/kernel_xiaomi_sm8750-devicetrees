@@ -3,4 +3,8 @@
  * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
-#include "sun-audio-overlay.dtsi"
+/*This is CDP with Hamilton wlan*/
+#include "sun-audio-cdp.dtsi"
+&lpass_bt_swr {
+	status = "disabled";
+};
