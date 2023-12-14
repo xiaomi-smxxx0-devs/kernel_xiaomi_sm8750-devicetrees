@@ -205,10 +205,15 @@
 		qcom,sde-dspp-aiqe-wrapper-version = <0x00010000>;
 		qcom,sde-dspp-aiqe-wrapper-size = <0x1c>;
 
+		qcom,sde-dspp-aiqe-aiscaler-off = <0x30000 0xffffffff>;
+		qcom,sde-dspp-aiqe-aiscaler-version = <0x00010000>;
+		qcom,sde-dspp-aiqe-aiscaler-size = <0x7d0>;
+
 		qcom,sde-aiqe-has-feature-mdnie;
 		qcom,sde-aiqe-has-feature-abc;
 		qcom,sde-aiqe-has-feature-ssrc;
 		qcom,sde-aiqe-has-feature-copr;
+		qcom,sde-aiqe-has-feature-aiscaler;
 
 		qcom,sde-lm-noise-off = <0x320>;
 		qcom,sde-lm-noise-version = <0x00010000>;
