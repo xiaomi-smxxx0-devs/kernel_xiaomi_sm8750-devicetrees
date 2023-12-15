@@ -145,10 +145,9 @@
 		compatible = "qcom,gen8-gmu";
 
 		reg = <0x3d37000 0x68000>,
-		      <0xb5d0000 0x24000>,
 		      <0x3d40000 0x10000>;
 
-		reg-names = "gmu", "gmu_pdc", "gmu_ao_blk_dec0";
+		reg-names = "gmu", "gmu_ao_blk_dec0";
 
 		interrupts = <0 304 IRQ_TYPE_LEVEL_HIGH>,
 			<0 305 IRQ_TYPE_LEVEL_HIGH>;
