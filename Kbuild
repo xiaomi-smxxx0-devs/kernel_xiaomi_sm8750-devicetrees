@@ -13,7 +13,14 @@ ifeq ($(CONFIG_ARCH_SUN), y)
 		sun-mm-qrd-sku1-overlay.dtbo \
 		sun-mm-qrd-sku1-v8-overlay.dtbo \
 		sun-mm-qrd-sku2-v8-overlay.dtbo \
-		sun-mm-rumi-overlay.dtbo
+		sun-mm-rumi-overlay.dtbo \
+		sun-mm-rcm-overlay.dtbo \
+		sun-mm-atp-overlay.dtbo \
+		sun-mm-cdp-ganges-nodisplay-overlay.dtbo \
+		sun-mm-mtp-3-5mm-overlay.dtbo \
+		sun-mm-rcm-kiwi-overlay.dtbo \
+		sun-mm-rcm-kiwi-v8-overlay.dtbo \
+		sun-mm-rcm-v8-overlay.dtbo
 endif
 
 always-y    := $(dtb-y) $(dtbo-y)
