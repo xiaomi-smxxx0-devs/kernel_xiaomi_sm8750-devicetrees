@@ -3189,12 +3189,13 @@
 			<&camcc CAM_CC_IPE_PPS_CLK>,
 			<&camcc CAM_CC_CAMNOC_NRT_IPE_NPS_CLK>;
 		clock-rates =
-			<0 0 0 455000000 0 0 0>,
+			<0 0 0 332500000 0 0 0>,
+			<0 0 0 475000000 0 0 0>,
 			<0 0 0 575000000 0 0 0>,
 			<0 0 0 675000000 0 0 0>,
 			<0 0 0 825000000 0 0 0>,
 			<0 0 0 825000000 0 0 0>;
-		clock-cntl-level = "lowsvs", "svs", "svs_l1", "nominal",
+		clock-cntl-level = "lowsvs_d1", "lowsvs", "svs", "svs_l1", "nominal",
 			"turbo";
 		nrt-device;
 		src-clock-name = "ipe_nps_clk_src";
