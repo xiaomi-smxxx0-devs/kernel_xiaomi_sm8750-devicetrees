@@ -32,6 +32,7 @@
 		qcom,mdss-dsi-te-check-enable;
 		qcom,mdss-dsi-te-using-te-pin;
 		qcom,panel-cphy-mode;
+		qcom,spr-pack-type = "pentile";
 
 		qcom,mdss-dsi-display-timings {
 			timing@0 {
