@@ -470,7 +470,7 @@
 			   	"wsa-codec1", "wsa-codec2";
 		qcom,wsa-max-devs = <2>;
 		qcom,msm_audio_ssr_devs = <&audio_gpr>, <&lpi_tlmm>,
-				  <&lpass_cdc>;
+				  <&lpass_cdc>, <&lpass_bt_swr>;
 
 		/*
 		 * ====================
