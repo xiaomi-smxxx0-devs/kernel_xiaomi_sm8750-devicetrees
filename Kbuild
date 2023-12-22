@@ -6,6 +6,7 @@ ifeq ($(CONFIG_ARCH_SUN), y)
 dtbo-y += sun-peach-bt.dtbo
 dtbo-y += sun-kiwi-bt.dtbo
 dtbo-y += sun-peach-bt-v8.dtbo
+dtbo-y += sun-kiwi-bt-v8.dtbo
 endif
 
 always-y        := $(dtb-y) $(dtbo-y)
