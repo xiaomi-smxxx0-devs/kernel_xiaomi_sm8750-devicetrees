@@ -94,3 +94,10 @@
 &qupv3_se14_4uart {
 	status = "ok";
 };
+
+//q2spi instance
+&qupv3_se13_q2spi {
+	status = "ok";
+};
+
+
