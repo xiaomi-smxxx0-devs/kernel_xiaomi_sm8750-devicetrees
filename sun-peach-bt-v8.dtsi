@@ -6,7 +6,7 @@
 
 #include <dt-bindings/interconnect/qcom,sun.h>
 
-&pm8550vs_f_gpios {
+&pm8550ve_f_gpios {
 	bt_uwb_en: bt_uwb_en {
 		pins = "gpio3";
 		function = "normal";
@@ -37,7 +37,7 @@
 			mpm_wake_set_gpios = <18>;
 			qcom,wl-reset-gpio = <&tlmm 16 0>; /* WL_EN */
 			qcom,bt-sw-ctrl-gpio = <&tlmm 18 0>; /* SW_CTRL */
-			qcom,bt-reset-gpio = <&pm8550vs_f_gpios 3 0>; /* BT_EN */
+			qcom,bt-reset-gpio = <&pm8550ve_f_gpios 3 0>; /* BT_EN */
 			qcom,qmp = <&aoss_qmp>;
 
 			qcom,bt-vdd18-aon-supply  = <&L3F>;   /* VDD1P8_AON */
@@ -99,5 +99,3 @@
 &qupv3_se13_q2spi {
 	status = "ok";
 };
-
-
