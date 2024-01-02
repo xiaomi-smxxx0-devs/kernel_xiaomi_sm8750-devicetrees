@@ -2437,6 +2437,15 @@
 		qcom,client-id = <0x00000001>;
 	};
 
+	sdhc_2_dma_resv: sdhc_2_dma_resv_region {
+		/*
+		 * Restrict IOVA mappings for SDHC2 buffers to the 256 MB region
+		 * from 0x40000000 - 0x4fffffff.
+		 */
+		iommu-addresses = <&sdhc_2 0x0 0x40000000>,
+						  <&sdhc_2 0x50000000 0xb0000000>;
+	};
+
 	sdhc_2: sdhci@8804000 {
 		status = "disabled";
 
@@ -2468,7 +2477,7 @@
 		iommus = <&apps_smmu 0x540 0x0>;
 		qcom,iommu-dma = "fastmap";
 		dma-coherent;
-		qcom,iommu-dma-addr-pool = <0x40000000 0x10000000>;
+		memory-region = <&sdhc_2_dma_resv>;
 		qcom,iommu-geometry = <0x40000000 0x10000000>;
 
 		interconnects = <&aggre2_noc MASTER_SDCC_2 &mc_virt SLAVE_EBI1>,
