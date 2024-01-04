@@ -3195,7 +3195,7 @@
 			<0 0 0 675000000 0 0 0>,
 			<0 0 0 825000000 0 0 0>,
 			<0 0 0 825000000 0 0 0>;
-		clock-cntl-level = "lowsvs_d1", "lowsvs", "svs", "svs_l1", "nominal",
+		clock-cntl-level = "lowsvsd1", "lowsvs", "svs", "svs_l1", "nominal",
 			"turbo";
 		nrt-device;
 		src-clock-name = "ipe_nps_clk_src";
