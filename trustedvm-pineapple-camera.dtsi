@@ -889,6 +889,7 @@
 		interrupt-names = "CSIPHY0";
 		interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
 		regulator-names = "gdscr", "csi-vdd-1p2", "csi-vdd-0p9";
+		vmrm-resource-ids = <1 1 1>;
 		status = "ok";
 	};
 
@@ -901,6 +902,7 @@
 		interrupt-names = "CSIPHY1";
 		interrupts = <GIC_SPI 478 IRQ_TYPE_EDGE_RISING>;
 		regulator-names = "gdscr", "csi-vdd-1p2", "csi-vdd-0p9";
+		vmrm-resource-ids = <2 2 2>;
 		status = "ok";
 	};
 
@@ -913,6 +915,7 @@
 		interrupt-names = "CSIPHY2";
 		interrupts = <GIC_SPI 479 IRQ_TYPE_EDGE_RISING>;
 		regulator-names = "gdscr", "csi-vdd-1p2", "csi-vdd-0p9";
+		vmrm-resource-ids = <3 3 3>;
 		status = "ok";
 	};
 
@@ -925,6 +928,7 @@
 		interrupt-names = "CSIPHY3";
 		interrupts = <GIC_SPI 448 IRQ_TYPE_EDGE_RISING>;
 		regulator-names = "gdscr", "csi-vdd-1p2", "csi-vdd-0p9";
+		vmrm-resource-ids = <4 4 4>;
 		status = "ok";
 	};
 
@@ -937,6 +941,7 @@
 		interrupt-names = "CSIPHY4";
 		interrupts = <GIC_SPI 122 IRQ_TYPE_EDGE_RISING>;
 		regulator-names = "gdscr", "csi-vdd-1p2", "csi-vdd-0p9";
+		vmrm-resource-ids = <5 5 5>;
 		status = "ok";
 	};
 
@@ -949,6 +954,7 @@
 		interrupt-names = "CSIPHY5";
 		interrupts = <GIC_SPI 89 IRQ_TYPE_EDGE_RISING>;
 		regulator-names = "gdscr", "csi-vdd-1p2", "csi-vdd-0p9";
+		vmrm-resource-ids = <6 6 6>;
 		status = "ok";
 	};
 
@@ -969,6 +975,7 @@
 		pinctrl-1 = <&cci_i2c_scl0_suspend &cci_i2c_sda0_suspend>;
 		pinctrl-2 = <&cci_i2c_scl1_active &cci_i2c_sda1_active>;
 		pinctrl-3 = <&cci_i2c_scl1_suspend &cci_i2c_sda1_suspend>;
+		vmrm-resource-ids = <7 7 7>;
 		status = "ok";
 
 		i2c_freq_100Khz_cci0: qcom,i2c_standard_mode {
@@ -1049,6 +1056,7 @@
 		pinctrl-1 = <&cci_i2c_scl2_suspend &cci_i2c_sda2_suspend>;
 		pinctrl-2 = <&cci_i2c_scl3_active &cci_i2c_sda3_active>;
 		pinctrl-3 = <&cci_i2c_scl3_suspend &cci_i2c_sda3_suspend>;
+		vmrm-resource-ids = <8 8 8>;
 		status = "ok";
 
 		i2c_freq_100Khz_cci1: qcom,i2c_standard_mode {
@@ -1129,6 +1137,7 @@
 		pinctrl-1 = <&cci_i2c_scl4_suspend &cci_i2c_sda4_suspend>;
 		pinctrl-2 = <&cci_i2c_scl5_active &cci_i2c_sda5_active>;
 		pinctrl-3 = <&cci_i2c_scl5_suspend &cci_i2c_sda5_suspend>;
+		vmrm-resource-ids = <9 9 9>;
 		status = "ok";
 
 		i2c_freq_100Khz_cci2: qcom,i2c_standard_mode {
@@ -1409,6 +1418,7 @@
 		rt-wr-highstress-indicator-threshold = <50>;
 		rt-wr-lowstress-indicator-threshold = <0>;
 		rt-wr-bw-ratio-scale-factor = <1>;
+		vmrm-resource-ids = <10 10 10>;
 		status = "ok";
 
 		camera-bus-nodes {
@@ -2243,6 +2253,7 @@
 		cam_hw_pid = <25>;
 		cam-hw-mid = <0>;
 		single-context-cdm;
+		vmrm-resource-ids = <11 11 11>;
 		status = "ok";
 	};
 
@@ -2263,6 +2274,7 @@
 		cam_hw_pid = <26>;
 		cam-hw-mid = <0>;
 		single-context-cdm;
+		vmrm-resource-ids = <12 12 12>;
 		status = "ok";
 	};
 
@@ -2283,6 +2295,7 @@
 		cam_hw_pid = <27>;
 		cam-hw-mid = <0>;
 		single-context-cdm;
+		vmrm-resource-ids = <13 13 13>;
 		status = "ok";
 	};
 
@@ -2303,6 +2316,7 @@
 		cam_hw_pid = <24>;
 		cam-hw-mid = <0>;
 		single-context-cdm;
+		vmrm-resource-ids = <14 14 14>;
 		status = "ok";
 	};
 
@@ -2323,6 +2337,7 @@
 		cam_hw_pid = <30>;
 		cam-hw-mid = <0>;
 		single-context-cdm;
+		vmrm-resource-ids = <15 15 15>;
 		status = "ok";
 	};
 
@@ -2344,6 +2359,7 @@
 		regulator-names = "gdsc", "sfe0";
 		cam_hw_pid = <11 0>;
 		clock-control-debugfs = "true";
+		vmrm-resource-ids = <16 16 16>;
 		status = "ok";
 	};
 
@@ -2359,6 +2375,7 @@
 		regulator-names = "gdsc", "sfe1";
 		cam_hw_pid = <12 1>;
 		clock-control-debugfs = "true";
+		vmrm-resource-ids = <17 17 17>;
 		status = "ok";
 	};
 
@@ -2374,6 +2391,7 @@
 		regulator-names = "gdsc", "sfe2";
 		cam_hw_pid = <13 2>;
 		clock-control-debugfs = "true";
+		vmrm-resource-ids = <18 18 18>;
 		status = "ok";
 	};
 
@@ -2391,6 +2409,7 @@
 		regulator-names = "gdsc";
 		src-clock-name = "csid_clk_src";
 		clock-control-debugfs = "true";
+		vmrm-resource-ids = <19 19 19>;
 		status = "ok";
 	};
 
@@ -2407,6 +2426,7 @@
 		regulator-names = "gdsc", "ife0";
 		ubwc-static-cfg = <0x1026 0x1036>;
 		cam_hw_pid = <16 20 24 8>;
+		vmrm-resource-ids = <20 20 20>;
 		status = "ok";
 	};
 
@@ -2424,6 +2444,7 @@
 		regulator-names = "gdsc";
 		src-clock-name = "csid_clk_src";
 		clock-control-debugfs = "true";
+		vmrm-resource-ids = <21 21 21>;
 		status = "ok";
 	};
 
@@ -2440,6 +2461,7 @@
 		regulator-names = "gdsc", "ife1";
 		ubwc-static-cfg = <0x1026 0x1036>;
 		cam_hw_pid = <17 21 25 9>;
+		vmrm-resource-ids = <22 22 22>;
 		status = "ok";
 	};
 
@@ -2457,6 +2479,7 @@
 		regulator-names = "gdsc";
 		src-clock-name = "csid_clk_src";
 		clock-control-debugfs = "true";
+		vmrm-resource-ids = <23 23 23>;
 		status = "ok";
 	};
 
@@ -2473,6 +2496,7 @@
 		regulator-names = "gdsc", "ife2";
 		ubwc-static-cfg = <0x1026 0x1036>;
 		cam_hw_pid = <18 22 26 10>;
+		vmrm-resource-ids = <24 24 24>;
 		status = "ok";
 	};
 
@@ -2490,6 +2514,7 @@
 			"turbo";
 		src-clock-name = "ife_lite_csid_clk_src";
 		clock-control-debugfs = "true";
+		vmrm-resource-ids = <25 25 25>;
 		status = "ok";
 	};
 
@@ -2506,6 +2531,7 @@
 		src-clock-name = "ife_lite_clk_src";
 		clock-control-debugfs = "true";
 		cam_hw_pid = <27>;
+		vmrm-resource-ids = <26 26 26>;
 		status = "ok";
 	};
 
@@ -2523,6 +2549,7 @@
 			"turbo";
 		src-clock-name = "ife_lite_csid_clk_src";
 		clock-control-debugfs = "true";
+		vmrm-resource-ids = <27 27 27>;
 		status = "ok";
 	};
 
@@ -2539,6 +2566,7 @@
 		src-clock-name = "ife_lite_clk_src";
 		clock-control-debugfs = "true";
 		cam_hw_pid = <28>;
+		vmrm-resource-ids = <28 28 28>;
 		status = "ok";
 	};
 

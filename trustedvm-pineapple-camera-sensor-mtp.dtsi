@@ -67,6 +67,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK0",
 			"CAM_RESET0";
 		cci-master = <CCI_MASTER_0>;
+		vmrm-resource-ids = <32 32>;
 		status = "ok";
 	};
 
@@ -87,6 +88,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK1",
 			"CAM_RESET1";
 		cci-master = <CCI_MASTER_1>;
+		vmrm-resource-ids = <33 33>;
 		status = "ok";
 	};
 
@@ -112,6 +114,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK0",
 			"CAM_RESET0";
 		cci-master = <0>;
+		vmrm-resource-ids = <34 34>;
 		status = "ok";
 	};
 
@@ -140,6 +143,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK1",
 			"CAM_RESET1";
 		cci-master = <CCI_MASTER_1>;
+		vmrm-resource-ids = <35 35>;
 		status = "ok";
 	};
 
@@ -170,6 +174,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK3",
 			"CAM_RESET3";
 		cci-master = <CCI_MASTER_0>;
+		vmrm-resource-ids = <36 36>;
 		status = "ok";
 	};
 
@@ -197,6 +202,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK3",
 			"CAM_RESET3";
 		cci-master = <CCI_MASTER_0>;
+		vmrm-resource-ids = <37 37>;
 		status = "ok";
 	};
 
@@ -220,6 +226,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK5",
 			"CAM_RESET5";
 		cci-master = <CCI_MASTER_1>;
+		vmrm-resource-ids = <38 38>;
 		status = "ok";
 	};
 
@@ -245,6 +252,7 @@
 		gpio-req-tbl-label = "CAMIF_MCLK5",
 			"CAM_RESET5";
 		cci-master = <CCI_MASTER_1>;
+		vmrm-resource-ids = <39 39>;
 		status = "ok";
 	};
 };

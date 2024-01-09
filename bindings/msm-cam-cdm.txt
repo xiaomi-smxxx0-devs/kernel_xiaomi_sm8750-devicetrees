@@ -150,6 +150,12 @@ to CDM interface node.
   Value type: <empty>
   Definition: Flag to indicate whether this is non real time device.
 
+- vmrm-resource-ids
+  Usage: optional
+  Value type: <u32>
+  Definition: should specify vmrm resource id list order is mem label,
+  mem tag, irq1 label, irq2 label.
+
 Example:
 	qcom,cpas-cdm0@ac48000 {
 		cell-index = <0>;
@@ -180,5 +186,6 @@ Example:
 		config-fifo;
 		fifo-depths = <64 0 0 0>;
 		single-context-cdm;
+		vmrm-resource-ids = <12 12 12>;
 		status = "ok";
 	};

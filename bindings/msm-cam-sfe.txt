@@ -101,6 +101,12 @@ Required properties:
   Value type: <string>
   Definition: Enable/Disable clk rate control.
 
+- vmrm-resource-ids
+  Usage: optional
+  Value type: <u32>
+  Definition: should specify vmrm resource id list order is mem label,
+  mem tag, irq1 label, irq2 label.
+
 Example:
 cam_sfe0: qcom,sfe0@ac9e000 {
 	cell-index = <0>;
@@ -133,5 +139,6 @@ cam_sfe0: qcom,sfe0@ac9e000 {
 	src-clock-name = "sfe_clk_src";
 	scl-clk-names = "sfe_0_ahb";
 	clock-control-debugfs = "true";
+	vmrm-resource-ids = <16 16 16>;
 	status = "ok";
 };

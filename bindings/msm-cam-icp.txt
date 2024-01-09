@@ -179,6 +179,12 @@ and name of firmware image.
   Value type: <empty>
   Definition: Flag to indicate whether this is non real time device.
 
+- vmrm-resource-ids
+  Usage: optional
+  Value type: <u32>
+  Definition: should specify vmrm resource id list order is mem label,
+  mem tag, irq1 label, irq2 label.
+
 Examples:
 cam_a5: qcom,a5 {
 	cell-index = <0>;
@@ -258,6 +264,7 @@ cam_lx7: qcom,lx7 {
 	ubwc-ipe-write-cfg = <0x161ef 0x1620f>;
 	ubwc-bps-fetch-cfg = <0x707b 0x7083>;
 	ubwc-bps-write-cfg = <0x161ef 0x1620f>;
+	vmrm-resource-ids = <29 29 29>;
 	status = "ok";
 };
 
@@ -299,6 +306,7 @@ cam_ipe0: qcom,ipe0@ac42000 {
 	clock-cntl-level = "lowsvs", "svs", "svs_l1", "nominal",
 		"turbo";
 	nrt-device;
+	vmrm-resource-ids = <30 30 30>;
 	status = "ok";
 };
 
@@ -326,6 +334,7 @@ qcom,ipe1 {
 		<0 0 0 0 600000000>;
 	clock-cntl-level = "lowsvs", "svs",
 		"svs_l1", "nominal", "turbo";
+	vmrm-resource-ids = <31 31 31>;
 	nrt-device;
 };
 
@@ -363,5 +372,6 @@ cam_bps: qcom,bps@ac2c000 {
 	clock-cntl-level = "lowsvs", "svs", "svs_l1", "nominal",
 		"turbo";
 	nrt-device;
+	vmrm-resource-ids = <32 32 32>;
 	status = "ok";
 };

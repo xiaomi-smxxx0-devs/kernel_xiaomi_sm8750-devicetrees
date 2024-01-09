@@ -110,6 +110,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <32 32>;
 		status = "ok";
 	};
 
@@ -146,6 +147,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <33 33>;
 		status = "ok";
 	};
 
@@ -187,6 +189,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <34 34>;
 		status = "ok";
 	};
 
@@ -231,6 +234,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <35 35>;
 		status = "ok";
 	};
 
@@ -282,6 +286,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <36 36>;
 		status = "ok";
 	};
 
@@ -324,6 +329,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <37 37>;
 		status = "ok";
 	};
 
@@ -363,6 +369,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <38 38>;
 		status = "ok";
 	};
 
@@ -404,6 +411,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <39 39>;
 		status = "ok";
 	};
 };
@@ -460,6 +468,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <40 40>;
 		status = "ok";
 	};
 
@@ -496,6 +505,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <41 41>;
 		status = "ok";
 	};
 
@@ -542,6 +552,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <42 42>;
 		status = "ok";
 	};
 
@@ -591,6 +602,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <43 43>;
 		status = "ok";
 	};
 };
@@ -649,6 +661,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <44 44>;
 		status = "ok";
 	};
 
@@ -711,6 +724,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <45 45>;
 		status = "ok";
 	};
 
@@ -760,6 +774,7 @@
 		clock-names = "cam_clk";
 		clock-cntl-level = "nominal";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <46 46>;
 		status = "ok";
 	};
 };
