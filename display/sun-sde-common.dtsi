@@ -285,10 +285,10 @@
 				qcom,sde-fp16-unmult = <0x200 0x00010000>;
 				qcom,sde-fp16-gc = <0x200 0x00010000>;
 				qcom,sde-fp16-csc = <0x200 0x00010000>;
-				qcom,sde-ucsc-igc = <0x700 0x00010000>;
-				qcom,sde-ucsc-unmult = <0x700 0x00010000>;
-				qcom,sde-ucsc-gc = <0x700 0x00010000>;
-				qcom,sde-ucsc-csc = <0x700 0x00010000>;
+				qcom,sde-ucsc-igc = <0x700 0x00010001>;
+				qcom,sde-ucsc-unmult = <0x700 0x00010001>;
+				qcom,sde-ucsc-gc = <0x700 0x00010001>;
+				qcom,sde-ucsc-csc = <0x700 0x00010001>;
 				qcom,sde-ucsc-alpha-dither = <0x700 0x00010000>;
 			};
 
@@ -298,10 +298,10 @@
 				qcom,sde-fp16-unmult = <0x280 0x00010000>;
 				qcom,sde-fp16-gc = <0x280 0x00010000>;
 				qcom,sde-fp16-csc = <0x280 0x00010000>;
-				qcom,sde-ucsc-igc = <0x1700 0x00010000>;
-				qcom,sde-ucsc-unmult = <0x1700 0x00010000>;
-				qcom,sde-ucsc-gc = <0x1700 0x00010000>;
-				qcom,sde-ucsc-csc = <0x1700 0x00010000>;
+				qcom,sde-ucsc-igc = <0x1700 0x00010001>;
+				qcom,sde-ucsc-unmult = <0x1700 0x00010001>;
+				qcom,sde-ucsc-gc = <0x1700 0x00010001>;
+				qcom,sde-ucsc-csc = <0x1700 0x00010001>;
 				qcom,sde-ucsc-alpha-dither = <0x1700 0x00010000>;
 			};
 		};
@@ -314,10 +314,10 @@
 				qcom,sde-fp16-unmult = <0x200 0x00010000>;
 				qcom,sde-fp16-gc = <0x200 0x00010000>;
 				qcom,sde-fp16-csc = <0x200 0x00010000>;
-				qcom,sde-ucsc-igc = <0x700 0x00010000>;
-				qcom,sde-ucsc-unmult = <0x700 0x00010000>;
-				qcom,sde-ucsc-gc = <0x700 0x00010000>;
-				qcom,sde-ucsc-csc = <0x700 0x00010000>;
+				qcom,sde-ucsc-igc = <0x700 0x00010001>;
+				qcom,sde-ucsc-unmult = <0x700 0x00010001>;
+				qcom,sde-ucsc-gc = <0x700 0x00010001>;
+				qcom,sde-ucsc-csc = <0x700 0x00010001>;
 				qcom,sde-ucsc-alpha-dither = <0x700 0x00010000>;
 			};
 
@@ -327,16 +327,16 @@
 				qcom,sde-fp16-unmult = <0x200 0x00010000>;
 				qcom,sde-fp16-gc = <0x200 0x00010000>;
 				qcom,sde-fp16-csc = <0x200 0x00010000>;
-				qcom,sde-ucsc-igc = <0x1700 0x00010000>;
-				qcom,sde-ucsc-unmult = <0x1700 0x00010000>;
-				qcom,sde-ucsc-gc = <0x1700 0x00010000>;
-				qcom,sde-ucsc-csc = <0x1700 0x00010000>;
+				qcom,sde-ucsc-igc = <0x1700 0x00010001>;
+				qcom,sde-ucsc-unmult = <0x1700 0x00010001>;
+				qcom,sde-ucsc-gc = <0x1700 0x00010001>;
+				qcom,sde-ucsc-csc = <0x1700 0x00010001>;
 				qcom,sde-ucsc-alpha-dither = <0x1700 0x00010000>;
 			};
 		};
 
 		qcom,sde-dspp-blocks {
-			qcom,sde-dspp-igc = <0x1260 0x00040000>;
+			qcom,sde-dspp-igc = <0x1260 0x00050000>;
 			qcom,sde-dspp-hsic = <0x800 0x00010007>;
 			qcom,sde-dspp-memcolor = <0x880 0x00010007>;
 			qcom,sde-dspp-hist = <0x800 0x00010007>;
