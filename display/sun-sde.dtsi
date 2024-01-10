@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/regulator/qcom,rpmh-regulator-levels.h>
@@ -181,10 +181,16 @@
 		};
 	};
 
+	smmu_sde_iommu_region_partition: smmu_sde_iommu_region_partition {
+		iommu-addresses = <&smmu_sde_unsec 0x0 0x00060000>,
+				  <&smmu_sde_unsec 0xd5500000 0x02b00000>,
+				  <&smmu_sde_sec 0x0 0x00020000>;
+	};
+
 	smmu_sde_unsec: qcom,smmu_sde_unsec_cb {
 		compatible = "qcom,smmu_sde_unsec";
 		iommus = <&apps_smmu 0x800 0x2>;
-		qcom,iommu-dma-addr-pool = <0x00020000 0xfffe0000>;
+		memory-region = <&smmu_sde_iommu_region_partition>;
 		qcom,iommu-faults = "non-fatal";
 		qcom,iommu-earlymap; /* for cont-splash */
 		dma-coherent;
@@ -193,7 +199,7 @@
 	smmu_sde_sec: qcom,smmu_sde_sec_cb {
 		compatible = "qcom,smmu_sde_sec";
 		iommus = <&apps_smmu 0x801 0x0>;
-		qcom,iommu-dma-addr-pool = <0x00020000 0xfffe0000>;
+		memory-region = <&smmu_sde_iommu_region_partition>;
 		qcom,iommu-faults = "non-fatal";
 		qcom,iommu-vmid = <0xa>;
 	};
@@ -231,7 +237,7 @@
 	qcom,sde-has-idle-pc;
 
 	qcom,sde-ib-bw-vote = <2500000 0 800000>;
-	qcom,sde-dspp-ltm-version = <0x00010002>;
+	qcom,sde-dspp-ltm-version = <0x00010003>;
 	/* offsets are based off dspp 0, 1, 2, and 3 */
 	qcom,sde-dspp-ltm-off = <0x15300 0x14300 0x13300 0x12300>;
 
