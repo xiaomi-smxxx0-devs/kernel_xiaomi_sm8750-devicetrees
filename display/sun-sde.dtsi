@@ -218,6 +218,7 @@
 			"lut_clk";
 	clock-rate = <0 0 575000000 575000000 19200000 575000000>;
 	clock-max-rate = <0 0 575000000 575000000 19200000 575000000>;
+	clock-mmrm = <0 0 0 DISP_CC_MDSS_MDP_CLK_SRC 0 0>;
 
 	vdd-supply = <&disp_cc_mdss_core_gdsc>;
 	mmcx-supply = <&VDD_MMCX_LEVEL>;
