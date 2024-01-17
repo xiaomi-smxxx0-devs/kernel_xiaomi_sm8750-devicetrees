@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
@@ -177,8 +177,8 @@
 		qcom,sde-has-dest-scaler;
 		qcom,sde-max-trusted-vm-displays = <1>;
 
-		qcom,sde-max-bw-low-kbps = <17000000>;
-		qcom,sde-max-bw-high-kbps = <27000000>;
+		qcom,sde-max-bw-low-kbps = <18900000>;
+		qcom,sde-max-bw-high-kbps = <28500000>;
 		qcom,sde-min-core-ib-kbps = <2500000>;
 		qcom,sde-min-llcc-ib-kbps = <0>;
 		qcom,sde-min-dram-ib-kbps = <800000>;
@@ -192,6 +192,23 @@
 		qcom,sde-dspp-demura-off = <0x15600 0x14600 0x13600 0x12600>;
 		qcom,sde-dspp-demura-size = <0xe4>;
 		qcom,sde-dspp-demura-version = <0x00020000>;
+
+		qcom,sde-dspp-aiqe-off = <0x39000 0xffffffff 0x3a000 0xffffffff>;
+		qcom,sde-dspp-aiqe-version = <0x00010000>;
+		qcom,sde-dspp-aiqe-size = <0x3fc>;
+
+		qcom,sde-dspp-aiqe-dither-off = <0x39700 0xffffffff 0x3a700 0xffffffff>;
+		qcom,sde-dspp-aiqe-dither-version = <0x00010000>;
+		qcom,sde-dspp-aiqe-dither-size = <0x20>;
+
+		qcom,sde-dspp-aiqe-wrapper-off = <0x39780 0xffffffff 0x3a780 0xffffffff>;
+		qcom,sde-dspp-aiqe-wrapper-version = <0x00010000>;
+		qcom,sde-dspp-aiqe-wrapper-size = <0x1c>;
+
+		qcom,sde-aiqe-has-feature-mdnie;
+		qcom,sde-aiqe-has-feature-abc;
+		qcom,sde-aiqe-has-feature-ssrc;
+		qcom,sde-aiqe-has-feature-copr;
 
 		qcom,sde-lm-noise-off = <0x320>;
 		qcom,sde-lm-noise-version = <0x00010000>;
@@ -268,10 +285,10 @@
 				qcom,sde-fp16-unmult = <0x200 0x00010000>;
 				qcom,sde-fp16-gc = <0x200 0x00010000>;
 				qcom,sde-fp16-csc = <0x200 0x00010000>;
-				qcom,sde-ucsc-igc = <0x700 0x00010000>;
-				qcom,sde-ucsc-unmult = <0x700 0x00010000>;
-				qcom,sde-ucsc-gc = <0x700 0x00010000>;
-				qcom,sde-ucsc-csc = <0x700 0x00010000>;
+				qcom,sde-ucsc-igc = <0x700 0x00010001>;
+				qcom,sde-ucsc-unmult = <0x700 0x00010001>;
+				qcom,sde-ucsc-gc = <0x700 0x00010001>;
+				qcom,sde-ucsc-csc = <0x700 0x00010001>;
 				qcom,sde-ucsc-alpha-dither = <0x700 0x00010000>;
 			};
 
@@ -281,10 +298,10 @@
 				qcom,sde-fp16-unmult = <0x280 0x00010000>;
 				qcom,sde-fp16-gc = <0x280 0x00010000>;
 				qcom,sde-fp16-csc = <0x280 0x00010000>;
-				qcom,sde-ucsc-igc = <0x1700 0x00010000>;
-				qcom,sde-ucsc-unmult = <0x1700 0x00010000>;
-				qcom,sde-ucsc-gc = <0x1700 0x00010000>;
-				qcom,sde-ucsc-csc = <0x1700 0x00010000>;
+				qcom,sde-ucsc-igc = <0x1700 0x00010001>;
+				qcom,sde-ucsc-unmult = <0x1700 0x00010001>;
+				qcom,sde-ucsc-gc = <0x1700 0x00010001>;
+				qcom,sde-ucsc-csc = <0x1700 0x00010001>;
 				qcom,sde-ucsc-alpha-dither = <0x1700 0x00010000>;
 			};
 		};
@@ -297,10 +314,10 @@
 				qcom,sde-fp16-unmult = <0x200 0x00010000>;
 				qcom,sde-fp16-gc = <0x200 0x00010000>;
 				qcom,sde-fp16-csc = <0x200 0x00010000>;
-				qcom,sde-ucsc-igc = <0x700 0x00010000>;
-				qcom,sde-ucsc-unmult = <0x700 0x00010000>;
-				qcom,sde-ucsc-gc = <0x700 0x00010000>;
-				qcom,sde-ucsc-csc = <0x700 0x00010000>;
+				qcom,sde-ucsc-igc = <0x700 0x00010001>;
+				qcom,sde-ucsc-unmult = <0x700 0x00010001>;
+				qcom,sde-ucsc-gc = <0x700 0x00010001>;
+				qcom,sde-ucsc-csc = <0x700 0x00010001>;
 				qcom,sde-ucsc-alpha-dither = <0x700 0x00010000>;
 			};
 
@@ -310,24 +327,24 @@
 				qcom,sde-fp16-unmult = <0x200 0x00010000>;
 				qcom,sde-fp16-gc = <0x200 0x00010000>;
 				qcom,sde-fp16-csc = <0x200 0x00010000>;
-				qcom,sde-ucsc-igc = <0x1700 0x00010000>;
-				qcom,sde-ucsc-unmult = <0x1700 0x00010000>;
-				qcom,sde-ucsc-gc = <0x1700 0x00010000>;
-				qcom,sde-ucsc-csc = <0x1700 0x00010000>;
+				qcom,sde-ucsc-igc = <0x1700 0x00010001>;
+				qcom,sde-ucsc-unmult = <0x1700 0x00010001>;
+				qcom,sde-ucsc-gc = <0x1700 0x00010001>;
+				qcom,sde-ucsc-csc = <0x1700 0x00010001>;
 				qcom,sde-ucsc-alpha-dither = <0x1700 0x00010000>;
 			};
 		};
 
 		qcom,sde-dspp-blocks {
-			qcom,sde-dspp-igc = <0x1260 0x00040000>;
+			qcom,sde-dspp-igc = <0x1260 0x00050000>;
 			qcom,sde-dspp-hsic = <0x800 0x00010007>;
 			qcom,sde-dspp-memcolor = <0x880 0x00010007>;
 			qcom,sde-dspp-hist = <0x800 0x00010007>;
 			qcom,sde-dspp-sixzone = <0x900 0x00020000>;
 			qcom,sde-dspp-vlut = <0xa00 0x00010008>;
 			qcom,sde-dspp-gamut = <0x1000 0x00040003>;
-			qcom,sde-dspp-pcc = <0x1700 0x00040000>;
-			qcom,sde-dspp-gc = <0x17c0 0x00010008>;
+			qcom,sde-dspp-pcc = <0x1700 0x00060000>;
+			qcom,sde-dspp-gc = <0x17c0 0x00020000>;
 			qcom,sde-dspp-dither = <0x82c 0x00010007>;
 		};
 	};

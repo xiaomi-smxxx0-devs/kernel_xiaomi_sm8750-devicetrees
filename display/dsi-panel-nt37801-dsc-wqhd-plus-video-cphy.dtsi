@@ -22,6 +22,7 @@
 		qcom,mdss-dsi-tx-eot-append;
 		qcom,adjust-timer-wakeup-ms = <1>;
 		qcom,panel-cphy-mode;
+		qcom,spr-pack-type = "pentile";
 
 		qcom,mdss-dsi-wr-mem-start = <0x2c>;
 		qcom,mdss-dsi-wr-mem-continue = <0x3c>;
@@ -87,6 +88,8 @@
 					39 01 00 00 00 00 05 FF AA 55 A5 82
 					39 01 00 00 00 00 02 6F 08
 					39 01 00 00 00 00 03 F3 CC 0C
+					39 01 00 00 00 00 06 F0 55 AA 52 08 01
+					39 01 00 00 00 00 05 B2 55 01 FF 03
 					05 01 00 00 78 00 01 11
 					05 01 00 00 14 00 01 29
 				];

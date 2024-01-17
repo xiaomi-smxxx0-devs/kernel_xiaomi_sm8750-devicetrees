@@ -387,6 +387,31 @@ Optional properties:
                 corresponding DSPP block offset as base.
 - qcom,sde-dspp-demura-size:    A u32 value indicating the demura block register address range
 - qcom,sde-dspp-demura-version:    A u32 value indicating the version of demura hardware.
+- qcom,sde-dspp-aiqe-off:	Array of u32 values indicating the offset of each AIQE block
+				relative to its parent DSPP block.
+- qcom,sde-dspp-aiqe-version:   A u32 value indicating the version of the AIQE hardware.
+- qcom,sde-dspp-aiqe-size:      A u32 value indicating the shared memory size of each AIQE
+				hardware block instance.
+- qcom,sde-dspp-aiqe-dither-off: Array of u32 values indicating the offset of each AIQE
+				dither block relative to its parent DSPP block.
+- qcom,sde-dspp-aiqe-dither-version: A u32 value indicating the version of the AIQE dither
+				hardware.
+- qcom,sde-dspp-aiqe-dither-size: A u32 value indicating the shared memory size of each AIQE
+				dither hardware block instance.
+- qcom,sde-dspp-aiqe-wrapper-off: Array of u32 values indicating the offset of each AIQE
+				wrapper block relative to its parent DSPP block.
+- qcom,sde-dspp-aiqe-wrapper-version: A u32 value indicating the version of the AIQE wrapper
+				hardware.
+- qcom,sde-dspp-aiqe-wrapper-size: A u32 value indicating the shared memory size of each AIQE
+				wrapper hardware block instance.
+- qcom,sde-aiqe-has-feature-mdnie:	Boolean property indicating the presence of AIQE feature mDNIe
+				hardware.
+- qcom,sde-aiqe-has-feature-abc:	Boolean property indicating the presence of AIQE feature ABC
+				hardware.
+- qcom,sde-aiqe-has-feature-ssrc:	Boolean property indicating the presence of AIQE feature SSRC
+				hardware.
+- qcom,sde-aiqe-has-feature-copr:	Boolean property indicating the presence of AIQE feature COPR
+				hardware.
 - qcom,sde-lm-noise-off:	A u32 value indicating noise layer offset from mixer base.
 - qcom,sde-lm-noise-version:	A u32 value indicating the noise layer version.
 - qcom,sde-vbif-id:		Array of vbif ids corresponding to the
@@ -709,6 +734,23 @@ Example:
     qcom,sde-dspp-demura-version = <0x00010000>;
     qcom,sde-lm-noise-off = <0x320>;
     qcom,sde-lm-noise-version = <0x00010000>;
+
+    qcom,sde-dspp-aiqe-off = <0x39000 0xffffffff 0x3a000 0xffffffff>;
+    qcom,sde-dspp-aiqe-version = <0x00010000>;
+    qcom,sde-dspp-aiqe-size = <0x3fc>;
+
+    qcom,sde-dspp-aiqe-dither-off = <0x39700 0xffffffff 0x3a700 0xffffffff>;
+    qcom,sde-dspp-aiqe-dither-version = <0x00010000>;
+    qcom,sde-dspp-aiqe-dither-size = <0x20>;
+
+    qcom,sde-dspp-aiqe-wrapper-off = <0x39780 0xffffffff 0x3a780 0xffffffff>;
+    qcom,sde-dspp-aiqe-wrapper-version = <0x00010000>;
+    qcom,sde-dspp-aiqe-wrapper-size = <0x1c>;
+
+    qcom,sde-aiqe-has-feature-mdnie;
+    qcom,sde-aiqe-has-feature-abc;
+    qcom,sde-aiqe-has-feature-ssrc;
+    qcom,sde-aiqe-has-feature-copr;
 
     qcom,sde-dspp-rc-mem-size = <2720>;
     qcom,sde-dest-scaler-top-off = <0x00061000>;
