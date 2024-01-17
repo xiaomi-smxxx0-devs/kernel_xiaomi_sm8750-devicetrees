@@ -6,13 +6,14 @@
 /dts-v1/;
 /plugin/;
 
-/*This is MTP with Ganges wlan w/ v8 Power Grid */
+/*This is MTP with Hamilton + V8/V6 wlan*/
 
-#include "sun-audio-mtp.dtsi"
+#include "sun-audio-hamilton-mtp.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. Sun MTP ST54L NFC";
 	compatible = "qcom,sun-mtp", "qcom,sun", "qcom,sunp-mtp", "qcom,sunp", "qcom,mtp";
 	qcom,msm-id = <618 0x10000>, <618 0x20000>, <639 0x10000>, <639 0x20000>;
-	qcom,board-id = <0x30008 0>, <0x40008 0>;
+	qcom,board-id = <0x20008 0>, <0x50008 0>;
 };
+
