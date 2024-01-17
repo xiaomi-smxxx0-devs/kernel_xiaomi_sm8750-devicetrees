@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/clock/qcom,gcc-sun.h>
@@ -57,13 +57,13 @@
 			0x144 /* GSI_RING_BASE_ADDR_H */
 			0x1a4>; /* GSI_IF_STS */
 
-		dwc3@a600000 {
+		dwc3_0: dwc3@a600000 {
 			compatible = "snps,dwc3";
 			reg = <0xa600000 0xd93c>;
 
 			iommus = <&apps_smmu 0x40 0x0>;
 			qcom,iommu-dma = "atomic";
-			qcom,iommu-dma-addr-pool = <0x90000000 0x60000000>;
+			iommu-addresses = <&dwc3_0 0x0 0x90000000>, <&dwc3_0 0xf0000000 0x10000000>;
 			dma-coherent;
 
 			interrupts = <GIC_SPI 133 IRQ_TYPE_LEVEL_HIGH>;
