@@ -404,6 +404,12 @@ Optional properties:
 				hardware.
 - qcom,sde-dspp-aiqe-wrapper-size: A u32 value indicating the shared memory size of each AIQE
 				wrapper hardware block instance.
+- qcom,sde-dspp-aiqe-aiscaler-off: Array of u32 values indicating the offset of each AIQE
+				AI Scaler block relative to its parent DSPP block.
+- qcom,sde-dspp-aiqe-aiscaler-version: A u32 value indicating the version of the AIQE AI Scaler
+				hardware.
+- qcom,sde-dspp-aiqe-aiscaler-size: A u32 value indicating the shared memory size of each AIQE
+				AI Scaler hardware block instance.
 - qcom,sde-aiqe-has-feature-mdnie:	Boolean property indicating the presence of AIQE feature mDNIe
 				hardware.
 - qcom,sde-aiqe-has-feature-abc:	Boolean property indicating the presence of AIQE feature ABC
@@ -412,6 +418,8 @@ Optional properties:
 				hardware.
 - qcom,sde-aiqe-has-feature-copr:	Boolean property indicating the presence of AIQE feature COPR
 				hardware.
+- qcom,sde-aiqe-has-feature-aiscaler:	Boolean property indicating the presence of AIQE feature
+				AI Scaler hardware.
 - qcom,sde-lm-noise-off:	A u32 value indicating noise layer offset from mixer base.
 - qcom,sde-lm-noise-version:	A u32 value indicating the noise layer version.
 - qcom,sde-vbif-id:		Array of vbif ids corresponding to the
