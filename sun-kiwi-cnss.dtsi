@@ -71,7 +71,7 @@
 
 		supported-ids = <0x1107>;
 		wlan-en-gpio = <&tlmm 16 0>;
-		qcom,bt-en-gpio = <&pm8550vs_f 3 0>;
+		qcom,bt-en-gpio = <&pm8550vs_f_gpios 3 0>;
 		qcom,sw-ctrl-gpio = <&tlmm 18 0>;
 		/* List of GPIOs to be setup for interrupt wakeup capable */
 		mpm_wake_set_gpios = <18 19>;
