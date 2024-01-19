@@ -862,6 +862,8 @@
 			CAM_BYPASS_CLKS |
 			CAM_BYPASS_CESTA |
 			CAM_BYPASS_ICC)>;
+		device-heap-size = <0x400000>;
+		session-heap-size = <0xC800000>;
 		status = "ok";
 	};
 
