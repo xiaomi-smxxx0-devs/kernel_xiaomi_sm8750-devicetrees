@@ -132,6 +132,16 @@ First Level Node - CCI device
   Definition: should specify vmrm resource id list order is mem label,
   mem tag, irq1 label, irq2 label.
 
+- gpios
+  Usage: required when enable vmrm
+  Value type: <phandle>
+  Definition: should specify the gpios to be used for the cci.
+
+- gpio_for_vmrm_purpose
+  Usage: required when enable vmrm
+  Value type: <boolean>
+  Definition: A boolean flag to indicate the gpios is only for vmrm.
+
 =========================
 CCI clock settings
 =========================

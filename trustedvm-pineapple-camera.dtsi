@@ -975,6 +975,11 @@
 		pinctrl-1 = <&cci_i2c_scl0_suspend &cci_i2c_sda0_suspend>;
 		pinctrl-2 = <&cci_i2c_scl1_active &cci_i2c_sda1_active>;
 		pinctrl-3 = <&cci_i2c_scl1_suspend &cci_i2c_sda1_suspend>;
+		gpios = <&tlmm 113 0>,
+			<&tlmm 114 0>,
+			<&tlmm 115 0>,
+			<&tlmm 116 0>;
+		gpio_for_vmrm_purpose;
 		vmrm-resource-ids = <7 7 7>;
 		status = "ok";
 
@@ -1056,6 +1061,11 @@
 		pinctrl-1 = <&cci_i2c_scl2_suspend &cci_i2c_sda2_suspend>;
 		pinctrl-2 = <&cci_i2c_scl3_active &cci_i2c_sda3_active>;
 		pinctrl-3 = <&cci_i2c_scl3_suspend &cci_i2c_sda3_suspend>;
+		gpios = <&tlmm 12 0>,
+			<&tlmm 13 0>,
+			<&tlmm 117 0>,
+			<&tlmm 118 0>;
+		gpio_for_vmrm_purpose;
 		vmrm-resource-ids = <8 8 8>;
 		status = "ok";
 
@@ -1137,6 +1147,11 @@
 		pinctrl-1 = <&cci_i2c_scl4_suspend &cci_i2c_sda4_suspend>;
 		pinctrl-2 = <&cci_i2c_scl5_active &cci_i2c_sda5_active>;
 		pinctrl-3 = <&cci_i2c_scl5_suspend &cci_i2c_sda5_suspend>;
+		gpios = <&tlmm 112 0>,
+			<&tlmm 153 0>,
+			<&tlmm 119 0>,
+			<&tlmm 120 0>;
+		gpio_for_vmrm_purpose;
 		vmrm-resource-ids = <9 9 9>;
 		status = "ok";
 
