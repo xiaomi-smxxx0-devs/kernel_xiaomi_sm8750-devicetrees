@@ -574,6 +574,8 @@ Optional properties:
 - qcom,sde-ipcc-protocol-id:	A u32 value indicating ipcc protocol id used for hw fencing feature.
 - qcom,sde-ipcc-client-dpu-phys-id:	A u32 value indicating ipcc physical client id of dpu used
 					for ipcc registers access.
+- qcom,sde-hw-fence-mdp-ctl-offset:	An optional u32 value indicating the hw fence mdp reg
+					offset.
 - qcom,sde-inline-rot-xin:	An integer array of xin-ids related to inline
 				rotation.
 - qcom,sde-inline-rot-xin-type:	A string array indicating the type of xin,
@@ -916,6 +918,7 @@ Example:
     qcom,sde-soccp-controller = <&soccp_pas>;
     qcom,sde-ipcc-protocol-id = <0x2>;
     qcom,sde-ipcc-client-dpu-phys-id = <0x19>;
+    qcom,sde-hw-fence-mdp-ctl-offset = <0x20000>;
 
     qcom,sde-vbif-off = <0 0>;
     qcom,sde-vbif-id = <0 1>;
