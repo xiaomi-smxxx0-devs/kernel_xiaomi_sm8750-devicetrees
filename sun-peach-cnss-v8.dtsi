@@ -50,6 +50,32 @@
 				function = "wcn_sw";
 			};
 		};
+
+		cnss_host_sol_default: cnss_host_sol_default {
+			mux {
+				pins = "gpio202";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio202";
+				drive-strength = <4>;
+				bias-pull-down;
+			};
+		};
+
+		cnss_dev_sol_default: cnss_dev_sol_default {
+			mux {
+				pins = "gpio203";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio203";
+				drive-strength = <4>;
+				bias-pull-down;
+			};
+		};
 	};
 };
 
@@ -74,14 +100,17 @@
 		wlan-en-gpio = <&tlmm 16 0>;
 		qcom,bt-en-gpio = <&pm8550ve_f_gpios 3 0>;
 		qcom,sw-ctrl-gpio = <&tlmm 18 0>;
+		wlan-host-sol-gpio = <&tlmm 202 0>;
+		wlan-dev-sol-gpio = <&tlmm 203 0>;
 		/* List of GPIOs to be setup for interrupt wakeup capable */
 		mpm_wake_set_gpios = <18 19>;
 		pinctrl-names = "wlan_en_active", "wlan_en_sleep", "sw_ctrl",
-				"sw_ctrl_wl_cx";
+				"sw_ctrl_wl_cx", "sol_default";
 		pinctrl-0 = <&cnss_wlan_en_active>;
 		pinctrl-1 = <&cnss_wlan_en_sleep>;
 		pinctrl-2 = <&cnss_wlan_sw_ctrl>;
 		pinctrl-3 = <&cnss_wlan_sw_ctrl_wl_cx>;
+		pinctrl-4 = <&cnss_host_sol_default &cnss_dev_sol_default>;
 		qcom,wlan;
 		qcom,wlan-rc-num = <0>;
 		qcom,wlan-ramdump-dynamic = <0x780000>;
