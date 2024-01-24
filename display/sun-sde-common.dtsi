@@ -265,6 +265,7 @@
 
 		qcom,sde-ipcc-protocol-id = <0x4>;
 		qcom,sde-ipcc-client-dpu-phys-id = <0x14>;
+		qcom,sde-soccp-controller = <&soccp_pas>;
 
 		/* offsets are relative to "mdp_phys + qcom,sde-off */
 		qcom,sde-reg-dma-off = <0 0x800>;

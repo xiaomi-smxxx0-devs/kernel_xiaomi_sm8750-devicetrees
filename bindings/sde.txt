@@ -569,6 +569,8 @@ Optional properties:
 					silver or gold or gold+.
 - qcom,sde-qos-cpu-dma-latency:	A u32 value indicating desired PM QoS CPU DMA latency in usec.
 - qcom,sde-qos-cpu-irq-latency:	A u32 value indicating desired PM QoS CPU irq latency in usec.
+- qcom,sde-soccp-controller:    The phandle for the soccp controller.
+				This value is optional and only required for targets with SOCCP.
 - qcom,sde-ipcc-protocol-id:	A u32 value indicating ipcc protocol id used for hw fencing feature.
 - qcom,sde-ipcc-client-dpu-phys-id:	A u32 value indicating ipcc physical client id of dpu used
 					for ipcc registers access.
@@ -911,6 +913,7 @@ Example:
     qcom,sde-qos-cpu-dma-latency = <300>;
     qcom,sde-qos-cpu-irq-latency = <300>;
 
+    qcom,sde-soccp-controller = <&soccp_pas>;
     qcom,sde-ipcc-protocol-id = <0x2>;
     qcom,sde-ipcc-client-dpu-phys-id = <0x19>;
 
