@@ -1,0 +1,10 @@
+/dts-v1/;
+/plugin/;
+
+#include "sun-dsp.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. sun v1 SoC";
+	compatible = "qcom,sun";
+	qcom,board-id = <0 0>;
+};

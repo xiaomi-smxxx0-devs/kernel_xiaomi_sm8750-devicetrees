@@ -1,0 +1,10 @@
+/dts-v1/;
+/plugin/;
+
+#include "sun-dsp-trustedvm.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. Sun - TrustedVM";
+	compatible = "qcom,sun";
+	qcom,msm-id = <618 0x10000>;
+};
