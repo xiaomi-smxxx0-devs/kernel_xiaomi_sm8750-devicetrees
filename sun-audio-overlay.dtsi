@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <bindings/qcom,audio-ext-clk.h>
@@ -385,7 +385,6 @@
 			<5 BT_AUDIO_TX1 0x3>, <6 BT_AUDIO_TX2 0x3>,
 			<7 BT_AUDIO_TX3 0x3>, <8 FM_AUDIO_TX1 0x3>;
 		qcom,swr-num-dev = <1>;
-		qcom,swr-clock-stop-mode0 = <1>;
 	};
 };
 
