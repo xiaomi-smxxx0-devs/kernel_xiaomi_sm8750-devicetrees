@@ -74,6 +74,40 @@ pineapple-dtb-$(CONFIG_ARCH_PINEAPPLE) += \
 pineapple-overlays-dtb-$(CONFIG_ARCH_PINEAPPLE) += $(PINEAPPLE_BOARDS) $(NOAPQ_PINEAPPLE_BOARDS) $(PINEAPPLE_BASE_DTB) $(PINEAPPLE_APQ_BASE_DTB)
 dtb-y += $(pineapple-dtb-y)
 
+PARROT_BASE_DTB += parrot.dtb parrotp.dtb parrot-sg.dtb parrotp-sg.dtb
+PARROT_4GB_BASE_DTB += parrot-4gb.dtb
+
+PARROT_BOARDS += \
+		 parrot-rumi-overlay.dtbo \
+		 parrot-atp-overlay.dtbo \
+		 parrot-idp-overlay.dtbo \
+		 parrot-idp-wcn3990-overlay.dtbo \
+		 parrot-idp-wcn3990-amoled-rcm-overlay.dtbo \
+		 parrot-idp-wcn6750-amoled-rcm-overlay.dtbo \
+		 parrot-idp-wcn6750-amoled-overlay.dtbo \
+		 parrot-idp-nopmi-overlay.dtbo \
+		 parrot-idp-pm8350b-overlay.dtbo \
+		 parrot-qrd-overlay.dtbo \
+		 parrot-qrd-wcn6750-overlay.dtbo \
+		 parrot-qrd-nopmi-overlay.dtbo   \
+		 parrot-qrd-pm8350b-overlay.dtbo
+
+PARROT_4GB_BOARDS += \
+		 parrot-idp-4gb-overlay.dtbo \
+		 parrot-idp-wcn3990-4gb-overlay.dtbo \
+		 parrot-idp-wcn3990-amoled-rcm-4gb-overlay.dtbo \
+		 parrot-idp-wcn6750-amoled-rcm-4gb-overlay.dtbo \
+		 parrot-idp-wcn6750-amoled-4gb-overlay.dtbo \
+		 parrot-qrd-4gb-overlay.dtbo \
+		 parrot-qrd-wcn6750-4gb-overlay.dtbo \
+
+
+parrot-dtb-$(CONFIG_ARCH_PARROT) += \
+	$(call add-overlays, $(PARROT_BOARDS),$(PARROT_BASE_DTB)) \
+	$(call add-overlays, $(PARROT_4GB_BOARDS),$(PARROT_4GB_BASE_DTB))
+parrot-overlays-dtb-$(CONFIG_ARCH_PARROT) += $(PARROT_BOARDS) $(PARROT_BASE_DTB) $(PARROT_4GB_BOARDS) $(PARROT_4GB_BASE_DTB)
+dtb-y += $(parrot-dtb-y)
+
 endif
 
 ifeq ($(CONFIG_ARCH_PINEAPPLE), y)
