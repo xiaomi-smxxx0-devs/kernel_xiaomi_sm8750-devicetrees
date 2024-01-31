@@ -5,6 +5,11 @@ dtbo-y += sun-peach-cnss.dtbo
 dtbo-y += sun-peach-cnss-v8.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_PINEAPPLE),y)
+dtbo-y += pineapple-kiwi-cnss.dtbo
+dtbo-y += pineapplep-hdk-kiwi-cnss.dtbo
+endif
+
 always-y	:= $(dtb-y) $(dtbo-y)
 subdir-y	:= $(dts-dirs)
 clean-files	:= *.dtb *.dtbo
