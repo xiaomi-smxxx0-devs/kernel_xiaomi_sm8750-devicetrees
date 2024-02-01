@@ -1689,6 +1689,7 @@
 			      "iface";
 		qcom,disp_crm-crmc = <&dispcc_crmc>;
 		#clock-cells = <1>;
+		#power-domain-cells = <1>;
 		#reset-cells = <1>;
 	};
 
@@ -1908,6 +1909,7 @@
 		qcom,retain-regs;
 		qcom,support-hw-trigger;
 		qcom,support-cfg-gdscr;
+		status = "disabled";
 	};
 
 	disp_cc_mdss_core_int2_gdsc: qcom,gdsc@af0b000 {
@@ -1919,6 +1921,7 @@
 		qcom,retain-regs;
 		qcom,support-hw-trigger;
 		qcom,support-cfg-gdscr;
+		status = "disabled";
 	};
 
 	/* EVA_CC GDSCs */
