@@ -2989,6 +2989,26 @@
 		interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
 	};
 
+	pdp0: qcom,pdp0@0x18980000 {
+		compatible = "qcom,cpucp-v2";
+		reg =	<0x16420000 0x4C08>,
+			<0x18980000 0x300>;
+		reg-names = "rx", "tx";
+		#mbox-cells = <1>;
+		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
+		qcom,rx-chans = <0x10>;
+	};
+
+	pdp1: qcom,pdp1@0x19980000 {
+		compatible = "qcom,cpucp-v2";
+		reg =	<0x16420000 0x4C08>,
+			<0x19980000 0x300>;
+		reg-names = "rx", "tx";
+		#mbox-cells = <1>;
+		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
+		qcom,rx-chans = <0x20>;
+	};
+
 	vendor_hooks: qcom,cpu-vendor-hooks {
 		compatible = "qcom,cpu-vendor-hooks";
 	};
@@ -3014,8 +3034,26 @@
 
 	cpucp_log: qcom,cpucp_log@0x81210000 {
 		compatible = "qcom,cpucp-log";
-		reg = <0x81210000 0x10000>, <0x81220000 0x10000>;
+		reg =	<0x81210000 0x10000>,
+			<0x81220000 0x10000>;
 		mboxes = <&cpucp 1>;
+		qcom,log-type = <0>;
+	};
+
+	pdp0_log: qcom,pdp0_log@0x81f41000 {
+		compatible = "qcom,pdp-log";
+		reg =	<0x81f41000 0x10000>,
+			<0x81f51000 0x10000>;
+		mboxes = <&pdp0 4>;
+		qcom,log-type = <1>;
+	};
+
+	pdp1_log: qcom,pdp1_log@0x81f61000 {
+		compatible = "qcom,pdp-log";
+		reg =	<0x81f61000 0x10000>,
+			<0x81f71000 0x10000>;
+		mboxes = <&pdp1 5>, <&pdp1 4>;
+		qcom,log-type = <2>;
 	};
 
 	llcc_pmu: llcc-pmu@24095000 {
