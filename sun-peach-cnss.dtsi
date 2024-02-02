@@ -62,19 +62,6 @@
 				bias-pull-down;
 			};
 		};
-
-		cnss_dev_sol_default: cnss_dev_sol_default {
-			mux {
-				pins = "gpio203";
-				function = "gpio";
-			};
-
-			config {
-				pins = "gpio203";
-				drive-strength = <4>;
-				bias-pull-down;
-			};
-		};
 	};
 };
 
@@ -109,7 +96,7 @@
 		pinctrl-1 = <&cnss_wlan_en_sleep>;
 		pinctrl-2 = <&cnss_wlan_sw_ctrl>;
 		pinctrl-3 = <&cnss_wlan_sw_ctrl_wl_cx>;
-		pinctrl-4 = <&cnss_host_sol_default &cnss_dev_sol_default>;
+		pinctrl-4 = <&cnss_host_sol_default>;
 		qcom,wlan;
 		qcom,wlan-rc-num = <0>;
 		qcom,wlan-ramdump-dynamic = <0x780000>;
