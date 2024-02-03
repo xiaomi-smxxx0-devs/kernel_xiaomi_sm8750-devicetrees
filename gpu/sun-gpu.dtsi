@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #define MHZ_TO_KBPS(mhz, w) ((mhz * 1000000 * w) / (1024))
@@ -171,7 +171,7 @@
 
 		qcom,gmu-freq-table = <500000000 RPMH_REGULATOR_LEVEL_LOW_SVS>,
 					<650000000 RPMH_REGULATOR_LEVEL_SVS>;
-		qcom,gmu-perf-ddr-bw = <MHZ_TO_KBPS(1353, 4)>;
+		qcom,gmu-perf-ddr-bw = <MHZ_TO_KBPS(1555, 4)>;
 
 		iommus = <&kgsl_smmu 0x5 0x000>;
 		qcom,iommu-dma = "disabled";
