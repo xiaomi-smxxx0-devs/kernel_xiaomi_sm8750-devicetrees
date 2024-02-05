@@ -11,7 +11,7 @@
 		interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>, <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>;
 
 		/* LLCC Cache */
-		cache-slice-names = "cvp";
+		cache-slice-names = "cvpfw", "cvp";
 
 		/* Supply */
 		cvp-supply = <&eva_cc_mvs0c_gdsc>;
