@@ -2162,9 +2162,7 @@
 	};
 
 	etm@12c21000 {
-		compatible = "arm,primecell";
-		arm,primecell-periphid = <0x000bb95d>;
-		reg = <0x12c21000 0x1000>;
+		compatible = "arm,coresight-etm4x-sysreg";
 		cpu = <&CPU0>;
 
 		coresight-name = "coresight-etm0";
@@ -2270,9 +2268,7 @@
 	};
 
 	etm@12d21000 {
-		compatible = "arm,primecell";
-		arm,primecell-periphid = <0x000bb95d>;
-		reg = <0x12d21000 0x1000>;
+		compatible = "arm,coresight-etm4x-sysreg";
 		cpu = <&CPU1>;
 
 		coresight-name = "coresight-etm1";
@@ -2377,9 +2373,7 @@
 	};
 
 	etm@12e21000 {
-		compatible = "arm,primecell";
-		arm,primecell-periphid = <0x000bb95d>;
-		reg = <0x12e21000 0x1000>;
+		compatible = "arm,coresight-etm4x-sysreg";
 		cpu = <&CPU2>;
 
 		coresight-name = "coresight-etm2";
@@ -2484,9 +2478,7 @@
 	};
 
 	etm@12f21000 {
-		compatible = "arm,primecell";
-		arm,primecell-periphid = <0x000bb95d>;
-		reg = <0x12f21000 0x1000>;
+		compatible = "arm,coresight-etm4x-sysreg";
 		cpu = <&CPU3>;
 
 		coresight-name = "coresight-etm3";
@@ -2591,9 +2583,7 @@
 	};
 
 	etm@13021000 {
-		compatible = "arm,primecell";
-		arm,primecell-periphid = <0x000bb95d>;
-		reg = <0x13021000 0x1000>;
+		compatible = "arm,coresight-etm4x-sysreg";
 		cpu = <&CPU4>;
 
 		coresight-name = "coresight-etm4";
@@ -2698,9 +2688,7 @@
 	};
 
 	etm@13121000 {
-		compatible = "arm,primecell";
-		arm,primecell-periphid = <0x000bb95d>;
-		reg = <0x13121000 0x1000>;
+		compatible = "arm,coresight-etm4x-sysreg";
 		cpu = <&CPU5>;
 
 		coresight-name = "coresight-etm5";
@@ -3033,9 +3021,7 @@
 	};
 
 	etm@13521000 {
-		compatible = "arm,primecell";
-		arm,primecell-periphid = <0x000bb95d>;
-		reg = <0x13521000 0x1000>;
+		compatible = "arm,coresight-etm4x-sysreg";
 		cpu = <&CPU6>;
 
 		coresight-name = "coresight-etm6";
@@ -3140,9 +3126,7 @@
 	};
 
 	etm@13621000 {
-		compatible = "arm,primecell";
-		arm,primecell-periphid = <0x000bb95d>;
-		reg = <0x13621000 0x1000>;
+		compatible = "arm,coresight-etm4x-sysreg";
 		cpu = <&CPU7>;
 
 		coresight-name = "coresight-etm7";
