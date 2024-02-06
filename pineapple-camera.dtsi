@@ -877,6 +877,12 @@
 		status = "disabled";
 	};
 
+	qcom,cam-vmrm {
+		compatible = "qcom,cam-vmrm";
+		vmid = <CAM_PVM>;
+		status = "disabled";
+	};
+
 	cam_csiphy0: qcom,csiphy0@ace4000 {
 		cell-index = <0>;
 		compatible = "qcom,csiphy-v2.2.0", "qcom,csiphy";
