@@ -17,7 +17,8 @@ dtbo-$(CONFIG_ARCH_SUN) += display/sun-sde.dtbo \
 		display/sun-sde-display-mtp-v8-overlay.dtbo
 else
 dtbo-$(CONFIG_ARCH_SUN) += display/trustedvm-sun-sde-display-cdp-overlay.dtbo \
-		display/trustedvm-sun-sde-display-mtp-overlay.dtbo
+		display/trustedvm-sun-sde-display-mtp-overlay.dtbo \
+		display/trustedvm-sun-sde-display-qrd-overlay.dtbo
 endif
 
 always-y    := $(dtb-y) $(dtbo-y)
