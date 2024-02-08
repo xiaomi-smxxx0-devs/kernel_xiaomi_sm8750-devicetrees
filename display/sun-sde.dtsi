@@ -224,6 +224,8 @@
 
 	qti,smmu-proxy-cb-id = <QTI_SMMU_PROXY_DISPLAY_CB>;
 
+	qcom,sde-soccp-controller = <&soccp_pas>;
+
 	qcom,sde-vm-exclude-reg-names = "ipcc_reg";
 
 	/* data and reg bus scale settings */
