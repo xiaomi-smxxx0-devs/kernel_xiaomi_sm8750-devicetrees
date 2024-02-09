@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
@@ -17,8 +17,7 @@
 		ranges;
 		dma-coherent;
 
-		qcom,regulator-names = "vdd";
-		vdd-supply = <&gpu_cc_cx_gdsc>;
+		power-domains = <&gpucc GPU_CC_CX_GDSC>;
 
 		clocks = <&gpucc GPU_CC_HLOS1_VOTE_GPU_SMMU_CLK>;
 		clock-names =
