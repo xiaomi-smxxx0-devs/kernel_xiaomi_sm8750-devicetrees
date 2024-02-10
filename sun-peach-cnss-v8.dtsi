@@ -141,7 +141,7 @@
 			"{class: wlan_pdc, ss: rf, res: s5f.m, enable: 1}",
 			"{class: wlan_pdc, ss: rf, res: s5f.v, enable: 1}",
 			"{class: wlan_pdc, ss: rf, res: s5f.v, upval: 876}",
-			"{class: wlan_pdc, ss: rf, res: s5f.v, dwnval: 796}";
+			"{class: wlan_pdc, ss: rf, res: s5f.v, dwnval: 876}";
 	};
 };
 

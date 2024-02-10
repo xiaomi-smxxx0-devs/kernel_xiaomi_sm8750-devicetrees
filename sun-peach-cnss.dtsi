@@ -135,6 +135,12 @@
 		qcom,vdd-wlan-rfa2-config = <1312000 1340000 0 0 1>;
 		vdd-wlan-ant-share-supply = <&L6K>;
 		qcom,vdd-wlan-ant-share-config = <1800000 1860000 0 0 1>;
+
+		qcom,pdc_init_table =
+			"{class: wlan_pdc, ss: rf, res: s4j.m, enable: 1}",
+			"{class: wlan_pdc, ss: rf, res: s4j.v, enable: 1}",
+			"{class: wlan_pdc, ss: rf, res: s4j.v, upval: 876}",
+			"{class: wlan_pdc, ss: rf, res: s4j.v, dwnval: 876}";
 	};
 };
 
