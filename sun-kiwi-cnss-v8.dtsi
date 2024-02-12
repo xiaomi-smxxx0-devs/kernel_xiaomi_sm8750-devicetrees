@@ -92,21 +92,21 @@
 		qcom,qmp = <&aoss_qmp>;
 
 		vdd-wlan-io-supply = <&L3F>;
-		qcom,vdd-wlan-io-config = <1800000 1800000 0 0 0>;
+		qcom,vdd-wlan-io-config = <1800000 1800000 0 0 1>;
 		vdd-wlan-io12-supply = <&L2F>;
-		qcom,vdd-wlan-io12-config = <1200000 1200000 0 0 0>;
+		qcom,vdd-wlan-io12-config = <1200000 1200000 0 0 1>;
 		vdd-wlan-supply = <&S5F>;
 		qcom,vdd-wlan-config = <932000 1000000 0 0 0>;
 		vdd-wlan-aon-supply = <&S4D>;
-		qcom,vdd-wlan-aon-config = <976000 1036000 0 0 0>;
+		qcom,vdd-wlan-aon-config = <976000 1036000 0 0 1>;
 		vdd-wlan-dig-supply = <&S1D>;
-		qcom,vdd-wlan-dig-config = <916000 1100000 0 0 0>;
+		qcom,vdd-wlan-dig-config = <916000 1100000 0 0 1>;
 		vdd-wlan-rfa1-supply = <&S3G>;
-		qcom,vdd-wlan-rfa1-config = <1864000 2000000 0 0 0>;
+		qcom,vdd-wlan-rfa1-config = <1864000 2000000 0 0 1>;
 		vdd-wlan-rfa2-supply = <&S7I>;
-		qcom,vdd-wlan-rfa2-config = <1316000 1340000 0 0 0>;
+		qcom,vdd-wlan-rfa2-config = <1316000 1340000 0 0 1>;
 		vdd-wlan-ant-share-supply = <&L6K>;
-		qcom,vdd-wlan-ant-share-config = <1800000 1800000 0 0 0>;
+		qcom,vdd-wlan-ant-share-config = <1800000 1800000 0 0 1>;
 
 		qcom,vreg_pdc_map =
 			"s5f", "bb",
