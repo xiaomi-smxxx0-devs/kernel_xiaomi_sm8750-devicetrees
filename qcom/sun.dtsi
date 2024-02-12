@@ -3453,7 +3453,7 @@
 		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
 		reusable;
 		alignment = <0x0 0x400000>;
-		size = <0x0 0x1000000>;
+		size = <0x0 0x1400000>;
 	};
 
 	/* merged aop_config, tme_crash_dump, tme_log and uefi_log regions */
