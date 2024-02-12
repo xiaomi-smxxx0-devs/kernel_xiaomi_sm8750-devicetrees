@@ -424,6 +424,8 @@ Optional properties:
 				hardware.
 - qcom,sde-aiqe-has-feature-aiscaler:	Boolean property indicating the presence of AIQE feature
 				AI Scaler hardware.
+- nvmem-cells: phandle list to the fuse configuration data provided by a nvmem device.
+- nvmem-cell-names: nvmem cell name.
 - qcom,sde-lm-noise-off:	A u32 value indicating noise layer offset from mixer base.
 - qcom,sde-lm-noise-version:	A u32 value indicating the noise layer version.
 - qcom,sde-vbif-id:		Array of vbif ids corresponding to the
@@ -992,6 +994,9 @@ Example:
     qcom,sde-reg-dma-broadcast-disabled = <0>;
     qcom,sde-reg-dma-xin-id = <7>;
     qcom,sde-reg-dma-clk-ctrl = <0x2bc 20>;
+
+    nvmem-cells = <&ssip_config>;
+    nvmem-cell-names = "ssip_config";
 
     qcom,sde-sspp-vig-blocks {
         vcm@0 {

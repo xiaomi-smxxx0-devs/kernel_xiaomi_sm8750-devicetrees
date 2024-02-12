@@ -246,6 +246,9 @@
 	/* offsets are based off dspp 0, 1, 2, and 3 */
 	qcom,sde-dspp-ltm-off = <0x15300 0x14300 0x13300 0x12300>;
 
+	nvmem-cells = <&ssip_config>;
+	nvmem-cell-names = "ssip_config";
+
 	qcom,platform-supply-entries {
 		#address-cells = <1>;
 		#size-cells = <0>;
