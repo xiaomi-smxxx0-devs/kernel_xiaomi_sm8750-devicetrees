@@ -116,7 +116,11 @@
 				<7 GPPO 0x03>, <8 HAPT 0x03>,
 				<9 HIFI_PCM_L 0x01>, <9 HIFI_PCM_R 0x2>,
 				<10 HPTH 0x03>, <11 CMPT 0x03>, <12 IPCM 0x03>;
-			qcom,swr-num-dev = <2>;
+
+			/* num-dev is 2 if WCD RX and PMIC SWR Slaves are connected */
+			/* num-dev is 1 if only WCD RX slave is connected */
+			qcom,swr-num-dev = <1>;
+
 			qcom,swr-clock-stop-mode0 = <1>;
 			wcd939x_rx_slave: wcd939x-rx-slave {
 				compatible = "qcom,wcd939x-slave";
@@ -234,10 +238,10 @@
 				<2 SPKR_L_COMP 0xF>, <3 SPKR_L_BOOST 0x3>,
 				<4 SPKR_R 0x1>, <5 SPKR_R_COMP 0xF>,
 				<6 SPKR_R_BOOST 0x3>, <7 PBR 0x3>,
-				<8 SPKR_HAPT 0x3>, <9 OCPM 0x3>,
+				<8 SPKR_HAPT 0x1>, <9 OCPM 0x3>,
 				<10 SPKR_L_VI 0x3>, <11 SPKR_R_VI 0x3>,
 				<12 SPKR_IPCM 0x3>, <13 CPS 0x3>;
-			qcom,swr-num-dev = <2>;
+			qcom,swr-num-dev = <3>;
 			qcom,dynamic-port-map-supported = <0>;
 			wsa884x_2_0220: wsa884x@02170220 {
 				status = "disabled";
@@ -280,12 +284,10 @@
 			};
 
 			swr_haptics: swr_haptics@f0170220 {
-				status = "disabled";
-				compatible = "qcom,pm8750b-swr-haptics";
-				reg = <0x02 0xf0170220>;
-				// Temporarily commented out to avoid compilation error
-				// swr-slave-supply = <&hap_swr_slave_reg>;
-				qcom,rx_swr_ch_map = <0 0x01 0x01 0 PCM_OUT1>;
+				compatible = "qcom,pmih010x-swr-haptics";
+				reg = <0x03 0xf0170220>;
+				swr-slave-supply = <&hap_swr_slave_reg>;
+				qcom,rx_swr_ch_map = <0 0x01 0x01 0 SPKR_HAPT>;
 			};
 		};
 	};
@@ -391,7 +393,6 @@
 &spf_core_platform  {
 	sun_snd: sound {
 		qcom,model = "sun-mtp-snd-card";
-		swr-haptics-unsupported;
 		qcom,msm-mi2s-master = <1>, <1>, <1>, <1>, <1>, <1>, <1>;
 		qcom,mi2s-tdm-is-hw-vote-needed = <1>, <0>, <1>, <0>, <1>, <0>, <0>;
 		qcom,wcn-bt = <1>;
@@ -432,6 +433,7 @@
 			"IN1_HPHL", "HPHL_OUT",
 			"IN2_HPHR", "HPHR_OUT",
 			"IN3_EAR", "AUX_OUT",
+			"HAP_IN", "WSA_HAPT OUT",
 			"WSA SRC0_INP", "SRC0",
 			"WSA_TX DEC0_INP", "TX DEC0 MUX",
 			"WSA_TX DEC1_INP", "TX DEC1 MUX",
