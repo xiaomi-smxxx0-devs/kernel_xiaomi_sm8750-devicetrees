@@ -183,6 +183,7 @@
 
 	smmu_sde_iommu_region_partition: smmu_sde_iommu_region_partition {
 		iommu-addresses = <&smmu_sde_unsec 0x0 0x00060000>,
+				  <&smmu_sde_unsec 0xd4e23000 0x002dd000>,
 				  <&smmu_sde_unsec 0xd5500000 0x02b00000>,
 				  <&smmu_sde_sec 0x0 0x00020000>;
 	};
@@ -219,10 +220,14 @@
 	clock-rate = <0 0 575000000 575000000 19200000 575000000>;
 	clock-max-rate = <0 0 575000000 575000000 19200000 575000000>;
 
+	qcom,hw-fence-sw-version = <0x1>;
+
 	vdd-supply = <&disp_cc_mdss_core_gdsc>;
 	mmcx-supply = <&VDD_MMCX_LEVEL>;
 
 	qti,smmu-proxy-cb-id = <QTI_SMMU_PROXY_DISPLAY_CB>;
+
+	qcom,sde-soccp-controller = <&soccp_pas>;
 
 	qcom,sde-vm-exclude-reg-names = "ipcc_reg";
 

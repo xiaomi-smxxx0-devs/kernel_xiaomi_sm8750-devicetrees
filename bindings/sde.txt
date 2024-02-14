@@ -103,6 +103,10 @@ Optional properties:
 				-- qcom,supply-pre-off-sleep: time to sleep (ms) before turning off
 				-- qcom,supply-post-off-sleep: time to sleep (ms) after turning off
 - qcom,sde-hw-version:      A u32 value indicates the MDSS hw version
+- qcom,hw-fence-sw-version:	A u32 value to indicate the hw fencing version. If set to a value
+				greather than zero, driver will attempt to enable the feature (if
+				supported by the HW). Otherwise, if this value is not set or set
+				to zero, feature will remain disabled.
 - qcom,sde-sspp-src-size:	A u32 value indicates the address range for each sspp.
 - qcom,sde-mixer-size:		A u32 value indicates the address range for each mixer.
 - qcom,sde-ctl-size:		A u32 value indicates the address range for each ctl.
@@ -720,6 +724,7 @@ Example:
     #power-domain-cells = <0>;
 
     qcom,sde-hw-version = <0x70000000>;
+    qcom,hw-fence-sw-version = <0x1>;
     qcom,sde-emulated-env;
     qcom,sde-off = <0x1000>;
     qcom,sde-ctl-off = <0x00002000 0x00002200 0x00002400
