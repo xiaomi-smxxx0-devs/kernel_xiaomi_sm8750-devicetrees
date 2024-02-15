@@ -2238,6 +2238,11 @@
 		};
 	};
 
+	rng: rng@10c3000 {
+		compatible = "qcom,trng";
+		reg = <0x10c3000 0x1000>;
+	};
+
 	ufshc_mem: ufshc@1d84000 {
 		compatible = "qcom,ufshc";
 		reg = <0x1d84000 0x3000>,
