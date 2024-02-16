@@ -58,13 +58,11 @@
 			qcom,bt-vdd-rfa1p8-config = <1860000 2000000 0 1>;
 			qcom,bt-vdd-rfa1p25-config  = <1312000 1340000 0 1>;
 
-			qcom,pdc_init_table=
+			qcom,pdc_init_table =
+				"{class: wlan_pdc, ss: rf, res: s5f.m, enable: 1}",
+				"{class: wlan_pdc, ss: rf, res: s5f.v, enable: 1}",
 				"{class: wlan_pdc, ss: rf, res: s5f.v, upval: 876}",
-				"{class: wlan_pdc, ss: rf, res: s5f.v, dwnval:660}",
-				"{class: wlan_pdc, ss: rf, res: s7i.v, upval: 1312}",
-				"{class: wlan_pdc, ss: rf, res: s7i.v, dwnval:1244}",
-				"{class: wlan_pdc, ss: rf, res: s3g.v, upval: 1860}",
-				"{class: wlan_pdc, ss: rf, res: s3g.v, dwnval: 0}";
+				"{class: wlan_pdc, ss: rf, res: s5f.v, dwnval: 876}";
 	};
 };
 
