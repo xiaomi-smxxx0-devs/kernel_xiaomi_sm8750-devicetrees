@@ -12,10 +12,12 @@
 		compatible = "qcom,sde-kms";
 		reg = <0x0ae00000 0x93800>,
 		      <0x0aeb0000 0x2008>,
-		      <0x0af80000 0x7000>;
+		      <0x0af80000 0x7000>,
+		      <0x400000 0x2000>;
 		reg-names = "mdp_phys",
 			"vbif_phys",
-			"regdma_phys";
+			"regdma_phys",
+			"ipcc_reg";
 
 		/* interrupt config */
 		interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
@@ -205,10 +207,15 @@
 		qcom,sde-dspp-aiqe-wrapper-version = <0x00010000>;
 		qcom,sde-dspp-aiqe-wrapper-size = <0x1c>;
 
+		qcom,sde-dspp-aiqe-aiscaler-off = <0x30000 0xffffffff>;
+		qcom,sde-dspp-aiqe-aiscaler-version = <0x00010000>;
+		qcom,sde-dspp-aiqe-aiscaler-size = <0x7d0>;
+
 		qcom,sde-aiqe-has-feature-mdnie;
 		qcom,sde-aiqe-has-feature-abc;
 		qcom,sde-aiqe-has-feature-ssrc;
 		qcom,sde-aiqe-has-feature-copr;
+		qcom,sde-aiqe-has-feature-aiscaler;
 
 		qcom,sde-lm-noise-off = <0x320>;
 		qcom,sde-lm-noise-version = <0x00010000>;
@@ -255,6 +262,11 @@
 		qcom,sde-qos-cpu-mask-performance = <0x3>;
 		qcom,sde-qos-cpu-dma-latency = <300>;
 		qcom,sde-qos-cpu-irq-latency = <300>;
+
+		qcom,sde-ipcc-protocol-id = <0x4>;
+		qcom,sde-ipcc-client-dpu-phys-id = <0x14>;
+		qcom,sde-soccp-controller = <&soccp_pas>;
+		qcom,sde-hw-fence-mdp-ctl-offset = <0x20000>;
 
 		/* offsets are relative to "mdp_phys + qcom,sde-off */
 		qcom,sde-reg-dma-off = <0 0x800>;
