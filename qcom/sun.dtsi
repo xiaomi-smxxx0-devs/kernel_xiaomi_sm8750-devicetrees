@@ -3450,10 +3450,14 @@
 	 * varies.
 	 */
 
-	/* merged xbl_dtlog, xbl_ramdump and aop_image regions */
-	xbl_aop_merged_mem: xbl_aop_merged_region@81a00000 {
+	xbl_dtlog_mem: xbl_dtlog_region@81a00000 {
 		no-map;
-		reg = <0x0 0x81a00000 0x0 0x260000>;
+		reg = <0x0 0x81a00000 0x0 0x40000>;
+	};
+
+	aop_image_mem: aop_image_region@81c00000 {
+		no-map;
+		reg = <0x0 0x81c00000 0x0 0x60000>;
 	};
 
 	aop_cmd_db_mem: aop_cmd_db_region@81c60000 {
@@ -3549,14 +3553,14 @@
 		reusable;
 	};
 
-	dsm_partition_1_mem: dsm_partition_1_region@84d00000 {
+	dsm_partition_1_mem: dsm_partition_1_region@84a00000 {
 		no-map;
-		reg = <0x0 0x84d00000 0x0 0x4900000>;
+		reg = <0x0 0x84a00000 0x0 0x4900000>;
 	};
 
-	dsm_partition_2_mem: dsm_partition_2_region@89600000 {
+	dsm_partition_2_mem: dsm_partition_2_region@89300000 {
 		no-map;
-		reg = <0x0 0x89600000 0x0 0x800000>;
+		reg = <0x0 0x89300000 0x0 0xa80000>;
 	};
 
 	mpss_mem: mpss_region@89e00000 {
@@ -3643,22 +3647,27 @@
 
 	soccp_mem: soccp_region@a3380000 {
 		no-map;
-		reg = <0x0 0xa3380000 0x0 0x100000>;
+		reg = <0x0 0xa3380000 0x0 0x180000>;
 	};
 
 	/* uefi region can be reused by apps */
 
 	/* Linux kernel image is loaded at 0xa8000000 */
 
-	/* merged tz_reserved, xbl_sc, and qtee regions */
-	tz_merged_mem: tz_merged_region@d8000000 {
+	xbl_ramdump_mem: xbl_ramdump_region@b8000000 {
 		no-map;
-		reg = <0x0 0xd8000000 0x0 0x600000>;
+		reg = <0x0 0xb8000000 0x0 0x1c0000>;
 	};
 
 	hwfence_shbuf: hwfence-shmem {
 		no-map;
 		reg = <0x0 0xd4e23000 0x0 0x2dd000>;
+	};
+
+	/* merged tz_reserved, xbl_sc, and qtee regions */
+	tz_merged_mem: tz_merged_region@d8000000 {
+		no-map;
+		reg = <0x0 0xd8000000 0x0 0x600000>;
 	};
 
 	/*
