@@ -298,6 +298,27 @@ First Level Node - CAM CPAS device
               properties for those need to be included for this
               property to work.
 
+- vmrm-resource-ids
+  Usage: optional
+  Value type: <u32>
+  Definition: should specify vmrm resource id list order is mem label,
+  mem tag, irq1 label, irq2 label.
+
+- cam-version
+  Usage: optional
+  Value type: <u32>
+  Definition: should specify camera version.
+
+- cpas-version
+  Usage: optional
+  Value type: <u32>
+  Definition: should specify cpas version.
+
+- camera-capability
+  Usage: optional
+  Value type: <u32>
+  Definition: should specify camera capability.
+
 ===================================================================
 Third Level Node - CAMNOC Level nodes
 ===================================================================
@@ -521,6 +542,10 @@ Example:
 		rt-wr-lowstress-indicator-threshold = <0>;
 		rt-wr-bw-ratio-scale-factor = <1>;
 		enable-cam-drv;
+		vmrm-resource-ids = <10 10 10>;
+		cam-version = <0x80800>;
+		cpas-version = <0x10000000>;
+		camera-capability = <0x9fffedeb 0x8>;
 		camera-bus-nodes {
 			level3-nodes {
 				level-index = <3>;

@@ -141,6 +141,12 @@ First Level Node - CAM EEPROM device
   Value type: <u32>
   Definition: List of clocks rates.
 
+- vmrm-resource-ids
+  Usage: optional
+  Value type: <u32>
+  Definition: should specify vmrm resource id list order is mem label,
+  mem tag, irq1 label, irq2 label.
+
 Example:
 
 	eeprom0: qcom,eeprom@0 {
@@ -174,6 +180,7 @@ Example:
 		clock-names = "cam_clk";
 		clock-cntl-level = "turbo";
 		clock-rates = <24000000>;
+		vmrm-resource-ids = <32 32>;
 	};
 
 =======================================================

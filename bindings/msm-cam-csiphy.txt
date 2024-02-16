@@ -139,6 +139,12 @@ First Level Node - CSIPHY device
   Value type: <u32>
   Definition: List of 0 or 1 values indicating whether shared clk or not.
 
+- vmrm-resource-ids
+  Usage: optional
+  Value type: <u32>
+  Definition: should specify vmrm resource id list order is mem label,
+  mem tag, irq1 label, irq2 label.
+
 Example:
 
 cam_csiphy0: qcom,csiphy0@ace4000 {
@@ -171,5 +177,6 @@ cam_csiphy0: qcom,csiphy0@ace4000 {
 	clock-cntl-level = "nominal";
 	clock-rates =
 		<480000000 0 400000000 0>;
+	vmrm-resource-ids = <1 1 1>;
 	status = "ok";
 };

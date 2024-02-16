@@ -126,6 +126,22 @@ First Level Node - CCI device
   Value type: <phandle>
   Definition: should contain mmagic regulator used for mmagic clocks.
 
+- vmrm-resource-ids
+  Usage: optional
+  Value type: <u32>
+  Definition: should specify vmrm resource id list order is mem label,
+  mem tag, irq1 label, irq2 label.
+
+- gpios
+  Usage: required when enable vmrm
+  Value type: <phandle>
+  Definition: should specify the gpios to be used for the cci.
+
+- gpio_for_vmrm_purpose
+  Usage: required when enable vmrm
+  Value type: <boolean>
+  Definition: A boolean flag to indicate the gpios is only for vmrm.
+
 =========================
 CCI clock settings
 =========================
@@ -201,6 +217,7 @@ Example:
 		pinctrl-1 = <&cci0_suspend>;
 		pinctrl-2 = <&cci1_active>;
 		pinctrl-3 = <&cci1_suspend>;
+		vmrm-resource-ids = <7 7 7>;
 		i2c_freq_100Khz: qcom,i2c_standard_mode {
 			 hw-thigh = <78>;
 			 hw-tlow = <114>;

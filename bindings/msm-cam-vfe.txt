@@ -132,6 +132,12 @@ Optional properties:
   Value type: <u32>
   Definition: HW unique Pid values
 
+- vmrm-resource-ids
+  Usage: optional
+  Value type: <u32>
+  Definition: should specify vmrm resource id list order is mem label,
+  mem tag, irq1 label, irq2 label.
+
 Example:
 cam_vfe0: qcom,ife0@ac62000 {
 	cell-index = <0>;
@@ -173,4 +179,5 @@ cam_vfe0: qcom,ife0@ac62000 {
 	ubwc-static-cfg = <0x1026 0x1036>;
 	cam_hw_pid = <16 28 20 8>;
 	status = "ok";
+	vmrm-resource-ids = <20 20 20>;
 };
