@@ -836,7 +836,7 @@
 		coresight-name = "coresight-turing-etm0";
 
 		qcom,atid-num = <2>;
-		atid = <38 39>;
+		trace-name = "turing-etm0";
 
 
 		out-ports {
@@ -961,7 +961,7 @@
 	};
 
 	tpdm_modem1: tpdm@10801000 {
-		compatible = "arm,coresight-dummy-source";
+		compatible = "qcom,coresight-static-tpdm";
 
 		coresight-name = "coresight-tpdm-modem-1";
 
@@ -976,7 +976,7 @@
 	};
 
 	tpdm_modem_rscc: tpdm@1080d000 {
-		compatible = "arm,coresight-dummy-source";
+		compatible = "qcom,coresight-static-tpdm";
 
 		coresight-name = "coresight-tpdm-modem-rscc";
 
@@ -995,7 +995,7 @@
 
 		coresight-name = "coresight-modem-etm0";
 		qcom,atid-num = <2>;
-		atid = <36 37>;
+		trace-name = "modem-etm0";
 		qcom,secure-component;
 
 		out-ports {
@@ -1022,7 +1022,7 @@
 
 		coresight-name = "coresight-modem2-etm0";
 		qcom,atid-num = <1>;
-		atid = <39>;
+		trace-name = "modem2-etm0";
 
 		out-ports {
 			port@0 {
@@ -3479,12 +3479,22 @@
 	tpdm_ddr_lpi: tpdm@10b34000 {
 		compatible = "arm,coresight-dummy-source";
 		coresight-name = "coresight-tpdm-ddr-lpi";
+		trace-name = "tracenoc-ddr-lpi";
 
 		out-ports {
-			port {
+			port@0 {
+				reg = <0>;
 				tpdm_ddr_lpi_out_funnel_aoss: endpoint {
 					remote-endpoint =
 					<&funnel_aoss_in_tpdm_ddr_lpi>;
+				};
+			};
+
+			port@1 {
+				reg = <1>;
+				ddr_lpi_out_qmi: endpoint {
+					remote-endpoint =
+					<&qmi_in_ddr_lpi>;
 				};
 			};
 		};
@@ -3685,6 +3695,7 @@
 	gladiator {
 		compatible = "arm,coresight-dummy-source";
 		coresight-name = "coresight-gladiator";
+		atid = <96>;
 
 		out-ports {
 			port {
@@ -3807,7 +3818,7 @@
 
 		coresight-name = "coresight-audio-etm0";
 		qcom,atid-num = <2>;
-		atid = <40 41>;
+		trace-name = "audio-etm0";
 
 		out-ports {
 			port@0 {
@@ -3832,11 +3843,22 @@
 		compatible = "arm,coresight-dummy-source";
 		coresight-name = "coresight-tpdm-lpass-lpi";
 
+		trace-name = "tpda-lpass-lpi";
+
 		out-ports {
-			port {
+			port@0 {
+				reg = <0>;
 				tpdm_lpass_lpi_out_funnel_lpass_lpi_1: endpoint {
 					remote-endpoint =
 					<&funnel_lpass_lpi_1_in_tpdm_lpass_lpi>;
+				};
+			};
+
+			port@1 {
+				reg = <1>;
+				lpass_lpi_out_qmi: endpoint {
+					remote-endpoint =
+					<&qmi_in_lpass_lpi>;
 				};
 			};
 		};
@@ -3846,11 +3868,22 @@
 		compatible = "arm,coresight-dummy-source";
 		coresight-name = "coresight-tpdm-lpass-rscc";
 
+		trace-name = "tpda-lpass-rscc";
+
 		out-ports {
-			port {
+			port@0 {
+				reg = <0>;
 				tpdm_lpass_rscc_out_funnel_lpass_lpi_1: endpoint {
 					remote-endpoint =
 					<&funnel_lpass_lpi_1_in_tpdm_lpass_rscc>;
+				};
+			};
+
+			port@1 {
+				reg = <1>;
+				lpass_rscc_out_qmi: endpoint {
+					remote-endpoint =
+					<&qmi_in_lpass_rscc>;
 				};
 			};
 		};
@@ -3860,11 +3893,23 @@
 		compatible = "arm,coresight-dummy-source";
 		coresight-name = "coresight-tpdm-lpass-audio";
 
+		trace-name = "tpda-lpass-audio";
+		status = "disabled";
+
 		out-ports {
-			port {
+			port@0 {
+				reg = <0>;
 				tpdm_lpass_audio_out_funnel_lpass_lpi_1: endpoint {
 					remote-endpoint =
 					<&funnel_lpass_lpi_1_in_tpdm_lpass_audio>;
+				};
+			};
+
+			port@1 {
+				reg = <1>;
+				lpass_audio_out_qmi: endpoint {
+					remote-endpoint =
+					<&qmi_in_lpass_audio>;
 				};
 			};
 		};
@@ -3929,15 +3974,25 @@
 	lpass_stm: lpass-stm {
 		compatible = "arm,coresight-dummy-source";
 		coresight-name = "coresight-lpass-stm";
-		atid = <25>;
+		trace-name = "lpass-stm";
 
 		out-ports {
-			port {
+			port@0 {
+				reg = <0>;
 				lpass_stm_out_funnel_lpass_lpi_1: endpoint {
 					remote-endpoint =
 					<&funnel_lpass_lpi_1_in_lpass_stm>;
 				};
 			};
+
+			port@1 {
+				reg = <1>;
+				lpass_stm_out_qmi: endpoint {
+					remote-endpoint =
+					<&qmi_in_lpass_stm>;
+				};
+			};
+
 		};
 	};
 
@@ -5353,10 +5408,51 @@
 		qcom,inst-id = <5>;
 
 		in-ports {
-			port {
+			port@0 {
+				reg = <0>;
 				qmi_in_audio_etm0: endpoint {
 					remote-endpoint =
 						<&audio_etm0_out_qmi>;
+				};
+			};
+
+			port@1 {
+				reg = <1>;
+				qmi_in_lpass_stm: endpoint {
+					remote-endpoint =
+						<&lpass_stm_out_qmi>;
+				};
+			};
+
+			port@2 {
+				reg = <2>;
+				qmi_in_lpass_lpi: endpoint {
+					remote-endpoint =
+						<&lpass_lpi_out_qmi>;
+				};
+			};
+
+			port@3 {
+				reg = <3>;
+				qmi_in_lpass_rscc: endpoint {
+					remote-endpoint =
+						<&lpass_rscc_out_qmi>;
+				};
+			};
+
+			port@4 {
+				reg = <4>;
+				qmi_in_lpass_audio: endpoint {
+					remote-endpoint =
+						<&lpass_audio_out_qmi>;
+				};
+			};
+
+			port@5 {
+				reg = <5>;
+				qmi_in_ddr_lpi: endpoint {
+					remote-endpoint =
+						<&ddr_lpi_out_qmi>;
 				};
 			};
 		};
@@ -5391,7 +5487,7 @@
 		compatible = "qcom,coresight-qmi";
 
 		coresight-name = "coresight-qmi-modem2";
-		qcom,inst-id = <39>;
+		qcom,inst-id = <11>;
 
 		in-ports {
 			port {
