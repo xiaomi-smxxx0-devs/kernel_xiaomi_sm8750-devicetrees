@@ -360,6 +360,22 @@
 					   "cdc-vdd-mic-bias",
 					   "cdc-vdd-px";
 		qcom,cdc-on-demand-supplies = "cdc-vdd-buck";
+
+		wcd_mb1_reg: qcom,wcd-mb1-reg {
+			regulator-name = "wcd-mb1-reg";
+		};
+
+		wcd_mb2_reg: qcom,wcd-mb2-reg {
+			regulator-name = "wcd-mb2-reg";
+		};
+
+		wcd_mb3_reg: qcom,wcd-mb3-reg {
+			regulator-name = "wcd-mb3-reg";
+		};
+
+		wcd_mb4_reg: qcom,wcd-mb4-reg {
+			regulator-name = "wcd-mb4-reg";
+		};
 	};
 
 };
