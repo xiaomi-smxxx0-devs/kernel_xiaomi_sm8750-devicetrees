@@ -87,3 +87,11 @@
 		};
 	};
 };
+
+&ibat_lvl0 {
+	temperature = <6500>;
+};
+
+&ibat_lvl1 {
+	temperature = <7000>;
+};
