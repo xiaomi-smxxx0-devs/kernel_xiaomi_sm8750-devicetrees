@@ -1,15 +1,31 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #define MHZ_TO_KBPS(mhz, w) ((mhz * 1000000 * w) / (1024))
 
 /* External feature codes */
 #define FC_UNKNOWN 0x0
+#define FC_AA 0x1
+#define FC_AB 0x2
+#define FC_AC 0x3
+#define FC_AD 0x4
+
+/* Internal feature codes */
+#define FC_Y0 0x00f1
+#define FC_Y1 0x00f2
 
 /* Pcodes */
 #define PCODE_UNKNOWN 0
+#define PCODE_0 1
+#define PCODE_1 2
+#define PCODE_2 3
+#define PCODE_3 4
+#define PCODE_4 5
+#define PCODE_5 6
+#define PCODE_6 7
+#define PCODE_7 8
 
 #define SKU_CODE(pcode, featurecode) ((pcode << 16) + featurecode)
 
