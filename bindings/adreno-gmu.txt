@@ -66,6 +66,7 @@ GMU GDSC/regulators:
 			baseAddr - base address of the IPC region
 			size     - size of the IPC region
 
+- qcom,soccp-controller: Phandle of the soccp controller
 
 Example:
 
