@@ -10,6 +10,8 @@ ifeq ($(CONFIG_ARCH_SUN), y)
 		sun-mm-mtp-nfc-overlay.dtbo \
 		sun-mm-mtp-overlay.dtbo \
 		sun-mm-mtp-v8-overlay.dtbo \
+		sun-mm-mtp-qmp1000-overlay.dtbo \
+		sun-mm-mtp-qmp1000-v8-overlay.dtbo \
 		sun-mm-qrd-sku1-overlay.dtbo \
 		sun-mm-qrd-sku1-v8-overlay.dtbo \
 		sun-mm-qrd-sku2-v8-overlay.dtbo \
