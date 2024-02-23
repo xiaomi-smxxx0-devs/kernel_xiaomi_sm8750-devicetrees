@@ -19,6 +19,7 @@ dtbo-y += sun-audio.dtbo \
                 sun-audio-cdp-nfc.dtbo \
                 sun-audio-rumi.dtbo \
                 sun-audio-mtp.dtbo \
+                sun-audio-mtp-3.5mm.dtbo \
                 sun-audio-mtp-nfc.dtbo \
                 sun-audio-qrd.dtbo \
                 sun-audio-qrd-sku2.dtbo \
