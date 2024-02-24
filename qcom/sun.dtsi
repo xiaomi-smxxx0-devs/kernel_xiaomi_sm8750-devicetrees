@@ -1622,6 +1622,12 @@
 			  "cdsp", "apss";
 	};
 
+	cpufreq_thermal: qcom,cpufreq-thermal {
+		compatible = "qcom,cpufreq-thermal";
+		mboxes = <&cpucp 5>, <&cpucp 6>;
+		qcom,policy-cpus = <0 6>;
+	};
+
 	cambistmclkcc: clock-controller@1760000 {
 		compatible = "qcom,sun-cambistmclkcc", "syscon";
 		reg = <0x1760000 0x6000>;
