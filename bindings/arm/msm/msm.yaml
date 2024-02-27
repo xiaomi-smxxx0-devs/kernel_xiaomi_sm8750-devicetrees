@@ -67,6 +67,8 @@ properties:
               - qcom,qrd
               - qcom,sunp-rcm
               - qcom,rcm
+              - qcom,sunp-hdk
+              - qcom,hdk
           - const: qcom,sunp
 
       - description: Qualcomm Technologies, Inc. PARROT
