@@ -2,11 +2,15 @@
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 
 &soc {
+	fastrpc_gen_pool_region : fastrpc_gen_pool_region {
+		iommu-addresses = <&fastrpc_compute_cb1 0x8000 0x11000>;
+	};
+
 	fastrpc_compute_cb1: compute-cb@13 {
 		compatible = "qcom,fastrpc-compute-cb";
 		reg = <11>;
 		iommus = <&apps_smmu 0xC0B 0x0>;
-		qcom,iommu-dma-addr-pool = <0x10000000 0xF0000000>;
+		memory-region = <&fastrpc_gen_pool_region>;
 		qcom,iommu-faults = "stall-disable", "HUPCF";
 		dma-coherent;
 		qrtr-gen-pool = <&fastrpc_compute_cb1>;
