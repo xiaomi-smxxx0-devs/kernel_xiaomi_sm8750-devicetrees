@@ -40,7 +40,8 @@ SUN_BOARDS += \
 		sun-rcm-kiwi-v8-overlay.dtbo \
 		sun-rcm-overlay.dtbo \
 		sun-rcm-v8-overlay.dtbo \
-		sun-atp-overlay.dtbo
+		sun-atp-overlay.dtbo \
+		sunp-hdk-overlay.dtbo
 
 NOAPQ_SUN_BOARDS += \
 		 sun-rumi-overlay.dtbo
@@ -100,12 +101,14 @@ sun_tuivm-dtb-$(CONFIG_ARCH_QTI_VM) += sun-vm-rumi.dtb \
 				sun-vm-cdp.dtb \
 				sun-vm-qrd.dtb \
 				sun-vm-rcm.dtb \
+				sunp-vm-hdk.dtb \
 				sun-oemvm-rumi.dtb \
 				sun-oemvm-mtp.dtb \
 				sun-oemvm-mtp-v8.dtb \
 				sun-oemvm-cdp.dtb \
 				sun-oemvm-qrd.dtb \
-				sun-oemvm-rcm.dtb
+				sun-oemvm-rcm.dtb \
+				sunp-oemvm-hdk.dtb
 dtb-y += $(sun_tuivm-dtb-y)
 
 endif
