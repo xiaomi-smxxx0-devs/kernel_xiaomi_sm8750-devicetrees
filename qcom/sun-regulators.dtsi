@@ -801,6 +801,25 @@
 			qcom,init-voltage = <880000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 		};
+
+		L1F_AO: pm_v6f_l1_ao: pm_v8f_l1_ao: regulator-pm-vxf-l1-ao {
+			regulator-name = "pm_v6f_l1_ao";
+			qcom,set = <RPMH_REGULATOR_SET_ACTIVE>;
+			regulator-min-microvolt = <880000>;
+			regulator-max-microvolt = <920000>;
+			qcom,init-voltage = <880000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_LPM>;
+		};
+
+		L1F_SO: pm_v6f_l1_so: pm_v8f_l1_so: regulator-pm-vxf-l1-so {
+			regulator-name = "pm_v6f_l1_so";
+			qcom,set = <RPMH_REGULATOR_SET_SLEEP>;
+			regulator-min-microvolt = <880000>;
+			regulator-max-microvolt = <920000>;
+			qcom,init-voltage = <880000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_LPM>;
+			qcom,init-enable = <0>;
+		};
 	};
 
 	rpmh-regulator-ldof2 {
@@ -938,6 +957,25 @@
 			qcom,init-voltage = <1200000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 			qcom,proxy-consumer-enable;
+		};
+
+		L3G_AO: pm_v8g_l3_ao: regulator-pm-v8g-l3-ao {
+			regulator-name = "pm_v8g_l3_ao";
+			qcom,set = <RPMH_REGULATOR_SET_ACTIVE>;
+			regulator-min-microvolt = <1200000>;
+			regulator-max-microvolt = <1256000>;
+			qcom,init-voltage = <1200000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_LPM>;
+		};
+
+		regulator-pm-v8g-l3-so {
+			regulator-name = "pm_v8g_l3_so";
+			qcom,set = <RPMH_REGULATOR_SET_SLEEP>;
+			regulator-min-microvolt = <1200000>;
+			regulator-max-microvolt = <1256000>;
+			qcom,init-voltage = <1200000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_LPM>;
+			qcom,init-enable = <0>;
 		};
 	};
 
