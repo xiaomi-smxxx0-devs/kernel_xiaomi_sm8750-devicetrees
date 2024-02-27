@@ -69,4 +69,28 @@ properties:
               - qcom,rcm
           - const: qcom,sunp
 
+      - description: Qualcomm Technologies, Inc. PARROT
+        items:
+          - enum:
+              - qcom,parrot-atp
+              - qcom,atp
+              -  qcom,parrot-idp
+              - qcom,idp
+              - qcom,parrot-qrd
+              - qcom,qrd
+              - qcom,parrot-rumi
+              - qcom,rumi
+          - const: qcom,parrot
+
+      - description: Qualcomm Technologies, Inc. PARROTP
+        items:
+          - enum:
+              - qcom,parrotp-atp
+              - qcom,atp
+              - qcom,parrotp-idp
+              - qcom,idp
+              - qcom,parrotp-qrd
+              - qcom,qrd
+          - const: qcom,parrotp
+
 additionalProperties: true
