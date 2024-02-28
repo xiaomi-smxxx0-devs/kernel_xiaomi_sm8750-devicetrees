@@ -1,3 +1,8 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ */
+
 &mdss_mdp {
 	dsi_nt37801_amoled_cmd_cphy: qcom,mdss_dsi_nt37801_wqhd_plus_cmd_cphy {
 		qcom,mdss-dsi-panel-name =
