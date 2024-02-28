@@ -30,23 +30,23 @@
 		qcom,codec-name = "qmp-dmic.02";
 		qmp-vdd-supply = <&wcd_mb3_reg>;
 		qcom,swr-tx-port-params =
-				<OFFSET1_VAL2 LANE0>, <OFFSET1_VAL5 LANE0>,
-				<OFFSET1_VAL2 LANE0>, <OFFSET1_VAL5 LANE0>,
-				<OFFSET1_VAL2 LANE0>, <OFFSET1_VAL5 LANE0>,
-				<OFFSET1_VAL2 LANE0>, <OFFSET1_VAL5 LANE0>;
+				<OFFSET1_VAL2 LANE0>, <OFFSET1_VAL1 LANE0>,
+				<OFFSET1_VAL2 LANE0>, <OFFSET1_VAL1 LANE0>,
+				<OFFSET1_VAL2 LANE0>, <OFFSET1_VAL1 LANE0>,
+				<OFFSET1_VAL2 LANE0>, <OFFSET1_VAL1 LANE0>;
 	};
 
 	qmp03: qmp@04170230 {
 		reg = <0x0100 0x04170230>;
 		compatible = "qcom,qmp-sdca-dmic";
-		sound-name-prefix = "QMP_MIC03 ";
+		sound-name-prefix = "QMP_MIC03";
 		qcom,codec-name = "qmp-dmic.03";
 		qmp-vdd-supply = <&wcd_mb1_reg>;
 		qcom,swr-tx-port-params =
-				<OFFSET1_VAL3 LANE0>, <OFFSET1_VAL6 LANE0>,
-				<OFFSET1_VAL3 LANE0>, <OFFSET1_VAL6 LANE0>,
-				<OFFSET1_VAL3 LANE0>, <OFFSET1_VAL6 LANE0>,
-				<OFFSET1_VAL3 LANE0>, <OFFSET1_VAL6 LANE0>;
+				<OFFSET1_VAL3 LANE0>, <OFFSET1_VAL2 LANE0>,
+				<OFFSET1_VAL3 LANE0>, <OFFSET1_VAL2 LANE0>,
+				<OFFSET1_VAL3 LANE0>, <OFFSET1_VAL2 LANE0>,
+				<OFFSET1_VAL3 LANE0>, <OFFSET1_VAL2 LANE0>;
 	};
 
 	qmp04: qmp@04170239 {
@@ -56,15 +56,26 @@
 		qcom,codec-name = "qmp-dmic.04";
 		qmp-vdd-supply = <&wcd_mb1_reg>;
 		qcom,swr-tx-port-params =
-				<OFFSET1_VAL1 LANE0>, <OFFSET1_VAL8 LANE0>,
-				<OFFSET1_VAL1 LANE0>, <OFFSET1_VAL8 LANE0>,
-				<OFFSET1_VAL1 LANE0>, <OFFSET1_VAL8 LANE0>,
-				<OFFSET1_VAL1 LANE0>, <OFFSET1_VAL8 LANE0>;
+				<OFFSET1_VAL1 LANE0>, <OFFSET1_VAL2 LANE0>,
+				<OFFSET1_VAL1 LANE0>, <OFFSET1_VAL2 LANE0>,
+				<OFFSET1_VAL1 LANE0>, <OFFSET1_VAL2 LANE0>,
+				<OFFSET1_VAL1 LANE0>, <OFFSET1_VAL2 LANE0>;
 	};
 };
 
 &sun_snd {
 	qcom,model = "sun-mtp-wsa883x-qmp-snd-card";
+	asoc-codec  = <&stub_codec>, <&lpass_cdc>,
+			<&wcd939x_codec>, <&swr_haptics>,
+			<&wsa883x_0221>, <&wsa883x_0222>,
+			<&qmp01>, <&qmp02>,
+			<&qmp03>, <&qmp04>;
+	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc",
+		"wcd939x_codec", "swr-haptics",
+		"wsa-codec1", "wsa-codec2",
+		"qmp-dmic.01", "qmp-dmic.02",
+		"qmp-dmic.03", "qmp-dmic.04";
+	qcom,qmp-mic = <1>;
 	qcom,audio-routing =
 		"AMIC1", "Analog Mic1",
 		"AMIC1", "MIC BIAS1",
@@ -117,6 +128,10 @@
 		"VA SWR_INPUT", "QMP_MIC02 LP_OUTPUT",
 		"VA SWR_INPUT", "QMP_MIC03 LP_OUTPUT",
 		"VA SWR_INPUT", "QMP_MIC04 LP_OUTPUT",
+		"VA SWR_INPUT", "QMP_MIC01 NORMAL_OUTPUT",
+		"VA SWR_INPUT", "QMP_MIC02 NORMAL_OUTPUT",
+		"VA SWR_INPUT", "QMP_MIC03 NORMAL_OUTPUT",
+		"VA SWR_INPUT", "QMP_MIC04 NORMAL_OUTPUT",
 		"VA_AIF1 CAP", "VA_SWR_CLK",
 		"VA_AIF2 CAP", "VA_SWR_CLK",
 		"VA_AIF3 CAP", "VA_SWR_CLK",
