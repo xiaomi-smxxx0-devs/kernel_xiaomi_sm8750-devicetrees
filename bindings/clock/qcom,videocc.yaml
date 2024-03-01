@@ -4,7 +4,7 @@
 $id: http://devicetree.org/schemas/clock/qcom,videocc.yaml#
 $schema: http://devicetree.org/meta-schemas/core.yaml#
 
-title: Qualcomm Technologies, Inc. Video Clock & Reset Controller Binding
+title: Qualcomm Technologies, Inc. Video Clock & Reset Controller
 
 maintainers:
   - Taniya Das <tdas@codeaurora.org>
@@ -33,6 +33,7 @@ properties:
       - qcom,pineapple-videocc
       - qcom,pineapple-videocc-v2
       - qcom,sun-videocc
+      - qcom,sun-videocc-v2
 
   clocks:
     items:
