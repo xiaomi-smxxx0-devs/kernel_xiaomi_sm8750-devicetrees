@@ -186,7 +186,7 @@
 
 		qcom,gmu-freq-table = <500000000 RPMH_REGULATOR_LEVEL_LOW_SVS>,
 					<650000000 RPMH_REGULATOR_LEVEL_SVS>;
-		qcom,gmu-perf-ddr-bw = <MHZ_TO_KBPS(1353, 4)>;
+		qcom,gmu-perf-ddr-bw = <MHZ_TO_KBPS(1555, 4)>;
 
 		iommus = <&kgsl_smmu 0x5 0x000>;
 		qcom,iommu-dma = "disabled";
