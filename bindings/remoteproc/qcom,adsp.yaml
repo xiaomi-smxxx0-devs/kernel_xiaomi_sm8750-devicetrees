@@ -66,6 +66,9 @@ properties:
       - qcom,parrot-cdsp-pas
       - qcom,parrot-modem-pas
       - qcom,parrot-wpss-pas
+      - qcom,ravelin-adsp-pas
+      - qcom,ravelin-modem-pas
+      - qcom,ravelin-wpss-pas
 
   reg:
     maxItems: 1
