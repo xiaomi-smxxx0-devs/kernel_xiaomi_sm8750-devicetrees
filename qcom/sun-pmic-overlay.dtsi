@@ -370,6 +370,12 @@
 				type = "passive";
 			};
 
+			shutdown-trip {
+				temperature = <90000>;
+				hysteresis = <0>;
+				type = "hot";
+			};
+
 			display_test_config1: display-test-config1 {
 				temperature = <125000>;
 				hysteresis = <1000>;
