@@ -76,7 +76,7 @@
 // FM changes
 &qupv3_se5_i2c {
     status = "ok";
-	nq@64 {
+	fm_rtc6226: nq@64 {
 		compatible = "rtc6226";
 		reg = <0x64>;
 		fmint-gpio = <&tlmm 84 0>;
