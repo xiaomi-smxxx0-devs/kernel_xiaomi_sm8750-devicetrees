@@ -1769,12 +1769,12 @@
 
 			nr_scg_cdev0 {
 				trip = <&mdmss0_config0>;
-				cooling-device = <&modem_nr_scg_dsc 12 12>;
+				cooling-device = <&modem_nr_scg_dsc 100 100>;
 			};
 
 			nr_cdev0 {
 				trip = <&mdmss0_config0>;
-				cooling-device = <&modem_nr_dsc 8 8>;
+				cooling-device = <&modem_nr_dsc 10 10>;
 			};
 
 			lte_cdev2 {
@@ -1833,12 +1833,12 @@
 
 			nr_scg_cdev0 {
 				trip = <&mdmss1_config0>;
-				cooling-device = <&modem_nr_scg_dsc 12 12>;
+				cooling-device = <&modem_nr_scg_dsc 100 100>;
 			};
 
 			nr_cdev0 {
 				trip = <&mdmss1_config0>;
-				cooling-device = <&modem_nr_dsc 8 8>;
+				cooling-device = <&modem_nr_dsc 10 10>;
 			};
 
 			lte_cdev2 {
@@ -1897,12 +1897,12 @@
 
 			nr_scg_cdev0 {
 				trip = <&mdmss2_config0>;
-				cooling-device = <&modem_nr_scg_dsc 12 12>;
+				cooling-device = <&modem_nr_scg_dsc 100 100>;
 			};
 
 			nr_cdev0 {
 				trip = <&mdmss2_config0>;
-				cooling-device = <&modem_nr_dsc 8 8>;
+				cooling-device = <&modem_nr_dsc 10 10>;
 			};
 
 			lte_cdev2 {
@@ -1961,12 +1961,12 @@
 
 			nr_scg_cdev0 {
 				trip = <&mdmss3_config0>;
-				cooling-device = <&modem_nr_scg_dsc 12 12>;
+				cooling-device = <&modem_nr_scg_dsc 100 100>;
 			};
 
 			nr_cdev0 {
 				trip = <&mdmss3_config0>;
-				cooling-device = <&modem_nr_dsc 8 8>;
+				cooling-device = <&modem_nr_dsc 10 10>;
 			};
 
 			lte_cdev2 {
