@@ -47,6 +47,14 @@
 	regulator-name = "pm_v8f_l1";
 };
 
+&L1F_AO {
+	regulator-name = "pm_v8f_l1_ao";
+};
+
+&L1F_SO {
+	regulator-name = "pm_v8f_l1_so";
+};
+
 &L2F {
 	regulator-name = "pm_v8f_l2";
 };

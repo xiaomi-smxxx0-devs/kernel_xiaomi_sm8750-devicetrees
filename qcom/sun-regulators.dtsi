@@ -792,6 +792,7 @@
 			<RPMH_REGULATOR_MODE_LPM
 			 RPMH_REGULATOR_MODE_HPM>;
 		qcom,mode-threshold-currents = <0 30000>;
+		qcom,send-defaults;
 
 		L1F: pm_v6f_l1: pm_v8f_l1: regulator-pm-vxf-l1 {
 			regulator-name = "pm_v6f_l1";
@@ -800,6 +801,26 @@
 			regulator-max-microvolt = <920000>;
 			qcom,init-voltage = <880000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
+		};
+
+		L1F_AO: pm_v6f_l1_ao: pm_v8f_l1_ao: regulator-pm-vxf-l1-ao {
+			regulator-name = "pm_v6f_l1_ao";
+			qcom,set = <RPMH_REGULATOR_SET_ACTIVE>;
+			regulator-min-microvolt = <880000>;
+			regulator-max-microvolt = <920000>;
+			qcom,init-voltage = <880000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
+			regulator-always-on;
+		};
+
+		L1F_SO: pm_v6f_l1_so: pm_v8f_l1_so: regulator-pm-vxf-l1-so {
+			regulator-name = "pm_v6f_l1_so";
+			qcom,set = <RPMH_REGULATOR_SET_SLEEP>;
+			regulator-min-microvolt = <880000>;
+			regulator-max-microvolt = <920000>;
+			qcom,init-voltage = <880000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_LPM>;
+			qcom,init-enable = <0>;
 		};
 	};
 
@@ -929,6 +950,7 @@
 			 RPMH_REGULATOR_MODE_HPM>;
 		qcom,mode-threshold-currents = <0 30000>;
 		proxy-supply = <&L3G>;
+		qcom,send-defaults;
 
 		L3G: pm_v8g_l3: regulator-pm-v8g-l3 {
 			regulator-name = "pm_v8g_l3";
@@ -938,6 +960,26 @@
 			qcom,init-voltage = <1200000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 			qcom,proxy-consumer-enable;
+		};
+
+		L3G_AO: pm_v8g_l3_ao: regulator-pm-v8g-l3-ao {
+			regulator-name = "pm_v8g_l3_ao";
+			qcom,set = <RPMH_REGULATOR_SET_ACTIVE>;
+			regulator-min-microvolt = <1200000>;
+			regulator-max-microvolt = <1256000>;
+			qcom,init-voltage = <1200000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
+			regulator-always-on;
+		};
+
+		regulator-pm-v8g-l3-so {
+			regulator-name = "pm_v8g_l3_so";
+			qcom,set = <RPMH_REGULATOR_SET_SLEEP>;
+			regulator-min-microvolt = <1200000>;
+			regulator-max-microvolt = <1256000>;
+			qcom,init-voltage = <1200000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_LPM>;
+			qcom,init-enable = <0>;
 		};
 	};
 
