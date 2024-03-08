@@ -10,6 +10,10 @@
 	qcom,msm-id = <618 0x20000>;
 };
 
+&videocc {
+	compatible = "qcom,sun-videocc-v2", "syscon";
+};
+
 &tsens1 {
 	#qcom,sensors = <7>;
 };
