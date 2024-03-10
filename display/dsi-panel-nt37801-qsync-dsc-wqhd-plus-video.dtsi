@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 &mdss_mdp {
-	dsi_nt37801_amoled_video: qcom,mdss_dsi_nt37801_wqhd_plus_vid {
+	dsi_nt37801_amoled_qsync_video: qcom,mdss_dsi_nt37801_qsync_wqhd_plus_vid {
 		qcom,mdss-dsi-panel-name =
-			"nt37801 amoled video mode dsi csot panel with DSC";
+			"nt37801 amoled qsync video mode dsi csot panel with DSC";
 		qcom,mdss-dsi-panel-type = "dsi_video_mode";
 		qcom,mdss-dsi-panel-physical-type = "oled";
 		qcom,mdss-dsi-virtual-channel-id = <0>;
@@ -33,6 +33,8 @@
 		qcom,mdss-dsi-wr-mem-start = <0x2c>;
 		qcom,mdss-dsi-wr-mem-continue = <0x3c>;
 		qcom,spr-pack-type = "pentile";
+		qcom,qsync-enable;
+		qcom,mdss-dsi-qsync-min-refresh-rate = <80>;
 		qcom,mdss-dsi-display-timings {
 			timing@0 {
 				cell-index = <0>;
