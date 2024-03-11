@@ -119,4 +119,11 @@ properties:
               - qcom,qrd
           - const: qcom,ravelinp
 
+      - description: Qualcomm Technologies, Inc. TUNA
+        items:
+          - enum:
+              - qcom,tuna-rumi
+              - qcom,rumi
+          - const: qcom,tuna
+
 additionalProperties: true
