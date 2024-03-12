@@ -5505,8 +5505,19 @@
 		reg = <0x10010000 0x1000>;
 
 		arm,primecell-periphid = <0x000bb922>;
-		coresight-name = "coresight-cti-swao";
+		coresight-name = "coresight-cti-qdss";
 
+		qcom,extended_cti;
+		clocks = <&aoss_qmp>;
+		clock-names = "apb_pclk";
+	};
+
+	swao_cti: cti@10b00000 {
+		compatible = "arm,coresight-cti", "arm,primecell";
+		reg = <0x10b00000 0x1000>;
+
+		arm,primecell-periphid = <0x000bb922>;
+		coresight-name = "coresight-cti-swao";
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
