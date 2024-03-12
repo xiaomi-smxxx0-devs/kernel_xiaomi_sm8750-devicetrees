@@ -47,7 +47,6 @@
 			exit-latency-us = <129>;
 			min-residency-us = <560>;
 			arm,psci-suspend-param = <0x00000004>;
-			status = "disabled";
 		};
 
 		CLUSTER_PWR_DWN: cl5 { /* C4+CL5 */
@@ -57,7 +56,6 @@
 			exit-latency-us = <1901>;
 			min-residency-us = <24511>;
 			arm,psci-suspend-param = <0x01000054>;
-			status = "disabled";
 		};
 	};
 
