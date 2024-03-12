@@ -25,14 +25,6 @@
 	status = "nok";
 };
 
-&MEDIUM_CLUSTER_CL4 {
-	status = "nok";
-};
-
-&LARGE_CLUSTER_CL4 {
-	status = "nok";
-};
-
 &MEDIUM_CLUSTER_PWR_DN {
 	status = "nok";
 };

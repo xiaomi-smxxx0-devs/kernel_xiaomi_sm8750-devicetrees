@@ -241,24 +241,6 @@
 				arm,psci-suspend-param = <0x00000004>;
 			};
 
-			MEDIUM_CLUSTER_CL4: medium-cluster0-cl4 { /* CL4 */
-				compatible = "domain-idle-state";
-				idle-state-name = "l2-ret";
-				entry-latency-us = <253>;
-				exit-latency-us = <288>;
-				min-residency-us = <1492>;
-				arm,psci-suspend-param = <0x01000044>;
-			};
-
-			LARGE_CLUSTER_CL4: large-cluster1-cl4 { /* CL4 */
-				compatible = "domain-idle-state";
-				idle-state-name = "l2-ret";
-				entry-latency-us = <354>;
-				exit-latency-us = <394>;
-				min-residency-us = <3146>;
-				arm,psci-suspend-param = <0x01000044>;
-			};
-
 			MEDIUM_CLUSTER_PWR_DN: medium-cluster-cl5 { /* CL5 */
 				compatible = "domain-idle-state";
 				idle-state-name = "ret-pll-off";
@@ -377,13 +359,13 @@
 		CLUSTER_PD0: cluster-pd0 {
 			#power-domain-cells = <0>;
 			power-domains = <&CLUSTER_PD2>;
-			domain-idle-states = <&MEDIUM_CLUSTER_CL4 &MEDIUM_CLUSTER_PWR_DN>;
+			domain-idle-states = <&MEDIUM_CLUSTER_PWR_DN>;
 		};
 
 		CLUSTER_PD1: cluster-pd1 {
 			#power-domain-cells = <0>;
 			power-domains = <&CLUSTER_PD2>;
-			domain-idle-states = <&LARGE_CLUSTER_CL4 &LARGE_CLUSTER_PWR_DN>;
+			domain-idle-states = <&LARGE_CLUSTER_PWR_DN>;
 		};
 
 		CLUSTER_PD2: cluster-pd2 {
