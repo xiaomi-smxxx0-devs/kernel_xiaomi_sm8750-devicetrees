@@ -3376,14 +3376,16 @@
 		};
 	};
 
-	bwmon_ddr: qcom,bwmon-ddr@24091000 {
-		compatible = "qcom,bwmon5";
-		reg = <0x24091000 0x1000>;
-		reg-names = "base";
-		interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
-		qcom,hw-timer-hz = <19200000>;
-		qcom,count-unit = <0x10000>;
+	qcom_llcc_ddr_vote: qcom,llcc-ddr-vote {
 		qcom,target-dev = <&qcom_ddr_dcvs_hw>;
+		qcom,secondary-map =
+			<  350000  547000 >,
+			<  533000 1555000 >,
+			<  600000 2092000 >,
+			<  806000 3187000 >,
+			<  933000 3686000 >,
+			< 1066000 4224000 >,
+			< 1211000 4761000 >;
 	};
 
 	bwmon_llcc_gold: qcom,bwmon-llcc-gold@240B3300 {
@@ -3395,6 +3397,7 @@
 		qcom,hw-timer-hz = <19200000>;
 		qcom,count-unit = <0x10000>;
 		qcom,target-dev = <&qcom_llcc_dcvs_hw>;
+		qcom,second-vote = <&qcom_llcc_ddr_vote>;
 	};
 
 	bwmon_llcc_prime: qcom,bwmon-llcc-prime@240B7300 {
@@ -3406,6 +3409,7 @@
 		qcom,hw-timer-hz = <19200000>;
 		qcom,count-unit = <0x10000>;
 		qcom,target-dev = <&qcom_llcc_dcvs_hw>;
+		qcom,second-vote = <&qcom_llcc_ddr_vote>;
 	};
 
 	qcom,qrtr-gunyah-oemvm {
