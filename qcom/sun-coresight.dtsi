@@ -162,30 +162,6 @@
 		};
 
 		out-ports {
-			port {
-				funnel_gfx_dl_out_replicator_dummy: endpoint {
-				remote-endpoint =
-					<&replicator_dummy_in_funnel_gfx_dl>;
-				};
-			};
-		};
-	};
-
-	gpu-replicator {
-		compatible = "arm,coresight-static-replicator";
-
-		coresight-name = "coresight-replicator-gpu";
-
-		in-ports {
-			port {
-				replicator_dummy_in_funnel_gfx_dl: endpoint {
-					remote-endpoint =
-					<&funnel_gfx_dl_out_replicator_dummy>;
-				};
-			};
-		};
-
-		out-ports {
 			#address-cells = <1>;
 			#size-cells = <0>;
 
@@ -194,6 +170,7 @@
 				replicator_dummy_out_tpda_dlet: endpoint {
 					remote-endpoint =
 					<&tpda_dlet_in_replicator_dummy>;
+					source = <&tpdm_gfx>;
 				};
 			};
 
@@ -205,7 +182,6 @@
 				};
 			};
 		};
-
 	};
 
 	tpda_dlet: tpda@10c38000 {
