@@ -24,8 +24,6 @@ SUN_BOARDS += \
 		sun-mtp-kiwi-v8-overlay.dtbo \
 		sun-mtp-nfc-overlay.dtbo \
 		sun-mtp-overlay.dtbo \
-		sun-mtp-qmp1000-overlay.dtbo \
-		sun-mtp-qmp1000-v8-overlay.dtbo \
 		sun-mtp-v8-overlay.dtbo \
 		sun-cdp-kiwi-overlay.dtbo \
 		sun-cdp-kiwi-v8-overlay.dtbo \
