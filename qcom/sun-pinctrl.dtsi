@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 &tlmm {
@@ -2569,16 +2569,14 @@
 			};
 		};
 
-		qupv3_se13_q2spi_sleep: qupv3_se13_q2spi_sleep {
+		qupv3_se13_q2spi_doorbell_sleep: qupv3_se13_q2spi_doorbell_sleep {
 			mux {
-				pins = "gpio21", "gpio22",
-					"gpio23";
+				pins = "gpio23";
 				function = "gpio";
 			};
 
 			config {
-				pins = "gpio21", "gpio22",
-					"gpio23";
+				pins = "gpio23";
 				drive-strength = <2>;
 				bias-pull-down;
 			};
