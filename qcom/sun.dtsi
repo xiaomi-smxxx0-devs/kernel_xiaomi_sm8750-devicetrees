@@ -975,6 +975,14 @@
 		qcom,crm-pwr-states = <2>;
 	};
 
+	disp_crm_sw_0_bcm_voter: bcm_voter@7 {
+		compatible = "qcom,bcm-voter";
+		qcom,crm-name = "disp_crm";
+		qcom,crm-sw-client;
+		qcom,crm-client-idx = <0>;
+		qcom,crm-pwr-states = <1>;
+	};
+
 	clk_virt: interconnect@0 {
 		compatible = "qcom,sun-clk_virt";
 		#interconnect-cells = <1>;
@@ -997,7 +1005,8 @@
 				       "disp_crm_hw_2",
 				       "disp_crm_hw_3",
 				       "disp_crm_hw_4",
-				       "disp_crm_hw_5";
+				       "disp_crm_hw_5",
+				       "disp_crm_sw_0";
 		qcom,bcm-voters = <&apps_bcm_voter>,
 				  <&cam_bcm_voter0>,
 				  <&cam_bcm_voter1>,
@@ -1008,7 +1017,8 @@
 				  <&disp_crm_hw_2_bcm_voter>,
 				  <&disp_crm_hw_3_bcm_voter>,
 				  <&disp_crm_hw_4_bcm_voter>,
-				  <&disp_crm_hw_5_bcm_voter>;
+				  <&disp_crm_hw_5_bcm_voter>,
+				  <&disp_crm_sw_0_bcm_voter>;
 	};
 
 	config_noc: interconnect@1600000 {
@@ -1079,7 +1089,8 @@
 				       "disp_crm_hw_2",
 				       "disp_crm_hw_3",
 				       "disp_crm_hw_4",
-				       "disp_crm_hw_5";
+				       "disp_crm_hw_5",
+				       "disp_crm_sw_0";
 		qcom,bcm-voters = <&apps_bcm_voter>,
 				  <&cam_bcm_voter0>,
 				  <&cam_bcm_voter1>,
@@ -1089,7 +1100,8 @@
 				  <&disp_crm_hw_2_bcm_voter>,
 				  <&disp_crm_hw_3_bcm_voter>,
 				  <&disp_crm_hw_4_bcm_voter>,
-				  <&disp_crm_hw_5_bcm_voter>;
+				  <&disp_crm_hw_5_bcm_voter>,
+				  <&disp_crm_sw_0_bcm_voter>;
 	};
 
 	gem_noc: interconnect@24100000 {
@@ -1106,7 +1118,8 @@
 				       "disp_crm_hw_2",
 				       "disp_crm_hw_3",
 				       "disp_crm_hw_4",
-				       "disp_crm_hw_5";
+				       "disp_crm_hw_5",
+				       "disp_crm_sw_0";
 		qcom,bcm-voters = <&apps_bcm_voter>,
 				  <&cam_bcm_voter0>,
 				  <&cam_bcm_voter1>,
@@ -1117,7 +1130,8 @@
 				  <&disp_crm_hw_2_bcm_voter>,
 				  <&disp_crm_hw_3_bcm_voter>,
 				  <&disp_crm_hw_4_bcm_voter>,
-				  <&disp_crm_hw_5_bcm_voter>;
+				  <&disp_crm_hw_5_bcm_voter>,
+				  <&disp_crm_sw_0_bcm_voter>;
 	};
 
 	nsp_noc: interconnect@320c0000 {
