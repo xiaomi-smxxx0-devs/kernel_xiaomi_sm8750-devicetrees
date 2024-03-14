@@ -185,7 +185,7 @@
 
 			virtio-mmio@2 {
 				vdevice-type = "virtio-mmio";
-				generate = "/virtio-mmio";
+				patch = "/soc/virtio-mmio";
 				peer-default;
 				vqs-num = <0x3>;
 				push-compatible = "virtio,mmio";
@@ -322,6 +322,10 @@
 	#size-cells = <1>;
 	ranges = <0 0 0 0xffffffff>;
 	compatible = "simple-bus";
+
+	virtio-mmio {
+		wakeup-source;
+	};
 
 	gcc: clock-controller@100000 {
 		compatible = "qcom,dummycc";
