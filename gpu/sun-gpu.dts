@@ -21,6 +21,6 @@
 / {
 	model = "Qualcomm Technologies, Inc. sun";
 	compatible = "qcom,sun";
-	qcom,msm-id = <618 0x10000>, <639 0x10000>;
+	qcom,msm-id = <618 0x10000>;
 	qcom,board-id = <0 0>;
 };
