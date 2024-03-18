@@ -18,6 +18,7 @@ properties:
       - qcom,icnss #for ADRASTEA architecture
       - qcom,wcn6750 #for iWCN architecture
       - qcom,wcn6450 #for evros architecture
+      - qcom,wcn7750 #for wcn7750 architecture
 
    reg:
      description: Memory regions defined as starting address and size.
