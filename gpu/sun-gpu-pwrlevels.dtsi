@@ -31,6 +31,7 @@
 			#size-cells = <0>;
 
 			qcom,initial-pwrlevel = <10>;
+			qcom,initial-min-pwrlevel = <10>;
 			qcom,sku-codes = <SKU_CODE(PCODE_UNKNOWN, FC_AB)
 					SKU_CODE(PCODE_UNKNOWN, FC_AC)>;
 
@@ -176,6 +177,17 @@
 
 				qcom,acd-level = <ACD_LEVEL_LOW_SVS_D2>;
 			};
+
+			/* Low_SVS_D3 */
+			qcom,gpu-pwrlevel@11 {
+				reg = <11>;
+				qcom,gpu-freq = <125000000>;
+				qcom,level = <RPMH_REGULATOR_LEVEL_LOW_SVS_D3>;
+
+				qcom,bus-freq = <2>;
+				qcom,bus-min = <2>;
+				qcom,bus-max = <2>;
+			};
 		};
 
 		qcom,gpu-pwrlevels-1 {
@@ -183,6 +195,7 @@
 			#size-cells = <0>;
 
 			qcom,initial-pwrlevel = <12>;
+			qcom,initial-min-pwrlevel = <12>;
 			qcom,sku-codes = <SKU_CODE(PCODE_UNKNOWN, FC_UNKNOWN)>;
 
 			/* TURBO_L3 */
@@ -352,6 +365,17 @@
 				qcom,bus-max = <3>;
 
 				qcom,acd-level = <ACD_LEVEL_LOW_SVS_D2>;
+			};
+
+			/* Low_SVS_D3 */
+			qcom,gpu-pwrlevel@13 {
+				reg = <13>;
+				qcom,gpu-freq = <125000000>;
+				qcom,level = <RPMH_REGULATOR_LEVEL_LOW_SVS_D3>;
+
+				qcom,bus-freq = <2>;
+				qcom,bus-min = <2>;
+				qcom,bus-max = <2>;
 			};
 		};
 	};
