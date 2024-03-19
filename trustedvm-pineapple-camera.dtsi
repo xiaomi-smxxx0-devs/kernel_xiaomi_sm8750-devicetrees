@@ -1258,23 +1258,25 @@
 
 		msm_cam_smmu_icp {
 			compatible = "qcom,msm-cam-smmu-cb";
-			iommus = <&apps_smmu 0x1820 0x00>,
-				<&apps_smmu 0x18C0 0x00>,
-				<&apps_smmu 0x1800 0x00>,
-				<&apps_smmu 0x1840 0x00>,
-				<&apps_smmu 0x1880 0x00>;
+			iommus = <&apps_smmu 0x18C2 0x00>,
+				<&apps_smmu 0x1841 0x00>,
+				<&apps_smmu 0x1881 0x00>,
+				<&apps_smmu 0x1808 0x20>;
 			cam-smmu-label = "icp";
 			qcom,iommu-faults = "stall-disable", "non-fatal";
-			qcom,iommu-dma-addr-pool = <0x0 0xf9500000 0xf 0x06a00000>;
+			/* dma-addr-pool is iova address range for io region */
+			/* here size of dma-addr-pool is appoximately 2.5GB */
+			qcom,iommu-dma-addr-pool = <0x0 0x1FF00000 0x0 0xC0000000>;
 			dma-coherent;
+			/* TVM iova address range can be between 48MB to 3GB */
 			icp_iova_mem_map: iova-mem-map {
 				iova-mem-region-shared {
-					/* Shared region is ~900MB long */
+					/* Shared region is ~423MB long */
 					iova-region-name = "shared";
-					/* Start address: 0xc0700000 */
-					iova-region-start = <0x0 0xc0700000>;
-					/* Length: 0x38e00000 */
-					iova-region-len = <0x0 0x38e00000>;
+					/* Start address: 0x5800000 */
+					iova-region-start = <0x0  0x5800000>;
+					/* Length: 0x1a700000 */
+					iova-region-len = <0x0 0x1a700000>;
 					iova-region-id = <0x1>;
 					status = "ok";
 				};
@@ -1282,8 +1284,8 @@
 				iova-mem-region-fwuncached-region {
 					/* FW uncached region is 5 MB long */
 					iova-region-name = "fw_uncached";
-					/* Start address: 0xc0200000 */
-					iova-region-start = <0x0 0xc0200000>;
+					/* Start address: 0x5300000 */
+					iova-region-start = <0x0 0x5300000>;
 					/* Length: 0x500000 */
 					iova-region-len = <0x0 0x500000>;
 					iova-region-id = <0x6>;
@@ -1293,48 +1295,35 @@
 					/* Used for HFI queues/sec heap */
 					iova-mem-region-generic-region {
 						iova-region-name = "icp_hfi";
-						iova-region-start = <0x0 0xc0300000>;
+						/* Start address: 0x5300000 */
+						iova-region-start = <0x0 0x5300000>;
 						/* Length: 0x200000 */
 						iova-region-len = <0x0 0x200000>;
 						iova-region-id = <0x0>;
 					};
 
-					/* Global Sync Memory for IPC */
-					iova-mem-region-global-sync-region {
-						iova-region-name = "global_sync";
-						iova-region-start = <0x0 0xc0200000>;
-						/* Length: 0x100000 */
-						iova-region-len = <0x0 0x100000>;
-						iova-region-id = <0x2>;
-						phy-addr = <0x82600000>;
-					};
 				};
 
 				iova-mem-device-region {
 					/* Device region is appropriate 1MB */
 					iova-region-name = "device";
-					iova-region-start = <0x0 0xc0100000>;
+					/* Start address: 0x5200000 */
+					iova-region-start = <0x0 0x5200000>;
+					/* Length: 0x100000 */
 					iova-region-len = <0x0 0x100000>;
 					iova-region-id = <0x7>;
 					subregion_support;
 					status = "ok";
 
-					iova-mem-region-synx-hwmutex {
-						iova-region-name = "synx_hwmutex";
-						iova-region-start = <0x0 0xc0100000>;
-						iova-region-len = <0x0 0x1000>;
-						iova-region-id = <0x1>;
-						phy-addr = <0x1f4a000>;
-					};
 				};
 
 				iova-mem-region-io {
-					/* IO region is approximately 60 GB */
+					/* IO region is approximately 2.5 GB */
 					iova-region-name = "io";
-					/* Start address: 0xf9500000 */
-					iova-region-start = <0x0 0xf9500000>;
-					/* Length: 0xf06a00000 */
-					iova-region-len = <0xf 0x06a00000>;
+					/* Start address: 0x1FF00000 */
+					iova-region-start = <0x0 0x1FF00000>;
+					/* Length: 0xC0000000 */
+					iova-region-len = <0x0 0xC0000000>;
 					iova-region-id = <0x3>;
 					status = "ok";
 				};
@@ -1342,8 +1331,8 @@
 				iova-mem-qdss-region {
 					/* QDSS region is appropriate 1MB */
 					iova-region-name = "qdss";
-					/* Start address: 0xc0000000 */
-					iova-region-start = <0x0 0xc0000000>;
+					/* Start address: 0x5100000 */
+					iova-region-start = <0x0 0x5100000>;
 					/* Length: 0x100000 */
 					iova-region-len = <0x0 0x100000>;
 					iova-region-id = <0x5>;
@@ -2646,5 +2635,71 @@
 		interrupts = <GIC_SPI 417 IRQ_TYPE_EDGE_RISING>;
 		status = "ok";
 	};
-};
+	qcom,cam-icp {
+		compatible = "qcom,cam-icp";
+		compat-hw-name = "qcom,icp",
+			"qcom,ipe0",
+			"qcom,bps";
+		num-icp = <1>;
+		num-ipe = <1>;
+		num-bps = <1>;
+		status = "ok";
+		icp_use_pil;
+		icp_pc_en;
+	};
 
+	cam_icp: qcom,icp@ac00000 {
+		cell-index = <0>;
+		compatible = "qcom,cam-icp_v2_1";
+		icp-version = <0x0201>;
+		reg = <0xac02000 0x1000>,
+			<0x0ac04000 0x1000>;
+		reg-names = "icp_csr", "icp_wd0";
+		reg-cam-base = <0x2000 0x4000>;
+		interrupt-names = "icp";
+		interrupts = <GIC_SPI 460 IRQ_TYPE_EDGE_RISING>;
+		regulator-names = "gdsc";
+		nrt-device;
+		src-clock-name = "icp_clk_src";
+		clock-control-debugfs = "true";
+		fw_name = "CAMERA_ICP";
+		ubwc-ipe-fetch-cfg = <0x707b 0x7083>;
+		ubwc-ipe-write-cfg = <0x161ef 0x1620f>;
+		ubwc-bps-fetch-cfg = <0x707b 0x7083>;
+		ubwc-bps-write-cfg = <0x161ef 0x1620f>;
+		qos-val = <0x808>;
+		cam_hw_pid = <11>;
+		vmrm-resource-ids = <29 29 29>;
+		status = "ok";
+	};
+
+	cam_ipe0: qcom,ipe0@ac42000 {
+		cell-index = <0>;
+		compatible = "qcom,cam-ipe680";
+		reg = <0xac42000 0x18000>;
+		reg-names = "ipe0_top";
+		reg-cam-base = <0x42000>;
+		regulator-names = "ipe0-vdd";
+		nrt-device;
+		src-clock-name = "ipe_nps_clk_src";
+		clock-control-debugfs = "true";
+		cam_hw_pid = <15 14 13 31>;
+		vmrm-resource-ids = <30 30 30>;
+		status = "ok";
+	};
+
+	cam_bps: qcom,bps@ac2c000 {
+		cell-index = <0>;
+		compatible = "qcom,cam-bps680";
+		reg = <0xac2c000 0xb000>;
+		reg-names = "bps_top";
+		reg-cam-base = <0x2c000>;
+		regulator-names = "bps-vdd";
+		nrt-device;
+		src-clock-name = "bps_clk_src";
+		clock-control-debugfs = "true";
+		cam_hw_pid = <6 30>;
+		vmrm-resource-ids = <31 31 31>;
+		status = "ok";
+	};
+};
