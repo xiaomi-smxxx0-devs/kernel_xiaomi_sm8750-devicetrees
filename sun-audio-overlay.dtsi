@@ -238,7 +238,7 @@
 				<2 SPKR_L_COMP 0xF>, <3 SPKR_L_BOOST 0x3>,
 				<4 SPKR_R 0x1>, <5 SPKR_R_COMP 0xF>,
 				<6 SPKR_R_BOOST 0x3>, <7 PBR 0x3>,
-				<8 SPKR_HAPT 0x1>, <9 OCPM 0x3>,
+				<8 SPKR_HAPT 0x1>, <9 OCPM 0x1>,
 				<10 SPKR_L_VI 0x3>, <11 SPKR_R_VI 0x3>,
 				<12 SPKR_IPCM 0x3>, <13 CPS 0x3>;
 			qcom,swr-num-dev = <3>;
@@ -287,7 +287,7 @@
 				compatible = "qcom,pmih010x-swr-haptics";
 				reg = <0x03 0xf0170220>;
 				swr-slave-supply = <&hap_swr_slave_reg>;
-				qcom,rx_swr_ch_map = <0 0x01 0x01 0 SPKR_HAPT>;
+				qcom,rx_swr_ch_map = <0 0x01 0x01 0 OCPM>;
 			};
 		};
 	};
@@ -417,6 +417,12 @@
 		qcom,tdm-clk-attribute = <0x1>, <0x1>, <0x1>, <0x1>, <0x1>, <0x1>, <0x1>;
 		qcom,mi2s-clk-attribute = <0x1>, <0x1>, <0x1>, <0x1>, <0x1>, <0x1>, <0x1>;
 		qcom,audio-core-list = <0>, <1>;
+		/*
+		 * Add this property,
+		 * To Enable swr haptics through OPCM port.
+		 * This will include wsa2 dailinks.
+		 */
+		qcom,dedicated-wsa2;
 		qcom,audio-routing =
 			"AMIC1", "Analog Mic1",
 			"AMIC1", "MIC BIAS1",
@@ -449,7 +455,7 @@
 			"IN1_HPHL", "HPHL_OUT",
 			"IN2_HPHR", "HPHR_OUT",
 			"IN3_EAR", "AUX_OUT",
-			"HAP_IN", "WSA_HAPT OUT",
+			"HAP_IN", "WSA2_HAPT OUT",
 			"WSA SRC0_INP", "SRC0",
 			"WSA_TX DEC0_INP", "TX DEC0 MUX",
 			"WSA_TX DEC1_INP", "TX DEC1 MUX",
