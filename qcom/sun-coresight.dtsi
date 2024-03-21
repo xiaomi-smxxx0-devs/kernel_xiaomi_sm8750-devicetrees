@@ -2163,6 +2163,7 @@
 
 		cluster = <0>;
 		core = <0>;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2219,6 +2220,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2269,6 +2271,7 @@
 
 		cluster = <0>;
 		core = <1>;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2324,6 +2327,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2374,6 +2378,7 @@
 
 		cluster = <0>;
 		core = <2>;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2429,6 +2434,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2479,6 +2485,7 @@
 
 		cluster = <0>;
 		core = <3>;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2534,6 +2541,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2584,6 +2592,7 @@
 
 		cluster = <0>;
 		core = <4>;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2639,6 +2648,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2689,6 +2699,7 @@
 
 		cluster = <0>;
 		core = <5>;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2744,6 +2755,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2778,6 +2790,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			#address-cells = <1>;
@@ -2849,6 +2862,7 @@
 
 		cluster = <0>;
 		qcom,uncore_uetm;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2869,6 +2883,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2900,6 +2915,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2934,6 +2950,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			#address-cells = <1>;
@@ -2976,6 +2993,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -3022,6 +3040,7 @@
 
 		cluster = <1>;
 		core = <0>;
+		power-domains = <&CLUSTER_PD1>;
 
 		out-ports {
 			port {
@@ -3077,6 +3096,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			port {
@@ -3127,6 +3147,7 @@
 
 		cluster = <1>;
 		core = <1>;
+		power-domains = <&CLUSTER_PD1>;
 
 		out-ports {
 			port {
@@ -3182,6 +3203,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			port {
@@ -3216,6 +3238,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			#address-cells = <1>;
@@ -3255,6 +3278,7 @@
 
 		cluster = <1>;
 		qcom,uncore_uetm;
+		power-domains = <&CLUSTER_PD1>;
 
 		out-ports {
 			port {
@@ -3275,6 +3299,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			port {
@@ -3306,6 +3331,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			port {
@@ -3340,6 +3366,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			#address-cells = <1>;
@@ -3382,6 +3409,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			port {
