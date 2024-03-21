@@ -6,6 +6,7 @@
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/clock/qcom,gcc-sun.h>
 #include <dt-bindings/arm/msm/qti-smmu-proxy-dt-ids.h>
+#include <dt-bindings/soc/qcom,ipcc.h>
 
 / {
 	#address-cells = <0x2>;
@@ -104,14 +105,16 @@
 		vm-attrs = "crash-fatal", "context-dump";
 
 		iomemory-ranges = <0x0 0xa24000 0x0 0xa24000 0x0 0x4000 0x0
-				0x0 0x824000 0x0 0x824000 0x0 0x4000 0x0>;
+				0x0 0x824000 0x0 0x824000 0x0 0x4000 0x0
+				0x0 0x407000 0x0 0x407000 0x0 0x1000 0x0>;
 
 		/* For LEVM por usecases is QUP1_SE4 and QUP2_SE7.
 		 * QUP1_SE4: GPII5 : IRQ_316
 		 * QUP2_SE7: GPII5 : IRQ_625
 		 */
 		gic-irq-ranges = <316 316
-				  625 625>; /* PVM->SVM IRQ transfer */
+				  625 625 /* PVM->SVM IRQ transfer */
+				  279 279>;
 
 		memory {
 			#address-cells = <0x2>;
@@ -397,6 +400,15 @@
 		redistributor-stride = <0x0 0x40000>;
 		reg = <0x16000000 0x10000>,     /* GICD */
 		      <0x16080000 0x200000>;    /* GICR * 8 */
+	};
+
+	ipcc_mproc_ns1: qcom,ipcc@407000 {
+		compatible = "qcom,ipcc";
+		reg = <0x407000 0x1000>;
+		interrupts = <GIC_SPI 247 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-controller;
+		#interrupt-cells = <3>;
+		#mbox-cells = <2>;
 	};
 
 	arch_timer: timer {
