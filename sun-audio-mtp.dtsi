@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include "sun-audio-overlay.dtsi"
@@ -120,6 +120,7 @@
 		cdc-vdd-1p8-supply = <&L15B>;
 		qcom,cdc-vdd-1p8-voltage = <1800000 1800000>;
 		qcom,cdc-vdd-1p8-current = <20000>;
+		qcom,cdc-vdd-1p8-lpm-supported = <1>;
 		qcom,cdc-static-supplies = "cdc-vdd-1p8";
 		sound-name-prefix = "SpkrLeft";
 	};
@@ -132,6 +133,7 @@
 		cdc-vdd-1p8-supply = <&L15B>;
 		qcom,cdc-vdd-1p8-voltage = <1800000 1800000>;
 		qcom,cdc-vdd-1p8-current = <20000>;
+		qcom,cdc-vdd-1p8-lpm-supported = <1>;
 		qcom,cdc-static-supplies = "cdc-vdd-1p8";
 		sound-name-prefix = "SpkrRight";
 	};
@@ -146,6 +148,7 @@
 		cdc-vdd-1p8-supply = <&L15B>;
 		qcom,cdc-vdd-1p8-voltage = <1800000 1800000>;
 		qcom,cdc-vdd-1p8-current = <20000>;
+		qcom,cdc-vdd-1p8-lpm-supported = <1>;
 		qcom,cdc-static-supplies = "cdc-vdd-1p8";
 		sound-name-prefix = "Spkr2Left";
 		status = "disabled";
@@ -159,6 +162,7 @@
 		cdc-vdd-1p8-supply = <&L15B>;
 		qcom,cdc-vdd-1p8-voltage = <1800000 1800000>;
 		qcom,cdc-vdd-1p8-current = <20000>;
+		qcom,cdc-vdd-1p8-lpm-supported = <1>;
 		qcom,cdc-static-supplies = "cdc-vdd-1p8";
 		sound-name-prefix = "Spkr2Right";
 		status = "disabled";
