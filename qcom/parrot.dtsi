@@ -1973,11 +1973,13 @@
 			mask = <0xf0>;
 			vote = <44>;
 			perf;
+			cpu_freq_vote = <4>;
 		};
 
 		qos1 {
 			mask = <0x0f>;
 			vote = <44>;
+			cpu_freq_vote = <0>;
 		};
 	};
 
