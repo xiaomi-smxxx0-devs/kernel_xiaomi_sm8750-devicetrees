@@ -190,16 +190,31 @@
 				};
 			};
 
+			virtio-mmio@2 {
+				vdevice-type = "virtio-mmio";
+				patch = "/soc/virtio-mmio";
+				peer-default;
+				vqs-num = <0x3>;
+				push-compatible = "virtio,mmio";
+				dma-coherent;
+				dma_base = <0x0 0x8000>;
+				memory {
+					qcom,label = <0x15>;			//for virtio-vsock
+					#address-cells = <0x2>;
+					base = <0x0 0xDA700000>;
+				};
+			};
+
 			swiotlb-shm {
 				vdevice-type = "shm";
 				generate = "/swiotlb";
 				push-compatible = "swiotlb";
 				peer-default;
-				dma_base = <0x0 0x8000>;
+				dma_base = <0x0 0x14000>;
 				memory {
 					qcom,label = <0x12>;
 					#address-cells = <0x2>;
-					base = <0x0 0xDA700000>;
+					base = <0x0 0xDA70c000>;
 				};
 			};
 
@@ -314,6 +329,10 @@
 	#size-cells = <1>;
 	ranges = <0 0 0 0xffffffff>;
 	compatible = "simple-bus";
+
+	virtio-mmio {
+		wakeup-source;
+	};
 
 	gcc: clock-controller@100000 {
 		compatible = "qcom,dummycc";
