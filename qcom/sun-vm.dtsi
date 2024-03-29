@@ -52,13 +52,13 @@
 			arm,psci-suspend-param = <0x00000004>;
 		};
 
-		CLUSTER_PWR_DWN: cl5 { /* C4+CL5 */
+		CLUSTER_PWR_DWN: ss3 { /* C4+CL5+SS3 */
 			compatible = "arm,idle-state";
 			idle-state-name = "ret-pll-off";
 			entry-latency-us = <1964>;
 			exit-latency-us = <1901>;
 			min-residency-us = <24511>;
-			arm,psci-suspend-param = <0x01000054>;
+			arm,psci-suspend-param = <0x0200C354>;
 		};
 	};
 
