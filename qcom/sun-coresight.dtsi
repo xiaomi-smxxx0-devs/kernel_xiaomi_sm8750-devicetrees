@@ -1023,13 +1023,22 @@
 		compatible = "arm,coresight-dummy-source";
 
 		coresight-name = "coresight-modem-diag";
-		atid = <50>;
-
+		qcom,atid-num = <1>;
+		trace-name = "modem-diag";
 		out-ports {
-			port {
+			port@0 {
+				reg = <0>;
 				modem_diag_out_funnel_modem_q6: endpoint {
 					remote-endpoint =
 					<&funnel_modem_q6_in_modem_diag>;
+				};
+			};
+
+			port@1 {
+				reg = <1>;
+				modem_diag_out_qmi: endpoint {
+					remote-endpoint =
+						<&qmi_in_modem_diag>;
 				};
 			};
 		};
@@ -1628,7 +1637,7 @@
 		};
 	};
 
-	tpdm_mm_bcv: tpdm@0x1084e000 {
+	tpdm_mm_bcv: tpdm@1084e000 {
 		compatible = "arm,primecell";
 		arm,primecell-periphid = <0x000bb968>;
 		reg = <0x1084e000 0x1000>;
@@ -3399,7 +3408,7 @@
 		};
 	};
 
-	tmc@1b109000 {
+	tmc@13d09000 {
 		compatible = "arm,primecell";
 		arm,primecell-periphid = <0x000bb961>;
 		reg = <0x13d09000 0x1000>;
@@ -4096,7 +4105,6 @@
 		reg-names = "stm-base", "stm-stimulus-base";
 
 		coresight-name = "coresight-stm";
-		atid = <16>;
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -5483,6 +5491,14 @@
 				qmi_in_tmc_modem: endpoint {
 					remote-endpoint =
 						<&tmc_modem_out_qmi>;
+				};
+			};
+
+			port@3 {
+				reg = <3>;
+				qmi_in_modem_diag: endpoint {
+					remote-endpoint =
+						<&modem_diag_out_qmi>;
 				};
 			};
 		};
