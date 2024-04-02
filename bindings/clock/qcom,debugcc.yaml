@@ -18,6 +18,7 @@ properties:
     enum:
       - qcom,pineapple-debugcc
       - qcom,sun-debugcc
+      - qcom,parrot-debugcc
 
   clocks:
     items:
