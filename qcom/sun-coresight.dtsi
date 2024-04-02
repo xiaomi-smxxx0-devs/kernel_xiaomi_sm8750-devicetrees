@@ -5337,7 +5337,6 @@
 
 		qcom,iommu-dma = "bypass";
 		iommus = <&apps_smmu 0x04e0 0x0>;
-		qcom,iommu-dma-addr-pool = <0x0 0xffc00000>;
 		dma-coherent;
 		arm,scatter-gather;
 
@@ -5373,7 +5372,6 @@
 		coresight-name = "coresight-tmc-etr1";
 
 		iommus = <&apps_smmu 0x0500 0x0>;
-		qcom,iommu-dma-addr-pool = <0x0 0xffc00000>;
 		dma-coherent;
 		arm,scatter-gather;
 
