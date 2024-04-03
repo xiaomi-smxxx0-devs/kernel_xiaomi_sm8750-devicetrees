@@ -170,6 +170,24 @@
 		/* low (latency critical): 18-60 Mbps ddr: 547.2 MHz */
 		<7500 2188800>;
 
+		qcom,vreg_pdc_map =
+			"s5f", "rf",
+			"s4d", "bb",
+			"s3g", "rf",
+			"s7i", "rf";
+
+		qcom,pmu_vreg_map =
+			"VDDD_AON_0P9", "s5f",
+			"VDDA_RFA_1P9", "s3g",
+			"VDDA_RFA_1P3", "s7i",
+			"VDDA_RFA_0P9", "s5f",
+			"VDDD_WLMX_0P9", "s4d",
+			"VDDD_WLCX_0P9", "s5f",
+			"VDDD_BTCX_0P9", "s5f",
+			"VDDD_BTCMX_0P9", "s5f",
+			"VDDA_PCIE_1P2", "s7i",
+			"VDDA_PCIE_0P9", "s7i";
+
 		qcom,pdc_init_table =
 			"{class: wlan_pdc, ss: rf, res: s5f.m, enable: 1}",
 			"{class: wlan_pdc, ss: rf, res: s5f.v, enable: 1}",
