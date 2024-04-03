@@ -19,6 +19,7 @@ properties:
   compatible:
     enum:
       - qcom,sys-pm-parrot
+      - qcom,sys-pm-ravelin
       - qcom,sys-pm-lahaina
       - qcom,sys-pm-waipio
       - qcom,sys-pm-kalama
@@ -49,6 +50,7 @@ allOf:
               - qcom,sys-pm-sun
               - qcom,sys-pm-pineapple
               - qcom,sys-pm-parrot
+              - qcom,sys-pm-ravelin
     then:
       properties:
         reg:
