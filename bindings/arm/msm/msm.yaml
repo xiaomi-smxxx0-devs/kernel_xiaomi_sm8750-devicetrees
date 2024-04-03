@@ -126,4 +126,26 @@ properties:
               - qcom,rumi
           - const: qcom,tuna
 
+      - description: Qualcomm Technologies, Inc. MONACO
+        items:
+          - enum:
+              - qcom,monaco-atp
+              - qcom,atp
+              - qcom,monaco-idp
+              - qcom,idp
+              - qcom,monaco-wdp
+              - qcom,wdp
+          - const: qcom,monaco
+
+      - description: Qualcomm Technologies, Inc. MONACOP
+        items:
+          - enum:
+              - qcom,monaco-atp
+              - qcom,atp
+              - qcom,monaco-idp
+              - qcom,idp
+              - qcom,monaco-wdp
+              - qcom,wdp
+          - const: qcom,monacop
+
 additionalProperties: true
