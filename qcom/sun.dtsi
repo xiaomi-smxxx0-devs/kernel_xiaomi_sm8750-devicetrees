@@ -1773,7 +1773,6 @@
 			      "ufs_phy_tx_symbol_0_clk",
 			      "usb3_phy_wrapper_gcc_usb30_pipe_clk";
 		#clock-cells = <1>;
-		#power-domain-cells = <1>;
 		#reset-cells = <1>;
 	};
 
@@ -2005,7 +2004,6 @@
 		qcom,no-status-check-on-disable;
 		qcom,collapse-vote = <&gcc_apcs_gdsc_vote_ctrl 0>;
 		qcom,support-cfg-gdscr;
-		status = "disabled";
 	};
 
 	gcc_pcie_0_phy_gdsc: qcom,gdsc@16c000 {
@@ -2017,7 +2015,6 @@
 		qcom,no-status-check-on-disable;
 		qcom,collapse-vote = <&gcc_apcs_gdsc_vote_ctrl 2>;
 		qcom,support-cfg-gdscr;
-		status = "disabled";
 	};
 
 	gcc_ufs_mem_phy_gdsc: qcom,gdsc@19e000 {
