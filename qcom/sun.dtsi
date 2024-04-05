@@ -244,18 +244,18 @@
 			MEDIUM_CLUSTER_PWR_DN: medium-cluster-cl5 { /* CL5 */
 				compatible = "domain-idle-state";
 				idle-state-name = "ret-pll-off";
-				entry-latency-us = <1964>;
-				exit-latency-us = <1901>;
-				min-residency-us = <24511>;
+				entry-latency-us = <2150>;
+				exit-latency-us = <1983>;
+				min-residency-us = <9144>;
 				arm,psci-suspend-param = <0x01000054>;
 			};
 
 			LARGE_CLUSTER_PWR_DN: large-cluster-cl5 { /* CL5 */
 				compatible = "domain-idle-state";
 				idle-state-name = "ret-pll-off";
-				entry-latency-us = <2124>;
-				exit-latency-us = <1967>;
-				min-residency-us = <36712>;
+				entry-latency-us = <2150>;
+				exit-latency-us = <1983>;
+				min-residency-us = <9144>;
 				arm,psci-suspend-param = <0x01000054>;
 			};
 
@@ -264,7 +264,7 @@
 				idle-state-name = "apps-pc";
 				entry-latency-us = <2800>;
 				exit-latency-us = <4400>;
-				min-residency-us = <40000>;
+				min-residency-us = <10150>;
 				arm,psci-suspend-param = <0x0200C354>;
 			};
 		};
