@@ -1667,6 +1667,12 @@
 		};
 	};
 
+	cpuss-sleep-stats@17850000 {
+		compatible = "qcom,cpuss-sleep-stats-v4";
+		reg = <0x17850000 0x4000>;
+		reg-names = "base";
+	};
+
 	ram@c3f0000 {
 		compatible = "qcom,rpmh-stats-v4";
 		reg = <0x0c3f0000 0x400>;
