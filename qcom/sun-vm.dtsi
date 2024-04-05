@@ -58,7 +58,7 @@
 			entry-latency-us = <1964>;
 			exit-latency-us = <1901>;
 			min-residency-us = <24511>;
-			arm,psci-suspend-param = <0x0200C354>;
+			arm,psci-suspend-param = <0x0000C354>;
 		};
 	};
 
