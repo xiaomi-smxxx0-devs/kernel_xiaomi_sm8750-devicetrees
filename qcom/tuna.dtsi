@@ -530,4 +530,5 @@
 };
 
 #include "tuna-pinctrl.dtsi"
+#include "tuna-stub-regulators.dtsi"
 #include "tuna-usb.dtsi"
