@@ -530,3 +530,4 @@
 };
 
 #include "tuna-pinctrl.dtsi"
+#include "tuna-usb.dtsi"
