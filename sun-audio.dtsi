@@ -45,6 +45,7 @@
 
 		audio_prm: q6prm {
 			compatible = "qcom,audio_prm";
+			qcom,sleep-api-supported = <1>;
 			reg = <GPR_SVC_ASM>;
 		};
 	};
