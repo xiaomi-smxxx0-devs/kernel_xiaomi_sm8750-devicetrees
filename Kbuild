@@ -22,7 +22,8 @@ ifeq ($(CONFIG_ARCH_SUN), y)
 		sun-mm-mtp-3-5mm-overlay.dtbo \
 		sun-mm-rcm-kiwi-overlay.dtbo \
 		sun-mm-rcm-kiwi-v8-overlay.dtbo \
-		sun-mm-rcm-v8-overlay.dtbo
+		sun-mm-rcm-v8-overlay.dtbo \
+		sun-mm-cdp-no-display-overlay.dtbo
 endif
 
 always-y    := $(dtb-y) $(dtbo-y)
