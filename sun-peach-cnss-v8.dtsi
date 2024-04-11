@@ -135,21 +135,21 @@
 		/** ICC Path 1 **/
 		<0 0>, /* no vote */
 		/* idle: 0-18 Mbps snoc/anoc: 100 Mhz */
-		<2250 1600000>,
+		<2250 800000>,
 		/* low: 18-60 Mbps snoc/anoc: 100 Mhz */
-		<7500 1600000>,
+		<7500 800000>,
 		/* medium: 60-240 Mbps snoc/anoc: 100 Mhz */
-		<30000 1600000>,
+		<30000 800000>,
 		/* high: 240-1200 Mbps snoc/anoc: 100 Mhz */
-		<100000 1600000>,
+		<100000 800000>,
 		/* very high: > 1200 Mbps snoc/anoc: 403 Mhz */
-		<175000 6448000>,
+		<175000 3224000>,
 		/* ultra high: DBS mode snoc/anoc: 403 Mhz */
-		<312500 6448000>,
+		<312500 3224000>,
 		/* super high: DBS mode snoc/anoc: 533 Mhz */
-		<587500 8528000>,
+		<587500 4264000>,
 		/* low (latency critical): 18-60 Mbps snoc/anoc: 200 Mhz */
-		<7500 3200000>,
+		<7500 1600000>,
 
 		/** ICC Path 2 **/
 		<0 0>,
