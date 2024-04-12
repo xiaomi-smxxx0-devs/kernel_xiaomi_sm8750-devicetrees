@@ -51,8 +51,7 @@
 				&pcie0_clkreq_sleep
 				&pcie0_wake_default>;
 
-		power-domains = <&gcc GCC_PCIE_0_PHY_GDSC>;
-		power-domain-names = "gdsc-phy-vdd";
+		gdsc-phy-vdd-supply = <&gcc_pcie_0_phy_gdsc>;
 
 		qcom,bw-scale = /* Gen1 */
 				<RPMH_REGULATOR_LEVEL_LOW_SVS
