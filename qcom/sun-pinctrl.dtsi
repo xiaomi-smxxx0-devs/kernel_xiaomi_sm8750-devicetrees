@@ -105,6 +105,19 @@
 		};
 	};
 
+	trigout_a: trigout_a {
+		mux {
+			pins = "gpio73";
+			function = "qdss_cti";
+		};
+
+		config {
+			pins = "gpio78";
+			drive-strength = <2>;
+			bias-disable;
+		};
+	};
+
 	i2s0_sd0 {
 		i2s0_sd0_sleep: i2s0_sd0_sleep {
 			mux {
