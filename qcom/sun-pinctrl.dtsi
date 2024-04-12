@@ -1967,7 +1967,7 @@
 		qupv3_se8_i3c_sda_sleep: qupv3_se8_i3c_sda_sleep {
 			mux {
 				pins = "gpio0";
-				function = "ibi_i3c";
+				function = "qup2_se0_l0";
 			};
 
 			config {
@@ -1981,7 +1981,7 @@
 		qupv3_se8_i3c_scl_sleep: qupv3_se8_i3c_scl_sleep {
 			mux {
 				pins = "gpio1";
-				function = "ibi_i3c";
+				function = "qup2_se0_l1";
 			};
 
 			config {
