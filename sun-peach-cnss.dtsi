@@ -109,9 +109,9 @@
 		msix-match-addr = <0x3000>;
 
 		vdd-wlan-io-supply = <&L3F>;
-		qcom,vdd-wlan-io-config = <1800000 1800000 0 0 1>;
+		qcom,vdd-wlan-io-config = <1800000 1800000 30000 0 1>;
 		vdd-wlan-io12-supply = <&L2F>;
-		qcom,vdd-wlan-io12-config = <1200000 1200000 0 0 1>;
+		qcom,vdd-wlan-io12-config = <1200000 1200000 30000 0 1>;
 		vdd-wlan-aon-supply = <&S4D>;
 		qcom,vdd-wlan-aon-config = <876000 1036000 0 0 1>;
 		vdd-wlan-dig-supply = <&S4J>;
