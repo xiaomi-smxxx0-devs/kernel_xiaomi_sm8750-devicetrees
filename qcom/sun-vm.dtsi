@@ -483,7 +483,10 @@
 	 * QUP2 : SE7 - Secondary touch
 	 */
 	qup_iommu_group: qup_common_iommu_group {
-		qcom,iommu-dma-addr-pool = <0x00020000 0xfffe0000>;
+		iommu-addresses = <&gpi_dma1 0x00000000 0x00020000>,
+				<&qupv3_1 0x00000000 0x00020000>,
+				<&gpi_dma2 0x00000000 0x00020000>,
+				<&qupv3_2 0x00000000 0x00020000>;
 	};
 
 	/* QUPv3_1 GPI Instance */
@@ -494,6 +497,7 @@
 		reg-names = "gpi-top";
 		iommus = <&apps_smmu 0xb8 0x0>;
 		qcom,iommu-group = <&qup_iommu_group>;
+		memory-region = <&qup_iommu_group>;
 		dma-coherent;
 		interrupts = <GIC_SPI 279 IRQ_TYPE_LEVEL_HIGH>,
 			<GIC_SPI 280 IRQ_TYPE_LEVEL_HIGH>,
@@ -527,6 +531,7 @@
 			<&gcc GCC_QUPV3_WRAP_1_S_AHB_CLK>;
 		iommus = <&apps_smmu 0xb8 0x0>;
 		qcom,iommu-group = <&qup_iommu_group>;
+		memory-region = <&qup_iommu_group>;
 		dma-coherent;
 		ranges;
 		status = "ok";
@@ -568,6 +573,7 @@
 		reg-names = "gpi-top";
 		iommus = <&apps_smmu 0x438 0x0>;
 		qcom,iommu-group = <&qup_iommu_group>;
+		memory-region = <&qup_iommu_group>;
 		dma-coherent;
 		interrupts = <GIC_SPI 588 IRQ_TYPE_LEVEL_HIGH>,
 			<GIC_SPI 589 IRQ_TYPE_LEVEL_HIGH>,
@@ -601,6 +607,7 @@
 			<&gcc GCC_QUPV3_WRAP_2_S_AHB_CLK>;
 		iommus = <&apps_smmu 0x438 0x0>;
 		qcom,iommu-group = <&qup_iommu_group>;
+		memory-region = <&qup_iommu_group>;
 		dma-coherent;
 		ranges;
 		status = "ok";
