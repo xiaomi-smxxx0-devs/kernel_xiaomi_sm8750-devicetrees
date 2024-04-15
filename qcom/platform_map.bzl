@@ -150,6 +150,39 @@ _platform_map = {
             {"name": "monaco-standalone-atp-v1-overlay.dtbo"},
         ],
     },
+    "parrot": {
+        "dtb_list": [
+            # keep sorted
+            {"name": "parrot.dtb"},
+            {"name": "parrotp.dtb"},
+            {"name": "parrot-sg.dtb"},
+            {"name": "parrotp-sg.dtb"},
+            {"name": "parrot-4gb.dtb"},
+        ],
+        "dtbo_list": [
+            # keep sorted
+            {"name": "parrot-rumi-overlay.dtbo"},
+            {"name": "parrot-atp-overlay.dtbo"},
+            {"name": "parrot-idp-overlay.dtbo"},
+            {"name": "parrot-idp-wcn3990-overlay.dtbo"},
+            {"name": "parrot-idp-wcn3990-amoled-rcm-overlay.dtbo"},
+            {"name": "parrot-idp-wcn6750-amoled-rcm-overlay.dtbo"},
+            {"name": "parrot-idp-wcn6750-amoled-overlay.dtbo"},
+            {"name": "parrot-idp-nopmi-overlay.dtbo"},
+            {"name": "parrot-idp-pm8350b-overlay.dtbo"},
+            {"name": "parrot-qrd-overlay.dtbo"},
+            {"name": "parrot-qrd-wcn6750-overlay.dtbo"},
+            {"name": "parrot-qrd-nopmi-overlay.dtbo"},
+            {"name": "parrot-qrd-pm8350b-overlay.dtbo"},
+            {"name": "parrot-idp-4gb-overlay.dtbo"},
+            {"name": "parrot-idp-wcn3990-4gb-overlay.dtbo"},
+            {"name": "parrot-idp-wcn3990-amoled-rcm-4gb-overlay.dtbo"},
+            {"name": "parrot-idp-wcn6750-amoled-rcm-4gb-overlay.dtbo"},
+            {"name": "parrot-idp-wcn6750-amoled-4gb-overlay.dtbo"},
+            {"name": "parrot-qrd-4gb-overlay.dtbo"},
+            {"name": "parrot-qrd-wcn6750-4gb-overlay.dtbo"},
+        ],
+    },
 }
 
 def _get_dtb_lists(target, dt_overlay_supported):
