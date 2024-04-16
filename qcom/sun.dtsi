@@ -1789,14 +1789,17 @@
 			      "gpll0_out_main",
 			      "gpll0_out_main_div";
 		#clock-cells = <1>;
+		#power-domain-cells = <1>;
 		#reset-cells = <1>;
 	};
 
-	gxclkctl: clock-controller@3d64000 {
-		compatible = "qcom,dummycc";
-		clock-output-names = "gxclkctl_clocks";
-		#clock-cells = <1>;
-		#reset-cells = <1>;
+	gxclkctl: clock-controller@3d68024 {
+		compatible = "qcom,sun-gx_clkctl";
+		reg = <0x3d68024 0x8>;
+		reg-name = "cc_base";
+		power-domains = <&gpucc GPU_CC_CX_GDSC>;
+		vdd_gx-supply = <&VDD_GFX_GFX_MXC_VOTER_LEVEL>;
+		#power-domain-cells = <1>;
 	};
 
 	tcsrcc: clock-controller@f204008 {
@@ -2077,6 +2080,7 @@
 		qcom,proxy-consumer-enable;
 		qcom,retain-regs;
 		qcom,support-cfg-gdscr;
+		status = "disabled";
 	};
 
 	/* GX_CLKCTL GDSCs */
@@ -2089,6 +2093,7 @@
 		reg-supply = <&gpu_cc_cx_gdsc>;
 		qcom,retain-regs;
 		qcom,support-cfg-gdscr;
+		status = "disabled";
 	};
 
 	/* VIDEO_CC GDSCs */
