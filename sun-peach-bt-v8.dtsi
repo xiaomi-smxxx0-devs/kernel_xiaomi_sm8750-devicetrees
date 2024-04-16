@@ -5,6 +5,7 @@
  */
 
 #include <dt-bindings/interconnect/qcom,sun.h>
+#include <dt-bindings/clock/qcom,rpmh.h>
 
 &pm8550ve_f_gpios {
 	bt_uwb_en: bt_uwb_en {
@@ -12,6 +13,14 @@
 		function = "normal";
 		input-disable;
 		output-enable;
+		bias-disable;
+		power-source = <1>;
+	};
+	bt_fmd_clk_en: bt_fmd_clk_en {
+		pins = "gpio6";
+		function = "normal";
+		input-enable;
+		output-disable;
 		bias-disable;
 		power-source = <1>;
 	};
@@ -29,14 +38,20 @@
 &soc {
 	bluetooth: bt_peach {
 			compatible = "qcom,peach-bt";
+			nvmem-cells = <&fmd_set>;
+			nvmem-cell-names = "fmd_set";
+			clocks = <&rpmhcc RPMH_RF_CLK1>;
+			clock-names = "bt_rf_clk1";
 			qcom,peach-bt;
-			pinctrl-names = "bt_uwb_en", "sw_ctrl";
+			pinctrl-names = "bt_uwb_en", "sw_ctrl", "bt_fmd_clk_en";
 			pinctrl-0 = <&bt_uwb_en>;
 			pinctrl-1 = <&cnss_bt_sw_ctrl>;
+			pinctrl-2 = <&bt_fmd_clk_en>;
 			/* List of GPIOs to be setup for interrupt wakeup capable*/
-			mpm_wake_set_gpios = <18>;
+			mpm_wake_set_gpios = <18 9>;
 			qcom,wl-reset-gpio = <&tlmm 16 0>; /* WL_EN */
 			qcom,bt-sw-ctrl-gpio = <&tlmm 18 0>; /* SW_CTRL */
+			qcom,bt-fmd-clk-gpio = <&pm8550ve_f_gpios 6 0>; /* FMD_CLK_CTRL */
 			qcom,bt-reset-gpio = <&pm8550ve_f_gpios 3 0>; /* BT_EN */
 			qcom,qmp = <&aoss_qmp>;
 
@@ -49,14 +64,14 @@
 			qcom,bt-vdd-rfa1p8-supply  = <&S3G>;  /* RFA_1P8 */
 			qcom,bt-vdd-rfa1p25-supply = <&S7I>; /* RFA_1P2 */
 
-			qcom,bt-vdd18-aon-config  = <1800000 1800000 0 1>;
-			qcom,bt-vdd12-io-config   = <1200000 1200000 0 1>;
-			qcom,bt-ant-ldo-config    = <1800000 1860000 0 1>;
-			qcom,bt-vdd-aon-config    = <876000 1000000 0 1>;
-			qcom,bt-vdd-dig-config    = <876000 1000000 0 1>;
-			qcom,bt-vdd-rfa0p75-config = <876000 1000000 0 1>;
-			qcom,bt-vdd-rfa1p8-config = <1860000 2000000 0 1>;
-			qcom,bt-vdd-rfa1p25-config  = <1312000 1340000 0 1>;
+			qcom,bt-vdd18-aon-config  = <1800000 1800000 0 1 1>;
+			qcom,bt-vdd12-io-config   = <1200000 1200000 0 1 1>;
+			qcom,bt-ant-ldo-config    = <1800000 1860000 0 1 0>;
+			qcom,bt-vdd-aon-config    = <876000 1000000 0 1 0>;
+			qcom,bt-vdd-dig-config    = <876000 1000000 0 1 0>;
+			qcom,bt-vdd-rfa0p75-config = <876000 1000000 0 1 0>;
+			qcom,bt-vdd-rfa1p8-config = <1860000 2000000 0 1 0>;
+			qcom,bt-vdd-rfa1p25-config  = <1312000 1340000 0 1 0>;
 
 			qcom,pdc_init_table =
 				"{class: wlan_pdc, ss: rf, res: s5f.m, enable: 1}",
@@ -76,7 +91,7 @@
 // FM changes
 &qupv3_se5_i2c {
     status = "ok";
-	nq@64 {
+	fm_rtc6226: nq@64 {
 		compatible = "rtc6226";
 		reg = <0x64>;
 		fmint-gpio = <&tlmm 84 0>;
