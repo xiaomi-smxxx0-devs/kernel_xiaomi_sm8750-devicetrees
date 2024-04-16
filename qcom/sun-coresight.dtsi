@@ -1023,22 +1023,13 @@
 		compatible = "arm,coresight-dummy-source";
 
 		coresight-name = "coresight-modem-diag";
-		qcom,atid-num = <1>;
-		trace-name = "modem-diag";
+		atid = <50>;
+
 		out-ports {
-			port@0 {
-				reg = <0>;
+			port {
 				modem_diag_out_funnel_modem_q6: endpoint {
 					remote-endpoint =
 					<&funnel_modem_q6_in_modem_diag>;
-				};
-			};
-
-			port@1 {
-				reg = <1>;
-				modem_diag_out_qmi: endpoint {
-					remote-endpoint =
-						<&qmi_in_modem_diag>;
 				};
 			};
 		};
@@ -4105,6 +4096,7 @@
 		reg-names = "stm-base", "stm-stimulus-base";
 
 		coresight-name = "coresight-stm";
+		atid = <16>;
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -5489,14 +5481,6 @@
 				qmi_in_tmc_modem: endpoint {
 					remote-endpoint =
 						<&tmc_modem_out_qmi>;
-				};
-			};
-
-			port@3 {
-				reg = <3>;
-				qmi_in_modem_diag: endpoint {
-					remote-endpoint =
-						<&modem_diag_out_qmi>;
 				};
 			};
 		};
