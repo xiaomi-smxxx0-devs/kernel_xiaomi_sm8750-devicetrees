@@ -3,6 +3,7 @@ dtbo-y += sun-kiwi-cnss.dtbo
 dtbo-y += sun-kiwi-cnss-v8.dtbo
 dtbo-y += sun-peach-cnss.dtbo
 dtbo-y += sun-peach-cnss-v8.dtbo
+dtbo-y += sunp-hdk-peach-cnss-v8.dtbo
 endif
 
 ifeq ($(CONFIG_ARCH_PINEAPPLE),y)
