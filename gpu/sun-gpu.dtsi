@@ -136,7 +136,7 @@
 		compatible = "qcom,kgsl-smmu-v2";
 		reg = <0x3da0000 0x40000>;
 
-		vddcx-supply = <&gpu_cc_cx_gdsc>;
+		power-domains = <&gpucc GPU_CC_CX_GDSC>;
 
 		gfx3d_user: gfx3d_user {
 			compatible = "qcom,smmu-kgsl-cb";
@@ -169,10 +169,9 @@
 			<0 305 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "hfi", "gmu";
 
-		regulator-names = "vddcx", "vdd";
-
-		vddcx-supply = <&gpu_cc_cx_gdsc>;
-		vdd-supply = <&gx_clkctl_gx_gdsc>;
+		power-domains = <&gpucc GPU_CC_CX_GDSC>,
+				<&gxclkctl GX_CLKCTL_GX_GDSC>;
+		power-domain-names = "cx", "gx";
 
 		clocks = <&gpucc GPU_CC_CX_GMU_CLK>,
 			<&gpucc GPU_CC_CXO_CLK>,
