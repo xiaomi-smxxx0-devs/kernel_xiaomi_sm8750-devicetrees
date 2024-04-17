@@ -58,6 +58,19 @@
 		reg = <0x0 0xfc800000 0x0 0x02b00000>;
 		label = "cont_splash_region";
 	};
+	/*
+	 * Demura memory regions are to be commented out if
+	 * feature not in use.
+	 */
+	demura_memory_0: demura_region_0 {
+		reg = <0x0 0x0 0x0 0x0>;
+		label = "demura hfc region 0";
+	};
+
+	demura_memory_1: demura_region_1 {
+		reg = <0x0 0x0 0x0 0x0>;
+		label = "demura hfc region 1";
+	};
 };
 
 &sde_dsi {
@@ -119,7 +132,8 @@
 };
 
 &mdss_mdp {
-	connectors = <&sde_dsi &sde_dsi1 &smmu_sde_unsec &smmu_sde_sec &sde_wb1 &sde_wb2 &sde_dp>;
+	connectors = <&sde_dsi &sde_dsi1 &smmu_sde_unsec &smmu_sde_sec &sde_wb1 &sde_wb2
+			&sde_dp &sde_cesta>;
 };
 
 &dsi_vtdr6130_amoled_cmd {
@@ -155,42 +169,37 @@
 	qcom,mdss-dsi-display-timings {
 		timing@0 {
 			qcom,partial-update-enabled = "single_roi";
-			qcom,panel-roi-alignment = <0 0 720 40 1440 40>;
+			qcom,panel-roi-alignment = <720 40 720 40 1440 40>;
 		};
 
 		timing@1 {
 			qcom,partial-update-enabled = "single_roi";
-			qcom,panel-roi-alignment = <0 0 540 40 1080 40>;
+			qcom,panel-roi-alignment = <720 40 720 40 1440 40>;
 		};
 
 		timing@2 {
 			qcom,partial-update-enabled = "single_roi";
-			qcom,panel-roi-alignment = <0 0 720 40 1440 40>;
+			qcom,panel-roi-alignment = <720 40 720 40 1440 40>;
 		};
 
 		timing@3 {
 			qcom,partial-update-enabled = "single_roi";
-			qcom,panel-roi-alignment = <0 0 720 40 1440 40>;
+			qcom,panel-roi-alignment = <720 40 720 40 1440 40>;
 		};
 
 		timing@4 {
 			qcom,partial-update-enabled = "single_roi";
-			qcom,panel-roi-alignment = <0 0 720 40 1440 40>;
+			qcom,panel-roi-alignment = <720 40 720 40 1440 40>;
 		};
 
 		timing@5 {
 			qcom,partial-update-enabled = "single_roi";
-			qcom,panel-roi-alignment = <0 0 720 40 1440 40>;
+			qcom,panel-roi-alignment = <720 40 720 40 1440 40>;
 		};
 
 		timing@6 {
 			qcom,partial-update-enabled = "single_roi";
-			qcom,panel-roi-alignment = <0 0 720 40 1440 40>;
-		};
-
-		timing@7 {
-			qcom,partial-update-enabled = "single_roi";
-			qcom,panel-roi-alignment = <0 0 720 40 1440 40>;
+			qcom,panel-roi-alignment = <720 40 720 40 1440 40>;
 		};
 	};
 };
@@ -199,17 +208,46 @@
 	qcom,mdss-dsi-display-timings {
 		timing@0 {
 			qcom,partial-update-enabled = "single_roi";
-			qcom,panel-roi-alignment = <0 0 720 40 1440 40>;
+			qcom,panel-roi-alignment = <720 40 720 40 1440 40>;
 		};
 
 		timing@1 {
 			qcom,partial-update-enabled = "single_roi";
-			qcom,panel-roi-alignment = <0 0 720 40 1440 40>;
+			qcom,panel-roi-alignment = <720 40 720 40 1440 40>;
 		};
 
 		timing@2 {
 			qcom,partial-update-enabled = "single_roi";
-			qcom,panel-roi-alignment = <0 0 720 40 1440 40>;
+			qcom,panel-roi-alignment = <720 40 720 40 1440 40>;
+		};
+	};
+};
+
+&dsi_nt37801_amoled_fhd_plus_cmd {
+	qcom,mdss-dsi-display-timings {
+		timing@0 {
+			qcom,partial-update-enabled = "single_roi";
+			qcom,panel-roi-alignment = <540 40 540 40 1080 40>;
+		};
+
+		timing@1 {
+			qcom,partial-update-enabled = "single_roi";
+			qcom,panel-roi-alignment = <540 40 540 40 1080 40>;
+		};
+
+		timing@2 {
+			qcom,partial-update-enabled = "single_roi";
+			qcom,panel-roi-alignment = <540 40 540 40 1080 40>;
+		};
+
+		timing@3 {
+			qcom,partial-update-enabled = "single_roi";
+			qcom,panel-roi-alignment = <540 40 540 40 1080 40>;
+		};
+
+		timing@4 {
+			qcom,partial-update-enabled = "single_roi";
+			qcom,panel-roi-alignment = <540 40 540 40 1080 40>;
 		};
 	};
 };
