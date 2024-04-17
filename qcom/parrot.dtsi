@@ -2839,6 +2839,7 @@
 #include "parrot-qupv3.dtsi"
 #include "parrot-dma-heaps.dtsi"
 #include "msm-arm-smmu-parrot.dtsi"
+#include "parrot-walt.dtsi"
 
 &qupv3_se3_2uart {
 	status = "ok";
