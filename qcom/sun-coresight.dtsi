@@ -2163,7 +2163,6 @@
 
 		cluster = <0>;
 		core = <0>;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2271,7 +2270,6 @@
 
 		cluster = <0>;
 		core = <1>;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2378,7 +2376,6 @@
 
 		cluster = <0>;
 		core = <2>;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2485,7 +2482,6 @@
 
 		cluster = <0>;
 		core = <3>;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2592,7 +2588,6 @@
 
 		cluster = <0>;
 		core = <4>;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2699,7 +2694,6 @@
 
 		cluster = <0>;
 		core = <5>;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2862,7 +2856,6 @@
 
 		cluster = <0>;
 		qcom,uncore_uetm;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -3040,7 +3033,6 @@
 
 		cluster = <1>;
 		core = <0>;
-		power-domains = <&CLUSTER_PD1>;
 
 		out-ports {
 			port {
@@ -3147,7 +3139,6 @@
 
 		cluster = <1>;
 		core = <1>;
-		power-domains = <&CLUSTER_PD1>;
 
 		out-ports {
 			port {
@@ -3278,7 +3269,6 @@
 
 		cluster = <1>;
 		qcom,uncore_uetm;
-		power-domains = <&CLUSTER_PD1>;
 
 		out-ports {
 			port {
