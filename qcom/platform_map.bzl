@@ -27,6 +27,8 @@ _platform_map = {
             {"name": "sun-mtp-kiwi-v8-overlay.dtbo"},
             {"name": "sun-mtp-nfc-overlay.dtbo"},
             {"name": "sun-mtp-overlay.dtbo"},
+            {"name": "sun-mtp-qmp1000-overlay.dtbo"},
+            {"name": "sun-mtp-qmp1000-v8-overlay.dtbo"},
             {"name": "sun-mtp-v8-overlay.dtbo"},
             {"name": "sun-qrd-sku1-overlay.dtbo"},
             {"name": "sun-qrd-sku1-v8-overlay.dtbo"},
