@@ -25,7 +25,7 @@
 
         /* SVS2 */
         qcom,svs2 =
-                <600000 0 600000 1300000 0 76800>;
+		<0 0 0 1300000 0 76800>;
 
         /* SVS */
         qcom,svs =
@@ -44,32 +44,11 @@
 
         /* Low Latency pipe alloc factor */
         qcom,ipa-gen-rx-ll-pool-sz-factor = <1>;
-	#address-cells = <2>;
-	#size-cells = <2>;
-};
-
-&soc {
-	ipa_smmu_ap_partition: ipa_smmu_ap_partition {
-		iommu-addresses = <&ipa_smmu_ap 0x0 0x0 0x0 0x20000000>,
-			<&ipa_smmu_ap 0x0 0x40000000 0xFFFFFFFF 0xC0000000>;
-	};
-
-	ipa_smmu_uc_partition: ipa_smmu_uc_partition {
-		iommu-addresses = <&ipa_smmu_uc 0x0 0x0 0x0 0x20000000>,
-			<&ipa_smmu_uc 0x0 0x40000000 0xFFFFFFFF 0xC0000000>;
-	};
 };
 
 &ipa_smmu_ap {
-	/delete-property/ qcom,iommu-dma-addr-pool;
-	memory-region = <&ipa_smmu_ap_partition>;
 	qcom,additional-mapping =
 		/* modem tables in IMEM */
 		<0x14683000 0x14683000 0x2000>;
 	qcom,ipa-q6-smem-size = <55296>;
-};
-
-&ipa_smmu_uc {
-	/delete-property/ qcom,iommu-dma-addr-pool;
-	memory-region = <&ipa_smmu_uc_partition>;
 };
