@@ -2,6 +2,7 @@ ifneq ($(CONFIG_ARCH_QTI_VM), y)
 
 ifeq ($(CONFIG_ARCH_SUN), y)
 dtbo-y += sun-eva.dtbo
+dtbo-y += sun-eva-v2.dtbo
 endif
 
 ifeq ($(CONFIG_ARCH_PINEAPPLE), y)
