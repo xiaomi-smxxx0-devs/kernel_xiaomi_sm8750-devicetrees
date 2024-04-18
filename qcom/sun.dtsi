@@ -3143,6 +3143,16 @@
 		compatible = "qcom,mpam";
 		reg = <0x17b6f000 0x1000>;
 		reg-names = "mon-base";
+
+		L2_0 {
+			qcom,msc-id = <0>;
+			qcom,msc-name = "L2_0";
+		};
+
+		L2_1 {
+			qcom,msc-id = <1>;
+			qcom,msc-name = "L2_1";
+		};
 	};
 
 	llcc_pmu: llcc-pmu@24095000 {
