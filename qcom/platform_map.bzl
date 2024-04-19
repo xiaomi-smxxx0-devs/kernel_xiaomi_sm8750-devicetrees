@@ -50,7 +50,7 @@ _platform_map = {
             {"name": "sunp-hdk-overlay.dtbo"},
             {"name": "sun-rumi-overlay.dtbo"},
         ],
-        "binary_compatible_with": ["tuna"],
+        "binary_compatible_with": ["tuna", "kera"],
     },
     "tuna": {
         "dtb_list": [
@@ -59,6 +59,17 @@ _platform_map = {
         "dtbo_list": [
             {
                 "name": "tuna-rumi-overlay.dtbo",
+                "apq": False,
+            },
+        ],
+    },
+    "kera": {
+        "dtb_list": [
+            {"name": "kera.dtb"},
+        ],
+        "dtbo_list": [
+            {
+                "name": "kera-rumi-overlay.dtbo",
                 "apq": False,
             },
         ],
