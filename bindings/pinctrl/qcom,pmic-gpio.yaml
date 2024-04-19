@@ -18,6 +18,7 @@ properties:
     items:
       - enum:
           - qcom,pm2250-gpio
+          - qcom,pm5100-gpio
           - qcom,pm660-gpio
           - qcom,pm660l-gpio
           - qcom,pm6125-gpio
@@ -303,6 +304,7 @@ allOf:
           contains:
             enum:
               - qcom,pmx65-gpio
+              - qcom,pm5100-gpio
     then:
       properties:
         gpio-line-names:
@@ -474,6 +476,7 @@ $defs:
                                             and gpio11)
                  - gpio1-gpio16 for pmx65
                  - gpio1-gpio12 for pmxr2230
+                 - gpio1-gpio16 for pm5100
 
         items:
           pattern: "^gpio([0-9]+)$"
