@@ -50,6 +50,14 @@ sun-dtb-$(CONFIG_ARCH_SUN) += \
 	$(call add-overlays, $(SUN_BOARDS) $(NOAPQ_SUN_BOARDS),$(SUN_BASE_DTB))\
 	$(call add-overlays, $(SUN_BOARDS) $(APQ_SUN_BOARDS),$(SUN_APQ_BASE_DTB))
 sun-overlays-dtb-$(CONFIG_ARCH_SUN) += $(SUN_BOARDS) $(NOAPQ_SUN_BOARDS) $(SUN_BASE_DTB) $(SUN_APQ_BASE_DTB)
+
+TUNA_BASE_DTB += tuna.dtb
+NOAPQ_TUNA_BOARDS += \
+		 tuna-rumi-overlay.dtbo
+
+sun-dtb-$(CONFIG_ARCH_TUNA) +=  \
+        $(call add-overlays, $(NOAPQ_TUNA_BOARDS),$(TUNA_BASE_DTB))
+sun-overlays-dtb-$(CONFIG_ARCH_TUNA) += $(NOAPQ_TUNA_BOARDS) $(TUNA_BASE_DTB)
 dtb-y += $(sun-dtb-y)
 
 PINEAPPLE_BASE_DTB += pineapple.dtb pineapple-v2.dtb
