@@ -76,7 +76,7 @@ properties:
           - enum:
               - qcom,parrot-atp
               - qcom,atp
-              -  qcom,parrot-idp
+              - qcom,parrot-idp
               - qcom,idp
               - qcom,parrot-qrd
               - qcom,qrd
@@ -94,5 +94,58 @@ properties:
               - qcom,parrotp-qrd
               - qcom,qrd
           - const: qcom,parrotp
+
+      - description: Qualcomm Technologies, Inc. RAVELIN
+        items:
+          - enum:
+              - qcom,ravelin-atp
+              - qcom,atp
+              - qcom,ravelin-idp
+              - qcom,idp
+              - qcom,ravelin-qrd
+              - qcom,qrd
+              - qcom,ravelin-rumi
+              - qcom,rumi
+          - const: qcom,ravelin
+
+      - description: Qualcomm Technologies, Inc. RAVELINP
+        items:
+          - enum:
+              - qcom,ravelinp-atp
+              - qcom,atp
+              - qcom,ravelinp-idp
+              - qcom,idp
+              - qcom,ravelinp-qrd
+              - qcom,qrd
+          - const: qcom,ravelinp
+
+      - description: Qualcomm Technologies, Inc. TUNA
+        items:
+          - enum:
+              - qcom,tuna-rumi
+              - qcom,rumi
+          - const: qcom,tuna
+
+      - description: Qualcomm Technologies, Inc. MONACO
+        items:
+          - enum:
+              - qcom,monaco-atp
+              - qcom,atp
+              - qcom,monaco-idp
+              - qcom,idp
+              - qcom,monaco-wdp
+              - qcom,wdp
+          - const: qcom,monaco
+
+      - description: Qualcomm Technologies, Inc. MONACOP
+        items:
+          - enum:
+              - qcom,monaco-atp
+              - qcom,atp
+              - qcom,monaco-idp
+              - qcom,idp
+              - qcom,monaco-wdp
+              - qcom,wdp
+          - const: qcom,monacop
 
 additionalProperties: true

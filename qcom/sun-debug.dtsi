@@ -894,10 +894,5 @@
 			qcom,dump-size = <0x300000>;
 			qcom,dump-id = <0x221>;
 		};
-
-		scandump_ubwcp {
-			qcom,dump-size = <0x40000>;
-			qcom,dump-id = <0x222>;
-		};
 	};
 };

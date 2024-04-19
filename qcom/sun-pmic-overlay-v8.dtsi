@@ -35,6 +35,11 @@
 	status = "ok";
 };
 
+&pm8550ve_f_tz {
+	io-channels = <&pmk8550_vadc PM8550VX_ADC5_GEN3_DIE_TEMP(5)>;
+	io-channel-names = "thermal";
+};
+
 &S8F_LEVEL {
 	regulator-name = "pm_v8f_s8_level";
 };

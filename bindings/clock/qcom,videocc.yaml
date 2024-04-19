@@ -21,6 +21,7 @@ description: |
     dt-bindings/clock/qcom,videocc-sm8250.h
     dt-bindings/clock/qcom,videocc-pineapple.h
     dt-bindings/clock/qcom,videocc-sun.h
+    dt-bindings/clock/qcom,videocc-parrot.h
 
 properties:
   compatible:
@@ -34,6 +35,7 @@ properties:
       - qcom,pineapple-videocc-v2
       - qcom,sun-videocc
       - qcom,sun-videocc-v2
+      - qcom,parrot-videocc
 
   clocks:
     items:

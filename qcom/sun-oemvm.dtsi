@@ -47,17 +47,15 @@
 			exit-latency-us = <129>;
 			min-residency-us = <560>;
 			arm,psci-suspend-param = <0x00000004>;
-			status = "disabled";
 		};
 
-		CLUSTER_PWR_DWN: cl5 { /* C4+CL5 */
+		CLUSTER_PWR_DWN: ss3 { /* C4+CL5+SS3 */
 			compatible = "arm,idle-state";
 			idle-state-name = "ret-pll-off";
 			entry-latency-us = <1964>;
 			exit-latency-us = <1901>;
 			min-residency-us = <24511>;
-			arm,psci-suspend-param = <0x01000054>;
-			status = "disabled";
+			arm,psci-suspend-param = <0x0000C354>;
 		};
 	};
 
@@ -108,6 +106,12 @@
 
 		vdevices {
 			generate = "/hypervisor";
+
+			minidump {
+				vdevice-type = "minidump";
+				push-compatible = "qcom,minidump_rm";
+				minidump_allowed;
+			};
 
 			rm-rpc {
 				vdevice-type = "rm-rpc";
@@ -251,11 +255,11 @@
 		affinity = <0>;
 	};
 
-	qcom,gh-qtimer@16805000 {
+	qcom,gh-qtimer@1680b000 {
 		compatible = "qcom,gh-qtmr";
-		reg = <0x16805000 0x1000>;
+		reg = <0x1680b000 0x1000>;
 		reg-names = "qtmr-base";
-		interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
+		interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "qcom,qtmr-intr";
 		qcom,secondary;
 	};

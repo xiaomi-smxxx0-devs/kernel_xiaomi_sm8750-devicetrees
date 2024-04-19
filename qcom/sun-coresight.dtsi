@@ -162,30 +162,6 @@
 		};
 
 		out-ports {
-			port {
-				funnel_gfx_dl_out_replicator_dummy: endpoint {
-				remote-endpoint =
-					<&replicator_dummy_in_funnel_gfx_dl>;
-				};
-			};
-		};
-	};
-
-	gpu-replicator {
-		compatible = "arm,coresight-static-replicator";
-
-		coresight-name = "coresight-replicator-gpu";
-
-		in-ports {
-			port {
-				replicator_dummy_in_funnel_gfx_dl: endpoint {
-					remote-endpoint =
-					<&funnel_gfx_dl_out_replicator_dummy>;
-				};
-			};
-		};
-
-		out-ports {
 			#address-cells = <1>;
 			#size-cells = <0>;
 
@@ -194,6 +170,7 @@
 				replicator_dummy_out_tpda_dlet: endpoint {
 					remote-endpoint =
 					<&tpda_dlet_in_replicator_dummy>;
+					source = <&tpdm_gfx>;
 				};
 			};
 
@@ -205,7 +182,6 @@
 				};
 			};
 		};
-
 	};
 
 	tpda_dlet: tpda@10c38000 {
@@ -1047,13 +1023,22 @@
 		compatible = "arm,coresight-dummy-source";
 
 		coresight-name = "coresight-modem-diag";
-		atid = <50>;
-
+		qcom,atid-num = <1>;
+		trace-name = "modem-diag";
 		out-ports {
-			port {
+			port@0 {
+				reg = <0>;
 				modem_diag_out_funnel_modem_q6: endpoint {
 					remote-endpoint =
 					<&funnel_modem_q6_in_modem_diag>;
+				};
+			};
+
+			port@1 {
+				reg = <1>;
+				modem_diag_out_qmi: endpoint {
+					remote-endpoint =
+						<&qmi_in_modem_diag>;
 				};
 			};
 		};
@@ -1652,7 +1637,7 @@
 		};
 	};
 
-	tpdm_mm_bcv: tpdm@0x1084e000 {
+	tpdm_mm_bcv: tpdm@1084e000 {
 		compatible = "arm,primecell";
 		arm,primecell-periphid = <0x000bb968>;
 		reg = <0x1084e000 0x1000>;
@@ -2187,6 +2172,7 @@
 
 		cluster = <0>;
 		core = <0>;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2243,6 +2229,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2293,6 +2280,7 @@
 
 		cluster = <0>;
 		core = <1>;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2348,6 +2336,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2398,6 +2387,7 @@
 
 		cluster = <0>;
 		core = <2>;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2453,6 +2443,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2503,6 +2494,7 @@
 
 		cluster = <0>;
 		core = <3>;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2558,6 +2550,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2608,6 +2601,7 @@
 
 		cluster = <0>;
 		core = <4>;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2663,6 +2657,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2713,6 +2708,7 @@
 
 		cluster = <0>;
 		core = <5>;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2768,6 +2764,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2802,6 +2799,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			#address-cells = <1>;
@@ -2873,6 +2871,7 @@
 
 		cluster = <0>;
 		qcom,uncore_uetm;
+		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2893,6 +2892,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2924,6 +2924,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -2958,6 +2959,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			#address-cells = <1>;
@@ -3000,6 +3002,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
 			port {
@@ -3046,6 +3049,7 @@
 
 		cluster = <1>;
 		core = <0>;
+		power-domains = <&CLUSTER_PD1>;
 
 		out-ports {
 			port {
@@ -3101,6 +3105,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			port {
@@ -3151,6 +3156,7 @@
 
 		cluster = <1>;
 		core = <1>;
+		power-domains = <&CLUSTER_PD1>;
 
 		out-ports {
 			port {
@@ -3206,6 +3212,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			port {
@@ -3240,6 +3247,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			#address-cells = <1>;
@@ -3279,6 +3287,7 @@
 
 		cluster = <1>;
 		qcom,uncore_uetm;
+		power-domains = <&CLUSTER_PD1>;
 
 		out-ports {
 			port {
@@ -3299,6 +3308,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			port {
@@ -3330,6 +3340,7 @@
 		qcom,replicator-loses-context;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			port {
@@ -3364,6 +3375,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			#address-cells = <1>;
@@ -3396,7 +3408,7 @@
 		};
 	};
 
-	tmc@1b109000 {
+	tmc@13d09000 {
 		compatible = "arm,primecell";
 		arm,primecell-periphid = <0x000bb961>;
 		reg = <0x13d09000 0x1000>;
@@ -3406,6 +3418,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
 			port {
@@ -4092,7 +4105,6 @@
 		reg-names = "stm-base", "stm-stimulus-base";
 
 		coresight-name = "coresight-stm";
-		atid = <16>;
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -5325,7 +5337,6 @@
 
 		qcom,iommu-dma = "bypass";
 		iommus = <&apps_smmu 0x04e0 0x0>;
-		qcom,iommu-dma-addr-pool = <0x0 0xffc00000>;
 		dma-coherent;
 		arm,scatter-gather;
 
@@ -5361,7 +5372,6 @@
 		coresight-name = "coresight-tmc-etr1";
 
 		iommus = <&apps_smmu 0x0500 0x0>;
-		qcom,iommu-dma-addr-pool = <0x0 0xffc00000>;
 		dma-coherent;
 		arm,scatter-gather;
 
@@ -5481,6 +5491,14 @@
 						<&tmc_modem_out_qmi>;
 				};
 			};
+
+			port@3 {
+				reg = <3>;
+				qmi_in_modem_diag: endpoint {
+					remote-endpoint =
+						<&modem_diag_out_qmi>;
+				};
+			};
 		};
 	};
 
@@ -5505,8 +5523,19 @@
 		reg = <0x10010000 0x1000>;
 
 		arm,primecell-periphid = <0x000bb922>;
-		coresight-name = "coresight-cti-swao";
+		coresight-name = "coresight-cti-qdss";
 
+		qcom,extended_cti;
+		clocks = <&aoss_qmp>;
+		clock-names = "apb_pclk";
+	};
+
+	swao_cti: cti@10b00000 {
+		compatible = "arm,coresight-cti", "arm,primecell";
+		reg = <0x10b00000 0x1000>;
+
+		arm,primecell-periphid = <0x000bb922>;
+		coresight-name = "coresight-cti-swao";
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";

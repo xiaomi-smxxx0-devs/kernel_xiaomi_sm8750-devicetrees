@@ -274,7 +274,7 @@
 			pmih010x_trip1: trip1 {
 				temperature = <115000>;
 				hysteresis = <0>;
-				type = "passive";
+				type = "hot";
 			};
 
 			pmih010x_trip2: trip2 {
@@ -301,7 +301,7 @@
 			pmih010x_lite_trip1: trip1 {
 				temperature = <135000>;
 				hysteresis = <0>;
-				type = "passive";
+				type = "hot";
 			};
 
 			pmih010x_lite_trip2: trip2 {
