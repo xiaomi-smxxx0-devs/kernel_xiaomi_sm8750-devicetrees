@@ -126,6 +126,13 @@ properties:
               - qcom,rumi
           - const: qcom,tuna
 
+      - description: Qualcomm Technologies, Inc. KERA
+        items:
+          - enum:
+              - qcom,kera-rumi
+              - qcom,rumi
+          - const: qcom,kera
+
       - description: Qualcomm Technologies, Inc. MONACO
         items:
           - enum:
