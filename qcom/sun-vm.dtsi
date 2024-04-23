@@ -218,6 +218,12 @@
 				};
 			};
 
+			vrtc {
+				vdevice-type = "vrtc-pl031";
+				peer-default;
+				allocate-base;
+			};
+
 			test-dbl-tuivm {
 				vdevice-type = "doorbell";
 				generate = "/hypervisor/test-dbl-tuivm";
