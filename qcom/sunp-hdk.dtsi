@@ -5,6 +5,10 @@
 
 #include "sun-qrd-sku1-v8.dtsi"
 
+&sdhc_2 {
+	cd-gpios = <&tlmm 55 GPIO_ACTIVE_HIGH>;
+};
+
 &qupv3_se4_spi {
 	#address-cells = <1>;
 	#size-cells = <0>;
