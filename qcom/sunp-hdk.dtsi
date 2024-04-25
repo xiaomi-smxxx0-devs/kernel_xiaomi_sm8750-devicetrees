@@ -57,3 +57,36 @@
 						&tlmm 51 0 &tlmm 161 0 &tlmm 162 0x2008>;
 	};
 };
+
+&tlmm {
+	fan_enable_pin {
+		mux {
+			pins = "gpio182";
+			function = "gpio";
+		};
+
+		config {
+			pins = "gpio182";
+			bias-pull-up;
+			drive-strength = <16>;
+		};
+	};
+};
+
+&qupv3_se3_i2c {
+	status = "ok";
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	fancontroller: max31760@50 {
+		compatible = "maxim,max31760";
+		reg = <0x50>;
+		#cooling-cells = <2>;
+		maxim,fan-num = <1>;
+		maxim,vdd-supply = <&BOB1>;
+		maxim,vcca-supply = <&L15B>;
+		regulator-name = "maxim,vdd", "maxim,vcca";
+		maxim,pwr-en-gpio = <&tlmm 182 GPIO_ACTIVE_LOW>;
+		status = "ok";
+	};
+};
