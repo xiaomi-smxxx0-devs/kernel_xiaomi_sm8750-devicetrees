@@ -46,6 +46,7 @@
 		qcom,gcc-reg = <0x110000 0x90000>;
 
 		pas-id = <26>;
+		soc_ver = <0x10000>;
 		memory-region = <&cvp_mem>;
 
 		/* UC region mapping */
