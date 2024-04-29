@@ -1654,7 +1654,7 @@
 	};
 
 	clk_virt: interconnect {
-		/* compatible = "qcom,monaco-clk_virt"; */
+		compatible = "qcom,monaco-clk_virt";
 		#interconnect-cells = <1>;
 		clock-names = "bus", "bus_a";
 		clocks = <&rpmcc RPM_SMD_QUP_CLK>,
@@ -1662,7 +1662,7 @@
 	};
 
 	mmnrt_virt: interconnect@0 {
-		/* compatible = "qcom,monaco-mmnrt_virt"; */
+		compatible = "qcom,monaco-mmnrt_virt";
 		#interconnect-cells = <1>;
 		qcom,util-factor = <142>;
 		qcom,keepalive;
@@ -1672,7 +1672,7 @@
 	};
 
 	mmrt_virt: interconnect@1 {
-		/* compatible = "qcom,monaco-mmrt_virt"; */
+		compatible = "qcom,monaco-mmrt_virt";
 		#interconnect-cells = <1>;
 		qcom,util-factor = <142>;
 		qcom,keepalive;
@@ -1683,7 +1683,7 @@
 
 	system_noc: interconnect@1880000 {
 		reg = <0x01880000 0x5e200>;
-		/* compatible = "qcom,monaco-system_noc"; */
+		compatible = "qcom,monaco-system_noc";
 		#interconnect-cells = <1>;
 		qcom,keepalive;
 		clock-names = "bus", "bus_a";
@@ -1696,7 +1696,7 @@
 
 	config_noc: interconnect@1900000 {
 		reg = <0x01900000 0x1000>;
-		/* compatible = "qcom,monaco-config_noc"; */
+		compatible = "qcom,monaco-config_noc";
 		#interconnect-cells = <1>;
 		qcom,keepalive;
 		clock-names = "bus", "bus_a";
@@ -1706,7 +1706,7 @@
 
 	bimc: interconnect@4480000 {
 		reg = <0x04480000 0x80000>;
-		/* compatible = "qcom,monaco-bimc"; */
+		compatible = "qcom,monaco-bimc";
 		#interconnect-cells = <1>;
 		qcom,util-factor = <151>;
 		qcom,keepalive;
