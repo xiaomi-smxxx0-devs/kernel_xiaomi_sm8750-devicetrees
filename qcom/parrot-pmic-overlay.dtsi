@@ -169,10 +169,6 @@
 	};
 };
 
-&pm6150l_revid {
-	status = "disabled";
-};
-
 &pm6150l_4 {
 	qcom,power-on@800 {
 		status = "disabled";
@@ -422,15 +418,12 @@
 		pinctrl-0 = <&pm8010i_active>;
 
 		pm8010-chip@900 {
+			compatible = "qcom,pm8008-chip";
 			reg = <0x900>;
 
 			PM8010I_EN: qcom,pm8008-chip-en {
 				regulator-name = "pm8010i-chip-en";
 			};
-		};
-
-		qcom,revid@100 {
-			reg = <0x100>;
 		};
 	};
 
@@ -441,6 +434,7 @@
 		#size-cells = <0>;
 
 		qcom,pm8010i-regulator {
+			compatible = "qcom,pm8010-regulator";
 			#address-cells = <1>;
 			#size-cells = <0>;
 
@@ -517,15 +511,12 @@
 		pinctrl-0 = <&pm8010j_active>;
 
 		pm8010-chip@900 {
+			compatible = "qcom,pm8008-chip";
 			reg = <0x900>;
 
 			PM8010J_EN: qcom,pm8008-chip-en {
 				regulator-name = "pm8010j-chip-en";
 			};
-		};
-
-		qcom,revid@100 {
-			reg = <0x100>;
 		};
 	};
 
@@ -536,6 +527,7 @@
 		#size-cells = <0>;
 
 		qcom,pm8010j-regulator {
+			compatible = "qcom,pm8010-regulator";
 			#address-cells = <1>;
 			#size-cells = <0>;
 

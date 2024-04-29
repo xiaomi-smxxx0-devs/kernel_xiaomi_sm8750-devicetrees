@@ -36,6 +36,7 @@
 
 		pm6450_pwm_1: qcom,pwms@e800 {
 			status = "disabled";
+			compatible = "qcom,pwm-lpg";
 			reg = <0xe800>;
 			reg-names = "lpg-base";
 			qcom,num-lpg-channels = <1>;
