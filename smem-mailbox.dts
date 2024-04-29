@@ -8,8 +8,6 @@
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/soc/qcom,ipcc.h>
-#include <dt-bindings/interconnect/qcom,pineapple.h>
-#include <dt-bindings/clock/qcom,gcc-pineapple.h>
 #include <dt-bindings/clock/qcom,rpmh.h>
 #include "smem-mailbox.dtsi"
 
