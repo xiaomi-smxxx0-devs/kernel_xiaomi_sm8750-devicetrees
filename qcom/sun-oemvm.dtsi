@@ -182,6 +182,15 @@
 				qcom,label = <0x3>;
 			};
 
+			mem-buf-message-queue-pair {
+				vdevice-type = "message-queue-pair";
+				generate = "/hypervisor/membuf-msgq-pair";
+				message-size = <0x000000f0>;
+				queue-depth = <0x00000008>;
+				peer-default;
+				qcom,label = <0x000000C>;
+			};
+
 			qrtr-shm {
 				vdevice-type = "shm-doorbell";
 				generate = "/hypervisor/qrtr-shm";
@@ -237,11 +246,13 @@
 
 	qcom,mem-buf {
 		compatible = "qcom,mem-buf";
+		qcom,mem-buf-capabilities = "consumer";
 		qcom,vmid = <49>;
 	};
 
 	qcom,mem-buf-msgq {
 		compatible = "qcom,mem-buf-msgq";
+		qcom,msgq-names = "oem_vm";
 	};
 
 	qcom,test-dbl-oemvm {
