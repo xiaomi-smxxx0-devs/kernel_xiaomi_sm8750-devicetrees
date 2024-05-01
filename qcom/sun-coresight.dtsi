@@ -812,6 +812,7 @@
 		coresight-name = "coresight-turing-etm0";
 
 		qcom,atid-num = <2>;
+		atid = <38 39>;
 		trace-name = "turing-etm0";
 
 
@@ -971,6 +972,7 @@
 
 		coresight-name = "coresight-modem-etm0";
 		qcom,atid-num = <2>;
+		atid = <36 37>;
 		trace-name = "modem-etm0";
 		qcom,secure-component;
 
@@ -998,6 +1000,7 @@
 
 		coresight-name = "coresight-modem2-etm0";
 		qcom,atid-num = <1>;
+		atid = <39>;
 		trace-name = "modem2-etm0";
 
 		out-ports {
@@ -3813,6 +3816,7 @@
 		coresight-name = "coresight-audio-etm0";
 		qcom,atid-num = <2>;
 		trace-name = "audio-etm0";
+		atid = <40 41>;
 
 		out-ports {
 			port@0 {
