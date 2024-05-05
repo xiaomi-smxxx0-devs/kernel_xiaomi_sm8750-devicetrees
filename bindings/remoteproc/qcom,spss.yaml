@@ -58,6 +58,12 @@ properties:
   px-supply:
     description: Phandle to the PX regulator
 
+  sensors-supply:
+    description: Phandle to the Sensors regulator
+
+  sensors-uV-uA:
+    description: Voltage and Current levels for Sensors regulator
+
   memory-region:
     maxItems: 1
     description: Reference to the reserved-memory for the SPSS
@@ -74,6 +80,8 @@ required:
   - reg-names
   - interrupts
   - cx-supply
+  - sensors-supply
+  - sensors-uV-uA
   - clocks
   - clock-names
   - memory-region
@@ -98,6 +106,9 @@ examples:
 
         cx-supply = <&VDD_CX_LEVEL>;
         cx-uV-uA = <RPMH_REGULATOR_LEVEL_TURBO 100000>;
+
+        sensors-supply = <&L2J>;
+        sensors-uV-uA = <1200000 100000>;
 
         clocks = <&rpmhcc RPMH_CXO_CLK>;
         clock-names = "xo";
