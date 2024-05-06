@@ -213,7 +213,7 @@
 	};
 
 	pm8550-bcl-lvl0 {
-		polling-delay-passive = <100>;
+		polling-delay-passive = <50>;
 		polling-delay = <0>;
 		thermal-governor = "step_wise";
 		thermal-sensors = <&pm8550_bcl 5>;
@@ -228,7 +228,7 @@
 	};
 
 	pm8550-bcl-lvl1 {
-		polling-delay-passive = <100>;
+		polling-delay-passive = <50>;
 		polling-delay = <0>;
 		thermal-governor = "step_wise";
 		thermal-sensors = <&pm8550_bcl 6>;
@@ -243,7 +243,7 @@
 	};
 
 	pm8550-bcl-lvl2 {
-		polling-delay-passive = <100>;
+		polling-delay-passive = <50>;
 		polling-delay = <0>;
 		thermal-governor = "step_wise";
 		thermal-sensors = <&pm8550_bcl 7>;
