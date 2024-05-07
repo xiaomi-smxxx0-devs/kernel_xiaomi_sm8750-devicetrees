@@ -1463,7 +1463,6 @@
 		reset-names = "core_reset";
 
 		iommus = <&apps_smmu 0x60 0x0>;
-		dma-coherent;
 		qcom,iommu-dma = "fastmap";
 
 		qcom,iommu-dma-addr-pool = <0x40000000 0x10000000>;
@@ -1526,7 +1525,6 @@
 					0x2C010800 0x80040868>;
 
 		iommus = <&apps_smmu 0x540 0x0>;
-		dma-coherent;
 		qcom,iommu-dma = "fastmap";
 
 		qcom,iommu-dma-addr-pool = <0x40000000 0x10000000>;
