@@ -30,8 +30,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 
-			qcom,initial-pwrlevel = <9>;
-			qcom,initial-min-pwrlevel = <9>;
+			qcom,initial-pwrlevel = <10>;
 			qcom,sku-codes = <SKU_CODE(PCODE_UNKNOWN, FC_AB)>;
 
 			/* NOM */
@@ -170,9 +169,9 @@
 				qcom,gpu-freq = <160000000>;
 				qcom,level = <RPMH_REGULATOR_LEVEL_LOW_SVS_D3>;
 
-				qcom,bus-freq = <2>;
+				qcom,bus-freq = <3>;
 				qcom,bus-min = <2>;
-				qcom,bus-max = <2>;
+				qcom,bus-max = <3>;
 			};
 		};
 
@@ -180,8 +179,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 
-			qcom,initial-pwrlevel = <11>;
-			qcom,initial-min-pwrlevel = <11>;
+			qcom,initial-pwrlevel = <12>;
 			qcom,sku-codes = <SKU_CODE(PCODE_UNKNOWN, FC_AC)>;
 
 			/* TURBO_L1 */
@@ -346,9 +344,9 @@
 				qcom,gpu-freq = <160000000>;
 				qcom,level = <RPMH_REGULATOR_LEVEL_LOW_SVS_D3>;
 
-				qcom,bus-freq = <2>;
+				qcom,bus-freq = <3>;
 				qcom,bus-min = <2>;
-				qcom,bus-max = <2>;
+				qcom,bus-max = <3>;
 			};
 		};
 
@@ -356,8 +354,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 
-			qcom,initial-pwrlevel = <12>;
-			qcom,initial-min-pwrlevel = <12>;
+			qcom,initial-pwrlevel = <13>;
 			qcom,sku-codes = <SKU_CODE(PCODE_UNKNOWN, FC_UNKNOWN)>;
 
 			/* TURBO_L3 */
@@ -535,9 +532,9 @@
 				qcom,gpu-freq = <160000000>;
 				qcom,level = <RPMH_REGULATOR_LEVEL_LOW_SVS_D3>;
 
-				qcom,bus-freq = <2>;
+				qcom,bus-freq = <3>;
 				qcom,bus-min = <2>;
-				qcom,bus-max = <2>;
+				qcom,bus-max = <3>;
 			};
 		};
 	};
