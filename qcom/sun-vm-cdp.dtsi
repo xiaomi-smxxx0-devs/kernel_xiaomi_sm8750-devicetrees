@@ -12,6 +12,7 @@
 	st_fts@49 {
 		compatible = "st,fts";
 		reg = <0x49>;
+		st,irq-flags = <8>;
 
 		st,touch-type = "primary";
 		st,qts_en;
@@ -33,6 +34,7 @@
 	st_fts@49 {
 		compatible = "st,fts2";
 		reg = <0x49>;
+		st,irq-flags = <8>;
 
 		st,touch-type = "secondary";
 		st,qts_en;

@@ -314,6 +314,7 @@
 		pinctrl-0 = <&ts_active>;
 		pinctrl-1 = <&ts_int_suspend &ts_reset_suspend>;
 		st,irq-gpio = <&tlmm 162 0x2008>;
+		st,irq-flags = <8>;
 		st,reset-gpio = <&tlmm 161 0x00>;
 		st,regulator_dvdd = "vdd";
 		st,regulator_avdd = "avdd";
