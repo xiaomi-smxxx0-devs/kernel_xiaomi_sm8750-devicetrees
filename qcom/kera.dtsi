@@ -39,7 +39,9 @@
 		qcom_scm: qcom_scm { };
 	};
 
-	aliases {};
+	aliases {
+		serial0 = &qupv3_se13_2uart;
+	};
 
 	cpus {
 		#address-cells = <2>;
@@ -725,3 +727,8 @@
 
 #include "kera-pinctrl.dtsi"
 #include "kera-usb.dtsi"
+#include "kera-qupv3.dtsi"
+
+&qupv3_se13_2uart {
+	status = "ok";
+};
