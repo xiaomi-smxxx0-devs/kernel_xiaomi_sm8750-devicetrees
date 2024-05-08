@@ -3138,6 +3138,8 @@
 
 	qcom_mpam: qcom,mpam {
 		compatible = "qcom,mpam";
+		reg = <0x17b6f000 0x1000>;
+		reg-names = "mon-base";
 	};
 
 	llcc_pmu: llcc-pmu@24095000 {
