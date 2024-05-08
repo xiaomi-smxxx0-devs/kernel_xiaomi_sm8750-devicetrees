@@ -351,7 +351,7 @@
 };
 
 &firmware {
-	scm {
+	qcom_scm: scm {
 		compatible = "qcom,scm";
 		qcom,dload-mode = <&tcsr 0x13000>;
 	};
