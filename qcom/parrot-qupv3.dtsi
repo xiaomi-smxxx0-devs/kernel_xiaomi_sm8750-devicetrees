@@ -91,7 +91,7 @@
 			interrupts = <GIC_SPI 601 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP0_S0_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A1NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -114,7 +114,7 @@
 			interrupts = <GIC_SPI 601 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP0_S0_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A1NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -138,7 +138,7 @@
 			interrupts = <GIC_SPI 602 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP0_S1_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A1NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -161,7 +161,7 @@
 			interrupts = <GIC_SPI 602 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP0_S1_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A1NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -185,7 +185,7 @@
 			interrupts = <GIC_SPI 603 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP0_S2_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A1NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -209,7 +209,7 @@
 			interrupts = <GIC_SPI 603 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP0_S2_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A1NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -233,7 +233,7 @@
 			interrupts = <GIC_SPI 605 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP0_S4_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A1NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -256,7 +256,7 @@
 			interrupts = <GIC_SPI 605 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP0_S4_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A1NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -280,7 +280,7 @@
 			interrupts = <GIC_SPI 606 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP0_S5_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A1NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -303,7 +303,7 @@
 			interrupts = <GIC_SPI 606 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP0_S5_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A1NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -374,7 +374,7 @@
 			interrupts = <GIC_SPI 353 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP1_S0_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -396,7 +396,7 @@
 			interrupts = <GIC_SPI 353 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP1_S0_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -420,7 +420,7 @@
 			interrupts = <GIC_SPI 354 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP1_S1_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -443,7 +443,7 @@
 			interrupts = <GIC_SPI 354 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP1_S1_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -467,7 +467,7 @@
 			interrupts = <GIC_SPI 355 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP1_S2_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -490,7 +490,7 @@
 			interrupts = <GIC_SPI 355 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP1_S2_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -514,7 +514,7 @@
 			interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP1_S3_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -537,7 +537,7 @@
 			interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP1_S3_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -562,7 +562,7 @@
 					<&tlmm 17 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se-clk";
 			clocks = <&gcc GCC_QUPV3_WRAP1_S5_CLK>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
