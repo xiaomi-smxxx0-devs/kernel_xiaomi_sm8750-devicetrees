@@ -1527,6 +1527,9 @@
 		cx-supply = <&VDD_CX_LEVEL>;
 		cx-uV-uA = <RPMH_REGULATOR_LEVEL_TURBO 100000>;
 
+		sensors-supply = <&L2J>;
+		sensors-uV-uA = <1200000 100000>;
+
 		clocks = <&rpmhcc RPMH_CXO_CLK>;
 		clock-names = "xo";
 		qcom,proxy-clock-names = "xo";
