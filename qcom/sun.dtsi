@@ -3060,6 +3060,18 @@
 		qcom,primary;
 	};
 
+	qcom,test-large-dmabuf-tuivm {
+		compatible = "qcom,gh-large-dmabuf-test";
+		gunyah-label = <0xd>;
+		qcom,primary;
+	};
+
+	qcom,test-large-dmabuf-oemvm {
+		compatible = "qcom,gh-large-dmabuf-test";
+		gunyah-label = <0xe>;
+		qcom,primary;
+	};
+
 	qcom,gh-qtimer@1680b000 {
 		compatible = "qcom,gh-qtmr";
 		reg = <0x1680b000 0x1000>;
