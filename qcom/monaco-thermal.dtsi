@@ -69,8 +69,36 @@
 		};
 	};
 
+	qcom,cpu-hotplug {
+		compatible = "qcom,cpu-hotplug";
+
+		cpu0_hotplug: cpu0-hotplug {
+			qcom,cpu = <&CPU0>;
+			qcom,cdev-alias = "cpu-hotplug0";
+			#cooling-cells = <2>;
+		};
+
+		cpu1_hotplug: cpu1-hotplug {
+			qcom,cpu = <&CPU1>;
+			qcom,cdev-alias = "cpu-hotplug1";
+			#cooling-cells = <2>;
+		};
+
+		cpu2_hotplug: cpu2-hotplug {
+			qcom,cpu = <&CPU2>;
+			qcom,cdev-alias = "cpu-hotplug2";
+			#cooling-cells = <2>;
+		};
+
+		cpu3_hotplug: cpu3-hotplug {
+			qcom,cpu = <&CPU3>;
+			qcom,cdev-alias = "cpu-hotplug3";
+			#cooling-cells = <2>;
+		};
+	};
+
 	tsens0:tsens@4410000 {
-		//compatible = "qcom,tsens26xx";
+		compatible = "qcom,tsens26xx";
 		reg = <0x04410000 0x20>,
 			<0x04411000 0x140>;
 		reg-names = "tsens_srot_physical",
@@ -139,7 +167,7 @@
 	};
 
 	lmh_cpu_vdd: qcom,lmh-cpu-vdd@f550800 {
-		//compatible = "qcom,lmh-cpu-vdd";
+		compatible = "qcom,lmh-cpu-vdd";
 		reg =  <0xf550800 0x1000>;
 		#cooling-cells = <2>;
 	};
