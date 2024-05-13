@@ -17,13 +17,20 @@ properties:
     items:
       - const: qcom,mem-buf-msgq
 
+  qcom,msgq-names:
+    $ref: /schemas/types.yaml#/definitions/string-array
+    description:
+      A list of msgqs this device is able to communicate over.
+
 additionalProperties: false
 
 required:
   - compatible
+  - qcom,msgq-names
 
 examples:
   - |
     qcom,mem-buf-msgq {
         compatible = "qcom,mem-buf-msgq";
+        qcom,msgq-names = "trusted_vm", "oem_vm";
     };
