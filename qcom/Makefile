@@ -60,6 +60,15 @@ sun-dtb-$(CONFIG_ARCH_TUNA) +=  \
 sun-overlays-dtb-$(CONFIG_ARCH_TUNA) += $(NOAPQ_TUNA_BOARDS) $(TUNA_BASE_DTB)
 dtb-y += $(sun-dtb-y)
 
+KERA_BASE_DTB += kera.dtb
+NOAPQ_KERA_BOARDS += \
+		 kera-rumi-overlay.dtbo
+
+sun-dtb-$(CONFIG_ARCH_KERA) +=  \
+        $(call add-overlays, $(NOAPQ_KERA_BOARDS),$(KERA_BASE_DTB))
+sun-overlays-dtb-$(CONFIG_ARCH_KERA) += $(NOAPQ_KERA_BOARDS) $(KERA_BASE_DTB)
+dtb-y += $(sun-dtb-y)
+
 PINEAPPLE_BASE_DTB += pineapple.dtb pineapple-v2.dtb
 PINEAPPLE_APQ_BASE_DTB += pineapplep.dtb pineapplep-v2.dtb
 
