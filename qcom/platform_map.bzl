@@ -12,16 +12,6 @@ _platform_map = {
                 "apq": True,
             },
             {"name": "sun-v2.dtb"},
-            {"name": "sun-tp.dtb"},
-            {"name": "sun-tp-v2.dtb"},
-            {
-                "name": "sunp-tp.dtb",
-                "apq": True,
-            },
-            {
-                "name": "sunp-tp-v2.dtb",
-                "apq": True,
-            },
         ],
         "dtbo_list": [
             # keep sorted
