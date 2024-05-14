@@ -2659,10 +2659,6 @@
 		compatible = "qcom,c1dcvs-v2";
 	};
 
-	qcom_mpam: qcom,mpam {
-		compatible = "qcom,mpam";
-	};
-
 	qcom_cpufreq_stats: qcom,cpufreq_stats {
 		compatible = "qcom,cpufreq-stats-v2";
 	};
