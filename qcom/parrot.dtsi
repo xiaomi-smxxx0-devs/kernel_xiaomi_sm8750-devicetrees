@@ -2530,6 +2530,8 @@
 	};
 
 	qfprom_sys: qfprom@0 {
+		compatible = "qcom,qfprom-sys";
+
 		nvmem-cells = <&adsp_variant>,
 				<&feat_conf12>,
 				<&feat_conf13>,
