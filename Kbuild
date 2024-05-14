@@ -4,8 +4,7 @@ dtbo-y += gpu/pineapple-gpu.dtbo \
 endif
 
 ifeq ($(CONFIG_ARCH_SUN), y)
-dtbo-y += gpu/sun-gpu.dtbo \
-		gpu/sun-v2-gpu.dtbo
+dtbo-y += gpu/sun-gpu.dtbo
 endif
 
 always-y    := $(dtb-y) $(dtbo-y)
