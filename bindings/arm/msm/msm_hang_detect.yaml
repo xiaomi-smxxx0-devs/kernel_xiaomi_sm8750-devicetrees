@@ -7,7 +7,7 @@ $schema: "http://devicetree.org/meta-schemas/core.yaml#"
 title: QTI MSM Core Hang Detection
 
 maintainers:
-  - Elliot Berman <quic_eberman@quicinc.com>
+  - Elliot Berman <eberman@quicinc.com>
 
 description: |
   Core Hang Detection provides the three sysfs entries for configuring
