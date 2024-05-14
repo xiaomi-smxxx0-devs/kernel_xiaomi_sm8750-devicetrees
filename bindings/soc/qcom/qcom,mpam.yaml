@@ -9,6 +9,7 @@ title: Qualcomm Technologies, Inc. (QTI) MPAM Driver
 maintainers:
   - avajid@quicinc.com <quic_avajid@quicinc.com>
   - gurbaror@quicinc.com <quic_gurbaror@quicinc.com>
+  - Huang Yiwei <quic_hyiwei@quicinc.com>
 
 description: |
   The Qualcomm Technologies, Inc. (QTI) MPAM Driver provides sysfs nodes for
@@ -19,11 +20,25 @@ properties:
   compatible:
     const: qcom,mpam
 
+  reg:
+    items:
+      - description: address and size of CPUCP DTIM area for MPAM monitor data
+
+  reg-names:
+    items:
+      - const: mon-base
+
 required:
   - compatible
+  - reg
+  - reg-names
+
+additionalProperties: false
 
 examples:
   - |
     qcom_mpam: qcom,mpam {
       compatible = "qcom,mpam";
+      reg = <0x17b6f000 0x1000>;
+      reg-names = "mon-base";
     };
