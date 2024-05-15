@@ -29,6 +29,7 @@ dtbo-y += sun-audio.dtbo \
                 sun-audio-rcm.dtbo \
                 sun-audio-hamilton-rcm.dtbo \
                 sun-audio-hamilton-cdp.dtbo \
+                sun-audio-hamilton-mtp-v2.dtbo \
                 sun-audio-hamilton-mtp.dtbo
 endif
 
