@@ -1186,8 +1186,8 @@
 			"m1_active", "m1_suspend";
 		pinctrl-0 = <&cci_i2c_scl2_active &cci_i2c_sda2_active>;
 		pinctrl-1 = <&cci_i2c_scl2_suspend &cci_i2c_sda2_suspend>;
-		pinctrl-2 = <&cci_i2c_scl3_active &cci_i2c_scl3_active>;
-		pinctrl-3 = <&cci_i2c_scl3_suspend &cci_i2c_scl3_suspend>;
+		pinctrl-2 = <&cci_i2c_scl3_active &cci_i2c_sda3_active>;
+		pinctrl-3 = <&cci_i2c_scl3_suspend &cci_i2c_sda3_suspend>;
 		status = "ok";
 
 		i2c_freq_100Khz_cci1: qcom,i2c_standard_mode {
