@@ -131,9 +131,24 @@
 				dma-coherent;
 				dma_base = <0x0 0x0>;
 				memory {
-					qcom,label = <0x13>;
+					qcom,label = <0x16>;			//for persist.img
 					#address-cells = <0x2>;
 					base = <0x0 0xFFEFC000>;
+				};
+			};
+
+			virtio-mmio@1 {
+				vdevice-type = "virtio-mmio";
+				generate = "/virtio-mmio";
+				peer-default;
+				vqs-num = <0x2>;
+				push-compatible = "virtio,mmio";
+				dma-coherent;
+				dma_base = <0x0 0x4000>;
+				memory {
+					qcom,label = <0x13>;			//for system.img
+					#address-cells = <0x2>;
+					base = <0x0 0xFFF00000>;
 				};
 			};
 
@@ -142,11 +157,11 @@
 				generate = "/swiotlb";
 				push-compatible = "swiotlb";
 				peer-default;
-				dma_base = <0x0 0x4000>;
+				dma_base = <0x0 0x8000>;
 				memory {
 					qcom,label = <0x14>;
 					#address-cells = <0x2>;
-					base = <0x0 0xFFF00000>;
+					base = <0x0 0xFFF04000>;
 				};
 			};
 
