@@ -15,6 +15,17 @@ ifeq ($(CONFIG_ARCH_X1E80100),y)
 dtbo-y += x1e80100-kiwi-cnss.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_PARROT),y)
+dtbo-y += parrot-idp-wcn3990.dtbo
+dtbo-y += parrot-idp-wcn6750.dtbo
+dtbo-y += parrot-qrd-wcn3990.dtbo
+dtbo-y += parrot-qrd-wcn6750.dtbo
+dtbo-y += parrot-atp-wcn3990.dtbo
+dtbo-y += parrot-rumi-wcn3990.dtbo
+dtbo-y += parrot-idp-wcn6755.dtbo
+dtbo-y += parrot-qrd-wcn6755.dtbo
+endif
+
 always-y	:= $(dtb-y) $(dtbo-y)
 subdir-y	:= $(dts-dirs)
 clean-files	:= *.dtb *.dtbo
