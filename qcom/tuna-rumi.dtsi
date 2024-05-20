@@ -38,3 +38,11 @@
 		maximum-speed = "high-speed";
 	};
 };
+
+&cam_rsc {
+	status = "disabled";
+};
+
+&disp_rsc {
+	status = "disabled";
+};
