@@ -109,9 +109,9 @@
 		msix-match-addr = <0x3000>;
 
 		vdd-wlan-io-supply = <&L3F>;
-		qcom,vdd-wlan-io-config = <1800000 1800000 0 0 1>;
+		qcom,vdd-wlan-io-config = <1800000 1800000 30000 0 1>;
 		vdd-wlan-io12-supply = <&L2F>;
-		qcom,vdd-wlan-io12-config = <1200000 1200000 0 0 1>;
+		qcom,vdd-wlan-io12-config = <1200000 1200000 30000 0 1>;
 		vdd-wlan-aon-supply = <&S4D>;
 		qcom,vdd-wlan-aon-config = <876000 1036000 0 0 1>;
 		vdd-wlan-dig-supply = <&S4J>;
@@ -168,6 +168,24 @@
 		<587500 12800000>,
 		/* low (latency critical): 18-60 Mbps ddr: 547.2 MHz */
 		<7500 2188800>;
+
+		qcom,vreg_pdc_map =
+			"s4j", "rf",
+			"s4d", "bb",
+			"s3g", "rf",
+			"s7i", "rf";
+
+		qcom,pmu_vreg_map =
+			"VDDD_AON_0P9", "s4j",
+			"VDDA_RFA_1P9", "s3g",
+			"VDDA_RFA_1P3", "s7i",
+			"VDDA_RFA_0P9", "s4j",
+			"VDDD_WLMX_0P9", "s4d",
+			"VDDD_WLCX_0P9", "s4j",
+			"VDDD_BTCX_0P9", "s4j",
+			"VDDD_BTCMX_0P9", "s4j",
+			"VDDA_PCIE_1P2", "s7i",
+			"VDDA_PCIE_0P9", "s7i";
 
 		qcom,pdc_init_table =
 			"{class: wlan_pdc, ss: rf, res: s4j.m, enable: 1}",
