@@ -90,3 +90,12 @@
 		status = "ok";
 	};
 };
+
+&pmih010x_eusb2_repeater {
+	qcom,param-override-seq =
+		/* <value reg_offset> */
+		/* Adjust HS trasmit amplitude */
+		<0xc 0x51
+		/* Tx pre-emphasis tuning */
+		0x5 0x57>;
+};
