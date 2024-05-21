@@ -10,7 +10,15 @@ dtbo-y += st/sun-nfc.dtbo \
           st/sun-nfc-qrd-sku1-v8.dtbo \
           st/sun-nfc-qrd-sku2-v8.dtbo \
           st/sun-nfc-atp.dtbo \
+          st/sun-mtp-kiwi-v8.dtbo \
           st/sun-nfc-rcm.dtbo
+endif
+
+ifeq ($(CONFIG_ARCH_PARROT),y)
+dtbo-y += nxp/parrot-nfc.dtbo \
+          nxp/parrot-nfc-qrd.dtbo \
+          nxp/parrot-nfc-idp.dtbo \
+          nxp/parrot-nfc-atp.dtbo
 endif
 
 always-y        := $(dtb-y) $(dtbo-y)
