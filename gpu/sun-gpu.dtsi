@@ -136,7 +136,7 @@
 		compatible = "qcom,kgsl-smmu-v2";
 		reg = <0x3da0000 0x40000>;
 
-		vddcx-supply = <&gpu_cc_cx_gdsc>;
+		power-domains = <&gpucc GPU_CC_CX_GDSC>;
 
 		gfx3d_user: gfx3d_user {
 			compatible = "qcom,smmu-kgsl-cb";
@@ -169,10 +169,9 @@
 			<0 305 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "hfi", "gmu";
 
-		regulator-names = "vddcx", "vdd";
-
-		vddcx-supply = <&gpu_cc_cx_gdsc>;
-		vdd-supply = <&gx_clkctl_gx_gdsc>;
+		power-domains = <&gpucc GPU_CC_CX_GDSC>,
+				<&gxclkctl GX_CLKCTL_GX_GDSC>;
+		power-domain-names = "cx", "gx";
 
 		clocks = <&gpucc GPU_CC_CX_GMU_CLK>,
 			<&gpucc GPU_CC_CXO_CLK>,
@@ -195,5 +194,59 @@
 		qcom,soccp-controller = <&soccp_pas>;
 
 		qcom,qmp = <&aoss_qmp>;
+	};
+
+	coresight_cx_dgbc: qcom,gpu-coresight-cx {
+		compatible = "qcom,gpu-coresight-cx";
+
+		coresight-name = "coresight-gfx-cx";
+
+		out-ports {
+			port {
+				cx_dbgc_out_funnel_gfx: endpoint {
+					remote-endpoint =
+					  <&funnel_gfx_in_cx_dbgc>;
+				};
+			};
+		};
+	};
+
+	coresight_gx_dgbc: qcom,gpu-coresight-gx {
+		compatible = "qcom,gpu-coresight-gx";
+
+		coresight-name = "coresight-gfx";
+
+		out-ports {
+			port {
+				gx_dbgc_out_funnel_gfx: endpoint {
+					remote-endpoint =
+					  <&funnel_gfx_in_gx_dbgc>;
+				};
+			};
+		};
+	};
+};
+
+&funnel_gfx {
+	status = "ok";
+	in-ports {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		port@0 {
+			reg = <0>;
+			funnel_gfx_in_gx_dbgc: endpoint {
+			remote-endpoint =
+				<&gx_dbgc_out_funnel_gfx>;
+			};
+		};
+
+		port@1 {
+			reg = <1>;
+			funnel_gfx_in_cx_dbgc: endpoint {
+			remote-endpoint =
+				<&cx_dbgc_out_funnel_gfx>;
+			};
+		};
 	};
 };
