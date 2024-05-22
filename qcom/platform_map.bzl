@@ -12,6 +12,16 @@ _platform_map = {
                 "apq": True,
             },
             {"name": "sun-v2.dtb"},
+            {"name": "sun-tp.dtb"},
+            {"name": "sun-tp-v2.dtb"},
+            {
+                "name": "sunp-tp.dtb",
+                "apq": True,
+            },
+            {
+                "name": "sunp-tp-v2.dtb",
+                "apq": True,
+            },
         ],
         "dtbo_list": [
             # keep sorted
@@ -39,6 +49,29 @@ _platform_map = {
             {"name": "sun-rcm-v8-overlay.dtbo"},
             {"name": "sunp-hdk-overlay.dtbo"},
             {"name": "sun-rumi-overlay.dtbo"},
+        ],
+        "binary_compatible_with": ["tuna", "kera"],
+    },
+    "tuna": {
+        "dtb_list": [
+            {"name": "tuna.dtb"},
+        ],
+        "dtbo_list": [
+            {
+                "name": "tuna-rumi-overlay.dtbo",
+                "apq": False,
+            },
+        ],
+    },
+    "kera": {
+        "dtb_list": [
+            {"name": "kera.dtb"},
+        ],
+        "dtbo_list": [
+            {
+                "name": "kera-rumi-overlay.dtbo",
+                "apq": False,
+            },
         ],
     },
     "sun-tuivm": {
@@ -148,6 +181,39 @@ _platform_map = {
             {"name": "monaco-standalone-wdp-v1-overlay.dtbo"},
             {"name": "monaco-atp-v1-overlay.dtbo"},
             {"name": "monaco-standalone-atp-v1-overlay.dtbo"},
+        ],
+    },
+    "parrot": {
+        "dtb_list": [
+            # keep sorted
+            {"name": "parrot.dtb"},
+            {"name": "parrotp.dtb"},
+            {"name": "parrot-sg.dtb"},
+            {"name": "parrotp-sg.dtb"},
+            {"name": "parrot-4gb.dtb"},
+        ],
+        "dtbo_list": [
+            # keep sorted
+            {"name": "parrot-rumi-overlay.dtbo"},
+            {"name": "parrot-atp-overlay.dtbo"},
+            {"name": "parrot-idp-overlay.dtbo"},
+            {"name": "parrot-idp-wcn3990-overlay.dtbo"},
+            {"name": "parrot-idp-wcn3990-amoled-rcm-overlay.dtbo"},
+            {"name": "parrot-idp-wcn6750-amoled-rcm-overlay.dtbo"},
+            {"name": "parrot-idp-wcn6750-amoled-overlay.dtbo"},
+            {"name": "parrot-idp-nopmi-overlay.dtbo"},
+            {"name": "parrot-idp-pm8350b-overlay.dtbo"},
+            {"name": "parrot-qrd-overlay.dtbo"},
+            {"name": "parrot-qrd-wcn6750-overlay.dtbo"},
+            {"name": "parrot-qrd-nopmi-overlay.dtbo"},
+            {"name": "parrot-qrd-pm8350b-overlay.dtbo"},
+            {"name": "parrot-idp-4gb-overlay.dtbo"},
+            {"name": "parrot-idp-wcn3990-4gb-overlay.dtbo"},
+            {"name": "parrot-idp-wcn3990-amoled-rcm-4gb-overlay.dtbo"},
+            {"name": "parrot-idp-wcn6750-amoled-rcm-4gb-overlay.dtbo"},
+            {"name": "parrot-idp-wcn6750-amoled-4gb-overlay.dtbo"},
+            {"name": "parrot-qrd-4gb-overlay.dtbo"},
+            {"name": "parrot-qrd-wcn6750-4gb-overlay.dtbo"},
         ],
     },
 }

@@ -172,6 +172,18 @@ properties:
       - qcom,parrot-nsp_noc
       - qcom,parrot-pcie_anoc
       - qcom,parrot-system_noc
+      - qcom,ravelin-clk_virt
+      - qcom,ravelin-mc_virt
+      - qcom,ravelin-aggre1_noc
+      - qcom,ravelin-aggre2_noc
+      - qcom,ravelin-cnoc2
+      - qcom,ravelin-cnoc3
+      - qcom,ravelin-gem_noc
+      - qcom,ravelin-lpass_ag_noc
+      - qcom,ravelin-mmss_noc
+      - qcom,ravelin-pcie_anoc
+      - qcom,ravelin-system_noc
+      - qcom,ravelin-video_aggre_noc
 
   '#interconnect-cells': true
 

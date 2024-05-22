@@ -1137,7 +1137,7 @@
 		qcom,resource-name = "ldoj2";
 		qcom,regulator-type = "pmic5-ldo";
 		qcom,supported-modes =
-			<RPMH_REGULATOR_MODE_LPM
+			<RPMH_REGULATOR_MODE_RET
 			 RPMH_REGULATOR_MODE_HPM>;
 		qcom,mode-threshold-currents = <0 30000>;
 

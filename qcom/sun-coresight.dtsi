@@ -812,6 +812,7 @@
 		coresight-name = "coresight-turing-etm0";
 
 		qcom,atid-num = <2>;
+		atid = <38 39>;
 		trace-name = "turing-etm0";
 
 
@@ -971,6 +972,7 @@
 
 		coresight-name = "coresight-modem-etm0";
 		qcom,atid-num = <2>;
+		atid = <36 37>;
 		trace-name = "modem-etm0";
 		qcom,secure-component;
 
@@ -998,6 +1000,7 @@
 
 		coresight-name = "coresight-modem2-etm0";
 		qcom,atid-num = <1>;
+		atid = <39>;
 		trace-name = "modem2-etm0";
 
 		out-ports {
@@ -1023,22 +1026,13 @@
 		compatible = "arm,coresight-dummy-source";
 
 		coresight-name = "coresight-modem-diag";
-		qcom,atid-num = <1>;
-		trace-name = "modem-diag";
+		atid = <50>;
+
 		out-ports {
-			port@0 {
-				reg = <0>;
+			port {
 				modem_diag_out_funnel_modem_q6: endpoint {
 					remote-endpoint =
 					<&funnel_modem_q6_in_modem_diag>;
-				};
-			};
-
-			port@1 {
-				reg = <1>;
-				modem_diag_out_qmi: endpoint {
-					remote-endpoint =
-						<&qmi_in_modem_diag>;
 				};
 			};
 		};
@@ -2172,7 +2166,6 @@
 
 		cluster = <0>;
 		core = <0>;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2280,7 +2273,6 @@
 
 		cluster = <0>;
 		core = <1>;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2387,7 +2379,6 @@
 
 		cluster = <0>;
 		core = <2>;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2494,7 +2485,6 @@
 
 		cluster = <0>;
 		core = <3>;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2601,7 +2591,6 @@
 
 		cluster = <0>;
 		core = <4>;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2708,7 +2697,6 @@
 
 		cluster = <0>;
 		core = <5>;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -2871,7 +2859,6 @@
 
 		cluster = <0>;
 		qcom,uncore_uetm;
-		power-domains = <&CLUSTER_PD0>;
 
 		out-ports {
 			port {
@@ -3049,7 +3036,6 @@
 
 		cluster = <1>;
 		core = <0>;
-		power-domains = <&CLUSTER_PD1>;
 
 		out-ports {
 			port {
@@ -3156,7 +3142,6 @@
 
 		cluster = <1>;
 		core = <1>;
-		power-domains = <&CLUSTER_PD1>;
 
 		out-ports {
 			port {
@@ -3287,7 +3272,6 @@
 
 		cluster = <1>;
 		qcom,uncore_uetm;
-		power-domains = <&CLUSTER_PD1>;
 
 		out-ports {
 			port {
@@ -3832,6 +3816,7 @@
 		coresight-name = "coresight-audio-etm0";
 		qcom,atid-num = <2>;
 		trace-name = "audio-etm0";
+		atid = <40 41>;
 
 		out-ports {
 			port@0 {
@@ -4105,6 +4090,7 @@
 		reg-names = "stm-base", "stm-stimulus-base";
 
 		coresight-name = "coresight-stm";
+		atid = <16>;
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4429,6 +4415,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		status = "disabled";
 
 		out-ports {
 			port {
@@ -4450,6 +4437,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		status = "disabled";
 
 		out-ports {
 			port {
@@ -4471,6 +4459,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		status = "disabled";
 
 		out-ports {
 			port {
@@ -5491,14 +5480,6 @@
 						<&tmc_modem_out_qmi>;
 				};
 			};
-
-			port@3 {
-				reg = <3>;
-				qmi_in_modem_diag: endpoint {
-					remote-endpoint =
-						<&modem_diag_out_qmi>;
-				};
-			};
 		};
 	};
 
@@ -5528,6 +5509,10 @@
 		qcom,extended_cti;
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+
+		qcom,cti-gpio-trigout = <16>;
+		pinctrl-names = "cti-trigout-pctrl";
+		pinctrl-0 = <&trigout_a>;
 	};
 
 	swao_cti: cti@10b00000 {

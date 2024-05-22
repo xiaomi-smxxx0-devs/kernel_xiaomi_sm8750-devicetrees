@@ -279,7 +279,7 @@
 		};
 
 		bcl_off: bcl-off@4700 {
-			/* compatible = "qcom,bcl-off"; */
+			compatible = "qcom,bcl-off";
 			reg =  <0x4700 0x100>;
 			#cooling-cells = <2>;
 		};

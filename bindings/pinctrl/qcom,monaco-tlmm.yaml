@@ -16,7 +16,7 @@ allOf:
   - $ref: /schemas/pinctrl/qcom,tlmm-common.yaml#
 properties:
   compatible:
-    const: "qcom,monaco-pinctrl"
+    const: "qcom,monaco-tlmm"
 
   reg:
     maxItems: 1
