@@ -150,6 +150,12 @@ First Level Node - CAM CPAS device
   Definition: Bool property specifying whether to control camnoc axi
               clock from cpas driver.
 
+- cam-crmb-clk
+  Usage: required
+  Value type: <empty>
+  Definition: Flag indicating whether the src clk in this node is
+              a crmb clk or not
+
 - camnoc-bus-width
   Usage: required if control-camnoc-axi-clk is enabled
   Value type: <u32>
@@ -509,6 +515,7 @@ Example:
 		clock-cntl-level = "turbo";
 		qcom,cam-cx-ipeak = <&cx_ipeak_lm 8>;
 		control-camnoc-axi-clk;
+		cam-crmb-clk;
 		camnoc-bus-width = <32>;
 		camnoc-axi-clk-bw-margin-perc = <10>;
 		qcom,msm-bus,name = "cam_ahb";
