@@ -28,7 +28,7 @@
 		resets = <&gcc GCC_USB30_PRIM_BCR>;
 		reset-names = "core_reset";
 
-		interrupts-extended = <&intc GIC_SPI 128 IRQ_TYPE_LEVEL_HIGH>;
+		interrupts-extended = <&intc GIC_SPI 130 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "pwr_event_irq";
 
 		qcom,core-clk-rate = <200000000>;
@@ -39,7 +39,7 @@
 			compatible = "snps,dwc3";
 			reg = <0xa600000 0xd93c>;
 
-			interrupts = <GIC_SPI 131 IRQ_TYPE_LEVEL_HIGH>;
+			interrupts = <GIC_SPI 133 IRQ_TYPE_LEVEL_HIGH>;
 			snps,disable-clk-gating;
 			snps,has-lpm-erratum;
 			snps,hird-threshold = /bits/ 8 <0x0>;
