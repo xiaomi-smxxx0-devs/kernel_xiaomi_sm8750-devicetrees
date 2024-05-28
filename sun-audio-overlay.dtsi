@@ -351,6 +351,8 @@
 		qcom,cdc-vdd-px-current = <5000>;
 		qcom,cdc-vdd-px-lpm-supported = <1>;
 
+		qcom,cdc-vdd-px-rem-supported = <1>;
+
 		qcom,cdc-micbias1-mv = <1800>;
 		qcom,cdc-micbias2-mv = <1800>;
 		qcom,cdc-micbias3-mv = <1800>;
@@ -358,9 +360,9 @@
 
 		qcom,cdc-static-supplies = "cdc-vdd-rx",
 					   "cdc-vdd-tx",
-					   "cdc-vdd-mic-bias",
-					   "cdc-vdd-px";
-		qcom,cdc-on-demand-supplies = "cdc-vdd-buck";
+					   "cdc-vdd-mic-bias";
+		qcom,cdc-on-demand-supplies = "cdc-vdd-buck",
+					      "cdc-vdd-px";
 
 		wcd_mb1_reg: qcom,wcd-mb1-reg {
 			regulator-name = "wcd-mb1-reg";
