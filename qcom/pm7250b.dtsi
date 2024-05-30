@@ -21,6 +21,7 @@
 		#size-cells = <0>;
 
 		qcom,power-on@800 {
+			compatible = "qcom,qpnp-power-on";
 			reg = <0x800>;
 		};
 
@@ -199,6 +200,7 @@
 		#size-cells = <0>;
 
 		pm7250b_vib: qcom,vibrator@5300 {
+			compatible = "qcom,qpnp-vibrator-ldo";
 			reg = <0x5300>;
 			qcom,vib-ldo-volt-uv = <3000000>;
 			qcom,disable-overdrive;
