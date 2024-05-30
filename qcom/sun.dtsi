@@ -2149,10 +2149,6 @@
 		mem-type = <2>;
 	};
 
-	logbuf: qcom,logbuf-vendor-hooks {
-		compatible = "qcom,logbuf-vendor-hooks";
-	};
-
 	qcom,mpm2-sleep-counter@c221000 {
 		compatible = "qcom,mpm2-sleep-counter";
 		reg = <0xc221000 0x1000>;
@@ -3099,10 +3095,6 @@
 		#mbox-cells = <1>;
 		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
 		qcom,rx-chans = <0x20>;
-	};
-
-	vendor_hooks: qcom,cpu-vendor-hooks {
-		compatible = "qcom,cpu-vendor-hooks";
 	};
 
 	scmi: qcom,scmi {
