@@ -3504,6 +3504,11 @@
 		read-only;
 		ranges;
 
+		gpu_speed_bin: gpu_speed_bin@138 {
+			reg = <0x138 0x2>;
+			bits = <0 9>;
+		};
+
 		ssip_config: ssip_config@13e {
 			reg = <0x13e 0x2>;
 			bits = <7 2>;
