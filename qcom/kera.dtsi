@@ -614,3 +614,4 @@
 };
 
 #include "kera-pinctrl.dtsi"
+#include "kera-usb.dtsi"
