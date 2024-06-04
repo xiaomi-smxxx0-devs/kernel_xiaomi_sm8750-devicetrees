@@ -6,7 +6,7 @@
 /dts-v1/;
 /plugin/;
 
-#include "sun-audio-qrd.dtsi"
+#include "sun-audio-hdk.dtsi"
  / {
 	model = "Qualcomm Technologies, Inc. SunP QRD HDK";
 	compatible = "qcom,sunp-hdk", "qcom,sunp", "qcom,hdk";

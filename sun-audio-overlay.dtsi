@@ -841,3 +841,7 @@
 		#clock-cells = <1>;
 	};
 };
+
+&adsp_loader {
+	status = "ok";
+};
