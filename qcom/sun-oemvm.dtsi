@@ -131,9 +131,24 @@
 				dma-coherent;
 				dma_base = <0x0 0x0>;
 				memory {
-					qcom,label = <0x13>;
+					qcom,label = <0x16>;			//for persist.img
 					#address-cells = <0x2>;
 					base = <0x0 0xFFEFC000>;
+				};
+			};
+
+			virtio-mmio@1 {
+				vdevice-type = "virtio-mmio";
+				generate = "/virtio-mmio";
+				peer-default;
+				vqs-num = <0x2>;
+				push-compatible = "virtio,mmio";
+				dma-coherent;
+				dma_base = <0x0 0x4000>;
+				memory {
+					qcom,label = <0x13>;			//for system.img
+					#address-cells = <0x2>;
+					base = <0x0 0xFFF00000>;
 				};
 			};
 
@@ -142,11 +157,11 @@
 				generate = "/swiotlb";
 				push-compatible = "swiotlb";
 				peer-default;
-				dma_base = <0x0 0x4000>;
+				dma_base = <0x0 0x8000>;
 				memory {
 					qcom,label = <0x14>;
 					#address-cells = <0x2>;
-					base = <0x0 0xFFF00000>;
+					base = <0x0 0xFFF04000>;
 				};
 			};
 
@@ -182,6 +197,15 @@
 				qcom,label = <0x3>;
 			};
 
+			mem-buf-message-queue-pair {
+				vdevice-type = "message-queue-pair";
+				generate = "/hypervisor/membuf-msgq-pair";
+				message-size = <0x000000f0>;
+				queue-depth = <0x00000008>;
+				peer-default;
+				qcom,label = <0x000000C>;
+			};
+
 			qrtr-shm {
 				vdevice-type = "shm-doorbell";
 				generate = "/hypervisor/qrtr-shm";
@@ -196,7 +220,7 @@
 	};
 
 	firmware: firmware {
-		scm {
+		qcom_scm: scm {
 			compatible = "qcom,scm";
 		};
 	};
@@ -237,11 +261,23 @@
 
 	qcom,mem-buf {
 		compatible = "qcom,mem-buf";
+		qcom,mem-buf-capabilities = "consumer";
+		qcom,ipa-range = <0x0 0x0 0xf 0xffffffff>;
+		qcom,dmabuf-ipa-size = <0x1 0x00000000>; /* 4GB IPA space for dmabuf */
 		qcom,vmid = <49>;
 	};
 
 	qcom,mem-buf-msgq {
 		compatible = "qcom,mem-buf-msgq";
+		qcom,msgq-names = "oem_vm";
+	};
+
+	virtio_mem_device {
+		compatible = "qcom,virtio-mem";
+		/* Must be memory_block_size_bytes() aligned */
+		qcom,max-size = <0x0 0x10000000>;
+		qcom,ipa-range = <0x0 0x0 0xf 0xffffffff>;
+		qcom,block-size = <0x400000>;
 	};
 
 	qcom,test-dbl-oemvm {
@@ -289,3 +325,4 @@
 		msgq-label = <3>;
 	};
 };
+#include "sun-vm-dma-heaps.dtsi"

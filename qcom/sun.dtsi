@@ -904,13 +904,14 @@
 		qcom,vmid = <3>;
 	};
 
+	qcom,mem-buf-msgq {
+		compatible = "qcom,mem-buf-msgq";
+		qcom,msgq-names = "trusted_vm", "oem_vm";
+	};
+
 	qcom,hdcp {
 		compatible = "qcom,hdcp";
 		qcom,use-smcinvoke = <1>;
-	};
-
-	qcom,mem-buf-msgq {
-	       compatible = "qcom,mem-buf-msgq";
 	};
 
 	qti,smmu-proxy {
@@ -1940,6 +1941,8 @@
 		compatible = "qcom,gdsc";
 		reg = <0xadf134c 0x4>;
 		clocks = <&gcc GCC_CAMERA_AHB_CLK>;
+		interconnects = <&mmss_noc MASTER_CAMNOC_HF &mmss_noc SLAVE_MNOC_HF_MEM_NOC>;
+		interconnect-names = "mmnoc";
 		regulator-name = "cam_cc_titan_top_gdsc";
 		parent-supply = <&VDD_MM_MXC_VOTER_LEVEL>;
 		qcom,retain-regs;
@@ -2123,11 +2126,6 @@
 		status = "disabled";
 	};
 
-	psci {
-		compatible = "arm,psci-1.0";
-		method = "smc";
-	};
-
 	google,debug-kinfo {
 		compatible = "google,debug-kinfo";
 		memory-region = <&kinfo_mem>;
@@ -2226,6 +2224,11 @@
 
 	oem_vm_vblk0_ring: oem_vm_vblk0_ring {
 		size = <0x4000>;
+		gunyah-label = <0x16>;
+	};
+
+	oem_vm_vblk1_ring: oem_vm_vblk1_ring {
+		size = <0x4000>;
 		gunyah-label = <0x13>;
 	};
 
@@ -2236,11 +2239,16 @@
 
 	oem_vm: qcom,oem_vm {
 		vm_name = "oemvm";
-		shared-buffers-size = <0x104000>;
-		shared-buffers = <&oem_vm_vblk0_ring &oem_vm_swiotlb>;
+		shared-buffers-size = <0x108000>;
+		shared-buffers = <&oem_vm_vblk0_ring &oem_vm_vblk1_ring &oem_vm_swiotlb>;
 	};
 
-	oem_vm_virt_be0: oem_vm_virt_be0@13 {
+	oem_vm_virt_be0: oem_vm_virt_be0@16 {
+		qcom,vm = <&oem_vm>;
+		qcom,label = <0x16>;
+	};
+
+	oem_vm_virt_be1: oem_vm_virt_be1@13 {
 		qcom,vm = <&oem_vm>;
 		qcom,label = <0x13>;
 	};
@@ -2251,7 +2259,7 @@
 		qcom,vmid = <49>;
 		qcom,firmware-name = "oemvm";
 		memory-region = <&oem_vm_mem &vm_comm_mem>;
-		virtio-backends = <&oem_vm_virt_be0>;
+		virtio-backends = <&oem_vm_virt_be0 &oem_vm_virt_be1>;
 	};
 
 	ufsphy_mem: ufsphy_mem@1d80000 {
@@ -2418,6 +2426,7 @@
 		dma-coherent;
 
 		qcom,bypass-pbl-rst-wa;
+		qcom,max-cpus = <8>;
 
 		msi-parent = <&gic_its 0x60>;
 
@@ -3143,6 +3152,16 @@
 		compatible = "qcom,mpam";
 		reg = <0x17b6f000 0x1000>;
 		reg-names = "mon-base";
+
+		L2_0 {
+			qcom,msc-id = <0>;
+			qcom,msc-name = "L2_0";
+		};
+
+		L2_1 {
+			qcom,msc-id = <1>;
+			qcom,msc-name = "L2_1";
+		};
 	};
 
 	llcc_pmu: llcc-pmu@24095000 {
@@ -3670,6 +3689,11 @@
 	gpu_microcode_mem: gpu_microcode_region@9b09a000 {
 		no-map;
 		reg = <0x0 0x9b09a000 0x0 0x2000>;
+	};
+
+	lost_reg_mem {
+		no-map;
+		reg = <0x0 0x9b09c000 0x0 0x4000>;
 	};
 
 	spss_region_mem: spss_region_region@9b0a0000  {

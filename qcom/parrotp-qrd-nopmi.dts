@@ -6,7 +6,6 @@
 /dts-v1/;
 
 #include "parrotp.dtsi"
-#include "parrot-wcn3990.dtsi"
 #include "parrotp-qrd.dtsi"
 
 / {

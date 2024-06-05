@@ -21,7 +21,7 @@
 / {
 	model = "Qualcomm Technologies, Inc. Parrot";
 	compatible = "qcom,parrot";
-	qcom,msm-id = <537 0x10000>, <613 0x10000>;
+	qcom,msm-id = <537 0x10000>, <613 0x10000>, <663 0x10000>;
 	interrupt-parent = <&intc>;
 
 	#address-cells = <2>;
@@ -2530,6 +2530,8 @@
 	};
 
 	qfprom_sys: qfprom@0 {
+		compatible = "qcom,qfprom-sys";
+
 		nvmem-cells = <&adsp_variant>,
 				<&feat_conf12>,
 				<&feat_conf13>,
@@ -2839,6 +2841,7 @@
 #include "parrot-qupv3.dtsi"
 #include "parrot-dma-heaps.dtsi"
 #include "msm-arm-smmu-parrot.dtsi"
+#include "parrot-walt.dtsi"
 
 &qupv3_se3_2uart {
 	status = "ok";
