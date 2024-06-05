@@ -32,6 +32,10 @@ dtbo-y += parrot-idp-wcn6755.dtbo
 dtbo-y += parrot-qrd-wcn6755.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_VOLCANO),y)
+dtbo-y += volcano-qca6750.dtbo
+endif
+
 always-y	:= $(dtb-y) $(dtbo-y)
 subdir-y	:= $(dts-dirs)
 clean-files	:= *.dtb *.dtbo
