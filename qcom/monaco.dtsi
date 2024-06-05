@@ -54,17 +54,17 @@
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
 			#cooling-cells = <2>;
 			L2_0: l2-cache {
-			      /* compatible = "arm,arch-cache"; */
-			      cache-size = <0x80000>;
-			      cache-level = <2>;
+				compatible = "cache";
+				cache-size = <0x80000>;
+				cache-level = <2>;
 			};
 
 			L1_I_0: l1-icache {
-			      /* compatible = "arm,arch-cache"; */
+				compatible = "cache";
 			};
 
 			L1_D_0: l1-dcache {
-			      /* compatible = "arm,arch-cache"; */
+				compatible = "cache";
 			};
 		};
 
@@ -85,11 +85,11 @@
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
 
 			L1_I_1: l1-icache {
-			      /* compatible = "arm,arch-cache"; */
+				compatible = "cache";
 			};
 
 			L1_D_1: l1-dcache {
-			      /* compatible = "arm,arch-cache"; */
+				compatible = "cache";
 			};
 		};
 
@@ -110,11 +110,11 @@
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
 
 			L1_I_2: l1-icache {
-			      /* compatible = "arm,arch-cache"; */
+				compatible = "cache";
 			};
 
 			L1_D_2: l1-dcache {
-			      /* compatible = "arm,arch-cache"; */
+				compatible = "cache";
 			};
 		};
 
@@ -135,11 +135,11 @@
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
 
 			L1_I_3: l1-icache {
-			      /* compatible = "arm,arch-cache"; */
+				compatible = "cache";
 			};
 
 			L1_D_3: l1-dcache {
-			      /* compatible = "arm,arch-cache"; */
+				compatible = "cache";
 			};
 
 		};
