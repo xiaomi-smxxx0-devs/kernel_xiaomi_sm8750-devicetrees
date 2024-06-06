@@ -379,6 +379,16 @@
 		#mbox-cells = <2>;
 	};
 
+	cache-controller@24800000 {
+		compatible = "qcom,kera-llcc";
+		reg = <0x24800000 0x200000>, <0x24C00000 0x200000>,
+			<0x26800000 0x200000>, <0x26C00000 0x200000>;
+		reg-names = "llcc0_base", "llcc2_base",
+			"llcc_broadcast_or_base", "llcc_broadcast_and_base";
+		interrupts = <GIC_SPI 266 IRQ_TYPE_LEVEL_HIGH>;
+		cap-based-alloc-and-pwr-collapse;
+	};
+
 	clocks {
 		xo_board: xo_board {
 			compatible = "fixed-clock";
