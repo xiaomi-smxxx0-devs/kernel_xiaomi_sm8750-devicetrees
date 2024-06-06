@@ -1676,6 +1676,7 @@
 			<0>, <0>, <0>, <0>;
 		shared-clks-option = <0 0 0 1 0>;
 		control-camnoc-axi-clk;
+		cam-crmb-clk;
 		camnoc-bus-width = <32>;
 		camnoc-axi-clk-bw-margin-perc = <20>;
 		domain-id = <CAM_CPAS_SECURE_DOMAIN 16>,
