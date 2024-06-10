@@ -192,6 +192,11 @@
 			"{class: wlan_pdc, ss: rf, res: s4j.v, enable: 1}",
 			"{class: wlan_pdc, ss: rf, res: s4j.v, upval: 876}",
 			"{class: wlan_pdc, ss: rf, res: s4j.v, dwnval: 876}";
+
+		/* cpu mask used for wlan tx rx interrupt affinity
+		 * <cpumask_for_rx_interrupts cpumask_for_tx_comp_interrupts>
+		 */
+		wlan-txrx-intr-cpumask = <0x3 0x30>;
 	};
 };
 

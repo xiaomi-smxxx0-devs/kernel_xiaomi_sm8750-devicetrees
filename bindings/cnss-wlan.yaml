@@ -211,6 +211,9 @@ properties:
    qcom,bus-bw-cfg:
      description: Bus bandwidth voting data.
 
+   wlan-txrx-intr-cpumask:
+     description: cpumask for wlan tx rx interrupt affinity
+
    qcom,tcs_offset_int_pow_amp_vreg:
      description: |
        TCS CMD register offset for Voltage
