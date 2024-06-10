@@ -2424,6 +2424,9 @@
 		qcom,bypass-pbl-rst-wa;
 		qcom,max-cpus = <8>;
 
+		/* Enable WA for broken ah8*/
+		qcom,broken-ahit-wa;
+
 		msi-parent = <&gic_its 0x60>;
 
 		status = "disabled";
