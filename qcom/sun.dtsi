@@ -3424,6 +3424,7 @@
 		qcom,count-unit = <0x10000>;
 		qcom,target-dev = <&qcom_llcc_dcvs_hw>;
 		qcom,second-vote = <&qcom_llcc_ddr_vote>;
+		qcom,low-power-cpu = <0>;
 	};
 
 	bwmon_llcc_prime: qcom,bwmon-llcc-prime@240B7300 {
