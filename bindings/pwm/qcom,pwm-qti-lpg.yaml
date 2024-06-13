@@ -88,6 +88,14 @@ properties:
     $ref: /schemas/types.yaml#/definitions/uint32-array
     maxItems: 64
 
+  qcom,force-low-pwm-size:
+    description: |
+      The flag to indicate the forced use of legacy low PWM sizes
+      (6 or 9 bits) instead of full 8-15 bit PWM sizes, when the
+      PWM size is calculated based on the requested PWM period by
+      the client driver.
+    type: boolean
+
 required:
   - compatible
   - reg
