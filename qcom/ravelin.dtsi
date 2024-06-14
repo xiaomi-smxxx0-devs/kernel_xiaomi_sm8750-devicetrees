@@ -351,6 +351,7 @@
 #include "ravelin-usb.dtsi"
 #include "ravelin-coresight.dtsi"
 #include "ravelin-debug.dtsi"
+#include "parrot-walt.dtsi"
 
 &reserved_memory {
 	#address-cells = <2>;
