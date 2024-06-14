@@ -125,6 +125,26 @@ parrot-dtb-$(CONFIG_ARCH_PARROT) += \
 parrot-overlays-dtb-$(CONFIG_ARCH_PARROT) += $(PARROT_BOARDS) $(PARROT_BASE_DTB) $(PARROT_4GB_BOARDS) $(PARROT_4GB_BASE_DTB)
 dtb-y += $(parrot-dtb-y)
 
+RAVELIN_BASE_DTB += ravelin.dtb ravelinp.dtb
+RAVELIN_4GB_BASE_DTB += ravelin-4gb.dtb ravelinp-4gb.dtb
+
+RAVELIN_BOARDS += \
+		 ravelin-rumi-overlay.dtbo \
+		 ravelin-atp-overlay.dtbo \
+		 ravelin-idp-overlay.dtbo \
+		 ravelin-idp-wcn3950-amoled-rcm-overlay.dtbo \
+		 ravelin-qrd-overlay.dtbo \
+
+RAVELIN_4GB_BOARDS += \
+		 ravelin-idp-wcn3988-4gb-overlay.dtbo \
+		 ravelin-qrd-4gb-overlay.dtbo \
+
+parrot-dtb-$(CONFIG_ARCH_RAVELIN) += \
+	$(call add-overlays, $(RAVELIN_BOARDS),$(RAVELIN_BASE_DTB)) \
+	$(call add-overlays, $(RAVELIN_4GB_BOARDS),$(RAVELIN_4GB_BASE_DTB))
+parrot-overlays-dtb-$(CONFIG_ARCH_RAVELIN) += $(RAVELIN_BOARDS) $(RAVELIN_BASE_DTB) $(RAVELIN_4GB_BOARDS) $(RAVELIN_4GB_BASE_DTB)
+dtb-y += $(parrot-dtb-y)
+
 endif
 
 ifeq ($(CONFIG_ARCH_PINEAPPLE), y)

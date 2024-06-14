@@ -191,6 +191,10 @@ _platform_map = {
             {"name": "parrot-sg.dtb"},
             {"name": "parrotp-sg.dtb"},
             {"name": "parrot-4gb.dtb"},
+            {"name": "ravelin.dtb"},
+            {"name": "ravelinp.dtb"},
+            {"name": "ravelin-4gb.dtb"},
+            {"name": "ravelinp-4gb.dtb"},
         ],
         "dtbo_list": [
             # keep sorted
@@ -214,6 +218,13 @@ _platform_map = {
             {"name": "parrot-idp-wcn6750-amoled-4gb-overlay.dtbo"},
             {"name": "parrot-qrd-4gb-overlay.dtbo"},
             {"name": "parrot-qrd-wcn6750-4gb-overlay.dtbo"},
+            {"name": "ravelin-rumi-overlay.dtbo"},
+            {"name": "ravelin-atp-overlay.dtbo"},
+            {"name": "ravelin-idp-overlay.dtbo"},
+            {"name": "ravelin-idp-wcn3950-amoled-rcm-overlay.dtbo"},
+            {"name": "ravelin-qrd-overlay.dtbo"},
+            {"name": "ravelin-idp-wcn3988-4gb-overlay.dtbo"},
+            {"name": "ravelin-qrd-4gb-overlay.dtbo"},
         ],
     },
 }
