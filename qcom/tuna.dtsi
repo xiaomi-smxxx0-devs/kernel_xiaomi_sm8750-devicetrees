@@ -549,8 +549,25 @@
 	};
 
 	gcc: clock-controller@100000 {
-		compatible = "qcom,dummycc";
-		clock-output-names = "gcc_clocks";
+		compatible = "qcom,tuna-gcc", "syscon";
+		reg = <0x100000 0x1f4200>;
+		reg-name = "cc_base";
+		vdd_cx-supply = <&VDD_CX_LEVEL>;
+		vdd_mx-supply = <&VDD_MX_LEVEL>;
+		clocks = <&rpmhcc RPMH_CXO_CLK>,
+			 <&pcie_0_pipe_clk>,
+			 <&sleep_clk>,
+			 <&ufs_phy_rx_symbol_0_clk>,
+			 <&ufs_phy_rx_symbol_1_clk>,
+			 <&ufs_phy_tx_symbol_0_clk>,
+			 <&usb3_phy_wrapper_gcc_usb30_pipe_clk>;
+		clock-names = "bi_tcxo",
+			      "pcie_0_pipe_clk",
+			      "sleep_clk",
+			      "ufs_phy_rx_symbol_0_clk",
+			      "ufs_phy_rx_symbol_1_clk",
+			      "ufs_phy_tx_symbol_0_clk",
+			      "usb3_phy_wrapper_gcc_usb30_pipe_clk";
 		#clock-cells = <1>;
 		#reset-cells = <1>;
 	};
@@ -562,9 +579,10 @@
 		#reset-cells = <1>;
 	};
 
-	tcsrcc: clock-controller@f100000 {
-		compatible = "qcom,dummycc";
-		clock-output-names = "tcsrcc_clocks";
+	tcsrcc: clock-controller@1fbf000 {
+		compatible = "qcom,tuna-tcsrcc", "syscon";
+		reg = <0x1fbf000 0x14>;
+		reg-name = "cc_base";
 		#clock-cells = <1>;
 		#reset-cells = <1>;
 	};
@@ -631,32 +649,38 @@
 };
 
 &gcc_pcie_0_gdsc {
-	compatible = "regulator-fixed";
+	compatible = "qcom,gdsc";
+	parent-supply = <&VDD_CX_LEVEL>;
 	status = "ok";
 };
 
 &gcc_pcie_0_phy_gdsc {
-	compatible = "regulator-fixed";
+	compatible = "qcom,gdsc";
+	parent-supply = <&VDD_MX_LEVEL>;
 	status = "ok";
 };
 
 &gcc_ufs_mem_phy_gdsc {
-	compatible = "regulator-fixed";
+	compatible = "qcom,gdsc";
+	parent-supply = <&VDD_MX_LEVEL>;
 	status = "ok";
 };
 
 &gcc_ufs_phy_gdsc {
-	compatible = "regulator-fixed";
+	compatible = "qcom,gdsc";
+	parent-supply = <&VDD_CX_LEVEL>;
 	status = "ok";
 };
 
 &gcc_usb30_prim_gdsc {
-	compatible = "regulator-fixed";
+	compatible = "qcom,gdsc";
+	parent-supply = <&VDD_CX_LEVEL>;
 	status = "ok";
 };
 
 &gcc_usb3_phy_gdsc {
-	compatible = "regulator-fixed";
+	compatible = "qcom,gdsc";
+	parent-supply = <&VDD_MX_LEVEL>;
 	status = "ok";
 };
 
