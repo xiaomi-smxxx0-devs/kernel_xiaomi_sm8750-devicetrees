@@ -252,6 +252,15 @@
 	};
 };
 
+&dsi_nt37801_amoled_cmd_spr {
+	qcom,mdss-dsi-display-timings {
+		timing@0 {
+			qcom,partial-update-enabled = "single_roi";
+			qcom,panel-roi-alignment = <720 40 720 40 1440 40>;
+		};
+	};
+};
+
 &dsi_sharp_4k_dsc_cmd {
 	qcom,ulps-enabled;
 };
