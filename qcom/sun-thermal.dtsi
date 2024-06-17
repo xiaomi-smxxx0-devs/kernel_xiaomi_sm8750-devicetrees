@@ -1422,7 +1422,7 @@
 	};
 
 	gpuss-0 {
-		polling-delay-passive = <10>;
+		polling-delay-passive = <4>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 1>;
 		trips {
@@ -1460,7 +1460,7 @@
 	};
 
 	gpuss-1 {
-		polling-delay-passive = <10>;
+		polling-delay-passive = <4>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 2>;
 		trips {
@@ -1498,7 +1498,7 @@
 	};
 
 	gpuss-2 {
-		polling-delay-passive = <10>;
+		polling-delay-passive = <4>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 3>;
 		trips {
@@ -1536,7 +1536,7 @@
 	};
 
 	gpuss-3 {
-		polling-delay-passive = <10>;
+		polling-delay-passive = <4>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 4>;
 		trips {
@@ -1574,7 +1574,7 @@
 	};
 
 	gpuss-4 {
-		polling-delay-passive = <10>;
+		polling-delay-passive = <4>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 5>;
 		trips {
@@ -1612,7 +1612,7 @@
 	};
 
 	gpuss-5 {
-		polling-delay-passive = <10>;
+		polling-delay-passive = <4>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 6>;
 		trips {
@@ -1650,7 +1650,7 @@
 	};
 
 	gpuss-6 {
-		polling-delay-passive = <10>;
+		polling-delay-passive = <4>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 7>;
 		trips {
@@ -1688,7 +1688,7 @@
 	};
 
 	gpuss-7 {
-		polling-delay-passive = <10>;
+		polling-delay-passive = <4>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 8>;
 		trips {
