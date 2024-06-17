@@ -618,6 +618,42 @@
 			qcom,glinkpkt-dev-name = "at_mdm0";
 		};
 
+		qcom,glinkpkt-ctrl-cdsp {
+				qcom,glinkpkt-edge = "cdsp";
+				qcom,glinkpkt-ch-name = "LOOPBACK_CTL_CDSP";
+				qcom,glinkpkt-dev-name = "glink_pkt_ctrl_cdsp";
+		};
+
+		qcom,glinkpkt-data-cdsp {
+				qcom,glinkpkt-edge = "cdsp";
+				qcom,glinkpkt-ch-name = "LOOPBACK_DATA_CDSP";
+				qcom,glinkpkt-dev-name = "glink_pkt_data_cdsp";
+		};
+
+		qcom,glinkpkt-ctrl-lpass {
+				qcom,glinkpkt-edge = "lpass";
+				qcom,glinkpkt-ch-name = "LOOPBACK_CTL_LPASS";
+				qcom,glinkpkt-dev-name = "glink_pkt_ctrl_lpass";
+		};
+
+		qcom,glinkpkt-data-lpass {
+				qcom,glinkpkt-edge = "lpass";
+				qcom,glinkpkt-ch-name = "LOOPBACK_DATA_LPASS";
+				qcom,glinkpkt-dev-name = "glink_pkt_data_lpass";
+		};
+
+		qcom,glinkpkt-ctrl-mpss {
+				qcom,glinkpkt-edge = "mpss";
+				qcom,glinkpkt-ch-name = "LOOPBACK_CTL_MPSS";
+				qcom,glinkpkt-dev-name = "glink_pkt_ctrl_mpss";
+		};
+
+		qcom,glinkpkt-data-mpss {
+				qcom,glinkpkt-edge = "mpss";
+				qcom,glinkpkt-ch-name = "LOOPBACK_DATA_MPSS";
+				qcom,glinkpkt-dev-name = "glink_pkt_data_mpss";
+		};
+
 		qcom,glinkpkt-apr-apps2 {
 			qcom,glinkpkt-edge = "adsp";
 			qcom,glinkpkt-ch-name = "apr_apps2";
