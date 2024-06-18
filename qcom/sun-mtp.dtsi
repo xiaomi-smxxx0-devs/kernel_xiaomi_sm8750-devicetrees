@@ -238,9 +238,6 @@
 	vccq-supply = <&pm_v8d_l1>;
 	vccq-max-microamp = <1200000>;
 
-	qcom,vccq-proxy-vote-supply = <&pm_v8d_l1>;
-	qcom,vccq-proxy-vote-max-microamp = <1200000>;
-
 	/* UFS Rst pin is always on. It is shared with VDD_PX14 */
 	qcom,vddp-ref-clk-supply = <&pm_v8i_l2>;
 	qcom,vddp-ref-clk-max-microamp = <100>;
