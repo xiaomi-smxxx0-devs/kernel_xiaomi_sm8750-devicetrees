@@ -734,15 +734,17 @@
 				qcom,dump-size = <0x40000>;
 				qcom,dump-id = <0x220>;
 			};
-
-			scandump_gpu {
-				qcom,dump-size = <0x300000>;
-				qcom,dump-id = <0x221>;
-			};
 		};
 
 		dynamic_mem_dump {
 			qcom,dynamic-mem-dump;
+
+			scandump_gpu {
+				scandump_gpu {
+					qcom,dump-size = <0x300000>;
+					qcom,dump-id = <0x221>;
+				};
+			};
 
 			cpuss_reg {
 				cpuss_reg {
