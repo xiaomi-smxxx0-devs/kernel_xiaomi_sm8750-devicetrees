@@ -13,6 +13,7 @@
 #include <dt-bindings/clock/qcom,videocc-tuna.h>
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/soc/qcom,ipcc.h>
+#include <dt-bindings/soc/qcom,rpmh-rsc.h>
 
 / {
 	model = "Qualcomm Technologies, Inc. Kera";
@@ -283,6 +284,81 @@
 		};
 	};
 
+	apps_rsc: rsc@17a00000 {
+		label = "apps_rsc";
+		compatible = "qcom,rpmh-rsc";
+		reg = <0x17a00000 0x10000>,
+		      <0x17a10000 0x10000>,
+		      <0x17a20000 0x10000>;
+		reg-names = "drv-0", "drv-1", "drv-2";
+		qcom,drv-count = <3>;
+		interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
+
+		apps_rsc_drv2: drv@2 {
+			qcom,drv-id = <2>;
+			qcom,tcs-offset = <0xd00>;
+			qcom,tcs-distance = <0x2a0>;
+			channel@0 {
+				qcom,tcs-config = <ACTIVE_TCS    3>,
+						  <SLEEP_TCS     2>,
+						  <WAKE_TCS      2>,
+						  <CONTROL_TCS   0>,
+						  <FAST_PATH_TCS 1>;
+			};
+		};
+	};
+
+	disp_rsc: rsc@af20000 {
+		label = "disp_rsc";
+		compatible = "qcom,rpmh-rsc";
+		reg = <0xaf20000 0x1000>;
+		reg-names = "drv-0";
+		qcom,drv-count = <1>;
+		interrupts = <GIC_SPI 129 IRQ_TYPE_LEVEL_HIGH>;
+
+		disp_rsc_drv0: drv@0 {
+			qcom,drv-id = <0>;
+			qcom,tcs-offset = <0x520>;
+			qcom,tcs-distance = <0x150>;
+			channel@0 {
+				qcom,tcs-config = <ACTIVE_TCS    0>,
+						  <SLEEP_TCS     1>,
+						  <WAKE_TCS      1>,
+						  <CONTROL_TCS   0>,
+						  <FAST_PATH_TCS 0>;
+			};
+		};
+	};
+
+	pdc: interrupt-controller@b220000 {
+		compatible = "qcom,kera-pdc", "qcom,pdc";
+		reg = <0xb220000 0x10000>, <0x17c000f0 0x60>;
+		qcom,pdc-ranges = <0 480 8>, <8 719 1>, <9 718 1>,
+				  <10 230 1>, <11 724 1>, <12 716 1>,
+				  <13 727 1>, <14 720 1>, <15 726 1>,
+				  <16 721 1>, <17 262 1>, <18 70 1>,
+				  <19 723 1>, <20 234 1>, <22 725 1>,
+				  <23 231 1>, <24 504 5>, <30 510 8>,
+				  <40 520 6>, <51 531 4>, <58 538 2>,
+				  <61 541 5>, <66 92 1>, <67 547 13>,
+				  <80 240 1>, <81 235 1>, <82 310 2>,
+				  <84 248 1>, <85 241 1>, <86 238 2>,
+				  <88 254 1>, <89 509 1>, <90 563 1>,
+				  <91 259 2>, <93 201 1>, <94 246 1>,
+				  <95 93 1>, <96 611 29>, <125 63 1>,
+				  <126 366 2>, <128 374 1>, <129 377 1>,
+				  <130 428 1>, <131 434 2>, <133 437 1>,
+				  <134 452 2>, <136 458 2>, <138 464 11>,
+				  <149 671 1>, <150 688 1>, <151 714 2>,
+				  <153 722 1>, <154 255 1>, <155 269 2>,
+				  <157 276 1>, <158 287 1>, <159 306 4>;
+		#interrupt-cells = <2>;
+		interrupt-parent = <&intc>;
+		interrupt-controller;
+	};
+
 	tlmm: pinctrl@f000000 {
 		compatible = "qcom,kera-tlmm";
 		reg = <0xf000000 0x1000000>;
@@ -291,6 +367,7 @@
 		#gpio-cells = <2>;
 		interrupt-controller;
 		#interrupt-cells = <2>;
+		wakeup-parent = <&pdc>;
 	};
 
 	ipcc_mproc: qcom,ipcc@406000 {
@@ -522,6 +599,18 @@
 &video_cc_mvs0c_gdsc {
 	compatible = "regulator-fixed";
 	status = "ok";
+};
+
+&reserved_memory {
+	#address-cells = <2>;
+	#size-cells = <2>;
+	ranges;
+
+	aop_cmd_db_mem: aop_cmd_db_region@81c60000 {
+		compatible = "qcom,cmd-db";
+		no-map;
+		reg = <0x0 0x81c60000 0x0 0x20000>;
+	};
 };
 
 #include "kera-pinctrl.dtsi"
