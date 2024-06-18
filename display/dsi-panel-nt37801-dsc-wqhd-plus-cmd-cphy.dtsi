@@ -38,6 +38,20 @@
 		qcom,mdss-dsi-te-using-te-pin;
 		qcom,panel-cphy-mode;
 		qcom,spr-pack-type = "pentile";
+		/*
+		 * ###############################################################
+		 * # Pentile SPR phases for SM8750 and later
+		 * ###############################################################
+		 * # RG/BG Type A    BG/RG Type A    GR/GB Type A    GB/GR Type A
+		 * # R B R B ...     B R B R ...      R B R B ...     B R B R ...
+		 * #  G G G G ...     G G G G ...    G G G G ...     G G G G ...
+		 * #
+		 * # RG/BG Type B    BG/RG Type B    GR/GB Type B    GB/GR Type B
+		 * #  G G G G ...     G G G G ...    G G G G ...     G G G G ...
+		 * # R B R B ...     B R B R ...      R B R B ...     B R B R ...
+		 * ###############################################################
+		 */
+		qcom,spr-pentile-pack-type = "RG-BG Type A";
 
 		qcom,mdss-dsi-display-timings {
 			timing@0 {
