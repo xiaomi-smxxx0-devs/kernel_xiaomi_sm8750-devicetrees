@@ -1716,7 +1716,7 @@
 	};
 
 	rpm_bus: qcom,rpm-smd {
-		/* compatible = "qcom,rpm-smd"; */
+		compatible = "qcom,rpm-smd";
 		rpm-channel-name = "rpm_requests";
 		interrupts = <GIC_SPI 194 IRQ_TYPE_EDGE_RISING>;
 		rpm-channel-type = <15>; /* SMD_APPS_RPM */
@@ -1825,7 +1825,7 @@
 	};
 
 	mpm: interrupt-controller@45f01b8 {
-		/* compatible = "qcom,mpm-monaco", "qcom,mpm"; */
+		compatible = "qcom,mpm-monaco", "qcom,mpm";
 		interrupts = <GIC_SPI 197 IRQ_TYPE_EDGE_RISING>;
 		reg = <0x45f01b8 0x1000>,
 		      <0xf111008 0x4>,
