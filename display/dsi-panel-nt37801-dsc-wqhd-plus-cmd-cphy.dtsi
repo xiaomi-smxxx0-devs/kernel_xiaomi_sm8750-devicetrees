@@ -57,7 +57,6 @@
 				qcom,mdss-dsi-v-top-border = <0>;
 				qcom,mdss-dsi-v-bottom-border = <0>;
 				qcom,mdss-dsi-panel-jitter = <0x4 0x1>;
-				qcom,mdss-dsi-panel-clockrate = <728870000>;
 
 				qcom,mdss-dsi-timing-switch-command = [
 					39 01 00 00 00 00 02 2f 00
@@ -150,7 +149,6 @@
 				qcom,mdss-dsi-v-top-border = <0>;
 				qcom,mdss-dsi-v-bottom-border = <0>;
 				qcom,mdss-dsi-panel-jitter = <0x4 0x1>;
-				qcom,mdss-dsi-panel-clockrate = <548200000>;
 
 				qcom,mdss-dsi-timing-switch-command = [
 					39 01 00 00 00 00 02 2f 01
@@ -251,7 +249,7 @@
 				qcom,mdss-dsi-v-top-border = <0>;
 				qcom,mdss-dsi-v-bottom-border = <0>;
 				qcom,mdss-dsi-panel-jitter = <0x4 0x1>;
-				qcom,mdss-dsi-panel-clockrate = <728870000>;
+				qcom,mdss-dsi-panel-clockrate = <707640000>;
 
 				qcom,mdss-dsi-timing-switch-command = [
 					39 01 00 00 00 00 02 2f 00
