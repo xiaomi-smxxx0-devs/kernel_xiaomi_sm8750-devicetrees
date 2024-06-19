@@ -1418,6 +1418,9 @@ properties:
   qcom,mdss-dsc-block-prediction-enable:
     description: A boolean value to enable/disable the block prediction at decoder.
 
+  qcom,mdss-dsc-rc-override_v1:
+    description: A boolean value to enable override rc_range_bpg_ofs in sde_dsc_rc_range_bpg_override_v1.
+
   qcom,mdss-dsc-config-by-manufacture-cmd:
     description: >
       A boolean to indicates panel use manufacture command to setup pps
@@ -1786,6 +1789,7 @@ examples:
         qcom,mdss-dsi-panel-prefill-lines = <0x10>;
         qcom,mdss-dsi-force-clock-lane-hs;
         qcom,compression-mode = "dsc";
+        qcom,mdss-dsc-rc-override_v1;
         qcom,adjust-timer-wakeup-ms = <1>;
         qcom,platform-reset-gpio = <&tlmm 0 0>;
 
