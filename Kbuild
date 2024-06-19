@@ -3,6 +3,7 @@ dtbo-y += sun-ese-mtp.dtbo
 dtbo-y += sun-ese-rcm-v8.dtbo
 dtbo-y += sun-ese-rcm.dtbo
 dtbo-y += sun-ese-mtp-kiwi-v8.dtbo
+dtbo-y += sun-ese-cdp-kiwi-v8.dtbo
 dtbo-y += sun-ese-atp.dtbo
 dtbo-y += sun-ese-qrd-sku1.dtbo
 dtbo-y += sun-ese-qrd-sku1-v8.dtbo
