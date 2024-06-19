@@ -13,7 +13,7 @@
 	};
 
 	qcom,pmic_glink_log {
-		compatible = "qcom,pmic-glink";
+		compatible = "qcom,qti-pmic-glink";
 		qcom,pmic-glink-channel = "PMIC_LOGS_ADSP_APPS";
 
 		qcom,battery_debug {
