@@ -1479,11 +1479,20 @@
 		 };
 	};
 
+	ufshc_dma_resv: ufshc_dma_resv_region {
+		/*
+		 * Restrict IOVA mappings for UFSHC buffers to the 3 GB region
+		 * from 0x1000 - 0xffffffff.
+		 */
+		iommu-addresses = <&ufshc_mem 0x0 0x1000>;
+	};
+
 	ufshc_mem: ufshc@1d84000 {
 		compatible = "qcom,ufshc";
 		reg = <0x1d84000 0x3000>,
-		      <0x1d88000 0x18000>;
-		reg-names = "ufs_mem", "ice";
+		      <0x1d88000 0x18000>,
+		      <0x1da5000 0x2000>, <0x1da4000 0x10>;
+		reg-names = "ufs_mem", "ice", "mcq_sqd", "mcq_vs";
 		interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
 		phys = <&ufsphy_mem>;
 		phy-names = "ufsphy";
@@ -1492,7 +1501,7 @@
 		qcom,ice-use-hwkm;
 		qcom,prime-mask = <0x80>;
 		qcom,silver-mask = <0x0f>;
-		qcom,esi-affinity-mask = <0xf0>;
+		qcom,esi-affinity-mask = <0xe0>;
 
 		lanes-per-direction = <2>;
 		dev-ref-clk-freq = <0>; /* 19.2 MHz */
@@ -1594,10 +1603,16 @@
 
 		iommus = <&apps_smmu 0x60 0x0>;
 		qcom,iommu-dma = "fastmap";
+		qcom,iommu-msi-size = <0x1000>;
+		memory-region = <&ufshc_dma_resv>;
 		shared-ice-cfg = <&ice_cfg>;
 		dma-coherent;
 
 		qcom,bypass-pbl-rst-wa;
+
+		msi-parent = <&gic_its 0x60>;
+		qcom,max-cpus = <8>;
+		qcom,broken-ahit-wa;
 
 		status = "disabled";
 
@@ -2391,7 +2406,8 @@
 	};
 
 	qcom,mem-buf-msgq {
-	       compatible = "qcom,mem-buf-msgq";
+		compatible = "qcom,mem-buf-msgq";
+		qcom,msgq-names = "trusted_vm";
 	};
 
 	qti,smmu-proxy {

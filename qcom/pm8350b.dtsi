@@ -180,6 +180,7 @@
 		};
 
 		pm8350b_amoled: qcom,amoled {
+			compatible = "qcom,amoled-regulator";
 			#address-cells = <1>;
 			#size-cells = <0>;
 

@@ -21,6 +21,7 @@
 		#size-cells = <0>;
 
 		qcom,power-on@800 {
+			compatible = "qcom,qpnp-power-on";
 			reg = <0x800>;
 		};
 
@@ -199,6 +200,7 @@
 		#size-cells = <0>;
 
 		pm7250b_vib: qcom,vibrator@5300 {
+			compatible = "qcom,qpnp-vibrator-ldo";
 			reg = <0x5300>;
 			qcom,vib-ldo-volt-uv = <3000000>;
 			qcom,disable-overdrive;
@@ -220,16 +222,16 @@
 				type = "passive";
 			};
 
-			pm7250b_trip1: trip1 {
+			trip1 {
 				temperature = <115000>;
 				hysteresis = <0>;
-				type = "passive";
+				type = "hot";
 			};
 
-			pm7250b_trip2: trip2 {
+			trip2 {
 				temperature = <145000>;
 				hysteresis = <0>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};

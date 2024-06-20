@@ -613,6 +613,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		qcom,interconnect-trace-noc;
 
 		in-ports {
 			#address-cells = <1>;
@@ -1480,6 +1481,7 @@
 		status = "disabled";
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		qcom,trace-noc-v2;
 
 		in-ports {
 			#address-cells = <1>;
@@ -3711,6 +3713,7 @@
 		reg-names = "traceNoc-base";
 
 		coresight-name = "coresight-tracenoc-ddr";
+		qcom,interconnect-trace-noc;
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3945,6 +3948,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		qcom,interconnect-trace-noc;
 
 		in-ports {
 			#address-cells = <1>;
@@ -3973,6 +3977,7 @@
 		compatible = "arm,coresight-dummy-source";
 		coresight-name = "coresight-lpass-stm";
 		trace-name = "lpass-stm";
+		atid = <25>;
 
 		out-ports {
 			port@0 {
@@ -4481,6 +4486,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
+		qcom,trace-noc-v2;
 
 		in-ports {
 			#address-cells = <1>;

@@ -43,6 +43,7 @@
 	novatek@62 {
 		reg = <0x62>;
 
+		compatible = "novatek,NVT-ts";
 		interrupt-parent = <&tlmm>;
 		interrupts = <13 0x2008>;
 
