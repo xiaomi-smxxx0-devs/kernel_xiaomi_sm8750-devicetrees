@@ -38,7 +38,9 @@
 
 	firmware: firmware {};
 
-	aliases {};
+	aliases {
+		serial0 = &qupv3_se7_2uart;
+	};
 
 	cpus {
 		#address-cells = <2>;
@@ -747,3 +749,8 @@
 #include "tuna-pinctrl.dtsi"
 #include "tuna-stub-regulators.dtsi"
 #include "tuna-usb.dtsi"
+#include "tuna-qupv3.dtsi"
+
+&qupv3_se7_2uart {
+	status = "ok";
+};

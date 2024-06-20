@@ -46,3 +46,7 @@
 &disp_rsc {
 	status = "disabled";
 };
+
+&qupv3_se7_2uart {
+	qcom,rumi_platform;
+};
