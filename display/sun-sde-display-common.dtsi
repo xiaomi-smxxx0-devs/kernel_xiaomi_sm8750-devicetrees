@@ -15,6 +15,8 @@
 #include "dsi-panel-nt37801-qsync-dsc-wqhd-plus-video.dtsi"
 #include "dsi-panel-nt37801-qsync-dsc-wqhd-plus-video-cphy.dtsi"
 #include "dsi-panel-nt37801-dsc-fhd-plus-cmd.dtsi"
+#include "dsi-panel-nt37801-dsc-wqhd-plus-cmd-ddicspr.dtsi"
+#include "dsi-panel-nt37801-dsc-wqhd-plus-video-ddicspr.dtsi"
 #include "dsi-panel-sharp-dsc-4k-cmd.dtsi"
 #include "dsi-panel-sharp-dsc-4k-video.dtsi"
 #include "dsi-panel-sim-cmd-au.dtsi"
@@ -128,9 +130,10 @@
 		qcom,dsi-ctrl = <&mdss_dsi0 &mdss_dsi1>;
 		qcom,dsi-phy = <&mdss_dsi_phy0 &mdss_dsi_phy1>;
 
-		pinctrl-names = "panel_active", "panel_suspend";
-		pinctrl-0 = <&sde_dsi_active &sde_te_active>;
-		pinctrl-1 = <&sde_dsi_suspend &sde_te_suspend>;
+		pinctrl-names = "panel_active", "panel_active_with_esync", "panel_suspend";
+		pinctrl-0 = <&sde_dsi_active &sde_te_active &sde_esync0_suspend>;
+		pinctrl-1 = <&sde_dsi_active &sde_te_active &sde_esync0_active>;
+		pinctrl-2 = <&sde_dsi_suspend &sde_te_suspend &sde_esync0_suspend>;
 
 		qcom,platform-te-gpio = <&tlmm 86 0>;
 		qcom,panel-te-source = <0>;
@@ -147,9 +150,10 @@
 		qcom,dsi-ctrl = <&mdss_dsi0 &mdss_dsi1>;
 		qcom,dsi-phy = <&mdss_dsi_phy0 &mdss_dsi_phy1>;
 
-		pinctrl-names = "panel_active", "panel_suspend";
-		pinctrl-0 = <&sde_dsi1_active &sde_te1_active>;
-		pinctrl-1 = <&sde_dsi1_suspend &sde_te1_suspend>;
+		pinctrl-names = "panel_active", "panel_active_with_esync", "panel_suspend";
+		pinctrl-0 = <&sde_dsi1_active &sde_te1_active &sde_esync1_suspend>;
+		pinctrl-1 = <&sde_dsi1_active &sde_te1_active &sde_esync1_active>;
+		pinctrl-2 = <&sde_dsi1_suspend &sde_te1_suspend &sde_esync1_suspend>;
 
 		qcom,platform-te-gpio = <&tlmm 87 0>;
 		qcom,panel-te-source = <1>;
@@ -680,6 +684,46 @@
 		timing@4 {
 			qcom,mdss-dsi-panel-phy-timings = [00 19 06 06 15 14 07
 					06 06 07 02 04 16 0b];
+			qcom,display-topology = <2 2 1>;
+			qcom,default-topology-index = <0>;
+		};
+	};
+};
+
+&dsi_nt37801_amoled_cmd_ddicspr {
+	qcom,dsi-select-clocks = "pll_byte_clk0", "pll_dsi_clk0";
+	qcom,dsi-select-sec-clocks = "pll_byte_clk1", "pll_dsi_clk1";
+	qcom,esd-check-enabled;
+	qcom,mdss-dsi-panel-status-check-mode = "reg_read";
+	qcom,mdss-dsi-panel-status-command = [06 01 00 01 00 00 01 0a];
+	qcom,mdss-dsi-panel-status-command-state = "dsi_lp_mode";
+	qcom,mdss-dsi-panel-status-value = <0x9c>;
+	qcom,mdss-dsi-panel-status-read-length = <1>;
+
+	qcom,mdss-dsi-display-timings {
+		timing@0 {
+			qcom,mdss-dsi-panel-phy-timings = [00 28 0a 0b 1b 1a 0a
+					0b 0a 02 04 00 21 0f];
+			qcom,display-topology = <2 2 1>;
+			qcom,default-topology-index = <0>;
+		};
+	};
+};
+
+&dsi_nt37801_amoled_video_ddicspr {
+	qcom,dsi-select-clocks = "pll_byte_clk0", "pll_dsi_clk0";
+	qcom,dsi-select-sec-clocks = "pll_byte_clk1", "pll_dsi_clk1";
+	qcom,esd-check-enabled;
+	qcom,mdss-dsi-panel-status-check-mode = "reg_read";
+	qcom,mdss-dsi-panel-status-command = [06 01 00 01 00 00 01 0a];
+	qcom,mdss-dsi-panel-status-command-state = "dsi_lp_mode";
+	qcom,mdss-dsi-panel-status-value = <0x9c>;
+	qcom,mdss-dsi-panel-status-read-length = <1>;
+
+	qcom,mdss-dsi-display-timings {
+		timing@0 {
+			qcom,mdss-dsi-panel-phy-timings = [00 28 0a 0b 1b 1a 0a
+					0b 0a 02 04 00 21 0f];
 			qcom,display-topology = <2 2 1>;
 			qcom,default-topology-index = <0>;
 		};
