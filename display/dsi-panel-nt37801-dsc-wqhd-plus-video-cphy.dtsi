@@ -125,6 +125,7 @@
 				qcom,mdss-dsi-off-command-state = "dsi_lp_mode";
 				qcom,mdss-dsi-h-sync-pulse = <0>;
 				qcom,compression-mode = "dsc";
+				qcom,mdss-dsc-rc-override_v1;
 				qcom,mdss-dsc-slice-height = <40>;
 				qcom,mdss-dsc-slice-width = <720>;
 				qcom,mdss-dsc-slice-per-pkt = <1>;
