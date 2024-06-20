@@ -62,8 +62,8 @@
 		reg = <0x0 0x17D09100 0x0 0x200>;
 		ranges = <0x0 0x0 0x0 0x17D09100 0x0 0x200>;
 
-		cpu_scp_lpri: scp-shmem@0 {
-			compatible = "arm,scp-shmem";
+		cpu_scmi_lpri: scmi-shmem@0 {
+			compatible = "arm,scmi-shmem";
 			reg = <0x0 0x0 0x0 0x200>;
 		};
 	};
@@ -746,7 +746,7 @@
 		compatible = "qcom,cpucp";
 		reg =   <0x17400000 0x10>,
 			<0x17d90000 0x2000>;
-		reg-names = "rx", "tx";
+		reg-names = "tx", "rx";
 		#mbox-cells = <1>;
 		interrupts = <GIC_SPI 62 IRQ_TYPE_LEVEL_HIGH>;
 	};
@@ -757,7 +757,7 @@
 		compatible = "arm,scmi";
 		mboxes = <&cpucp 0>;
 		mbox-names = "tx";
-		shmem = <&cpu_scp_lpri>;
+		shmem = <&cpu_scmi_lpri>;
 
 		scmi_pmu: protocol@86 {
 			reg = <0x86>;
@@ -1444,8 +1444,7 @@
 			< 0x0008 0xFF 0xFF 0x02 >,
 			< 0x0011 0xFF 0xFF 0x00 >,
 			< 0x0017 0xFF 0xFF 0xFF >,
-			< 0x002A 0xFF 0xFF 0xFF >,
-			< 0x4005 0xC0 0xFF 0xFF >;
+			< 0x002A 0xFF 0xFF 0xFF >;
 	};
 
 	ddr_freq_table: ddr-freq-table {
@@ -1531,7 +1530,6 @@
 
 	qcom_memlat: qcom,memlat {
 		compatible = "qcom,memlat";
-		qcom,be-stall-ev = <0x4005>;
 
 		ddr {
 			compatible = "qcom,memlat-grp";
