@@ -203,7 +203,7 @@
 
 		cnss_pci0_iommu_region_partition: cnss_pci0_iommu_region_partition {
 			/* address-cells =3 size-cells=2 from sun-pcie.dtsi */
-			iommu-addresses = <&cnss_pci0 0x0 0x0 0x0 0x0 0x88000000>,
+			iommu-addresses = <&cnss_pci0 0x0 0x0 0x0 0x0 0x18000000>,
 					  <&cnss_pci0 0x0 0x0 0xB0000000 0x0 0x50000000>;
 		};
 	};
