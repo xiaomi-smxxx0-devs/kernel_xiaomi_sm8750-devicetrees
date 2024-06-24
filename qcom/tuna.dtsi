@@ -2721,7 +2721,7 @@
 };
 
 #include "tuna-pinctrl.dtsi"
-#include "tuna-stub-regulators.dtsi"
+#include "tuna-regulators.dtsi"
 #include "tuna-usb.dtsi"
 #include "tuna-qupv3.dtsi"
 #include "msm-rdbg.dtsi"
