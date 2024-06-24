@@ -1560,6 +1560,13 @@
 			qcom,glinkpkt-ch-name = "slate-dfu";
 			qcom,glinkpkt-dev-name = "glink_pkt_slate_dfu";
 		};
+
+		qcom,glinkpkt-slate-custom-data {
+			qcom,glinkpkt-edge = "slate";
+			qcom,glinkpkt-ch-name = "slate_custom_data";
+			qcom,glinkpkt-dev-name = "glink_pkt_slate_custom_data";
+		};
+
 		qcom,glinkpkt-ss-bt-ctrl {
 			qcom,glinkpkt-edge = "slate";
 			qcom,glinkpkt-ch-name = "ss_bt_ctrl";
