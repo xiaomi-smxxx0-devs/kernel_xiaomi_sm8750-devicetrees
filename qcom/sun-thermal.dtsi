@@ -328,7 +328,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -377,7 +377,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -426,7 +426,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -475,7 +475,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -524,7 +524,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -573,7 +573,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -622,7 +622,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -671,7 +671,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -720,7 +720,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -769,7 +769,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -818,7 +818,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -867,7 +867,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -973,7 +973,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1022,7 +1022,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1071,7 +1071,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1120,7 +1120,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1207,7 +1207,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1232,7 +1232,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1257,7 +1257,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1282,7 +1282,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1307,7 +1307,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1332,7 +1332,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1357,7 +1357,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1433,7 +1433,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1471,7 +1471,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1509,7 +1509,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1547,7 +1547,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1585,7 +1585,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1623,7 +1623,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1661,7 +1661,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
@@ -1699,7 +1699,7 @@
 			};
 
 			thermal-hal-config {
-				temperature = <135000>;
+				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
 			};
