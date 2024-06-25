@@ -3153,6 +3153,11 @@
 			#clock-cells = <1>;
 		};
 
+		scmi_clk: protocol@14 {
+			reg = <0x14>;
+			#clock-cells = <1>;
+		};
+
 		scmi_qcom: protocol@80 {
 			reg = <0x80>;
 			#clock-cells = <1>;
