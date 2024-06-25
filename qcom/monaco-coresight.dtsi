@@ -60,6 +60,7 @@
 		reg-names = "stm-base", "stm-stimulus-base";
 
 		coresight-name = "coresight-stm";
+		atid = <16>;
 
 		clocks = <&rpmcc RPM_SMD_QDSS_CLK>;
 		clock-names = "apb_pclk";
