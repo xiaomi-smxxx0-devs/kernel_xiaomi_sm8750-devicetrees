@@ -957,13 +957,13 @@
 		};
 	};
 
-	tpda: tpda@8004000 {
+	tpda_dl: tpda@8004000 {
 		compatible = "arm,primecell";
 		arm,primecell-periphid = <0x000bb969>;
 		reg = <0x8004000 0x1000>;
 		reg-names = "tpda-base";
 
-		coresight-name = "coresight-tpda";
+		coresight-name = "coresight-tpda-dl";
 
 		qcom,tpda-atid = <65>;
 		qcom,dsb-elem-size = <0 32>,
