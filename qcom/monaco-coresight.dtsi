@@ -134,6 +134,7 @@
 		compatible = "qcom,coresight-remote-etm";
 		coresight-name = "coresight-audio-etm0";
 
+		atid = <40>;
 		qcom,inst-id = <5>;
 		out-ports {
 			port {
@@ -484,6 +485,7 @@
 		compatible = "qcom,coresight-remote-etm";
 		coresight-name = "coresight-modem-etm0";
 
+		atid = <36>;
 		qcom,inst-id = <2>;
 
 		out-ports {
