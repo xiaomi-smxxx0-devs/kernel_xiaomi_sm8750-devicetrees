@@ -119,7 +119,7 @@
 		compatible = "arm,coresight-dummy-source";
 
 		coresight-name = "coresight-modem-rfxe";
-
+		atid = <50>;
 		out-ports {
 			port {
 				modem_rxfe_out_funnel_in1: endpoint {
@@ -149,6 +149,7 @@
 		compatible = "arm,coresight-dummy-source";
 		coresight-name = "coresight-snoc";
 
+		atid = <125>;
 
 		out-ports {
 			port {
@@ -164,7 +165,7 @@
 		compatible = "arm,coresight-dummy-source";
 
 		coresight-name = "coresight-tpdm-lpass";
-
+		atid = <26>;
 		out-ports {
 			port {
 				tpdm_lpass_out_funnel_lpass: endpoint {
@@ -441,6 +442,7 @@
 	tpdm_wcss: tpdm@899c000 {
 		compatible = "arm,coresight-dummy-source";
 		coresight-name = "coresight-tpdm-wcss";
+		atid = <67>;
 
 		out-ports {
 			port {
