@@ -4,15 +4,6 @@
  */
 
 &soc {
-	hwevent {
-		/* compatible = "qcom,coresight-hwevent"; */
-
-		coresight-name = "coresight-hwevent";
-		coresight-csr = <&csr>;
-		clocks = <&rpmcc RPM_SMD_QDSS_CLK>;
-		clock-names = "apb_pclk";
-	};
-
 	apss_tgu: tgu@9900000 {
 		compatible = "arm,primecell";
 		arm,primecell-periphid = <0x0003b999>;
