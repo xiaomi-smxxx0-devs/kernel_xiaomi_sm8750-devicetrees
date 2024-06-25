@@ -116,9 +116,10 @@
 	};
 
 	modem_rfxe: modem_rfxe {
-		/* compatible = "qcom,coresight-dummy"; */
+		compatible = "arm,coresight-dummy-source";
+
 		coresight-name = "coresight-modem-rfxe";
-		qcom,dummy-source;
+
 		out-ports {
 			port {
 				modem_rxfe_out_funnel_in1: endpoint {
@@ -145,10 +146,9 @@
 	};
 
 	snoc: snoc {
-		/* compatible = "qcom,coresight-dummy"; */
+		compatible = "arm,coresight-dummy-source";
 		coresight-name = "coresight-snoc";
 
-		qcom,dummy-source;
 
 		out-ports {
 			port {
@@ -161,10 +161,10 @@
 	};
 
 	tpdm_lpass: tpdm@8a26000 {
-		/* compatible = "qcom,coresight-dummy"; */
+		compatible = "arm,coresight-dummy-source";
 
 		coresight-name = "coresight-tpdm-lpass";
-		qcom,dummy-source;
+
 		out-ports {
 			port {
 				tpdm_lpass_out_funnel_lpass: endpoint {
@@ -439,9 +439,8 @@
 	};
 
 	tpdm_wcss: tpdm@899c000 {
-		/* compatible = "qcom,coresight-dummy"; */
+		compatible = "arm,coresight-dummy-source";
 		coresight-name = "coresight-tpdm-wcss";
-		qcom,dummy-source;
 
 		out-ports {
 			port {
