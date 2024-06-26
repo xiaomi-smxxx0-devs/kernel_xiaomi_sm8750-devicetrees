@@ -2415,7 +2415,8 @@
 		qcom,ice-use-hwkm;
 		qcom,prime-mask = <0xc0>;
 		qcom,silver-mask = <0x3f>;
-		qcom,esi-affinity-mask = <0xe0>;
+		/* affine cpu for each CQ starting from CQ:0 to CQ:max_cqs */
+		qcom,esi-affinity-mask = <4 5 3 4 5 3 7 7>;
 
 		lanes-per-direction = <2>;
 		dev-ref-clk-freq = <0>; /* 19.2 MHz */
