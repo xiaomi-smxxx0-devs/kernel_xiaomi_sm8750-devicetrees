@@ -30,7 +30,8 @@ dtbo-y += sun-audio.dtbo \
                 sun-audio-hamilton-rcm.dtbo \
                 sun-audio-hamilton-cdp.dtbo \
                 sun-audio-hamilton-mtp-v2.dtbo \
-                sun-audio-hamilton-mtp.dtbo
+                sun-audio-hamilton-mtp.dtbo \
+                sun-audio-hamilton-mtp-3.5mm.dtbo
 endif
 
  always-y    := $(dtb-y) $(dtbo-y)
