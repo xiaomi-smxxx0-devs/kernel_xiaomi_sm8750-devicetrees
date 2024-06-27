@@ -2157,7 +2157,7 @@
 	status = "ok";
 
 	tsc@24 {
-		/* compatible = "parade,pt_i2c_adapter"; */
+		compatible = "parade,pt_i2c_adapter";
 		reg = <0x24>;
 		status = "ok";
 		interrupt-parent = <&tlmm>;
