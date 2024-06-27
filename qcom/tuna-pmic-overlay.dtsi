@@ -1,0 +1,73 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ */
+
+#include <dt-bindings/gpio/gpio.h>
+
+#include "pmk8550.dtsi"
+#include "pmxr2230.dtsi"
+#include "pm8550vs.dtsi"
+#include "pmr735b.dtsi"
+#include "pm8550ve.dtsi"
+#include "pmd802x.dtsi"
+#include "pm8010.dtsi"
+
+&pm8550vs_g {
+	status = "ok";
+};
+
+&pm8550vs_g_temp_alarm {
+	status = "ok";
+};
+
+&pm8550vs_d {
+	status = "ok";
+};
+
+&pm8550vs_d_temp_alarm {
+	status = "ok";
+};
+
+&pm8550ve_f {
+	status = "ok";
+};
+
+&pm8550ve_f_temp_alarm {
+	status = "ok";
+};
+
+&pmxr2230_switch0 {
+	qcom,led-mask = <9>; /* Channels 1 & 4 */
+	qcom,symmetry-en;
+};
+
+&pmxr2230_switch1 {
+	qcom,led-mask = <6>; /* Channels 2 & 3 */
+	qcom,symmetry-en;
+};
+
+&pmxr2230_switch2 {
+	qcom,led-mask = <15>; /* All Channels */
+	qcom,symmetry-en;
+};
+
+&pmxr2230_flash {
+	status = "ok";
+};
+
+&pmk8550_gpios {
+	pinctrl-0 = <&alt_sleep_clk_default>;
+	pinctrl-names = "default";
+
+	alt_sleep_clk {
+		alt_sleep_clk_default: alt_sleep_clk_default {
+			pins = "gpio3";
+			function = "func1";
+			input-disable;
+			output-enable;
+			bias-disable;
+			power-source = <0>;
+		};
+	};
+};
