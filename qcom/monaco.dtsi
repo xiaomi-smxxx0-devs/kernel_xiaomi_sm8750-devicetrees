@@ -622,6 +622,16 @@
 		hyplog-size-offset = <0x414>;
 	};
 
+	qcom_rng: qrng@4453000 {
+		compatible = "qcom,msm-rng";
+		reg = <0x4453000 0x1000>;
+		qcom,no-qrng-config;
+		interconnect-names = "data_path";
+		interconnects = <&bimc MASTER_AMPSS_M0 &config_noc SLAVE_HWKM>;
+		clock-names = "km_clk_src";
+		clocks = <&rpmcc RPM_SMD_HWKM_CLK>;
+	};
+
 	qcom_cedev: qcedev@1b20000 {
 		compatible = "qcom,qcedev";
 		reg = <0x1b20000 0x20000>,
