@@ -577,7 +577,7 @@
 	};
 
 	qcom_qseecom: qseecom@61800000 {
-		/* compatible = "qcom,qseecom"; */
+		compatible = "qcom,qseecom";
 		reg = <0x61800000 0x2100000>;
 		reg-names = "secapp-region";
 		memory-region = <&qseecom_mem>;
