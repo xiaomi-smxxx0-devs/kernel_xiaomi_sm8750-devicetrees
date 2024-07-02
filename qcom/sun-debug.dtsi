@@ -734,6 +734,11 @@
 				qcom,dump-size = <0x40000>;
 				qcom,dump-id = <0x220>;
 			};
+
+			apps_scandump {
+				qcom,dump-size = <0x380000>;
+				qcom,dump-id = <0x130>;
+			};
 		};
 
 		dynamic_mem_dump {
@@ -853,13 +858,6 @@
 				cpucp {
 					qcom,dump-size = <0x80000>;
 					qcom,dump-id = <0xf5>;
-				};
-			};
-
-			apps_scandump {
-				scandump_apps {
-					qcom,dump-size = <0x380000>;
-					qcom,dump-id = <0x130>;
 				};
 			};
 
