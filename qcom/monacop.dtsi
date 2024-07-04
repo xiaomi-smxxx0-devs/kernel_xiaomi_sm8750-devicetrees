@@ -11,8 +11,3 @@
 	qcom,msm-id = <517 0x10000>;
 };
 
-&soc {
-	qcom,rmnet-ipa {
-		status = "disabled";
-	};
-};
