@@ -2297,6 +2297,7 @@
 		qcom,pas-id = <34>;
 		qcom,vmid = <49>;
 		qcom,firmware-name = "oemvm";
+		qcom,keep-running;
 		memory-region = <&oem_vm_mem &vm_comm_mem>;
 		virtio-backends = <&oem_vm_virt_be0 &oem_vm_virt_be1>;
 	};
