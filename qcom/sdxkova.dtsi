@@ -4,7 +4,8 @@
  */
 
 #include "sdx75.dtsi"
-
+/delete-node/ &apps_smmu;
+#include "msm-arm-smmu-sdxkova.dtsi"
 / {
 	qcom_tzlog: tz-log@14680720 {
 		compatible = "qcom,tz-log";
