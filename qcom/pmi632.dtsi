@@ -384,16 +384,16 @@
 				type = "passive";
 			};
 
-			pmi632_trip1: trip1 {
+			trip1 {
 				temperature = <115000>;
 				hysteresis = <0>;
-				type = "passive";
+				type = "hot";
 			};
 
 			trip2 {
 				temperature = <145000>;
 				hysteresis = <0>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
