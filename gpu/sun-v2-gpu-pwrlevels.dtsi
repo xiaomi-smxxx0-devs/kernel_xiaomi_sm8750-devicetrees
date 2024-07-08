@@ -521,7 +521,8 @@
 			#size-cells = <0>;
 
 			qcom,initial-pwrlevel = <12>;
-			qcom,sku-codes = <SKU_CODE(PCODE_UNKNOWN, FC_AB)>;
+			qcom,sku-codes = <SKU_CODE(PCODE_UNKNOWN, FC_AA)
+					SKU_CODE(PCODE_UNKNOWN, FC_AB)>;
 
 			/* TURBO_L3 */
 			qcom,gpu-pwrlevel@0 {
