@@ -37,6 +37,7 @@ properties:
           - qcom,parrot-pdc
           - qcom,ravelin-pdc
           - qcom,tuna-pdc
+          - qcom,kera-pdc
       - const: qcom,pdc
 
   reg:
