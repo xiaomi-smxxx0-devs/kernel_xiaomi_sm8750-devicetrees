@@ -31,7 +31,6 @@
 
 &pm6450_pwm_1 {
 	status = "ok";
-	qcom,force-low-pwm-size;
 };
 
 &qupv3_se9_i2c {
