@@ -986,12 +986,6 @@
 				qcom,non-wake-svc = <0x51
 						0x190>;
 			};
-
-			qcom,msm_fastrpc_rpmsg {
-				compatible = "qcom,msm-fastrpc-rpmsg";
-				qcom,glink-channels = "fastrpcglink-apps-dsp";
-				qcom,intents = <0x64 64>;
-			};
 		};
 	};
 
@@ -1044,12 +1038,6 @@
 				qcom,intents = <0x800  5
 						0x2000 3
 						0x4400 2>;
-			};
-
-			qcom,msm_fastrpc_rpmsg {
-				compatible = "qcom,msm-fastrpc-rpmsg";
-				qcom,glink-channels = "fastrpcglink-apps-dsp";
-				qcom,intents = <0x64 64>;
 			};
 
 			qcom,modem_ds {
@@ -1222,55 +1210,6 @@
 		compatible = "qcom,msm-adsprpc-mem-region";
 		memory-region = <&adsp_mem>;
 		restrict-access;
-	};
-
-	qcom,msm_fastrpc {
-		compatible = "qcom,msm-fastrpc-compute";
-		qcom,rpc-latency-us = <611>;
-		qcom,adsp-remoteheap-vmid = <22 37>;
-		qcom,fastrpc-adsp-audio-pdr;
-		qcom,fastrpc-adsp-sensors-pdr;
-
-		qcom,msm_fastrpc_compute_cb1 {
-			compatible = "qcom,msm-fastrpc-compute-cb";
-			label = "adsprpc-smd";
-			iommus = <&apps_smmu 0x01C3 0x0>;
-			qcom,iommu-dma-addr-pool = <0x80000000 0x78000000>;
-			qcom,iommu-faults = "stall-disable";
-		};
-
-		qcom,msm_fastrpc_compute_cb2 {
-			compatible = "qcom,msm-fastrpc-compute-cb";
-			label = "adsprpc-smd";
-			iommus = <&apps_smmu 0x01C4 0x0>;
-			qcom,iommu-dma-addr-pool = <0x80000000 0x78000000>;
-			qcom,iommu-faults = "stall-disable";
-		};
-
-		qcom,msm_fastrpc_compute_cb3 {
-			compatible = "qcom,msm-fastrpc-compute-cb";
-			label = "adsprpc-smd";
-			iommus = <&apps_smmu 0x01C5 0x0>;
-			qcom,iommu-dma-addr-pool = <0x80000000 0x78000000>;
-			qcom,iommu-faults = "stall-disable";
-		};
-
-		qcom,msm_fastrpc_compute_cb4 {
-			compatible = "qcom,msm-fastrpc-compute-cb";
-			label = "adsprpc-smd";
-			iommus = <&apps_smmu 0x01C6 0x0>;
-			qcom,iommu-dma-addr-pool = <0x80000000 0x78000000>;
-			qcom,iommu-faults = "stall-disable";
-		};
-
-		qcom,msm_fastrpc_compute_cb5 {
-			compatible = "qcom,msm-fastrpc-compute-cb";
-			label = "adsprpc-smd";
-			iommus = <&apps_smmu 0x01C7 0x0>;
-			qcom,iommu-dma-addr-pool = <0x80000000 0x78000000>;
-			qcom,iommu-faults = "stall-disable";
-		};
-
 	};
 
 	rpm-glink {
