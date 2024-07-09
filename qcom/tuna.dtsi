@@ -211,6 +211,7 @@
 };
 
 #include "tuna-reserved-memory.dtsi"
+#include "msm-arm-smmu-tuna.dtsi"
 
 &reserved_memory {
 	#address-cells = <2>;
