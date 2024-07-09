@@ -1435,23 +1435,16 @@
 	cluster-device0 {
 		compatible = "qcom,lpm-cluster-dev";
 		power-domains = <&CLUSTER_PD0>;
-		qcom,pred-prem-cnt = <2>;
-		qcom,sample-invalid-time = <40000000>;
 	};
 
 	cluster-device1 {
 		compatible = "qcom,lpm-cluster-dev";
 		power-domains = <&CLUSTER_PD1>;
-		qcom,pred-prem-cnt = <2>;
-		qcom,sample-invalid-time = <40000000>;
-		qcom,use-cluster-bias-timer;
 	};
 
 	cluster-device2 {
 		compatible = "qcom,lpm-cluster-dev";
 		power-domains = <&CLUSTER_PD2>;
-		qcom,pred-prem-cnt = <2>;
-		qcom,sample-invalid-time = <40000000>;
 	};
 
 	qcom,memshare {
