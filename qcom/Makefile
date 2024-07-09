@@ -107,12 +107,7 @@ PARROT_BOARDS += \
 		 parrot-qrd-overlay.dtbo \
 		 parrot-qrd-wcn6750-overlay.dtbo \
 		 parrot-qrd-nopmi-overlay.dtbo   \
-		 parrot-qrd-pm8350b-overlay.dtbo \
-		 parrot-idp-wcn6755-overlay.dtbo \
-		 parrot-idp-wcn6755-amoled-rcm-overlay.dtbo \
-		 parrot-qrd-wcn6755-overlay.dtbo \
-		 parrot-idp-wcn6755-pm8350b-overlay.dtbo \
-		 parrot-idp-wcn6755-nopmi-overlay.dtbo
+		 parrot-qrd-pm8350b-overlay.dtbo
 
 PARROT_4GB_BOARDS += \
 		 parrot-idp-4gb-overlay.dtbo \
