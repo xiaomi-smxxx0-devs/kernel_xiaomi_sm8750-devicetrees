@@ -61,6 +61,7 @@ description: |
         sdx55
         sdx65
         sdx75
+        sdxkova
         sm4250
         sm6115
         sm6125
@@ -743,6 +744,11 @@ properties:
           - enum:
               - qcom,sdx75-idp
           - const: qcom,sdx75
+
+      - items:
+          - enum:
+              - qcom,sdxkova-idp
+          - const: qcom,sdxkova
 
       - items:
           - enum:
