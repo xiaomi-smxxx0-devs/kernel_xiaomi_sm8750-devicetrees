@@ -62,6 +62,7 @@
 				<0x3dc2200 0x8>;
 			reg-names = "base", "status-reg";
 			qcom,stream-id-range = <0x0 0x400>;
+			qcom,iova-width = <49>;
 		};
 
 		gfx_1_tbu: gfx_1_tbu@3dc9000 {
@@ -70,6 +71,7 @@
 				<0x3dc2208 0x8>;
 			reg-names = "base", "status-reg";
 			qcom,stream-id-range = <0x400 0x400>;
+			qcom,iova-width = <49>;
 		};
 	};
 
