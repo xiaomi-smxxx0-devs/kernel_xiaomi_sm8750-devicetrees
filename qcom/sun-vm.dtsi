@@ -247,6 +247,15 @@
 				peer-default;
 			};
 
+			test-large-dmabuf-tuivm {
+				vdevice-type = "message-queue-pair";
+				generate = "/hypervisor/test-large-dmabuf-tuivm-pair";
+				message-size = <0xf0>;
+				queue-depth = <0x8>;
+				qcom,label = <0xd>;
+				peer-default;
+			};
+
 			mem-buf-message-queue-pair {
 				vdevice-type = "message-queue-pair";
 				generate = "/hypervisor/membuf-msgq-pair";
@@ -674,6 +683,11 @@
 		compatible = "qcom,gh-msgq-test";
 		gunyah-label = <0x4>;
 		affinity = <0>;
+	};
+
+	qcom,test-large-dmabuf-tuivm {
+		compatible = "qcom,gh-large-dmabuf-test";
+		gunyah-label = <0xd>;
 	};
 
 	qcom,gh-qtimer@1680b000 {
