@@ -18,7 +18,10 @@ description: |
 
 properties:
   compatible:
-    const: qcom,mpam
+    enum:
+      - qcom,cpu-mpam
+      - qcom,platform-mpam
+      - qcom,mpam
 
   reg:
     items:
@@ -39,6 +42,19 @@ examples:
   - |
     qcom_mpam: qcom,mpam {
       compatible = "qcom,mpam";
-      reg = <0x17b6f000 0x1000>;
+      reg = <0x17b6f000 0x400>;
       reg-names = "mon-base";
     };
+
+    cpu_mpam: qcom,cpu_mpam {
+      compatible = "qcom,cpu-mpam";
+      reg = <0x17b6f400 0x400>;
+      reg-names = "mon-base";
+    };
+
+    noc_bw_mpam: qcom,noc_bw_mpam {
+      compatible = "qcom,platform-mpam";
+      reg = <0x17b6f800 0x400>;
+      reg-names = "mon-base";
+    };
+...
