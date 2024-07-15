@@ -1446,6 +1446,10 @@
 				<GIC_SPI 137 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "hc_irq", "pwr_irq";
 
+		boot_device_type = <0x1>;
+		nvmem-cells = <&boot_config>;
+		nvmem-cell-names = "boot_conf";
+
 		bus-width = <8>;
 		non-removable;
 		supports-cqe;
