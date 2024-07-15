@@ -285,16 +285,16 @@
 				type = "passive";
 			};
 
-			reset-mon-cfg {
-				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
-			};
-
 			cpu0_emerg: cpu0-emerg-cfg {
 				temperature = <110000>;
 				hysteresis = <10000>;
 				type = "passive";
+			};
+
+			reset-mon-cfg {
+				temperature = <115000>;
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 
@@ -323,16 +323,16 @@
 				type = "passive";
 			};
 
-			reset-mon-cfg {
-				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
-			};
-
 			cpu1_emerg: cpu1-emerg-cfg {
 				temperature = <110000>;
 				hysteresis = <10000>;
 				type = "passive";
+			};
+
+			reset-mon-cfg {
+				temperature = <115000>;
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 
@@ -361,16 +361,16 @@
 				type = "passive";
 			};
 
-			reset-mon-cfg {
-				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
-			};
-
 			cpu2_emerg: cpu2-emerg-cfg {
 				temperature = <110000>;
 				hysteresis = <10000>;
 				type = "passive";
+			};
+
+			reset-mon-cfg {
+				temperature = <115000>;
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 
@@ -399,16 +399,16 @@
 				type = "passive";
 			};
 
-			reset-mon-cfg {
-				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
-			};
-
 			cpu3_emerg: cpu3-emerg-cfg {
 				temperature = <110000>;
 				hysteresis = <10000>;
 				type = "passive";
+			};
+
+			reset-mon-cfg {
+				temperature = <115000>;
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 
@@ -437,16 +437,16 @@
 				type = "passive";
 			};
 
-			reset-mon-cfg {
-				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
-			};
-
 			cpu4_emerg: cpu4-emerg-cfg {
 				temperature = <110000>;
 				hysteresis = <10000>;
 				type = "passive";
+			};
+
+			reset-mon-cfg {
+				temperature = <115000>;
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 
@@ -475,16 +475,16 @@
 				type = "passive";
 			};
 
-			reset-mon-cfg {
-				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
-			};
-
 			cpu5_emerg: cpu5-emerg-cfg {
 				temperature = <110000>;
 				hysteresis = <10000>;
 				type = "passive";
+			};
+
+			reset-mon-cfg {
+				temperature = <115000>;
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 
@@ -509,8 +509,8 @@
 
 			reset-mon-cfg {
 				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 	};
@@ -528,8 +528,8 @@
 
 			reset-mon-cfg {
 				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 	};
@@ -551,16 +551,16 @@
 				type = "passive";
 			};
 
-			reset-mon-cfg {
-				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
-			};
-
 			cpu6_emerg0: cpu6-emerg0-cfg {
 				temperature = <110000>;
 				hysteresis = <10000>;
 				type = "passive";
+			};
+
+			reset-mon-cfg {
+				temperature = <115000>;
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 
@@ -589,16 +589,16 @@
 				type = "passive";
 			};
 
-			reset-mon-cfg {
-				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
-			};
-
 			cpu6_emerg1: cpu6-emerg1-cfg {
 				temperature = <110000>;
 				hysteresis = <10000>;
 				type = "passive";
+			};
+
+			reset-mon-cfg {
+				temperature = <115000>;
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 
@@ -629,8 +629,8 @@
 
 			reset-mon-cfg {
 				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
+				hysteresis = <0>;
+				type = "hot";
 			};
 
 			cpu7_emerg0: cpu7-emerg0-cfg {
@@ -667,8 +667,8 @@
 
 			reset-mon-cfg {
 				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
+				hysteresis = <0>;
+				type = "hot";
 			};
 
 			cpu7_emerg1: cpu7-emerg1-cfg {
@@ -703,16 +703,16 @@
 				type = "passive";
 			};
 
-			reset-mon-cfg {
-				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
-			};
-
 			gpu_tj_cfg: tj_cfg {
 				temperature = <95000>;
 				hysteresis = <5000>;
 				type = "passive";
+			};
+
+			reset-mon-cfg {
+				temperature = <115000>;
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 
@@ -737,8 +737,8 @@
 
 			reset-mon-cfg {
 				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 	};
@@ -756,8 +756,8 @@
 
 			reset-mon-cfg {
 				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 	};
@@ -800,8 +800,8 @@
 
 			reset-mon-cfg {
 				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 
@@ -826,8 +826,8 @@
 
 			reset-mon-cfg {
 				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 	};
@@ -845,8 +845,8 @@
 
 			reset-mon-cfg {
 				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 	};
@@ -864,8 +864,8 @@
 
 			reset-mon-cfg {
 				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 	};
@@ -883,13 +883,13 @@
 
 			reset-mon-cfg {
 				temperature = <115000>;
-				hysteresis = <5000>;
-				type = "passive";
+				hysteresis = <0>;
+				type = "hot";
 			};
 		};
 	};
 
-	zeroc-0-step {
+	zeroc-0 {
 		polling-delay-passive = <0>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens0 128>;
@@ -908,7 +908,7 @@
 		};
 	};
 
-	zeroc-1-step {
+	zeroc-1 {
 		polling-delay-passive = <0>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens1 128>;
