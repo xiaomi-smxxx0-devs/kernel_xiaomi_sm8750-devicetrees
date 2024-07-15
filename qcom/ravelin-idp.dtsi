@@ -61,6 +61,7 @@
 
 	focaltech@38 {
 		reg = <0x38>;
+		compatible = "focaltech,fts_ts";
 
 		interrupt-parent = <&tlmm>;
 		interrupts = <13 0x2008>;
