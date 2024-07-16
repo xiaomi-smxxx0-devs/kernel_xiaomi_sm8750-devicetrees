@@ -105,7 +105,7 @@
 		memory {
 			#address-cells = <0x2>;
 			#size-cells = <0x0>;
-			base-address = <0x0 0xe0b00000>;
+			base-address = <0x0 0xe0c00000>;
 			size-min = <0x0 0x7a00000>;    /* 122 MB */
 		};
 
