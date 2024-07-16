@@ -826,6 +826,7 @@
 	};
 
 	qcom_qseecom: qseecom@c1700000 {
+		compatible = "qcom,qseecom";
 		memory-region = <&qseecom_mem>;
 		qseecom_mem = <&qseecom_mem>;
 		qseecom_ta_mem = <&qseecom_ta_mem>;
