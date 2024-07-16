@@ -483,15 +483,12 @@
 		pinctrl-0 = <&pm8010m_active>;
 
 		pm8010-chip@900 {
+			compatible = "qcom,pm8008-chip";
 			reg = <0x900>;
 
 			PM8010M_EN: qcom,pm8008-chip-en {
 				regulator-name = "pm8010m-chip-en";
 			};
-		};
-
-		qcom,revid@100 {
-			reg = <0x100>;
 		};
 	};
 
@@ -502,6 +499,7 @@
 		#size-cells = <0>;
 
 		qcom,pm8010m-regulator {
+			compatible = "qcom,pm8010-regulator";
 			#address-cells = <1>;
 			#size-cells = <0>;
 
@@ -570,15 +568,12 @@
 		pinctrl-0 = <&pm8010n_active>;
 
 		pm8010-chip@900 {
+			compatible = "qcom,pm8008-chip";
 			reg = <0x900>;
 
 			PM8010N_EN: qcom,pm8008-chip-en {
 				regulator-name = "pm8010n-chip-en";
 			};
-		};
-
-		qcom,revid@100 {
-			reg = <0x100>;
 		};
 	};
 
@@ -589,6 +584,7 @@
 		#size-cells = <0>;
 
 		qcom,pm8010n-regulator {
+			compatible = "qcom,pm8010-regulator";
 			#address-cells = <1>;
 			#size-cells = <0>;
 
