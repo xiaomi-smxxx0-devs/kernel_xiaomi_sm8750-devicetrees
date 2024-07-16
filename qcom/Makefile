@@ -169,6 +169,13 @@ dtb-y += $(pineapple_tuivm-dtb-y)
 endif
 endif
 
+ifeq ($(CONFIG_ARCH_SDXKOVA), y)
+sdxkova-dtb-$(CONFIG_ARCH_SDXKOVA) += sdxkova-idp-cpe.dtb \
+				sdxkova-idp-mbb.dtb
+dtb-y += $(sdxkova-dtb-y)
+
+endif
+
 ifeq ($(CONFIG_ARCH_SUN), y)
 ifeq ($(CONFIG_ARCH_QTI_VM), y)
 sun_tuivm-dtb-$(CONFIG_ARCH_QTI_VM) += sun-vm-rumi.dtb \
