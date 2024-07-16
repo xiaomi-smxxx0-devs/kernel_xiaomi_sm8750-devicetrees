@@ -719,105 +719,110 @@
 
 	mem_dump {
 		compatible = "qcom,mem-dump";
+		memory-region = <&dump_mem>;
 
-		c0_context {
-			qcom,dump-size = <0x800>;
-			qcom,dump-id = <0x0>;
-		};
+		static_dump {
+			qcom,static-mem-dump;
 
-		c1_context {
-			qcom,dump-size = <0x800>;
-			qcom,dump-id = <0x1>;
-		};
+			c0_context {
+				qcom,dump-size = <0x800>;
+				qcom,dump-id = <0x0>;
+			};
 
-		c2_context {
-			qcom,dump-size = <0x800>;
-			qcom,dump-id = <0x2>;
-		};
+			c1_context {
+				qcom,dump-size = <0x800>;
+				qcom,dump-id = <0x1>;
+			};
 
-		c3_context {
-			qcom,dump-size = <0x800>;
-			qcom,dump-id = <0x3>;
-		};
+			c2_context {
+				qcom,dump-size = <0x800>;
+				qcom,dump-id = <0x2>;
+			};
 
-		l1_icache0 {
-			qcom,dump-size = <0x9040>;
-			qcom,dump-id = <0x60>;
-		};
+			c3_context {
+				qcom,dump-size = <0x800>;
+				qcom,dump-id = <0x3>;
+			};
 
-		l1_icache1 {
-			qcom,dump-size = <0x9040>;
-			qcom,dump-id = <0x61>;
-		};
+			l1_icache0 {
+				qcom,dump-size = <0x9040>;
+				qcom,dump-id = <0x60>;
+			};
 
-		l1_icache2 {
-			qcom,dump-size = <0x9040>;
-			qcom,dump-id = <0x62>;
-		};
+			l1_icache1 {
+				qcom,dump-size = <0x9040>;
+				qcom,dump-id = <0x61>;
+			};
 
-		l1_icache3 {
-			qcom,dump-size = <0x9040>;
-			qcom,dump-id = <0x63>;
-		};
+			l1_icache2 {
+				qcom,dump-size = <0x9040>;
+				qcom,dump-id = <0x62>;
+			};
 
-		l1_dcache0 {
-			qcom,dump-size = <0x9040>;
-			qcom,dump-id = <0x80>;
-		};
+			l1_icache3 {
+				qcom,dump-size = <0x9040>;
+				qcom,dump-id = <0x63>;
+			};
 
-		l1_dcache1 {
-			qcom,dump-size = <0x9040>;
-			qcom,dump-id = <0x81>;
-		};
+			l1_dcache0 {
+				qcom,dump-size = <0x9040>;
+				qcom,dump-id = <0x80>;
+			};
 
-		l1_dcache2 {
-			qcom,dump-size = <0x9040>;
-			qcom,dump-id = <0x82>;
-		};
+			l1_dcache1 {
+				qcom,dump-size = <0x9040>;
+				qcom,dump-id = <0x81>;
+			};
 
-		l1_dcache3 {
-			qcom,dump-size = <0x9040>;
-			qcom,dump-id = <0x83>;
-		};
+			l1_dcache2 {
+				qcom,dump-size = <0x9040>;
+				qcom,dump-id = <0x82>;
+			};
 
-		l2_tlb0 {
-			qcom,dump-size = <0x2000>;
-			qcom,dump-id = <0x120>;
-		};
+			l1_dcache3 {
+				qcom,dump-size = <0x9040>;
+				qcom,dump-id = <0x83>;
+			};
 
-		l2_tlb1 {
-			qcom,dump-size = <0x2000>;
-			qcom,dump-id = <0x121>;
-		};
+			l2_tlb0 {
+				qcom,dump-size = <0x2000>;
+				qcom,dump-id = <0x120>;
+			};
 
-		l2_tlb2 {
-			qcom,dump-size = <0x2000>;
-			qcom,dump-id = <0x122>;
-		};
+			l2_tlb1 {
+				qcom,dump-size = <0x2000>;
+				qcom,dump-id = <0x121>;
+			};
 
-		l2_tlb3 {
-			qcom,dump-size = <0x2000>;
-			qcom,dump-id = <0x123>;
-		};
+			l2_tlb2 {
+				qcom,dump-size = <0x2000>;
+				qcom,dump-id = <0x122>;
+			};
 
-		pmic {
-			qcom,dump-size = <0x200000>;
-			qcom,dump-id = <0xe4>;
-		};
+			l2_tlb3 {
+				qcom,dump-size = <0x2000>;
+				qcom,dump-id = <0x123>;
+			};
 
-		tmc_etf {
-			qcom,dump-size = <0x8000>;
-			qcom,dump-id = <0xf0>;
-		};
+			pmic {
+				qcom,dump-size = <0x200000>;
+				qcom,dump-id = <0xe4>;
+			};
 
-		etr_reg {
-			qcom,dump-size = <0x1000>;
-			qcom,dump-id = <0x100>;
-		};
+			tmc_etf {
+				qcom,dump-size = <0x8000>;
+				qcom,dump-id = <0xf0>;
+			};
 
-		etf_reg {
-			qcom,dump-size = <0x1000>;
-			qcom,dump-id = <0x101>;
+			etr_reg {
+				qcom,dump-size = <0x1000>;
+				qcom,dump-id = <0x100>;
+			};
+
+			etf_reg {
+				qcom,dump-size = <0x1000>;
+				qcom,dump-id = <0x101>;
+			};
 		};
 	};
 
