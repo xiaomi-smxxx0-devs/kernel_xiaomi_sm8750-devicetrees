@@ -103,7 +103,7 @@
 			reg = <0x980000 0x4000>;
 			reg-names = "se_phys";
 			interrupts = <GIC_SPI 601 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -122,7 +122,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 			interrupts = <GIC_SPI 601 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -143,7 +143,7 @@
 			reg = <0x984000 0x4000>;
 			#address-cells = <1>;
 			#size-cells = <0>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -167,7 +167,7 @@
 			#size-cells = <0>;
 			reg-names = "se_phys";
 			interrupts = <GIC_SPI 602 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -190,7 +190,7 @@
 			reg = <0x98c000 0x4000>;
 			#address-cells = <1>;
 			#size-cells = <0>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -214,7 +214,7 @@
 			#size-cells = <0>;
 			reg-names = "se_phys";
 			interrupts = <GIC_SPI 604 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -238,7 +238,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 			interrupts = <GIC_SPI 605 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -261,7 +261,7 @@
 			#size-cells = <0>;
 			reg-names = "se_phys";
 			interrupts = <GIC_SPI 605 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 			<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 			<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -350,7 +350,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 			interrupts = <GIC_SPI 353 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 				<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 				<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -373,7 +373,7 @@
 			#size-cells = <0>;
 			reg-names = "se_phys";
 			interrupts = <GIC_SPI 353 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 				<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 				<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -397,7 +397,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 			interrupts = <GIC_SPI 354 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 				<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 				<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -420,7 +420,7 @@
 			#size-cells = <0>;
 			reg-names = "se_phys";
 			interrupts = <GIC_SPI 354 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 				<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 				<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -444,7 +444,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 			interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 				<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 				<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -468,7 +468,7 @@
 			#size-cells = <0>;
 			reg-names = "se_phys";
 			interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 				<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 				<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -492,7 +492,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 			interrupts = <GIC_SPI 357 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 				<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 				<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
@@ -515,7 +515,7 @@
 			#size-cells = <0>;
 			reg-names = "se_phys";
 			interrupts = <GIC_SPI 357 IRQ_TYPE_LEVEL_HIGH>;
-			interconnect-names = "qup-core", "snoc-llcc", "qup-ddr";
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
 				<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
 				<&system_noc MASTER_A2NOC_SNOC &gem_noc SLAVE_LLCC>,
