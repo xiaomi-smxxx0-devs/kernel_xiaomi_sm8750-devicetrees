@@ -14,6 +14,7 @@
 		reg = <0x28>;
 		qcom,sn-irq = <&tlmm 9 0x00>;
 		qcom,sn-ven = <&tlmm 6 0x00>;
+                qcom,sn-firm = <&tlmm 8 0x00>;
 		qcom,sn-clkreq = <&tlmm 7 0x00>;
 		qcom,sn-vdd-1p8-supply = <&L21B>;
 		qcom,sn-vdd-1p8-voltage = <1800000 1800000>;
