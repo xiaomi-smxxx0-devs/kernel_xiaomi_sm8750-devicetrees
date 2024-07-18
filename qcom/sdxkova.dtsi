@@ -140,3 +140,5 @@
 &uart1 {
 	status = "ok";
 };
+
+#include "sdxkova-regulators.dtsi"
