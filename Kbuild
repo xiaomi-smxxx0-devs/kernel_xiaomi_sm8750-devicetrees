@@ -15,6 +15,12 @@ ifeq ($(CONFIG_ARCH_X1E80100),y)
 dtbo-y += x1e80100-kiwi-cnss.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_RAVELIN),y)
+dtbo-y += ravelin-idp-adrastea.dtbo
+dtbo-y += ravelin-qrd-adrastea.dtbo
+dtbo-y += ravelin-atp-adrastea.dtbo
+endif
+
 ifeq ($(CONFIG_ARCH_PARROT),y)
 dtbo-y += parrot-idp-wcn3990.dtbo
 dtbo-y += parrot-idp-wcn6750.dtbo
