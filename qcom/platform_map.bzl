@@ -205,6 +205,8 @@ _platform_map = {
             {"name": "ravelinp.dtb"},
             {"name": "ravelin-4gb.dtb"},
             {"name": "ravelinp-4gb.dtb"},
+            {"name": "ravelin-sg.dtb"},
+            {"name": "ravelinp-sg.dtb"},
         ],
         "dtbo_list": [
             # keep sorted
