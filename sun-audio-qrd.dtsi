@@ -103,6 +103,7 @@
 	qcom,msm-mbhc-usbc-audio-supported = <1>;
 	qcom,msm-mbhc-hphl-swh = <0>;
 	qcom,msm-mbhc-gnd-swh = <0>;
+	qcom,msm-mbhc-hs-mic-max-threshold-mv = <1670>;
 	qcom,wcd-disable-legacy-surge;
 	wcd939x-i2c-handle = <&wcd_usbss>;
 };
