@@ -3,6 +3,7 @@ _platform_map = {
         "dtb_list": [
             # keep sorted
             {"name": "sdxkova-idp-cpe.dtb"},
+            {"name": "sdxkova-idp-m2.dtb"},
             {"name": "sdxkova-idp-mbb.dtb"},
         ],
         "dtbo_list": [
