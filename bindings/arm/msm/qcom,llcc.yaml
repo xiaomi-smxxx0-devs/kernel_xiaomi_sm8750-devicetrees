@@ -34,6 +34,7 @@ properties:
       - qcom,sm8550-llcc
       - qcom,pineapple-llcc
       - qcom,sun-llcc
+      - qcom,kera-llcc
       - qcom,x1e80100-llcc
 
   reg:

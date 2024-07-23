@@ -2297,6 +2297,7 @@
 		qcom,pas-id = <34>;
 		qcom,vmid = <49>;
 		qcom,firmware-name = "oemvm";
+		qcom,keep-running;
 		memory-region = <&oem_vm_mem &vm_comm_mem>;
 		virtio-backends = <&oem_vm_virt_be0 &oem_vm_virt_be1>;
 	};
@@ -2363,6 +2364,7 @@
 		qcom,bam-ee = <0>;
 		qcom,smmu-s1-enable;
 		qcom,no-clock-support;
+		qcom,no-clk-gating;
 		interconnect-names = "data_path";
 		interconnects = <&aggre2_noc MASTER_CRYPTO &mc_virt SLAVE_EBI1>;
 		iommus = <&apps_smmu 0x0480 0x0>,
@@ -3060,6 +3062,18 @@
 		qcom,primary;
 	};
 
+	qcom,test-large-dmabuf-tuivm {
+		compatible = "qcom,gh-large-dmabuf-test";
+		gunyah-label = <0xd>;
+		qcom,primary;
+	};
+
+	qcom,test-large-dmabuf-oemvm {
+		compatible = "qcom,gh-large-dmabuf-test";
+		gunyah-label = <0xe>;
+		qcom,primary;
+	};
+
 	qcom,gh-qtimer@1680b000 {
 		compatible = "qcom,gh-qtmr";
 		reg = <0x1680b000 0x1000>;
@@ -3191,7 +3205,11 @@
 
 	qcom_mpam: qcom,mpam {
 		compatible = "qcom,mpam";
-		reg = <0x17b6f000 0x1000>;
+	};
+
+	cpu_mpam: qcom,cpu_mpam {
+		compatible = "qcom,cpu-mpam";
+		reg = <0x17b6f000 0x400>;
 		reg-names = "mon-base";
 
 		L2_0 {
@@ -3202,6 +3220,36 @@
 		L2_1 {
 			qcom,msc-id = <1>;
 			qcom,msc-name = "L2_1";
+		};
+	};
+
+	noc_bw_mpam: qcom,noc_bw_mpam {
+		compatible = "qcom,platform-mpam";
+		reg = <0x17b6f400 0x400>;
+		reg-names = "mon-base";
+		qcom,msc-id = <3>;
+		qcom,msc-name = "noc_bw";
+		qcom,gears = "low", "medium", "high", "veryhigh";
+		qcom,gear-id = <1>, <2>, <3>, <4>;
+
+		cpu_cluster0 {
+			qcom,client-id = <0x1>;
+			qcom,client-name = "cpu_cluster0";
+		};
+
+		cpu_cluster1 {
+			qcom,client-id = <0x2>;
+			qcom,client-name = "cpu_cluster1";
+		};
+
+		gpu {
+			qcom,client-id = <0x10>;
+			qcom,client-name = "gpu";
+		};
+
+		nsp {
+			qcom,client-id = <0x100>;
+			qcom,client-name = "nsp";
 		};
 	};
 

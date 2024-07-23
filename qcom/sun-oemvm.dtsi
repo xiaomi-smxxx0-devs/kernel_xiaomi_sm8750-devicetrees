@@ -188,6 +188,15 @@
 				peer-default;
 			};
 
+			test-large-dmabuf-oemvm {
+				vdevice-type = "message-queue-pair";
+				generate = "/hypervisor/test-large-dmabuf-oemvm-pair";
+				message-size = <0xf0>;
+				queue-depth = <0x8>;
+				qcom,label = <0xe>;
+				peer-default;
+			};
+
 			msgqsock-msgq-pair {
 				vdevice-type = "message-queue-pair";
 				generate = "/hypervisor/msgqsock-msgq-pair";
@@ -289,6 +298,11 @@
 		compatible = "qcom,gh-msgq-test";
 		gunyah-label = <0x5>;
 		affinity = <0>;
+	};
+
+	qcom,test-large-dmabuf-oemvm {
+		compatible = "qcom,gh-large-dmabuf-test";
+		gunyah-label = <0xe>;
 	};
 
 	qcom,gh-qtimer@1680b000 {
