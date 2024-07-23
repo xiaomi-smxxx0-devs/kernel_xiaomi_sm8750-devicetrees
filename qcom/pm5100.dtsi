@@ -256,7 +256,7 @@
 		};
 
 		pm5100_cdc: qcom,pm5100-cdc {
-			/* compatible = "qcom,pm5100-spmi"; */
+			compatible = "qcom,pm5100-spmi";
 		};
 
 		pm5100_bcl: bcl@4700 {
