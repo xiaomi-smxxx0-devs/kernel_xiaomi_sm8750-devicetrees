@@ -983,6 +983,7 @@
 #include "tuna-stub-regulators.dtsi"
 #include "tuna-usb.dtsi"
 #include "tuna-qupv3.dtsi"
+#include "msm-rdbg.dtsi"
 
 &qupv3_se7_2uart {
 	status = "ok";
