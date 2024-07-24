@@ -7,6 +7,7 @@
 /plugin/;
 
 #include "tuna-cdp.dtsi"
+#include "tuna-pmiv0108.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. Tuna CDP";
