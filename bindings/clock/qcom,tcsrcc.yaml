@@ -22,6 +22,7 @@ properties:
       - qcom,pineapple-tcsrcc
       - qcom,sun-tcsrcc
       - qcom,tuna-tcsrcc
+      - qcom,kera-tcsrcc
 
 required:
   - compatible
