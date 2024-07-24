@@ -85,6 +85,18 @@ allOf:
             - const: llcc3_base
             - const: llcc_broadcast_base
 
+  child-node:
+    description: Container of scid_heuristics node
+    properties:
+    required:
+        compatible:
+            const: qcom,scid-heuristics
+        qcom,heuristics_scid: Heuristics SCID number
+        freq,threshold_idx: Frequency level index for each Freq CPU domains,
+        freq,threshold_residency: Resideancy of the frequency for the Heuristics algorithm
+        heuristics_scid_thread_interval: Thread poll interval for Frequency monitoring
+        qcom,scid_heuristics_enabled: Flag to Disable enable the feature.
+
 additionalProperties: false
 
 examples:
@@ -107,5 +119,14 @@ examples:
             llcc_perfmon {
                 compatible = "qcom,llcc-perfmon";
             }
+
+            scid_heuristics {
+                 compatible = "qcom,scid-heuristics";
+                 qcom,heuristics_scid = <32>;
+                 freq,threshold_idx = <11>, <10>;
+                 freq,threshold_residency = <5000>, <5000>;
+                 heuristics_scid_thread_interval = <16000>;
+                 qcom,scid_heuristics_enabled;
+            };
         };
     };
