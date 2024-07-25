@@ -11,6 +11,10 @@ dtbo-y += sun-wcn786x-v8.dtbo
 dtbo-y += sunp-hdk-peach-bt-v8.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_RAVELIN), y)
+dtbo-y += ravelin-bt.dtbo
+endif
+
 always-y        := $(dtb-y) $(dtbo-y)
 subdir-y        := $(dts-dirs)
 clean-files     := *.dtb *.dtbo
