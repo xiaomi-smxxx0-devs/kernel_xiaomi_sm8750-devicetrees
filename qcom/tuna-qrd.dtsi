@@ -112,3 +112,6 @@
 	status = "ok";
 };
 
+&thermal_zones {
+	/delete-node/ sys-therm-11;
+};

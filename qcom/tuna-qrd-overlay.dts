@@ -7,6 +7,8 @@
 /plugin/;
 
 #include "tuna-qrd.dtsi"
+#include "tuna-pmih010x.dtsi"
+#include "pmd802x.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. Tuna QRD";
