@@ -64,7 +64,7 @@
 		dma-coherent;
 
 		audio_cnss_resv_region: audio_cnss_resv_region {
-			iommu-addresses = <&msm_audio_ion 0x00000000 0x88000000>,
+			iommu-addresses = <&msm_audio_ion 0x00000000 0x18000000>,
 				<&msm_audio_ion 0xb0000000 0x50000000>;
 		};
 	};
