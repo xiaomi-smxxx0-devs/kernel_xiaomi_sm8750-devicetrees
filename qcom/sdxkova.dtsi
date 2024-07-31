@@ -33,9 +33,18 @@
 	};
 
 	aliases: aliases {
+		serial0 = &uart1;
 	};
 };
 
 &tlmm {
 	gpio-reserved-ranges = <110 6>;
+};
+
+&qupv3_id_0 {
+	status = "ok";
+};
+
+&uart1 {
+	status = "ok";
 };
