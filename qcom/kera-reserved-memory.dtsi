@@ -66,8 +66,10 @@
 	};
 
 	smem_mem: smem_region@81d00000 {
-		no-map;
+		compatible = "qcom,smem";
 		reg = <0x0 0x81d00000 0x0 0x200000>;
+		hwlocks = <&tcsr_mutex 3>;
+		no-map;
 	};
 
 	pdp_ns_shared_mem: pdp_ns_shared_region@81f00000 {
