@@ -33,7 +33,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 
-			qcom,initial-pwrlevel = <9>;
+			qcom,initial-pwrlevel = <10>;
 			qcom,speed-bin = <0xbe>;
 
 			/* NOM */
@@ -178,7 +178,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 
-			qcom,initial-pwrlevel = <11>;
+			qcom,initial-pwrlevel = <12>;
 			qcom,speed-bin = <0xdd>;
 
 			/* TURBO_L1 */
@@ -349,7 +349,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 
-			qcom,initial-pwrlevel = <11>;
+			qcom,initial-pwrlevel = <12>;
 			qcom,speed-bin = <0xe8>;
 
 			/* TURBO_L3 */
@@ -520,7 +520,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 
-			qcom,initial-pwrlevel = <11>;
+			qcom,initial-pwrlevel = <12>;
 			qcom,sku-codes = <SKU_CODE(PCODE_UNKNOWN, FC_AA)
 					SKU_CODE(PCODE_UNKNOWN, FC_AB)>;
 
@@ -692,7 +692,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 
-			qcom,initial-pwrlevel = <12>;
+			qcom,initial-pwrlevel = <13>;
 			qcom,speed-bin = <0xf2>;
 
 			/* TURBO_L3 */
@@ -876,7 +876,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 
-			qcom,initial-pwrlevel = <13>;
+			qcom,initial-pwrlevel = <14>;
 			qcom,sku-codes = <SKU_CODE(PCODE_UNKNOWN, FC_AC)
 					SKU_CODE(PCODE_UNKNOWN, FC_UNKNOWN)>;
 
