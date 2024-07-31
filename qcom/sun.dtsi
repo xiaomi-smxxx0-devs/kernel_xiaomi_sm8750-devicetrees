@@ -3182,12 +3182,6 @@
 		};
 	};
 
-	cpucp_fast: qcom,cpucp_fast {
-		compatible = "qcom,cpucp_fast";
-		mboxes = <&cpucp 7>;
-		qcom,policy-cpus = < 6 >;
-	};
-
 	cpucp_log: qcom,cpucp_log@0x81210000 {
 		compatible = "qcom,cpucp-log";
 		reg =	<0x81210000 0x10000>,
