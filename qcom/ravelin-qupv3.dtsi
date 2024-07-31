@@ -77,7 +77,7 @@
 			reg-names = "se_phys";
 			interrupts-extended = <&intc GIC_SPI 603 IRQ_TYPE_LEVEL_HIGH>,
 					<&tlmm 17 IRQ_TYPE_LEVEL_HIGH>;
-			clock-names = "se-clk";
+			clock-names = "se";
 			clocks = <&gcc GCC_QUPV3_WRAP0_S2_CLK>;
 			interconnect-names = "qup-core", "qup-config", "qup-memory";
 			interconnects =
