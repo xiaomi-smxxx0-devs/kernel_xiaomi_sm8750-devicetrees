@@ -1734,6 +1734,7 @@
 		sys-cache-names = "ofe_ip", "ipe_rt_ip", "ipe_srt_ip", "ipe_rt_rf", "ipe_srt_rf";
 		sys-cache-uids = <71 72 73 74 75>;
 		sys-cache-concur = <1 1 1 0 0>;
+		enable-secure-qos-update;
 		enable-smart-qos;
 		enable-cam-drv = <(CAM_DDR_DRV | CAM_CLK_DRV)>;
 		rt-wr-priority-min = <4>;
