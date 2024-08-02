@@ -1143,7 +1143,7 @@
 	};
 
 	qcom,cpufreq-hw-debug@f521000 {
-		/* compatible = "qcom,cpufreq-hw-debug"; */
+		compatible = "qcom,cpufreq-hw-debug";
 		reg = <0xf521000 0x1400>;
 		reg-names = "domain-top";
 		qcom,freq-hw-domain = <&cpufreq_hw 0>;
