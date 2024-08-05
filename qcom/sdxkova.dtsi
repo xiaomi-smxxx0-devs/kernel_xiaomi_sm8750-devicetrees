@@ -398,6 +398,14 @@
 		#interrupt-cells = <3>;
 		#mbox-cells = <2>;
 	};
+
+	llcc_device: cache-controller@19200000 {
+		compatible = "qcom,sdxpinn-llcc";
+		reg = <0x0 0x19200000 0x0 0x200000>;
+		reg-names = "llcc0_base";
+		interrupts = <GIC_SPI 399 IRQ_TYPE_LEVEL_HIGH>;
+		cap-based-alloc-and-pwr-collapse;
+	};
 };
 
 &gcc {
