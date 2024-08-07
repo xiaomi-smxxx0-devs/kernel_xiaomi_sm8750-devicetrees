@@ -83,7 +83,7 @@
 
 				qcom,bus-freq = <6>;
 				qcom,bus-min = <4>;
-				qcom,bus-max = <7>;
+				qcom,bus-max = <8>;
 
 				qcom,acd-level = <ACD_LEVEL_SVS_L0>;
 			};
@@ -96,7 +96,7 @@
 
 				qcom,bus-freq = <6>;
 				qcom,bus-min = <4>;
-				qcom,bus-max = <7>;
+				qcom,bus-max = <8>;
 
 				qcom,acd-level = <ACD_LEVEL_SVS>;
 			};
@@ -254,7 +254,7 @@
 
 				qcom,bus-freq = <6>;
 				qcom,bus-min = <4>;
-				qcom,bus-max = <7>;
+				qcom,bus-max = <8>;
 
 				qcom,acd-level = <ACD_LEVEL_SVS_L0>;
 			};
@@ -267,7 +267,7 @@
 
 				qcom,bus-freq = <6>;
 				qcom,bus-min = <4>;
-				qcom,bus-max = <7>;
+				qcom,bus-max = <8>;
 
 				qcom,acd-level = <ACD_LEVEL_SVS>;
 			};
@@ -425,7 +425,7 @@
 
 				qcom,bus-freq = <6>;
 				qcom,bus-min = <4>;
-				qcom,bus-max = <7>;
+				qcom,bus-max = <8>;
 
 				qcom,acd-level = <ACD_LEVEL_SVS_L0>;
 			};
@@ -438,7 +438,7 @@
 
 				qcom,bus-freq = <6>;
 				qcom,bus-min = <4>;
-				qcom,bus-max = <7>;
+				qcom,bus-max = <8>;
 
 				qcom,acd-level = <ACD_LEVEL_SVS>;
 			};
@@ -521,7 +521,8 @@
 			#size-cells = <0>;
 
 			qcom,initial-pwrlevel = <12>;
-			qcom,sku-codes = <SKU_CODE(PCODE_UNKNOWN, FC_AB)>;
+			qcom,sku-codes = <SKU_CODE(PCODE_UNKNOWN, FC_AA)
+					SKU_CODE(PCODE_UNKNOWN, FC_AB)>;
 
 			/* TURBO_L3 */
 			qcom,gpu-pwrlevel@0 {
@@ -596,7 +597,7 @@
 
 				qcom,bus-freq = <6>;
 				qcom,bus-min = <4>;
-				qcom,bus-max = <7>;
+				qcom,bus-max = <8>;
 
 				qcom,acd-level = <ACD_LEVEL_SVS_L0>;
 			};
@@ -609,7 +610,7 @@
 
 				qcom,bus-freq = <6>;
 				qcom,bus-min = <4>;
-				qcom,bus-max = <7>;
+				qcom,bus-max = <8>;
 
 				qcom,acd-level = <ACD_LEVEL_SVS>;
 			};
@@ -780,7 +781,7 @@
 
 				qcom,bus-freq = <6>;
 				qcom,bus-min = <4>;
-				qcom,bus-max = <7>;
+				qcom,bus-max = <8>;
 
 				qcom,acd-level = <ACD_LEVEL_SVS_L0>;
 			};
@@ -793,7 +794,7 @@
 
 				qcom,bus-freq = <6>;
 				qcom,bus-min = <4>;
-				qcom,bus-max = <7>;
+				qcom,bus-max = <8>;
 
 				qcom,acd-level = <ACD_LEVEL_SVS>;
 			};
@@ -978,7 +979,7 @@
 
 				qcom,bus-freq = <6>;
 				qcom,bus-min = <4>;
-				qcom,bus-max = <7>;
+				qcom,bus-max = <8>;
 
 				qcom,acd-level = <ACD_LEVEL_SVS_L0>;
 			};
@@ -991,7 +992,7 @@
 
 				qcom,bus-freq = <6>;
 				qcom,bus-min = <4>;
-				qcom,bus-max = <7>;
+				qcom,bus-max = <8>;
 
 				qcom,acd-level = <ACD_LEVEL_SVS>;
 			};
