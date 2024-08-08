@@ -719,6 +719,10 @@
 		};
 	};
 
+	qcom,glink {
+		compatible = "qcom,glink";
+	};
+
 	qcom,qsee_ipc_irq_bridge {
 		compatible = "qcom,qsee-ipc-irq-bridge";
 
@@ -924,9 +928,9 @@
 	gic-interrupt-router {
 		compatible = "qcom,gic-intr-routing";
 		/* keep a few m cores in class0 only to avoid wakeup of l cores */
-		qcom,gic-class0-cpus = <0 1>;
+		qcom,gic-class0-cpus = <&CPU0 &CPU1>;
 		/* keep other cores in class1 */
-		qcom,gic-class1-cpus = <2 3 4 5 6 7>;
+		qcom,gic-class1-cpus = <&CPU2 &CPU3 &CPU4 &CPU5 &CPU6 &CPU7>;
 	};
 
 	qcom,secure-buffer {
@@ -1381,7 +1385,7 @@
 				  "disp_crm_drv5";
 		clocks = <&dispcc DISP_CC_MDSS_AHB_CLK>;
 		qcom,hw-drv-ids = <0 1 2 3 4 5>;
-		qcom,sw-drv-ids = <0 1 2 3 4 5>;
+		qcom,sw-drv-ids = <0 2 3>;
 	};
 
 	cam_crm: crm@adcb000 {
@@ -2776,13 +2780,15 @@
 					<&adsp_smp2p_in 0 0>,
 					<&adsp_smp2p_in 2 0>,
 					<&adsp_smp2p_in 1 0>,
-					<&adsp_smp2p_in 3 0>;
+					<&adsp_smp2p_in 3 0>,
+					<&adsp_smp2p_in 7 0>;
 
 		interrupt-names = "wdog",
 				"fatal",
 				"handover",
 				"ready",
-				"stop-ack";
+				"stop-ack",
+				"shutdown-ack";
 
 		/* Outputs to turing */
 		qcom,smem-states = <&adsp_smp2p_out 0>;
@@ -2926,13 +2932,15 @@
 					<&cdsp_smp2p_in 0 0>,
 					<&cdsp_smp2p_in 2 0>,
 					<&cdsp_smp2p_in 1 0>,
-					<&cdsp_smp2p_in 3 0>;
+					<&cdsp_smp2p_in 3 0>,
+					<&cdsp_smp2p_in 7 0>;
 
 		interrupt-names = "wdog",
 				"fatal",
 				"handover",
 				"ready",
-				"stop-ack";
+				"stop-ack",
+				"shutdown-ack";
 
 		/* Outputs to turing */
 		qcom,smem-states = <&cdsp_smp2p_out 0>;
@@ -3177,6 +3185,12 @@
 			reg = <0x80>;
 			#clock-cells = <1>;
 		};
+	};
+
+	cpucp_fast: qcom,cpucp_fast {
+		compatible = "qcom,cpucp_fast";
+		mboxes = <&cpucp 7>;
+		qcom,policy-cpus = < 6 >;
 	};
 
 	cpucp_log: qcom,cpucp_log@0x81210000 {
@@ -3516,6 +3530,7 @@
 		reg = <0x240B3400 0x300>, <0x240B3300 0x200>;
 		reg-names = "base", "global_base";
 		interrupts = <GIC_SPI 581 IRQ_TYPE_LEVEL_HIGH>;
+		qcom,map-ne;
 		qcom,mport = <0>;
 		qcom,hw-timer-hz = <19200000>;
 		qcom,count-unit = <0x10000>;
@@ -3837,6 +3852,11 @@
 	q6_cdsp_dtb_mem: q6_cdsp_dtb_region@9eb00000 {
 		no-map;
 		reg = <0x0 0x9eb00000 0x0 0x80000>;
+	};
+
+	lost_reg_mem2 {
+		no-map;
+		reg = <0x0 0x9eb80000 0x0 0x80000>;
 	};
 
 	soccp_mem: soccp_region@9ec00000 {

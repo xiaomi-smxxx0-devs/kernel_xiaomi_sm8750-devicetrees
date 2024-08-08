@@ -184,6 +184,20 @@ properties:
       - qcom,ravelin-pcie_anoc
       - qcom,ravelin-system_noc
       - qcom,ravelin-video_aggre_noc
+      - qcom,tuna-aggre1_noc
+      - qcom,tuna-aggre2_noc
+      - qcom,tuna-clk_virt
+      - qcom,tuna-cnoc_cfg
+      - qcom,tuna-cnoc_main
+      - qcom,tuna-gem_noc
+      - qcom,tuna-lpass_ag_noc
+      - qcom,tuna-lpass_lpiaon_noc
+      - qcom,tuna-lpass_lpicx_noc
+      - qcom,tuna-mc_virt
+      - qcom,tuna-mmss_noc
+      - qcom,tuna-nsp_noc
+      - qcom,tuna-pcie_anoc
+      - qcom,tuna-system_noc
 
   '#interconnect-cells': true
 

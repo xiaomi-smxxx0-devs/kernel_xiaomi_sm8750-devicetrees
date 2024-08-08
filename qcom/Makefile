@@ -19,6 +19,7 @@ SUN_BASE_DTB += sun.dtb sun-v2.dtb sun-tp.dtb sun-tp-v2.dtb
 SUN_APQ_BASE_DTB += sunp.dtb sunp-v2.dtb sunp-tp.dtb sunp-tp-v2.dtb
 
 SUN_BOARDS += \
+		sun-mtp-3.5mm-kiwi-v8-overlay.dtbo \
 		sun-mtp-3.5mm-overlay.dtbo \
 		sun-mtp-kiwi-overlay.dtbo \
 		sun-mtp-kiwi-v8-overlay.dtbo \
@@ -130,8 +131,8 @@ parrot-dtb-$(CONFIG_ARCH_PARROT) += \
 parrot-overlays-dtb-$(CONFIG_ARCH_PARROT) += $(PARROT_BOARDS) $(PARROT_BASE_DTB) $(PARROT_4GB_BOARDS) $(PARROT_4GB_BASE_DTB)
 dtb-y += $(parrot-dtb-y)
 
-RAVELIN_BASE_DTB += ravelin.dtb ravelinp.dtb
-RAVELIN_4GB_BASE_DTB += ravelin-4gb.dtb ravelinp-4gb.dtb
+RAVELIN_BASE_DTB += ravelin.dtb ravelinp.dtb ravelin-sg.dtb ravelinp-sg.dtb
+RAVELIN_4GB_BASE_DTB += ravelin-4gb.dtb ravelinp-4gb.dtb ravelin-sg.dtb ravelinp-sg.dtb
 
 RAVELIN_BOARDS += \
 		 ravelin-rumi-overlay.dtbo \

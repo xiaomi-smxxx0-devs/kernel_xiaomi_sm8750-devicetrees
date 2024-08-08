@@ -42,6 +42,7 @@ _platform_map = {
             {"name": "sun-cdp-no-display-overlay.dtbo"},
             {"name": "sun-cdp-overlay.dtbo"},
             {"name": "sun-cdp-v8-overlay.dtbo"},
+            {"name": "sun-mtp-3.5mm-kiwi-v8-overlay.dtbo"},
             {"name": "sun-mtp-3.5mm-overlay.dtbo"},
             {"name": "sun-mtp-kiwi-overlay.dtbo"},
             {"name": "sun-mtp-kiwi-v8-overlay.dtbo"},
@@ -205,6 +206,8 @@ _platform_map = {
             {"name": "ravelinp.dtb"},
             {"name": "ravelin-4gb.dtb"},
             {"name": "ravelinp-4gb.dtb"},
+            {"name": "ravelin-sg.dtb"},
+            {"name": "ravelinp-sg.dtb"},
         ],
         "dtbo_list": [
             # keep sorted

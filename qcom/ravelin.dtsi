@@ -28,7 +28,7 @@
 
 	chosen: chosen {
 		stdout-path = "/soc/qcom,qup_uart@a88000:115200n8";
-		bootargs = "console=ttyMSM0,115200n8 loglevel=6 log_buf_len=256K kernel.panic_on_rcu_stall=1 loop.max_part=7 pcie_ports=compat kasan=off rcupdate.rcu_expedited=1 rcu_nocbs=0-7 ftrace_dump_on_oops pstore.compress=none kpti=0 swiotlb=noforce cgroup.memory=nokmem,nosocket kswapd_per_node=2 slub_debug=- allow_file_spec_access cpufreq.default_governor=performance transparent_hugepage=never can.stats_timer=0 disable_dma32=on android12_only.will_be_removed_soon.memblock_nomap_remove=on pcie_ports=compat";
+		bootargs = "loglevel=6 log_buf_len=256K kernel.panic_on_rcu_stall=1 loop.max_part=7 pcie_ports=compat kasan=off rcupdate.rcu_expedited=1 rcu_nocbs=0-7 ftrace_dump_on_oops pstore.compress=none kpti=0 swiotlb=noforce cgroup.memory=nokmem,nosocket kswapd_per_node=2 slub_debug=- allow_file_spec_access cpufreq.default_governor=performance transparent_hugepage=never can.stats_timer=0 disable_dma32=on android12_only.will_be_removed_soon.memblock_nomap_remove=on pcie_ports=compat";
 	};
 
 	memory { device_type = "memory"; reg = <0 0 0 0>; };
@@ -44,6 +44,7 @@
 				<0x2 0xc0000000 0x1 0x40000000>;
 		granule = <512>;
 		mboxes = <&qmp_aop 0>;
+		status = "disabled";
 	};
 
 	aliases: aliases {
@@ -806,6 +807,7 @@
 
 	qcom,mem-buf-msgq {
 		compatible = "qcom,mem-buf-msgq";
+		qcom,msgq-names = "trusted_vm";
 	};
 
 	qcom,rmtfs_sharedmem@0 {
@@ -826,6 +828,7 @@
 	};
 
 	qcom_qseecom: qseecom@c1700000 {
+		compatible = "qcom,qseecom";
 		memory-region = <&qseecom_mem>;
 		qseecom_mem = <&qseecom_mem>;
 		qseecom_ta_mem = <&qseecom_ta_mem>;
@@ -1081,6 +1084,17 @@
 			#interrupt-cells = <2>;
 		};
 
+		smp2p_ipa_1_out: qcom,smp2p-ipa-1-out {
+			qcom,entry-name = "ipa";
+			#qcom,smem-state-cells = <1>;
+		};
+
+		/* ipa - inbound entry from mss */
+		smp2p_ipa_1_in: qcom,smp2p-ipa-1-in {
+			qcom,entry-name = "ipa";
+			interrupt-controller;
+			#interrupt-cells = <2>;
+		};
 	};
 
 	qcom,smp2p-adsp {
@@ -1291,6 +1305,13 @@
 		};
 	};
 
+	qcom_rng: qrng@10c3000 {
+		compatible = "qcom,msm-rng";
+		reg = <0x10c3000 0x1000>;
+		qcom,no-qrng-config;
+		qcom,no-clock-support;
+	};
+
 	ufsphy_mem: ufsphy_mem@1d87000 {
 		reg = <0x1d87000 0xe10>;
 		reg-names = "phy_mem";
@@ -1317,14 +1338,14 @@
 	ufshc_mem: ufshc@1d84000 {
 		compatible = "qcom,ufshc";
 		reg = <0x1d84000 0x3000>,
-				<0x1d88000 0x8000>,
-				<0x1d90000 0x9000>;
-		reg-names = "ufs_mem", "ufs_ice", "ufs_ice_hwkm";
+				<0x1d88000 0x18000>;
+		reg-names = "ufs_mem", "ice";
 		interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
 		phys = <&ufsphy_mem>;
 		phy-names = "ufsphy";
 		#reset-cells = <1>;
 
+		qcom,ice-use-hwkm;
 		lanes-per-direction = <2>;
 		dev-ref-clk-freq = <0>; /* 19.2 MHz */
 		clock-names =
