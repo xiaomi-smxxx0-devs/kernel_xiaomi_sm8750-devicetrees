@@ -5,6 +5,10 @@
 
 #include "ravelin.dtsi"
 
+&cx_sdpm {
+	status = "disabled";
+};
+
 / {
 
 	model = "Qualcomm Technologies, Inc. Ravelin SG";
