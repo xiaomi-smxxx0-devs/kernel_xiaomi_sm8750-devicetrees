@@ -163,9 +163,11 @@
 	 * qcom,ufs-dev-revert to identify ufs device.
 	 */
 	ufs-dev-types = <2>;
-	qcom,ufs-dev-revert;
 	nvmem-cells = <&ufs_dev>, <&boot_config>;
 	nvmem-cell-names = "ufs_dev", "boot_conf";
+
+	boot_device_type = <0x0>;
+	non-removable;
 
 	status = "ok";
 };
