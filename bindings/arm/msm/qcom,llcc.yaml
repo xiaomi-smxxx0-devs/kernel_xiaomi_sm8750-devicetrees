@@ -60,26 +60,26 @@ properties:
           - const: qcom,llcc-perfmon
           - const: qcom,scid-heuristics
 
-      qcom,heuristics_scid:
+      qcom,heuristics-scid:
         $ref: '/schemas/types.yaml#/definitions/uint32'
         description: |
           SCID number of HEURISTICS SID
-      freq,threshold_idx:
+      qcom,freq-threshold-idx:
         $ref: '/schemas/types.yaml#/definitions/uint32-array'
         description: |
           CPU DVFS frequency threshold index
         minItems: 1
         maxItems: 2
-      freq,threshold_residency:
+      qcom,frequency-threshold-residency:
         $ref: '/schemas/types.yaml#/definitions/uint32-array'
         description: |
           CPU DVFS frequency threshold Residency value in micro seconds
         minItems: 1
         maxItems: 2
-      qcom,scid_heuristics_enabled:
+      qcom,scid-heuristics-enabled:
         description: |
-          On enabling this flag, Heristics driver will communicate to qcom
-          control software to enable the Heristics based SCID functionality.
+          On enabling this flag, Heuristics driver will communicate to qcom
+          control software to enable the Heuristics based SCID functionality.
         type: boolean
 
     required:
@@ -141,10 +141,10 @@ examples:
 
             scid_heuristics {
                 compatible = "qcom,scid-heuristics";
-                qcom,heuristics_scid = <32>;
-                freq,threshold_idx = <11>, <10>;
-                freq,threshold_residency = <5000>, <5000>;
-                qcom,scid_heuristics_enabled;
+                qcom,heuristics-scid = <32>;
+                qcom,freq-threshold-idx = <11>, <10>;
+                qcom,frequency-threshold-residency = <5000>, <5000>;
+                qcom,scid-heuristics-enabled;
             };
         };
     };
