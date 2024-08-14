@@ -3276,6 +3276,26 @@
 		};
 	};
 
+	qcom-mpam-msc {
+		compatible = "qcom,mpam-msc";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges;
+
+		qcom-slc-mpam@17b6f800 {
+			compatible = "qcom,slc-mpam";
+			reg = <0x17b6f800 0x400>;
+			reg-names = "mon-base";
+			qcom,msc-id = <2>;
+			qcom,msc-name = "slc";
+			qcom,dev-index = <0>;
+			qcom,num-read-miss-cfg = <2>;
+			qcom,num-cap-cfg = <5>;
+			qcom,slc-clients = "APPS_CLIENT", "GPU_CLIENT",
+				"NSP_CLIENT";
+		};
+	};
+
 	llcc_pmu: llcc-pmu@24095000 {
 		compatible = "qcom,llcc-pmu-ver2";
 		reg = <0x24095000 0x300>;
