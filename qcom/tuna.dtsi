@@ -1544,6 +1544,7 @@
 			      "sleep_clk",
 			      "iface";
 		qcom,dispcc_crm-crmc = <&dispcc_crm>;
+		#power-domain-cells = <1>;
 		#clock-cells = <1>;
 		#reset-cells = <1>;
 	};
@@ -2570,13 +2571,11 @@
 &disp_cc_mdss_core_gdsc {
 	clocks = <&gcc GCC_DISP_AHB_CLK>;
 	parent-supply = <&VDD_MM_LEVEL>;
-	status = "ok";
 };
 
 &disp_cc_mdss_core_int2_gdsc {
 	clocks = <&gcc GCC_DISP_AHB_CLK>;
 	parent-supply = <&VDD_MM_LEVEL>;
-	status = "ok";
 };
 
 &eva_cc_mvs0_gdsc {

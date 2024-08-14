@@ -196,3 +196,11 @@
 	clock-output-names = "rpmh_clocks";
 	clock-frequency = <19200000>;
 };
+
+&disp_cc_mdss_core_gdsc {
+	status = "ok";
+};
+
+&disp_cc_mdss_core_int2_gdsc {
+	status = "ok";
+};
