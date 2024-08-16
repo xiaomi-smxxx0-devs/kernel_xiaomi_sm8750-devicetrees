@@ -12,11 +12,11 @@ maintainers:
 
 description: |
   LLCC (Last Level Cache Controller) provides last level of cache memory in SoC,
-  that can be shared by multiple clients. Clients here are different cores in
-  the SoC, the idea is to minimize the local caches at the clients and migrate
-  to common pool of memory. Cache memory is divided into partitions called
-  slices which are assigned to clients. Clients can query the slice details,
-  activate and deactivate them.
+  that can be shared by multiple clients. Clients here are different cores in the
+  SoC, the idea is to minimize the local caches at the clients and migrate to
+  common pool of memory. Cache memory is divided into partitions called slices
+  which are assigned to clients. Clients can query the slice details, activate
+  and deactivate them.
 
 properties:
   compatible:
@@ -49,17 +49,11 @@ properties:
     maxItems: 1
 
   child-node:
-    description: Child node for
-                      - llcc_perfmon node
-                      - scid_heurstics node
+    description: Container of llcc_perfmon node
     type: object
     properties:
-    required:
-      - compatible:
-        enum:
-          - qcom,llcc-perfmon
-          - qcom,scid-heuristics
-
+        compatible:
+            const: qcom,llcc-perfmon
 required:
   - compatible
   - reg
@@ -84,46 +78,12 @@ allOf:
             - description: LLCC3 base register region
             - description: LLCC broadcast base register region
         reg-names:
-          items:
+            items:
             - const: llcc0_base
             - const: llcc1_base
             - const: llcc2_base
             - const: llcc3_base
             - const: llcc_broadcast_base
-
-  - if:
-      properties:
-        compatible:
-          contains:
-            enum:
-              - qcom,llcc-perfmon
-    then:
-
-  - if:
-      properties:
-        compatible:
-          contains:
-            enum:
-              - qcom,scid-heuristics
-    then:
-      properties:
-        qcom,heuristics_scid:
-          minItems: 1
-          maxItems: 1
-        freq,threshold_idx:
-          minItems: 1
-          maxItems: 2
-        freq,threshold_residency:
-          minItems: 1
-          maxItems: 2
-        heuristics_scid_thread_interval:
-          minItems: 1
-          maxItems: 1
-        qcom,scid_heuristics_enabled:
-          description: |
-            On enabling this flag, Heristics driver will communicate to qcom
-            control software to enable the Heristics based SCID functionality.
-          type: boolean
 
 additionalProperties: false
 
@@ -147,14 +107,5 @@ examples:
             llcc_perfmon {
                 compatible = "qcom,llcc-perfmon";
             }
-
-            scid_heuristics {
-                 compatible = "qcom,scid-heuristics";
-                 qcom,heuristics_scid = <32>;
-                 freq,threshold_idx = <11>, <10>;
-                 freq,threshold_residency = <5000>, <5000>;
-                 heuristics_scid_thread_interval = <16000>;
-                 qcom,scid_heuristics_enabled;
-            };
         };
     };
