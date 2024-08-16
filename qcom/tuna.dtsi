@@ -546,6 +546,11 @@
 		power-domains = <&CLUSTER_PD>;
 	};
 
+	qcom,secure-buffer {
+		compatible = "qcom,secure-buffer";
+		qcom,vmid-cp-camera-preview-ro;
+	};
+
 	cam_rsc: rsc@adc8000 {
 		label = "cam_rsc";
 		compatible = "qcom,rpmh-rsc";
