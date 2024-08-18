@@ -156,19 +156,20 @@
 
 &pm7250b_adc_tm {
 	interrupts = <0x8 0x35 0x0 IRQ_TYPE_EDGE_RISING>;
-	io-channels = <&pm7250b_vadc ADC5_AMUX_THM3_100K_PU>,
-			<&pm7250b_vadc ADC5_AMUX_THM1_100K_PU>;
 
+	/* Channel nodes */
 	pm7250b_usb_conn_therm {
-		reg = <ADC5_AMUX_THM3_100K_PU>;
+		reg = <0>;
+		io-channels = <&pm7250b_vadc ADC5_AMUX_THM3_100K_PU>;
 		qcom,ratiometric;
-		qcom,hw-settle-time = <200>;
+		qcom,hw-settle-time-us = <200>;
 	};
 
 	pm7250b_smb_skin_therm {
-		reg = <ADC5_AMUX_THM1_100K_PU>;
+		reg = <1>;
+		io-channels =  <&pm7250b_vadc ADC5_AMUX_THM1_100K_PU>;
 		qcom,ratiometric;
-		qcom,hw-settle-time = <200>;
+		qcom,hw-settle-time-us = <200>;
 	};
 };
 
@@ -293,7 +294,7 @@
 	sys-therm-7 {
 		polling-delay-passive = <0>;
 		polling-delay = <0>;
-		thermal-sensors =  <&pm7250b_adc_tm ADC5_AMUX_THM3_100K_PU>;
+		thermal-sensors =  <&pm7250b_adc_tm 0>;
 		trips {
 			active-config0 {
 				temperature = <125000>;
@@ -312,7 +313,7 @@
 	sys-therm-6 {
 		polling-delay-passive = <0>;
 		polling-delay = <0>;
-		thermal-sensors =  <&pm7250b_adc_tm ADC5_AMUX_THM1_100K_PU>;
+		thermal-sensors =  <&pm7250b_adc_tm 1>;
 		trips {
 			active-config0 {
 				temperature = <125000>;
