@@ -38,5 +38,11 @@
 			qcom,dma-heap-type = <HEAP_TYPE_TVM_CARVEOUT>;
 			qcom,dynamic-heap;
 		};
+
+		qcom,tui_test {
+			qcom,dma-heap-name = "qcom,tui_test";
+			qcom,dma-heap-type = <HEAP_TYPE_TVM_CARVEOUT>;
+			qcom,dynamic-heap;
+		};
 	};
 };
