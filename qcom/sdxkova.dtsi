@@ -6,7 +6,7 @@
 #include "sdx75.dtsi"
 /delete-node/ &apps_smmu;
 #include "msm-arm-smmu-sdxkova.dtsi"
-/ {
+/{
 	qcom_tzlog: tz-log@14680720 {
 		compatible = "qcom,tz-log";
 		reg = <0x14680720 0x3000>;
@@ -15,21 +15,26 @@
 		hyplog-size-offset = <0x414>;
 	};
 
-/delete-node/ reserved-memory;
+	/delete-node/ reserved-memory;
 
-reserved_memory: reserved-memory {
-	#address-cells = <2>;
-	#size-cells = <2>;
-	ranges;
+	reserved_memory: reserved-memory {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
 
-	system_cma: linux,cma {
-		compatible = "shared-dma-pool";
-		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
-		reusable;
-		alignment = <0x0 0x400000>;
-		size = <0x0 0x2000000>;
-		linux,cma-default;
+		system_cma: linux,cma {
+			compatible = "shared-dma-pool";
+			alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+			reusable;
+			alignment = <0x0 0x400000>;
+			size = <0x0 0x2000000>;
+			linux,cma-default;
+		};
+	};
+
+	aliases: aliases {
 	};
 };
 
+&tlmm {
 };
