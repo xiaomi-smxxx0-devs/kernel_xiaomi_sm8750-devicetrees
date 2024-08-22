@@ -130,3 +130,47 @@
 &qupv3_se7_2uart {
 	qcom,rumi_platform;
 };
+
+&GOLD_OFF_CL0 {
+	status = "disabled";
+};
+
+&GOLD_OFF_CL1 {
+	status = "disabled";
+};
+
+&GOLD_OFF_CL2 {
+	status = "disabled";
+};
+
+&GOLD_RAIL_OFF_CL0 {
+	status = "disabled";
+};
+
+&GOLD_RAIL_OFF_CL1 {
+	status = "disabled";
+};
+
+&GOLD_RAIL_OFF_CL2 {
+	status = "disabled";
+};
+
+&GOLD_PLUS_OFF {
+	status = "disabled";
+};
+
+&GOLD_PLUS_RAIL_OFF {
+	status = "disabled";
+};
+
+&CLUSTER_PWR_DN {
+	status = "disabled";
+};
+
+&CX_RET {
+	status = "disabled";
+};
+
+&APSS_OFF {
+	status = "disabled";
+};
