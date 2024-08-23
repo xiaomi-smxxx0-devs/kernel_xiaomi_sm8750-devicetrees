@@ -9,6 +9,12 @@
     #cooling-cells = <2>;
 };
 
+&aoss_qmp {
+	cx_cdev: cx_cdev {
+		#cooling-cells = <2>;
+	};
+};
+
 &soc {
 	tsens0: thermal-sensor@c263000 {
 		compatible = "qcom,tsens-v2";
@@ -222,7 +228,7 @@
 		};
 	};
 
-	cx_sdpm@634000 {
+	cx_sdpm: cx_sdpm@634000 {
 		compatible = "qcom,sdpm";
 		reg = <0x00634000 0x1000>;
 		clock-names = "gpu_cc_gx_gfx3d",
@@ -285,23 +291,10 @@
 				type = "passive";
 			};
 
-			cpu0_emerg: cpu0-emerg-cfg {
-				temperature = <110000>;
-				hysteresis = <10000>;
-				type = "passive";
-			};
-
 			reset-mon-cfg {
 				temperature = <115000>;
 				hysteresis = <0>;
 				type = "hot";
-			};
-		};
-
-		cooling-maps {
-			cpu00_cdev {
-				trip = <&cpu0_emerg>;
-				cooling-device = <&cpu0_pause 1 1>;
 			};
 		};
 	};
@@ -906,6 +899,13 @@
 				type = "passive";
 			};
 		};
+
+		cooling-maps {
+			wcss_cx_vdd_cdev {
+				trip = <&min_temp_0_trip>;
+				cooling-device = <&cx_cdev 1 1>;
+			};
+		};
 	};
 
 	zeroc-1 {
@@ -923,6 +923,13 @@
 				temperature = <1>;
 				hysteresis = <1>;
 				type = "passive";
+			};
+		};
+
+		cooling-maps {
+			wcss_cx_vdd_cdev {
+				trip = <&min_temp_1_trip>;
+				cooling-device = <&cx_cdev 1 1>;
 			};
 		};
 	};
