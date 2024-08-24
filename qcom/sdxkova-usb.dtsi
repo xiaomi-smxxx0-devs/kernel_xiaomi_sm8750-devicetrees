@@ -45,6 +45,12 @@
 		dwc3: dwc3@a600000 {
 			compatible = "snps,dwc3";
 			reg = <0x0 0xa600000 0x0 0xd93c>;
+
+			iommus = <&apps_smmu 0x80 0x0>;
+			qcom,iommu-dma = "atomic";
+			memory-region = <&dwc3_mem_region>;
+			dma-coherent;
+
 			interrupts = <GIC_SPI 133 IRQ_TYPE_LEVEL_HIGH>;
 			usb-phy = <&usb_nop_phy>, <&usb_qmp_phy>;
 			snps,has-lpm-erratum;
@@ -61,6 +67,11 @@
 			dr_mode = "peripheral";
 		};
 
+	};
+
+	dwc3_mem_region: dwc3_mem_region {
+		iommu-addresses = <&dwc3 0x0 0x0 0x0 0x90000000>,
+					<&dwc3 0x0 0xf0000000 0xffffffff 0x10000000>;
 	};
 
 	/* USB port related QMP USB UNI PHY */
