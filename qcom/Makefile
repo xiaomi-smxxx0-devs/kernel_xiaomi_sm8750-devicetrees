@@ -175,6 +175,8 @@ sdxkova-dtb-$(CONFIG_ARCH_SDXKOVA) += sdxkova-idp-cpe.dtb \
 				sdxkova-idp-mbb.dtb
 dtb-y += $(sdxkova-dtb-y)
 
+sdxkova-cpe-wkk-dtb-$(CONFIG_ARCH_SDXKOVA) += sdxkova-idp-cpe.dtb
+
 endif
 
 ifeq ($(CONFIG_ARCH_SUN), y)
