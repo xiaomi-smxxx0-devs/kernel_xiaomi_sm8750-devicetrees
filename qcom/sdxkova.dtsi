@@ -3,6 +3,7 @@
  * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
+#include <dt-bindings/soc/qcom,ipcc.h>
 #include "sdx75.dtsi"
 /delete-node/ &apps_smmu;
 #include "msm-arm-smmu-sdxkova.dtsi"
@@ -410,3 +411,4 @@
 };
 
 #include "sdxkova-usb.dtsi"
+#include "ipcc-test-sdxkova.dtsi"
