@@ -1422,6 +1422,23 @@
 			#size-cells = <0>;
 			qcom,can-sleep;
 		};
+
+		pm8010@c {
+			compatible = "qcom,spmi-pmic";
+			reg = <12 SPMI_USID>;
+			#address-cells = <2>;
+			#size-cells = <0>;
+			qcom,can-sleep;
+		};
+
+		pm8010@d {
+			compatible = "qcom,spmi-pmic";
+			reg = <13 SPMI_USID>;
+			#address-cells = <2>;
+			#size-cells = <0>;
+			qcom,can-sleep;
+		};
+
 	};
 
 	thermal_zones: thermal-zones {
@@ -1627,6 +1644,7 @@
 #include "tuna-usb.dtsi"
 #include "tuna-qupv3.dtsi"
 #include "msm-rdbg.dtsi"
+#include "tuna-pmic-overlay.dtsi"
 
 &qupv3_se7_2uart {
 	status = "ok";
