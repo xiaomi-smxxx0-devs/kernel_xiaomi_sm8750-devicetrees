@@ -172,7 +172,8 @@ endif
 
 ifeq ($(CONFIG_ARCH_SDXKOVA), y)
 sdxkova-dtb-$(CONFIG_ARCH_SDXKOVA) += sdxkova-idp-cpe.dtb \
-				sdxkova-idp-mbb.dtb
+				sdxkova-idp-mbb.dtb \
+				sdxkova-idp-m2.dtb
 dtb-y += $(sdxkova-dtb-y)
 
 endif
