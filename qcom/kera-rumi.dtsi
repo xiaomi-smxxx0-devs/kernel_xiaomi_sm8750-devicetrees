@@ -180,3 +180,11 @@
 &disp_cc_mdss_core_int2_gdsc {
 	status = "ok";
 };
+
+&gpu_cc_cx_gdsc {
+	status = "ok";
+};
+
+&gpu_cc_gx_gdsc {
+	status = "ok";
+};
