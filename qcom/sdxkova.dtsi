@@ -6,6 +6,7 @@
 #include <dt-bindings/soc/qcom,ipcc.h>
 #include "sdx75.dtsi"
 /delete-node/ &apps_smmu;
+/delete-node/ &tcsr_mutex;
 #include "msm-arm-smmu-sdxkova.dtsi"
 /{
 	qcom_tzlog: tz-log@14680720 {
@@ -405,6 +406,17 @@
 		reg-names = "llcc0_base";
 		interrupts = <GIC_SPI 399 IRQ_TYPE_LEVEL_HIGH>;
 		cap-based-alloc-and-pwr-collapse;
+	};
+
+	tcsr_mutex_block: syscon@1f40000 {
+		compatible = "syscon";
+		reg = <0x0 0x1f40000 0x0 0x20000>;
+	};
+
+	tcsr_mutex: hwlock {
+		compatible = "qcom,tcsr-mutex";
+		syscon = <&tcsr_mutex_block 0 0x1000>;
+		#hwlock-cells = <1>;
 	};
 };
 
