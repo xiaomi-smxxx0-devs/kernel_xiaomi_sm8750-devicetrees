@@ -30,6 +30,10 @@
 	operating-points-v2 = <&sdhc2_opp_table>;
 };
 
+&qnand_1 {
+	status = "ok";
+};
+
 &pmk8550_vadc {
 	/* PM8550BA Channel nodes */
 	pm7550ba_offset_ref {
