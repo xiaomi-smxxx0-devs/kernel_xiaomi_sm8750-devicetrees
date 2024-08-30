@@ -20,7 +20,7 @@
 	focaltech@38 {
 		status = "ok";
 		reg = <0x38>;
-
+		compatible = "focaltech,fts_ts";
 		interrupt-parent = <&tlmm>;
 		interrupts = <13 0x2008>;
 		focaltech,reset-gpio = <&tlmm 12 0x00>;
