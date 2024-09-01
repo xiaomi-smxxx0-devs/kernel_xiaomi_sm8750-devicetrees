@@ -21,6 +21,7 @@ properties:
     enum:
       - qcom,sun-evacc
       - qcom,tuna-evacc
+      - qcom,sun-evacc-v2
 
   clocks:
     items:
