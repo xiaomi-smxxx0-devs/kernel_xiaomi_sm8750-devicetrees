@@ -142,3 +142,260 @@
 };
 
 #include "sdxkova-regulators.dtsi"
+
+&chosen {
+	bootargs = "cpufreq.default_governor=performance";
+};
+
+&soc {
+
+	clocks {
+		emac0_sgmiiphy_mac_rclk: emac0_sgmiiphy_mac_rclk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "emac0_sgmiiphy_mac_rclk";
+			#clock-cells = <0>;
+		};
+
+		emac0_sgmiiphy_mac_tclk: emac0_sgmiiphy_mac_tclk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "emac0_sgmiiphy_mac_tclk";
+			#clock-cells = <0>;
+		};
+
+		emac0_sgmiiphy_rclk: emac0_sgmiiphy_rclk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "emac0_sgmiiphy_rclk";
+			#clock-cells = <0>;
+		};
+
+		emac0_sgmiiphy_tclk: emac0_sgmiiphy_tclk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "emac0_sgmiiphy_tclk";
+			#clock-cells = <0>;
+		};
+
+		emac1_sgmiiphy_mac_rclk: emac1_sgmiiphy_mac_rclk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "emac1_sgmiiphy_mac_rclk";
+			#clock-cells = <0>;
+		};
+
+		emac1_sgmiiphy_mac_tclk: emac1_sgmiiphy_mac_tclk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "emac1_sgmiiphy_mac_tclk";
+			#clock-cells = <0>;
+		};
+
+		emac1_sgmiiphy_rclk: emac1_sgmiiphy_rclk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "emac1_sgmiiphy_rclk";
+			#clock-cells = <0>;
+		};
+
+		emac1_sgmiiphy_tclk: emac1_sgmiiphy_tclk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "emac1_sgmiiphy_tclk";
+			#clock-cells = <0>;
+		};
+
+		pcie20_phy_aux_clk: pcie20_phy_aux_clk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "pcie20_phy_aux_clk";
+			#clock-cells = <0>;
+		};
+
+		pcie_1_pipe_clk: pcie_1_pipe_clk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "pcie_1_pipe_clk";
+			#clock-cells = <0>;
+		};
+
+		pcie_2_pipe_clk: pcie_2_pipe_clk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "pcie_2_pipe_clk";
+			#clock-cells = <0>;
+		};
+
+		pcie_pipe_clk: pcie_pipe_clk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "pcie_pipe_clk";
+			#clock-cells = <0>;
+		};
+
+		usb3_phy_wrapper_gcc_usb30_pipe_clk: usb3_phy_wrapper_gcc_usb30_pipe_clk {
+			compatible = "fixed-clock";
+			clock-frequency = <1000>;
+			clock-output-names = "usb3_phy_wrapper_gcc_usb30_pipe_clk";
+			#clock-cells = <0>;
+		};
+	};
+
+	/* GCC GDSCs */
+	gcc_emac0_gdsc: qcom,gdsc@f1004 {
+		compatible = "qcom,gdsc";
+		reg = <0x0 0xf1004 0x0 0x4>;
+		regulator-name = "gcc_emac0_gdsc";
+		parent-supply = <&VDD_CX_LEVEL>;
+		qcom,retain-regs;
+		qcom,support-hw-trigger;
+	};
+
+	gcc_emac1_gdsc: qcom,gdsc@f2004 {
+		compatible = "qcom,gdsc";
+		reg = <0x0 0xf2004 0x0 0x4>;
+		regulator-name = "gcc_emac1_gdsc";
+		parent-supply = <&VDD_CX_LEVEL>;
+		qcom,retain-regs;
+		qcom,support-hw-trigger;
+	};
+
+	gcc_pcie_1_gdsc: qcom,gdsc@e7004 {
+		compatible = "qcom,gdsc";
+		reg = <0x0 0xe7004 0x0 0x4>;
+		regulator-name = "gcc_pcie_1_gdsc";
+		parent-supply = <&VDD_CX_LEVEL>;
+		qcom,retain-regs;
+		qcom,support-hw-trigger;
+	};
+
+	gcc_pcie_1_phy_gdsc: qcom,gdsc@d6004 {
+		compatible = "qcom,gdsc";
+		reg = <0x0 0xd6004 0x0 0x4>;
+		regulator-name = "gcc_pcie_1_phy_gdsc";
+		parent-supply = <&VDD_MXA_LEVEL>;
+		qcom,retain-regs;
+		qcom,support-hw-trigger;
+	};
+
+	gcc_pcie_2_gdsc: qcom,gdsc@e8004 {
+		compatible = "qcom,gdsc";
+		reg = <0x0 0xe8004 0x0 0x4>;
+		regulator-name = "gcc_pcie_2_gdsc";
+		parent-supply = <&VDD_CX_LEVEL>;
+		qcom,retain-regs;
+		qcom,support-hw-trigger;
+	};
+
+	gcc_pcie_2_phy_gdsc: qcom,gdsc@ee004 {
+		compatible = "qcom,gdsc";
+		reg = <0x0 0xee004 0x0 0x4>;
+		regulator-name = "gcc_pcie_2_phy_gdsc";
+		parent-supply = <&VDD_MXA_LEVEL>;
+		qcom,retain-regs;
+		qcom,support-hw-trigger;
+	};
+
+	gcc_pcie_gdsc: qcom,gdsc@d3004 {
+		compatible = "qcom,gdsc";
+		reg = <0x0 0xd3004 0x0 0x4>;
+		regulator-name = "gcc_pcie_gdsc";
+		parent-supply = <&VDD_MXA_LEVEL>;
+		qcom,retain-regs;
+		qcom,support-hw-trigger;
+	};
+
+	gcc_pcie_phy_gdsc: qcom,gdsc@d4004 {
+		compatible = "qcom,gdsc";
+		reg = <0x0 0xd4004 0x0 0x4>;
+		regulator-name = "gcc_pcie_phy_gdsc";
+		parent-supply = <&VDD_MXA_LEVEL>;
+		qcom,retain-regs;
+		qcom,support-hw-trigger;
+	};
+
+	gcc_usb30_gdsc: qcom,gdsc@a7004 {
+		compatible = "qcom,gdsc";
+		reg = <0x0 0xa7004 0x0 0x4>;
+		regulator-name = "gcc_usb30_gdsc";
+		parent-supply = <&VDD_MXA_LEVEL>;
+		qcom,retain-regs;
+	};
+
+	gcc_usb3_phy_gdsc: qcom,gdsc@a8008 {
+		compatible = "qcom,gdsc";
+		reg = <0x0 0xa8008 0x0 0x4>;
+		regulator-name = "gcc_usb3_phy_gdsc";
+		parent-supply = <&VDD_CX_LEVEL>;
+		qcom,retain-regs;
+	};
+
+	apsscc: syscon@17aa0000 {
+		compatible = "syscon";
+		reg = <0x0 0x17aa0000 0x0 0x1c>;
+	};
+
+	mccc: syscon@190ba000 {
+		compatible = "syscon";
+		reg = <0x0 0x190ba000 0x0 0x54>;
+	};
+
+	debugcc: clock-controller@0 {
+		compatible = "qcom,sdx75-debugcc";
+		qcom,apsscc = <&apsscc>;
+		qcom,gcc = <&gcc>;
+		qcom,mccc = <&mccc>;
+		clocks = <&rpmhcc RPMH_CXO_CLK>,
+			<&gcc 0>;
+		clock-names = "xo_clk_src",
+			"gcc";
+		#clock-cells = <1>;
+	};
+
+	qcom,cpufreq-hw-debug {
+		compatible = "qcom,cpufreq-hw-epss-debug";
+		qcom,freq-hw-domain = <&cpufreq_hw 0>;
+	};
+};
+
+&gcc {
+	compatible = "qcom,sdx75-gcc", "syscon";
+	reg = <0x0 0x0080000 0x0 0x1f7400>;
+	vdd_cx-supply = <&VDD_CX_LEVEL>;
+	vdd_mx-supply = <&VDD_MXA_LEVEL>;
+	clocks = <&rpmhcc RPMH_CXO_CLK>,
+		 <&emac0_sgmiiphy_mac_rclk>,
+		 <&emac0_sgmiiphy_mac_tclk>,
+		 <&emac0_sgmiiphy_rclk>,
+		 <&emac0_sgmiiphy_tclk>,
+		 <&emac1_sgmiiphy_mac_rclk>,
+		 <&emac1_sgmiiphy_mac_tclk>,
+		 <&emac1_sgmiiphy_rclk>,
+		 <&emac1_sgmiiphy_tclk>,
+		 <&pcie20_phy_aux_clk>,
+		 <&pcie_1_pipe_clk>,
+		 <&pcie_2_pipe_clk>,
+		 <&pcie_pipe_clk>,
+		 <&sleep_clk>,
+		 <&usb3_phy_wrapper_gcc_usb30_pipe_clk>;
+	clock-names = "bi_tcxo",
+		      "emac0_sgmiiphy_mac_rclk",
+		      "emac0_sgmiiphy_mac_tclk",
+		      "emac0_sgmiiphy_rclk",
+		      "emac0_sgmiiphy_tclk",
+		      "emac1_sgmiiphy_mac_rclk",
+		      "emac1_sgmiiphy_mac_tclk",
+		      "emac1_sgmiiphy_rclk",
+		      "emac1_sgmiiphy_tclk",
+		      "pcie20_phy_aux_clk",
+		      "pcie_1_pipe_clk",
+		      "pcie_2_pipe_clk",
+		      "pcie_pipe_clk",
+		      "sleep_clk",
+		      "usb3_phy_wrapper_gcc_usb30_pipe_clk";
+	protected-clocks = <GCC_TLMM_125_CLK>,
+			<GCC_TLMM_125_CLK_SRC>;
+	#clock-cells = <1>;
+	#reset-cells = <1>;
+};
