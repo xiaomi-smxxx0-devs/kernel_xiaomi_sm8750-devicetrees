@@ -129,6 +129,37 @@
 	};
 };
 
+&clk_virt {
+	#interconnect-cells = <1>;
+	qcom,bcm-voter-names = "hlos";
+};
+
+&mc_virt {
+	#interconnect-cells = <1>;
+	qcom,bcm-voter-names = "hlos";
+};
+
+&system_noc {
+	#interconnect-cells = <1>;
+	qcom,bcm-voter-names = "hlos";
+	clocks = <&gcc GCC_SYS_NOC_MVMSS_CLK>;
+};
+
+&pcie_anoc {
+	#interconnect-cells = <1>;
+	qcom,bcm-voter-names = "hlos";
+};
+
+&dc_noc {
+	#interconnect-cells = <1>;
+	qcom,bcm-voter-names = "hlos";
+};
+
+&gem_noc {
+	#interconnect-cells = <1>;
+	qcom,bcm-voter-names = "hlos";
+};
+
 &tlmm {
 	gpio-reserved-ranges = <110 6>;
 };
