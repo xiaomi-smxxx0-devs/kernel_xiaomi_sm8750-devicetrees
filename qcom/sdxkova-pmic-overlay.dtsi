@@ -1,0 +1,29 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ */
+
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+	vreg_sdc1_sd_ls_vccb: sdc1-sd-ls-gpio-regulator {
+		compatible = "regulator-gpio";
+		regulator-name = "sdc1_sd_ls_vccb";
+		regulator-min-microvolt = <1800000>;
+		regulator-max-microvolt = <2850000>;
+		enable-gpio = <&tlmm 102 GPIO_ACTIVE_HIGH>;
+		gpios = <&tlmm 84 GPIO_ACTIVE_HIGH>;
+		states = <1800000 0>,
+			 <2850000 1>;
+		startup-delay-us = <5000>;
+		enable-active-high;
+	};
+
+	vreg_sdc1_emmc_sd_vdd: sdc1-emmc-sd-fixed-regulator {
+		compatible = "qcom,stub-regulator";
+		regulator-name = "sdc1_emmc_sd_vdd";
+		regulator-min-microvolt = <2950000>;
+		regulator-max-microvolt = <2950000>;
+		parent-supply = <&vreg_sdc1_sd_ls_vccb>;
+	};
+};
