@@ -399,3 +399,5 @@
 	#clock-cells = <1>;
 	#reset-cells = <1>;
 };
+
+#include "sdxkova-usb.dtsi"
