@@ -165,9 +165,15 @@
 };
 
 &qupv3_id_0 {
+	interconnects =
+	<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>;
+	interconnect-names = "qup-core";
 	status = "ok";
 };
 
 &uart1 {
+	interconnects =
+	<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
+	<&gem_noc MASTER_APPSS_PROC &system_noc SLAVE_QUP_0>;
 	status = "ok";
 };
