@@ -62,7 +62,6 @@
 
 			hap_swr_slave_reg: qcom,hap-swr-slave-reg {
 				regulator-name = "hap-swr-slave-reg";
-				regulator-always-on;
 			};
 
 			/*
