@@ -37,6 +37,14 @@ dtbo-y += volcano-qca6750.dtbo
 dtbo-y += volcano6i-peach-cnss.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_TUNA),y)
+dtbo-y += tuna-rcm-wcn7750.dtbo
+dtbo-y += tuna-cdp-wcn7750.dtbo
+dtbo-y += tuna-mtp-wcn7750.dtbo
+dtbo-y += tuna-mtp-qmp1000-wcn7750.dtbo
+dtbo-y += tuna-qrd-wcn7750.dtbo
+endif
+
 always-y	:= $(dtb-y) $(dtbo-y)
 subdir-y	:= $(dts-dirs)
 clean-files	:= *.dtb *.dtbo
