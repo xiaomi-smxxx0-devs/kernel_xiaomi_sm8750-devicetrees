@@ -96,7 +96,7 @@
 		vdd-wlan-io12-supply = <&L2F>;
 		qcom,vdd-wlan-io12-config = <1200000 1200000 30000 0 1>;
 		vdd-wlan-supply = <&S4J>;
-		qcom,vdd-wlan-config = <932000 1000000 0 0 0>;
+		qcom,vdd-wlan-config = <932000 1000000 0 0 1>;
 		vdd-wlan-aon-supply = <&S4D>;
 		qcom,vdd-wlan-aon-config = <976000 1036000 0 0 1>;
 		vdd-wlan-dig-supply = <&S1D>;
