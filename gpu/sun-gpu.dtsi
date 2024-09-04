@@ -173,8 +173,9 @@
 		interrupt-names = "hfi", "gmu";
 
 		power-domains = <&gpucc GPU_CC_CX_GDSC>,
+				<&gpucc GPU_CC_CX_GMU_GDSC>,
 				<&gxclkctl GX_CLKCTL_GX_GDSC>;
-		power-domain-names = "cx", "gx";
+		power-domain-names = "cx", "gmu_cx", "gx";
 
 		clocks = <&gpucc GPU_CC_CX_GMU_CLK>,
 			<&gpucc GPU_CC_CXO_CLK>,

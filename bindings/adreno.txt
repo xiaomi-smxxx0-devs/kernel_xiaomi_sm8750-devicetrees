@@ -80,8 +80,9 @@ Power Domains:
 - power-domains:		List of PM domain specifiers that reference each power-domain
 				used by the GPU
 - power-domain-names:		List of names that represent each of the specifiers in the
-				'power-domains' property. Includes 'gpu_cx' and 'gpu_gx' which
-				represent the power-domains for CX and GX GDSC, respectively.
+				'power-domains' property. Includes 'cx', 'gx' and 'gmu_cx'
+				which represent the power-domains for CX GDSC, GX GDSC and
+				GMU CX GDSC respectively.
 
 IOMMU Data:
 - iommu:			Phandle for the KGSL IOMMU device node
