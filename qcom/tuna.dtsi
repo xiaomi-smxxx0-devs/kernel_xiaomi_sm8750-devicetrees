@@ -1477,6 +1477,14 @@
 		};
 	};
 
+	gh-secure-vm-loader@2 {
+		compatible = "qcom,gh-secure-vm-loader";
+		qcom,pas-id = <35>;
+		qcom,vmid = <50>;
+		qcom,firmware-name = "cpusys_vm";
+		memory-region = <&cpusys_vm_mem>;
+	};
+
 	qcom,pmic_glink_log {
 		compatible = "qcom,qti-pmic-glink";
 		qcom,pmic-glink-channel = "PMIC_LOGS_ADSP_APPS";
@@ -1627,6 +1635,16 @@
 	#address-cells = <2>;
 	#size-cells = <2>;
 	ranges;
+
+	gunyah_hyp_mem: gunyah_hyp_region@80000000 {
+		no-map;
+		reg = <0x0 0x80000000 0x0 0xe00000>;
+	};
+
+	cpusys_vm_mem: cpusys_vm_region@80e00000 {
+		no-map;
+		reg = <0x0 0x80e00000 0x0 0x400000>;
+	};
 
 	aop_cmd_db_mem: aop_cmd_db_region@81c60000 {
 		compatible = "qcom,cmd-db";
