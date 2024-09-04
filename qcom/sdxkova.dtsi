@@ -3,13 +3,14 @@
  * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
+#include <dt-bindings/soc/qcom,ipcc.h>
 #include "sdx75.dtsi"
 /delete-node/ &apps_smmu;
 #include "msm-arm-smmu-sdxkova.dtsi"
 /{
 	qcom_tzlog: tz-log@14680720 {
 		compatible = "qcom,tz-log";
-		reg = <0x14680720 0x3000>;
+		reg = <0x0 0x14680720 0x0 0x3000>;
 		qcom,hyplog-enabled;
 		hyplog-address-offset = <0x410>;
 		hyplog-size-offset = <0x414>;
@@ -388,6 +389,15 @@
 		compatible = "qcom,cpufreq-hw-epss-debug";
 		qcom,freq-hw-domain = <&cpufreq_hw 0>;
 	};
+
+	ipcc_mproc: qcom,ipcc@408000 {
+		compatible = "qcom,ipcc";
+		reg = <0x0 0x408000 0x0 0x1000>;
+		interrupts = <GIC_SPI 241 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-controller;
+		#interrupt-cells = <3>;
+		#mbox-cells = <2>;
+	};
 };
 
 &gcc {
@@ -432,3 +442,4 @@
 };
 
 #include "sdxkova-usb.dtsi"
+#include "ipcc-test-sdxkova.dtsi"
