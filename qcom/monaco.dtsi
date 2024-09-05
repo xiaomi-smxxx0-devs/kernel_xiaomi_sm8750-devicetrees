@@ -1928,6 +1928,7 @@
 #include "monaco-usb.dtsi"
 #include "monaco-thermal.dtsi"
 #include "msm-rdbg-monaco.dtsi"
+#include "monaco-walt.dtsi"
 
 &gcc_camss_top_gdsc {
 	parent-supply = <&VDD_CX_LEVEL>;

@@ -3,6 +3,7 @@ _platform_map = {
         "dtb_list": [
             # keep sorted
             {"name": "sdxkova-idp-cpe.dtb"},
+            {"name": "sdxkova-idp-m2.dtb"},
             {"name": "sdxkova-idp-mbb.dtb"},
         ],
         "dtbo_list": [
@@ -83,6 +84,26 @@ _platform_map = {
                 "name": "kera-rumi-overlay.dtbo",
                 "apq": False,
             },
+        ],
+    },
+    "parrot-tuivm": {
+        "dtb_list": [
+            # keep sorted
+            {"name": "parrot-vm-rumi.dtb"},
+            {"name": "parrot-vm-atp.dtb"},
+            {"name": "parrot-vm-idp.dtb"},
+            {"name": "parrot-vm-idp-wcn3990.dtb"},
+            {"name": "parrot-vm-idp-wcn3990-amoled-rcm.dtb"},
+            {"name": "parrot-vm-idp-wcn6750-amoled.dtb"},
+            {"name": "parrot-vm-idp-wcn6750-amoled-rcm.dtb"},
+            {"name": "parrot-vm-qrd.dtb"},
+            {"name": "parrot-vm-qrd-wcn6750.dtb"},
+            {"name": "ravelin-vm-rumi.dtb"},
+            {"name": "ravelin-vm-atp.dtb"},
+            {"name": "ravelin-vm-idp.dtb"},
+            {"name": "ravelin-vm-idp-wcn3988.dtb"},
+            {"name": "ravelin-vm-idp-wcn3950-amoled-rcm.dtb"},
+            {"name": "ravelin-vm-qrd.dtb"},
         ],
     },
     "sun-tuivm": {

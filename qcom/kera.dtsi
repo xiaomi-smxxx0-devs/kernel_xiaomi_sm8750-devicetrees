@@ -39,7 +39,9 @@
 		qcom_scm: qcom_scm { };
 	};
 
-	aliases {};
+	aliases {
+		serial0 = &qupv3_se13_2uart;
+	};
 
 	cpus {
 		#address-cells = <2>;
@@ -489,6 +491,12 @@
 		status = "ok";
 	};
 
+	qcom,msm-adsprpc-mem {
+		compatible = "qcom,msm-adsprpc-mem-region";
+		memory-region = <&adsp_mem_heap>;
+		restrict-access;
+	};
+
 	clocks {
 		xo_board: xo_board {
 			compatible = "fixed-clock";
@@ -721,7 +729,28 @@
 		no-map;
 		reg = <0x0 0x81c60000 0x0 0x20000>;
 	};
+
+	adsp_mem_heap: adsp_heap_region {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0xC00000>;
+	};
+
+	cdsp_secure_heap_cma: secure_cdsp_region { /* Secure DSP */
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x4800000>;
+	};
 };
 
 #include "kera-pinctrl.dtsi"
 #include "kera-usb.dtsi"
+#include "kera-qupv3.dtsi"
+
+&qupv3_se13_2uart {
+	status = "ok";
+};

@@ -129,9 +129,9 @@
 		reg = <0x0 0xe0600000 0x0 0x400000>;
 	};
 
-	trust_ui_vm_mem: trust_ui_vm_region@e0b00000 {
+	trust_ui_vm_mem: trust_ui_vm_region@e0c00000 {
 		no-map;
-		reg = <0x0 0xe0b00000 0x0 0x4af3000>;
+		reg = <0x0 0xe0c00000 0x0 0x49f3000>;
 	};
 
 	trust_ui_vm_qrtr: trust_ui_vm_qrtr@e55f3000 {
