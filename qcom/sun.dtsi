@@ -3294,38 +3294,6 @@
 		};
 	};
 
-	qcom_slc_mpam: qcom,slc_mpam {
-		compatible = "qcom,mpam-slc";
-		qcom,msc-name = "slc";
-
-		apps {
-			qcom,client-id = <0>;
-			qcom,client-name = "apps";
-
-			part-id0 {
-				qcom,part-id = <0>;
-			};
-
-			part-id1 {
-				qcom,part-id = <1>;
-			};
-
-			part-id2 {
-				qcom,part-id = <2>;
-			};
-		};
-
-		gpu {
-			qcom,client-id = <1>;
-			qcom,client-name = "gpu";
-		};
-
-		nsp {
-			qcom,client-id = <2>;
-			qcom,client-name = "nsp";
-		};
-	};
-
 	llcc_pmu: llcc-pmu@24095000 {
 		compatible = "qcom,llcc-pmu-ver2";
 		reg = <0x24095000 0x300>;
