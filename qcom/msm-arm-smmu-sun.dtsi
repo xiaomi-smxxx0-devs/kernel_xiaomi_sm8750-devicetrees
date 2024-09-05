@@ -22,7 +22,7 @@
 		 * bandwidth vote must be present to prevent DDR
 		 * shutdown.
 		 */
-		power-domains = <&gpucc GPU_CC_CX_SMMU_GDSC>;
+		power-domains = <&gpucc GPU_CC_CX_GDSC>;
 		interconnects = <&gem_noc MASTER_GPU_TCU &mc_virt SLAVE_EBI1>;
 
 		clocks = <&gpucc GPU_CC_HLOS1_VOTE_GPU_SMMU_CLK>;
