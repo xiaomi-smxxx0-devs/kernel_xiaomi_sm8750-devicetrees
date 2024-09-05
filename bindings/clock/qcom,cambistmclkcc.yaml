@@ -20,6 +20,7 @@ properties:
     enum:
       - qcom,sun-cambistmclkcc
       - qcom,tuna-cambistmclkcc
+      - qcom,sun-cambistmclkcc-v2
 
   clocks:
     items:

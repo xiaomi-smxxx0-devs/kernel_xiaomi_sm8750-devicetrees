@@ -8,7 +8,7 @@
 &soc {
 	apps_smmu: apps-smmu@15000000 {
 		compatible = "qcom,qsmmu-v500";
-		reg = <0x15000000 0x40000>;
+		reg = <0x0 0x15000000 0x0 0x40000>;
 		#iommu-cells = <2>;
 		qcom,use-3-lvl-tables;
 		#global-interrupts = <1>;

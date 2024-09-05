@@ -172,7 +172,8 @@ endif
 
 ifeq ($(CONFIG_ARCH_SDXKOVA), y)
 sdxkova-dtb-$(CONFIG_ARCH_SDXKOVA) += sdxkova-idp-cpe.dtb \
-				sdxkova-idp-mbb.dtb
+				sdxkova-idp-mbb.dtb \
+				sdxkova-idp-m2.dtb
 dtb-y += $(sdxkova-dtb-y)
 
 endif
@@ -218,6 +219,37 @@ monaco-dtb-$(CONFIG_ARCH_MONACO) += \
         $(call add-overlays, $(MONACO_BOARDS) ,$(MONACO_BASE_DTB))
 monaco-overlays-dtb-$(CONFIG_ARCH_MONACO) += $(MONACO_BOARDS) $(MONACO_BASE_DTB)
 dtb-y += $(monaco-dtb-y)
+
+ifeq ($(CONFIG_ARCH_PARROT), y)
+ifeq ($(CONFIG_ARCH_QTI_VM), y)
+parrot_tuivm-dtb-$(CONFIG_ARCH_QTI_VM) += parrot-vm-rumi.dtb \
+			parrot-vm-atp.dtb \
+			parrot-vm-idp.dtb \
+			parrot-vm-idp-wcn3990.dtb \
+			parrot-vm-idp-wcn3990-amoled-rcm.dtb \
+			parrot-vm-idp-wcn6750-amoled.dtb \
+			parrot-vm-idp-wcn6750-amoled-rcm.dtb \
+			parrot-vm-qrd.dtb \
+			parrot-vm-qrd-wcn6750.dtb
+
+dtb-y += $(parrot_tuivm-dtb-y)
+
+endif
+endif
+
+ifeq ($(CONFIG_ARCH_RAVELIN), y)
+ifeq ($(CONFIG_ARCH_QTI_VM), y)
+parrot_tuivm-dtb-$(CONFIG_ARCH_QTI_VM) +=  ravelin-vm-rumi.dtb \
+			ravelin-vm-atp.dtb \
+			ravelin-vm-idp.dtb \
+			ravelin-vm-idp-wcn3988.dtb \
+			ravelin-vm-idp-wcn3950-amoled-rcm.dtb \
+			ravelin-vm-qrd.dtb
+
+dtb-y += $(parrot_tuivm-dtb-y)
+
+endif
+endif
 
 always-y        := $(dtb-y)
 subdir-y        := $(dts-dirs)
