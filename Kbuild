@@ -5,6 +5,10 @@ dtbo-y += sun-eva.dtbo
 dtbo-y += sun-eva-v2.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_TUNA), y)
+dtbo-y += tuna-eva.dtbo
+endif
+
 ifeq ($(CONFIG_ARCH_PINEAPPLE), y)
 dtbo-y += pineapple-eva.dtbo
 endif
