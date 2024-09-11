@@ -10,6 +10,15 @@ _platform_map = {
             # keep sorted
         ],
     },
+    "sdxkova.cpe.wkk": {
+        "dtb_list": [
+            # keep sorted
+            {"name": "sdxkova-idp-cpe.dtb"},
+        ],
+        "dtbo_list": [
+            # keep sorted
+        ],
+    },
     "sun": {
         "dtb_list": [
             # keep sorted
