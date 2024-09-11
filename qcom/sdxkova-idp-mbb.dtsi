@@ -4,3 +4,27 @@
  */
 
 #include "sdxkova-pmic-overlay.dtsi"
+#include <dt-bindings/gpio/gpio.h>
+
+&sdhc_1 {
+	status = "disabled";
+
+	no-mmc;
+	max-frequency = <192000000>;
+
+	vdd-supply = <&vreg_sdc1_emmc_sd_vdd>;
+	qcom,vdd-voltage-level = <2950000 2950000>;
+	qcom,vdd-current-level = <0 800000>;
+
+	vdd-io-supply = <&vreg_sdc1_sd_ls_vccb>;
+	qcom,vdd-io-voltage-level = <1800000 2850000>;
+	qcom,vdd-io-current-level = <0 22000>;
+
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&sdc1_sd_on>;
+	pinctrl-1 = <&sdc1_sd_off>;
+
+	cd-gpios = <&tlmm 103 GPIO_ACTIVE_LOW>;
+
+	operating-points-v2 = <&sdhc2_opp_table>;
+};
