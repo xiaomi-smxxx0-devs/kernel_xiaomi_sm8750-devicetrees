@@ -570,7 +570,7 @@
 		coresight-name = "coresight-snoc";
 		qcom,dummy-source;
 
-		atid = <125>;
+		atid = <108>;
 		out-ports {
 			port {
 				snoc_out_funnel_in0: endpoint {
