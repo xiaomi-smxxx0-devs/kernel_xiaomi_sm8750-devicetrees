@@ -720,3 +720,19 @@
 
 #include "sdxkova-usb.dtsi"
 #include "ipcc-test-sdxkova.dtsi"
+
+&CPU0 {
+	/delete-property/ clocks;
+};
+
+&CPU1 {
+	/delete-property/ clocks;
+};
+
+&CPU2 {
+	/delete-property/ clocks;
+};
+
+&CPU3 {
+	/delete-property/ clocks;
+};
