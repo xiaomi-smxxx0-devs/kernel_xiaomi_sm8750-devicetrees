@@ -125,6 +125,8 @@
 		};
 	};
 
+	firmware: firmware { };
+
 	aliases: aliases {
 		serial0 = &uart1;
 		mmc0 = &sdhc_1; /*SDC1 eMMC slot*/
@@ -279,6 +281,16 @@
 	<&clk_virt MASTER_QUP_CORE_0 &clk_virt SLAVE_QUP_CORE_0>,
 	<&gem_noc MASTER_APPSS_PROC &system_noc SLAVE_QUP_0>;
 	status = "ok";
+};
+
+&scm {
+	qcom,dload-mode = <&tcsr 0x13000>;
+};
+
+&firmware {
+	qtee_shmbridge {
+		compatible = "qcom,tee-shared-memory-bridge";
+	};
 };
 
 #include "sdxkova-regulators.dtsi"
@@ -524,6 +536,11 @@
 		compatible = "qcom,tcsr-mutex";
 		syscon = <&tcsr_mutex_block 0 0x1000>;
 		#hwlock-cells = <1>;
+	};
+
+	tcsr: syscon@1fc0000 {
+		compatible = "syscon";
+		reg = <0x0 0x1fc0000 0x0 0x30000>;
 	};
 
 	qcom,smp2p-modem {
