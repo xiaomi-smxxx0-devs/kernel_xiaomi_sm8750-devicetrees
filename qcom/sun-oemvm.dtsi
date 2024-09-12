@@ -76,7 +76,7 @@
 		vm-guid = "847bfe26-0b12-5728-812a-06103f6bdec0";
 		qcom,sensitive;
 
-		vm-attrs = "crash-fatal", "context-dump", "crash-restart";
+		vm-attrs = "context-dump", "crash-restart";
 
 		memory {
 			#address-cells = <0x2>;
