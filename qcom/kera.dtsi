@@ -746,7 +746,7 @@
 		size = <0x0 0x4800000>;
 	};
 };
-
+#include "kera-debug.dtsi"
 #include "kera-pinctrl.dtsi"
 #include "kera-usb.dtsi"
 #include "kera-qupv3.dtsi"
