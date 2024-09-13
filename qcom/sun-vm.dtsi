@@ -102,7 +102,7 @@
 		vm-guid = "598085da-c516-5b25-a9c1-927a02819770";
 		qcom,sensitive;
 
-		vm-attrs = "crash-fatal", "context-dump", "crash-restart";
+		vm-attrs = "context-dump", "crash-restart";
 
 		iomemory-ranges = <0x0 0xa24000 0x0 0xa24000 0x0 0x4000 0x0
 				0x0 0x824000 0x0 0x824000 0x0 0x4000 0x0
