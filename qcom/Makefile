@@ -182,9 +182,10 @@ ifeq ($(CONFIG_ARCH_SDXKOVA), y)
 sdxkova-dtb-$(CONFIG_ARCH_SDXKOVA) += sdxkova-idp-cpe.dtb \
 				sdxkova-idp-mbb.dtb \
 				sdxkova-idp-m2.dtb
-dtb-y += $(sdxkova-dtb-y)
 
 sdxkova-cpe-wkk-dtb-$(CONFIG_ARCH_SDXKOVA) += sdxkova-idp-cpe.dtb
+
+dtb-y += $($(MSM_ARCH)-dtb-y)
 
 endif
 
