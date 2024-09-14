@@ -177,6 +177,8 @@
 };
 
 &tlmm {
+	/delete-property/ wakeup-parent;
+	/* TO DO: re-enable PDC dependency once we validate PDC changes */
 	gpio-reserved-ranges = <110 6>;
 	sdc1_emmc_on: sdc1_emmc_on {
 		clk {
