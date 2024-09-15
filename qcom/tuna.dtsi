@@ -1827,6 +1827,7 @@
 #include "tuna-qupv3.dtsi"
 #include "msm-rdbg.dtsi"
 #include "tuna-pmic-overlay.dtsi"
+#include "tuna-walt.dtsi"
 
 &qupv3_se7_2uart {
 	status = "ok";
