@@ -2498,6 +2498,7 @@
 		qos1 {
 			mask = <0x3f>;
 			vote = <44>;
+			perf;
 			/* Set CPU0 to fmax, and CPU[0-5] will run at fmax */
 			cpu_freq_vote = <0>;
 		};
