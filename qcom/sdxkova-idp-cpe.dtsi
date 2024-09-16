@@ -46,3 +46,8 @@
 
 	operating-points-v2 = <&sdhc1_opp_table>;
 };
+
+&pmx75_vbus_detect {
+	status = "ok";
+};
+
