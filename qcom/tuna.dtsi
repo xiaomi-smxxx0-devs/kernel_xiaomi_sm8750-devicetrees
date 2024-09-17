@@ -36,7 +36,7 @@
 	};
 
 	chosen: chosen {
-		bootargs = "log_buf_len=512K loglevel=6 cpufreq.default_governor=performance sysctl.kernel.sched_pelt_multiplier=4 no-steal-acc kpti=0 swiotlb=0 loop.max_part=7 irqaffinity=0-1 printk.console_no_auto_verbose=1 kasan=off rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kernel.panic_on_rcu_stall=1 disable_dma32=on cgroup_disable=pressure fw_devlink.strict=1 can.stats_timer=0 ftrace_dump_on_oops";
+		bootargs = "log_buf_len=512K loglevel=6 cpufreq.default_governor=performance sysctl.kernel.sched_pelt_multiplier=4 no-steal-acc kpti=0 swiotlb=0 loop.max_part=7 pcie_ports=compat irqaffinity=0-1 printk.console_no_auto_verbose=1 kasan=off rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kernel.panic_on_rcu_stall=1 disable_dma32=on cgroup_disable=pressure fw_devlink.strict=1 can.stats_timer=0 ftrace_dump_on_oops";
 		stdout-path = "/soc/qcom,qupv3_1_geni_se@ac0000/qcom,qup_uart@a9c000:115200n8";
 	};
 
@@ -406,6 +406,7 @@
 #include "msm-arm-smmu-tuna.dtsi"
 #include "tuna-dma-heaps.dtsi"
 #include "tuna-vm-dma-heaps.dtsi"
+#include "tuna-pcie.dtsi"
 
 &reserved_memory {
 	#address-cells = <2>;
@@ -525,11 +526,21 @@
 		compatible = "arm,gic-v3";
 		#interrupt-cells = <3>;
 		interrupt-controller;
+		ranges;
 		#redistributor-regions = <1>;
 		redistributor-stride = <0x0 0x40000>;
 		reg = <0x17100000 0x10000>,	/* GICD */
 		      <0x17180000 0x200000>;	/* GICR * 8 */
 		interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+
+		#address-cells = <1>;
+		#size-cells = <1>;
+		gic_its: msi-controller@0x17140000 {
+			compatible = "arm,gic-v3-its";
+			msi-controller;
+			#msi-cells = <1>;
+			reg = <0x17140000 0x20000>;
+		};
 	};
 
 	qcom,hdcp {
