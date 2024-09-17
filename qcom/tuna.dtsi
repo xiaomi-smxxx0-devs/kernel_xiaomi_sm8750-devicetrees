@@ -1708,7 +1708,7 @@
 			      "bi_tcxo_ao",
 			      "sleep_clk",
 			      "iface";
-		qcom,dispcc_crm-crmc = <&dispcc_crm>;
+		qcom,disp_crm-crmc = <&dispcc_crm>;
 		#power-domain-cells = <1>;
 		#clock-cells = <1>;
 		#reset-cells = <1>;
