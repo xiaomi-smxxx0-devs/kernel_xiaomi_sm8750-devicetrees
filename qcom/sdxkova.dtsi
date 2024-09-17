@@ -1317,6 +1317,11 @@
 		cap-based-alloc-and-pwr-collapse;
 	};
 
+	qcom,sps {
+		compatible = "qcom,msm-sps-4k";
+		qcom,pipe-attr-ee;
+	};
+
 	qcom,msm-imem@14680000 {
 		compatible = "qcom,msm-imem";
 		reg = <0x0 0x14680000 0x0 0x1000>;
