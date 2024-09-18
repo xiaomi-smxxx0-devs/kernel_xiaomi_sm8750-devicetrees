@@ -472,6 +472,7 @@
 	#address-cells = <1>;
 	#size-cells = <0>;
 	status = "ok";
+	qcom,old-i2c-freq-cfg;
 
 	pm8010m@8 {
 		compatible = "qcom,i2c-pmic";
