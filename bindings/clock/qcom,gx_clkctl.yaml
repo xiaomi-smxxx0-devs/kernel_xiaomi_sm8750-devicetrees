@@ -15,12 +15,13 @@ description: |
 
   See also:
     dt-bindings/clock/qcom,gxclkctl-sun.h
+    dt-bindings/clock/qcom,gpucc-tuna.h
 
 properties:
   compatible:
     enum:
       - qcom,sun-gx_clkctl
-
+      - qcom,tuna-gx_clkctl
   reg:
     maxItems: 1
 
