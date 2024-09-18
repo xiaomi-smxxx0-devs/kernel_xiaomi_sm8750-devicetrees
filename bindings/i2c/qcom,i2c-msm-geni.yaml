@@ -54,6 +54,11 @@ properties:
   reg:
     maxItems: 1
 
+  qcom,old-i2c-freq-cfg:
+    type: boolean
+    deprecated: true
+    description: Configure the I2C bus speed using the older counter settings
+
 required:
   - compatible
   - reg
