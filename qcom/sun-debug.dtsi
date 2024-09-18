@@ -23,7 +23,7 @@
 		      <0x10080800 0x7800>;
 		reg-names = "dcc-base", "dcc-ram-base";
 
-		qcom,transaction_timeout = <0>;
+		qcom,transaction_timeout = <0x80>;
 		dcc-ram-offset = <0x800>;
 
 		link_list_0 {
