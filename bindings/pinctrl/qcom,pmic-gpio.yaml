@@ -56,6 +56,7 @@ properties:
           - qcom,pm8998-gpio
           - qcom,pma8084-gpio
           - qcom,pmd802x-gpio
+          - qcom,pmi632-gpio
           - qcom,pmi8950-gpio
           - qcom,pmi8994-gpio
           - qcom,pmi8998-gpio
@@ -183,6 +184,7 @@ allOf:
               - qcom,pm8550ve-gpio
               - qcom,pm8950-gpio
               - qcom,pm7550ba-gpio
+              - qcom,pmi632-gpio
     then:
       properties:
         gpio-line-names:
@@ -467,6 +469,7 @@ $defs:
                  - gpio1-gpio26 for pm8998
                  - gpio1-gpio22 for pma8084
                  - gpio1-gpio4 for pmd802x
+                 - gpio1-gpio8 for pmi632
                  - gpio1-gpio2 for pmi8950
                  - gpio1-gpio10 for pmi8994
                  - gpio1-gpio18 for pmih010x
