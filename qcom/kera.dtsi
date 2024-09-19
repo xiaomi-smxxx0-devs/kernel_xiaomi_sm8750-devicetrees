@@ -403,6 +403,7 @@
 		interrupt-controller;
 		#interrupt-cells = <2>;
 		wakeup-parent = <&pdc>;
+		qcom,gpios-reserved = <20 21 22 23 100 111 112 116>;
 	};
 
 	tcsr_mutex_block: syscon@1f40000 {
