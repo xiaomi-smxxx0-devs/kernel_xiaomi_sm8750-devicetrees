@@ -59,6 +59,7 @@ NOAPQ_TUNA_BOARDS += \
 		tuna-mtp-kiwi-overlay.dtbo \
 		tuna-mtp-overlay.dtbo \
 		tuna-mtp-qmp1000-overlay.dtbo \
+		tuna-mtp-kiwi-pmd802x-overlay.dtbo \
 		tuna-qrd-overlay.dtbo \
 		tuna-rcm-kiwi-overlay.dtbo \
 		tuna-rcm-overlay.dtbo \
