@@ -36,6 +36,7 @@ properties:
       - qcom,pineapple-llcc
       - qcom,sun-llcc
       - qcom,sdxpinn-llcc
+      - qcom,tuna-llcc
       - qcom,kera-llcc
       - qcom,x1e80100-llcc
 

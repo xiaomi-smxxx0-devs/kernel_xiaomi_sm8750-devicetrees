@@ -4,6 +4,7 @@
  */
 
 #include "waipio-vm.dtsi"
+#include <dt-bindings/clock/qcom,gcc-parrot.h>
 
 / {
 	qcom,msm-id = <537 0x10000>, <583 0x10000>, <613 0x10000>, <631 0x10000>,
@@ -33,6 +34,13 @@
 
 	qcom,spmi@c42d000 {
 		status = "disabled";
+	};
+
+	gcc: clock-controller@100000 {
+		compatible = "qcom,dummycc";
+		clock-output-names = "gcc_clocks";
+		#clock-cells = <1>;
+		#reset-cells = <1>;
 	};
 
 	vgic: interrupt-controller@17200000 {
@@ -74,7 +82,8 @@
 	/delete-node/ spi@990000;
 
 	qup_iommu_group: qup_common_iommu_group {
-			qcom,iommu-dma-addr-pool = <0x00020000 0xfffe0000>;
+			iommu-addresses = <&gpi_dma1 0x00000000 0x00020000>,
+					<&qupv3_1 0x00000000 0x00020000>;
 	};
 
 	gpi_dma1: qcom,gpi-dma@a00000  {
@@ -84,6 +93,7 @@
 		reg-names = "gpi-top";
 		iommus = <&apps_smmu 0x418 0x0>;
 		qcom,iommu-group = <&qup_iommu_group>;
+		memory-region = <&qup_iommu_group>;
 		dma-coherent;
 		interrupts = <GIC_SPI 279 IRQ_TYPE_LEVEL_HIGH>,
 			<GIC_SPI 280 IRQ_TYPE_LEVEL_HIGH>,
@@ -109,9 +119,16 @@
 	qupv3_1: qcom,qupv3_1_geni_se@ac0000 {
 		compatible = "qcom,geni-se-qup";
 		reg = <0xac0000 0x2000>;
+		#address-cells = <1>;
+		#size-cells = <1>;
+		clock-names = "m-ahb", "s-ahb";
+		clocks = <&gcc GCC_QUPV3_WRAP_1_M_AHB_CLK>,
+			<&gcc GCC_QUPV3_WRAP_1_S_AHB_CLK>;
 		iommus = <&apps_smmu 0x418 0x0>;
 		qcom,iommu-group = <&qup_iommu_group>;
+		memory-region = <&qup_iommu_group>;
 		dma-coherent;
+		ranges;
 		status = "ok";
 
 		/* TUI over I2C */

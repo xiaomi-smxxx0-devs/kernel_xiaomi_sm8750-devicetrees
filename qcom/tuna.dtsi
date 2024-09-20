@@ -358,11 +358,20 @@
 #include "tuna-reserved-memory.dtsi"
 #include "msm-arm-smmu-tuna.dtsi"
 #include "tuna-dma-heaps.dtsi"
+#include "tuna-vm-dma-heaps.dtsi"
 
 &reserved_memory {
 	#address-cells = <2>;
 	#size-cells = <2>;
 	ranges;
+
+	cdsp_eva_mem: cdsp_eva_region {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x400000>;
+	};
 
 	/* global autoconfigured region for contiguous allocations */
 	system_cma: linux,cma {
@@ -372,6 +381,21 @@
 		alignment = <0x0 0x400000>;
 		size = <0x0 0x2000000>;
 		linux,cma-default;
+	};
+};
+
+&firmware {
+	qcom_scm {
+		compatible = "qcom,scm";
+		qcom,dload-mode = <&tcsr 0x19000>;
+	};
+
+	qcom_smcinvoke {
+		compatible = "qcom,smcinvoke";
+	};
+
+	qtee_shmbridge {
+		compatible = "qcom,tee-shared-memory-bridge";
 	};
 };
 
@@ -442,6 +466,11 @@
 		interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
 	};
 
+	qcom,hdcp {
+		compatible = "qcom,hdcp";
+		qcom,use-smcinvoke = <1>;
+	};
+
 	arch_timer: timer {
 		compatible = "arm,armv8-timer";
 		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>,
@@ -508,6 +537,20 @@
 			reg = <0x1742d000 0x1000>;
 			status = "disabled";
 		};
+	};
+
+	cache-controller@24800000 {
+		compatible = "qcom,tuna-llcc";
+		reg = <0x24800000 0x200000>, <0x25800000 0x200000>,
+			<0x24C00000 0x200000>, <0x25C00000 0x200000>,
+			<0x26800000 0x200000>, <0x26C00000 0x200000>;
+
+		reg-names = "llcc0_base", "llcc1_base", "llcc2_base",
+				"llcc3_base", "llcc_broadcast_or_base",
+				"llcc_broadcast_and_base";
+
+		interrupts = <GIC_SPI 266 IRQ_TYPE_LEVEL_HIGH>;
+		cap-based-alloc-and-pwr-collapse;
 	};
 
 	apps_rsc: rsc@17a00000 {
@@ -654,7 +697,7 @@
 
 	pdc: interrupt-controller@b220000 {
 		compatible = "qcom,tuna-pdc", "qcom,pdc";
-		reg = <0xb220000 0x10000>, <0x17c000f0 0x60>;
+		reg = <0xb220000 0x10000>, <0x174000f0 0x64>;
 		qcom,pdc-ranges = <0 480 8>, <8 719 1>, <9 718 1>,
 				  <10 230 1>, <11 724 1>, <12 716 1>,
 				  <13 727 1>, <14 720 1>, <15 726 1>,
@@ -683,6 +726,36 @@
 		interrupt-controller;
 		#interrupt-cells = <2>;
 		wakeup-parent = <&pdc>;
+		qcom,gpios-reserved = <54>;
+	};
+
+	slimbam: bamdma@6c04000 {
+		compatible = "qcom,bam-v1.7.0";
+		reg = <0x6c04000 0x20000>, <0x6c8f000 0x1000>;
+		reg-names = "bam", "bam_remote_mem";
+		interrupts = <GIC_SPI 164 IRQ_TYPE_LEVEL_HIGH>;
+		num-channels  = <31>;
+		#dma-cells = <1>;
+		qcom,controlled-remotely;
+		qcom,ee = <1>;
+		qcom,num-ees = <2>;
+	};
+
+	slim_msm: slim@6c40000 {
+		compatible = "qcom,slim-ngd-v1.5.0";
+		reg = <0x6c40000 0x2c000>, <0x6c8E000 0x1000>;
+		reg-names = "ctrl", "slimbus_remote_mem";
+		interrupts = <GIC_SPI 163 IRQ_TYPE_LEVEL_HIGH>;
+		dmas = <&slimbam 3>, <&slimbam 4>;
+		dma-names = "rx", "tx";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		status = "disabled";
+	};
+
+	qcom,sps {
+		compatible = "qcom,msm-sps-4k";
+		qcom,pipe-attr-ee;
 	};
 
 	tcsr_mutex_block: syscon@1f40000 {
@@ -741,6 +814,14 @@
 		priority = <0>;
 		mbox-desc-offset = <0x0>;
 		#mbox-cells = <1>;
+	};
+
+	qcom,tmecom-qmp-client {
+		compatible = "qcom,tmecom-qmp-client";
+		mboxes = <&qmp_tme 0>;
+		mbox-names = "tmecom";
+		label = "tmecom";
+		depends-on-supply = <&qmp_tme>;
 	};
 
 	qcom,smp2p-adsp {
@@ -862,6 +943,28 @@
 
 		smp2p_smem_mailbox_1_in: qcom,smp2p-smem-mailbox-1-in {
 			qcom,entry-name = "smem-mailbox";
+			interrupt-controller;
+			#interrupt-cells = <2>;
+		};
+	};
+
+	qcom,smp2p-wpss {
+		compatible = "qcom,smp2p";
+		qcom,smem = <617>, <616>;
+		interrupt-parent = <&ipcc_mproc>;
+		interrupts = <IPCC_CLIENT_WPSS IPCC_MPROC_SIGNAL_SMP2P
+			IRQ_TYPE_EDGE_RISING>;
+		mboxes = <&ipcc_mproc IPCC_CLIENT_WPSS IPCC_MPROC_SIGNAL_SMP2P>;
+		qcom,local-pid = <0>;
+		qcom,remote-pid = <13>;
+
+		wpss_smp2p_out: master-kernel {
+			qcom,entry-name = "master-kernel";
+			#qcom,smem-state-cells = <1>;
+		};
+
+		wpss_smp2p_in: slave-kernel {
+			qcom,entry-name = "slave-kernel";
 			interrupt-controller;
 			#interrupt-cells = <2>;
 		};
@@ -1250,12 +1353,16 @@
 
 	ufshc_mem: ufshc@1d84000 {
 		compatible = "qcom,ufshc";
-		reg = <0x1d84000 0x3000>;
-		reg-names = "ufs_mem";
+		reg = <0x1d84000 0x3000>,
+			<0x1d88000 0x18000>;
+		reg-names = "ufs_mem", "ice";
+
 		interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
 		phys = <&ufsphy_mem>;
 		phy-names = "ufsphy";
 		#reset-cells = <1>;
+
+		qcom,ice-use-hwkm;
 
 		lanes-per-direction = <2>;
 		clock-names =
@@ -1308,6 +1415,69 @@
 		reset-names = "rst";
 
 		status = "disabled";
+	};
+
+	qcom_tzlog: tz-log@14680720 {
+		compatible = "qcom,tz-log";
+		reg = <0x14680720 0x3000>;
+		qcom,hyplog-enabled;
+		hyplog-address-offset = <0x410>;
+		hyplog-size-offset = <0x414>;
+		tmecrashdump-address-offset = <0x81CA0000>;
+	};
+
+	qcom_cedev: qcedev@1de0000 {
+		compatible = "qcom,qcedev";
+		reg = <0x1de0000 0x20000>,
+			<0x1dc4000 0x28000>;
+		reg-names = "crypto-base","crypto-bam-base";
+		interrupts = <GIC_SPI 272 IRQ_TYPE_LEVEL_HIGH>;
+		qcom,bam-pipe-pair = <2>;
+		qcom,offload-ops-support;
+		qcom,bam-pipe-offload-cpb-hlos = <1>;
+		qcom,bam-pipe-offload-hlos-cpb = <3>;
+		qcom,bam-pipe-offload-hlos-cpb-1 = <8>;
+		qcom,bam-pipe-offload-hlos-hlos = <4>;
+		qcom,bam-pipe-offload-hlos-hlos-1 = <9>;
+		qcom,ce-hw-instance = <0>;
+		qcom,ce-device = <0>;
+		qcom,ce-hw-shared;
+		qcom,bam-ee = <0>;
+		qcom,smmu-s1-enable;
+		qcom,no-clock-support;
+		qcom,no-clk-gating;
+		interconnect-names = "data_path";
+		interconnects = <&aggre2_noc MASTER_CRYPTO &mc_virt SLAVE_EBI1>;
+		iommus = <&apps_smmu 0x0480 0x0>,
+			<&apps_smmu 0x0481 0x0>;
+		qcom,iommu-dma = "atomic";
+		dma-coherent;
+
+		qcom_cedev_ns_cb {
+			compatible = "qcom,qcedev,context-bank";
+			label = "ns_context";
+			iommus = <&apps_smmu 0x0481 0x0>;
+			dma-coherent;
+		};
+
+		qcom_cedev_s_cb {
+			compatible = "qcom,qcedev,context-bank";
+			label = "secure_context";
+			iommus = <&apps_smmu 0x0483 0x0>;
+			qcom,iommu-vmid = <0x9>;
+			qcom,secure-context-bank;
+			dma-noncoherent;
+		};
+	};
+
+	rng: rng@10c3000 {
+		compatible = "qcom,trng";
+		reg = <0x10c3000 0x1000>;
+	};
+
+	cpu_pmu: cpu-pmu {
+		compatible = "arm,armv8-pmuv3";
+		interrupts = <GIC_PPI 7 IRQ_TYPE_LEVEL_HIGH>;
 	};
 
 	spmi_bus: spmi0_bus: qcom,spmi@c42d000 {
@@ -1477,6 +1647,14 @@
 		};
 	};
 
+	gh-secure-vm-loader@2 {
+		compatible = "qcom,gh-secure-vm-loader";
+		qcom,pas-id = <35>;
+		qcom,vmid = <50>;
+		qcom,firmware-name = "cpusys_vm";
+		memory-region = <&cpusys_vm_mem>;
+	};
+
 	qcom,pmic_glink_log {
 		compatible = "qcom,qti-pmic-glink";
 		qcom,pmic-glink-channel = "PMIC_LOGS_ADSP_APPS";
@@ -1628,6 +1806,16 @@
 	#size-cells = <2>;
 	ranges;
 
+	gunyah_hyp_mem: gunyah_hyp_region@80000000 {
+		no-map;
+		reg = <0x0 0x80000000 0x0 0xe00000>;
+	};
+
+	cpusys_vm_mem: cpusys_vm_region@80e00000 {
+		no-map;
+		reg = <0x0 0x80e00000 0x0 0x400000>;
+	};
+
 	aop_cmd_db_mem: aop_cmd_db_region@81c60000 {
 		compatible = "qcom,cmd-db";
 		no-map;
@@ -1649,6 +1837,30 @@
 		alignment = <0x0 0x400000>;
 		size = <0x0 0x4800000>;
 	};
+
+	non_secure_display_memory: non_secure_display_region {
+		compatible = "shared-dma-pool";
+		reusable;
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		size = <0x0 0xc800000>;
+		alignment = <0x0 0x400000>;
+	};
+
+	qseecom_mem: qseecom_region {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x1400000>;
+	};
+
+	qseecom_ta_mem: qseecom_ta_region {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x1400000>;
+	};
 };
 
 #include "tuna-pinctrl.dtsi"
@@ -1657,6 +1869,7 @@
 #include "tuna-qupv3.dtsi"
 #include "msm-rdbg.dtsi"
 #include "tuna-pmic-overlay.dtsi"
+#include "tuna-walt.dtsi"
 
 &qupv3_se7_2uart {
 	status = "ok";

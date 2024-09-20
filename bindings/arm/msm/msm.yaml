@@ -122,9 +122,34 @@ properties:
       - description: Qualcomm Technologies, Inc. TUNA
         items:
           - enum:
+              - qcom,tuna-atp
+              - qcom,atp
+              - qcom,tuna-cdp
+              - qcom,cdp
+              - qcom,tuna-mtp
+              - qcom,mtp
+              - qcom,tuna-qrd
+              - qcom,qrd
+              - qcom,tuna-rcm
+              - qcom,rcm
               - qcom,tuna-rumi
               - qcom,rumi
           - const: qcom,tuna
+
+      - description: Qualcomm Technologies, Inc. TUNAP
+        items:
+          - enum:
+              - qcom,tunap-atp
+              - qcom,atp
+              - qcom,tunap-cdp
+              - qcom,cdp
+              - qcom,tunap-mtp
+              - qcom,mtp
+              - qcom,tunap-qrd
+              - qcom,qrd
+              - qcom,tunap-rcm
+              - qcom,rcm
+          - const: qcom,tunap
 
       - description: Qualcomm Technologies, Inc. KERA
         items:

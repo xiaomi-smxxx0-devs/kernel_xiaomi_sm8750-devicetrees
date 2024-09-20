@@ -54,7 +54,15 @@ sun-overlays-dtb-$(CONFIG_ARCH_SUN) += $(SUN_BOARDS) $(NOAPQ_SUN_BOARDS) $(SUN_B
 
 TUNA_BASE_DTB += tuna.dtb
 NOAPQ_TUNA_BOARDS += \
-		 tuna-rumi-overlay.dtbo
+		tuna-atp-overlay.dtbo \
+		tuna-cdp-overlay.dtbo \
+		tuna-mtp-kiwi-overlay.dtbo \
+		tuna-mtp-overlay.dtbo \
+		tuna-mtp-qmp1000-overlay.dtbo \
+		tuna-qrd-overlay.dtbo \
+		tuna-rcm-kiwi-overlay.dtbo \
+		tuna-rcm-overlay.dtbo \
+		tuna-rumi-overlay.dtbo
 
 sun-dtb-$(CONFIG_ARCH_TUNA) +=  \
         $(call add-overlays, $(NOAPQ_TUNA_BOARDS),$(TUNA_BASE_DTB))
@@ -174,7 +182,10 @@ ifeq ($(CONFIG_ARCH_SDXKOVA), y)
 sdxkova-dtb-$(CONFIG_ARCH_SDXKOVA) += sdxkova-idp-cpe.dtb \
 				sdxkova-idp-mbb.dtb \
 				sdxkova-idp-m2.dtb
-dtb-y += $(sdxkova-dtb-y)
+
+sdxkova-cpe-wkk-dtb-$(CONFIG_ARCH_SDXKOVA) += sdxkova-idp-cpe.dtb
+
+dtb-y += $($(MSM_ARCH)-dtb-y)
 
 endif
 

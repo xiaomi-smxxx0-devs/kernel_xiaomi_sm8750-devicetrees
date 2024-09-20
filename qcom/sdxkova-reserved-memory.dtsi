@@ -64,6 +64,8 @@
 	};
 
 	smem_mem: smem_region@87e20000 {
+		compatible = "qcom,smem";
+		hwlocks = <&tcsr_mutex 3>;
 		no-map;
 		reg = <0x0 0x87e20000 0x0 0xc0000>;
 	};

@@ -12,6 +12,7 @@
 
 &qupv3_se8_i2c {
 	awinic@64 {
+		compatible = "awinic,aw2016_led";
 		reg = <0x64>;
 
 		awinic,red {

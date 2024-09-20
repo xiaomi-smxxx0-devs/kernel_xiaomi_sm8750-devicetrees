@@ -190,7 +190,7 @@
 	soc: soc { };
 
 	chosen {
-		bootargs = "console=ttyMSM0,115200n8 loglevel=6 log_buf_len=256K kpti=off kernel.panic_on_rcu_stall=1 msm_rtb.filter=0x237 rcupdate.rcu_expedited=1 rcu_nocbs=0-3 ftrace_dump_on_oops fw_devlink.strict=1 printk.console_no_auto_verbose=1 irqaffinity=0-2 cpufreq.default_governor=performance slub_debug=- randomize_kstack_offset=on ";
+		bootargs = "loglevel=6 log_buf_len=256K kpti=off kernel.panic_on_rcu_stall=1 msm_rtb.filter=0x237 rcupdate.rcu_expedited=1 rcu_nocbs=0-3 ftrace_dump_on_oops fw_devlink.strict=1 printk.console_no_auto_verbose=1 irqaffinity=0-2 cpufreq.default_governor=performance slub_debug=- randomize_kstack_offset=on ";
 	};
 
 	reserved_memory: reserved-memory {
@@ -1678,9 +1678,8 @@
 	sdhc_1: sdhci@4744000 {
 		compatible = "qcom,sdhci-msm-v5";
 		reg = <0x04744000 0x1000>, <0x04745000 0x1000>,
-		      <0x04748000 0x8000>, <0x04750000 0x9000>;
-		reg-names = "hc", "cqhci", "cqhci_ice",
-			    "cqhci_ice_hwkm";
+		      <0x04748000 0x18000>;
+		reg-names = "hc", "cqhci", "ice";
 
 		iommus = <&apps_smmu 0xC0 0x0>;
 		qcom,iommu-dma = "bypass";
@@ -1689,6 +1688,7 @@
 				<GIC_SPI 352 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "hc_irq", "pwr_irq";
 
+		qcom,ice-use-hwkm;
 		clocks = <&gcc GCC_SDCC1_APPS_CLK>,
 			<&gcc GCC_SDCC1_AHB_CLK>,
 			<&gcc GCC_SDCC1_ICE_CORE_CLK>;

@@ -10,6 +10,15 @@ _platform_map = {
             # keep sorted
         ],
     },
+    "sdxkova.cpe.wkk": {
+        "dtb_list": [
+            # keep sorted
+            {"name": "sdxkova-idp-cpe.dtb"},
+        ],
+        "dtbo_list": [
+            # keep sorted
+        ],
+    },
     "sun": {
         "dtb_list": [
             # keep sorted
@@ -73,6 +82,14 @@ _platform_map = {
                 "name": "tuna-rumi-overlay.dtbo",
                 "apq": False,
             },
+            {"name": "tuna-atp-overlay.dtbo"},
+            {"name": "tuna-cdp-overlay.dtbo"},
+            {"name": "tuna-mtp-kiwi-overlay.dtbo"},
+            {"name": "tuna-mtp-overlay.dtbo"},
+            {"name": "tuna-mtp-qmp1000-overlay.dtbo"},
+            {"name": "tuna-qrd-overlay.dtbo"},
+            {"name": "tuna-rcm-kiwi-overlay.dtbo"},
+            {"name": "tuna-rcm-overlay.dtbo"},
         ],
     },
     "kera": {

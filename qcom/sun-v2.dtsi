@@ -18,6 +18,10 @@
 	compatible = "qcom,sun-cambistmclkcc-v2", "syscon";
 };
 
+&evacc {
+	compatible = "qcom,sun-evacc-v2", "syscon";
+};
+
 &tsens1 {
 	#qcom,sensors = <7>;
 };
