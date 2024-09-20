@@ -63,6 +63,9 @@ properties:
       - qcom,sun-cdsp-pas
       - qcom,sun-modem-pas
       - qcom,sun-soccp-pas
+      - qcom,tuna-adsp-pas
+      - qcom,tuna-cdsp-pas
+      - qcom,tuna-modem-pas
       - qcom,parrot-adsp-pas
       - qcom,parrot-cdsp-pas
       - qcom,parrot-modem-pas
