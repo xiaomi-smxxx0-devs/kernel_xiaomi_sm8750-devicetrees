@@ -23,6 +23,7 @@ properties:
       - qcom,sm4450-debugcc
       - qcom,monaco-debugcc
       - qcom,tuna-debugcc
+      - qcom,kera-debugcc
 
   clocks:
     items:
