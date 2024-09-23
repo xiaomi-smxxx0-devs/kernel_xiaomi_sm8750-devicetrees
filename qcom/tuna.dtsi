@@ -1953,16 +1953,6 @@
 	#size-cells = <2>;
 	ranges;
 
-	gunyah_hyp_mem: gunyah_hyp_region@80000000 {
-		no-map;
-		reg = <0x0 0x80000000 0x0 0xe00000>;
-	};
-
-	cpusys_vm_mem: cpusys_vm_region@80e00000 {
-		no-map;
-		reg = <0x0 0x80e00000 0x0 0x400000>;
-	};
-
 	adsp_mem_heap: adsp_heap_region {
 		compatible = "shared-dma-pool";
 		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
