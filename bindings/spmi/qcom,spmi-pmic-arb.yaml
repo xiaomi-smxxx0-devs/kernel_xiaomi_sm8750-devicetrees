@@ -85,6 +85,13 @@ properties:
     description: >
       which of the PMIC Arb provided channels to use for accesses
 
+  qcom,mid:
+    $ref: /schemas/types.yaml#/definitions/uint32
+    minimum: 0
+    maximum: 3
+    description: >
+      SPMI master ID of this controller.
+
 required:
   - compatible
   - reg-names
