@@ -636,6 +636,11 @@
 				qcom,llcc-bcm-name = "SH5";
 
 			};
+
+			rpmhcc: clock-controller {
+				compatible = "qcom,tuna-rpmh-clk";
+				#clock-cells = <1>;
+			};
 		};
 	};
 
@@ -1730,13 +1735,6 @@
 			clock-output-names = "usb3_phy_wrapper_gcc_usb30_pipe_clk";
 			#clock-cells = <0>;
 		};
-	};
-
-	rpmhcc: clock-controller {
-		compatible = "fixed-clock";
-		clock-output-names = "rpmh_clocks";
-		clock-frequency = <19200000>;
-		#clock-cells = <1>;
 	};
 
 	cambistmclkcc: clock-controller@1760000 {
@@ -3082,6 +3080,46 @@
 		qcom,hw-timer-hz = <19200000>;
 		qcom,count-unit = <0x10000>;
 		qcom,target-dev = <&qcom_ddr_dcvs_hw>;
+	};
+
+	apsscc: syscon@17a80000 {
+		compatible = "syscon";
+		reg = <0x17a80000 0x21000>;
+	};
+
+	mccc: syscon@240ba000 {
+		compatible = "syscon";
+		reg = <0x240ba000 0x800>;
+	};
+
+	debugcc: clock-controller@0 {
+		compatible = "qcom,kera-debugcc";
+		qcom,apsscc = <&apsscc>;
+		qcom,cambistmclkcc = <&cambistmclkcc>;
+		qcom,camcc = <&camcc>;
+		qcom,dispcc = <&dispcc>;
+		qcom,gcc = <&gcc>;
+		qcom,gpucc = <&gpucc>;
+		qcom,tcsrcc = <&tcsrcc>;
+		qcom,videocc = <&videocc>;
+		qcom,mccc = <&mccc>;
+		clocks = <&rpmhcc RPMH_CXO_CLK>,
+			 <&cambistmclkcc 0>,
+			 <&camcc 0>,
+			 <&dispcc 0>,
+			 <&gcc 0>,
+			 <&gpucc 0>,
+			 <&tcsrcc 0>,
+			 <&videocc 0>;
+		clock-names = "xo_clk_src",
+			      "cambistmclkcc",
+			      "camcc",
+			      "dispcc",
+			      "gcc",
+			      "gpucc",
+			      "tcsrcc",
+			      "videocc";
+		#clock-cells = <1>;
 	};
 };
 
