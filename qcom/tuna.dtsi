@@ -650,6 +650,12 @@
 		cap-based-alloc-and-pwr-collapse;
 	};
 
+	gic-interrupt-router {
+		compatible = "qcom,gic-intr-routing";
+		qcom,gic-class0-cpus = <&CPU0 &CPU1>;
+		qcom,gic-class1-cpus = <&CPU2 &CPU3 &CPU4 &CPU5 &CPU6 &CPU7>;
+	};
+
 	apps_rsc: rsc@17a00000 {
 		label = "apps_rsc";
 		compatible = "qcom,rpmh-rsc";
