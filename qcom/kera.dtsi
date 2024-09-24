@@ -319,6 +319,11 @@
 		};
 	};
 
+	qcom,secure-buffer {
+		compatible = "qcom,secure-buffer";
+		qcom,vmid-cp-camera-preview-ro;
+	};
+
 	apps_rsc: rsc@17a00000 {
 		label = "apps_rsc";
 		compatible = "qcom,rpmh-rsc";
