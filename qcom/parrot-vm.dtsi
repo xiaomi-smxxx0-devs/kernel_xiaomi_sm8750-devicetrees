@@ -53,14 +53,13 @@
 		<0x17260000 0x100000>;    /* GICR * 8 */
 	};
 
-	pinctrl@f000000 {
+	tlmm: pinctrl@f000000 {
 		compatible = "qcom,parrot-vm-tlmm";
-		gpios = /bits/ 16 <>;
-		qcom,gpios-reserved = <0 1 2 3 38>;
+		gpios = /bits/ 16 <98 99>;
 	};
 
 	tlmm-vm-mem-access {
-		tlmm-vm-gpio-list = <>;
+		tlmm-vm-gpio-list = <&tlmm 98 0 &tlmm 99 0>;
 	};
 
 	apps-smmu@15000000 {
