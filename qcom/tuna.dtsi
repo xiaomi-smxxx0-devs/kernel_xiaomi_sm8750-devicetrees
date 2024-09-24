@@ -1953,12 +1953,6 @@
 		reg = <0x0 0x80e00000 0x0 0x400000>;
 	};
 
-	aop_cmd_db_mem: aop_cmd_db_region@81c60000 {
-		compatible = "qcom,cmd-db";
-		no-map;
-		reg = <0x0 0x81c60000 0x0 0x20000>;
-	};
-
 	adsp_mem_heap: adsp_heap_region {
 		compatible = "shared-dma-pool";
 		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
