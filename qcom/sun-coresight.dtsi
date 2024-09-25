@@ -1765,7 +1765,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		out-ports {
 			port {
@@ -1788,7 +1788,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		out-ports {
 			port {
@@ -1811,7 +1811,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		out-ports {
 			port {
@@ -1834,7 +1834,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		out-ports {
 			port {
@@ -1857,7 +1857,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		out-ports {
 			port {
@@ -1880,7 +1880,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		out-ports {
 			port {
@@ -1903,7 +1903,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		out-ports {
 			port {
@@ -1926,7 +1926,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		out-ports {
 			port {
@@ -1949,7 +1949,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		out-ports {
 			port {
@@ -1972,7 +1972,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		out-ports {
 			port {
@@ -1995,7 +1995,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		out-ports {
 			port {
@@ -2018,7 +2018,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		out-ports {
 			port {
@@ -2055,7 +2055,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		in-ports {
 			#address-cells = <1>;
@@ -2251,7 +2251,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
@@ -2360,7 +2360,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
@@ -2469,7 +2469,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
@@ -2578,7 +2578,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
@@ -2687,7 +2687,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
@@ -2796,7 +2796,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
@@ -2833,7 +2833,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
@@ -2927,7 +2927,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
@@ -2962,7 +2962,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
@@ -2999,7 +2999,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
@@ -3044,7 +3044,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD0>;
 
 		in-ports {
@@ -3149,7 +3149,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
@@ -3257,7 +3257,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
@@ -3294,7 +3294,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
@@ -3356,7 +3356,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
@@ -3391,7 +3391,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
@@ -3428,7 +3428,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
@@ -3473,7 +3473,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 		power-domains = <&CLUSTER_PD1>;
 
 		in-ports {
@@ -3506,7 +3506,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 
 		in-ports {
 			#address-cells = <1>;
@@ -5627,7 +5627,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 	};
 
 	cti@12195000 {
@@ -5641,7 +5641,7 @@
 		clocks = <&aoss_qmp>,
 			<&scmi_clk 0>;
 		clock-names = "apb_pclk",
-				"dynamic_clk";
+				"atclk";
 	};
 
 	cti@10a05000 {
