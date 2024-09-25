@@ -331,3 +331,5 @@
 		qcom,support-hypervisor;
 	};
 };
+
+#include "msm-arm-smmu-tuna-vm.dtsi"
