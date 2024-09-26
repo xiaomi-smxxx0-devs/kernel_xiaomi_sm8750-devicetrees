@@ -89,6 +89,14 @@ properties:
       - qcom,sdx65-mc-virt
       - qcom,sdx65-mem-noc
       - qcom,sdx65-system-noc
+      - qcom,sdxbaagha-aggre_noc,
+      - qcom,sdxbaagha-cnoc_main,
+      - qcom,sdxbaagha-dc_noc,
+      - qcom,sdxbaagha-mc_virt,
+      - qcom,sdxbaagha-clk_virt,
+      - qcom,sdxbaagha-pcie_anoc,
+      - qcom,sdxbaagha-mem_noc,
+      - qcom,sdxbaagha-system_noc,
       - qcom,sm8150-aggre1-noc
       - qcom,sm8150-aggre2-noc
       - qcom,sm8150-camnoc-noc
