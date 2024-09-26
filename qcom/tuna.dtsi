@@ -1834,6 +1834,63 @@
 		};
 	};
 
+	trust_ui_vm_vblk0_ring: trust_ui_vm_vblk0_ring {
+		size = <0x4000>;
+		gunyah-label = <0x11>;
+	};
+
+	trust_ui_vm_vblk1_ring: trust_ui_vm_vblk1_ring {
+		size = <0x4000>;
+		gunyah-label = <0x10>;
+	};
+
+
+	trust_ui_vm_vsock_ring: trust_ui_vm_vsock_ring {
+		size = <0xc000>;
+		gunyah-label = <0x15>;
+	};
+
+	trust_ui_vm_swiotlb: trust_ui_vm_swiotlb {
+		size = <0x400000>;
+		gunyah-label = <0x12>;
+	};
+
+	trust_ui_vm: qcom,trust_ui_vm {
+		vm_name = "trustedvm";
+		shared-buffers-size = <0x414000>;
+		shared-buffers = <&trust_ui_vm_vblk0_ring
+				&trust_ui_vm_vblk1_ring
+				&trust_ui_vm_vsock_ring
+				&trust_ui_vm_swiotlb>;
+	};
+
+	trust_ui_vm_virt_be0: trust_ui_vm_virt_be0@11 {
+		qcom,vm = <&trust_ui_vm>;
+		qcom,label = <0x11>;
+	};
+
+	trust_ui_vm_virt_be1: trust_ui_vm_virt_be1@10 {
+		qcom,vm = <&trust_ui_vm>;
+		qcom,label = <0x10>;
+	};
+
+	trust_ui_vm_virt_be2: trust_ui_vm_virt_be2@15 {
+		qcom,vm = <&trust_ui_vm>;
+		qcom,label = <0x15>;
+	};
+
+	gh-secure-vm-loader@0 {
+		compatible = "qcom,gh-secure-vm-loader";
+		qcom,pas-id = <28>;
+		qcom,vmid = <45>;
+		qcom,firmware-name = "trustedvm";
+		qcom,keep-running;
+		memory-region = <&trust_ui_vm_mem &vm_comm_mem>;
+		virtio-backends = <&trust_ui_vm_virt_be0
+				&trust_ui_vm_virt_be1
+				&trust_ui_vm_virt_be2>;
+	};
+
 	gh-secure-vm-loader@2 {
 		compatible = "qcom,gh-secure-vm-loader";
 		qcom,pas-id = <35>;
@@ -1994,6 +2051,21 @@
 	#address-cells = <2>;
 	#size-cells = <2>;
 	ranges;
+
+	trust_ui_vm_mem: trust_ui_vm_region@f3800000 {
+		compatible = "shared-dma-pool";
+		reg = <0x0 0xf3800000 0x0 0x4400000>;
+		reusable;
+		alignment = <0x0 0x400000>;
+	};
+
+	vm_comm_mem: vm_comm_mem_region {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x800000>;
+	};
 
 	adsp_mem_heap: adsp_heap_region {
 		compatible = "shared-dma-pool";
