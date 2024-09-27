@@ -685,6 +685,11 @@
 	rpmh-regulator-smpe8 {
 		compatible = "qcom,rpmh-vrm-regulator";
 		qcom,resource-name = "smpe8";
+		qcom,regulator-type = "pmic5-hfsmps";
+		qcom,supported-modes =
+			<RPMH_REGULATOR_MODE_RET
+			RPMH_REGULATOR_MODE_AUTO>;
+		qcom,mode-threshold-currents = <0 200000>;
 		S8E:
 		pm6150l_s8: regulator-pm6150l-s8 {
 			regulator-name = "pm6150l_s8";
@@ -692,6 +697,7 @@
 			regulator-min-microvolt = <1816000>;
 			regulator-max-microvolt = <2040000>;
 			qcom,init-voltage = <1872000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_RET>;
 		};
 	};
 

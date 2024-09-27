@@ -144,6 +144,9 @@
 	vccq2-supply = <&L19B>;
 	vccq2-max-microamp = <750000>;
 
+	qcom,vccq2-parent-supply = <&S8E>;
+	qcom,vccq2-parent-max-microamp = <210000>;
+
 	qcom,vddp-ref-clk-supply = <&L13B>;
 	qcom,vddp-ref-clk-max-microamp = <100>;
 
