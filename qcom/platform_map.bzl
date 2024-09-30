@@ -161,10 +161,19 @@ _platform_map = {
             {"name": "sunp-vm-hdk.dtb"},
             {"name": "sun-vm-rumi.dtb"},
         ],
+        "binary_compatible_with": ["tuna-oemvm"],
     },
     "tuna-tuivm": {
         "dtb_list": [
             # keep sorted
+            {"name": "tuna-oemvm-rumi.dtb"},
+            {"name": "tuna-vm-rumi.dtb"},
+        ],
+    },
+    "tuna-oemvm": {
+        "dtb_list": [
+            # keep sorted
+            {"name": "tuna-oemvm-rumi.dtb"},
             {"name": "tuna-vm-rumi.dtb"},
         ],
     },
