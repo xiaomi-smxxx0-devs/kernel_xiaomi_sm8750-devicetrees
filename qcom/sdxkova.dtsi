@@ -6,6 +6,8 @@
 #include <dt-bindings/soc/qcom,ipcc.h>
 #include <dt-bindings/spmi/spmi.h>
 #include "sdx75.dtsi"
+#include <dt-bindings/regulator/qcom,rpmh-regulator-levels.h>
+#include <dt-bindings/gpio/gpio.h>
 /delete-node/ &apps_smmu;
 /delete-node/ &tcsr_mutex;
 #include "msm-arm-smmu-sdxkova.dtsi"
@@ -290,6 +292,168 @@
 			pins = "gpio103";
 			bias-pull-up;
 			drive-strength = <2>;
+		};
+	};
+
+	pcie0 {
+		pcie0_perst_default: pcie0_perst_default {
+			mux {
+				pins = "gpio44";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio44";
+				drive-strength = <2>;
+				bias-pull-down;
+			};
+		};
+
+		pcie0_clkreq_default: pcie0_clkreq_default {
+			mux {
+				pins = "gpio43";
+				function = "pcie0_clkreq_n";
+			};
+
+			config {
+				pins = "gpio43";
+				drive-strength = <2>;
+				bias-pull-up;
+			};
+		};
+
+		pcie0_wake_default: pcie0_wake_default {
+			mux {
+				pins = "gpio42";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio42";
+				drive-strength = <2>;
+				bias-pull-up;
+			};
+		};
+
+		pcie0_clkreq_sleep: pcie0_clkreq_sleep {
+			mux {
+				pins = "gpio43";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio43";
+				drive-strength = <2>;
+				bias-pull-up;
+			};
+		};
+	};
+
+	pcie1 {
+		pcie1_perst_default: pcie1_perst_default {
+			mux {
+				pins = "gpio125";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio125";
+				drive-strength = <2>;
+				bias-pull-down;
+			};
+		};
+
+		pcie1_clkreq_default: pcie1_clkreq_default {
+			mux {
+				pins = "gpio124";
+				function = "pcie1_clkreq_n";
+			};
+
+			config {
+				pins = "gpio124";
+				drive-strength = <2>;
+				bias-pull-up;
+			};
+		};
+
+		pcie1_wake_default: pcie1_wake_default {
+			mux {
+				pins = "gpio123";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio123";
+				drive-strength = <2>;
+				bias-pull-up;
+			};
+		};
+
+		pcie1_clkreq_sleep: pcie1_clkreq_sleep {
+			mux {
+				pins = "gpio124";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio124";
+				drive-strength = <2>;
+				bias-pull-up;
+			};
+		};
+	};
+
+	pcie2 {
+		pcie2_perst_default: pcie2_perst_default {
+			mux {
+				pins = "gpio122";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio122";
+				drive-strength = <2>;
+				bias-pull-down;
+			};
+		};
+
+		pcie2_clkreq_default: pcie2_clkreq_default {
+			mux {
+				pins = "gpio121";
+				function = "pcie2_clkreq_n";
+			};
+
+			config {
+				pins = "gpio121";
+				drive-strength = <2>;
+				bias-pull-up;
+			};
+		};
+
+		pcie2_wake_default: pcie2_wake_default {
+			mux {
+				pins = "gpio120";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio120";
+				drive-strength = <2>;
+				bias-pull-up;
+			};
+		};
+
+		pcie2_clkreq_sleep: pcie2_clkreq_sleep {
+			mux {
+				pins = "gpio121";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio121";
+				drive-strength = <2>;
+				bias-pull-up;
+			};
 		};
 	};
 
@@ -1086,7 +1250,7 @@
 #include "sdxkova-regulators.dtsi"
 
 &chosen {
-	bootargs = "cpufreq.default_governor=performance";
+	bootargs = "cpufreq.default_governor=performance pcie_ports=compat";
 };
 
 &soc {
@@ -2130,6 +2294,7 @@
 
 #include "sdxkova-usb.dtsi"
 #include "ipcc-test-sdxkova.dtsi"
+#include "sdxkova-pcie.dtsi"
 
 &CPU0 {
 	/delete-property/ clocks;
