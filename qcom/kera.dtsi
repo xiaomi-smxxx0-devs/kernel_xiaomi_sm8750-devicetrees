@@ -867,6 +867,30 @@
 		qcom,gpios-reserved = <20 21 22 23 100 111 112 116>;
 	};
 
+	slimbam: bamdma@6c04000 {
+		compatible = "qcom,bam-v1.7.0";
+		reg = <0x6c04000 0x20000>, <0x6c8f000 0x1000>;
+		reg-names = "bam", "bam_remote_mem";
+		interrupts = <GIC_SPI 164 IRQ_TYPE_LEVEL_HIGH>;
+		num-channels  = <31>;
+		#dma-cells = <1>;
+		qcom,controlled-remotely;
+		qcom,ee = <1>;
+		qcom,num-ees = <2>;
+	};
+
+	slim_msm: slim@6c40000 {
+		compatible = "qcom,slim-ngd-v1.5.0";
+		reg = <0x6c40000 0x2c000>, <0x6c8E000 0x1000>;
+		reg-names = "ctrl", "slimbus_remote_mem";
+		interrupts = <GIC_SPI 163 IRQ_TYPE_LEVEL_HIGH>;
+		dmas = <&slimbam 3>, <&slimbam 4>;
+		dma-names = "rx", "tx";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		status = "disabled";
+	};
+
 	tcsr_mutex_block: syscon@1f40000 {
 		compatible = "syscon";
 		reg = <0x1f40000 0x20000>;
