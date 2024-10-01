@@ -15,6 +15,17 @@ dtbo-y += sun-v2-ese-cdp.dtbo
 dtbo-y += sun-v2-ese-qrd.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_TUNA),y)
+dtbo-y += tuna-ese-cdp.dtbo
+dtbo-y += tuna-ese-mtp.dtbo
+dtbo-y += tuna-ese-qrd.dtbo
+dtbo-y += tuna-ese-mtp-kiwi-overlay.dtbo
+dtbo-y += tuna-ese-rcm-kiwi-overlay.dtbo
+dtbo-y += tuna-ese-mtp-qmp1000-overlay.dtbo
+dtbo-y += tuna-ese-oemvm-mtp-kiwi.dtbo
+dtbo-y += tuna-ese-oemvm-rcm-kiwi.dtbo
+endif
+
 always-y	:= $(dtb-y) $(dtbo-y)
 subdir-y	:= $(dts-dirs)
 clean-files	:= *.dtb *.dtbo
