@@ -52,7 +52,7 @@ sun-dtb-$(CONFIG_ARCH_SUN) += \
 	$(call add-overlays, $(SUN_BOARDS) $(APQ_SUN_BOARDS),$(SUN_APQ_BASE_DTB))
 sun-overlays-dtb-$(CONFIG_ARCH_SUN) += $(SUN_BOARDS) $(NOAPQ_SUN_BOARDS) $(SUN_BASE_DTB) $(SUN_APQ_BASE_DTB)
 
-TUNA_BASE_DTB += tuna.dtb
+TUNA_BASE_DTB += tuna.dtb tuna7.dtb
 NOAPQ_TUNA_BOARDS += \
 		tuna-atp-overlay.dtbo \
 		tuna-cdp-overlay.dtbo \
