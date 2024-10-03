@@ -9,7 +9,7 @@
 / {
 	#address-cells = <0x2>;
 	#size-cells = <0x2>;
-	qcom,msm-id = <655 0x10000>;
+	qcom,msm-id = <681 0x10000>, <655 0x10000>;
 	interrupt-parent = <&vgic>;
 
 	chosen {
