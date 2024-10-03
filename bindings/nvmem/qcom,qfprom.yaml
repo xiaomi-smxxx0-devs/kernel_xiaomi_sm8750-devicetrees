@@ -31,6 +31,8 @@ properties:
           - qcom,sm6115-qfprom
           - qcom,sun-qfprom
           - qcom,ravelin-qfprom
+          - qcom,tuna-qfprom
+          - qcom,kera-qfprom
       - const: qcom,qfprom
 
   reg:
