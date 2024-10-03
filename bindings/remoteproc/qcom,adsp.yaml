@@ -70,6 +70,9 @@ properties:
       - qcom,parrot-cdsp-pas
       - qcom,parrot-modem-pas
       - qcom,parrot-wpss-pas
+      - qcom,kera-adsp-pas
+      - qcom,kera-cdsp-pas
+      - qcom,kera-modem-pas
       - qcom,ravelin-adsp-pas
       - qcom,ravelin-modem-pas
       - qcom,ravelin-wpss-pas
