@@ -35,6 +35,11 @@
 		interrupt-names = "pwr_event_irq", "dp_hs_phy_irq",
 				"dm_hs_phy_irq", "ss_phy_irq";
 
+		interconnect-names = "usb-ddr", "usb-ipa", "ddr-usb";
+		interconnects = <&aggre1_noc MASTER_USB3_0 &mc_virt SLAVE_EBI1>,
+				<&aggre1_noc MASTER_USB3_0 &config_noc SLAVE_IPA_CFG>,
+				<&gem_noc MASTER_APPSS_PROC &config_noc SLAVE_USB3_0>;
+
 		qcom,use-pdc-interrupts;
 		qcom,use-eusb2-phy;
 
