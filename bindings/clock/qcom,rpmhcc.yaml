@@ -35,6 +35,7 @@ properties:
       - qcom,pineapple-rpmh-clk
       - qcom,sun-rpmh-clk
       - qcom,parrot-rpmh-clk
+      - qcom,tuna-rpmh-clk
 
   clocks:
     maxItems: 1
