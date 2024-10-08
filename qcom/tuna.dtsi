@@ -48,7 +48,7 @@
 		qcom_scm: qcom_scm {};
 	};
 
-	aliases {
+	aliases: aliases {
 		serial0 = &qupv3_se7_2uart;
 		ufshc1 = &ufshc_mem; /* Embedded UFS Slot */
 		mmc1 = &sdhc_2; /* SDC2 SD card slot */
@@ -3178,4 +3178,13 @@
 
 &qupv3_se7_2uart {
 	status = "ok";
+};
+
+&qupv3_se3_i2c {
+	status = "ok";
+	wcd_usbss: wcd939x_i2c@e {
+		compatible = "qcom,wcd939x-i2c";
+		reg = <0xe>;
+		vdd-usb-cp-supply = <&L7B>;
+	};
 };
