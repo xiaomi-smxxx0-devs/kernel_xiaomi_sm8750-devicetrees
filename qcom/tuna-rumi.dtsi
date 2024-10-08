@@ -174,3 +174,19 @@
 &APSS_OFF {
 	status = "disabled";
 };
+
+&tsens0 {
+	status = "disabled";
+};
+
+&tsens1 {
+	status = "disabled";
+};
+
+&tsens2 {
+	status = "disabled";
+};
+
+&tsens3 {
+	status = "disabled";
+};
