@@ -54,6 +54,20 @@ properties:
       - const: bcl-lvl1
       - const: bcl-lvl2
 
+  qcom,bcl-mon-vbat-only:
+    type: boolean
+    description: |
+      When this flag is defined, the BCL driver will only monitor
+      Vbat or both Ibat and Vbat based on runtime battery type and
+      Rsense input.
+
+  qcom,bcl-mon-ibat-only:
+    type: boolean
+    description: |
+      When this flag is defined, the BCL driver will only monitor
+      Ibat or don't monitor anything based on runtime battery type
+      and Rsense input.
+
   qcom,pmic7-threshold:
     type: boolean
     description: |
@@ -79,5 +93,6 @@ examples:
                      <0x2 0x42 0x1 IRQ_TYPE_NONE>;
         interrupt-names = "bcl-lvl0",
                           "bcl-lvl1";
+        qcom,bcl-mon-vbat-only;
         qcom,pmic7-threshold;
     };
