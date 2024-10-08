@@ -37,17 +37,26 @@
 		interrupt-names = "pwr_event_irq", "dp_hs_phy_irq",
 				"dm_hs_phy_irq", "ss_phy_irq";
 
-		interconnect-names = "usb-ddr", "usb-ipa", "ddr-usb";
-		interconnects = <&aggre1_noc MASTER_USB3_0 &mc_virt SLAVE_EBI1>,
-				<&aggre1_noc MASTER_USB3_0 &config_noc SLAVE_IPA_CFG>,
-				<&gem_noc MASTER_APPSS_PROC &config_noc SLAVE_USB3_0>;
-
 		qcom,use-pdc-interrupts;
 		qcom,use-eusb2-phy;
 
 		qcom,core-clk-rate = <200000000>;
 		qcom,core-clk-rate-hs = <66666667>;
 		qcom,core-clk-rate-disconnected = <133333333>;
+
+		interconnect-names = "usb-ddr", "usb-ipa", "ddr-usb";
+		interconnects = <&aggre1_noc MASTER_USB3_0 &mc_virt SLAVE_EBI1>,
+				<&aggre1_noc MASTER_USB3_0 &config_noc SLAVE_IPA_CFG>,
+				<&gem_noc MASTER_APPSS_PROC &config_noc SLAVE_USB3_0>;
+
+		qcom,num-gsi-evt-buffs = <0x3>;
+		qcom,gsi-reg-offset =
+			<0x0fc /* GSI_GENERAL_CFG */
+			0x110 /* GSI_DBL_ADDR_L */
+			0x120 /* GSI_DBL_ADDR_H */
+			0x130 /* GSI_RING_BASE_ADDR_L */
+			0x144 /* GSI_RING_BASE_ADDR_H */
+			0x1a4>; /* GSI_IF_STS */
 
 		dwc3_0: dwc3@a600000 {
 			compatible = "snps,dwc3";
