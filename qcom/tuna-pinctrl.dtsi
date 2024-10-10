@@ -1584,21 +1584,21 @@
 	sdc2_on: sdc2_on {
 		clk {
 			pins = "gpio62";
-			function = "sdc2_clk";
+			function = "SDC2_CLK";
 			bias-disable;
 			drive-strength = <16>;
 		};
 
 		cmd {
 			pins = "gpio51";
-			function = "sdc2_cmd";
+			function = "SDC2_CMD";
 			bias-pull-up;
 			drive-strength = <10>;
 		};
 
 		data {
 			pins = "gpio63", "gpio120", "gpio48", "gpio49";
-			function = "sdc2_data";
+			function = "SDC2_DATA";
 			bias-pull-up;
 			drive-strength = <10>;
 		};
