@@ -74,7 +74,7 @@
 			#size-cells = <0>;
 			status = "disabled";
 
-			oledb_vreg: oledb@fa00 {
+			pm7550ba_oledb_vreg: oledb@fa00 {
 				reg = <0xfa00>;
 				reg-names = "oledb_base";
 				regulator-name = "oledb";
@@ -83,7 +83,7 @@
 				qcom,swire-control;
 			};
 
-			ab_vreg: ab@f900 {
+			pm7550ba_ab_vreg: ab@f900 {
 				reg = <0xf900>;
 				reg-names = "ab_base";
 				regulator-name = "ab";
@@ -92,7 +92,7 @@
 				qcom,swire-control;
 			};
 
-			ibb_vreg: ibb@f800 {
+			pm7550ba_ibb_vreg: ibb@f800 {
 				reg = <0xf800>;
 				reg-names = "ibb_base";
 				regulator-name = "ibb";
