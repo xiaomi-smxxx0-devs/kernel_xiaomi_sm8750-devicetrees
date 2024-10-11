@@ -43,6 +43,9 @@ dtbo-y += tuna-cdp-wcn7750.dtbo
 dtbo-y += tuna-mtp-wcn7750.dtbo
 dtbo-y += tuna-mtp-qmp1000-wcn7750.dtbo
 dtbo-y += tuna-qrd-wcn7750.dtbo
+dtbo-y += tuna-mtp-kiwi.dtbo
+dtbo-y += tuna-rcm-kiwi.dtbo
+dtbo-y += tuna-atp-kiwi.dtbo
 endif
 
 always-y	:= $(dtb-y) $(dtbo-y)
