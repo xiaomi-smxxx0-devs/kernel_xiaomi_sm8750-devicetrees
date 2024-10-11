@@ -4,6 +4,8 @@
  */
 
 #include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/clock/qcom,gcc-sun.h>
+#include "tuna-thermal-overlay.dtsi"
 
 &qupv3_se4_i2c {
 	#address-cells = <1>;
