@@ -5,3 +5,7 @@
 
 &soc {
 };
+
+&qnand_1 {
+	status = "ok";
+};
