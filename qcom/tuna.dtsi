@@ -36,7 +36,7 @@
 	};
 
 	chosen: chosen {
-		bootargs = "log_buf_len=512K loglevel=6 cpufreq.default_governor=performance sysctl.kernel.sched_pelt_multiplier=4 no-steal-acc kpti=0 swiotlb=0 loop.max_part=7 pcie_ports=compat irqaffinity=0-1 printk.console_no_auto_verbose=1 kasan=off rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kernel.panic_on_rcu_stall=1 disable_dma32=on cgroup_disable=pressure fw_devlink.strict=1 can.stats_timer=0 ftrace_dump_on_oops";
+		bootargs = "log_buf_len=512K loglevel=6 cpufreq.default_governor=performance sysctl.kernel.sched_pelt_multiplier=4 no-steal-acc kpti=0 swiotlb=0 loop.max_part=7 pcie_ports=compat irqaffinity=0-1 printk.console_no_auto_verbose=1 kasan=off rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kernel.panic_on_rcu_stall=1 disable_dma32=on cgroup_disable=pressure fw_devlink.strict=1 can.stats_timer=0 ftrace_dump_on_oops cpufreq.default_governor=performance";
 		stdout-path = "/soc/qcom,qupv3_1_geni_se@ac0000/qcom,qup_uart@a9c000:115200n8";
 	};
 
@@ -91,6 +91,7 @@
 			cpu-idle-states = <&GOLD_OFF_CL0 &GOLD_RAIL_OFF_CL0>;
 			power-domains = <&CPU_PD0>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 0>;
 			#cooling-cells = <2>;
 			cpu-release-addr = <0x0 0xE3940000>;
 			next-level-cache = <&L2_0>;
@@ -116,6 +117,7 @@
 			cpu-idle-states = <&GOLD_OFF_CL0 &GOLD_RAIL_OFF_CL0>;
 			power-domains = <&CPU_PD1>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 0>;
 			#cooling-cells = <2>;
 			cpu-release-addr = <0x0 0xE3940000>;
 			next-level-cache = <&L2_1>;
@@ -137,6 +139,7 @@
 			cpu-idle-states = <&GOLD_OFF_CL1 &GOLD_RAIL_OFF_CL1>;
 			power-domains = <&CPU_PD2>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 3>;
 			#cooling-cells = <2>;
 			cpu-release-addr = <0x0 0xE3940000>;
 			next-level-cache = <&L2_2>;
@@ -157,6 +160,7 @@
 			cpu-idle-states = <&GOLD_OFF_CL1 &GOLD_RAIL_OFF_CL1>;
 			power-domains = <&CPU_PD3>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 3>;
 			#cooling-cells = <2>;
 			cpu-release-addr = <0x0 0xE3940000>;
 			next-level-cache = <&L2_3>;
@@ -177,6 +181,7 @@
 			cpu-idle-states = <&GOLD_OFF_CL1 &GOLD_RAIL_OFF_CL1>;
 			power-domains = <&CPU_PD4>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 3>;
 			#cooling-cells = <2>;
 			cpu-release-addr = <0x0 0xE3940000>;
 			next-level-cache = <&L2_4>;
@@ -197,6 +202,7 @@
 			cpu-idle-states = <&GOLD_OFF_CL2 &GOLD_RAIL_OFF_CL2>;
 			power-domains = <&CPU_PD5>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 1>;
 			#cooling-cells = <2>;
 			cpu-release-addr = <0x0 0xE3940000>;
 			next-level-cache = <&L2_5>;
@@ -217,6 +223,7 @@
 			cpu-idle-states = <&GOLD_OFF_CL2 &GOLD_RAIL_OFF_CL2>;
 			power-domains = <&CPU_PD6>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 1>;
 			#cooling-cells = <2>;
 			cpu-release-addr = <0x0 0xE3940000>;
 			next-level-cache = <&L2_6>;
@@ -237,6 +244,7 @@
 			cpu-idle-states = <&GOLD_PLUS_OFF &GOLD_PLUS_RAIL_OFF>;
 			power-domains = <&CPU_PD7>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 2>;
 			#cooling-cells = <2>;
 			cpu-release-addr = <0x0 0xE3940000>;
 			next-level-cache = <&L2_7>;
@@ -1532,6 +1540,33 @@
 		qcom,qmp = <&aoss_qmp>;
 		ss-name = "modem", "wpss", "adsp", "adsp_island",
 			  "cdsp", "apss";
+	};
+
+	cpufreq_hw: qcom,cpufreq-hw {
+		compatible = "qcom,cpufreq-epss";
+		reg = <0x17D91000 0x1000>, <0x17D92000 0x1000>,
+		      <0x17D93000 0x1000>, <0x17D94000 0x1000>;
+		reg-names = "freq-domain0", "freq-domain1",
+			    "freq-domain2", "freq-domain3";
+		clocks = <&rpmhcc RPMH_CXO_CLK>, <&gcc GCC_GPLL0>;
+		clock-names = "xo", "alternate";
+		interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 738 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "dcvsh0_int",
+				  "dcvsh1_int",
+				  "dcvsh2_int",
+				  "dcvsh3_int";
+		#freq-domain-cells = <1>;
+	};
+
+	qcom,cpufreq-hw-debug {
+		compatible = "qcom,cpufreq-hw-epss-debug";
+		qcom,freq-hw-domain = <&cpufreq_hw 0>,
+				      <&cpufreq_hw 1>,
+				      <&cpufreq_hw 2>,
+				      <&cpufreq_hw 3>;
 	};
 
 	cam_crm: syscon@adcd600 {
