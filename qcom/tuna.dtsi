@@ -2546,6 +2546,7 @@
 };
 
 #include "tuna-gdsc.dtsi"
+#include "ipcc-test-no-slpi.dtsi"
 
 &cam_cc_ipe_0_gdsc {
 	compatible = "qcom,gdsc";
