@@ -42,6 +42,8 @@
 
 	reserved_memory: reserved-memory {};
 
+	ddr-regions { };
+
 	firmware: firmware {
 		qcom_scm: qcom_scm {};
 	};
