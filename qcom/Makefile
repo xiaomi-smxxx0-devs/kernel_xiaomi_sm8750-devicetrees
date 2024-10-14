@@ -235,6 +235,13 @@ dtb-y += $(tuna_tuivm-dtb-y)
 endif
 endif
 
+ifeq ($(CONFIG_ARCH_KERA), y)
+ifeq ($(CONFIG_ARCH_QTI_VM), y)
+kera_tuivm-dtb-$(CONFIG_ARCH_QTI_VM) += kera-vm-rumi.dtb
+dtb-y += $(kera_tuivm-dtb-y)
+endif
+endif
+
 MONACO_BASE_DTB += monaco.dtb monacop.dtb
 
 MONACO_BOARDS += \
