@@ -333,3 +333,4 @@
 };
 
 #include "msm-arm-smmu-tuna-vm.dtsi"
+#include "tuna-vm-dma-heaps.dtsi"
