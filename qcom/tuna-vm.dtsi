@@ -343,12 +343,24 @@
 	qcom,mem-buf {
 		compatible = "qcom,mem-buf";
 		qcom,mem-buf-capabilities = "consumer";
+		qcom,ipa-range = <0x0 0x0 0xf 0xffffffff>;
+		qcom,dmabuf-ipa-size = <0x1 0x00000000>; /* 4GB IPA space for dmabuf */
 		qcom,vmid = <45>;
 	};
 
-	qcom,mem-buf-msgq {
+	mem_buf_msgq: qcom,mem-buf-msgq {
 		compatible = "qcom,mem-buf-msgq";
 		qcom,msgq-names = "trusted_vm";
+	};
+
+	virtio_mem_device {
+		compatible = "qcom,virtio-mem";
+		depends-on-supply = <&mem_buf_msgq>;
+		/* Must be memory_block_size_bytes() aligned */
+		qcom,max-size = <0x0 0x18000000>;
+		qcom,ipa-range = <0x0 0x0 0xf 0xffffffff>;
+		qcom,block-size = <0x400000>;
+		qcom,initial-movable-zone-size = <0x2000000>;
 	};
 };
 
