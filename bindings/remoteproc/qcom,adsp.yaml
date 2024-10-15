@@ -79,6 +79,7 @@ properties:
       - qcom,monaco-modem-pas
       - qcom,monaco-adsp-pas
       - qcom,tuna-wpss-pas
+      - qcom,kera-wpss-pas
 
   reg:
     maxItems: 1
