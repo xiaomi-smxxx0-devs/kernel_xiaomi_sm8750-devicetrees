@@ -76,6 +76,7 @@ _platform_map = {
     "tuna": {
         "dtb_list": [
             {"name": "tuna.dtb"},
+            {"name": "tuna7.dtb"},
         ],
         "dtbo_list": [
             {
@@ -141,6 +142,7 @@ _platform_map = {
             {"name": "sunp-vm-hdk.dtb"},
             {"name": "sun-vm-rumi.dtb"},
         ],
+        "binary_compatible_with": ["tuna-tuivm"],
     },
     "sun-oemvm": {
         "dtb_list": [
@@ -159,6 +161,53 @@ _platform_map = {
             {"name": "sun-vm-rcm.dtb"},
             {"name": "sunp-vm-hdk.dtb"},
             {"name": "sun-vm-rumi.dtb"},
+        ],
+        "binary_compatible_with": ["tuna-oemvm"],
+    },
+    "tuna-tuivm": {
+        "dtb_list": [
+            # keep sorted
+            {"name": "tuna-oemvm-atp.dtb"},
+            {"name": "tuna-oemvm-cdp.dtb"},
+            {"name": "tuna-oemvm-mtp.dtb"},
+            {"name": "tuna-oemvm-mtp-kiwi.dtb"},
+            {"name": "tuna-oemvm-mtp-qmp1000.dtb"},
+            {"name": "tuna-oemvm-qrd.dtb"},
+            {"name": "tuna-oemvm-rcm.dtb"},
+            {"name": "tuna-oemvm-rcm-kiwi.dtb"},
+            {"name": "tuna-oemvm-rumi.dtb"},
+            {"name": "tuna-vm-atp.dtb"},
+            {"name": "tuna-vm-cdp.dtb"},
+            {"name": "tuna-vm-mtp.dtb"},
+            {"name": "tuna-vm-mtp-kiwi.dtb"},
+            {"name": "tuna-vm-mtp-qmp1000.dtb"},
+            {"name": "tuna-vm-qrd.dtb"},
+            {"name": "tuna-vm-rcm.dtb"},
+            {"name": "tuna-vm-rcm-kiwi.dtb"},
+            {"name": "tuna-vm-rumi.dtb"},
+        ],
+    },
+    "tuna-oemvm": {
+        "dtb_list": [
+            # keep sorted
+            {"name": "tuna-oemvm-atp.dtb"},
+            {"name": "tuna-oemvm-cdp.dtb"},
+            {"name": "tuna-oemvm-mtp.dtb"},
+            {"name": "tuna-oemvm-mtp-kiwi.dtb"},
+            {"name": "tuna-oemvm-mtp-qmp1000.dtb"},
+            {"name": "tuna-oemvm-qrd.dtb"},
+            {"name": "tuna-oemvm-rcm.dtb"},
+            {"name": "tuna-oemvm-rcm-kiwi.dtb"},
+            {"name": "tuna-oemvm-rumi.dtb"},
+            {"name": "tuna-vm-atp.dtb"},
+            {"name": "tuna-vm-cdp.dtb"},
+            {"name": "tuna-vm-mtp.dtb"},
+            {"name": "tuna-vm-mtp-kiwi.dtb"},
+            {"name": "tuna-vm-mtp-qmp1000.dtb"},
+            {"name": "tuna-vm-qrd.dtb"},
+            {"name": "tuna-vm-rcm.dtb"},
+            {"name": "tuna-vm-rcm-kiwi.dtb"},
+            {"name": "tuna-vm-rumi.dtb"},
         ],
     },
     "pineapple": {

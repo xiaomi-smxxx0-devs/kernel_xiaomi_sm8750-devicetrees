@@ -30,7 +30,8 @@
 	};
 
 	chosen: chosen {
-		bootargs = "nokaslr kpti=0 log_buf_len=256K swiotlb=0 loop.max_part=7";
+		bootargs = "log_buf_len=512K loglevel=6 cpufreq.default_governor=performance sysctl.kernel.sched_pelt_multiplier=4 no-steal-acc kpti=0 swiotlb=0 loop.max_part=7 irqaffinity=0-1 printk.console_no_auto_verbose=1 kasan=off rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kernel.panic_on_rcu_stall=1 disable_dma32=on cgroup_disable=pressure fw_devlink.strict=1 can.stats_timer=0 ftrace_dump_on_oops";
+		stdout-path = "/soc/qcom,qupv3_1_geni_se@8c0000/qcom,qup_uart@894000:115200n8";
 	};
 
 	reserved_memory: reserved-memory {};
@@ -201,6 +202,10 @@
 	};
 
 	soc: soc { };
+
+	hypervisor: hypervisor {
+		gh_watchdog: qcom,gh-watchdog { };
+	};
 };
 
 &firmware {
@@ -403,6 +408,7 @@
 		interrupt-controller;
 		#interrupt-cells = <2>;
 		wakeup-parent = <&pdc>;
+		qcom,gpios-reserved = <20 21 22 23 100 111 112 116>;
 	};
 
 	tcsr_mutex_block: syscon@1f40000 {
@@ -900,8 +906,9 @@
 		size = <0x0 0x4800000>;
 	};
 };
-
+#include "kera-debug.dtsi"
 #include "kera-pinctrl.dtsi"
+#include "kera-stub-regulators.dtsi"
 #include "kera-usb.dtsi"
 #include "kera-qupv3.dtsi"
 

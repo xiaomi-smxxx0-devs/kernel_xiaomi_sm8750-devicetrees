@@ -63,15 +63,22 @@ properties:
       - qcom,sun-cdsp-pas
       - qcom,sun-modem-pas
       - qcom,sun-soccp-pas
+      - qcom,tuna-adsp-pas
+      - qcom,tuna-cdsp-pas
+      - qcom,tuna-modem-pas
       - qcom,parrot-adsp-pas
       - qcom,parrot-cdsp-pas
       - qcom,parrot-modem-pas
       - qcom,parrot-wpss-pas
+      - qcom,kera-adsp-pas
+      - qcom,kera-cdsp-pas
+      - qcom,kera-modem-pas
       - qcom,ravelin-adsp-pas
       - qcom,ravelin-modem-pas
       - qcom,ravelin-wpss-pas
       - qcom,monaco-modem-pas
       - qcom,monaco-adsp-pas
+      - qcom,tuna-wpss-pas
 
   reg:
     maxItems: 1

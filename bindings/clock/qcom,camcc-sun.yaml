@@ -21,6 +21,7 @@ properties:
     enum:
       - qcom,sun-camcc
       - qcom,tuna-camcc
+      - qcom,kera-camcc
 
   clocks:
     items:

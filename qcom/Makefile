@@ -52,7 +52,7 @@ sun-dtb-$(CONFIG_ARCH_SUN) += \
 	$(call add-overlays, $(SUN_BOARDS) $(APQ_SUN_BOARDS),$(SUN_APQ_BASE_DTB))
 sun-overlays-dtb-$(CONFIG_ARCH_SUN) += $(SUN_BOARDS) $(NOAPQ_SUN_BOARDS) $(SUN_BASE_DTB) $(SUN_APQ_BASE_DTB)
 
-TUNA_BASE_DTB += tuna.dtb
+TUNA_BASE_DTB += tuna.dtb tuna7.dtb
 NOAPQ_TUNA_BOARDS += \
 		tuna-atp-overlay.dtbo \
 		tuna-cdp-overlay.dtbo \
@@ -207,6 +207,30 @@ sun_tuivm-dtb-$(CONFIG_ARCH_QTI_VM) += sun-vm-rumi.dtb \
 				sunp-oemvm-hdk.dtb
 dtb-y += $(sun_tuivm-dtb-y)
 
+endif
+endif
+
+ifeq ($(CONFIG_ARCH_TUNA), y)
+ifeq ($(CONFIG_ARCH_QTI_VM), y)
+tuna_tuivm-dtb-$(CONFIG_ARCH_QTI_VM) += tuna-vm-rumi.dtb \
+				tuna-vm-atp.dtb \
+				tuna-vm-cdp.dtb \
+				tuna-vm-mtp.dtb \
+				tuna-vm-mtp-kiwi.dtb \
+				tuna-vm-mtp-qmp1000.dtb \
+				tuna-vm-qrd.dtb \
+				tuna-vm-rcm.dtb \
+				tuna-vm-rcm-kiwi.dtb \
+				tuna-oemvm-rumi.dtb \
+				tuna-oemvm-atp.dtb \
+				tuna-oemvm-cdp.dtb \
+				tuna-oemvm-mtp.dtb \
+				tuna-oemvm-mtp-kiwi.dtb \
+				tuna-oemvm-mtp-qmp1000.dtb \
+				tuna-oemvm-qrd.dtb \
+				tuna-oemvm-rcm.dtb \
+				tuna-oemvm-rcm-kiwi.dtb
+dtb-y += $(tuna_tuivm-dtb-y)
 endif
 endif
 
