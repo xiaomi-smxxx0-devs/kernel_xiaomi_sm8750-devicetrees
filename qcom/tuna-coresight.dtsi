@@ -704,15 +704,8 @@
 	};
 
 	tpdm_turing_llm: tpdm@10981000 {
-		compatible = "arm,primecell";
-		arm,primecell-periphid = <0x000bb968>;
-		reg = <0x10980000 0x1000>;
-		reg-names = "tpdm-base";
-
-		coresight-name = "coresight-tpdm-turing";
-
-		clocks = <&aoss_qmp>;
-		clock-names = "apb_pclk";
+		compatible = "qcom,coresight-static-tpdm";
+		coresight-name = "coresight-tpdm-turing-llm";
 
 		out-ports {
 			port {
@@ -754,6 +747,14 @@
 					<&tpdm_turing_llm_out_funnel_turing>;
 				};
 			};
+
+			port@4 {
+				reg = <4>;
+				funnel_turing_in_funnel_turing_dup: endpoint {
+					remote-endpoint =
+					<&funnel_turing_dup_out_funnel_turing>;
+				};
+			};
 		};
 
 		out-ports {
@@ -765,6 +766,7 @@
 				funnel_turing_out_tpda_dl4_16: endpoint {
 					remote-endpoint =
 					<&tpda_dl4_16_in_funnel_turing>;
+					source = <&tpdm_turing>;
 				};
 			};
 
@@ -773,6 +775,7 @@
 				funnel_turing_out_tpda_dl4_17: endpoint {
 					remote-endpoint =
 					<&tpda_dl4_17_in_funnel_turing>;
+					source = <&tpdm_turing_llm>;
 				};
 			};
 
@@ -781,6 +784,7 @@
 				funnel_turing_out_funnel_dl4: endpoint {
 					remote-endpoint =
 					<&funnel_dl4_in_funnel_turing>;
+					source = <&turing_etm0>;
 				};
 			};
 		};
@@ -925,6 +929,128 @@
 				tpdm_modem_rscc_out_funnel_modem_q6: endpoint {
 					remote-endpoint =
 					<&funnel_modem_q6_in_tpdm_modem_rscc>;
+				};
+			};
+		};
+	};
+
+	turing-qmi {
+		compatible = "qcom,coresight-qmi";
+
+		coresight-name = "coresight-qmi-turing";
+		qcom,inst-id = <13>;
+
+		in-ports {
+			port {
+				qmi_in_turing_etm0: endpoint {
+					remote-endpoint =
+						<&turing_etm0_out_qmi>;
+				};
+			};
+		};
+	};
+
+	turing_etm0: turing-etm0 {
+		compatible = "qcom,coresight-remote-etm";
+
+		coresight-name = "coresight-turing-etm0";
+
+		qcom,atid-num = <2>;
+		atid = <38 39>;
+		trace-name = "turing-etm0";
+
+
+		out-ports {
+			port@0 {
+				reg = <0>;
+				turing_etm0_out_funnel_turing_dup: endpoint {
+					remote-endpoint =
+						<&funnel_turing_dup_in_turing_etm0>;
+				};
+			};
+
+			port@1 {
+				reg = <1>;
+				turing_etm0_out_qmi: endpoint {
+					remote-endpoint =
+						<&qmi_in_turing_etm0>;
+				};
+			};
+		};
+	};
+
+	wpss_etm: wpss_etm0 {
+		compatible = "qcom,coresight-remote-etm";
+
+		coresight-name = "coresight-wpss-etm0";
+		qcom,inst-id = <3>;
+		atid = <44>;
+
+		out-ports {
+			port@0 {
+				reg = <0>;
+				wpss_etm0_out_funnel_wpss: endpoint {
+					remote-endpoint =
+						<&funnel_wpss_in_wpss_etm0>;
+				};
+			};
+
+			port@1 {
+				reg = <1>;
+				wpss_etm0_out_qmi: endpoint {
+					remote-endpoint =
+						<&qmi_in_wpss_etm0>;
+				};
+			};
+		};
+	};
+
+	wpss-qmi {
+		compatible = "qcom,coresight-qmi";
+
+		coresight-name = "coresight-qmi-wpss";
+		qcom,inst-id = <3>;
+
+		in-ports {
+			port {
+				qmi_in_wpss_etm0: endpoint {
+					remote-endpoint =
+						<&wpss_etm0_out_qmi>;
+				};
+			};
+		};
+	};
+
+	funnel_turing_dup: funnel@10940000 {
+		compatible = "arm,primecell";
+		arm,primecell-periphid = <0x000bb908>;
+		reg = <0x10940000 0x1000>,
+			<0x10983000 0x1000>;
+		reg-names = "funnel-base-dummy", "funnel-base-real";
+
+		coresight-name = "coresight-funnel-turing_dup";
+
+		qcom,duplicate-funnel;
+		clocks = <&aoss_qmp>;
+		clock-names = "apb_pclk";
+
+		in-ports {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			port@5 {
+				reg = <5>;
+				funnel_turing_dup_in_turing_etm0: endpoint {
+					remote-endpoint =
+					<&turing_etm0_out_funnel_turing_dup>;
+				};
+			};
+		};
+
+		out-ports {
+			port {
+				funnel_turing_dup_out_funnel_turing: endpoint {
+					remote-endpoint =
+					<&funnel_turing_in_funnel_turing_dup>;
 				};
 			};
 		};
@@ -1610,7 +1736,7 @@
 		reg = <0x13880000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-tpdm-llm-apc2";
+		coresight-name = "coresight-tpdm-llm-gold-apc";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -2069,42 +2195,9 @@
 
 		out-ports {
 			port {
-				tpdm_ddr_lpi_out_tn_ddr_lpi: endpoint {
+				tpdm_ddr_lpi_out_funnel_aoss: endpoint {
 					remote-endpoint =
-					<&tn_ddr_lpi_in_tpdm_ddr_lpi>;
-				};
-			};
-		};
-	};
-
-	tn_ddr_lpi: TN@10b30000 {
-		compatible = "arm,primecell";
-		arm,primecell-periphid = <0x000f0c00>;
-		reg = <0x10d00000 0x1000>;
-		reg-names = "traceNoc-base";
-
-		coresight-name = "coresight-tracenoc-ddr-lpi";
-		qcom,interconnect-trace-noc;
-
-		clocks = <&aoss_qmp>;
-		clock-names = "apb_pclk";
-
-		in-ports {
-			port {
-				tn_ddr_lpi_in_tpdm_ddr_lpi: endpoint {
-					remote-endpoint =
-					<&tpdm_ddr_lpi_out_tn_ddr_lpi>;
-				};
-			};
-
-
-		};
-
-		out-ports {
-			port {
-				tn_ddr_lpi_out_funnel_aoss: endpoint {
-					remote-endpoint =
-					<&funnel_aoss_in_tn_ddr_lpi>;
+					<&funnel_aoss_in_tpdm_ddr_lpi>;
 				};
 			};
 		};
@@ -2500,7 +2593,7 @@
 	tpdm_lpass_crdl: tpdm@10b84000 {
 		compatible = "arm,primecell";
 		arm,primecell-periphid = <0x000bb968>;
-		reg = <0x108b4000 0x1000>;
+		reg = <0x10b84000 0x1000>;
 		reg-names = "tpdm-base";
 
 		coresight-name = "coresight-tpdm-lpass-crdl";
@@ -3650,9 +3743,9 @@
 
 			port@3 {
 				reg = <3>;
-				funnel_aoss_in_tn_ddr_lpi: endpoint {
+				funnel_aoss_in_tpdm_ddr_lpi: endpoint {
 					remote-endpoint =
-					<&tn_ddr_lpi_out_funnel_aoss>;
+					<&tpdm_ddr_lpi_out_funnel_aoss>;
 				};
 			};
 
@@ -4020,7 +4113,7 @@
 		reg = <0x10881000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-tpdm-wpss";
+		coresight-name = "coresight-tpdm-wpss1";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -4045,7 +4138,6 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
-		status = "disabled";
 
 		in-ports {
 			#address-cells = <1>;
@@ -4067,6 +4159,14 @@
 				};
 			};
 
+			port@2 {
+				reg = <2>;
+				funnel_wpss_in_wpss_etm0: endpoint {
+					remote-endpoint =
+						<&wpss_etm0_out_funnel_wpss>;
+				};
+			};
+
 		};
 
 		out-ports {
@@ -4078,6 +4178,7 @@
 				funnel_wpss_out_tpda_dl2_4: endpoint {
 				remote-endpoint =
 					<&tpda_dl2_4_in_funnel_wpss>;
+				source = <&tpdm_wpss>;
 				};
 			};
 
@@ -4086,6 +4187,7 @@
 				funnel_wpss_out_tpda_dl2_5: endpoint {
 				remote-endpoint =
 					<&tpda_dl2_5_in_funnel_wpss>;
+				source = <&tpdm_wpss1>;
 				};
 			};
 
@@ -4094,6 +4196,7 @@
 				funnel_wpss_out_funnel_dl2: endpoint {
 				remote-endpoint =
 					<&funnel_dl2_in_funnel_wpss>;
+				source = <&wpss_etm>;
 				};
 			};
 		};
@@ -4146,7 +4249,7 @@
 	funnel_dl2: funnel@10c35000 {
 		compatible = "arm,primecell";
 		arm,primecell-periphid = <0x000bb908>;
-		reg = <0x10c2d000 0x1000>;
+		reg = <0x10c35000 0x1000>;
 		reg-names = "funnel-base";
 
 		coresight-name = "coresight-funnel-dl2";
