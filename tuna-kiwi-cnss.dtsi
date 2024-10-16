@@ -107,6 +107,21 @@
 		/* For AOP communication, use direct QMP instead of mailbox */
 		qcom,qmp = <&aoss_qmp>;
 
+		vdd-wlan-io-supply = <&L3G>;
+		qcom,vdd-wlan-io-config = <1800000 1800000 30000 0 1>;
+		vdd-wlan-io12-supply = <&L2G>;
+		qcom,vdd-wlan-io12-config = <1200000 1200000 30000 0 1>;
+		vdd-wlan-supply = <&S1G>;
+		qcom,vdd-wlan-config = <940000 1003000 0 0 1>;
+		vdd-wlan-dig-supply = <&S3B>;
+		qcom,vdd-wlan-dig-config = <976000 1040000 0 0 1>;
+		vdd-wlan-rfa1-supply = <&S1B>;
+		qcom,vdd-wlan-rfa1-config = <1864000 2104000 0 0 1>;
+		vdd-wlan-rfa2-supply = <&S2B>;
+		qcom,vdd-wlan-rfa2-config = <1316000 1408000 0 0 1>;
+		vdd-wlan-ant-share-supply = <&L6K>;
+		qcom,vdd-wlan-ant-share-config = <1800000 2000000 0 0 1>;
+
 		interconnects =
 		<&pcie_noc MASTER_PCIE_0 &pcie_noc SLAVE_ANOC_PCIE_GEM_NOC>,
 		<&gem_noc MASTER_ANOC_PCIE_GEM_NOC &mc_virt SLAVE_EBI1>;
@@ -159,6 +174,7 @@
 			" {class: wlan_pdc, ss: rf, res: s1g.m, enable: 0}",
 			" {class: wlan_pdc, ss: rf, res: l18b.m, enable: 0}",
 			" {class: wlan_pdc, ss: rf, res: b1b.m, enable: 0}",
+			" {class: wlan_pdc, ss: rf, res: l4k.m, enable: 0}",
 			" {class: wlan_pdc, ss: bb, res: pdc, enable: 1}";
 
 		/* cpu mask used for wlan tx rx interrupt affinity
