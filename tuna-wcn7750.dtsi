@@ -91,6 +91,13 @@
 		tsens = "sys-therm-3";
 		qcom,wlan-msa-fixed-region = <&wlan_msa_mem>;
 
+		vdd-cx-mx-supply = <&S3B>;
+		qcom,vdd-cx-mx-config = <880000 1040000 0 0 0>;
+		vdd-1.8-xo-supply = <&S1B>;
+		qcom,vdd-1.8-xo-config = <1856000 2104000 0 0 0>;
+		vdd-1.3-rfa-supply = <&S2B>;
+		qcom,vdd-1.3-rfa-config = <1256000 1408000 0 0 0>;
+
 		qcom,smem-states = <&smp2p_wlan_1_out 0>,
 				   <&smp2p_wlan_2_out 0>,
 				   <&smp2p_wlan_3_out 0>;
@@ -102,7 +109,7 @@
 		qcom,vreg_ol_cpr ="s3b";
 
 		interconnects =
-		<&pcie_anoc MASTER_PCIE_0 &pcie_anoc SLAVE_ANOC_PCIE_GEM_NOC>,
+		<&pcie_noc MASTER_PCIE_0 &pcie_noc SLAVE_ANOC_PCIE_GEM_NOC>,
 		<&gem_noc MASTER_ANOC_PCIE_GEM_NOC &mc_virt SLAVE_EBI1>;
 		interconnect-names = "pcie_to_memnoc", "memnoc_to_ddr";
 
