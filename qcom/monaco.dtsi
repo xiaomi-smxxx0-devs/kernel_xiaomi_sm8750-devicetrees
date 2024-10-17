@@ -84,6 +84,7 @@
 			qcom,freq-domain = <&cpufreq_hw 0>;
 			next-level-cache = <&L2_0>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
+			#cooling-cells = <2>;
 
 			L1_I_1: l1-icache {
 				compatible = "cache";
@@ -109,6 +110,7 @@
 			qcom,freq-domain = <&cpufreq_hw 0>;
 			next-level-cache = <&L2_0>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
+			#cooling-cells = <2>;
 
 			L1_I_2: l1-icache {
 				compatible = "cache";
@@ -134,6 +136,7 @@
 			qcom,freq-domain = <&cpufreq_hw 0>;
 			next-level-cache = <&L2_0>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
+			#cooling-cells = <2>;
 
 			L1_I_3: l1-icache {
 				compatible = "cache";
