@@ -22,6 +22,10 @@ ifeq ($(CONFIG_ARCH_TUNA), y)
 dtbo-y += tuna-vidc.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_KERA), y)
+dtbo-y += kera-vidc.dtbo
+endif
+
 always-y    := $(dtb-y) $(dtbo-y)
 subdir-y    := $(dts-dirs)
 clean-files    := *.dtb *.dtbo
