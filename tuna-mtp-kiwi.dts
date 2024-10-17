@@ -12,5 +12,5 @@
 	model = "Qualcomm Technologies, Inc. Tuna MTP + kiwi WLAN";
 	compatible = "qcom,tuna-mtp", "qcom,tuna", "qcom,mtp";
 	qcom,msm-id = <655 0x10000>, <681 0x10000>;
-	qcom,board-id = <8 2>;
+	qcom,board-id = <8 2>, <8 3>;
 };
