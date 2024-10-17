@@ -83,11 +83,11 @@
 	};
 };
 
-&sun_snd {
+&tuna_snd {
 	qcom,model = "tuna-mtp-qmp-snd-card";
 	asoc-codec  = <&stub_codec>, <&lpass_cdc>,
 			<&wcd9378_codec>,
-			<&wsa884x_0221>, <&wsa884x_0222>,
+			<&wsa884x_0220>, <&wsa884x_0221>,
 			<&qmp01>, <&qmp02>,
 			<&qmp03>, <&qmp04>;
 	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc",

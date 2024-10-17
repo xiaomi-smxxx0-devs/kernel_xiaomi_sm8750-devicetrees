@@ -6,9 +6,9 @@
 /dts-v1/;
 /plugin/;
 
-#include <dt-bindings/clock/qcom,gcc-volcano.h>
+#include <dt-bindings/clock/qcom,gcc-tuna.h>
 #include <dt-bindings/interrupt-controller/arm-gic.h>
-#include <dt-bindings/interconnect/qcom,volcano.h>
+#include <dt-bindings/interconnect/qcom,tuna.h>
 #include <dt-bindings/regulator/qcom,rpmh-regulator-levels.h>
 
 #include "tuna-audio.dtsi"

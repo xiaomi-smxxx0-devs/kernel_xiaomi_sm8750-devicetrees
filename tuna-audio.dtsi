@@ -59,7 +59,6 @@
 		qcom,smmu-enabled;
 		iommus = <&apps_smmu 0x1001 0x0080>, <&apps_smmu 0x1041 0x20>;
 		memory-region = <&audio_cnss_resv_region>;
-		qcom,iommu-group = <&cnss_audio_iommu_group0>;
 		qcom,smmu-sid-mask = /bits/ 64 <0xf>;
 		dma-coherent;
 

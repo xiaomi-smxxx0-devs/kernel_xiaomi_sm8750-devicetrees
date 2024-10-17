@@ -127,7 +127,7 @@
 			swr_haptics: swr_haptics@f0170220 {
 				compatible = "qcom,pmih010x-swr-haptics";
 				reg = <0x03 0xf0170220>;
-				swr-slave-supply = <&hap_swr_slave_reg>;
+				//swr-slave-supply = <&hap_swr_slave_reg>;
 				qcom,rx_swr_ch_map = <0 0x01 0x01 0 PCM_OUT1>;
 				status = "disabled";
 			};
@@ -542,9 +542,9 @@
 		compatible = "qcom,msm-cdc-pinctrl";
 		pinctrl-names = "aud_active", "aud_sleep";
 		pinctrl-0 = <&lpi_i2s1_sck_active &lpi_i2s1_ws_active
-				&lpi_i2s1_sd0_active &lpi_i2s1_sd1_active>;
+				&lpi_i2s1_data0_active &lpi_i2s1_data1_active>;
 		pinctrl-1 = <&lpi_i2s1_sck_sleep &lpi_i2s1_ws_sleep
-				&lpi_i2s1_sd0_sleep &lpi_i2s1_sd1_sleep>;
+				&lpi_i2s1_data0_sleep &lpi_i2s1_data1_sleep>;
 		qcom,lpi-gpios;
 		qcom,tlmm-pins = <144 147>;
 		#gpio-cells = <0>;
@@ -555,9 +555,9 @@
 		compatible = "qcom,msm-cdc-pinctrl";
 		pinctrl-names = "aud_active", "aud_sleep";
 		pinctrl-0 = <&lpi_i2s2_sck_active &lpi_i2s2_ws_active
-				&lpi_i2s2_sd0_active &lpi_i2s2_sd1_active>;
+				&lpi_i2s2_data0_active &lpi_i2s2_data1_active>;
 		pinctrl-1 = <&lpi_i2s2_sck_sleep &lpi_i2s2_ws_sleep
-				&lpi_i2s2_sd0_sleep &lpi_i2s2_sd1_sleep>;
+				&lpi_i2s2_data0_sleep &lpi_i2s2_data1_sleep>;
 		qcom,lpi-gpios;
 		qcom,tlmm-pins = <148 151>;
 		#gpio-cells = <0>;
@@ -568,9 +568,9 @@
 		compatible = "qcom,msm-cdc-pinctrl";
 		pinctrl-names = "aud_active", "aud_sleep";
 		pinctrl-0 = <&lpi_i2s3_sck_active &lpi_i2s3_ws_active
-				&lpi_i2s3_sd0_active &lpi_i2s3_sd1_active>;
+				&lpi_i2s3_data0_active &lpi_i2s3_data1_active>;
 		pinctrl-1 = <&lpi_i2s3_sck_sleep &lpi_i2s3_ws_sleep
-				&lpi_i2s3_sd0_sleep &lpi_i2s3_sd1_sleep>;
+				&lpi_i2s3_data0_sleep &lpi_i2s3_data1_sleep>;
 		qcom,lpi-gpios;
 		qcom,tlmm-pins = <153 156>;
 		#gpio-cells = <0>;

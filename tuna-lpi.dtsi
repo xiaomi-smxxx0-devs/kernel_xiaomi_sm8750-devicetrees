@@ -245,7 +245,7 @@
 	};
 
 	lpi_i2s1_sd0 {
-		lpi_i2s1_sd0_sleep: lpi_i2s1_sd0_sleep {
+		lpi_i2s1_data0_sleep: lpi_i2s1_data0_sleep {
 			mux {
 				pins = "gpio8";
 				function = "func2";
@@ -259,7 +259,7 @@
 			};
 		};
 
-		lpi_i2s1_sd0_active: lpi_i2s1_sd0_active {
+		lpi_i2s1_data0_active: lpi_i2s1_data0_active {
 			mux {
 				pins = "gpio8";
 				function = "func2";
