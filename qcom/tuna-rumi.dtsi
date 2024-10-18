@@ -127,6 +127,18 @@
 	status = "disabled";
 };
 
+&cam_crm {
+	status = "disabled";
+};
+
+&disp_crm {
+	status = "disabled";
+};
+
+&pcie_crm {
+	status = "disabled";
+};
+
 &qupv3_se7_2uart {
 	qcom,rumi_platform;
 };

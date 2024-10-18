@@ -813,6 +813,55 @@
 		};
 	};
 
+	disp_crm: crm@af21000 {
+		label = "disp_crm";
+		compatible = "qcom,disp-crm-v2";
+		reg = <0xaf21000 0x6000>, <0xaf27000 0x400>, <0xaf27400 0x400>,
+		      <0xaf27800 0x2000>, <0xaf29800 0x700>, <0xaf29f00 0x100>;
+		reg-names = "base", "crm_b", "crm_b_pt", "crm_c", "crm_v", "common";
+		interrupts = <GIC_SPI 703 IRQ_TYPE_EDGE_RISING>,
+			     <GIC_SPI 708 IRQ_TYPE_EDGE_RISING>,
+			     <GIC_SPI 714 IRQ_TYPE_EDGE_RISING>,
+			     <GIC_SPI 68 IRQ_TYPE_EDGE_RISING>,
+			     <GIC_SPI 96 IRQ_TYPE_EDGE_RISING>,
+			     <GIC_SPI 242 IRQ_TYPE_EDGE_RISING>;
+		interrupt-names = "disp_crm_drv0",
+				  "disp_crm_drv1",
+				  "disp_crm_drv2",
+				  "disp_crm_drv3",
+				  "disp_crm_drv4",
+				  "disp_crm_drv5";
+		clocks = <&dispcc DISP_CC_MDSS_AHB_CLK>;
+		qcom,hw-drv-ids = <0 1 2 3 4 5>;
+		qcom,sw-drv-ids = <0 1 2 3 4 5>;
+	};
+
+	cam_crm: crm@adcb000 {
+		label = "cam_crm";
+		compatible = "qcom,cam-crm-v2";
+		reg = <0xadcb000 0x1e00>, <0xadcce00 0x400>, <0xadcd200 0x400>,
+		      <0xadcd600 0x2000>, <0xadcf600 0x700>, <0xadcfd00 0x100>;
+		reg-names = "base", "crm_b", "crm_b_pt", "crm_c", "crm_v", "common";
+		interrupts = <GIC_SPI 121 IRQ_TYPE_EDGE_RISING>;
+		interrupt-names = "cam_crm_drv0";
+		clocks = <&camcc CAM_CC_DRV_AHB_CLK>;
+		qcom,hw-drv-ids = <0 1 2>;
+		qcom,sw-drv-ids = <0>;
+	};
+
+	pcie_crm: crm@1d01000 {
+		label = "pcie_crm";
+		compatible = "qcom,pcie-crm-v2";
+		reg = <0x1d01000 0x2000>, <0x1d03000 0x400>, <0x1d03400 0x400>,
+		      <0x1d03800 0x2000>, <0x1d05800 0x700>, <0x1d05f00 0x100>;
+		reg-names = "base", "crm_b", "crm_b_pt", "crm_c", "crm_v", "common";
+		interrupts = <GIC_SPI 641 IRQ_TYPE_EDGE_RISING>;
+		interrupt-names = "pcie_crm_drv0";
+		clocks = <&pcie_0_pipe_clk>;
+		qcom,hw-drv-ids = <0 1>;
+		qcom,sw-drv-ids = <0>;
+	};
+
 	pdc: interrupt-controller@b220000 {
 		compatible = "qcom,tuna-pdc", "qcom,pdc";
 		reg = <0xb220000 0x10000>, <0x174000f0 0x64>;
@@ -1577,7 +1626,7 @@
 				      <&cpufreq_hw 3>;
 	};
 
-	cam_crm: syscon@adcd600 {
+	camcc_crm: syscon@adcd600 {
 		compatible = "syscon";
 		reg = <0xadcd600 0x2000>;
 	};
@@ -1595,7 +1644,7 @@
 		clock-names = "bi_tcxo",
 			      "sleep_clk",
 			      "iface";
-		qcom,cam_crm-crmc = <&cam_crm>;
+		qcom,cam_crm-crmc = <&camcc_crm>;
 		#clock-cells = <1>;
 		#reset-cells = <1>;
 	};
