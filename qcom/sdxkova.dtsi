@@ -1368,6 +1368,11 @@
 			compatible = "qcom,msm-imem-diag-dload";
 			reg = <0x0 0xc8 0x0 0xc8>;
 		};
+
+		modem_dsm@c98 {
+			compatible = "qcom,msm-imem-mss-dsm";
+			reg = <0x0 0xc98 0x0 0x10>;
+		};
 	};
 
 	tcsr_mutex_block: syscon@1f40000 {
