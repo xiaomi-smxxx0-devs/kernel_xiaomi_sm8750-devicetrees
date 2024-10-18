@@ -301,7 +301,8 @@
 			<GIC_SPI 296 IRQ_TYPE_LEVEL_HIGH>,
 			<GIC_SPI 297 IRQ_TYPE_LEVEL_HIGH>,
 			<GIC_SPI 298 IRQ_TYPE_LEVEL_HIGH>;
-		qcom,gpii-mask = <0x3f>;
+		qcom,static-gpii-mask = <0x1>;
+		qcom,gpii-mask = <0x3e>;
 		qcom,ev-factor = <2>;
 		memory-region = <&qup_iommu_region>;
 		dma-coherent;
