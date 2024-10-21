@@ -21,6 +21,7 @@ properties:
       - qcom,sun-pcie-pdc
       - qcom,pineapple-pcie-pdc
       - qcom,cliffs-pcie-pdc
+      - qcom,tuna-pcie-pdc
       - qcom,pcie-pdc
 
   reg:
