@@ -13,5 +13,6 @@
 	model = "Qualcomm Technologies, Inc. SDXKOVA IDP M2";
 	compatible = "qcom,sdxkova-idp",
 			"qcom,sdxkova", "qcom,idp";
+	qcom,msm-id = <556 0x10000>, <580 0x10000>, <609 0x10000>, <610 0x10000>;
 	qcom,board-id = <0x4020022 0x304>;
 };
