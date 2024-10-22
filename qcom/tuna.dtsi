@@ -2071,6 +2071,9 @@
 		interconnect-names = "sdhc-ddr","cpu-sdhc";
 		operating-points-v2 = <&sdhc2_opp_table>;
 
+		resets = <&gcc GCC_SDCC2_BCR>;
+		reset-names = "core_reset";
+
 		qos0 {
 			mask = <0xc0>;
 			vote = <44>;

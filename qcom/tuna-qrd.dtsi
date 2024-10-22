@@ -3,7 +3,6 @@
  * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 #include <dt-bindings/gpio/gpio.h>
-#include <dt-bindings/clock/qcom,gcc-sun.h>
 #include <dt-bindings/interrupt-controller/irq.h>
 
 &qupv3_se4_spi {
@@ -112,9 +111,6 @@
 	pinctrl-1 = <&sdc2_off>;
 
 	cd-gpios = <&tlmm 55 GPIO_ACTIVE_LOW>;
-
-	resets = <&gcc GCC_SDCC2_BCR>;
-	reset-names = "core_reset";
 
 	qcom,uses_level_shifter;
 
