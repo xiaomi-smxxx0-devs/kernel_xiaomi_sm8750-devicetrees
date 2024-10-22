@@ -142,7 +142,7 @@ _platform_map = {
             {"name": "sunp-vm-hdk.dtb"},
             {"name": "sun-vm-rumi.dtb"},
         ],
-        "binary_compatible_with": ["tuna-tuivm"],
+        "binary_compatible_with": ["tuna-tuivm", "kera-tuivm"],
     },
     "sun-oemvm": {
         "dtb_list": [
@@ -162,7 +162,7 @@ _platform_map = {
             {"name": "sunp-vm-hdk.dtb"},
             {"name": "sun-vm-rumi.dtb"},
         ],
-        "binary_compatible_with": ["tuna-oemvm"],
+        "binary_compatible_with": ["tuna-oemvm", "kera-oemvm"],
     },
     "tuna-tuivm": {
         "dtb_list": [
@@ -208,6 +208,20 @@ _platform_map = {
             {"name": "tuna-vm-rcm.dtb"},
             {"name": "tuna-vm-rcm-kiwi.dtb"},
             {"name": "tuna-vm-rumi.dtb"},
+        ],
+    },
+    "kera-tuivm": {
+        "dtb_list": [
+            # keep sorted
+            {"name": "kera-oemvm-rumi.dtb"},
+            {"name": "kera-vm-rumi.dtb"},
+        ],
+    },
+    "kera-oemvm": {
+        "dtb_list": [
+            # keep sorted
+            {"name": "kera-oemvm-rumi.dtb"},
+            {"name": "kera-vm-rumi.dtb"},
         ],
     },
     "pineapple": {
