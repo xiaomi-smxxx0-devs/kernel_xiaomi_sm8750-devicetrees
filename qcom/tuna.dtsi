@@ -1735,6 +1735,7 @@
 		reg-name = "cc_base";
 		vdd_mm-supply = <&VDD_MM_LEVEL>;
 		vdd_mxc-supply = <&VDD_MXC_LEVEL>;
+		vdd_mm_mxc_voter-supply = <&VDD_MM_MXC_VOTER_LEVEL>;
 		clocks = <&rpmhcc RPMH_CXO_CLK>,
 			 <&rpmhcc RPMH_CXO_CLK_A>,
 			 <&sleep_clk>,
@@ -1743,6 +1744,7 @@
 			      "bi_tcxo_ao",
 			      "sleep_clk",
 			      "iface";
+		#power-domain-cells = <1>;
 		#clock-cells = <1>;
 		#reset-cells = <1>;
 	};
@@ -3121,14 +3123,12 @@
 &video_cc_mvs0_gdsc {
 	clocks = <&gcc GCC_VIDEO_AHB_CLK>;
 	clock-names = "ahb_clk";
-	status = "ok";
 };
 
 &video_cc_mvs0c_gdsc {
 	clocks = <&gcc GCC_VIDEO_AHB_CLK>;
 	clock-names = "ahb_clk";
 	parent-supply = <&VDD_MM_MXC_VOTER_LEVEL>;
-	status = "ok";
 };
 
 &reserved_memory {
