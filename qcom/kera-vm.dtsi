@@ -244,3 +244,5 @@
 		qcom,support-hypervisor;
 	};
 };
+
+#include "msm-arm-smmu-kera-vm.dtsi"
