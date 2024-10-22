@@ -212,3 +212,11 @@
 &video_cc_mvs0c_gdsc {
 	status = "ok";
 };
+
+&gpu_cc_cx_gdsc {
+	status = "ok";
+};
+
+&gx_clkctl_gx_gdsc {
+	status = "ok";
+};
