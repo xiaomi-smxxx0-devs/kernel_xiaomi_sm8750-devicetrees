@@ -38,6 +38,7 @@ dtbo-y += sun-audio.dtbo \
                 tuna-audio-hamilton-mtp.dtbo \
                 tuna-audio-hamilton-rcm.dtbo \
                 tuna-audio-mtp.dtbo \
+                tuna7-audio-mtp.dtbo \
                 tuna-audio-mtp-qmp1000.dtbo \
                 tuna-audio-qrd.dtbo \
                 tuna-audio-rcm.dtbo
