@@ -27,6 +27,7 @@ description: |
     dt-bindings/clock/qcom,gpucc-parrot.h
     dt-bindings/clock/qcom,gpucc-monaco.h
     dt-bindings/clock/qcom,gpucc-tuna.h
+    dt-bindings/clock/qcom,gpucc-kera.h
 
 properties:
   compatible:
@@ -45,6 +46,7 @@ properties:
       - qcom,parrot-gpucc
       - qcom,monaco-gpucc
       - qcom,tuna-gpucc
+      - qcom,kera-gpucc
 
   clocks:
     items:
