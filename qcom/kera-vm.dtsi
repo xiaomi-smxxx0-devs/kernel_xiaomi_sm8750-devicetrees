@@ -198,6 +198,18 @@
 				peer-default;
 				qcom,label = <0x0000001>;
 			};
+
+			gpiomem0 {
+				vdevice-type = "iomem";
+				patch = "/soc/tlmm-vm-mem-access";
+				push-compatible = "qcom,tlmm-vm-mem-access";
+				peer-default;
+				memory {
+					qcom,label = <0x8>;
+					qcom,mem-info-tag = <0x3>;
+					allocate-base;
+				};
+			};
 		};
 	};
 
@@ -225,6 +237,69 @@
 
 	virtio-mmio {
 		wakeup-source;
+	};
+
+	vm_tlmm_irq: vm-tlmm-irq@0 {
+		compatible = "qcom,tlmm-vm-irq";
+		reg = <0x0 0x0>;
+		interrupt-controller;
+		#interrupt-cells = <2>;
+	};
+
+	tlmm: pinctrl@f000000 {
+		compatible = "qcom,kera-vm-tlmm";
+		reg = <0x0F000000 0x1000000>;
+		interrupts-extended = <&vm_tlmm_irq 1 IRQ_TYPE_LEVEL_HIGH>;
+		gpio-controller;
+		#gpio-cells = <2>;
+		interrupt-controller;
+		#interrupt-cells = <2>;
+		/* Valid pins */
+		gpios = /bits/ 16 <17 121 12 127 0 1 2 3 16 13 28 29 30 31>;
+	};
+
+	tlmm-vm-mem-access {
+		compatible = "qcom,tlmm-vm-mem-access";
+		tlmm-vm-gpio-list = <&tlmm 17 0 &tlmm 121 0 &tlmm 12 0 &tlmm 127 0 &tlmm 0 0 &tlmm 1 0
+		    &tlmm 2 0 &tlmm 3 0 &tlmm 16 0 &tlmm 13 0 &tlmm 28 0 &tlmm 29 0 &tlmm 30 0 &tlmm 31 0>;
+	};
+
+	tlmm-vm-test {
+		compatible = "qcom,tlmm-vm-test";
+		pinctrl-names = "active", "sleep";
+		pinctrl-0 = <&qupv3_se1_7i2c_active>;
+		pinctrl-1 = <&qupv3_se1_7i2c_sleep>;
+		tlmm-vm-gpio-list = <&tlmm 17 0 &tlmm 121 0 &tlmm 12 0 &tlmm 127 0 &tlmm 0 0 &tlmm 1 0
+		    &tlmm 2 0 &tlmm 3 0 &tlmm 16 0 &tlmm 13 0 &tlmm 28 0 &tlmm 29 0 &tlmm 30 0 &tlmm 31 0>;
+	};
+
+	pinctrl@f000000 {
+		qupv3_se1_7i2c_pins: qupv3_se1_7i2c_pins {
+			qupv3_se1_7i2c_active: qupv3_se1_7i2c_active {
+				mux {
+					pins = "gpio28";
+					function = "qup1_se0_l0";
+				};
+
+				config {
+					pins = "gpio28";
+					drive-strength = <2>;
+					bias-pull-up;
+				};
+			};
+
+			qupv3_se1_7i2c_sleep: qupv3_se1_7i2c_sleep {
+				mux {
+					pins = "gpio28";
+					function = "gpio";
+				};
+
+				config {
+					pins = "gpio28";
+					drive-strength = <2>;
+				};
+			};
+		};
 	};
 
 	psci {
