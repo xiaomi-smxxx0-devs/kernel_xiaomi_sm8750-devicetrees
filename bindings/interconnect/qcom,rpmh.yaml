@@ -198,6 +198,20 @@ properties:
       - qcom,tuna-nsp_noc
       - qcom,tuna-pcie_anoc
       - qcom,tuna-system_noc
+      - qcom,kera-aggre1_noc
+      - qcom,kera-aggre2_noc
+      - qcom,kera-clk_virt
+      - qcom,kera-cnoc_cfg
+      - qcom,kera-cnoc_main
+      - qcom,kera-gem_noc
+      - qcom,kera-lpass_ag_noc
+      - qcom,kera-lpass_lpiaon_noc
+      - qcom,kera-lpass_lpicx_noc
+      - qcom,kera-mc_virt
+      - qcom,kera-mmss_noc
+      - qcom,kera-nsp_noc
+      - qcom,kera-pcie_anoc
+      - qcom,kera-system_noc
 
   '#interconnect-cells': true
 
