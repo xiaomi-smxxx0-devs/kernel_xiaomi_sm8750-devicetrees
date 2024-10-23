@@ -1539,12 +1539,16 @@
 		feat_conf6: feat_conf6@0118 {
 			reg = <0x0118 0x4>;
 		};
+
+		feat_conf18: feat_conf18@0148 {
+			reg = <0x0148 0x4>;
+		};
 	};
 
 	qfprom_sys: qfprom@0 {
 		compatible = "qcom,qfprom-sys";
-		nvmem-cells = <&feat_conf6>;
-		nvmem-cell-names = "feat_conf6";
+		nvmem-cells = <&feat_conf6>, <&feat_conf18>;
+		nvmem-cell-names = "feat_conf6", "feat_conf18";
 	};
 
 	clocks {
