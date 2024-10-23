@@ -43,7 +43,6 @@
 		reg-names = "msi_addr", "smmu_iova_ipa";
 		qcom,rproc-handle = <&wpss_pas>;
 		iommus = <&apps_smmu 0x1400 0x1>;
-		status = "disabled";
 		interrupts = <GIC_SPI 768 IRQ_TYPE_EDGE_RISING>,
 			     <GIC_SPI 769 IRQ_TYPE_EDGE_RISING>,
 			     <GIC_SPI 770 IRQ_TYPE_EDGE_RISING>,
