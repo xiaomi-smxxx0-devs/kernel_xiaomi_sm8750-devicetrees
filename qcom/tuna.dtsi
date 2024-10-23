@@ -3254,6 +3254,8 @@
 	};
 };
 
+#include "tuna-coresight.dtsi"
+#include "tuna-debug.dtsi"
 #include "tuna-pinctrl.dtsi"
 #include "tuna-regulators.dtsi"
 #include "tuna-usb.dtsi"
