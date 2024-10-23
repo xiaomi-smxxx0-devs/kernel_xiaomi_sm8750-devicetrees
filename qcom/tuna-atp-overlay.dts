@@ -7,6 +7,8 @@
 /plugin/;
 
 #include "tuna-atp.dtsi"
+#include "tuna-pmih010x.dtsi"
+#include "pmd802x.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. Tuna ATP";
