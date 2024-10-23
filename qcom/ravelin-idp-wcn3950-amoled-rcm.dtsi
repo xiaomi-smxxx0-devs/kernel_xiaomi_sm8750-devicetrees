@@ -17,8 +17,10 @@
 	#size-cells = <0>;
 	status = "ok";
 	qcom,touch-active = "goodix,gt9916S";
+	qcom,la-vm;
 
 	goodix-berlin@0 {
+		compatible = "goodix,gt9916S";
 		reg = <0>;
 		spi-max-frequency = <1000000>;
 
@@ -41,7 +43,8 @@
 		pinctrl-0 = <&ts_spi_active>;
 		pinctrl-1 = <&ts_spi_int_suspend &ts_spi_reset_suspend>;
 		pinctrl-2 = <&ts_spi_release>;
-
+		goodix,touch-type = "primary";
+		goodix,qts_en;
 		qcom,touch-environment = "pvm";
 	};
 };
