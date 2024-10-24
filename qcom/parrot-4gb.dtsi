@@ -36,17 +36,11 @@
 };
 
 &soc {
-
-	qcom,guestvm_loader@e0b00000 {
+	gh-secure-vm-loader@0 {
 		status = "disabled";
 	};
 
 	qrtr-gunyah {
 		status = "disabled";
 	};
-
-	qcom,virtio_backend@0 {
-		status = "disabled";
-	};
-
 };
