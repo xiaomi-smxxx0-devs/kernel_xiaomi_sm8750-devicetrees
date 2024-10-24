@@ -911,6 +911,11 @@
 		qcom,rproc-handle = <&adsp_pas>;
 	};
 
+	pcie_pdc: pdc@b360000 {
+		compatible = "qcom,tuna-pcie-pdc", "qcom,pcie-pdc";
+		reg = <0xb360000 0x10000>;
+	};
+
 	adsp_pas: remoteproc-adsp@03000000 {
 		compatible = "qcom,tuna-adsp-pas";
 		reg = <0x03000000 0x10000>;
