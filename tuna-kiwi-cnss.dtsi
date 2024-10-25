@@ -175,6 +175,7 @@
 			" {class: wlan_pdc, ss: rf, res: l18b.m, enable: 0}",
 			" {class: wlan_pdc, ss: rf, res: b1b.m, enable: 0}",
 			" {class: wlan_pdc, ss: rf, res: l4k.m, enable: 0}",
+			" {class: wlan_pdc, ss: rf, res: l2g.m, dwnval: 3}",
 			" {class: wlan_pdc, ss: bb, res: pdc, enable: 1}";
 
 		/* cpu mask used for wlan tx rx interrupt affinity
