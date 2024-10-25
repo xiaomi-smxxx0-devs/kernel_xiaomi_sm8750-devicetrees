@@ -42,6 +42,13 @@
 
 	ddr-regions { };
 
+	mem-offline {
+		compatible = "qcom,mem-offline";
+		offline-sizes = <0x2 0xc0000000 0x1 0x0>;
+		granule = <512>;
+		qcom,qmp = <&aoss_qmp>;
+	};
+
 	firmware: firmware {
 		qcom_scm: qcom_scm { };
 	};
@@ -352,6 +359,16 @@
 	qcom,secure-buffer {
 		compatible = "qcom,secure-buffer";
 		qcom,vmid-cp-camera-preview-ro;
+	};
+
+	qcom,mem-buf {
+		compatible = "qcom,mem-buf";
+		qcom,mem-buf-capabilities = "supplier";
+		qcom,vmid = <3>;
+	};
+
+	qcom,mem-buf-msgq {
+	       compatible = "qcom,mem-buf-msgq";
 	};
 
 	apps_rsc: rsc@17a00000 {
