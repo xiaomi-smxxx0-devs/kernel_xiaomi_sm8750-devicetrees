@@ -77,6 +77,10 @@ _platform_map = {
         "dtb_list": [
             {"name": "tuna.dtb"},
             {"name": "tuna7.dtb"},
+            {
+                "name": "tunap.dtb",
+                "apq": True,
+            },
         ],
         "dtbo_list": [
             {
