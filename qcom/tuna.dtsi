@@ -3156,31 +3156,37 @@
 #include "ipcc-test-no-slpi.dtsi"
 
 &cam_cc_ipe_0_gdsc {
+	clocks = <&gcc GCC_CAMERA_AHB_CLK>;
 	compatible = "qcom,gdsc";
 	status = "ok";
 };
 
 &cam_cc_ofe_gdsc {
+	clocks = <&gcc GCC_CAMERA_AHB_CLK>;
 	compatible = "qcom,gdsc";
 	status = "ok";
 };
 
 &cam_cc_tfe_0_gdsc {
+	clocks = <&gcc GCC_CAMERA_AHB_CLK>;
 	compatible = "qcom,gdsc";
 	status = "ok";
 };
 
 &cam_cc_tfe_1_gdsc {
+	clocks = <&gcc GCC_CAMERA_AHB_CLK>;
 	compatible = "qcom,gdsc";
 	status = "ok";
 };
 
 &cam_cc_tfe_2_gdsc {
+	clocks = <&gcc GCC_CAMERA_AHB_CLK>;
 	compatible = "qcom,gdsc";
 	status = "ok";
 };
 
 &cam_cc_titan_top_gdsc {
+	clocks = <&gcc GCC_CAMERA_AHB_CLK>;
 	compatible = "qcom,gdsc";
 	interconnects = <&mmss_noc MASTER_CAMNOC_HF &mmss_noc SLAVE_MNOC_HF_MEM_NOC>;
 	interconnect-names = "mmnoc";
