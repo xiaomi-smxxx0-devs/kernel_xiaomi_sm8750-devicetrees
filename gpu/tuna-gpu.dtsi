@@ -23,11 +23,15 @@
 	reg-names = "kgsl_3d0_reg_memory", "rscc", "cx_dbgc", "cx_misc",
 		"qdss_gfx", "qdss_etr", "qdss_tmc";
 
-	interrupts = <0 300 IRQ_TYPE_LEVEL_HIGH>;
-	interrupt-names = "kgsl_3d0_irq";
+	interrupts = <0 300 IRQ_TYPE_LEVEL_HIGH>, <0 80 IRQ_TYPE_LEVEL_HIGH>;
+	interrupt-names = "kgsl_3d0_irq", "cx_host_irq";
 
-	clocks = <&gcc GCC_GPU_GEMNOC_GFX_CLK>, <&gpucc GPU_CC_AHB_CLK>;
-	clock-names = "gcc_gpu_memnoc_gfx", "gpu_cc_ahb";
+	clocks = <&gcc GCC_GPU_GEMNOC_GFX_CLK>,
+		<&gpucc GPU_CC_AHB_CLK>,
+		<&aoss_qmp QDSS_CLK>;
+	clock-names = "gcc_gpu_memnoc_gfx",
+			"gpu_cc_ahb",
+			"apb_pclk";
 
 	qcom,gpu-model = "Adreno825";
 
@@ -56,7 +60,7 @@
 		<MHZ_TO_KBPS(3187, 4)>, /*      NOM index=8  */
 		<MHZ_TO_KBPS(3686, 4)>, /*    TURBO index=9  */
 		<MHZ_TO_KBPS(4224, 4)>, /* TURBO_L1 index=10 */
-		<MHZ_TO_KBPS(4761, 4)>; /* TURBO_L3 index=11 */
+		<MHZ_TO_KBPS(4761, 4)>; /* TURBO_L2 index=11 */
 
 	zap-shader {
 		memory-region = <&gpu_microcode_mem>;
@@ -111,7 +115,7 @@
 		compatible = "qcom,kgsl-smmu-v2";
 		reg = <0x3da0000 0x40000>;
 
-		vddcx-supply = <&gpu_cc_cx_gdsc>;
+		power-domains = <&gpucc GPU_CC_CX_GDSC>;
 
 		gfx3d_user: gfx3d_user {
 			compatible = "qcom,smmu-kgsl-cb";
@@ -144,10 +148,10 @@
 			<0 305 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "hfi", "gmu";
 
-		regulator-names = "vddcx", "vdd";
-
-		vddcx-supply = <&gpu_cc_cx_gdsc>;
-		vdd-supply = <&gx_clkctl_gx_gdsc>;
+		power-domains = <&gpucc GPU_CC_CX_GDSC>,
+				<&gpucc GPU_CC_CX_GMU_GDSC>,
+				<&gxclkctl GX_CLKCTL_GX_GDSC>;
+		power-domain-names = "cx", "gmu_cx", "gx";
 
 		clocks = <&gpucc GPU_CC_CX_GMU_CLK>,
 			<&gpucc GPU_CC_CXO_CLK>,
