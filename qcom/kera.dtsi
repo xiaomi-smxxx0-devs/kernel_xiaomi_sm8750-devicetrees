@@ -1074,9 +1074,9 @@
 		nvmem-cell-names = "feat_conf6";
 	};
 
-	wpss_pas: remoteproc-wpss@a3500000 {
+	wpss_pas: remoteproc-wpss@97000000 {
 		compatible = "qcom,kera-wpss-pas";
-		reg = <0xa3500000 0x10000>;
+		reg = <0x97000000 0x10000>;
 		status = "ok";
 
 		memory-region = <&wpss_mem>;
