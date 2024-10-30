@@ -1224,20 +1224,16 @@
 		tuivm {
 			qcom,label = <0x08>;
 			qcom,vmid = <45>;
-			tlmm-vm-gpio-list = <&tlmm 86 0 &tlmm 87 0 &tlmm 98 0 &tlmm 97 0 &tlmm 16 0 &tlmm 17 0
-					 &tlmm 18 0 &tlmm 19 0 &tlmm 161 0 &tlmm 162 0 &tlmm 100 0 &tlmm 44 0
-					 &tlmm 45 0 &tlmm 46 0 &tlmm 47 0 &tlmm 88 0 &tlmm 14 0 &tlmm 126 0
-					 &tlmm 77 &tlmm 78 &tlmm 189 0 &tlmm 176 0>;
+			tlmm-vm-gpio-list = <&tlmm 77 0 &tlmm 78 0 &tlmm 14 0 &tlmm 126 0 &tlmm 16 0 &tlmm 17 0
+			     &tlmm 18 0 &tlmm 19 0 &tlmm 189 0 &tlmm 176 0 &tlmm 44 0 &tlmm 45 0 &tlmm 46 0 &tlmm 47 0>;
 		};
 	};
 
 	tlmm-vm-test {
 		compatible = "qcom,tlmm-vm-test";
 		qcom,master;
-		tlmm-vm-gpio-list = <&tlmm 86 0 &tlmm 87 0 &tlmm 98 0 &tlmm 97 0 &tlmm 16 0 &tlmm 17 0
-					 &tlmm 18 0 &tlmm 19 0 &tlmm 161 0 &tlmm 162 0 &tlmm 100 0 &tlmm 44 0
-					 &tlmm 45 0 &tlmm 46 0 &tlmm 47 0 &tlmm 88 0 &tlmm 14 0 &tlmm 126 0
-					 &tlmm 77 &tlmm 78 &tlmm 189 0 &tlmm 176 0>;
+		tlmm-vm-gpio-list = <&tlmm 77 0 &tlmm 78 0 &tlmm 14 0 &tlmm 126 0 &tlmm 16 0 &tlmm 17 0
+		    &tlmm 18 0 &tlmm 19 0 &tlmm 189 0 &tlmm 176 0 &tlmm 44 0 &tlmm 45 0 &tlmm 46 0 &tlmm 47 0>;
 	};
 
 	slimbam: bamdma@6c04000 {
