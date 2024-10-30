@@ -2724,6 +2724,67 @@
 		};
 	};
 
+	qcom,test-dbl-tuivm {
+		compatible = "qcom,gh-dbl";
+		qcom,label = <0x4>;
+	};
+
+	qcom,test-dbl-oemvm {
+		compatible = "qcom,gh-dbl";
+		qcom,label = <0x5>;
+	};
+
+	qcom,test-msgq-tuivm {
+		compatible = "qcom,gh-msgq-test";
+		gunyah-label = <0x4>;
+		qcom,primary;
+	};
+
+	qcom,test-msgq-oemvm {
+		compatible = "qcom,gh-msgq-test";
+		gunyah-label = <0x5>;
+		qcom,primary;
+	};
+
+	qcom,test-large-dmabuf-tuivm {
+		compatible = "qcom,gh-large-dmabuf-test";
+		gunyah-label = <0xd>;
+		qcom,primary;
+	};
+
+	qcom,test-large-dmabuf-oemvm {
+		compatible = "qcom,gh-large-dmabuf-test";
+		gunyah-label = <0xe>;
+		qcom,primary;
+	};
+
+	qcom,gh-qtimer@1742b000 {
+		compatible = "qcom,gh-qtmr";
+		reg = <0x1742b000 0x1000>;
+		reg-names = "qtmr-base";
+		interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "qcom,qtmr-intr";
+		qcom,primary;
+	};
+
+	qcom,gunyah-panic-notifier {
+		compatible = "qcom,gh-panic-notifier";
+		qcom,primary-vm;
+		gunyah-label = <9>;
+		peer-name = <2>;
+		memory-region = <&vm_comm_mem>;
+		shared-buffer-size = <0x1000>;
+	};
+
+	dmesg-dump {
+		compatible = "qcom,dmesg-dump";
+		qcom,primary-vm;
+		gunyah-label = <7>;
+		peer-name = <2>;
+		memory-region = <&vm_comm_mem>;
+		shared-buffer-size = <0x1000>;
+	};
+
 	mmio_sram: mmio-sram@17D09400 {
 		#address-cells = <2>;
 		#size-cells = <2>;
