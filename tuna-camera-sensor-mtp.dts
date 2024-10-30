@@ -16,7 +16,7 @@
 #include "tuna-camera-sensor-mtp.dtsi"
 / {
 	model = "Qualcomm Technologies, Inc. Tuna MTP";
-	compatible = "qcom,tuna-mtp", "qcom,tuna", "qcom,mtp";
+	compatible = "qcom,tuna-mtp", "qcom,tuna", "qcom,tunap-mtp", "qcom,tunap", "qcom,mtp";
 	qcom,msm-id = <655 0x10000>, <655 0x20000>, <681 0x10000>, <681 0x20000>;
-	qcom,board-id = <8 0>, <8 1>, <8 2>;
+	qcom,board-id = <8 0>, <8 1>, <8 2>, <8 3>, <8 4>;
 };
