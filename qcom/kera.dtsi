@@ -470,6 +470,8 @@
 
 		qcom,qmp = <&aoss_qmp>;
 
+		interconnects = <&lpass_lpicx_noc MASTER_LPASS_PROC &mc_virt SLAVE_EBI1>,
+				<&aggre2_noc MASTER_CRYPTO &mc_virt SLAVE_EBI1>;
 		interconnect-names = "rproc_ddr", "crypto_ddr";
 
 		firmware-name = "adsp.mdt", "adsp_dtb.mdt";
@@ -547,6 +549,8 @@
 
 		qcom,qmp = <&aoss_qmp>;
 
+		interconnects = <&nsp_noc MASTER_CDSP_PROC &mc_virt SLAVE_EBI1>,
+				<&aggre2_noc MASTER_CRYPTO &mc_virt SLAVE_EBI1>;
 		interconnect-names = "rproc_ddr", "crypto_ddr";
 
 		firmware-name = "cdsp.mdt", "cdsp_dtb.mdt";
@@ -624,6 +628,8 @@
 
 		qcom,qmp = <&aoss_qmp>;
 
+		interconnects = <&mc_virt MASTER_LLCC &mc_virt SLAVE_EBI1>,
+				<&aggre2_noc MASTER_CRYPTO &mc_virt SLAVE_EBI1>;
 		interconnect-names = "rproc_ddr", "crypto_ddr";
 
 		firmware-name = "modem.mdt", "modem_dtb.mdt";
