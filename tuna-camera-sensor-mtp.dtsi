@@ -48,7 +48,7 @@
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <2800000>;
 		rgltr-max-voltage = <3000000>;
-		rgltr-load-current = <103000>;
+		rgltr-load-current = <118930>;
 		status = "ok";
 	};
 
@@ -76,7 +76,7 @@
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <1800000 2800000 0>;
 		rgltr-max-voltage = <1980000 3000000 0>;
-		rgltr-load-current = <3500 214290 0>;
+		rgltr-load-current = <3500 220000 0>;
 		status = "ok";
 	};
 
@@ -94,7 +94,7 @@
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <1800000 1104000 0 2800000 2800000 1800000>;
 		rgltr-max-voltage = <1980000 1200000 0 2900000 3000000 1900000>;
-		rgltr-load-current = <3500 913200 0 91430 103000 63100>;
+		rgltr-load-current = <3500 913200 0 91430 118930 63100>;
 		gpio-no-mux = <0>;
 		pinctrl-names = "cam_default", "cam_suspend";
 		pinctrl-0 = <&cam_sensor_mclk0_active
@@ -174,7 +174,7 @@
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <1800000 1104000 0 2800000 2800000 1800000>;
 		rgltr-max-voltage = <1980000 1200000 0 2900000 3000000 1900000>;
-		rgltr-load-current = <3500 913200 0 91430 103000 63100>;
+		rgltr-load-current = <3500 913200 0 91430 118930 63100>;
 		gpio-no-mux = <0>;
 		pinctrl-names = "cam_default", "cam_suspend";
 		pinctrl-0 = <&cam_sensor_mclk0_active
@@ -250,7 +250,7 @@
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <2800000>;
 		rgltr-max-voltage = <3000000>;
-		rgltr-load-current = <103040>;
+		rgltr-load-current = <130040>;
 		status = "ok";
 	};
 
@@ -267,7 +267,7 @@
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <1800000 1056000 0 2800000 2800000>;
 		rgltr-max-voltage = <1980000 1150000 0 2900000 3000000>;
-		rgltr-load-current = <4500 266330 0 69000 103040>;
+		rgltr-load-current = <4500 266330 0 69000 130040>;
 		gpio-no-mux = <0>;
 		pinctrl-names = "cam_default", "cam_suspend";
 		pinctrl-0 = <&cam_sensor_mclk3_active
@@ -310,7 +310,7 @@
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <1800000 1056000 0 2800000 2800000>;
 		rgltr-max-voltage = <1980000 1150000 0 2900000 3000000>;
-		rgltr-load-current = <4500 266330 0 69000 103040>;
+		rgltr-load-current = <4500 266330 0 69000 130040>;
 		gpio-no-mux = <0>;
 		pinctrl-names = "cam_default", "cam_suspend";
 		pinctrl-0 = <&cam_sensor_mclk3_active
