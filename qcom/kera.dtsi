@@ -583,7 +583,7 @@
 
 	pdc: interrupt-controller@b220000 {
 		compatible = "qcom,kera-pdc", "qcom,pdc";
-		reg = <0xb220000 0x10000>, <0x17c000f0 0x60>;
+		reg = <0xb220000 0x10000>, <0x174000f0 0x64>;
 		qcom,pdc-ranges = <0 480 8>, <8 719 1>, <9 718 1>,
 				  <10 230 1>, <11 724 1>, <12 716 1>,
 				  <13 727 1>, <14 720 1>, <15 726 1>,
