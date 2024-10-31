@@ -56,7 +56,9 @@ TUNA_BASE_DTB += tuna.dtb tuna7.dtb
 NOAPQ_TUNA_BOARDS += \
 		tuna-atp-overlay.dtbo \
 		tuna-cdp-overlay.dtbo \
+		tuna-mtp-kiwi-harmonium-overlay.dtbo \
 		tuna-mtp-kiwi-overlay.dtbo \
+		tuna-mtp-nfc-overlay.dtbo \
 		tuna-mtp-overlay.dtbo \
 		tuna-mtp-qmp1000-overlay.dtbo \
 		tuna-mtp-kiwi-pmd802x-overlay.dtbo \
