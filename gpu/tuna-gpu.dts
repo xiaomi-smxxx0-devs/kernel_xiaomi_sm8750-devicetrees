@@ -19,7 +19,7 @@
 
 / {
 	model = "Qualcomm Technologies, Inc. tuna";
-	compatible = "qcom,tuna";
-	qcom,msm-id = <0x28f 0x10000>;
+	compatible = "qcom,tuna", "qcom,tunap";
+	qcom,msm-id = <0x28f 0x10000>, <0x2b6 0x10000>;
 	qcom,board-id = <0 0>;
 };
