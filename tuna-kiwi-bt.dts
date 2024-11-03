@@ -15,5 +15,5 @@
 				 "qcom,tuna-atp", "qcom,tunap-atp", "qcom,atp",
 				 "qcom,tuna", "qcom,tunap";
 	qcom,msm-id = <681 0x10000>, <655 0x10000>;
-	qcom,board-id = <21 1>, <8 2>, <33 0>;
+	qcom,board-id = <21 1>, <8 2>, <8 3>;
 };
