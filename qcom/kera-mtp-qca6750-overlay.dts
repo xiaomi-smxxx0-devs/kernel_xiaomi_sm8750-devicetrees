@@ -7,6 +7,7 @@
 /plugin/;
 
 #include "kera-mtp-qca6750.dtsi"
+#include "kera-pm7550ba.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. Kera MTP + QCA6750";

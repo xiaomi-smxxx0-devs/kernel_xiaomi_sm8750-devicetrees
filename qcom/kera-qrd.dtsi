@@ -72,3 +72,37 @@
 						&tlmm 3 0 &tlmm 16 0 &tlmm 13 0x2008>;
 	};
 };
+
+&pmic_glink_debug {
+	i2c@104 {
+		reg = <0x104>;  /* I2C instance 4 in ADSP for SE5 */
+		#address-cells = <1>;
+		#size-cells = <0>;
+		qcom,bus-type = "i2c";
+
+		qcom,smb1393@34 {
+			compatible = "qcom,i2c-pmic";
+			reg = <0x34>;
+			qcom,can-sleep;
+		};
+	};
+};
+
+&pmic_glink_adc {
+	status = "ok";
+
+	smb1393_1_iin {
+		reg = <0x1043401>;
+		label = "smb1393_1_iin";
+	};
+
+	smb1393_1_ichg {
+		reg = <0x1043402>;
+		label = "smb1393_1_ichg";
+	};
+
+	smb1393_1_die_temp {
+		reg = <0x1043403>;
+		label = "smb1393_1_die_temp";
+	};
+};

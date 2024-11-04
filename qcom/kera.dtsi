@@ -3021,6 +3021,7 @@
 #include "kera-coresight.dtsi"
 #include "kera-pinctrl.dtsi"
 #include "kera-regulators.dtsi"
+#include "kera-pmic-overlay.dtsi"
 #include "kera-usb.dtsi"
 #include "kera-qupv3.dtsi"
 #include "kera-thermal.dtsi"
