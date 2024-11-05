@@ -8,6 +8,10 @@ dtbo-y += gpu/sun-gpu.dtbo \
 		gpu/sun-v2-gpu.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_TUNA), y)
+dtbo-y += gpu/tuna-gpu.dtbo
+endif
+
 always-y    := $(dtb-y) $(dtbo-y)
 subdir-y    := $(dts-dirs)
 clean-files    := *.dtb *.dtbo
