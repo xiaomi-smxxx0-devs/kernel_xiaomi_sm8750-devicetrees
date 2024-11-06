@@ -8,6 +8,7 @@
 &soc {
 	pcie0: qcom,pcie@1bf0000 {
 		compatible = "qcom,pci-msm";
+		device_type = "pci";
 
 		reg = <0x0 0x01bf0000 0x0 0x4000>,
 			<0x0 0x01bf7000 0x0 0x2000>,
@@ -330,6 +331,7 @@
 
 	pcie1: qcom,pcie@1c08000 {
 		compatible = "qcom,pci-msm";
+		device_type = "pci";
 
 		reg = <0x0 0x01c08000 0x0 0x4000>,
 			<0x0 0x01c0e000 0x0 0x2000>,
@@ -592,6 +594,7 @@
 
 	pcie2: qcom,pcie@1c10000 {
 		compatible = "qcom,pci-msm";
+		device_type = "pci";
 
 		reg = <0x0 0x01c10000 0x0 0x4000>,
 			<0x0 0x1c16000 0x0 0x2000>,
