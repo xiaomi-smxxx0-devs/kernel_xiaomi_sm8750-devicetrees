@@ -53,7 +53,8 @@ sun-dtb-$(CONFIG_ARCH_SUN) += \
 sun-overlays-dtb-$(CONFIG_ARCH_SUN) += $(SUN_BOARDS) $(NOAPQ_SUN_BOARDS) $(SUN_BASE_DTB) $(SUN_APQ_BASE_DTB)
 
 TUNA_BASE_DTB += tuna.dtb tuna7.dtb
-NOAPQ_TUNA_BOARDS += \
+TUNA_APQ_BASE_DTB += tunap.dtb
+TUNA_BOARDS += \
 		tuna-atp-overlay.dtbo \
 		tuna-cdp-overlay.dtbo \
 		tuna-mtp-kiwi-harmonium-overlay.dtbo \
@@ -64,12 +65,15 @@ NOAPQ_TUNA_BOARDS += \
 		tuna-mtp-kiwi-pmd802x-overlay.dtbo \
 		tuna-qrd-overlay.dtbo \
 		tuna-rcm-kiwi-overlay.dtbo \
-		tuna-rcm-overlay.dtbo \
+		tuna-rcm-overlay.dtbo
+
+NOAPQ_TUNA_BOARDS += \
 		tuna-rumi-overlay.dtbo
 
 sun-dtb-$(CONFIG_ARCH_TUNA) +=  \
-        $(call add-overlays, $(NOAPQ_TUNA_BOARDS),$(TUNA_BASE_DTB))
-sun-overlays-dtb-$(CONFIG_ARCH_TUNA) += $(NOAPQ_TUNA_BOARDS) $(TUNA_BASE_DTB)
+        $(call add-overlays, $(TUNA_BOARDS) $(NOAPQ_TUNA_BOARDS),$(TUNA_BASE_DTB)) \
+	$(call add-overlays, $(TUNA_BOARDS) $(APQ_TUNA_BOARDS),$(TUNA_APQ_BASE_DTB))
+sun-overlays-dtb-$(CONFIG_ARCH_TUNA) += $(TUNA_BOARDS) $(NOAPQ_TUNA_BOARDS) $(TUNA_BASE_DTB) $(TUNA_APQ_BASE_DTB)
 dtb-y += $(sun-dtb-y)
 
 KERA_BASE_DTB += kera.dtb
