@@ -87,6 +87,7 @@ _platform_map = {
             {"name": "tuna-cdp-overlay.dtbo"},
             {"name": "tuna-mtp-kiwi-harmonium-overlay.dtbo"},
             {"name": "tuna-mtp-kiwi-overlay.dtbo"},
+            {"name": "tuna-mtp-kiwi-pmd802x-overlay.dtbo"},
             {"name": "tuna-mtp-nfc-overlay.dtbo"},
             {"name": "tuna-mtp-overlay.dtbo"},
             {"name": "tuna-mtp-qmp1000-overlay.dtbo"},

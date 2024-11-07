@@ -4,3 +4,11 @@
  */
 
 #include "tuna-mtp.dtsi"
+
+&S1G_ALT {
+	status = "ok";
+};
+
+&L3G {
+	regulator-always-on;
+};
