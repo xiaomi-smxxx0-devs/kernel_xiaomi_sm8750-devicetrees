@@ -13,6 +13,10 @@ dtbo-y += gpu/tuna-gpu.dtbo \
 		gpu/tuna7-gpu.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_KERA), y)
+dtbo-y += gpu/kera-gpu.dtbo
+endif
+
 always-y    := $(dtb-y) $(dtbo-y)
 subdir-y    := $(dts-dirs)
 clean-files    := *.dtb *.dtbo
