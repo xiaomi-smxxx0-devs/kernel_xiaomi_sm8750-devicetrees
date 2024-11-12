@@ -564,6 +564,7 @@
 
 	qcom,mem-buf-msgq {
 	       compatible = "qcom,mem-buf-msgq";
+	       qcom,msgq-names = "trusted_vm";
 	};
 
 	apps_rsc: rsc@17a00000 {
