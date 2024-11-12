@@ -9,26 +9,36 @@
 	rpmh-regulator-smpb1 {
 		compatible = "qcom,rpmh-vrm-regulator";
 		qcom,resource-name = "smpb1";
+		qcom,regulator-type = "pmic5-ftsmps";
+		qcom,supported-modes = <RPMH_REGULATOR_MODE_RET
+					RPMH_REGULATOR_MODE_HPM>;
+		qcom,mode-threshold-currents = <0 200000>;
 
 		S1B: pmxr2230_s1: vreg-pmxr2230-s1 {
 			regulator-name = "pmxr2230_s1";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
 			regulator-min-microvolt = <1850000>;
-			regulator-max-microvolt = <2040000>;
+			regulator-max-microvolt = <2044000>;
 			qcom,init-voltage = <1856000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 		};
 	};
 
 	rpmh-regulator-smpb2 {
 		compatible = "qcom,rpmh-vrm-regulator";
 		qcom,resource-name = "smpb2";
+		qcom,regulator-type = "pmic5-ftsmps";
+		qcom,supported-modes = <RPMH_REGULATOR_MODE_RET
+					RPMH_REGULATOR_MODE_HPM>;
+		qcom,mode-threshold-currents = <0 200000>;
 
 		S2B: pmxr2230_s2: vreg-pmxr2230-s2 {
 			regulator-name = "pmxr2230_s2";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1020000>;
-			regulator-max-microvolt = <2100000>;
+			regulator-min-microvolt = <1256000>;
+			regulator-max-microvolt = <2092000>;
 			qcom,init-voltage = <1256000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 		};
 	};
 
@@ -39,8 +49,8 @@
 		S3B: pmxr2230_s3: vreg-pmxr2230-s3 {
 			regulator-name = "pmxr2230_s3";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <375000>;
-			regulator-max-microvolt = <2744000>;
+			regulator-min-microvolt = <920000>;
+			regulator-max-microvolt = <2736000>;
 			qcom,init-voltage = <952000>;
 		};
 	};
@@ -106,7 +116,7 @@
 		L2B: pmxr2230_l2: vreg-pmxr2230-l2 {
 			regulator-name = "pmxr2230_l2";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <720000>;
+			regulator-min-microvolt = <880000>;
 			regulator-max-microvolt = <950000>;
 			qcom,init-voltage = <880000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
@@ -142,8 +152,8 @@
 		L4B: pmxr2230_l4: vreg-pmxr2230-l4 {
 			regulator-name = "pmxr2230_l4";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1080000>;
-			regulator-max-microvolt = <1320000>;
+			regulator-min-microvolt = <1200000>;
+			regulator-max-microvolt = <1200000>;
 			qcom,init-voltage = <1200000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 		};
@@ -161,8 +171,8 @@
 		L5B: pmxr2230_l5: vreg-pmxr2230-l5 {
 			regulator-name = "pmxr2230_l5";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1170000>;
-			regulator-max-microvolt = <1370000>;
+			regulator-min-microvolt = <1200000>;
+			regulator-max-microvolt = <1200000>;
 			qcom,init-voltage = <1200000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 		};
@@ -199,8 +209,8 @@
 		L7B: pmxr2230_l7: vreg-pmxr2230-l7 {
 			regulator-name = "pmxr2230_l7";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1080000>;
-			regulator-max-microvolt = <2000000>;
+			regulator-min-microvolt = <1800000>;
+			regulator-max-microvolt = <1800000>;
 			qcom,init-voltage = <1800000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 		};
@@ -218,9 +228,9 @@
 		L8B: pmxr2230_l8: vreg-pmxr2230-l8 {
 			regulator-name = "pmxr2230_l8";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1650000>;
-			regulator-max-microvolt = <2000000>;
-			qcom,init-voltage = <1650000>;
+			regulator-min-microvolt = <1800000>;
+			regulator-max-microvolt = <1800000>;
+			qcom,init-voltage = <1800000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 		};
 	};
@@ -275,8 +285,8 @@
 		L11B: pmxr2230_l11: vreg-pmxr2230-l11 {
 			regulator-name = "pmxr2230_l11";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1080000>;
-			regulator-max-microvolt = <2000000>;
+			regulator-min-microvolt = <1800000>;
+			regulator-max-microvolt = <1800000>;
 			qcom,init-voltage = <1800000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 			regulator-always-on;
@@ -295,9 +305,6 @@
 		L12B: pmxr2230_l12: vreg-pmxr2230-l12 {
 			regulator-name = "pmxr2230_l12";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <2400000>;
-			regulator-max-microvolt = <3300000>;
-			qcom,init-voltage = <2504000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 		};
 	};
@@ -511,6 +518,25 @@
 		};
 	};
 
+	rpmh-regulator-bobb1 {
+		compatible = "qcom,rpmh-vrm-regulator";
+		qcom,resource-name = "bobb1";
+		qcom,regulator-type = "pmic5-bob";
+		qcom,supported-modes =
+			<RPMH_REGULATOR_MODE_PASS
+			RPMH_REGULATOR_MODE_LPM
+			RPMH_REGULATOR_MODE_HPM>;
+		qcom,mode-threshold-currents = <0 1000000 2000000>;
+		BOB:
+		pmxr2230_bob: vreg-pmxr2230-bob1 {
+			regulator-name = "pmxr2230_bob";
+			qcom,set = <RPMH_REGULATOR_SET_ALL>;
+			regulator-min-microvolt = <3008000>;
+			regulator-max-microvolt = <3960000>;
+			qcom,init-voltage = <3296000>;
+		};
+	};
+
 	rpmh-regulator-mxlvl {
 		compatible = "qcom,rpmh-arc-regulator";
 		qcom,resource-name = "mx.lvl";
@@ -626,9 +652,6 @@
 		L1D: pm_v6d_l1: vreg-pm_v6d-l1 {
 			regulator-name = "pm_v6d_l1";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1140000>;
-			regulator-max-microvolt = <1260000>;
-			qcom,init-voltage = <1200000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 		};
 	};
@@ -743,8 +766,8 @@
 		L2G: pm_v6g_l2: vreg-pm_v6g-l2 {
 			regulator-name = "pm_v6g_l2";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1080000>;
-			regulator-max-microvolt = <2000000>;
+			regulator-min-microvolt = <1800000>;
+			regulator-max-microvolt = <1800000>;
 			qcom,init-voltage = <1080000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 		};
@@ -762,8 +785,8 @@
 		L3G: pm_v6g_l3: vreg-pm_v6g-l3 {
 			regulator-name = "pm_v6g_l3";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1000000>;
-			regulator-max-microvolt = <1980000>;
+			regulator-min-microvolt = <1200000>;
+			regulator-max-microvolt = <1200000>;
 			qcom,init-voltage = <1200000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 		};
@@ -864,8 +887,8 @@
 		L4K: pmr735b_l4: vreg-pmr735b-l4 {
 			regulator-name = "pmr735b_l4";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <960000>;
-			regulator-max-microvolt = <1980000>;
+			regulator-min-microvolt = <120000>;
+			regulator-max-microvolt = <1200000>;
 			qcom,init-voltage = <1200000>;
 			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
 		};
@@ -999,8 +1022,8 @@
 		L5M: pm8010m_l5: vreg-pm8010m-l5 {
 			regulator-name = "pm8010m_l5";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1300000>;
-			regulator-max-microvolt = <1504000>;
+			regulator-min-microvolt = <1100000>;
+			regulator-max-microvolt = <1300000>;
 			qcom,init-voltage = <1504000>;
 		};
 	};
