@@ -415,3 +415,4 @@
 };
 
 #include "msm-arm-smmu-kera-vm.dtsi"
+#include "kera-vm-dma-heaps.dtsi"
