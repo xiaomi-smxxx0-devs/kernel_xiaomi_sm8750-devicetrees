@@ -1601,6 +1601,11 @@
 			reg = <0x0118 0x4>;
 		};
 
+		gpu_speed_bin: gpu_speed_bin@138 {
+			reg = <0x138 0x2>;
+			bits = <0 9>;
+		};
+
 		feat_conf18: feat_conf18@0148 {
 			reg = <0x0148 0x4>;
 		};
