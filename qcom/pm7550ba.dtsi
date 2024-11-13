@@ -221,7 +221,6 @@
 		};
 	};
 
-
 	pm7550ba-bcl-lvl0 {
 		polling-delay-passive = <50>;
 		polling-delay = <0>;
