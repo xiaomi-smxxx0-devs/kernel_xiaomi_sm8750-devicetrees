@@ -34,26 +34,6 @@
 		reg = <0 0 0 0>;
 	};
 
-	chosen: chosen {
-		bootargs = "log_buf_len=512K loglevel=6 cpufreq.default_governor=performance sysctl.kernel.sched_pelt_multiplier=4 no-steal-acc kpti=0 swiotlb=0 loop.max_part=7 irqaffinity=0-2 printk.console_no_auto_verbose=1 kasan=off rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kernel.panic_on_rcu_stall=1 disable_dma32=on cgroup_disable=pressure fw_devlink.strict=1 can.stats_timer=0 ftrace_dump_on_oops page_poison=on cgroup.memory=nokmem,nosocket";
-		stdout-path = "/soc/qcom,qupv3_1_geni_se@8c0000/qcom,qup_uart@894000:115200n8";
-	};
-
-	reserved_memory: reserved-memory {};
-
-	ddr-regions { };
-
-	mem-offline {
-		compatible = "qcom,mem-offline";
-		offline-sizes = <0x2 0xc0000000 0x1 0x0>;
-		granule = <512>;
-		qcom,qmp = <&aoss_qmp>;
-	};
-
-	firmware: firmware {
-		qcom_scm: qcom_scm { };
-	};
-
 	aliases: aliases {
 		serial0 = &qupv3_se13_2uart;
 		ufshc1 = &ufshc_mem; /* Embedded UFS Slot */
@@ -85,6 +65,26 @@
 		spi12 = &qupv3_se12_spi;
 		spi14 = &qupv3_se14_spi;
 		spi15 = &qupv3_se15_spi;
+	};
+
+	chosen: chosen {
+		bootargs = "log_buf_len=512K loglevel=6 cpufreq.default_governor=performance sysctl.kernel.sched_pelt_multiplier=4 no-steal-acc kpti=0 swiotlb=0 loop.max_part=7 irqaffinity=0-2 printk.console_no_auto_verbose=1 kasan=off rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kernel.panic_on_rcu_stall=1 disable_dma32=on cgroup_disable=pressure fw_devlink.strict=1 can.stats_timer=0 ftrace_dump_on_oops";
+		stdout-path = "serial0:115200n8";
+	};
+
+	reserved_memory: reserved-memory {};
+
+	ddr-regions { };
+
+	mem-offline {
+		compatible = "qcom,mem-offline";
+		offline-sizes = <0x2 0xc0000000 0x1 0x0>;
+		granule = <512>;
+		qcom,qmp = <&aoss_qmp>;
+	};
+
+	firmware: firmware {
+		qcom_scm: qcom_scm { };
 	};
 
 	cpus {
