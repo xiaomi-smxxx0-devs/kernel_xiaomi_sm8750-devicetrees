@@ -156,7 +156,7 @@
 	swr-haptics-unsupported;
 	qcom,pri_mi2s_gpios = <&cdc_pri_mi2s_gpios>;
 	qcom,wcd-disable-legacy-surge;
-	wcd939x-i2c-handle = <&wcd_usbss>;
+	//wcd939x-i2c-handle = <&wcd_usbss>;
 	qcom,msm-mbhc-usbc-audio-supported = <0>;
 	qcom,msm-mbhc-hphl-swh = <1>;
 	qcom,msm-mbhc-gnd-swh = <1>;
