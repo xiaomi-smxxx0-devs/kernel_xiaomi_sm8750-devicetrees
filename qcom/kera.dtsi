@@ -54,7 +54,7 @@
 		qcom_scm: qcom_scm { };
 	};
 
-	aliases {
+	aliases: aliases {
 		serial0 = &qupv3_se13_2uart;
 		ufshc1 = &ufshc_mem; /* Embedded UFS Slot */
 		hsuart0 = &qupv3_se5_4uart;
