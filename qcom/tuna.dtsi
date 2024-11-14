@@ -432,7 +432,6 @@
 #include "tuna-reserved-memory.dtsi"
 #include "msm-arm-smmu-tuna.dtsi"
 #include "tuna-dma-heaps.dtsi"
-#include "tuna-vm-dma-heaps.dtsi"
 #include "tuna-pcie.dtsi"
 
 &reserved_memory {
