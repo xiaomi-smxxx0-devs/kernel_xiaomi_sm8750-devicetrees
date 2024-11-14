@@ -2758,7 +2758,7 @@
 #include "kera-debug.dtsi"
 #include "kera-coresight.dtsi"
 #include "kera-pinctrl.dtsi"
-#include "kera-stub-regulators.dtsi"
+#include "kera-regulators.dtsi"
 #include "kera-usb.dtsi"
 #include "kera-qupv3.dtsi"
 #include "kera-thermal.dtsi"
