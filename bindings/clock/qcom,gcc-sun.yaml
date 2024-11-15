@@ -23,6 +23,7 @@ properties:
       - qcom,gcc-sun
       - qcom,tuna-gcc
       - qcom,kera-gcc
+      - qcom,tuna-gcc-v1
 
   clocks:
     items:
