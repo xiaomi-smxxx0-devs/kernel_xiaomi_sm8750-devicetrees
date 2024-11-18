@@ -330,7 +330,6 @@
 
 		coresight-name = "coresight-tpdm-eva";
 
-		status = "disabled";
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
 
@@ -354,7 +353,6 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
-		status = "disabled";
 
 		in-ports {
 			#address-cells = <1>;
@@ -1395,7 +1393,7 @@
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
-		static = "disabled";
+		status = "disabled";
 
 		out-ports {
 			port {
@@ -4688,7 +4686,7 @@
 				reg = <19>;
 				tn_ag_in_tpdm_qm: endpoint {
 					remote-endpoint =
-					<&tpdm_prng_out_tn_ag>;
+					<&tpdm_qm_out_tn_ag>;
 				};
 			};
 
