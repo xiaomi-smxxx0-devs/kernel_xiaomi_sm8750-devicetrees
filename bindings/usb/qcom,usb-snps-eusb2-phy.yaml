@@ -71,6 +71,11 @@ properties:
       phandle to eUSB2 repeater for enforcing probe ordering for eUSB2 repeater
       and eUSB2 PHY driver.
 
+  vdd_refgen-supply:
+    description: |
+      phandle to vote for additional refgen ldo. This is generally board/target
+      specific.
+
 required:
   - compatible
   - reg

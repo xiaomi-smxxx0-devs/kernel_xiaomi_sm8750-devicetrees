@@ -23,8 +23,10 @@ description: |
 
 properties:
   compatible:
-    const: qcom,bcl-v5
     description: msm battery state of charge device
+    items:
+      - const: qcom,bcl-v5
+      - const: qcom,pm8550-bcl-v5
 
   reg:
     maxItems: 1
@@ -95,4 +97,17 @@ examples:
                           "bcl-lvl1";
         qcom,bcl-mon-vbat-only;
         qcom,pmic7-threshold;
+    };
+
+    bcl@4700 {
+        compatible = "qcom,pm8550-bcl-v5";
+        reg = <0x4700 0x100>;
+        interrupts = <0x1 0x47 0x0 IRQ_TYPE_NONE>,
+                     <0x1 0x47 0x1 IRQ_TYPE_NONE>,
+                     <0x1 0x47 0x2 IRQ_TYPE_NONE>;
+        interrupt-names = "bcl-lvl0",
+                          "bcl-lvl1",
+                          "bcl-lvl2";
+        qcom,pmic7-threshold;
+        #thermal-sensor-cells = <1>;
     };

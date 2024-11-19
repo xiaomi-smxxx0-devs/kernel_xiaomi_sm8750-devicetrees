@@ -156,7 +156,7 @@
 			pm7550ba_trip1: trip1 {
 				temperature = <115000>;
 				hysteresis = <0>;
-				type = "critical";
+				type = "hot";
 			};
 
 			pm7550ba_trip2: trip2 {
@@ -196,7 +196,7 @@
 	};
 
 	pm7550ba-bcl-lvl0 {
-		polling-delay-passive = <100>;
+		polling-delay-passive = <50>;
 		polling-delay = <0>;
 		thermal-sensors = <&pm7550ba_bcl 5>;
 
@@ -222,7 +222,7 @@
 	};
 
 	pm7550ba-bcl-lvl1 {
-		polling-delay-passive = <100>;
+		polling-delay-passive = <50>;
 		polling-delay = <0>;
 		thermal-sensors = <&pm7550ba_bcl 6>;
 
@@ -248,7 +248,7 @@
 	};
 
 	pm7550ba-bcl-lvl2 {
-		polling-delay-passive = <100>;
+		polling-delay-passive = <50>;
 		polling-delay = <0>;
 		thermal-sensors = <&pm7550ba_bcl 7>;
 

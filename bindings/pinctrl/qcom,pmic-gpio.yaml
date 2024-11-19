@@ -28,6 +28,7 @@ properties:
           - qcom,pm6450-gpio
           - qcom,pm7250b-gpio
           - qcom,pm7325-gpio
+          - qcom,pm7325b-gpio
           - qcom,pm7550ba-gpio
           - qcom,pm8005-gpio
           - qcom,pm8008-gpio
@@ -73,6 +74,7 @@ properties:
           - qcom,pmx55-gpio
           - qcom,pmx65-gpio
           - qcom,pmx75-gpio
+          - qcom,pmx35-gpio
           - qcom,pmxr2230-gpio
 
       - enum:
@@ -183,8 +185,10 @@ allOf:
               - qcom,pm8350b-gpio
               - qcom,pm8550ve-gpio
               - qcom,pm8950-gpio
+              - qcom,pm7325b-gpio
               - qcom,pm7550ba-gpio
               - qcom,pmi632-gpio
+              - qcom,pmx35-gpio
     then:
       properties:
         gpio-line-names:
@@ -441,6 +445,7 @@ $defs:
                  - gpio1-gpio9 for pm6450
                  - gpio1-gpio12 for pm7250b
                  - gpio1-gpio10 for pm7325
+                 - gpio1-gpio8 for pm7325b
                  - gpio1-gpio8 for pm7550ba
                  - gpio1-gpio4 for pm8005
                  - gpio1-gpio2 for pm8008
@@ -483,6 +488,7 @@ $defs:
                  - gpio1-gpio2 for pmr735d
                  - gpio1-gpio12 for pms405 (holes on gpio1, gpio9
                                             and gpio10)
+                 - gpio1-gpio8 for pmx35
                  - gpio1-gpio11 for pmx55 (holes on gpio3, gpio7, gpio10
                                             and gpio11)
                  - gpio1-gpio16 for pmx65

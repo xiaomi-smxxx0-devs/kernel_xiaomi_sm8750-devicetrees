@@ -8,7 +8,7 @@
 
 / {
 	qcom,msm-id = <537 0x10000>, <583 0x10000>, <613 0x10000>, <631 0x10000>,
-			<633 0x10000>, <634 0x10000>, <638 0x10000>;
+			<633 0x10000>, <634 0x10000>, <638 0x10000>, <663 0x10000>;
 	interrupt-parent = <&vgic>;
 
 	qcom,vm-config {
@@ -53,14 +53,14 @@
 		<0x17260000 0x100000>;    /* GICR * 8 */
 	};
 
-	pinctrl@f000000 {
+	tlmm: pinctrl@f000000 {
 		compatible = "qcom,parrot-vm-tlmm";
-		gpios = /bits/ 16 <>;
-		qcom,gpios-reserved = <0 1 2 3 38>;
+		gpios = /bits/ 16 <98 99 10 11 12 13 64 65>;
 	};
 
 	tlmm-vm-mem-access {
-		tlmm-vm-gpio-list = <>;
+		tlmm-vm-gpio-list = <&tlmm 98 0 &tlmm 99 0 &tlmm 10 0 &tlmm 11 0
+			&tlmm 12 0 &tlmm 13 0 &tlmm 64 0 &tlmm 65 0>;
 	};
 
 	apps-smmu@15000000 {

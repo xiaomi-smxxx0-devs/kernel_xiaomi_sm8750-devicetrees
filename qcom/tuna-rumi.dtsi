@@ -127,6 +127,18 @@
 	status = "disabled";
 };
 
+&cam_crm {
+	status = "disabled";
+};
+
+&disp_crm {
+	status = "disabled";
+};
+
+&pcie_crm {
+	status = "disabled";
+};
+
 &qupv3_se7_2uart {
 	qcom,rumi_platform;
 };
@@ -195,4 +207,28 @@
 	compatible = "fixed-clock";
 	clock-output-names = "rpmh_clocks";
 	clock-frequency = <19200000>;
+};
+
+&disp_cc_mdss_core_gdsc {
+	status = "ok";
+};
+
+&disp_cc_mdss_core_int2_gdsc {
+	status = "ok";
+};
+
+&video_cc_mvs0_gdsc {
+	status = "ok";
+};
+
+&video_cc_mvs0c_gdsc {
+	status = "ok";
+};
+
+&gpu_cc_cx_gdsc {
+	status = "ok";
+};
+
+&gx_clkctl_gx_gdsc {
+	status = "ok";
 };

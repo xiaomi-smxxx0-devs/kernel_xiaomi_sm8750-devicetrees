@@ -84,6 +84,7 @@
 			qcom,freq-domain = <&cpufreq_hw 0>;
 			next-level-cache = <&L2_0>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
+			#cooling-cells = <2>;
 
 			L1_I_1: l1-icache {
 				compatible = "cache";
@@ -109,6 +110,7 @@
 			qcom,freq-domain = <&cpufreq_hw 0>;
 			next-level-cache = <&L2_0>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
+			#cooling-cells = <2>;
 
 			L1_I_2: l1-icache {
 				compatible = "cache";
@@ -134,6 +136,7 @@
 			qcom,freq-domain = <&cpufreq_hw 0>;
 			next-level-cache = <&L2_0>;
 			qcom,lmh-dcvs = <&lmh_dcvs0>;
+			#cooling-cells = <2>;
 
 			L1_I_3: l1-icache {
 				compatible = "cache";
@@ -1641,22 +1644,9 @@
 	};
 
 	rpm-sleep-stats@4690000 {
-		/* compatible = "qcom,rpm-sleep-stats"; */
+		compatible = "qcom,rpm-stats-v2";
 		reg = <0x04690000 0x400>;
 		ss-name = "modem", "adsp", "adsp_island", "cdsp", "apss";
-	};
-
-	subsystem-sleep-stats@4690000 {
-		/* compatible = "qcom,subsystem-sleep-stats-v2"; */
-		reg = <0x4690000 0x400>;
-	};
-
-	qcom,rpm-master-stats@45f0150 {
-		/* compatible = "qcom,rpm-master-stats"; */
-		reg = <0x45f0150 0x5000>;
-		qcom,masters = "APSS", "MPSS", "ADSP", "CDSP", "TZ";
-		qcom,master-stats-version = <2>;
-		qcom,master-offset = <4096>;
 	};
 
 	sdhc1_opp_table: sdhc1-opp-table {

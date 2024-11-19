@@ -56,7 +56,9 @@ TUNA_BASE_DTB += tuna.dtb tuna7.dtb
 NOAPQ_TUNA_BOARDS += \
 		tuna-atp-overlay.dtbo \
 		tuna-cdp-overlay.dtbo \
+		tuna-mtp-kiwi-harmonium-overlay.dtbo \
 		tuna-mtp-kiwi-overlay.dtbo \
+		tuna-mtp-nfc-overlay.dtbo \
 		tuna-mtp-overlay.dtbo \
 		tuna-mtp-qmp1000-overlay.dtbo \
 		tuna-mtp-kiwi-pmd802x-overlay.dtbo \
@@ -232,6 +234,14 @@ tuna_tuivm-dtb-$(CONFIG_ARCH_QTI_VM) += tuna-vm-rumi.dtb \
 				tuna-oemvm-rcm.dtb \
 				tuna-oemvm-rcm-kiwi.dtb
 dtb-y += $(tuna_tuivm-dtb-y)
+endif
+endif
+
+ifeq ($(CONFIG_ARCH_KERA), y)
+ifeq ($(CONFIG_ARCH_QTI_VM), y)
+kera_tuivm-dtb-$(CONFIG_ARCH_QTI_VM) += kera-vm-rumi.dtb \
+				kera-oemvm-rumi.dtb
+dtb-y += $(kera_tuivm-dtb-y)
 endif
 endif
 

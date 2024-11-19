@@ -3,7 +3,8 @@
  * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 #include <dt-bindings/gpio/gpio.h>
-#include <dt-bindings/clock/qcom,gcc-sun.h>
+#include <dt-bindings/interrupt-controller/irq.h>
+#include "tuna-thermal-overlay.dtsi"
 
 &qupv3_se4_spi {
 	#address-cells = <1>;
@@ -89,6 +90,14 @@
 	status = "ok";
 };
 
+&wcd_usbss {
+	interrupt-parent = <&spmi_bus>;
+	interrupts = <0x0 0xb6 0x1 IRQ_TYPE_EDGE_BOTH>;
+	interrupt-names = "usb_wcd";
+	nvmem-cells = <&usb_mode>;
+	nvmem-cell-names = "usb_mode";
+};
+
 &sdhc_2 {
 	vdd-supply = <&L13B>;
 	qcom,vdd-voltage-level = <2960000 2960000>;
@@ -103,9 +112,6 @@
 	pinctrl-1 = <&sdc2_off>;
 
 	cd-gpios = <&tlmm 55 GPIO_ACTIVE_LOW>;
-
-	resets = <&gcc GCC_SDCC2_BCR>;
-	reset-names = "core_reset";
 
 	qcom,uses_level_shifter;
 

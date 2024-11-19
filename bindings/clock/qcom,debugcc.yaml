@@ -20,9 +20,11 @@ properties:
       - qcom,sun-debugcc
       - qcom,parrot-debugcc
       - qcom,sdx75-debugcc
+      - qcom,sdxbaagha-debugcc
       - qcom,sm4450-debugcc
       - qcom,monaco-debugcc
       - qcom,tuna-debugcc
+      - qcom,kera-debugcc
 
   clocks:
     items:

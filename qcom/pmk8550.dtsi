@@ -30,6 +30,11 @@
 			#address-cells = <1>;
 			#size-cells = <1>;
 
+			sm1510_present: sm1510_present@5d {
+				reg = <0x5d 0x1>;
+				bits = <5 5>;
+			};
+
 			ocp_log: ocp-log@76 {
 				reg = <0x76 0x6>;
 			};
@@ -56,6 +61,10 @@
 
 			fmd_set: fmd-set@9a {
 				reg = <0x9a 0x1>;
+			};
+
+			fmd_cont_after_pon: fmd-cont-after-pon@9c {
+				reg = <0x9c 0x1>;
 			};
 
 			fmd_chg_pon: fmd-chg-pon@9f {

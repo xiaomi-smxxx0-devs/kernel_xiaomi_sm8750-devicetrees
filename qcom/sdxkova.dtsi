@@ -1325,7 +1325,7 @@
 	qcom,msm-imem@14680000 {
 		compatible = "qcom,msm-imem";
 		reg = <0x0 0x14680000 0x0 0x1000>;
-		ranges = <0x0 0x0 0x14680000 0x0 0x1000>;
+		ranges = <0x0 0x0 0x0 0x14680000 0x0 0x1000>;
 		#address-cells = <2>;
 		#size-cells = <2>;
 
@@ -1367,6 +1367,11 @@
 		diag_dload@c8 {
 			compatible = "qcom,msm-imem-diag-dload";
 			reg = <0x0 0xc8 0x0 0xc8>;
+		};
+
+		modem_dsm@c98 {
+			compatible = "qcom,msm-imem-mss-dsm";
+			reg = <0x0 0xc98 0x0 0x10>;
 		};
 	};
 
@@ -2125,3 +2130,19 @@
 
 #include "sdxkova-usb.dtsi"
 #include "ipcc-test-sdxkova.dtsi"
+
+&CPU0 {
+	/delete-property/ clocks;
+};
+
+&CPU1 {
+	/delete-property/ clocks;
+};
+
+&CPU2 {
+	/delete-property/ clocks;
+};
+
+&CPU3 {
+	/delete-property/ clocks;
+};

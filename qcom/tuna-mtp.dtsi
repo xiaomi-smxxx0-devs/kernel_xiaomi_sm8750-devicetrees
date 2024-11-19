@@ -5,6 +5,7 @@
 
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/clock/qcom,gcc-sun.h>
+#include "tuna-thermal-overlay.dtsi"
 
 &qupv3_se4_i2c {
 	#address-cells = <1>;
@@ -101,9 +102,6 @@
 	pinctrl-1 = <&sdc2_off>;
 
 	cd-gpios = <&tlmm 55 GPIO_ACTIVE_LOW>;
-
-	resets = <&gcc GCC_SDCC2_BCR>;
-	reset-names = "core_reset";
 
 	qcom,uses_level_shifter;
 
