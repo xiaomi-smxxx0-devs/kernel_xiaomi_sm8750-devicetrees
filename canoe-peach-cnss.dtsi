@@ -52,12 +52,12 @@
 
 		cnss_host_sol_default: cnss_host_sol_default {
 			mux {
-				pins = "gpio202";
+				pins = "gpio204";
 				function = "gpio";
 			};
 
 			config {
-				pins = "gpio202";
+				pins = "gpio204";
 				drive-strength = <4>;
 				bias-pull-down;
 			};
@@ -78,16 +78,16 @@
 &soc {
 	wlan_peach: qcom,cnss-peach@b0000000 {
 		compatible = "qcom,cnss-peach";
-		reg = <0xb0000000 0x10000>;
+		reg = <0x0 0xb0000000 0x0 0x10000>;
 		reg-names = "smmu_iova_ipa";
 		qcom,wlan-sw-ctrl-gpio = <&tlmm 19 0>;
 
 		supported-ids = <0x110E>;
 		wlan-en-gpio = <&tlmm 16 0>;
-		qcom,bt-en-gpio = <&pm8550vs_f_gpios 3 0>;
+		qcom,bt-en-gpio = <&pmh0104_gpios 5 0>;
 		qcom,sw-ctrl-gpio = <&tlmm 18 0>;
-		wlan-host-sol-gpio = <&tlmm 202 0>;
-		wlan-dev-sol-gpio = <&tlmm 203 0>;
+		wlan-host-sol-gpio = <&tlmm 204 0>;
+		wlan-dev-sol-gpio = <&tlmm 205 0>;
 		/* List of GPIOs to be setup for interrupt wakeup capable */
 		mpm_wake_set_gpios = <18 19>;
 		pinctrl-names = "wlan_en_active", "wlan_en_sleep", "sw_ctrl",
@@ -108,90 +108,36 @@
 		qcom,qmp = <&aoss_qmp>;
 		msix-match-addr = <0x3000>;
 
-		vdd-wlan-io-supply = <&L3F>;
-		qcom,vdd-wlan-io-config = <1800000 1800000 30000 0 1>;
-		vdd-wlan-io12-supply = <&L2F>;
+		vdd-wlan-aon-supply = <&L2G>;
+		qcom,vdd-wlan-aon-config = <1800000 1800000 30000 0 1>;
+		vdd-wlan-io12-supply = <&L3G>;
 		qcom,vdd-wlan-io12-config = <1200000 1200000 30000 0 1>;
-		vdd-wlan-aon-supply = <&S4D>;
-		qcom,vdd-wlan-aon-config = <876000 1036000 0 0 1>;
-		vdd-wlan-dig-supply = <&S4J>;
-		qcom,vdd-wlan-dig-config = <876000 1000000 0 0 1>;
-		vdd-wlan-rfa1-supply = <&S3G>;
-		qcom,vdd-wlan-rfa1-config = <1860000 2000000 0 0 1>;
-		vdd-wlan-rfa2-supply = <&S7I>;
-		qcom,vdd-wlan-rfa2-config = <1312000 1340000 0 0 1>;
-		vdd-wlan-ant-share-supply = <&L6K>;
-		qcom,vdd-wlan-ant-share-config = <1800000 1860000 0 0 1>;
-
-		interconnects =
-		<&pcie_noc MASTER_PCIE_0 &pcie_noc SLAVE_ANOC_PCIE_GEM_NOC>,
-		<&gem_noc MASTER_ANOC_PCIE_GEM_NOC &mc_virt SLAVE_EBI1>;
-		interconnect-names = "pcie_to_memnoc", "memnoc_to_ddr";
-
-		qcom,icc-path-count = <2>;
-		qcom,bus-bw-cfg-count = <9>;
-		qcom,bus-bw-cfg =
-		/** ICC Path 1 **/
-		<0 0>, /* no vote */
-		/* idle: 0-18 Mbps snoc/anoc: 100 Mhz */
-		<2250 800000>,
-		/* low: 18-60 Mbps snoc/anoc: 100 Mhz */
-		<7500 800000>,
-		/* medium: 60-240 Mbps snoc/anoc: 100 Mhz */
-		<30000 800000>,
-		/* high: 240-1200 Mbps snoc/anoc: 100 Mhz */
-		<100000 800000>,
-		/* very high: > 1200 Mbps snoc/anoc: 403 Mhz */
-		<175000 3224000>,
-		/* ultra high: DBS mode snoc/anoc: 403 Mhz */
-		<312500 3224000>,
-		/* super high: DBS mode snoc/anoc: 533 Mhz */
-		<587500 4264000>,
-		/* low (latency critical): 18-60 Mbps snoc/anoc: 200 Mhz */
-		<7500 1600000>,
-
-		/** ICC Path 2 **/
-		<0 0>,
-		/* idle: 0-18 Mbps ddr: 547.2 MHz */
-		<2250 2188800>,
-		/* low: 18-60 Mbps ddr: 547.2 MHz */
-		<7500 2188800>,
-		/* medium: 60-240 Mbps ddr: 547.2 MHz */
-		<30000 2188800>,
-		/* high: 240-1200 Mbps ddr: 547.2 MHz */
-		<100000 2188800>,
-		/* very high: > 1200 Mbps ddr: 1555 MHz */
-		<175000 6220800>,
-		/* ultra high: DBS mode ddr: 2092 MHz */
-		<312500 8368000>,
-		/* super high: DBS mode ddr: 3.2 GHz */
-		<587500 12800000>,
-		/* low (latency critical): 18-60 Mbps ddr: 547.2 MHz */
-		<7500 2188800>;
+		vdd-wlan-cx-supply = <&S1J>;
+		qcom,vdd-wlan-cx-config = <892000 1000000 0 0 1>;
+		vdd-wlan-dig-supply = <&S2J>;
+		qcom,vdd-wlan-dig-config = <892000 1000000 0 0 1>;
+		vdd-wlan-rfa1-supply = <&S8F>;
+		qcom,vdd-wlan-rfa1-config = <1876000 2000000 0 0 1>;
+		vdd-wlan-rfa2-supply = <&S7F>;
+		qcom,vdd-wlan-rfa2-config = <1328000 1340000 0 0 1>;
 
 		qcom,vreg_pdc_map =
-			"s4j", "rf",
-			"s4d", "bb",
-			"s3g", "rf",
-			"s7i", "rf";
+			"s1j", "bb",
+			"s2j", "rf",
+			"s7f", "rf",
+			"s8f", "rf";
 
 		qcom,pmu_vreg_map =
-			"VDDD_AON_0P9", "s4j",
-			"VDDA_RFA_1P9", "s3g",
-			"VDDA_RFA_1P3", "s7i",
-			"VDDA_RFA_0P9", "s4j",
-			"VDDD_WLMX_0P9", "s4d",
-			"VDDD_WLCX_0P9", "s4j",
-			"VDDD_BTCX_0P9", "s4j",
-			"VDDD_BTCMX_0P9", "s4j",
-			"VDDA_PCIE_1P2", "s7i",
-			"VDDA_PCIE_0P9", "s7i";
-
-		qcom,pdc_init_table =
-			"{class: wlan_pdc, ss: rf, res: s4j.m, enable: 1}",
-			"{class: wlan_pdc, ss: rf, res: s4j.v, enable: 1}",
-			"{class: wlan_pdc, ss: rf, res: s4j.v, upval: 876}",
-			"{class: wlan_pdc, ss: rf, res: s4j.v, dwnval: 876}";
+			"VDD_PMU_AON_I", "s2j",
+			"VDD09_PMU_RFA_I", "s2j",
+			"VDD19_PMU_RFA_I", "s8f",
+			"VDD13_PMU_RFA_I", "s7f",
+			"VDD095_MX_PMU", "s2j",
+			"VDD095_PMU_CX", "s1j",
+			"VDD095_PMU_BTCX", "s2j",
+			"VDD095_PMU_BTMX", "s2j",
+			"VDD13_PMU_PCIE_I", "s7f",
+			"VDD13_PMU_PCIE12_I", "s7f";
 
 		/* cpu mask used for wlan tx rx interrupt affinity
 		 * <cpumask_for_rx_interrupts cpumask_for_tx_comp_interrupts>
@@ -207,7 +153,7 @@
 		memory-region = <&cnss_wlan_mem &cnss_pci0_iommu_region_partition>;
 
 		cnss_pci0_iommu_region_partition: cnss_pci0_iommu_region_partition {
-			/* address-cells =3 size-cells=2 from sun-pcie.dtsi */
+			/* address-cells =3 size-cells=2 from canoe-pcie.dtsi */
 			iommu-addresses = <&cnss_pci0 0x0 0x0 0x0 0x0 0x18000000>,
 					  <&cnss_pci0 0x0 0x0 0xB0000000 0x0 0x50000000>;
 		};
