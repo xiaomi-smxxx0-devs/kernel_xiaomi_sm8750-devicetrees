@@ -2099,6 +2099,34 @@
 		status = "disabled";
 	};
 
+	ice_cfg: shared_ice {
+		 alg1 {
+		      alg-name = "alg1";
+		      rx-alloc-percent = <60>;
+		      status = "disabled";
+		 };
+
+		 alg2 {
+		      alg-name = "alg2";
+		      status = "disabled";
+
+		 };
+
+		 alg3 {
+		      alg-name = "alg3";
+		      num-core = <28 28 15 13>;
+		      status = "ok";
+		 };
+	};
+
+	ufshc_dma_resv: ufshc_dma_resv_region {
+		/*
+		 * Restrict IOVA mappings for UFSHC buffers to the 3 GB region
+		 * from 0x1000 - 0xffffffff.
+		 */
+		iommu-addresses = <&ufshc_mem 0x0 0x1000>;
+	};
+
 	ufshc_mem: ufshc@1d84000 {
 		compatible = "qcom,ufshc";
 		reg = <0x1d84000 0x3000>,
@@ -2152,6 +2180,8 @@
 
 		iommus = <&apps_smmu 0x60 0x0>;
 		qcom,iommu-dma = "bypass";
+		memory-region = <&ufshc_dma_resv>;
+		shared-ice-cfg = <&ice_cfg>;
 		dma-coherent;
 
 		qcom,bypass-pbl-rst-wa;
@@ -2162,6 +2192,19 @@
 		reset-names = "rst";
 
 		status = "disabled";
+
+		qos0 {
+			mask = <0xf8>;
+			vote = <44>;
+			perf;
+			cpu_freq_vote = <3 7>;
+		};
+
+		qos1 {
+			mask = <0x07>;
+			vote = <44>;
+			cpu_freq_vote = <0>;
+		};
 	};
 
 	llcc_pmu: llcc-pmu@24095000 {
