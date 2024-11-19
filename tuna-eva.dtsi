@@ -144,12 +144,10 @@
 			qcom,iommu-group = <&non_secure_cb_group>;
 			memory-region = <&cvp_iommu_region_partition>;
 		};
-		/*
-		 * Memory Heaps
-		 * qcom,msm-cvp,mem_cdsp {
-		 *	compatible = "qcom,msm-cvp,mem-cdsp";
-		 *	memory-region = <&cdsp_eva_mem>;
-		 * };
-		 */
+		/* Memory Heaps */
+		qcom,msm-cvp,mem_cdsp {
+			compatible = "qcom,msm-cvp,mem-cdsp";
+			memory-region = <&cdsp_eva_mem>;
+		};
 	};
 };
