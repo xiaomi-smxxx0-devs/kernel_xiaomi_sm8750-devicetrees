@@ -43,7 +43,7 @@
 		      <0xc0000000 0x10000>;
 		reg-names = "msi_addr", "smmu_iova_ipa";
 		qcom,rproc-handle = <&wpss_pas>;
-		iommus = <&apps_smmu 0x1480 0x1>;
+		iommus = <&apps_smmu 0x1400 0x1>;
 		wlan-en-gpio =<35>;
 		host-sol-gpio =<132>;
 		dev-sol-gpio =<32>;
