@@ -1,71 +1,72 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
-#include "trustedvm-sun-sde-display.dtsi"
+#include "trustedvm-tuna-sde-display.dtsi"
 
 &dsi_nt37801_amoled_cmd {
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
+	qcom,mdss-dsi-sec-bl-pmic-control-type = "bl_ctrl_dcs";
 	qcom,mdss-dsi-bl-min-level = <10>;
 	qcom,mdss-dsi-bl-max-level = <4095>;
 	qcom,mdss-brightness-max-level = <8191>;
 	qcom,mdss-dsi-bl-inverted-dbv;
-	qcom,platform-reset-gpio = <&tlmm 98 0>;
+	qcom,platform-reset-gpio = <&tlmm 14 0>;
+	qcom,platform-sec-reset-gpio = <&tlmm 126 0>;
+};
+
+&dsi_nt37801_amoled_cmd_cphy {
+	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
+	qcom,mdss-dsi-sec-bl-pmic-control-type = "bl_ctrl_dcs";
+	qcom,mdss-dsi-bl-min-level = <10>;
+	qcom,mdss-dsi-bl-max-level = <4095>;
+	qcom,mdss-brightness-max-level = <8191>;
+	qcom,mdss-dsi-bl-inverted-dbv;
+	qcom,platform-reset-gpio = <&tlmm 14 0>;
+	qcom,platform-sec-reset-gpio = <&tlmm 126 0>;
 };
 
 &dsi_nt37801_amoled_video {
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
+	qcom,mdss-dsi-sec-bl-pmic-control-type = "bl_ctrl_dcs";
 	qcom,mdss-dsi-bl-min-level = <10>;
 	qcom,mdss-dsi-bl-max-level = <4095>;
 	qcom,mdss-brightness-max-level = <8191>;
 	qcom,mdss-dsi-bl-inverted-dbv;
-	qcom,platform-reset-gpio = <&tlmm 98 0>;
+	qcom,platform-reset-gpio = <&tlmm 14 0>;
+	qcom,platform-sec-reset-gpio = <&tlmm 126 0>;
 };
 
-&dsi_nt37801_amoled_cmd_spr {
+&dsi_nt37801_amoled_video_cphy {
+	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
+	qcom,mdss-dsi-sec-bl-pmic-control-type = "bl_ctrl_dcs";
+	qcom,mdss-dsi-bl-min-level = <10>;
+	qcom,mdss-dsi-bl-max-level = <4095>;
+	qcom,mdss-brightness-max-level = <8191>;
+	qcom,mdss-dsi-bl-inverted-dbv;
+	qcom,platform-reset-gpio = <&tlmm 14 0>;
+	qcom,platform-sec-reset-gpio = <&tlmm 126 0>;
+};
+
+&dsi_nt37801_amoled_qsync_cmd_cphy {
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
 	qcom,mdss-dsi-bl-min-level = <10>;
 	qcom,mdss-dsi-bl-max-level = <4095>;
 	qcom,mdss-brightness-max-level = <8191>;
 	qcom,mdss-dsi-bl-inverted-dbv;
-	qcom,platform-reset-gpio = <&tlmm 98 0>;
+	qcom,platform-reset-gpio = <&tlmm 14 0>;
+	qcom,platform-sec-reset-gpio = <&tlmm 126 0>;
 };
 
-&dsi_nt37801_amoled_vid_spr {
+&dsi_nt37801_amoled_qsync_video_cphy {
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
 	qcom,mdss-dsi-bl-min-level = <10>;
 	qcom,mdss-dsi-bl-max-level = <4095>;
 	qcom,mdss-brightness-max-level = <8191>;
 	qcom,mdss-dsi-bl-inverted-dbv;
-	qcom,platform-reset-gpio = <&tlmm 98 0>;
-};
-
-&dsi_nt37801_amoled_cmd_ddicspr {
-	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
-	qcom,mdss-dsi-bl-min-level = <10>;
-	qcom,mdss-dsi-bl-max-level = <4095>;
-	qcom,mdss-brightness-max-level = <8191>;
-	qcom,mdss-dsi-bl-inverted-dbv;
-	qcom,platform-reset-gpio = <&tlmm 98 0>;
-};
-
-&dsi_nt37801_amoled_video_ddicspr {
-	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
-	qcom,mdss-dsi-bl-min-level = <10>;
-	qcom,mdss-dsi-bl-max-level = <4095>;
-	qcom,mdss-brightness-max-level = <8191>;
-	qcom,mdss-dsi-bl-inverted-dbv;
-	qcom,platform-reset-gpio = <&tlmm 98 0>;
-};
-
-&dsi_sim_panel_au {
-	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
-	qcom,mdss-dsi-bl-min-level = <10>;
-	qcom,mdss-dsi-bl-max-level = <4095>;
-	qcom,mdss-brightness-max-level = <8191>;
-	qcom,mdss-dsi-bl-inverted-dbv;
-	qcom,platform-reset-gpio = <&tlmm 98 0>;
+	qcom,platform-reset-gpio = <&tlmm 14 0>;
+	qcom,platform-sec-reset-gpio = <&tlmm 126 0>;
 };
 
 &dsi_sim_cmd {
@@ -101,19 +102,5 @@
 };
 
 &sde_dsi {
-	qcom,dsi-default-panel = <&dsi_nt37801_amoled_cmd>;
-};
-
-&qupv3_se4_i2c {
-	st_fts@49 {
-		panel = <&dsi_nt37801_amoled_cmd
-			&dsi_nt37801_amoled_cmd_cphy
-			&dsi_nt37801_amoled_video
-			&dsi_nt37801_amoled_video_cphy
-			&dsi_nt37801_amoled_cmd_ddicspr
-			&dsi_nt37801_amoled_video_ddicspr
-			&dsi_nt37801_amoled_dsc_10b_video
-			&dsi_nt37801_amoled_cmd_spr
-			&dsi_nt37801_amoled_vid_spr>;
-	};
+	qcom,dsi-default-panel = <&dsi_nt37801_amoled_cmd_cphy>;
 };
