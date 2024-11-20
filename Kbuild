@@ -31,7 +31,16 @@ dtbo-y += sun-audio.dtbo \
                 sun-audio-hamilton-cdp.dtbo \
                 sun-audio-hamilton-mtp-v2.dtbo \
                 sun-audio-hamilton-mtp.dtbo \
-                sun-audio-hamilton-mtp-3.5mm.dtbo
+                sun-audio-hamilton-mtp-3.5mm.dtbo \
+                tuna-audio-atp.dtbo \
+                tuna-audio.dtbo \
+                tuna-audio-cdp.dtbo \
+                tuna-audio-hamilton-mtp.dtbo \
+                tuna-audio-hamilton-rcm.dtbo \
+                tuna-audio-mtp.dtbo \
+                tuna-audio-mtp-qmp1000.dtbo \
+                tuna-audio-qrd.dtbo \
+                tuna-audio-rcm.dtbo
 endif
 
  always-y    := $(dtb-y) $(dtbo-y)
