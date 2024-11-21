@@ -564,6 +564,7 @@
 		reg-names = "gpi-top";
 		iommus = <&apps_smmu 0xb8 0x0>;
 		qcom,iommu-group = <&qup_iommu_group>;
+		memory-region = <&qup_iommu_group>;
 		dma-coherent;
 		interrupts = <GIC_SPI 279 IRQ_TYPE_LEVEL_HIGH>,
 			<GIC_SPI 280 IRQ_TYPE_LEVEL_HIGH>,
@@ -597,6 +598,7 @@
 			<&gcc GCC_QUPV3_WRAP_1_S_AHB_CLK>;
 		iommus = <&apps_smmu 0xb8 0x0>;
 		qcom,iommu-group = <&qup_iommu_group>;
+		memory-region = <&qup_iommu_group>;
 		dma-coherent;
 		ranges;
 		status = "ok";
@@ -638,6 +640,7 @@
 		reg-names = "gpi-top";
 		iommus = <&apps_smmu 0x438 0x0>;
 		qcom,iommu-group = <&qup_iommu_group>;
+		memory-region = <&qup_iommu_group>;
 		dma-coherent;
 		interrupts = <GIC_SPI 588 IRQ_TYPE_LEVEL_HIGH>,
 			<GIC_SPI 589 IRQ_TYPE_LEVEL_HIGH>,
@@ -671,6 +674,7 @@
 			<&gcc GCC_QUPV3_WRAP_2_S_AHB_CLK>;
 		iommus = <&apps_smmu 0x438 0x0>;
 		qcom,iommu-group = <&qup_iommu_group>;
+		memory-region = <&qup_iommu_group>;
 		dma-coherent;
 		ranges;
 		status = "ok";
