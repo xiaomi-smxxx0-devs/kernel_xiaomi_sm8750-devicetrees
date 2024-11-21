@@ -2202,7 +2202,7 @@
 		dma-coherent;
 		memory-region = <&sdhc_2_dma_resv>;
 
-		interconnects = <&aggre2_noc MASTER_SDCC_2 &mc_virt SLAVE_EBI1>,
+		interconnects = <&aggre1_noc MASTER_SDCC_2 &mc_virt SLAVE_EBI1>,
 			      <&gem_noc MASTER_APPSS_PROC &config_noc SLAVE_SDCC_2>;
 		interconnect-names = "sdhc-ddr","cpu-sdhc";
 		operating-points-v2 = <&sdhc2_opp_table>;
