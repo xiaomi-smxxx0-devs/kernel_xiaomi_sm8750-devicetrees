@@ -33,7 +33,23 @@
 	status = "disabled";
 };
 
+&wcd9378_rx_slave {
+	status = "disabled";
+};
+
+&wcd9378_tx_slave {
+	status = "disabled";
+};
+
 &wcd939x_codec {
+	status = "okay";
+};
+
+&wcd939x_tx_slave {
+	status = "okay";
+};
+
+&wcd939x_rx_slave {
 	status = "okay";
 };
 
