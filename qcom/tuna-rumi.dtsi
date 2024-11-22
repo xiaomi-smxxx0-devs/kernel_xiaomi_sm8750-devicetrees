@@ -15,9 +15,6 @@
 };
 
 &soc {
-	usb_nop_phy: usb_nop_phy {
-		compatible = "usb-nop-xceiv";
-	};
 
 	usb_emuphy: phy@a784000 {
 		compatible = "qcom,usb-emu-phy";
