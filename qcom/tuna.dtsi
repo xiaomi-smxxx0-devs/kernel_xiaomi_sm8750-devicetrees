@@ -1204,6 +1204,43 @@
 		};
 	};
 
+	soccp_pas: remoteproc-soccp@a3380000 {
+		compatible = "qcom,tuna-soccp-pas";
+		reg = <0xa3380000 0x10000>;
+		status = "ok";
+
+		cx-supply = <&VDD_CX_LEVEL>;
+		cx-uV-uA = <RPMH_REGULATOR_LEVEL_LOW_SVS 0>;
+		mx-supply = <&VDD_MX_LEVEL>;
+		mx-uV-uA = <RPMH_REGULATOR_LEVEL_LOW_SVS 0>;
+		reg-names = "cx", "mx";
+
+		clocks = <&rpmhcc RPMH_CXO_CLK>;
+		clock-names = "xo";
+
+		memory-region = <&soccp_mem 0>;
+		soccp-config = <&tcsr 0x1a000>;
+
+		/* Inputs from SOCCP */
+		interrupts-extended = <&intc GIC_SPI 167 IRQ_TYPE_EDGE_RISING>,
+					<&soccp_smp2p_in 0 0>,
+					<&soccp_smp2p_in 1 0>,
+					<&soccp_smp2p_in 3 0>,
+					<&soccp_smp2p_in 2 0>,
+					<&soccp_smp2p_in 9 0>;
+
+		interrupt-names = "wdog",
+				"fatal",
+				"ready",
+				"stop-ack",
+				"handover",
+				"pong";
+
+		/* Outputs to soccp */
+		qcom,smem-states = <&soccp_smp2p_out 0>, <&soccp_smp2p_out 10>, <&soccp_smp2p_out 9>;
+		qcom,smem-state-names = "stop", "wakeup", "sleep";
+	};
+
 	sys-pm-vx@c320000 {
 		compatible = "qcom,sys-pm-violators", "qcom,sys-pm-tuna";
 		reg = <0xc320000 0x400>;
@@ -2198,7 +2235,7 @@
 		dma-coherent;
 		memory-region = <&sdhc_2_dma_resv>;
 
-		interconnects = <&aggre2_noc MASTER_SDCC_2 &mc_virt SLAVE_EBI1>,
+		interconnects = <&aggre1_noc MASTER_SDCC_2 &mc_virt SLAVE_EBI1>,
 			      <&gem_noc MASTER_APPSS_PROC &config_noc SLAVE_SDCC_2>;
 		interconnect-names = "sdhc-ddr","cpu-sdhc";
 		operating-points-v2 = <&sdhc2_opp_table>;
@@ -2837,6 +2874,44 @@
 
 	qcom_cpufreq_stats: qcom,cpufreq_stats {
 		compatible = "qcom,cpufreq-stats-v2";
+	};
+
+	qcom_mpam: qcom,mpam {
+		compatible = "qcom,mpam";
+	};
+
+	cpu_mpam: qcom,cpu_mpam {
+		compatible = "qcom,cpu-mpam";
+
+		L3 {
+			qcom,msc-id = <0>;
+			qcom,msc-name = "L3";
+		};
+	};
+
+	noc_bw_mpam: qcom,noc_bw_mpam {
+		compatible = "qcom,platform-mpam";
+		reg = <0x17D2EC00 0x400>;
+		reg-names = "mon-base";
+		qcom,msc-id = <3>;
+		qcom,msc-name = "noc_bw";
+		qcom,gears = "low", "medium", "high", "veryhigh";
+		qcom,gear-id = <1>, <2>, <3>, <4>;
+
+		cpu {
+			qcom,client-id = <0x1>;
+			qcom,client-name = "cpu";
+		};
+
+		gpu {
+			qcom,client-id = <0x10>;
+			qcom,client-name = "gpu";
+		};
+
+		nsp {
+			qcom,client-id = <0x100>;
+			qcom,client-name = "nsp";
+		};
 	};
 
 	llcc_pmu: llcc-pmu@24095000 {
