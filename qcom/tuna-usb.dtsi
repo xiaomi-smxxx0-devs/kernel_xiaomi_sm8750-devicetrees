@@ -40,6 +40,9 @@
 		qcom,use-pdc-interrupts;
 		qcom,use-eusb2-phy;
 
+		extcon = <&eud>;
+		usb-role-switch;
+
 		qcom,dis-sending-cm-l1-quirk;
 		qcom,core-clk-rate = <200000000>;
 		qcom,core-clk-rate-hs = <66666667>;
@@ -76,7 +79,7 @@
 			dma-coherent;
 
 			interrupts = <GIC_SPI 133 IRQ_TYPE_LEVEL_HIGH>;
-			usb-phy = <&eusb2_phy0>, <&usb_nop_phy>;
+			usb-phy = <&eusb2_phy0>, <&usb_qmp_dp_phy>;
 			snps,disable-clk-gating;
 			snps,has-lpm-erratum;
 			snps,hird-threshold = /bits/ 8 <0x0>;
