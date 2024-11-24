@@ -488,6 +488,10 @@
 		compatible = "qcom,smcinvoke";
 	};
 
+	qcom_mem_object {
+		compatible = "qcom,mem-object";
+	};
+
 	qtee_shmbridge {
 		compatible = "qcom,tee-shared-memory-bridge";
 	};
@@ -841,9 +845,9 @@
 		reg = <0xaf21000 0x6000>, <0xaf27000 0x400>, <0xaf27400 0x400>,
 		      <0xaf27800 0x2000>, <0xaf29800 0x700>, <0xaf29f00 0x100>;
 		reg-names = "base", "crm_b", "crm_b_pt", "crm_c", "crm_v", "common";
-		interrupts = <GIC_SPI 703 IRQ_TYPE_EDGE_RISING>,
-			     <GIC_SPI 708 IRQ_TYPE_EDGE_RISING>,
-			     <GIC_SPI 714 IRQ_TYPE_EDGE_RISING>,
+		interrupts = <GIC_SPI 702 IRQ_TYPE_EDGE_RISING>,
+			     <GIC_SPI 707 IRQ_TYPE_EDGE_RISING>,
+			     <GIC_SPI 713 IRQ_TYPE_EDGE_RISING>,
 			     <GIC_SPI 68 IRQ_TYPE_EDGE_RISING>,
 			     <GIC_SPI 96 IRQ_TYPE_EDGE_RISING>,
 			     <GIC_SPI 242 IRQ_TYPE_EDGE_RISING>;
@@ -877,7 +881,7 @@
 		reg = <0x1d01000 0x2000>, <0x1d03000 0x400>, <0x1d03400 0x400>,
 		      <0x1d03800 0x2000>, <0x1d05800 0x700>, <0x1d05f00 0x100>;
 		reg-names = "base", "crm_b", "crm_b_pt", "crm_c", "crm_v", "common";
-		interrupts = <GIC_SPI 641 IRQ_TYPE_EDGE_RISING>;
+		interrupts = <GIC_SPI 640 IRQ_TYPE_EDGE_RISING>;
 		interrupt-names = "pcie_crm_drv0";
 		clocks = <&pcie_0_pipe_clk>;
 		qcom,hw-drv-ids = <0 1>;

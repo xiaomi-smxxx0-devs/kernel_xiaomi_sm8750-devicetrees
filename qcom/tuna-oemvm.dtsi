@@ -307,6 +307,10 @@
 		compatible = "qcom,smcinvoke";
 	};
 
+	qcom_mem_object {
+		compatible = "qcom,mem-object";
+	};
+
 	qcom,qrtr {
 		compatible = "qcom,qrtr";
 		qcom,node-id = <21>;
