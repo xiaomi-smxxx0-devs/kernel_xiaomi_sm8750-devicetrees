@@ -39,12 +39,28 @@
 	};
 };
 
-&wsa_macro {
-	qcom,wsa-bat-cfgs = <1>, <1>;
-};
-
 &wcd9378_codec {
 	status = "disabled";
+};
+
+&wcd9378_rx_slave {
+	status = "disabled";
+};
+
+&wcd9378_tx_slave {
+	status = "disabled";
+};
+
+&wcd939x_tx_slave {
+	status = "okay";
+};
+
+&wcd939x_rx_slave {
+	status = "okay";
+};
+
+&wsa_macro {
+	qcom,wsa-bat-cfgs = <1>, <1>;
 };
 
 &wcd939x_codec {
