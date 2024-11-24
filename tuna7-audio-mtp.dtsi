@@ -111,6 +111,7 @@
 	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc",
 				"wcd939x_codec", "wsa-codec1",
 				"wsa-codec2";
+	qcom,ext-disp-audio-rx = <1>;
 	qcom,wsa-max-devs = <2>;
 	qcom,wcd-disable-legacy-surge;
 	wcd939x-i2c-handle = <&wcd_usbss>;
