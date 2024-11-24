@@ -244,14 +244,34 @@ _platform_map = {
     "kera-tuivm": {
         "dtb_list": [
             # keep sorted
+            {"name": "kera-oemvm-atp.dtb"},
+            {"name": "kera-oemvm-cdp.dtb"},
+            {"name": "kera-oemvm-mtp.dtb"},
+            {"name": "kera-oemvm-qrd.dtb"},
+            {"name": "kera-oemvm-rcm.dtb"},
             {"name": "kera-oemvm-rumi.dtb"},
+            {"name": "kera-vm-atp.dtb"},
+            {"name": "kera-vm-cdp.dtb"},
+            {"name": "kera-vm-mtp.dtb"},
+            {"name": "kera-vm-qrd.dtb"},
+            {"name": "kera-vm-rcm.dtb"},
             {"name": "kera-vm-rumi.dtb"},
         ],
     },
     "kera-oemvm": {
         "dtb_list": [
             # keep sorted
+            {"name": "kera-oemvm-atp.dtb"},
+            {"name": "kera-oemvm-cdp.dtb"},
+            {"name": "kera-oemvm-mtp.dtb"},
+            {"name": "kera-oemvm-qrd.dtb"},
+            {"name": "kera-oemvm-rcm.dtb"},
             {"name": "kera-oemvm-rumi.dtb"},
+            {"name": "kera-vm-atp.dtb"},
+            {"name": "kera-vm-cdp.dtb"},
+            {"name": "kera-vm-mtp.dtb"},
+            {"name": "kera-vm-qrd.dtb"},
+            {"name": "kera-vm-rcm.dtb"},
             {"name": "kera-vm-rumi.dtb"},
         ],
     },
