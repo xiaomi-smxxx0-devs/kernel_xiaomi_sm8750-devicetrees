@@ -1920,4 +1920,63 @@
 			};
 		};
 	};
+
+	/* sdcc2 pins */
+	sdc2_on: sdc2_on {
+		clk {
+			pins = "gpio62";
+			function = "SDC2_CLK";
+			bias-disable;
+			drive-strength = <16>;
+		};
+
+		cmd {
+			pins = "gpio51";
+			function = "SDC2_CMD";
+			bias-pull-up;
+			drive-strength = <10>;
+		};
+
+		data {
+			pins = "gpio38", "gpio39", "gpio48", "gpio49";
+			function = "SDC2_DATA";
+			bias-pull-up;
+			drive-strength = <10>;
+		};
+
+		sd-cd {
+			pins = "gpio58";
+			bias-pull-up;
+			drive-strength = <2>;
+		};
+	};
+
+	sdc2_off: sdc2_off {
+		clk {
+			pins = "gpio62";
+			function = "gpio";
+			bias-disable;
+			drive-strength = <2>;
+		};
+
+		cmd {
+			pins = "gpio51";
+			function = "gpio";
+			bias-pull-up;
+			drive-strength = <2>;
+		};
+
+		data {
+			pins = "gpio38", "gpio39", "gpio48", "gpio49";
+			function = "gpio";
+			bias-pull-up;
+			drive-strength = <2>;
+		};
+
+		sd-cd {
+			pins = "gpio58";
+			bias-pull-up;
+			drive-strength = <2>;
+		};
+	};
 };
