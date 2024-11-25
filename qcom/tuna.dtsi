@@ -648,7 +648,7 @@
 		};
 	};
 
-	cache-controller@24800000 {
+	llcc: cache-controller@24800000 {
 		compatible = "qcom,tuna-llcc";
 		reg = <0x24800000 0x200000>, <0x25800000 0x200000>,
 			<0x24C00000 0x200000>, <0x25C00000 0x200000>,
