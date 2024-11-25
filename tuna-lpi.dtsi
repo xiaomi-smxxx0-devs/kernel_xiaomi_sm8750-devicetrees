@@ -1804,7 +1804,7 @@
 			};
 
 			config {
-				pins = "gpio4";
+				pins = "gpio14";
 				drive-strength = <2>;
 				input-enable;
 				bias-pull-down;
