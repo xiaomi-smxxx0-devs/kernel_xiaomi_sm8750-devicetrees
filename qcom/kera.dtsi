@@ -1028,6 +1028,24 @@
 		qcom,pipe-attr-ee;
 	};
 
+	tlmm-vm-mem-access {
+		compatible = "qcom,tlmm-vm-mem-access";
+		qcom,master;
+		tuivm {
+			qcom,label = <0x08>;
+			qcom,vmid = <45>;
+			tlmm-vm-gpio-list = <&tlmm 17 0 &tlmm 121 0 &tlmm 12 0 &tlmm 127 0 &tlmm 0 0 &tlmm 1 0
+				&tlmm 2 0 &tlmm 3 0 &tlmm 16 0 &tlmm 13 0 &tlmm 28 0 &tlmm 29 0 &tlmm 30 0 &tlmm 31 0>;
+			};
+	};
+
+	tlmm-vm-test {
+		compatible = "qcom,tlmm-vm-test";
+		qcom,master;
+		tlmm-vm-gpio-list = <&tlmm 17 0 &tlmm 121 0 &tlmm 12 0 &tlmm 127 0 &tlmm 0 0 &tlmm 1 0
+		    &tlmm 2 0 &tlmm 3 0 &tlmm 16 0 &tlmm 13 0 &tlmm 28 0 &tlmm 29 0 &tlmm 30 0 &tlmm 31 0>;
+	};
+
 	tcsr_mutex_block: syscon@1f40000 {
 		compatible = "syscon";
 		reg = <0x1f40000 0x20000>;
