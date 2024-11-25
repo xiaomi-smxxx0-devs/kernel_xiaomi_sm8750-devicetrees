@@ -122,6 +122,12 @@
 		reg = <0x0 0x82700000 0x0 0x100000>;
 	};
 
+	qdss_apps_mem: qdss_apps_region@82800000 {
+		compatible = "shared-dma-pool";
+		reg = <0x0 0x82800000 0x0 0x2000000>;
+		reusable;
+	};
+
 	dsm_partition_1_mem: dsm_partition_1_region@84a00000 {
 		no-map;
 		reg = <0x0 0x84a00000 0x0 0x4900000>;

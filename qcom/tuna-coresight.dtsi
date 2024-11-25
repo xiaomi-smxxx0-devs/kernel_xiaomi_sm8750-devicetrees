@@ -3898,7 +3898,7 @@
 		real-name = "coresight-tmc-etr1";
 		qdss,buffer-size = <0x2000000>;
 		qcom,secure-component;
-	/*	memory-region = <&qdss_apps_mem>;*/
+		memory-region = <&qdss_apps_mem>;
 		coresight-csr = <&csr>;
 		csr-atid-offset = <0x108>;
 		csr-irqctrl-offset = <0x70>;
