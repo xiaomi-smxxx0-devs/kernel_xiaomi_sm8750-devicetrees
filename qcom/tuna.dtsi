@@ -2197,7 +2197,7 @@
 		qcom,dll-hsr-list = <0x0007442C 0x0 0x10
 					0x090106C0 0x80040868>;
 
-		iommus = <&apps_smmu 0x540 0x0>;
+		iommus = <&apps_smmu 0x140 0x0>;
 		qcom,iommu-dma = "fastmap";
 		dma-coherent;
 		memory-region = <&sdhc_2_dma_resv>;
