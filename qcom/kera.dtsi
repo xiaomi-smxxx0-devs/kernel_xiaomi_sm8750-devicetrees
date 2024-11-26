@@ -1705,6 +1705,10 @@
 		#reset-cells = <1>;
 	};
 
+	qti,smmu-proxy {
+		compatible = "smmu-proxy-sender";
+	};
+
 	clk_virt: interconnect@0 {
 		compatible = "qcom,kera-clk_virt";
 		#interconnect-cells = <1>;
