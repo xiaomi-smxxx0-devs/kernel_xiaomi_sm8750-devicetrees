@@ -5,8 +5,10 @@
 
 #include "tuna-mtp.dtsi"
 
-&S1G_ALT {
-	status = "ok";
+&S1G {
+	regulator-min-microvolt = <806000>;
+	regulator-max-microvolt = <1003000>;
+	qcom,init-voltage = <852000>;
 };
 
 &L3G {
