@@ -342,15 +342,6 @@
 		qcom,adc-tm-type = <1>;
 	};
 
-	pmxr2230_sys_therm_1 {
-		reg = <PMXR2230_ADC5_GEN3_AMUX_THM5_100K_PU>;
-		label = "pmxr2230_sys_therm_1";
-		qcom,ratiometric;
-		qcom,hw-settle-time = <200>;
-		qcom,pre-scaling = <1 1>;
-		qcom,adc-tm-type = <1>;
-	};
-
 	pmxr2230_sys_therm_2 {
 		reg = <PMXR2230_ADC5_GEN3_AMUX_THM1_100K_PU>;
 		label = "pmxr2230_sys_therm_2";
