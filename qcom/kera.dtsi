@@ -3028,6 +3028,7 @@
 #include "kera-usb.dtsi"
 #include "kera-qupv3.dtsi"
 #include "kera-thermal.dtsi"
+#include "kera-walt.dtsi"
 
 &qupv3_se13_2uart {
 	status = "ok";
