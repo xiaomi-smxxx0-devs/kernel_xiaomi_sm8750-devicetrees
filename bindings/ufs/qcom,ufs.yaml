@@ -37,6 +37,7 @@ properties:
           - qcom,ufs-phy-qmp-v4-pineapple
           - qcom,ufs-phy-qmp-v4-waipio
           - qcom,ufs-phy-qmp-v4-sun
+          - qcom,ufs-phy-qmp-v4-niobe
       - const: qcom,ufshc
       - const: jedec,ufs-2.0
 
