@@ -390,6 +390,11 @@
 			interrupts = <GIC_SPI 579 IRQ_TYPE_LEVEL_HIGH>;
 			clock-names = "se";
 			clocks = <&gcc GCC_QUPV3_WRAP1_S7_CLK>;
+			interconnect-names = "qup-core", "qup-config", "qup-memory";
+			interconnects =
+			<&clk_virt MASTER_QUP_CORE_1 &clk_virt SLAVE_QUP_CORE_1>,
+			<&gem_noc MASTER_APPSS_PROC &config_noc SLAVE_QUP_1>,
+			<&aggre1_noc MASTER_QUP_1 &mc_virt SLAVE_EBI1>;
 			pinctrl-names = "default", "sleep";
 			pinctrl-0 = <&qupv3_se7_2uart_tx_active>, <&qupv3_se7_2uart_rx_active>;
 			pinctrl-1 = <&qupv3_se7_2uart_sleep>;
