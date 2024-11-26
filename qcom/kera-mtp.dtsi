@@ -9,6 +9,26 @@
 #include <dt-bindings/spmi/spmi.h>
 #include "pmk8550.dtsi"
 
+&sdhc_2 {
+	vdd-supply = <&L13B>;
+	qcom,vdd-voltage-level = <2960000 2960000>;
+	qcom,vdd-current-level = <0 976270>;
+
+	vdd-io-supply = <&L23B>;
+	qcom,vdd-io-voltage-level = <1800000 2960000>;
+	qcom,vdd-io-current-level = <0 5830>;
+
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&sdc2_on>;
+	pinctrl-1 = <&sdc2_off>;
+
+	cd-gpios = <&tlmm 58 GPIO_ACTIVE_LOW>;
+
+	qcom,uses_level_shifter;
+
+	status = "ok";
+};
+
 &wcd_usbss {
 	interrupt-parent = <&spmi_bus>;
 	interrupts = <0x0 0xb6 0x1 IRQ_TYPE_EDGE_BOTH>;
