@@ -120,6 +120,8 @@
 		qcom,vdd-wlan-rfa1-config = <1876000 2000000 0 0 1>;
 		vdd-wlan-rfa2-supply = <&S7F>;
 		qcom,vdd-wlan-rfa2-config = <1328000 1340000 0 0 1>;
+		vdd-wlan-ant-share-supply = <&L3K>;
+		qcom,vdd-wlan-ant-share-config = <1200000 1200000 0 0 1>;
 
 		qcom,vreg_pdc_map =
 			"s1j", "bb",
@@ -146,7 +148,7 @@
 	};
 };
 
-&pcie0_rp {
+&pcie_rp {
 	cnss_pci0: cnss_pci0 {
 		reg = <0 0 0 0 0>;
 		qcom,iommu-group = <&cnss_audio_iommu_group0>;
