@@ -30,11 +30,11 @@
 	};
 };
 
-&rx_swr {
+&swr1 {
 	qcom,swr-num-dev = <2>;
 };
 
-&wsa_swr {
+&swr0 {
 	qcom,swr-num-dev = <2>;
 };
 

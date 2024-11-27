@@ -37,7 +37,7 @@
 		qcom,use-clk-id = <VA_CORE_CLK>;
 		qcom,is-used-swr-gpio = <1>;
 		qcom,va-swr-gpios = <&va_swr_gpios>;
-		tx_swr: va_swr_master {
+		swr2: va_swr_master {
 			compatible = "qcom,swr-mstr";
 			#address-cells = <2>;
 			#size-cells = <0>;
@@ -93,7 +93,7 @@
 		qcom,default-clk-id = <RX_TX_CORE_CLK>;
 		clock-names = "rx_mclk2_2x_clk";
 		clocks = <&clock_audio_rx_mclk2_2x_clk 0>;
-		rx_swr: rx_swr_master {
+		swr1: rx_swr_master {
 			compatible = "qcom,swr-mstr";
 			#address-cells = <2>;
 			#size-cells = <0>;
@@ -152,7 +152,7 @@
 		qcom,thermal-max-state = <11>;
 		qcom,noise-gate-mode = <2>;
 		#cooling-cells = <2>;
-		wsa_swr: wsa_swr_master {
+		swr0: wsa_swr_master {
 			compatible = "qcom,swr-mstr";
 			#address-cells = <2>;
 			#size-cells = <0>;

@@ -5,7 +5,7 @@
 
 #include "kera-audio-mtp.dtsi"
 
-&rx_swr {
+&swr1 {
 	qcom,swr-num-dev = <2>;
 };
 
@@ -33,7 +33,7 @@
 	status = "disabled";
 };
 
-&tx_swr {
+&swr2 {
 	qmp01: qmp@04170232 {
 		/*
 		 * reg = <Class_partID[7:0]
