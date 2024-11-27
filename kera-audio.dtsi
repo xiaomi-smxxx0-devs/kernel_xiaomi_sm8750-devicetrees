@@ -174,12 +174,12 @@
 	};
 };
 
-//&aliases {
-//	wsa_swr = "/soc/spf_core_platform/lpass-cdc/wsa-macro@6B00000/wsa_swr_master";
-//	rx_swr = "/soc/spf_core_platform/lpass-cdc/rx-macro@6AC0000/rx_swr_master";
-//	tx_swr = "/soc/spf_core_platform/lpass-cdc/va-macro@7660000/va_swr_master";
-//	swr4 = "/soc/spf_core_platform/lpass_bt_swr@6CA0000/bt_swr_mstr";
-//};
+&aliases {
+	wsa_swr = "/soc/spf_core_platform/lpass-cdc/wsa-macro@6B00000/wsa_swr_master";
+	rx_swr = "/soc/spf_core_platform/lpass-cdc/rx-macro@6AC0000/rx_swr_master";
+	tx_swr = "/soc/spf_core_platform/lpass-cdc/va-macro@7660000/va_swr_master";
+	swr4 = "/soc/spf_core_platform/lpass_bt_swr@6CA0000/bt_swr_mstr";
+};
 
 &adsp_loader {
 	/delete-property/ qcom,adsp-state;
