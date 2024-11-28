@@ -2872,7 +2872,7 @@
 
 	noc_bw_mpam: qcom,noc_bw_mpam {
 		compatible = "qcom,platform-mpam";
-		reg = <0x17D2EC00 0x400>;
+		reg = <0x17D2E800 0x400>;
 		reg-names = "mon-base";
 		qcom,msc-id = <3>;
 		qcom,msc-name = "noc_bw";
