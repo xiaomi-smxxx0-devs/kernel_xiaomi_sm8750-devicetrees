@@ -30,7 +30,7 @@
 &swr0 {
 	wsa884x_0220: wsa884x@02170220 {
 		qcom,spkr-sd-n-node = <&wsa_spkr_en13>;
-		sound-name-prefix = "SpkrRight";
+		sound-name-prefix = "SpkrLeft";
 		status = "okay";
 	};
 
@@ -91,6 +91,7 @@
 
 &tuna_snd {
 	qcom,model = "tuna-qrd-snd-card";
+	swr-haptics-unsupported;
 	qcom,audio-routing =
 		"AMIC1", "Analog Mic1",
 		"AMIC1", "MIC BIAS1",
@@ -118,7 +119,7 @@
 		"RX_TX DEC1_INP", "TX DEC1 MUX",
 		"RX_TX DEC2_INP", "TX DEC2 MUX",
 		"RX_TX DEC3_INP", "TX DEC3 MUX",
-		"SpkrRight IN", "WSA_SPK2 OUT",
+		"SpkrLeft IN", "WSA_SPK1 OUT",
 		"TX SWR_INPUT", "WCD_TX_OUTPUT",
 		"VA SWR_INPUT", "VA_SWR_CLK",
 		"VA SWR_INPUT", "WCD_TX_OUTPUT",
@@ -128,7 +129,7 @@
 	asoc-codec  = <&stub_codec>, <&lpass_cdc>,
 			<&wcd939x_codec>, <&wsa884x_0220>;
 	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc",
-			"wcd939x_codec", "wsa-codec2";
+			"wcd939x_codec", "wsa-codec1";
 	qcom,wsa-max-devs = <1>;
 	qcom,wcd-disable-legacy-surge;
 	wcd939x-i2c-handle = <&wcd_usbss>;
