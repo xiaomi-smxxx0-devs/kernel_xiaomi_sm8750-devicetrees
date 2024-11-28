@@ -3029,6 +3029,7 @@
 #include "kera-qupv3.dtsi"
 #include "kera-thermal.dtsi"
 #include "kera-walt.dtsi"
+#include "msm-rdbg.dtsi"
 
 &qupv3_se13_2uart {
 	status = "ok";
