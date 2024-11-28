@@ -199,6 +199,20 @@
 		 */
 		wlan-txrx-intr-cpumask = <0x3 0x30>;
 	};
+
+	wlan_direct_link: qcom,cnss-direct-link {
+		compatible = "qcom,cnss-direct-link";
+		iommus = <&apps_smmu 0x100f 0x0>;
+		qcom,iommu-group = <&cnss_audio_iommu_group0>;
+		memory-region = <&direct_link_iommu_region_partition>;
+		dma-coherent;
+
+		direct_link_iommu_region_partition: direct_link_iommu_region_partition {
+			iommu-addresses = <&wlan_direct_link 0x00000000 0x18000000>,
+				<&wlan_direct_link 0xb0000000 0x50000000>;
+		};
+
+	};
 };
 
 &pcie0_rp {
