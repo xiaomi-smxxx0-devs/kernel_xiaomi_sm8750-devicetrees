@@ -3217,3 +3217,4 @@
 		vdd-usb-cp-supply = <&L7B>;
 	};
 };
+#include "tuna-thermal-overlay.dtsi"
