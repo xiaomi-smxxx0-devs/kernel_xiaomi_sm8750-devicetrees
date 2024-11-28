@@ -77,6 +77,7 @@
 
 &kera_snd {
 	qcom,model = "kera-qrd-snd-card";
+	swr-haptics-unsupported;
 	asoc-codec  = <&stub_codec>, <&lpass_cdc>,
 			<&wcd9378_codec>, <&wsa884x_0221>;
 	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc",
