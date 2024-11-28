@@ -50,7 +50,7 @@
 			qcom,mipi-sdw-block-packing-mode = <1>;
 			swrm-io-base = <0x7630000 0x0>;
 			interrupts =
-				<GIC_SPI 722 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 721 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 520 IRQ_TYPE_LEVEL_HIGH>;
 			interrupt-names = "swr_master_irq", "swr_wake_irq";
 			qcom,swr-wakeup-required = <1>;
