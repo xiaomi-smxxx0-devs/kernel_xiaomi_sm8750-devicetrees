@@ -4,7 +4,7 @@
  */
 
 &ufsphy_mem {
-	compatible = "qcom,ufs-phy-qmp-v4-pineapple";
+	compatible = "qcom,ufs-phy-qmp-v4-niobe";
 
 	/* VDDA_UFS_CORE */
 	vdda-phy-supply = <&L6B>;
