@@ -2415,8 +2415,10 @@
 	ufshc_mem: ufshc@1d84000 {
 		compatible = "qcom,ufshc";
 		reg = <0x1d84000 0x3000>,
-			<0x1d88000 0x18000>;
-		reg-names = "ufs_mem", "ice";
+			<0x1d88000 0x18000>,
+			<0x1da5000 0x2000>,
+			<0x1da4000 0x10>;
+		reg-names = "ufs_mem", "ice", "mcq_sqd", "mcq_vs";
 
 		interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
 		phys = <&ufsphy_mem>;
@@ -2424,6 +2426,9 @@
 		#reset-cells = <1>;
 
 		qcom,ice-use-hwkm;
+		qcom,prime-mask = <0x80>;
+		qcom,silver-mask = <0x0f>;
+		qcom,esi-affinity-mask = <1 1 4 4 3 6 6 7>;
 
 		lanes-per-direction = <2>;
 		clock-names =
@@ -2465,13 +2470,16 @@
 		depends-on-supply = <&apps_smmu>;
 
 		iommus = <&apps_smmu 0x60 0x0>;
-		qcom,iommu-dma = "bypass";
+		qcom,iommu-dma = "fastmap";
+		qcom,iommu-msi-size = <0x1000>;
 		memory-region = <&ufshc_dma_resv>;
 		shared-ice-cfg = <&ice_cfg>;
 		dma-coherent;
 
 		qcom,bypass-pbl-rst-wa;
 		qcom,max-cpus = <8>;
+
+		msi-parent = <&gic_its 0x60>;
 
 		reset-gpios = <&tlmm 191 GPIO_ACTIVE_LOW>;
 		resets = <&gcc GCC_UFS_PHY_BCR>;
