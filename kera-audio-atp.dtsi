@@ -21,7 +21,7 @@
 	qcom,wsa-max-devs = <0>;
 };
 
-&wsa_swr {
+&swr0 {
 	qcom,swr-num-dev = <0>;
 };
 

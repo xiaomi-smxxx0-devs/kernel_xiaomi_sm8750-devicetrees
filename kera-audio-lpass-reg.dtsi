@@ -6,7 +6,7 @@
 	reg = <0x6AC0000 0x0>;
 };
 
-&rx_swr {
+&swr1 {
 	swrm-io-base = <0x6AD0000 0x0>;
 	interrupts = <GIC_SPI 155 IRQ_TYPE_LEVEL_HIGH>;
 };
@@ -19,12 +19,12 @@
 	reg = <0x6B00000 0x0>;
 };
 
-&wsa_swr {
+&swr0 {
 	swrm-io-base = <0x6B10000 0x0>;
 	interrupts = <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>;
 };
 
-&tx_swr {
+&swr2 {
 	reg = <0x7630000 0x0>;
 };
 

@@ -5,35 +5,8 @@
 
 #include "kera-audio-mtp.dtsi"
 
-&rx_swr {
-	qcom,swr-num-dev = <2>;
-};
 
-&wcd9378_rx_slave {
-	status = "okay";
-};
-
-&wcd9378_tx_slave {
-	status = "okay";
-};
-
-&wcd9378_codec {
-	status = "okay";
-};
-
-&wcd939x_rx_slave {
-	status = "disabled";
-};
-
-&wcd939x_tx_slave {
-	status = "disabled";
-};
-
-&wcd939x_codec {
-	status = "disabled";
-};
-
-&tx_swr {
+&swr2 {
 	qmp01: qmp@04170232 {
 		/*
 		 * reg = <Class_partID[7:0]
@@ -114,12 +87,12 @@
 &kera_snd {
 	qcom,model = "kera-mtp-qmp-snd-card";
 	asoc-codec  = <&stub_codec>, <&lpass_cdc>,
-			<&wcd9378_codec>,
+			<&wcd939x_codec>,
 			<&wsa884x_0220>, <&wsa884x_0221>,
 			<&qmp01>, <&qmp02>,
 			<&qmp03>, <&qmp04>;
 	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc",
-		"wcd9378_codec",
+		"wcd939x_codec",
 		"wsa-codec1", "wsa-codec2",
 		"qmp-dmic.01", "qmp-dmic.02",
 		"qmp-dmic.03", "qmp-dmic.04";
@@ -132,9 +105,7 @@
 		"AMIC3", "Analog Mic3",
 		"AMIC3", "MIC BIAS3",
 		"AMIC4", "Analog Mic4",
-		"AMIC4", "MIC BIAS3",
-		"AMIC5", "Analog Mic5",
-		"AMIC5", "MIC BIAS4",
+		"AMIC4", "MIC BIAS1",
 		"VA AMIC1", "Analog Mic1",
 		"VA AMIC1", "VA MIC BIAS1",
 		"VA AMIC2", "Analog Mic2",
@@ -142,9 +113,7 @@
 		"VA AMIC3", "Analog Mic3",
 		"VA AMIC3", "VA MIC BIAS3",
 		"VA AMIC4", "Analog Mic4",
-		"VA AMIC4", "VA MIC BIAS3",
-		"VA AMIC5", "Analog Mic5",
-		"VA AMIC5", "VA MIC BIAS4",
+		"VA AMIC4", "VA MIC BIAS1",
 		"TX DMIC0", "Digital Mic0",
 		"TX DMIC0", "MIC BIAS3",
 		"TX DMIC1", "Digital Mic1",
@@ -155,7 +124,7 @@
 		"TX DMIC3", "MIC BIAS1",
 		"IN1_HPHL", "HPHL_OUT",
 		"IN2_HPHR", "HPHR_OUT",
-		"IN3_EAR", "AUX_OUT",
+		"IN3_AUX", "AUX_OUT",
 		"WSA SRC0_INP", "SRC0",
 		"WSA_TX DEC0_INP", "TX DEC0 MUX",
 		"WSA_TX DEC1_INP", "TX DEC1 MUX",

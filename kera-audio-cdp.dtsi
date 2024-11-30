@@ -58,7 +58,7 @@
 	status = "okay";
 };
 
-&wsa_swr {
+&swr0 {
 	wsa884x_0220: wsa884x@02170220 {
 		status = "okay";
 	};
