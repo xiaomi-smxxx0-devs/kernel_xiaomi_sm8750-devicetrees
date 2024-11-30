@@ -15,6 +15,7 @@ endif
 
 ifeq ($(CONFIG_ARCH_SUN), y)
 dtbo-y += sun-vidc.dtbo
+dtbo-y += sun-vidc-v2.dtbo
 endif
 
 ifeq ($(CONFIG_ARCH_TUNA), y)
