@@ -96,7 +96,8 @@
 		vm-attrs = "context-dump", "crash-restart";
 
 		iomemory-ranges = <0x0 0xa24000 0x0 0xa24000 0x0 0x4000 0x0
-				0x0 0x824000 0x0 0x824000 0x0 0x4000 0x0>;
+				0x0 0x824000 0x0 0x824000 0x0 0x4000 0x0
+				0x0 0x407000 0x0 0x407000 0x0 0x1000 0x0>;
 
 		/* For LEVM por usecases is QUP1_SE4 and QUP2_SE7.
 		 * QUP1_SE4: GPII5 : IRQ_316
@@ -403,6 +404,15 @@
 	psci {
 		compatible = "arm,psci-1.0";
 		method = "smc";
+	};
+
+	ipcc_mproc_ns1: qcom,ipcc@407000 {
+		compatible = "qcom,ipcc";
+		reg = <0x407000 0x1000>;
+		interrupts = <GIC_SPI 247 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-controller;
+		#interrupt-cells = <3>;
+		#mbox-cells = <2>;
 	};
 
 	vgic: interrupt-controller@17100000 {
