@@ -214,6 +214,17 @@
 				allocate-base;
 			};
 
+			qrtr-shm {
+				vdevice-type = "shm-doorbell";
+				generate = "/hypervisor/qrtr-shm";
+				push-compatible = "qcom,qrtr-gunyah-gen";
+				peer-default;
+				memory {
+					qcom,label = <0x3>;
+					allocate-base;
+				};
+			};
+
 			mem-buf-message-queue-pair {
 				vdevice-type = "message-queue-pair";
 				generate = "/hypervisor/membuf-msgq-pair";
@@ -460,6 +471,11 @@
 	mem_buf_msgq: qcom,mem-buf-msgq {
 		compatible = "qcom,mem-buf-msgq";
 		qcom,msgq-names = "trusted_vm";
+	};
+
+	qrtr-gunyah {
+		compatible = "qcom,qrtr-gunyah";
+		gunyah-label = <3>;
 	};
 
 	virtio_mem_device {
