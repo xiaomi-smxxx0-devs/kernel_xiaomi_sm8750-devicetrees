@@ -225,6 +225,15 @@
 				};
 			};
 
+			msgqsock-msgq {
+				vdevice-type = "message-queue-pair";
+				generate = "/hypervisor/msgqsock-msgq-pair";
+				message-size = <0xf0>;
+				queue-depth = <0x8>;
+				peer = "vm-name:qcom,oemvm";
+				qcom,label = <0x3>;
+			};
+
 			mem-buf-message-queue-pair {
 				vdevice-type = "message-queue-pair";
 				generate = "/hypervisor/membuf-msgq-pair";
@@ -471,6 +480,11 @@
 	mem_buf_msgq: qcom,mem-buf-msgq {
 		compatible = "qcom,mem-buf-msgq";
 		qcom,msgq-names = "trusted_vm";
+	};
+
+	qmsgq-gunyah {
+		compatible = "qcom,qmsgq-gh";
+		msgq-label = <3>;
 	};
 
 	qrtr-gunyah {
