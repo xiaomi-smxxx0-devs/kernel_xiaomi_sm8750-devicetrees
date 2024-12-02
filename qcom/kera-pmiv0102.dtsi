@@ -12,3 +12,14 @@
 &pmiv010x_amoled_ecm {
 	status = "ok";
 };
+
+&pmiv010x_eusb2_repeater {
+	vdd18-supply = <&L7B>;
+	vdd3-supply = <&L17B>;
+	status = "ok";
+};
+
+&eusb2_phy0 {
+	dummy-supply = <&pmiv010x_eusb2_repeater>;
+	usb-repeater = <&pmiv010x_eusb2_repeater>;
+};
