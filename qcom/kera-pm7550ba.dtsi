@@ -9,8 +9,8 @@
 	/delete-node/ i2c@104;
 	/delete-node/ spmi@200;
 
-		i2c@104 {
-		reg = <0x104>;  /* I2C instance 4 in ADSP for SE5 */
+		i2c@105 {
+		reg = <0x105>;  /* I2C instance 5 in ADSP for SE4 */
 		#address-cells = <1>;
 		#size-cells = <0>;
 		qcom,bus-type = "i2c";
@@ -35,33 +35,33 @@
 	/delete-node/ smb1398_1_die_temp;
 
 	smb1500_1_iin {
-		reg = <0x1046901>;
-		label = "smb1393_1_iin";
+		reg = <0x1056901>;
+		label = "smb1500_1_iin";
 	};
 
 	smb1500_1_ichg {
-		reg = <0x1046902>;
-		label = "smb1393_1_ichg";
+		reg = <0x1056902>;
+		label = "smb1500_1_ichg";
 	};
 
 	smb1500_1_die_temp {
-		reg = <0x1046903>;
-		label = "smb1393_1_die_temp";
+		reg = <0x1056903>;
+		label = "smb1500_1_die_temp";
 	};
 
 	smb1500_2_iin {
-		reg = <0x1046801>;
-		label = "smb1393_2_iin";
+		reg = <0x1056801>;
+		label = "smb1500_2_iin";
 	};
 
 	smb1500_2_ichg {
-		reg = <0x1046802>;
-		label = "smb1393_2_ichg";
+		reg = <0x1056802>;
+		label = "smb1500_2_ichg";
 	};
 
 	smb1500_2_die_temp {
-		reg = <0x1046803>;
-		label = "smb1393_2_die_temp";
+		reg = <0x1056803>;
+		label = "smb1500_2_die_temp";
 	};
 };
 

@@ -2263,6 +2263,7 @@
 			#address-cells = <2>;
 			#size-cells = <0>;
 			qcom,can-sleep;
+			status = "disabled";
 		};
 
 		pm8550vs@6 {
@@ -2279,6 +2280,7 @@
 			#address-cells = <2>;
 			#size-cells = <0>;
 			qcom,can-sleep;
+			status = "disabled";
 		};
 
 		pmg1110@9 {
@@ -2287,6 +2289,7 @@
 			#address-cells = <2>;
 			#size-cells = <0>;
 			qcom,can-sleep;
+			status = "disabled";
 		};
 
 		pmr735d@a {
