@@ -183,6 +183,63 @@
 			};
 		};
 	};
+
+	pmiv010x-bcl-lvl0 {
+		cooling-maps {
+			lbat_0_nr_scg {
+				trip = <&b_bcl_lvl0>;
+				cooling-device = <&modem_nr_scg_dsc 3 3>;
+			};
+
+			lbat_0_nr {
+				trip = <&b_bcl_lvl0>;
+				cooling-device = <&modem_nr_dsc 6 6>;
+			};
+
+			lbat_0_mdm_lte {
+				trip = <&b_bcl_lvl0>;
+				cooling-device = <&modem_lte_dsc 8 8>;
+			};
+
+			lbat_1_gpu {
+				trip = <&b_bcl_lvl0>;
+				cooling-device = <&msm_gpu 2 2>;
+			};
+		};
+	};
+
+	pmiv010x-bcl-lvl1 {
+		cooling-maps {
+			lbat_1_nr_scg {
+				trip = <&b_bcl_lvl1>;
+				cooling-device = <&modem_nr_scg_dsc 10 10>;
+			};
+
+			lbat_1_nr {
+				trip = <&b_bcl_lvl1>;
+				cooling-device = <&modem_nr_dsc 9 9>;
+			};
+
+			lbat_1_mdm_lte {
+				trip = <&b_bcl_lvl1>;
+				cooling-device = <&modem_lte_dsc 10 10>;
+			};
+
+			lbat_1_gpu {
+				trip = <&b_bcl_lvl1>;
+				cooling-device = <&msm_gpu 3 3>;
+			};
+		};
+	};
+
+	pmiv010x-bcl-lvl2 {
+		cooling-maps {
+			lbat_2_gpu {
+				trip = <&b_bcl_lvl2>;
+				cooling-device = <&msm_gpu 7 7>;
+			};
+		};
+	};
 };
 
 &pmiv010x_eusb2_repeater {
