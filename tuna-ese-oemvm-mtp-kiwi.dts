@@ -4,6 +4,7 @@
  */
 
 /dts-v1/;
+/plugin/;
 
 #include "tuna-ese-common.dtsi"
 
