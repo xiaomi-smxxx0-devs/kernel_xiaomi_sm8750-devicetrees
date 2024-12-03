@@ -14,3 +14,7 @@
 &adsp_pas {
 	firmware-name = "adsp2.mdt", "adsp2_dtb.mdt";
 };
+
+&llcc {
+	compatible = "qcom,tuna7-llcc";
+};
