@@ -171,6 +171,7 @@
 				peer-default;
 				qcom,label = <0x000000C>;
 			};
+
 			test-dbl-oemvm {
 				vdevice-type = "doorbell";
 				generate = "/hypervisor/test-dbl-oemvm";
@@ -201,6 +202,17 @@
 				queue-depth = <0x8>;
 				qcom,label = <0xe>;
 				peer-default;
+			};
+
+			qrtr-shm {
+				vdevice-type = "shm-doorbell";
+				generate = "/hypervisor/qrtr-shm";
+				push-compatible = "qcom,qrtr-gunyah-gen";
+				peer-default;
+				memory {
+					qcom,label = <0x8>;
+					allocate-base;
+				};
 			};
 
 		};
@@ -298,6 +310,16 @@
 
 	qcom_mem_object {
 		compatible = "qcom,mem-object";
+	};
+
+	qcom,qrtr {
+		compatible = "qcom,qrtr";
+		qcom,node-id = <21>;
+	};
+
+	qrtr-gunyah {
+		compatible = "qcom,qrtr-gunyah";
+		gunyah-label = <8>;
 	};
 
 	qtee_shmbridge {

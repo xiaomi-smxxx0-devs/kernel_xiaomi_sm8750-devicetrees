@@ -1614,6 +1614,13 @@
 		};
 	};
 
+	qcom,qrtr-gunyah-oemvm {
+		compatible = "qcom,qrtr-gunyah";
+		qcom,master;
+		gunyah-label = <8>;
+		peer-name = <4>;
+	};
+
 	clocks {
 		xo_board: xo_board {
 			compatible = "fixed-clock";
