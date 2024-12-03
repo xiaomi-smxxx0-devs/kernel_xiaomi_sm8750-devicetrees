@@ -96,18 +96,29 @@
 		vdd-wlan-io12-supply = <&L3G>;
 		qcom,vdd-wlan-io12-config = <1200000 1200000 0 0 1>;
 		vdd-wlan-cx-supply = <&S1J>;
-		qcom,vdd-wlan-cx-config = <932000 1000000 0 0 1>;
+		qcom,vdd-wlan-cx-config = <968000 1000000 0 0 1>;
 		vdd-wlan-dig-supply = <&S2J>;
-		qcom,vdd-wlan-dig-config = <916000 1100000 0 0 1>;
+		qcom,vdd-wlan-dig-config = <1012000 1100000 0 0 1>;
 		vdd-wlan-rfa1-supply = <&S8F>;
-		qcom,vdd-wlan-rfa1-config = <1864000 2000000 0 0 1>;
+		qcom,vdd-wlan-rfa1-config = <1900000 2000000 0 0 1>;
 		vdd-wlan-rfa2-supply = <&S7F>;
-		qcom,vdd-wlan-rfa2-config = <1316000 1400000 0 0 1>;
+		qcom,vdd-wlan-rfa2-config = <1352000 1400000 0 0 1>;
 		vdd-wlan-ant-share-supply = <&L3K>;
 		qcom,vdd-wlan-ant-share-config = <1200000 1200000 0 0 1>;
-		//TODO: extractor regulator is required or not
-		// TODO PDC TABLE  BUS BW
-		// PDC MAP AND PMU Vreg Map
+		vdd-wlan-supply = <&S7G>;
+		qcom,vdd-wlan-config = <952000 1100000 0 0 1>;
+
+		qcom,pdc_init_table =
+			" {class: wlan_pdc, ss: rf, res: S8F0.v, upval: 1900}",
+			" {class: wlan_pdc, ss: rf, res: S8F0.v, dwnval: 1860}",
+			" {class: wlan_pdc, ss: rf, res: S7F0.v, upval: 1352}",
+			" {class: wlan_pdc, ss: rf, res: S7F0.v, dwnval: 988}",
+			" {class: wlan_pdc, ss: bb, res: S1J1.v, upval: 968}",
+			" {class: wlan_pdc, ss: bb, res: S1J1.v, dwnval: 460}",
+			" {class: wlan_pdc, ss: bb, res: S2J1.m, enable: 1}",
+			" {class: wlan_pdc, ss: bb, res: S2J1.v, enable: 1}",
+			" {class: wlan_pdc, ss: rf, res: S7G0.m, enable: 1}",
+			" {class: wlan_pdc, ss: rf, res: S7G0.v, enable: 1}";
 
 		/* cpu mask used for wlan tx rx interrupt affinity
 		 * <cpumask_for_rx_interrupts cpumask_for_tx_comp_interrupts>
