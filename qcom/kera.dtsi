@@ -1621,6 +1621,13 @@
 		peer-name = <4>;
 	};
 
+	qcom,qrtr-gunyah-tuivm {
+		compatible = "qcom,qrtr-gunyah";
+		qcom,master;
+		gunyah-label = <3>;
+		peer-name = <2>;
+	};
+
 	clocks {
 		xo_board: xo_board {
 			compatible = "fixed-clock";
