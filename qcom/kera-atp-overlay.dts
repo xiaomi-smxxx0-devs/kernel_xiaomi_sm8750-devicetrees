@@ -6,6 +6,7 @@
 /dts-v1/;
 /plugin/;
 
+#include "kera-pm7550ba.dtsi"
 #include "kera-atp.dtsi"
 
 / {

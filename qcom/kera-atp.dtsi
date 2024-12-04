@@ -23,3 +23,11 @@
 
 	status = "ok";
 };
+
+&pmic_glink_debug {
+	status = "disabled";
+};
+
+&pmic_glink_adc {
+	status = "disabled";
+};

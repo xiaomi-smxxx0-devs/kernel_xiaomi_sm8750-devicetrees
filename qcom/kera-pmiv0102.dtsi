@@ -10,7 +10,5 @@
 };
 
 &pmiv010x_amoled_ecm {
-	status = "ok"
+	status = "ok";
 };
-
-

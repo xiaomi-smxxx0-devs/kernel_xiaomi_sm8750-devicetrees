@@ -7,6 +7,7 @@
 /plugin/;
 
 #include "kera-rcm-qca6750-ufs3.dtsi"
+#include "kera-pmiv0102.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. Kera RCM + QCA6750 + UFS3.0";
