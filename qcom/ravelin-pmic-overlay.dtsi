@@ -633,7 +633,7 @@
 
 &pm6450_pwm_1 {
 	status = "ok";
-	qcom,force-low-pwm-size;
+	qcom,mid-res-support;
 };
 
 &pm6450_gpios {
