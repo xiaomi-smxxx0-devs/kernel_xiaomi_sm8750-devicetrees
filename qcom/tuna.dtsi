@@ -2656,14 +2656,6 @@
 			qcom,can-sleep;
 		};
 
-		pmd802x@4 {
-			compatible = "qcom,spmi-pmic";
-			reg = <4 SPMI_USID>;
-			#address-cells = <2>;
-			#size-cells = <0>;
-			qcom,can-sleep;
-		};
-
 		pm8550ve@5 {
 			compatible = "qcom,spmi-pmic";
 			reg = <5 SPMI_USID>;
@@ -2686,6 +2678,7 @@
 			#address-cells = <2>;
 			#size-cells = <0>;
 			qcom,can-sleep;
+			status = "disabled";
 		};
 
 		pmg1110@9 {
@@ -2694,6 +2687,7 @@
 			#address-cells = <2>;
 			#size-cells = <0>;
 			qcom,can-sleep;
+			status = "disabled";
 		};
 
 		pmr735d@a {
