@@ -167,6 +167,10 @@
 	status = "disabled";
 };
 
+&wpss_mem {
+	status = "disabled";
+};
+
 &pcie0_rp {
 	#address-cells = <5>;
 	#size-cells = <0>;
