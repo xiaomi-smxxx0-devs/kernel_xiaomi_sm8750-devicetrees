@@ -31,11 +31,11 @@
 
 &swr0 {
 	wsa884x_0220: wsa884x@02170220 {
-		status = "disabled";
+		status = "okay";
 	};
 
 	wsa884x_0221: wsa884x@02170221 {
-		status = "okay";
+		status = "disabled";
 	};
 };
 
@@ -79,8 +79,8 @@
 	qcom,model = "kera-qrd-snd-card";
 	swr-haptics-unsupported;
 	asoc-codec  = <&stub_codec>, <&lpass_cdc>,
-			<&wcd9378_codec>, <&wsa884x_0221>;
+			<&wcd9378_codec>, <&wsa884x_0220>;
 	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc",
-			"wcd9378_codec", "wsa-codec2";
+			"wcd9378_codec", "wsa-codec1";
 	qcom,wsa-max-devs = <1>;
 };
