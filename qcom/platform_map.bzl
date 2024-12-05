@@ -126,6 +126,7 @@ _platform_map = {
             {"name": "kera-qrd-wcn7750-ufs4-overlay.dtbo"},
             {"name": "kera-qrd-wcn7750-ufs2-overlay.dtbo"},
             {"name": "kera-qrd-wcn7750-ufs3-overlay.dtbo"},
+            {"name": "kera-qrd-qca6750-ufs2-overlay.dtbo"},
             {"name": "kera-rcm-qca6750-ufs4-overlay.dtbo"},
             {"name": "kera-rcm-qca6750-ufs2-overlay.dtbo"},
             {"name": "kera-rcm-qca6750-ufs3-overlay.dtbo"},
