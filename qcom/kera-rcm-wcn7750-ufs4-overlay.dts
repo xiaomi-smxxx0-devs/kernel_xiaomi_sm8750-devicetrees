@@ -9,7 +9,7 @@
 #include "kera-rcm-wcn7750-ufs4.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. Kera RCM + WCN7750 + UFS4.0";
+	model = "Qualcomm Technologies, Inc. Kera RCM + WCN7750 + UFS4";
 	compatible = "qcom,kera-rcm", "qcom,kera", "qcom,kerap-rcm", "qcom,kerap",
 			"qcom,rcm";
 	qcom,msm-id = <686 0x10000>, <659 0x10000>;

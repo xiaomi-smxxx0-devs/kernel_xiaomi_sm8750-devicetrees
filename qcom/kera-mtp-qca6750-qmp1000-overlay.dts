@@ -10,7 +10,7 @@
 #include "kera-pm7550ba.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. Kera MTP + QCA6750 + QMP1000";
+	model = "Qualcomm Technologies, Inc. Kera MTP + QCA6750 + QMP1000 + UFS3";
 	compatible = "qcom,kera-mtp", "qcom,kera", "qcom,kerap-mtp", "qcom,kerap",
 			 "qcom,mtp";
 	qcom,msm-id = <686 0x10000>, <659 0x10000>;

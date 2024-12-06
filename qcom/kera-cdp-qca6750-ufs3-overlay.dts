@@ -10,7 +10,7 @@
 #include "kera-pmiv0102.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. Kera CDP + QCA6750 + UFS3.0";
+	model = "Qualcomm Technologies, Inc. Kera CDP + QCA6750 + UFS3";
 	compatible = "qcom,kera-cdp", "qcom,kera", "qcom,kerap-cdp", "qcom,kerap",
 			"qcom,cdp";
 

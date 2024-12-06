@@ -9,7 +9,7 @@
 #include "kera-qrd-wcn7750-ufs2.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. Kera QRD";
+	model = "Qualcomm Technologies, Inc. Kera QRD + WCN7750 + UFS2";
 	compatible = "qcom,kera-qrd", "qcom,kera", "qcom,kerap-qrd", "qcom,kerap",
 			"qcom,qrd";
 	qcom,msm-id = <686 0x10000>, <659 0x10000>;

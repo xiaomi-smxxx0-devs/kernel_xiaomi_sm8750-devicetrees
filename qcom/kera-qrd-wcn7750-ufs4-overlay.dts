@@ -6,14 +6,13 @@
 /dts-v1/;
 /plugin/;
 
-#include "kera-cdp.dtsi"
+#include "kera-qrd-wcn7750-ufs4.dtsi"
 #include "kera-pmiv0102.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. Kera CDP";
-	compatible = "qcom,kera-cdp", "qcom,kera", "qcom,kerap-cdp", "qcom,kerap",
-			"qcom,cdp";
-
+	model = "Qualcomm Technologies, Inc. Kera QRD + WCN7750 + UFS4";
+	compatible = "qcom,kera-qrd", "qcom,kera", "qcom,kerap-qrd", "qcom,kerap",
+			"qcom,qrd";
 	qcom,msm-id = <686 0x10000>, <659 0x10000>;
-	qcom,board-id = <0x10001 0>;
+	qcom,board-id = <0x1000B 0>;
 };

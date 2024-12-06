@@ -80,20 +80,19 @@ KERA_BASE_DTB += kera.dtb
 KERA_APQ_BASE_DTB += kerap.dtb
 KERA_BOARDS += \
 		kera-atp-overlay.dtbo \
-		kera-mtp-overlay.dtbo \
-		kera-mtp-qca6750-overlay.dtbo \
+		kera-mtp-qca6750-ufs4-overlay.dtbo \
+		kera-mtp-qca6750-ufs3-overlay.dtbo \
 		kera-mtp-qca6750-qmp1000-overlay.dtbo \
 		kera-mtp-wcn7750-qmp1000-overlay.dtbo \
 		kera-mtp-wcn7750-ufs4-overlay.dtbo \
 		kera-mtp-wcn7750-ufs3-overlay.dtbo \
-		kera-cdp-overlay.dtbo \
 		kera-cdp-qca6750-ufs2-overlay.dtbo \
 		kera-cdp-qca6750-ufs3-overlay.dtbo \
 		kera-cdp-qca6750-ufs4-overlay.dtbo \
-		kera-qrd-overlay.dtbo \
+		kera-qrd-wcn7750-ufs4-overlay.dtbo \
 		kera-qrd-wcn7750-ufs2-overlay.dtbo \
 		kera-qrd-wcn7750-ufs3-overlay.dtbo \
-		kera-rcm-overlay.dtbo \
+		kera-rcm-qca6750-ufs4-overlay.dtbo \
 		kera-rcm-qca6750-ufs2-overlay.dtbo \
 		kera-rcm-qca6750-ufs3-overlay.dtbo \
 		kera-rcm-wcn7750-ufs2-overlay.dtbo \
