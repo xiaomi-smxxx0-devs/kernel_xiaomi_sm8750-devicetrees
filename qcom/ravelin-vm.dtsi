@@ -53,11 +53,11 @@
 
 	tlmm: pinctrl@f000000 {
 		compatible = "qcom,ravelin-vm-tlmm";
-		gpios = /bits/ 16 <92 93>;
+		gpios = /bits/ 16 <92 93 10 11 12 13>;
 	};
 
 	tlmm-vm-mem-access {
-		tlmm-vm-gpio-list = <&tlmm 92 0 &tlmm 93 0>;
+		tlmm-vm-gpio-list = <&tlmm 92 0 &tlmm 93 0 &tlmm 10 0 &tlmm 11 0 &tlmm 12 0 &tlmm 13 0x2008>;
 	};
 
 	apps-smmu@15000000 {
