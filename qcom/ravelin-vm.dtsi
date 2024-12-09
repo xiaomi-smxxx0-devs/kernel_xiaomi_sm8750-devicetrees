@@ -7,7 +7,7 @@
 #include <dt-bindings/clock/qcom,gcc-parrot.h>
 
 / {
-	qcom,msm-id = <568 0x10000>, <602 0x10000>, <581 0x10000>, <582 0x10000>;
+	qcom,msm-id = <568 0x10000>, <602 0x10000>, <581 0x10000>, <582 0x10000>, <653 0x10000>, <654 0x10000>;
 	interrupt-parent = <&vgic>;
 
 	qcom,vm-config {
