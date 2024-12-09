@@ -19,7 +19,7 @@
 
 / {
 	model = "Qualcomm Technologies, Inc. Kera SoC";
-	compatible = "qcom,kera";
-	qcom,msm-id = <0x293 0x10000>;
+	compatible = "qcom,kera", "qcom,kerap";
+	qcom,msm-id = <0x293 0x10000>, <0x2ae 0x10000>;
 	qcom,board-id = <0 0>;
 };
