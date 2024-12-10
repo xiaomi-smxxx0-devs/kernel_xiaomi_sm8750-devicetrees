@@ -76,6 +76,9 @@
 	vccq-supply = <&L3F>;
 	vccq-max-microamp = <1200000>;
 
+	qcom,vccq-proxy-vote-supply = <&L3F>;
+	qcom,vccq-proxy-vote-max-microamp = <1200000>;
+
 	/* VDD_PX10 is voted for the ufs_reset_n */
 	qcom,vddp-ref-clk-supply = <&L5B>;
 	qcom,vddp-ref-clk-max-microamp = <100>;
