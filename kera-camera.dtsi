@@ -487,7 +487,7 @@
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <0 1200000 880000>;
 		rgltr-max-voltage = <0 1320000 950000>;
-		rgltr-load-current = <0 14120 145800>;
+		rgltr-load-current = <0 7810 82290>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy0_clk",
@@ -521,7 +521,7 @@
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <0 1200000 880000>;
 		rgltr-max-voltage = <0 1320000 950000>;
-		rgltr-load-current = <0 14120 145800>;
+		rgltr-load-current = <0 7810 82290>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy1_clk",
@@ -555,7 +555,7 @@
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <0 1200000 880000>;
 		rgltr-max-voltage = <0 1320000 950000>;
-		rgltr-load-current = <0 14120 145800>;
+		rgltr-load-current = <0 7810 82290>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy2_clk",
@@ -576,7 +576,7 @@
 
 	cam_csiphy3: qcom,csiphy3@adaf000 {
 		cell-index = <3>;
-		compatible = "qcom,csiphy-v2.3.0", "qcom,csiphy";
+		compatible = "qcom,csiphy-v2.2.1", "qcom,csiphy";
 		reg = <0x0adaf000 0x2000>;
 		reg-names = "csiphy";
 		reg-cam-base = <0x1af000>;
@@ -589,7 +589,7 @@
 		rgltr-cntrl-support;
 		rgltr-min-voltage = <0 1200000 880000>;
 		rgltr-max-voltage = <0 1320000 950000>;
-		rgltr-load-current = <0 14120 145800>;
+		rgltr-load-current = <0 7810 82290>;
 		shared-clks = <1 0 0 0>;
 		clock-names = "cphy_rx_clk_src",
 			"csiphy3_clk",
@@ -815,6 +815,35 @@
 	cam_csiphy_tpg14: qcom,tpg14@ad8c000 {
 		cell-index = <14>;
 		phy-id = <1>;
+		compatible = "qcom,cam-tpg104";
+		reg-names = "tpg1", "cam_cpas_top";
+		reg = <0x0ad8c000 0x400>,
+			<0x0ac04000 0x1000>;
+		reg-cam-base = <0x18c000 0x04000>;
+		regulator-names = "gdsc";
+		gdsc-supply = <&cam_cc_titan_top_gdsc>;
+		interrupt-names = "tpg1";
+		interrupts = <GIC_SPI 416 IRQ_TYPE_EDGE_RISING>;
+		shared-clks = <1 0>;
+		clock-names =
+			"cphy_rx_clk_src",
+			"csid_csiphy_rx_clk";
+		clocks =
+			<&camcc CAM_CC_CPHY_RX_CLK_SRC>,
+			<&camcc CAM_CC_CSID_CSIPHY_RX_CLK>;
+		clock-rates =
+			<400000000 0>,
+			<400000000 0>,
+			<480000000 0>;
+		clock-cntl-level = "lowsvs", "svs", "nominal";
+		src-clock-name = "cphy_rx_clk_src";
+		status = "ok";
+	};
+
+	cam_csiphy_tpg15: qcom,tpg15@ad8c000 {
+		cell-index = <15>;
+		phy-id = <1>;
+		hw-no-ops;
 		compatible = "qcom,cam-tpg104";
 		reg-names = "tpg1", "cam_cpas_top";
 		reg = <0x0ad8c000 0x400>,
@@ -1214,7 +1243,7 @@
 			"ife0", "ife1", "ife2", "ife3",
 			"ipe0", "rt-cdm0", "rt-cdm1", "rt-cdm2", "rt-cdm3",
 			"cam-cdm-intf0", "icp0", "icp1", "ofe0", "cre0",
-			"jpeg-dma0", "jpeg-enc0", "tpg13", "tpg14";
+			"jpeg-dma0", "jpeg-enc0", "tpg13", "tpg14", "tpg15";
 		sys-cache-names = "ofe_ip", "ipe_rt_ip", "ipe_srt_ip", "ipe_rt_rf", "ipe_srt_rf";
 		sys-cache-uids = <71 72 73 74 75>;
 		sys-cache-concur = <1 1 1 0 0>;
