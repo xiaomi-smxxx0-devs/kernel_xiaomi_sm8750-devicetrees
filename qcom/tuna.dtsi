@@ -2353,6 +2353,7 @@
 					0x090106C0 0x80040868>;
 
 		iommus = <&apps_smmu 0x140 0x0>;
+		qcom,iommu-geometry = <0x40000000 0x10000000>;
 		qcom,iommu-dma = "fastmap";
 		dma-coherent;
 		memory-region = <&sdhc_2_dma_resv>;
