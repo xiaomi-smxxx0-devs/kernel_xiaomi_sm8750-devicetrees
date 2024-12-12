@@ -5,3 +5,7 @@
 
 #include "kera-rcm.dtsi"
 #include "kera_ufs4.dtsi"
+
+&L11B {
+	/delete-property/ regulator-always-on;
+};

@@ -5,3 +5,7 @@
 
 #include "kera-mtp.dtsi"
 #include "kera_ufs3.dtsi"
+
+&L11B {
+	/delete-property/ regulator-always-on;
+};

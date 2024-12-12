@@ -23,3 +23,7 @@
 		bits = <0 0>;
 	};
 };
+
+&thermal_zones {
+	/delete-node/ sys-therm-11;
+};
