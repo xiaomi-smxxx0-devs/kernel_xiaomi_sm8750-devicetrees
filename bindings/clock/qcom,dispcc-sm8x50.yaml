@@ -32,6 +32,7 @@ properties:
       - qcom,sun-dispcc
       - qcom,tuna-dispcc
       - qcom,tuna-dispcc-v1
+      - qcom,kera-dispcc
 
   clocks:
     items:
