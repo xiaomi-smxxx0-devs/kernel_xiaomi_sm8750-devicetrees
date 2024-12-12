@@ -17,7 +17,7 @@
 	 * Qup1 4: SE 9
 	 */
 
-	qup_iommu_region0: qup_iommu_region {
+	qup_iommu_region0: qup_iommu_region0 {
 		iommu-addresses =  <&gpi_dma0 0x0 0x100000>, <&gpi_dma0 0x200000 0xffe00000>,
 			<&qupv3_0 0x0 0x40000000>, <&qupv3_0 0x50000000 0xb0000000>;
 	};
@@ -279,7 +279,7 @@
 		};
 	};
 
-	qup_iommu_region1: qup_iommu_region {
+	qup_iommu_region1: qup_iommu_region1 {
 		iommu-addresses = <&gpi_dma1 0x0 0x100000>, <&gpi_dma1 0x200000 0xffe00000>,
 			<&qupv3_1 0x0 0x40000000>, <&qupv3_1 0x50000000 0xb0000000>;
 	};
