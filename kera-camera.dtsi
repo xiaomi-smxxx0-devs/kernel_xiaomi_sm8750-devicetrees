@@ -2048,7 +2048,7 @@
 		clock-cntl-level = "lowsvs", "svs", "svs_l1", "nominal", "turbo";
 		src-clock-name = "tfe_0_clk_src";
 		clock-control-debugfs = "true";
-		ubwc-static-cfg = <0x1026 0x1026>;
+		ubwc-static-cfg = <0x1016 0x1026>;
 		cam_hw_pid = <0 9 16 4>;
 		status = "ok";
 	};
@@ -2124,7 +2124,7 @@
 			"turbo";
 		src-clock-name = "tfe_1_clk_src";
 		clock-control-debugfs = "true";
-		ubwc-static-cfg = <0x1026 0x1026>;
+		ubwc-static-cfg = <0x1016 0x1026>;
 		cam_hw_pid = <1 10 17 5>;
 		status = "ok";
 	};
@@ -2199,7 +2199,7 @@
 		clock-cntl-level = "lowsvs", "svs", "svs_l1", "nominal", "turbo";
 		src-clock-name = "tfe_2_clk_src";
 		clock-control-debugfs = "true";
-		ubwc-static-cfg = <0x1026 0x1026>;
+		ubwc-static-cfg = <0x1016 0x1026>;
 		cam_hw_pid = <2 8 18 6>;
 		status = "ok";
 	};
@@ -2342,8 +2342,8 @@
 		src-clock-name = "icp_clk_src";
 		clock-control-debugfs = "true";
 		fw_name = "CAMERA_ICP_970";
-		ubwc-ipe-fetch-cfg = <0x707B 0x707B>;
-		ubwc-ipe-write-cfg = <0x161EF 0x161EF>;
+		ubwc-ipe-fetch-cfg = <0x7073 0x707B>;
+		ubwc-ipe-write-cfg = <0x161CF 0x161EF>;
 		qos-val = <0x808>;
 		fw-pas-id = <33>;
 		cam_hw_pid = <11>;
@@ -2384,8 +2384,8 @@
 		src-clock-name = "icp_1_clk_src";
 		clock-control-debugfs = "true";
 		fw_name = "CAMERA_ICP_1_970";
-		ubwc-ofe-fetch-cfg = <0x707B 0x707B>;
-		ubwc-ofe-write-cfg = <0x161EF 0x161EF>;
+		ubwc-ofe-fetch-cfg = <0x7073 0x707B>;
+		ubwc-ofe-write-cfg = <0x161CF 0x161EF>;
 		qos-val = <0x808>;
 		fw-pas-id = <50>;
 		cam_hw_pid = <10>;
