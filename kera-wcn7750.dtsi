@@ -96,11 +96,11 @@
 		qcom,wlan-msa-fixed-region = <&wlan_msa_mem>;
 
 		vdd-cx-mx-supply = <&S3B>;
-		qcom,vdd-cx-mx-config = <880000 2736000 0 0 0>;
+		qcom,vdd-cx-mx-config = <880000 1040000 0 0 0>;
 		vdd-1.8-xo-supply = <&S1B>;
-		qcom,vdd-1.8-xo-config = <1856000 2044000 0 0 0>;
+		qcom,vdd-1.8-xo-config = <1856000 2040000 0 0 0>;
 		vdd-1.3-rfa-supply = <&S2B>;
-		qcom,vdd-1.3-rfa-config = <1256000 2092000 0 0 0>;
+		qcom,vdd-1.3-rfa-config = <1256000 1408000 0 0 0>;
 		vdd-1.8-io-supply = <&L11B>;
 		qcom,vdd-1.8-io-config = <1800000 1800000 0 0 0>;
 
@@ -114,8 +114,7 @@
 			" {class: wlan_pdc, ss: rf, res: s3b.v, dwnval: 696}",
 			" {class: wlan_pdc, ss: rf, res: s1b.v, upval: 1864}",
 			" {class: wlan_pdc, ss: rf, res: s2b.v, upval: 1316}",
-			" {class: wlan_pdc, ss: rf, res: s4b.e, enable: 0}",
-			" {class: wlan_pdc, ss: rf, res: l4k.m, enable: 1}";
+			" {class: wlan_pdc, ss: rf, res: s4b.e, enable: 0}";
 
 		qcom,qmp = <&aoss_qmp>;
 		qcom,vreg_ol_cpr ="s3b";
