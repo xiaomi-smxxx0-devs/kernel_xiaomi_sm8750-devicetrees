@@ -6,16 +6,16 @@
 /dts-v1/;
 /plugin/;
 
-#include <dt-bindings/clock/qcom,gcc-tuna.h>
+#include <dt-bindings/clock/qcom,gcc-kera.h>
 #include <dt-bindings/interrupt-controller/arm-gic.h>
-#include <dt-bindings/interconnect/qcom,tuna.h>
+#include <dt-bindings/interconnect/qcom,kera.h>
 #include <dt-bindings/regulator/qcom,rpmh-regulator-levels.h>
 
-#include "tuna-audio.dtsi"
+#include "kera-audio.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. tuna";
-	compatible = "qcom,tuna";
-	qcom,msm-id = <681 0x10000>, <655 0x10000>, <694 0x10000>;
+	model = "Qualcomm Technologies, Inc. kera";
+	compatible = "qcom,kera";
+	qcom,msm-id = <686 0x10000>, <659 0x10000>;
 	qcom,board-id = <0 0>;
 };
