@@ -53,6 +53,9 @@ dtbo-y += kera-atp-qca6750.dtbo
 dtbo-y += kera-cdp-qca6750.dtbo
 dtbo-y += kera-mtp-qca6750.dtbo
 dtbo-y += kera-rcm-qca6750.dtbo
+dtbo-y += kera-mtp-wcn7750.dtbo
+dtbo-y += kera-qrd-wcn7750.dtbo
+dtbo-y += kera-rcm-wcn7750.dtbo
 endif
 
 always-y	:= $(dtb-y) $(dtbo-y)
