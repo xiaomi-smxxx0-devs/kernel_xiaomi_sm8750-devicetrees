@@ -77,6 +77,10 @@ _platform_map = {
         "dtb_list": [
             {"name": "tuna.dtb"},
             {"name": "tuna7.dtb"},
+            {
+                "name": "tunap.dtb",
+                "apq": True,
+            },
         ],
         "dtbo_list": [
             {
@@ -87,6 +91,7 @@ _platform_map = {
             {"name": "tuna-cdp-overlay.dtbo"},
             {"name": "tuna-mtp-kiwi-harmonium-overlay.dtbo"},
             {"name": "tuna-mtp-kiwi-overlay.dtbo"},
+            {"name": "tuna-mtp-kiwi-pmd802x-overlay.dtbo"},
             {"name": "tuna-mtp-nfc-overlay.dtbo"},
             {"name": "tuna-mtp-overlay.dtbo"},
             {"name": "tuna-mtp-qmp1000-overlay.dtbo"},
@@ -98,12 +103,35 @@ _platform_map = {
     "kera": {
         "dtb_list": [
             {"name": "kera.dtb"},
+            {
+                "name": "kerap.dtb",
+                "apq": True,
+            },
         ],
         "dtbo_list": [
             {
                 "name": "kera-rumi-overlay.dtbo",
                 "apq": False,
             },
+            {"name": "kera-atp-overlay.dtbo"},
+            {"name": "kera-mtp-qca6750-ufs4-overlay.dtbo"},
+            {"name": "kera-mtp-qca6750-ufs3-overlay.dtbo"},
+            {"name": "kera-mtp-qca6750-qmp1000-overlay.dtbo"},
+            {"name": "kera-mtp-wcn7750-qmp1000-overlay.dtbo"},
+            {"name": "kera-mtp-wcn7750-ufs3-overlay.dtbo"},
+            {"name": "kera-mtp-wcn7750-ufs4-overlay.dtbo"},
+            {"name": "kera-cdp-qca6750-ufs2-overlay.dtbo"},
+            {"name": "kera-cdp-qca6750-ufs3-overlay.dtbo"},
+            {"name": "kera-cdp-qca6750-ufs4-overlay.dtbo"},
+            {"name": "kera-qrd-wcn7750-ufs4-overlay.dtbo"},
+            {"name": "kera-qrd-wcn7750-ufs2-overlay.dtbo"},
+            {"name": "kera-qrd-wcn7750-ufs3-overlay.dtbo"},
+            {"name": "kera-rcm-qca6750-ufs4-overlay.dtbo"},
+            {"name": "kera-rcm-qca6750-ufs2-overlay.dtbo"},
+            {"name": "kera-rcm-qca6750-ufs3-overlay.dtbo"},
+            {"name": "kera-rcm-wcn7750-ufs2-overlay.dtbo"},
+            {"name": "kera-rcm-wcn7750-ufs3-overlay.dtbo"},
+            {"name": "kera-rcm-wcn7750-ufs4-overlay.dtbo"},
         ],
     },
     "parrot-tuivm": {
@@ -215,14 +243,34 @@ _platform_map = {
     "kera-tuivm": {
         "dtb_list": [
             # keep sorted
+            {"name": "kera-oemvm-atp.dtb"},
+            {"name": "kera-oemvm-cdp.dtb"},
+            {"name": "kera-oemvm-mtp.dtb"},
+            {"name": "kera-oemvm-qrd.dtb"},
+            {"name": "kera-oemvm-rcm.dtb"},
             {"name": "kera-oemvm-rumi.dtb"},
+            {"name": "kera-vm-atp.dtb"},
+            {"name": "kera-vm-cdp.dtb"},
+            {"name": "kera-vm-mtp.dtb"},
+            {"name": "kera-vm-qrd.dtb"},
+            {"name": "kera-vm-rcm.dtb"},
             {"name": "kera-vm-rumi.dtb"},
         ],
     },
     "kera-oemvm": {
         "dtb_list": [
             # keep sorted
+            {"name": "kera-oemvm-atp.dtb"},
+            {"name": "kera-oemvm-cdp.dtb"},
+            {"name": "kera-oemvm-mtp.dtb"},
+            {"name": "kera-oemvm-qrd.dtb"},
+            {"name": "kera-oemvm-rcm.dtb"},
             {"name": "kera-oemvm-rumi.dtb"},
+            {"name": "kera-vm-atp.dtb"},
+            {"name": "kera-vm-cdp.dtb"},
+            {"name": "kera-vm-mtp.dtb"},
+            {"name": "kera-vm-qrd.dtb"},
+            {"name": "kera-vm-rcm.dtb"},
             {"name": "kera-vm-rumi.dtb"},
         ],
     },

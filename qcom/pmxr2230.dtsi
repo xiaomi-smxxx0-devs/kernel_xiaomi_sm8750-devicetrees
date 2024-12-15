@@ -170,7 +170,7 @@
 		};
 
 		pmxr2230_bcl: bcl@4700 {
-			compatible = "qcom,bcl-v5";
+			compatible = "qcom,pm8550-bcl-v5";
 			reg = <0x4700 0x100>;
 			interrupts = <0x1 0x47 0x0 IRQ_TYPE_NONE>,
 					<0x1 0x47 0x1 IRQ_TYPE_NONE>,

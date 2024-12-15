@@ -19,6 +19,16 @@
 	status = "disabled";
 };
 
+&spmi0_debug_bus {
+	pmd802x@4 {
+		compatible = "qcom,spmi-pmic";
+		reg = <4 SPMI_USID>;
+		#address-cells = <2>;
+		#size-cells = <0>;
+		qcom,can-sleep;
+	};
+};
+
 &pmic_glink_debug {
 	/delete-node/ i2c@104;
 	/delete-node/ spmi@200;
