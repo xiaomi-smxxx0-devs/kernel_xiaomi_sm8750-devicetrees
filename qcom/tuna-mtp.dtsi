@@ -44,7 +44,7 @@
 };
 
 &ufsphy_mem {
-	compatible = "qcom,ufs-phy-qmp-v4-pineapple";
+	compatible = "qcom,ufs-phy-qmp-v4-niobe";
 
 	/* VDDA_UFS_CORE */
 	vdda-phy-supply = <&L1F>;
@@ -108,3 +108,6 @@
 	status = "ok";
 };
 
+&usb0 {
+	qcom,wcd_usbss = <&wcd_usbss>;
+};

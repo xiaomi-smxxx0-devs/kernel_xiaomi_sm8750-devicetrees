@@ -23,10 +23,11 @@ description: |
 
 properties:
   compatible:
-    description: msm battery state of charge device
+    description: msm battery current limiting device
     items:
       - const: qcom,bcl-v5
       - const: qcom,pm8550-bcl-v5
+      - const: qcom,pmiv010x-bcl-v5
 
   reg:
     maxItems: 1

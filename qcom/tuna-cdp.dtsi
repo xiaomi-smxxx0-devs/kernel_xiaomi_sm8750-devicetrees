@@ -4,6 +4,7 @@
  */
 
 #include <dt-bindings/gpio/gpio.h>
+#include "tuna-thermal-overlay.dtsi"
 
 &qupv3_se4_i2c {
 	#address-cells = <1>;
@@ -42,7 +43,7 @@
 };
 
 &ufsphy_mem {
-	compatible = "qcom,ufs-phy-qmp-v4-pineapple";
+	compatible = "qcom,ufs-phy-qmp-v4-niobe";
 
 	/* VDDA_UFS_CORE */
 	vdda-phy-supply = <&L1F>;

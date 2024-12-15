@@ -156,7 +156,32 @@ properties:
           - enum:
               - qcom,kera-rumi
               - qcom,rumi
+              - qcom,kera-atp
+              - qcom,atp
+              - qcom,kera-cdp
+              - qcom,cdp
+              - qcom,kera-mtp
+              - qcom,mtp
+              - qcom,kera-qrd
+              - qcom,qrd
+              - qcom,kera-rcm
+              - qcom,rcm
           - const: qcom,kera
+
+      - description: Qualcomm Technologies, Inc. KERAP
+        items:
+          - enum:
+              - qcom,kerap-atp
+              - qcom,atp
+              - qcom,kerap-cdp
+              - qcom,cdp
+              - qcom,kerap-mtp
+              - qcom,mtp
+              - qcom,kerap-qrd
+              - qcom,qrd
+              - qcom,kerap-rcm
+              - qcom,rcm
+          - const: qcom,kerap
 
       - description: Qualcomm Technologies, Inc. MONACO
         items:
