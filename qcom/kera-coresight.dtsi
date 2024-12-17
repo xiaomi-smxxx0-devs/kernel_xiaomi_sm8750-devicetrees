@@ -1842,10 +1842,10 @@
 		};
 	};
 
-	tpdm_lpass_crdl: tpdm@10bb4000 {
+	tpdm_lpass_crdl: tpdm@10b84000 {
 		compatible = "arm,primecell";
 		arm,primecell-periphid = <0x000bb968>;
-		reg = <0x10bb4000 0x1000>;
+		reg = <0x10b84000 0x1000>;
 		reg-names = "tpdm-base";
 
 		coresight-name = "coresight-tpdm-lpass-crdl";
@@ -3024,7 +3024,7 @@
 		reg = <0x10820000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-dlct-dsb";
+		coresight-name = "coresight-tpdm-dlct-dsb";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3046,7 +3046,7 @@
 		reg = <0x10821000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-dlct-cmb";
+		coresight-name = "coresight-tpdm-dlct-cmb";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3263,7 +3263,7 @@
 		reg = <0x109a4000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-mm-dsb";
+		coresight-name = "coresight-tpdm-mm-dsb";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3286,7 +3286,7 @@
 		reg = <0x109ae000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-west-dsb";
+		coresight-name = "coresight-tpdm-west-dsb";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3309,7 +3309,7 @@
 		reg = <0x109a5000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-south-dsb";
+		coresight-name = "coresight-tpdm-south-dsb";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3330,7 +3330,7 @@
 		reg = <0x109ab000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-ipcc-cmb";
+		coresight-name = "coresight-tpdm-ipcc-cmb";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3352,7 +3352,7 @@
 		reg = <0x109aa000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-center-dsb";
+		coresight-name = "coresight-tpdm-center-dsb";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3374,7 +3374,7 @@
 		reg = <0x109a7000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-rdpm-cx";
+		coresight-name = "coresight-tpdm-rdpm-cx";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3396,7 +3396,7 @@
 		reg = <0x109a9000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-rdpm-mxc";
+		coresight-name = "coresight-tpdm-rdpm-mxc";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3418,7 +3418,7 @@
 		reg = <0x109a8000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-rdpm-mxa";
+		coresight-name = "coresight-tpdm-rdpm-mxa";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3440,7 +3440,7 @@
 		reg = <0x109ac000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-center-cmb";
+		coresight-name = "coresight-tpdm-center-cmb";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
@@ -3462,7 +3462,7 @@
 		reg = <0x109af000 0x1000>;
 		reg-names = "tpdm-base";
 
-		coresight-name = "coresight-south-cmb";
+		coresight-name = "coresight-tpdm-south-cmb";
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
