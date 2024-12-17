@@ -1,3 +1,9 @@
+ifeq ($(CONFIG_ARCH_TUNA), y)
+dtbo-y += tuna/tuna-mmrm.dtbo
+dtbo-y += tuna/tuna-mmrm-test.dtbo
+endif
+
+
 ifeq ($(CONFIG_ARCH_SUN), y)
 dtbo-y += sun/sun-mmrm.dtbo
 dtbo-y += sun/sun-mmrm-test.dtbo
