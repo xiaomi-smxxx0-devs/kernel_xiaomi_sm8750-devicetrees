@@ -22,10 +22,6 @@ ifeq ($(CONFIG_ARCH_TUNA), y)
 dtbo-y += tuna-vidc.dtbo
 endif
 
-ifeq ($(CONFIG_ARCH_TUNA), y)
-dtbo-y += tuna-vidc.dtbo
-endif
-
 ifeq ($(CONFIG_ARCH_KERA), y)
 dtbo-y += kera-vidc.dtbo
 endif
