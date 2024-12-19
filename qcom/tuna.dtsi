@@ -2861,7 +2861,6 @@
 		memory-region = <&cpusys_vm_mem>;
 		ext-region = <&chipinfo_mem>;
 		ext-label = <0x7>;
-		status = "disabled";
 	};
 
 	qcom,qrtr-gunyah-tuivm {
