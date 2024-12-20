@@ -199,7 +199,7 @@
 			dma-coherent;
 
 			qcom,iova-max-align-shift = <9>;
-			pd-type = <9>;
+			pd-type = <7>;
 			alloc-size-range = <0x0 0xFFFFFFFF>;
 		};
 
@@ -213,7 +213,7 @@
 			dma-coherent;
 
 			qcom,iova-max-align-shift = <9>;
-			pd-type = <9>;
+			pd-type = <7>;
 			alloc-size-range = <0x0 0xFFFFFFFF>;
 		};
 
@@ -227,7 +227,7 @@
 			dma-coherent;
 
 			qcom,iova-max-align-shift = <9>;
-			pd-type = <9>;
+			pd-type = <7>;
 			alloc-size-range = <0x0 0xFFFFFFFF>;
 		};
 	};
