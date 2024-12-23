@@ -11,6 +11,5 @@
 
 &tuna_snd {
 	qcom,model = "tuna-mtp-snd-card";
-	swr-haptics-unsupported;
 	qcom,sec-mi2s-gpios = <&fm_i2s1_gpios>;
 };
