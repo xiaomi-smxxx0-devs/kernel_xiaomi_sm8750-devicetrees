@@ -63,6 +63,11 @@
 	qcom,wsa-bat-cfgs = <1>, <1>;
 };
 
+&swr_haptics {
+	status = "okay";
+	swr-slave-supply = <&hap_swr_slave_reg>;
+};
+
 &wcd939x_codec {
 	status = "okay";
 	/* 0 for digital crosstalk disabled,
@@ -91,7 +96,6 @@
 
 &tuna_snd {
 	qcom,model = "tuna-qrd-snd-card";
-	swr-haptics-unsupported;
 	qcom,audio-routing =
 		"AMIC1", "Analog Mic1",
 		"AMIC1", "MIC BIAS1",
@@ -126,9 +130,9 @@
 		"VA_AIF1 CAP", "VA_SWR_CLK",
 		"VA_AIF2 CAP", "VA_SWR_CLK",
 		"VA_AIF3 CAP", "VA_SWR_CLK";
-	asoc-codec  = <&stub_codec>, <&lpass_cdc>,
+	asoc-codec  = <&stub_codec>, <&lpass_cdc>, <&swr_haptics>,
 			<&wcd939x_codec>, <&wsa884x_0220>;
-	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc",
+	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc","swr_haptics",
 			"wcd939x_codec", "wsa-codec1";
 	qcom,ext-disp-audio-rx = <1>;
 	qcom,wsa-max-devs = <1>;

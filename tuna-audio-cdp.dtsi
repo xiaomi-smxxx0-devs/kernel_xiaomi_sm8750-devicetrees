@@ -65,7 +65,6 @@
 
 &tuna_snd {
 	qcom,model = "tuna-cdp-snd-card";
-	swr-haptics-unsupported;
 	qcom,audio-routing =
 		"AMIC1", "Analog Mic1",
 		"AMIC1", "MIC BIAS1",
