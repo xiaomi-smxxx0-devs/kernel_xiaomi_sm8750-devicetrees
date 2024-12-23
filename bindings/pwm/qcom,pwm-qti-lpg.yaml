@@ -88,12 +88,13 @@ properties:
     $ref: /schemas/types.yaml#/definitions/uint32-array
     maxItems: 64
 
-  qcom,force-low-pwm-size:
+  qcom,mid-res-support:
     description: |
-      The flag to indicate the forced use of legacy low PWM sizes
-      (6 or 9 bits) instead of full 8-15 bit PWM sizes, when the
-      PWM size is calculated based on the requested PWM period by
-      the client driver.
+      The flag to indicate support for medium resolution pwm
+      for PMICs where the subtype detects high resolution, but
+      the high resolution clock source 76.8Mz is not supported.
+      This flag will ensure removal of 76.8MHz clock support and
+      usage of the other 3 clock sources.
     type: boolean
 
 required:
