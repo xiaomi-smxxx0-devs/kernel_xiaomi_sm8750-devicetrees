@@ -12,7 +12,7 @@
 
 &tuna_snd {
 	qcom,model = "tuna-mtp-snd-card";
-	qcom,wcn-bt = <0>;
+	qcom,wcn-bt = <1>;
 	qcom,msm_audio_ssr_devs = <&audio_gpr>, <&lpi_tlmm>,
 				<&lpass_cdc>;
 };
