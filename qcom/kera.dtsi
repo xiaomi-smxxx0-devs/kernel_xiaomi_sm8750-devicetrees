@@ -406,7 +406,6 @@
 #include "kera-reserved-memory.dtsi"
 #include "msm-arm-smmu-kera.dtsi"
 #include "kera-dma-heaps.dtsi"
-#include "kera-vm-dma-heaps.dtsi"
 
 &reserved_memory {
 	#address-cells = <2>;
