@@ -25,6 +25,8 @@
 
 	qcom,gpu-model = "Adreno716";
 
+	qcom,chipid = <0x43020100>;
+
 	qcom,min-access-length = <32>;
 
 	qcom,ubwc-mode = <4>;
