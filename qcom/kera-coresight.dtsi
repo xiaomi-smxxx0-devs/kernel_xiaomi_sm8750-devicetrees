@@ -4326,7 +4326,7 @@
 		csr-irqctrl-offset = <0x6c>;
 		byte-cntr-name = "byte-cntr";
 		byte-cntr-class-name = "coresight-tmc-etr-stream";
-		interrupts = <GIC_SPI 738 IRQ_TYPE_EDGE_RISING>;
+		interrupts = <GIC_SPI 352 IRQ_TYPE_EDGE_RISING>;
 		interrupt-names = "byte-cntr-irq";
 
 		clocks = <&aoss_qmp>;
@@ -4359,7 +4359,7 @@
 		csr-irqctrl-offset = <0x70>;
 		byte-cntr-name = "byte-cntr1";
 		byte-cntr-class-name = "coresight-tmc-etr1-stream";
-		interrupts = <GIC_SPI 737 IRQ_TYPE_EDGE_RISING>;
+		interrupts = <GIC_SPI 362 IRQ_TYPE_EDGE_RISING>;
 		interrupt-names = "byte-cntr-irq";
 
 		clocks = <&aoss_qmp>;
