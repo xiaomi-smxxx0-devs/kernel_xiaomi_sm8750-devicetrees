@@ -1269,6 +1269,10 @@
 		};
 	};
 
+	qcom,glink {
+		compatible = "qcom,glink";
+	};
+
 	sys-pm-vx@c320000 {
 		compatible = "qcom,sys-pm-violators", "qcom,sys-pm-tuna";
 		reg = <0xc320000 0x400>;
