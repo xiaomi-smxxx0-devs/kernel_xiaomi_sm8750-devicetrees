@@ -794,10 +794,8 @@
 
 		coresight-name = "coresight-tpda-dl4";
 
-		qcom,cmb-elem-size = <0 32>,
-							<1 32>,
-							<2 32>,
-							<3 32>;
+		qcom,dsb-elem-size = <16 32>;
+		qcom,cmb-elem-size = <17 32>;
 
 		clocks = <&aoss_qmp>;
 		clock-names = "apb_pclk";
