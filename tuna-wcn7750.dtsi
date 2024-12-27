@@ -7,6 +7,15 @@
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/interconnect/qcom,tuna.h>
 
+&tlmm {
+	icnss_sw_ctrl: icnss_sw_ctrl {
+		mux {
+			pins = "gpio80";
+			function = "wcn_sw_ctrl";
+		};
+	};
+};
+
 &soc {
 	qcom,smp2p-wpss {
 		smp2p_wlan_1_in: qcom,smp2p-wlan-1-in {
@@ -54,7 +63,12 @@
 		wlan-en-gpio =<35>;
 		host-sol-gpio =<132>;
 		dev-sol-gpio =<32>;
-		wlan-sw-ctrl-gpio =<80>;
+		sw-ctrl-gpio =<80>;
+		/* List of GPIOs to be setup for interrupt wakeup capable */
+		mpm_wake_set_gpios = <80>;
+		pinctrl-names = "sw_ctrl";
+		pinctrl-0 = <&icnss_sw_ctrl>;
+
 		interrupts = <GIC_SPI 768 IRQ_TYPE_EDGE_RISING>,
 			     <GIC_SPI 769 IRQ_TYPE_EDGE_RISING>,
 			     <GIC_SPI 770 IRQ_TYPE_EDGE_RISING>,
@@ -90,6 +104,7 @@
 
 		qcom,iommu-group = <&icnss2_direct_link_iommu_group0>;
 		dma-coherent;
+		pin-ctrl-support;
 		qcom,fw-prefix;
 		qcom,wlan;
 		tsens = "sys-therm-3";
