@@ -279,7 +279,7 @@
 		};
 	};
 
-	sys-therm-11 {
+	sys_therm_11: sys-therm-11 {
 		polling-delay-passive = <0>;
 		polling-delay = <0>;
 		thermal-sensors = <&pmk8550_vadc PMXR2230_ADC5_GEN3_AMUX_THM5_100K_PU>;
@@ -387,7 +387,7 @@
 		qcom,adc-tm-type = <1>;
 	};
 
-	pmxr2230_sys_therm_11 {
+	pmxr2230_sys_therm_11: pmxr2230_sys_therm_11 {
 		reg = <PMXR2230_ADC5_GEN3_AMUX_THM5_100K_PU>;
 		label = "pmxr2230_sys_therm_11";
 		qcom,ratiometric;
@@ -408,7 +408,7 @@
 		qcom,pre-scaling = <1 1>;
 	};
 
-	pm8550ve_f_die_temp {
+	pm8550ve_f_die_temp: pm8550ve_f_die_temp {
 		reg = <PM8550VX_ADC5_GEN3_DIE_TEMP(5)>;
 		label = "pm8550ve_f_die_temp";
 		qcom,pre-scaling = <1 1>;
