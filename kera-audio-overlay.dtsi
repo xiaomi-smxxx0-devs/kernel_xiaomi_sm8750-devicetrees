@@ -489,9 +489,9 @@
 		compatible = "qcom,msm-cdc-pinctrl";
 		pinctrl-names = "aud_active", "aud_sleep";
 		pinctrl-0 = <&i2s0_sck_active &i2s0_ws_active
-				&i2s0_sd0_active &i2s0_sd1_active>;
+				&i2s0_sd0_active>;
 		pinctrl-1 = <&i2s0_sck_sleep &i2s0_ws_sleep
-				&i2s0_sd0_sleep &i2s0_sd1_sleep>;
+				&i2s0_sd0_sleep>;
 		#gpio-cells = <0>;
 	};
 
