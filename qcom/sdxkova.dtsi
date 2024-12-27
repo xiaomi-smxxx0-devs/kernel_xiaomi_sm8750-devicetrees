@@ -288,6 +288,11 @@
 			qcom,hw-drv-ids = <0>;
 			qcom,sw-drv-ids = <0>;
 		};
+
+		pcie_pdc: pdc@b2b0000 {
+			compatible = "qcom,sdxkova-pcie-pdc", "qcom,pcie-pdc";
+			reg = <0x0 0xb2b0000 0x0 0x30000>;
+		};
 	};
 
 	firmware: firmware { };
