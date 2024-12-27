@@ -276,6 +276,18 @@
 			compatible = "qcom,lpm-cluster-dev";
 			power-domains = <&CLUSTER_PD>;
 		};
+
+		pcie_crm: crm@501000 {
+			label = "pcie_crm";
+			compatible = "qcom,pcie-crm";
+			reg = <0x0 0x501000 0x0 0x3000>, <0x0 0x504800 0x0 0x800>, <0x0 0x505000 0x0 0x2000>, <0x0 0x504000 0x0 0x800>;
+			reg-names = "base", "crm_b", "crm_c", "crm_v";
+			interrupts = <GIC_SPI 261 IRQ_TYPE_EDGE_RISING>;
+			interrupt-names = "pcie_crm";
+			clocks = <&pcie_pipe_clk>;
+			qcom,hw-drv-ids = <0>;
+			qcom,sw-drv-ids = <0>;
+		};
 	};
 
 	firmware: firmware { };
