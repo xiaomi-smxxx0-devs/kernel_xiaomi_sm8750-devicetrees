@@ -1798,7 +1798,7 @@
 	};
 
 	dispcc: clock-controller@af00000 {
-		compatible = "qcom,tuna-dispcc", "syscon";
+		compatible = "qcom,kera-dispcc", "syscon";
 		reg = <0xaf00000 0x20000>;
 		reg-name = "cc_base";
 		vdd_mm-supply = <&VDD_CX_LEVEL>;
@@ -1814,6 +1814,7 @@
 		qcom,disp_crm-crmc = <&dispcc_crm>;
 		#clock-cells = <1>;
 		#reset-cells = <1>;
+		#power-domain-cells = <1>;
 	};
 
 	gcc: clock-controller@100000 {
@@ -3163,13 +3164,11 @@
 &disp_cc_mdss_core_gdsc {
 	clocks = <&gcc GCC_DISP_AHB_CLK>;
 	parent-supply = <&VDD_CX_LEVEL>;
-	status = "ok";
 };
 
 &disp_cc_mdss_core_int2_gdsc {
 	clocks = <&gcc GCC_DISP_AHB_CLK>;
 	parent-supply = <&VDD_CX_LEVEL>;
-	status = "ok";
 };
 
 &gcc_pcie_0_gdsc {
