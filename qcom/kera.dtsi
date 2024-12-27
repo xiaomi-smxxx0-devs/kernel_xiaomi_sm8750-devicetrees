@@ -636,6 +636,11 @@
 				qcom,llcc-bcm-name = "SH5";
 
 			};
+
+			rpmhcc: clock-controller {
+				compatible = "qcom,tuna-rpmh-clk";
+				#clock-cells = <1>;
+			};
 		};
 	};
 
@@ -1732,13 +1737,6 @@
 		};
 	};
 
-	rpmhcc: clock-controller {
-		compatible = "fixed-clock";
-		clock-output-names = "rpmh_clocks";
-		clock-frequency = <19200000>;
-		#clock-cells = <1>;
-	};
-
 	cambistmclkcc: clock-controller@1760000 {
 		compatible = "qcom,tuna-cambistmclkcc", "syscon";
 		reg = <0x1760000 0x6000>;
@@ -1874,6 +1872,7 @@
 		reg-name = "cc_base";
 		vdd_mm-supply = <&VDD_CX_LEVEL>;
 		vdd_mxc-supply = <&VDD_MX_LEVEL>;
+		vdd_mm_mxc_voter-supply = <&VDD_CX_LEVEL>;
 		clocks = <&rpmhcc RPMH_CXO_CLK>,
 			 <&rpmhcc RPMH_CXO_CLK_A>,
 			 <&sleep_clk>,
@@ -1884,6 +1883,7 @@
 			      "iface";
 		#clock-cells = <1>;
 		#reset-cells = <1>;
+		#power-domain-cells = <1>;
 	};
 
 	qti,smmu-proxy {
@@ -3082,6 +3082,46 @@
 		qcom,count-unit = <0x10000>;
 		qcom,target-dev = <&qcom_ddr_dcvs_hw>;
 	};
+
+	apsscc: syscon@17a80000 {
+		compatible = "syscon";
+		reg = <0x17a80000 0x21000>;
+	};
+
+	mccc: syscon@240ba000 {
+		compatible = "syscon";
+		reg = <0x240ba000 0x800>;
+	};
+
+	debugcc: clock-controller@0 {
+		compatible = "qcom,kera-debugcc";
+		qcom,apsscc = <&apsscc>;
+		qcom,cambistmclkcc = <&cambistmclkcc>;
+		qcom,camcc = <&camcc>;
+		qcom,dispcc = <&dispcc>;
+		qcom,gcc = <&gcc>;
+		qcom,gpucc = <&gpucc>;
+		qcom,tcsrcc = <&tcsrcc>;
+		qcom,videocc = <&videocc>;
+		qcom,mccc = <&mccc>;
+		clocks = <&rpmhcc RPMH_CXO_CLK>,
+			 <&cambistmclkcc 0>,
+			 <&camcc 0>,
+			 <&dispcc 0>,
+			 <&gcc 0>,
+			 <&gpucc 0>,
+			 <&tcsrcc 0>,
+			 <&videocc 0>;
+		clock-names = "xo_clk_src",
+			      "cambistmclkcc",
+			      "camcc",
+			      "dispcc",
+			      "gcc",
+			      "gpucc",
+			      "tcsrcc",
+			      "videocc";
+		#clock-cells = <1>;
+	};
 };
 
 #include "tuna-gdsc.dtsi"
@@ -3194,14 +3234,12 @@
 &video_cc_mvs0_gdsc {
 	clocks = <&gcc GCC_VIDEO_AHB_CLK>;
 	clock-names = "ahb_clk";
-	status = "ok";
 };
 
 &video_cc_mvs0c_gdsc {
 	clocks = <&gcc GCC_VIDEO_AHB_CLK>;
 	clock-names = "ahb_clk";
 	parent-supply = <&VDD_CX_LEVEL>;
-	status = "ok";
 };
 
 &reserved_memory {

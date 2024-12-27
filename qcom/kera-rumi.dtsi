@@ -158,3 +158,17 @@
 &APSS_OFF {
 	status = "disabled";
 };
+
+&rpmhcc {
+	compatible = "fixed-clock";
+	clock-output-names = "rpmh_clocks";
+	clock-frequency = <19200000>;
+};
+
+&video_cc_mvs0_gdsc {
+	status = "ok";
+};
+
+&video_cc_mvs0c_gdsc {
+	status = "ok";
+};
