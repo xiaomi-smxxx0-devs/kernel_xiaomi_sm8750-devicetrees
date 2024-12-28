@@ -90,6 +90,7 @@ KERA_BOARDS += \
 		kera-cdp-qca6750-ufs3-overlay.dtbo \
 		kera-cdp-qca6750-ufs4-overlay.dtbo \
 		kera-iot-cdp-qca6750-ufs4-overlay.dtbo \
+		kera-cdp-qca6750-ufs4-slt-overlay.dtbo \
 		kera-qrd-wcn7750-ufs4-overlay.dtbo \
 		kera-qrd-wcn7750-ufs2-overlay.dtbo \
 		kera-qrd-wcn7750-ufs3-overlay.dtbo \
