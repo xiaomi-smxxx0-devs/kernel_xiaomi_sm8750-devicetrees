@@ -7,6 +7,7 @@
 /plugin/;
 
 #include "kera-qrd-qca6750-ufs2.dtsi"
+#include "kera-pmiv0102.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. Kera QRD + QCA6750 + UFS2";
