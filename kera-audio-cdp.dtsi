@@ -59,6 +59,7 @@
 };
 
 &swr0 {
+	qcom,swr-num-dev = <2>;
 	wsa884x_0220: wsa884x@02170220 {
 		status = "okay";
 	};
@@ -66,6 +67,10 @@
 	wsa884x_0221: wsa884x@02170221 {
 		status = "okay";
 	};
+};
+
+&swr1 {
+	qcom,swr-num-dev = <2>;
 };
 
 &kera_snd {
@@ -79,7 +84,6 @@
 		"AMIC3", "Analog Mic3",
 		"AMIC3", "MIC BIAS3",
 		"AMIC4", "Analog Mic4",
-		"AMIC4", "MIC BIAS4",
 		"VA AMIC1", "Analog Mic1",
 		"VA AMIC1", "VA MIC BIAS1",
 		"VA AMIC2", "Analog Mic2",
@@ -87,7 +91,6 @@
 		"VA AMIC3", "Analog Mic3",
 		"VA AMIC3", "VA MIC BIAS3",
 		"VA AMIC4", "Analog Mic4",
-		"VA AMIC4", "VA MIC BIAS4",
 		"TX DMIC0", "Digital Mic0",
 		"TX DMIC0", "MIC BIAS3",
 		"TX DMIC1", "Digital Mic1",
