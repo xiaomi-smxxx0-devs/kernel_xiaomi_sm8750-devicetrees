@@ -25,6 +25,8 @@
 
 	qcom,gpu-model = "Adreno716";
 
+	qcom,chipid = <0x43020100>;
+
 	qcom,min-access-length = <32>;
 
 	qcom,ubwc-mode = <4>;
@@ -115,7 +117,7 @@
 		compatible = "qcom,kgsl-smmu-v2";
 		reg = <0x3da0000 0x40000>;
 
-		vddcx-supply = <&gpu_cc_cx_gdsc>;
+		power-domains = <&gpucc GPU_CC_CX_GDSC>;
 
 		gfx3d_user: gfx3d_user {
 			compatible = "qcom,smmu-kgsl-cb";
@@ -140,10 +142,10 @@
 			<0 305 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "hfi", "gmu";
 
-		regulator-names = "vddcx", "vdd";
-
-		vddcx-supply = <&gpu_cc_cx_gdsc>;
-		vdd-supply = <&gpu_cc_gx_gdsc>;
+		power-domains = <&gpucc GPU_CC_CX_GDSC>,
+				<&gpucc GPU_CC_CX_GMU_GDSC>,
+				<&gpucc GPU_CC_GX_GDSC>;
+		power-domain-names = "cx", "gmu_cx", "gx";
 
 		clocks = <&gpucc GPU_CC_CX_GMU_CLK>,
 			<&gpucc GPU_CC_CXO_CLK>,
