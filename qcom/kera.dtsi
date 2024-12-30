@@ -101,6 +101,7 @@
 			cpu-idle-states = <&SILVER_OFF &SILVER_RAIL_OFF>;
 			power-domains = <&CPU_PD0>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 0>;
 			next-level-cache = <&L2_0>;
 			#cooling-cells = <2>;
 			dynamic-power-coefficient = <100>;
@@ -125,6 +126,7 @@
 			cpu-idle-states = <&SILVER_OFF &SILVER_RAIL_OFF>;
 			power-domains = <&CPU_PD1>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 0>;
 			next-level-cache = <&L2_0>;
 			dynamic-power-coefficient = <100>;
 			capacity-dmips-mhz = <1024>;
@@ -139,6 +141,7 @@
 			cpu-idle-states = <&SILVER_OFF &SILVER_RAIL_OFF>;
 			power-domains = <&CPU_PD2>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 0>;
 			next-level-cache = <&L2_2>;
 			#cooling-cells = <2>;
 			dynamic-power-coefficient = <100>;
@@ -158,6 +161,7 @@
 			cpu-idle-states = <&GOLD_OFF &GOLD_RAIL_OFF>;
 			power-domains = <&CPU_PD3>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 1>;
 			next-level-cache = <&L2_3>;
 			#cooling-cells = <2>;
 			dynamic-power-coefficient = <263>;
@@ -177,6 +181,7 @@
 			cpu-idle-states = <&GOLD_OFF &GOLD_RAIL_OFF>;
 			power-domains = <&CPU_PD4>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 1>;
 			next-level-cache = <&L2_4>;
 			#cooling-cells = <2>;
 			dynamic-power-coefficient = <263>;
@@ -196,6 +201,7 @@
 			cpu-idle-states = <&GOLD_OFF &GOLD_RAIL_OFF>;
 			power-domains = <&CPU_PD5>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 1>;
 			next-level-cache = <&L2_5>;
 			#cooling-cells = <2>;
 			dynamic-power-coefficient = <263>;
@@ -215,6 +221,7 @@
 			cpu-idle-states = <&GOLD_OFF &GOLD_RAIL_OFF>;
 			power-domains = <&CPU_PD6>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 1>;
 			next-level-cache = <&L2_6>;
 			#cooling-cells = <2>;
 			dynamic-power-coefficient = <263>;
@@ -234,6 +241,7 @@
 			cpu-idle-states = <&GOLD_PLUS_OFF &GOLD_PLUS_RAIL_OFF>;
 			power-domains = <&CPU_PD7>;
 			power-domain-names = "psci";
+			qcom,freq-domain = <&cpufreq_hw 2>;
 			next-level-cache = <&L2_7>;
 			#cooling-cells = <2>;
 			dynamic-power-coefficient = <289>;
@@ -1850,6 +1858,12 @@
 			      "ufs_phy_rx_symbol_1_clk",
 			      "ufs_phy_tx_symbol_0_clk",
 			      "usb3_phy_wrapper_gcc_usb30_pipe_clk";
+		protected-clocks = <&gcc GCC_PCIE_1_AUX_CLK>, <&gcc GCC_PCIE_1_AUX_CLK_SRC>,
+				<&gcc GCC_PCIE_1_CFG_AHB_CLK>, <&gcc GCC_PCIE_1_MSTR_AXI_CLK>,
+				<&gcc GCC_PCIE_1_PHY_RCHNG_CLK>, <&gcc GCC_PCIE_1_PHY_RCHNG_CLK_SRC>,
+				<&gcc GCC_PCIE_1_PIPE_CLK>, <&gcc GCC_PCIE_1_PIPE_CLK_SRC>,
+				<&gcc GCC_PCIE_1_PIPE_DIV2_CLK>, <&gcc GCC_PCIE_1_PIPE_DIV2_CLK_SRC>,
+				<&gcc GCC_PCIE_1_SLV_AXI_CLK>, <&gcc GCC_PCIE_1_SLV_Q2A_AXI_CLK>;
 		#clock-cells = <1>;
 		#reset-cells = <1>;
 	};
@@ -1860,14 +1874,18 @@
 		reg-name = "cc_base";
 		vdd_cx-supply = <&VDD_CX_LEVEL>;
 		vdd_mx-supply = <&VDD_MX_LEVEL>;
+		vdd_gx-supply = <&VDD_GFX_LEVEL>;
 		clocks = <&rpmhcc RPMH_CXO_CLK>,
+			<&rpmhcc RPMH_CXO_CLK_A>,
 			 <&gcc GCC_GPU_GPLL0_CPH_CLK_SRC>,
 			 <&gcc GCC_GPU_GPLL0_DIV_CPH_CLK_SRC>;
 		clock-names = "bi_tcxo",
+			      "bi_tcxo_ao",
 			      "gpll0_out_main",
 			      "gpll0_out_main_div";
 		#clock-cells = <1>;
 		#reset-cells = <1>;
+		#power-domain-cells = <1>;
 	};
 
 	tcsrcc: clock-controller@1f40000 {
@@ -1900,6 +1918,24 @@
 
 	qti,smmu-proxy {
 		compatible = "smmu-proxy-sender";
+	};
+
+	cpufreq_hw: qcom,cpufreq-hw {
+		compatible = "qcom,cpufreq-epss";
+		reg = <0x17d91000 0x1000>, <0x17d92000 0x1000>, <0x17d93000 0x1000>;
+		reg-names = "freq-domain0", "freq-domain1", "freq-domain2";
+		clocks = <&rpmhcc RPMH_CXO_CLK>, <&gcc GCC_GPLL0>;
+		clock-names = "xo", "alternate";
+		interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "dcvsh0_int", "dcvsh1_int", "dcvsh2_int";
+		#freq-domain-cells = <1>;
+	};
+
+	qcom,cpufreq-hw-debug {
+		compatible = "qcom,cpufreq-hw-epss-debug";
+		qcom,freq-hw-domain = <&cpufreq_hw 0>, <&cpufreq_hw 1>, <&cpufreq_hw 2>;
 	};
 
 	clk_virt: interconnect@0 {
@@ -3195,12 +3231,10 @@
 
 &gcc_pcie_1_gdsc {
 	parent-supply = <&VDD_CX_LEVEL>;
-	status = "ok";
 };
 
 &gcc_pcie_1_phy_gdsc {
 	parent-supply = <&VDD_MX_LEVEL>;
-	status = "ok";
 };
 
 &gcc_ufs_mem_phy_gdsc {
@@ -3232,14 +3266,12 @@
 	parent-supply = <&VDD_CX_LEVEL>;
 	clocks = <&gcc GCC_GPU_CFG_AHB_CLK>;
 	clock-names = "ahb_clk";
-	status = "ok";
 };
 
 &gpu_cc_gx_gdsc {
 	parent-supply = <&VDD_GFX_LEVEL>;
 	clocks = <&gcc GCC_GPU_CFG_AHB_CLK>;
 	clock-names = "ahb_clk";
-	status = "ok";
 };
 
 &video_cc_mvs0_gdsc {
