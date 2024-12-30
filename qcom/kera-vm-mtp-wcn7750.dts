@@ -5,12 +5,12 @@
 
 /dts-v1/;
 
-#include "kera-oemvm.dtsi"
-#include "kera-oemvm-mtp.dtsi"
+#include "kera-vm.dtsi"
+#include "kera-vm-mtp-wcn7750.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. Kera OEMVM MTP";
+	model = "Qualcomm Technologies, Inc. Kera SVM MTP + WCN7750";
 	compatible = "qcom,kera-mtp", "qcom,kera", "qcom,kerap-mtp", "qcom,kerap",
 			"qcom,mtp";
-	qcom,board-id = <0x10008 0>, <0x10008 1>, <0x20008 0>, <0x20008 1>, <0x30008 0>, <0x30008 1>;
+	qcom,board-id = <0x10008 1>, <0x20008 1>, <0x30008 1>;
 };
