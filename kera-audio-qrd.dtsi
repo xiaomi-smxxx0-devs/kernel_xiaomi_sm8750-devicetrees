@@ -83,4 +83,5 @@
 	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc",
 			"wcd9378_codec", "wsa-codec1";
 	qcom,wsa-max-devs = <1>;
+	fsa4480-i2c-handle = <&fsa4480>;
 };
