@@ -479,6 +479,8 @@
 		qcom,msm-mbhc-hphl-swh = <0>;
 		qcom,msm-mbhc-gnd-swh = <0>;
 		qcom,wsa-max-devs = <1>;
+		qcom,cdc-dmic01-gpios = <&cdc_dmic01_gpios>;
+		qcom,cdc-dmic23-gpios = <&cdc_dmic23_gpios>;
 		qcom,msm_audio_ssr_devs = <&audio_gpr>, <&lpi_tlmm>,
 				  <&lpass_cdc>, <&lpass_bt_swr>;
 
