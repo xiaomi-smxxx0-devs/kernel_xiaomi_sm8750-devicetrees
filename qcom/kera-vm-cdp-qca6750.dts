@@ -5,11 +5,11 @@
 
 /dts-v1/;
 
-#include "kera-oemvm.dtsi"
-#include "kera-oemvm-cdp.dtsi"
+#include "kera-vm.dtsi"
+#include "kera-vm-cdp-qca6750.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. Kera OEMVM CDP";
+	model = "Qualcomm Technologies, Inc. Kera SVM CDP + QCA6750";
 	compatible = "qcom,kera-cdp", "qcom,kera", "qcom,kerap-cdp", "qcom,kerap",
 			"qcom,cdp";
 
