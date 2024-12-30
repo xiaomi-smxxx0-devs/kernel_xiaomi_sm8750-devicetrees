@@ -30,6 +30,10 @@
 	};
 };
 
+&cdc_pri_mi2s_gpios {
+	status = "okay";
+};
+
 &swr1 {
 	qcom,swr-num-dev = <2>;
 };
