@@ -11,13 +11,25 @@
 /delete-node/ &apps_smmu;
 /delete-node/ &tcsr_mutex;
 #include "msm-arm-smmu-sdxkova.dtsi"
-/{
+#include "sdxkova-dma-heaps.dtsi"
+
+/ {
 	qcom_tzlog: tz-log@14680720 {
 		compatible = "qcom,tz-log";
 		reg = <0x0 0x14680720 0x0 0x3000>;
 		qcom,hyplog-enabled;
 		hyplog-address-offset = <0x410>;
 		hyplog-size-offset = <0x414>;
+	};
+
+	qcom,mem-buf {
+		compatible = "qcom,mem-buf";
+		qcom,mem-buf-capabilities = "supplier";
+		qcom,vmid = <3>;
+	};
+
+	qcom,mem-buf-msgq {
+		compatible = "qcom,mem-buf-msgq";
 	};
 
 	/delete-node/ timer;
@@ -45,6 +57,23 @@
 			size = <0x0 0x2000000>;
 			linux,cma-default;
 		};
+		qseecom_mem: qseecom_region {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x800000>;
+		};
+
+		qseecom_ta_mem: qseecom_ta_region {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x400000>;
+		};
+
+
 	};
 
 	soc: soc {
@@ -1248,7 +1277,9 @@
 	qcom_smcinvoke {
 		compatible = "qcom,smcinvoke";
 	};
-
+	qcom_mem_object {
+		compatible = "qcom,mem-object";
+	};
 };
 
 #include "sdxkova-regulators.dtsi"
