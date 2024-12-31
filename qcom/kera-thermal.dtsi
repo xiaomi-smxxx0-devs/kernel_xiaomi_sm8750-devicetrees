@@ -1037,7 +1037,7 @@
 	video {
 		polling-delay-passive = <0>;
 		polling-delay = <0>;
-		thermal-sensors = <&tsens1 11>;
+		thermal-sensors = <&tsens1 10>;
 
 		trips {
 			trip-point0 {
