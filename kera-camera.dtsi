@@ -1255,6 +1255,24 @@
 		rt-wr-highstress-indicator-threshold = <50>;
 		rt-wr-lowstress-indicator-threshold = <0>;
 		rt-wr-bw-ratio-scale-factor = <1>;
+
+		resets = <&gcc GCC_CAMERA_HF_AXI_SLP_STG_ARES>,
+			<&gcc GCC_CAMERA_SF_AXI_SLP_STG_ARES>,
+			<&gcc GCC_CAMERA_HF_AXI_SEL_SLP_STG_ARES>,
+			<&gcc GCC_CAMERA_SF_AXI_SEL_SLP_STG_ARES>,
+			<&gcc GCC_CAMERA_SF_CLK_EN_SLP_STG>,
+			<&gcc GCC_CAMERA_SF_CLK_EN_SEL_SLP_STG>,
+			<&gcc GCC_CAMERA_HF_CLK_EN_SLP_STG>,
+			<&gcc GCC_CAMERA_HF_CLK_EN_SEL_SLP_STG>;
+		reset-names = "hf_slp_stg_ares",
+			"sf_slp_stg_ares",
+			"hf_sel_slp_stg_ares",
+			"sf_sel_slp_stg_ares",
+			"sf_clk_en_slp_stg",
+			"sf_clk_en_sel_slp_stg",
+			"hf_clk_en_slp_stg",
+			"hf_clk_en_sel_slp_stg";
+
 		status = "ok";
 
 		camera-bus-nodes {
