@@ -6,10 +6,10 @@
 /dts-v1/;
 
 #include "kera-oemvm.dtsi"
-#include "kera-oemvm-qrd.dtsi"
+#include "kera-oemvm-qrd-wcn7750.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. Kera OEMVM QRD";
+	model = "Qualcomm Technologies, Inc. Kera OEMVM QRD + WCN7750";
 	compatible = "qcom,kera-qrd", "qcom,kera", "qcom,kerap-qrd", "qcom,kerap",
 			"qcom,qrd";
 	qcom,board-id = <0x1000B 0>, <0x2000B 0>, <0x3000B 0>;
