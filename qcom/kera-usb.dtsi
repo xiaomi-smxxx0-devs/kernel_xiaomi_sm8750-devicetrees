@@ -45,6 +45,9 @@
 		qcom,use-pdc-interrupts;
 		qcom,use-eusb2-phy;
 
+		extcon = <&eud>;
+		usb-role-switch;
+
 		interconnect-names = "usb-ddr", "usb-ipa", "ddr-usb";
 		interconnects = <&aggre1_noc MASTER_USB3_0 &mc_virt SLAVE_EBI1>,
 				<&aggre1_noc MASTER_USB3_0 &config_noc SLAVE_IPA_CFG>,
@@ -83,9 +86,16 @@
 			snps,dis_u2_susphy_quirk;
 			snps,ssp-u3-u0-quirk;
 			tx-fifo-resize;
-			dr_mode = "peripheral";
+			num-hc-interrupters = /bits/ 16 <3>;
+			dr_mode = "otg";
 			maximum-speed = "super-speed-plus";
 			usb-role-switch;
+		};
+
+		port {
+			usb_port0: endpoint {
+				remote-endpoint = <&usb_port0_connector>;
+			};
 		};
 	};
 
