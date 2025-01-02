@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/clock/qcom,cambistmclkcc-sun.h>
@@ -1139,7 +1139,7 @@
 
 	slimbam: bamdma@6c04000 {
 		compatible = "qcom,bam-v1.7.0";
-		reg = <0x6c04000 0x20000>, <0x6c93000 0x1000>;
+		reg = <0x6c04000 0x20000>, <0x6c8f000 0x1000>;
 		reg-names = "bam", "bam_remote_mem";
 		interrupts = <GIC_SPI 164 IRQ_TYPE_LEVEL_HIGH>;
 		num-channels  = <31>;
@@ -1151,7 +1151,7 @@
 
 	slim_msm: slim@6c40000 {
 		compatible = "qcom,slim-ngd-v1.5.0";
-		reg = <0x6c40000 0x2c000>, <0x6c92000 0x1000>;
+		reg = <0x6c40000 0x2c000>, <0x6c8E000 0x1000>;
 		reg-names = "ctrl", "slimbus_remote_mem";
 		interrupts = <GIC_SPI 163 IRQ_TYPE_LEVEL_HIGH>;
 		dmas = <&slimbam 3>, <&slimbam 4>;
