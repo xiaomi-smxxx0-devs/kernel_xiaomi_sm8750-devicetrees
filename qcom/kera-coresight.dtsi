@@ -1348,6 +1348,7 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 			port@0 {
+				reg = <0>;
 				funnel_wpss_out_tpda_dlct_5: endpoint {
 					remote-endpoint =
 					<&tpda_dlct_5_in_funnel_wpss>;
@@ -1356,6 +1357,7 @@
 			};
 
 			port@1 {
+				reg = <1>;
 				funnel_wpss_out_tpda_dlct_6: endpoint {
 					remote-endpoint =
 					<&tpda_dlct_6_in_funnel_wpss>;
