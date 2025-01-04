@@ -23,15 +23,3 @@
 
 	status = "ok";
 };
-
-&pmxr2230_sys_therm_11{
-	status = "disabled";
-};
-
-&sys_therm_11 {
-	status = "disabled";
-};
-
-&pm8550ve_f_die_temp {
-	status = "disabled";
-};

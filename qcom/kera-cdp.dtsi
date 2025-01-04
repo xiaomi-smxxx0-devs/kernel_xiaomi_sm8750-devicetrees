@@ -64,15 +64,3 @@
 						&tlmm 3 0 &tlmm 16 0 &tlmm 13 0x2008>;
 	};
 };
-
-&pmxr2230_sys_therm_11{
-	status = "disabled";
-};
-
-&sys_therm_11 {
-	status = "disabled";
-};
-
-&pm8550ve_f_die_temp {
-	status = "disabled";
-};
