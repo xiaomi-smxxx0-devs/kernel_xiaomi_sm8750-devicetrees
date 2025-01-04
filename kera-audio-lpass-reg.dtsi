@@ -25,7 +25,7 @@
 };
 
 &swr2 {
-	reg = <0x7630000 0x0>;
+	swrm-io-base = <0x7630000 0x0>;
 };
 
 &va_macro {
