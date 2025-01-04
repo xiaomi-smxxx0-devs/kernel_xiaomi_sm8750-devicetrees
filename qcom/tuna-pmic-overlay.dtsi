@@ -9,7 +9,7 @@
 #include "pmk8550.dtsi"
 #include "pmxr2230.dtsi"
 #include "pm8550vs.dtsi"
-#include "pmr735b.dtsi"
+#include "pmr735d.dtsi"
 #include "pm8550ve.dtsi"
 #include "pm8010.dtsi"
 

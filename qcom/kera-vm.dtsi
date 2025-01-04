@@ -226,6 +226,15 @@
 				};
 			};
 
+			smmu-proxy-message-queue-pair {
+				vdevice-type = "message-queue-pair";
+				generate = "/hypervisor/smmu-proxy-msgq-pair";
+				message-size = <0x000000f0>;
+				queue-depth = <0x00000008>;
+				peer-default;
+				qcom,label = <0xA>;
+			};
+
 			msgqsock-msgq {
 				vdevice-type = "message-queue-pair";
 				generate = "/hypervisor/msgqsock-msgq-pair";

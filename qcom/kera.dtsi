@@ -705,6 +705,11 @@
 		qcom,rproc-handle = <&adsp_pas>;
 	};
 
+	pcie_pdc: pdc@b360000 {
+		compatible = "qcom,kera-pcie-pdc", "qcom,pcie-pdc";
+		reg = <0xb360000 0x10000>;
+	};
+
 	adsp_pas: remoteproc-adsp@03000000 {
 		compatible = "qcom,kera-adsp-pas";
 		reg = <0x03000000 0x10000>;
@@ -1953,7 +1958,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	cnoc_main: interconnect@1500000 {
@@ -1962,7 +1966,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	system_noc: interconnect@1680000 {
@@ -1971,7 +1974,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	pcie_noc: interconnect@16c0000 {
@@ -1980,7 +1982,8 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
+		clocks = <&gcc GCC_AGGRE_NOC_PCIE_AXI_CLK>,
+			<&gcc GCC_CFG_NOC_PCIE_ANOC_AHB_CLK>;
 	};
 
 	aggre1_noc: interconnect@16e0000 {
@@ -1989,7 +1992,7 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
+		clocks = <&gcc GCC_AGGRE_USB3_PRIM_AXI_CLK>;
 	};
 
 	aggre2_noc: interconnect@1700000 {
@@ -1998,7 +2001,7 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
+		clocks = <&rpmhcc RPMH_IPA_CLK>;
 	};
 
 	mmss_noc: interconnect@1780000 {
@@ -2007,7 +2010,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	gem_noc: interconnect@24100000 {
@@ -2016,7 +2018,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	nsp_noc: interconnect@320c0000 {
@@ -2025,7 +2026,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	lpass_ag_noc: interconnect@7e40000 {
@@ -2034,7 +2034,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	lpass_lpiaon_noc: interconnect@7400000 {
@@ -2043,7 +2042,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	lpass_lpicx_noc: interconnect@7420000 {
@@ -2052,7 +2050,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	trust_ui_vm_vblk0_ring: trust_ui_vm_vblk0_ring {
@@ -2529,6 +2526,7 @@
 					0x090106C0 0x80040868>;
 
 		iommus = <&apps_smmu 0x540 0x0>;
+		qcom,iommu-geometry = <0x40000000 0x10000000>;
 		qcom,iommu-dma = "fastmap";
 		dma-coherent;
 		memory-region = <&sdhc_2_dma_resv>;
@@ -3362,3 +3360,4 @@
 		vdd-usb-cp-supply = <&L7B>;
 	};
 };
+#include "tuna-thermal-overlay.dtsi"

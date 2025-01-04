@@ -20,15 +20,15 @@
 		};
 	};
 
-	i2c@104 {
-		reg = <0x104>;  /* I2C instance 4 in ADSP for SE5 */
+	i2c_pmic:i2c@106 {
+		reg = <0x106>;  /* I2C instance 6 in ADSP for SE5 */
 		#address-cells = <1>;
 		#size-cells = <0>;
 		qcom,bus-type = "i2c";
 
-		qcom,smb1500@69 {
+		qcom,smb1500@68 {
 			compatible = "qcom,i2c-pmic";
-			reg = <0x69>;
+			reg = <0x68>;
 			qcom,can-sleep;
 		};
 	};
@@ -48,18 +48,18 @@
 	status = "ok";
 
 	smb1500_1_iin {
-		reg = <0x1046901>;
-		label = "smb1393_1_iin";
+		reg = <0x1066801>;
+		label = "smb1500_1_iin";
 	};
 
 	smb1500_1_ichg {
-		reg = <0x1046902>;
-		label = "smb1393_1_ichg";
+		reg = <0x1066802>;
+		label = "smb1500_1_ichg";
 	};
 
 	smb1500_1_die_temp {
-		reg = <0x1046903>;
-		label = "smb1393_1_die_temp";
+		reg = <0x1066803>;
+		label = "smb1500_1_die_temp";
 	};
 };
 
@@ -295,6 +295,25 @@
 			lbat_2_gpu {
 				trip = <&b_bcl_lvl2>;
 				cooling-device = <&msm_gpu 7 7>;
+			};
+		};
+	};
+
+	socd {
+		cooling-maps {
+			socd_apc1 {
+				trip = <&socd_trip>;
+				cooling-device = <&APC1_MX_CX_PAUSE 1 1>;
+			};
+
+			socd_cdsp1 {
+				trip = <&socd_trip>;
+				cooling-device = <&cdsp_sw 4 4>;
+			};
+
+			socd_gpu0 {
+				trip = <&socd_trip>;
+				cooling-device = <&msm_gpu 4 4>;
 			};
 		};
 	};

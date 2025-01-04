@@ -29,27 +29,26 @@
 	};
 };
 
-&pmic_glink_debug {
-	/delete-node/ i2c@104;
-	/delete-node/ spmi@200;
 
-		i2c@104 {
-		reg = <0x104>;  /* I2C instance 4 in ADSP for SE5 */
-		#address-cells = <1>;
-		#size-cells = <0>;
-		qcom,bus-type = "i2c";
+&i2c_pmic_smb1398 {
+	status = "disabled";
+};
 
-		qcom,smb1500@69 {
-			compatible = "qcom,i2c-pmic";
-			reg = <0x69>;
-			qcom,can-sleep;
-		};
+&spmi_pmic_smb1510 {
+	status = "disabled";
+};
 
-		qcom,smb1500@68 {
-			compatible = "qcom,i2c-pmic";
-			reg = <0x68>;
-			qcom,can-sleep;
-		};
+&i2c_pmic {
+	qcom,smb1500@69 {
+		compatible = "qcom,i2c-pmic";
+		reg = <0x69>;
+		qcom,can-sleep;
+	};
+
+	qcom,smb1500@68 {
+		compatible = "qcom,i2c-pmic";
+		reg = <0x68>;
+		qcom,can-sleep;
 	};
 };
 
@@ -60,32 +59,32 @@
 	/delete-node/ smb1398_1_die_temp;
 
 	smb1500_1_iin {
-		reg = <0x1046901>;
-		label = "smb1393_1_iin";
+		reg = <0x1066901>;
+		label = "smb1500_1_iin";
 	};
 
 	smb1500_1_ichg {
-		reg = <0x1046902>;
-		label = "smb1393_1_ichg";
+		reg = <0x1066902>;
+		label = "smb1500_1_ichg";
 	};
 
 	smb1500_1_die_temp {
-		reg = <0x1046903>;
-		label = "smb1393_1_die_temp";
+		reg = <0x1066903>;
+		label = "smb1500_1_die_temp";
 	};
 
 	smb1500_2_iin {
-		reg = <0x1046801>;
-		label = "smb1393_2_iin";
+		reg = <0x1066801>;
+		label = "smb1500_2_iin";
 	};
 
 	smb1500_2_ichg {
-		reg = <0x1046802>;
-		label = "smb1393_2_ichg";
+		reg = <0x1066802>;
+		label = "smb1500_2_ichg";
 	};
 
 	smb1500_2_die_temp {
-		reg = <0x1046803>;
-		label = "smb1393_2_die_temp";
+		reg = <0x1066803>;
+		label = "smb1500_2_die_temp";
 	};
 };

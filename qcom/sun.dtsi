@@ -2429,6 +2429,7 @@
 		qcom,ice-use-hwkm;
 		qcom,prime-mask = <0xc0>;
 		qcom,silver-mask = <0x3f>;
+		qcom,cluster-mask = <0x3F 0xC0>;
 		/* affine cpu for each CQ starting from CQ:0 to CQ:max_cqs */
 		qcom,esi-affinity-mask = <2 3 4 2 3 4 7 7>;
 
@@ -2481,25 +2482,19 @@
 
 		qcom,bypass-pbl-rst-wa;
 		qcom,max-cpus = <8>;
+		qcom,storage-boost;
 
 		msi-parent = <&gic_its 0x60>;
 
 		status = "disabled";
 
 		qos0 {
-			mask = <0xc0>;
 			vote = <44>;
 			perf;
-			/* Set CPU6 to fmax, and CPU[6-7] will run at fmax */
-			cpu_freq_vote = <6>;
 		};
 
 		qos1 {
-			mask = <0x3f>;
 			vote = <44>;
-			perf;
-			/* Set CPU0 to fmax, and CPU[0-5] will run at fmax */
-			cpu_freq_vote = <0>;
 		};
 	};
 

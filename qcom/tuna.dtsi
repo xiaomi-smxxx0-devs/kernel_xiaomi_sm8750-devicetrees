@@ -454,7 +454,7 @@
 		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
 		reusable;
 		alignment = <0x0 0x400000>;
-		size = <0x0 0x2000000>;
+		size = <0x0 0x2400000>;
 		linux,cma-default;
 	};
 
@@ -1168,6 +1168,42 @@
 			qcom,glinkpkt-dev-name = "at_mdm0";
 		};
 
+		qcom,glinkpkt-ctrl-cdsp {
+				qcom,glinkpkt-edge = "cdsp";
+				qcom,glinkpkt-ch-name = "LOOPBACK_CTL_CDSP";
+				qcom,glinkpkt-dev-name = "glink_pkt_ctrl_cdsp";
+		};
+
+		qcom,glinkpkt-data-cdsp {
+				qcom,glinkpkt-edge = "cdsp";
+				qcom,glinkpkt-ch-name = "LOOPBACK_DATA_CDSP";
+				qcom,glinkpkt-dev-name = "glink_pkt_data_cdsp";
+		};
+
+		qcom,glinkpkt-ctrl-lpass {
+				qcom,glinkpkt-edge = "lpass";
+				qcom,glinkpkt-ch-name = "LOOPBACK_CTL_LPASS";
+				qcom,glinkpkt-dev-name = "glink_pkt_ctrl_lpass";
+		};
+
+		qcom,glinkpkt-data-lpass {
+				qcom,glinkpkt-edge = "lpass";
+				qcom,glinkpkt-ch-name = "LOOPBACK_DATA_LPASS";
+				qcom,glinkpkt-dev-name = "glink_pkt_data_lpass";
+		};
+
+		qcom,glinkpkt-ctrl-mpss {
+				qcom,glinkpkt-edge = "mpss";
+				qcom,glinkpkt-ch-name = "LOOPBACK_CTL_MPSS";
+				qcom,glinkpkt-dev-name = "glink_pkt_ctrl_mpss";
+		};
+
+		qcom,glinkpkt-data-mpss {
+				qcom,glinkpkt-edge = "mpss";
+				qcom,glinkpkt-ch-name = "LOOPBACK_DATA_MPSS";
+				qcom,glinkpkt-dev-name = "glink_pkt_data_mpss";
+		};
+
 		qcom,glinkpkt-apr-apps2 {
 			qcom,glinkpkt-edge = "adsp";
 			qcom,glinkpkt-ch-name = "apr_apps2";
@@ -1217,6 +1253,24 @@
 			qcom,glinkpkt-ch-name = "bt_cp_ctrl";
 			qcom,glinkpkt-dev-name = "bt_cp_ctrl";
 		};
+
+		qcom,glinkpkt-ims-sub-1 {
+			qcom,glinkpkt-edge = "mpss";
+			qcom,glinkpkt-ch-name = "Ims_dc_sub1";
+			qcom,glinkpkt-dev-name = "ims_dc_sub1";
+			qcom,glinkpkt-enable-ch-close;
+		};
+
+		qcom,glinkpkt-ims-sub-2 {
+			qcom,glinkpkt-edge = "mpss";
+			qcom,glinkpkt-ch-name = "Ims_dc_sub2";
+			qcom,glinkpkt-dev-name = "ims_dc_sub2";
+			qcom,glinkpkt-enable-ch-close;
+		};
+	};
+
+	qcom,glink {
+		compatible = "qcom,glink";
 	};
 
 	sys-pm-vx@c320000 {
@@ -2012,6 +2066,51 @@
 		};
 	};
 
+	qcom,memshare {
+		compatible = "qcom,memshare";
+
+		qcom,client_1 {
+			compatible = "qcom,memshare-peripheral";
+			qcom,peripheral-size = <0x0>;
+			qcom,client-id = <0>;
+			qcom,allocate-boot-time;
+			label = "modem";
+		};
+
+		qcom,client_2 {
+			compatible = "qcom,memshare-peripheral";
+			qcom,peripheral-size = <0x0>;
+			qcom,client-id = <2>;
+			label = "modem";
+		};
+
+		qcom,client_3 {
+			compatible = "qcom,memshare-peripheral";
+			qcom,peripheral-size = <0x500000>;
+			qcom,client-id = <1>;
+			qcom,allocate-on-request;
+			label = "modem";
+		};
+
+		qcom,client_ims_1 {
+			compatible = "qcom,memshare-peripheral";
+			qcom,peripheral-size = <0x100000>;
+			qcom,client-id = <7>;
+			qcom,allocate-on-request;
+			qcom,shared;
+			label = "modem";
+		};
+
+		qcom,client_ims_2 {
+			compatible = "qcom,memshare-peripheral";
+			qcom,peripheral-size = <0x100000>;
+			qcom,client-id = <8>;
+			qcom,allocate-on-request;
+			qcom,shared;
+			label = "modem";
+		};
+	};
+
 	google,debug-kinfo {
 		compatible = "google,debug-kinfo";
 		memory-region = <&kinfo_mem>;
@@ -2146,7 +2245,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	cnoc_main: interconnect@1500000 {
@@ -2155,7 +2253,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	system_noc: interconnect@1680000 {
@@ -2164,7 +2261,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	pcie_noc: interconnect@16c0000 {
@@ -2175,7 +2271,8 @@
 				       "pcie_crm_hw_0";
 		qcom,bcm-voters = <&apps_bcm_voter>,
 				  <&pcie_crm_hw_0_bcm_voter>;
-		qcom,skip-qos;
+		clocks = <&gcc GCC_AGGRE_NOC_PCIE_AXI_CLK>,
+			 <&gcc GCC_CFG_NOC_PCIE_ANOC_AHB_CLK>;
 	};
 
 	aggre1_noc: interconnect@16e0000 {
@@ -2184,7 +2281,7 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
+		clocks = <&gcc GCC_AGGRE_USB3_PRIM_AXI_CLK>;
 	};
 
 	aggre2_noc: interconnect@1700000 {
@@ -2193,7 +2290,7 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
+		clocks = <&rpmhcc RPMH_IPA_CLK>;
 	};
 
 	mmss_noc: interconnect@1780000 {
@@ -2222,7 +2319,6 @@
 				  <&disp_crm_hw_4_bcm_voter>,
 				  <&disp_crm_hw_5_bcm_voter>,
 				  <&disp_crm_sw_0_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	gem_noc: interconnect@24100000 {
@@ -2253,7 +2349,6 @@
 				  <&disp_crm_hw_4_bcm_voter>,
 				  <&disp_crm_hw_5_bcm_voter>,
 				  <&disp_crm_sw_0_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	nsp_noc: interconnect@320c0000 {
@@ -2262,7 +2357,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	lpass_ag_noc: interconnect@7e40000 {
@@ -2271,7 +2365,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	lpass_lpiaon_noc: interconnect@7400000 {
@@ -2280,7 +2373,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	lpass_lpicx_noc: interconnect@7420000 {
@@ -2289,7 +2381,6 @@
 		#interconnect-cells = <1>;
 		qcom,bcm-voter-names = "hlos";
 		qcom,bcm-voters = <&apps_bcm_voter>;
-		qcom,skip-qos;
 	};
 
 	qcom,rmtfs_sharedmem@0 {
@@ -2353,6 +2444,7 @@
 					0x090106C0 0x80040868>;
 
 		iommus = <&apps_smmu 0x140 0x0>;
+		qcom,iommu-geometry = <0x40000000 0x10000000>;
 		qcom,iommu-dma = "fastmap";
 		dma-coherent;
 		memory-region = <&sdhc_2_dma_resv>;
@@ -3677,3 +3769,5 @@
 		vdd-usb-cp-supply = <&L7B>;
 	};
 };
+
+#include "tuna-thermal-overlay.dtsi"

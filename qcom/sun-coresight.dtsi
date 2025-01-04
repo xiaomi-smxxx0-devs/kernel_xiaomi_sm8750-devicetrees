@@ -4199,8 +4199,10 @@
 		coresight-name = "coresight-stm";
 		atid = <16>;
 
-		clocks = <&aoss_qmp>;
-		clock-names = "apb_pclk";
+		clocks = <&aoss_qmp>,
+			<&scmi_clk 0>;
+		clock-names = "apb_pclk",
+				"atclk";
 
 		out-ports {
 			port {
