@@ -297,7 +297,6 @@
 			min-residency-us = <3200>;
 			arm,psci-suspend-param = <0x40000003>;
 			local-timer-stop;
-			status = "disabled";
 		};
 
 		SILVER_RAIL_OFF: silver-cluster0-c4 { /* C4 */
@@ -308,7 +307,6 @@
 			min-residency-us = <6700>;
 			arm,psci-suspend-param = <0x40000004>;
 			local-timer-stop;
-			status = "disabled";
 		};
 
 		GOLD_OFF: gold-c3 {  /* C3 */
@@ -319,7 +317,6 @@
 			min-residency-us = <4011>;
 			arm,psci-suspend-param = <0x40000003>;
 			local-timer-stop;
-			status = "disabled";
 		};
 
 		GOLD_RAIL_OFF: gold-cluster1-c4 { /* C4 */
@@ -330,7 +327,6 @@
 			min-residency-us = <7951>;
 			arm,psci-suspend-param = <0x40000004>;
 			local-timer-stop;
-			status = "disabled";
 		};
 
 		GOLD_PLUS_OFF: gold-plus-c3 {  /* C3 */
@@ -341,7 +337,6 @@
 			min-residency-us = <6230>;
 			arm,psci-suspend-param = <0x40000003>;
 			local-timer-stop;
-			status = "disabled";
 		};
 
 		GOLD_PLUS_RAIL_OFF: gold-plus-cluster3-c4 { /* C4 */
@@ -352,7 +347,6 @@
 			min-residency-us = <7480>;
 			arm,psci-suspend-param = <0x40000004>;
 			local-timer-stop;
-			status = "disabled";
 		};
 
 		CLUSTER_PWR_DN: cluster-d4 { /* D4 */
@@ -362,7 +356,6 @@
 			exit-latency-us = <2350>;
 			min-residency-us = <9144>;
 			arm,psci-suspend-param = <0x41000044>;
-			status = "disabled";
 		};
 
 		CX_RET: cx-ret { /* Cx Ret */
@@ -372,7 +365,6 @@
 			exit-latency-us = <2801>;
 			min-residency-us = <8550>;
 			arm,psci-suspend-param = <0x41001344>;
-			status = "disabled";
 		};
 
 		APSS_OFF: cluster-e3 { /* E3 */
@@ -382,7 +374,6 @@
 			exit-latency-us = <4400>;
 			min-residency-us = <10150>;
 			arm,psci-suspend-param = <0x4100b344>;
-			status = "disabled";
 		};
 	};
 
