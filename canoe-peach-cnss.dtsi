@@ -120,6 +120,8 @@
 		qcom,vdd-wlan-rfa1-config = <1876000 2000000 0 0 1>;
 		vdd-wlan-rfa2-supply = <&S7F>;
 		qcom,vdd-wlan-rfa2-config = <1328000 1340000 0 0 1>;
+		vdd-wlan-ant-share-supply = <&L3K>;
+		qcom,vdd-wlan-ant-share-config = <1200000 1200000 0 0 1>;
 
 		qcom,vreg_pdc_map =
 			"s1j", "bb",
@@ -144,9 +146,22 @@
 		 */
 		wlan-txrx-intr-cpumask = <0x3 0x30>;
 	};
+
+	wlan_direct_link: qcom,cnss-direct-link {
+		compatible = "qcom,cnss-direct-link";
+		iommus = <&apps_smmu 0x100f 0x0>;
+		qcom,iommu-group = <&cnss_audio_iommu_group0>;
+		memory-region = <&direct_link_iommu_region_partition>;
+		dma-coherent;
+
+		direct_link_iommu_region_partition: direct_link_iommu_region_partition {
+			iommu-addresses = <&wlan_direct_link 0x0 0x0 0x0 0x18000000>,
+				<&wlan_direct_link 0x0 0xb0000000 0x0 0x50000000>;
+		};
+	};
 };
 
-&pcie0_rp {
+&pcie_rp {
 	cnss_pci0: cnss_pci0 {
 		reg = <0 0 0 0 0>;
 		qcom,iommu-group = <&cnss_audio_iommu_group0>;

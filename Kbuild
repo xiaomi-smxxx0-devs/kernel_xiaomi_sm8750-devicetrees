@@ -1,3 +1,8 @@
+ifeq ($(CONFIG_ARCH_CANOE),y)
+dtbo-y += canoe-kiwi-cnss.dtbo
+dtbo-y += canoe-peach-cnss.dtbo
+endif
+
 ifeq ($(CONFIG_ARCH_SUN),y)
 dtbo-y += sun-kiwi-cnss.dtbo
 dtbo-y += sun-kiwi-cnss-v8.dtbo

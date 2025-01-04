@@ -96,16 +96,47 @@
 		vdd-wlan-io12-supply = <&L3G>;
 		qcom,vdd-wlan-io12-config = <1200000 1200000 0 0 1>;
 		vdd-wlan-cx-supply = <&S1J>;
-		qcom,vdd-wlan-cx-config = <932000 1000000 0 0 1>;
+		qcom,vdd-wlan-cx-config = <968000 1000000 0 0 1>;
 		vdd-wlan-dig-supply = <&S2J>;
-		qcom,vdd-wlan-dig-config = <916000 1100000 0 0 1>;
+		qcom,vdd-wlan-dig-config = <1012000 1100000 0 0 1>;
 		vdd-wlan-rfa1-supply = <&S8F>;
-		qcom,vdd-wlan-rfa1-config = <1864000 2000000 0 0 1>;
+		qcom,vdd-wlan-rfa1-config = <1900000 2000000 0 0 1>;
 		vdd-wlan-rfa2-supply = <&S7F>;
-		qcom,vdd-wlan-rfa2-config = <1316000 1400000 0 0 1>;
-		//TODO: extractor regulator is required or not
-		// TODO PDC TABLE  BUS BW
-		// PDC MAP AND PMU Vreg Map
+		qcom,vdd-wlan-rfa2-config = <1352000 1400000 0 0 1>;
+		vdd-wlan-ant-share-supply = <&L3K>;
+		qcom,vdd-wlan-ant-share-config = <1200000 1200000 0 0 1>;
+		vdd-wlan-supply = <&S7G>;
+		qcom,vdd-wlan-config = <952000 1100000 0 0 1>;
+
+		qcom,vreg_pdc_map =
+			"S2J1", "bb",
+			"S1J1", "bb",
+			"S8F0", "rf",
+			"S7F0", "rf",
+			"S7G0", "rf";
+
+		qcom,pmu_vreg_map =
+			"VDD095_MX_PMU", "S2J1",
+			"VDD095_PMU", "S1J1",
+			"VDD_PMU_AON_I", "S7G0",
+			"VDD095_PMU_BT", "S7G0",
+			"VDD09_PMU_RFA_I", "S7G0",
+			"VDD13_PMU_PCIE_I", "S7F0",
+			"VDD13_PMU_RFA_I", "S7F0",
+			"VDD19_PMU_PCIE_I", "S8F0",
+			"VDD19_PMU_RFA_I", "S8F0";
+
+		qcom,pdc_init_table =
+			" {class: wlan_pdc, ss: rf, res: S8F0.v, upval: 1900}",
+			" {class: wlan_pdc, ss: rf, res: S8F0.v, dwnval: 1860}",
+			" {class: wlan_pdc, ss: rf, res: S7F0.v, upval: 1352}",
+			" {class: wlan_pdc, ss: rf, res: S7F0.v, dwnval: 988}",
+			" {class: wlan_pdc, ss: bb, res: S1J1.v, upval: 968}",
+			" {class: wlan_pdc, ss: bb, res: S1J1.v, dwnval: 460}",
+			" {class: wlan_pdc, ss: bb, res: S2J1.m, enable: 1}",
+			" {class: wlan_pdc, ss: bb, res: S2J1.v, enable: 1}",
+			" {class: wlan_pdc, ss: rf, res: S7G0.m, enable: 1}",
+			" {class: wlan_pdc, ss: rf, res: S7G0.v, enable: 1}";
 
 		/* cpu mask used for wlan tx rx interrupt affinity
 		 * <cpumask_for_rx_interrupts cpumask_for_tx_comp_interrupts>
@@ -114,7 +145,7 @@
 	};
 };
 
-&pcie0_rp {
+&pcie_rp {
 
 	cnss_pci0: cnss_pci0 {
 		reg = <0 0 0 0 0>;
@@ -132,7 +163,7 @@
 
 		cnss_pci_iommu_group0: cnss_pci_iommu_group0 {
 			qcom,iommu-msi-size = <0x1000>;
-			qcom,iommu-geometry = <0x98000000 0x18010000>;
+			qcom,iommu-geometry = <0x0 0x98000000 0x0 0x18010000>;
 			qcom,iommu-dma = "fastmap";
 			qcom,iommu-pagetable = "coherent";
 			qcom,iommu-faults = "stall-disable", "HUPCF",
