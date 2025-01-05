@@ -26,6 +26,31 @@ dtbo-y += tuna-ese-oemvm-mtp-kiwi.dtbo
 dtbo-y += tuna-ese-oemvm-rcm-kiwi.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_KERA),y)
+dtbo-y += kera-ese-atp.dtbo
+dtbo-y += kera-ese-cdp-qca6750-ufs2.dtbo
+dtbo-y += kera-ese-cdp-qca6750-ufs3.dtbo
+dtbo-y += kera-ese-cdp-qca6750-ufs4.dtbo
+dtbo-y += kera-ese-cdp.dtbo
+dtbo-y += kera-ese-mtp-qca6750-qmp1000.dtbo
+dtbo-y += kera-ese-mtp-qca6750.dtbo
+dtbo-y += kera-ese-mtp-wcn7750-qmp1000.dtbo
+dtbo-y += kera-ese-mtp-wcn7750-ufs3.dtbo
+dtbo-y += kera-ese-mtp-wcn7750-ufs4.dtbo
+dtbo-y += kera-ese-mtp.dtbo
+dtbo-y += kera-ese-oemvm-mtp.dtbo
+dtbo-y += kera-ese-oemvm-rcm.dtbo
+dtbo-y += kera-ese-qrd-wcn7750-ufs2.dtbo
+dtbo-y += kera-ese-qrd-wcn7750-ufs3.dtbo
+dtbo-y += kera-ese-qrd.dtbo
+dtbo-y += kera-ese-rcm-qca6750-ufs2.dtbo
+dtbo-y += kera-ese-rcm-qca6750-ufs3.dtbo
+dtbo-y += kera-ese-rcm-wcn7750-ufs2.dtbo
+dtbo-y += kera-ese-rcm-wcn7750-ufs3.dtbo
+dtbo-y += kera-ese-rcm-wcn7750-ufs4.dtbo
+dtbo-y += kera-ese-rcm.dtbo
+endif
+
 always-y	:= $(dtb-y) $(dtbo-y)
 subdir-y	:= $(dts-dirs)
 clean-files	:= *.dtb *.dtbo
