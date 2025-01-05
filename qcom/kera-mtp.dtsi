@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
@@ -87,4 +87,8 @@
 
 &pm8550ve_f_die_temp {
 	status = "disabled";
+};
+
+&usb0 {
+	qcom,wcd_usbss = <&wcd_usbss>;
 };
