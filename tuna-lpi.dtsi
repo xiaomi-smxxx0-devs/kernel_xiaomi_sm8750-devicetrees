@@ -1735,7 +1735,7 @@
 			pins = "gpio1";
 			drive-strength = <4>;
 			slew-rate = <1>;
-			bias-disable;
+			bias-bus-hold;
 
 		};
 	};
@@ -1750,7 +1750,7 @@
 			pins = "gpio1";
 			drive-strength = <2>;
 			input-enable;
-			bias-bus-hold;
+			bias-pull-down;
 
 		};
 	};
