@@ -35,6 +35,7 @@
 	interrupt-names = "usb_wcd";
 	nvmem-cells = <&usb_mode>;
 	nvmem-cell-names = "usb_mode";
+	status = "ok";
 };
 
 &qupv3_se8_spi {
