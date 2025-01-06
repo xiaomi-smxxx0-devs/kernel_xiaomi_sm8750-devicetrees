@@ -3505,8 +3505,9 @@
 };
 
 &qupv3_se3_i2c {
-	status = "disabled";
+	status = "ok";
 	wcd_usbss: wcd939x_i2c@e {
+		status = "disabled";
 		compatible = "qcom,wcd939x-i2c";
 		reg = <0xe>;
 		vdd-usb-cp-supply = <&L7B>;
