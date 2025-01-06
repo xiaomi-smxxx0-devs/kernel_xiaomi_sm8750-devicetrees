@@ -127,7 +127,6 @@
 			swr_haptics: swr_haptics@f0170220 {
 				compatible = "qcom,pmih010x-swr-haptics";
 				reg = <0x03 0xf0170220>;
-				//swr-slave-supply = <&hap_swr_slave_reg>;
 				qcom,rx_swr_ch_map = <0 0x01 0x01 0 PCM_OUT1>;
 				status = "disabled";
 			};
