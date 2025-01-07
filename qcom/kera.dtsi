@@ -1764,6 +1764,14 @@
 			clock-output-names = "usb3_phy_wrapper_gcc_usb30_pipe_clk";
 			#clock-cells = <0>;
 		};
+
+		clk8_a4: clk8_a4 {
+			compatible = "fixed-factor-clock";
+			clocks = <&rpmhcc RPMH_LN_BB_CLK3>;
+			clock-mult = <1>;
+			clock-div = <2>;
+			#clock-cells = <0>;
+		};
 	};
 
 	cambistmclkcc: clock-controller@1760000 {
