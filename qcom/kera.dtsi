@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/clock/qcom,cambistmclkcc-sun.h>
@@ -1752,6 +1752,14 @@
 			compatible = "fixed-clock";
 			clock-frequency = <1000>;
 			clock-output-names = "usb3_phy_wrapper_gcc_usb30_pipe_clk";
+			#clock-cells = <0>;
+		};
+
+		clk8_a4: clk8_a4 {
+			compatible = "fixed-factor-clock";
+			clocks = <&rpmhcc RPMH_LN_BB_CLK3>;
+			clock-mult = <1>;
+			clock-div = <2>;
 			#clock-cells = <0>;
 		};
 	};
