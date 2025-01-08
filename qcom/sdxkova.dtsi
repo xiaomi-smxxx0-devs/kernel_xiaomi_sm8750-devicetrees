@@ -86,21 +86,22 @@
 			      <0x0 0x17a10000 0x0 0x10000>,
 			      <0x0 0x17a20000 0x0 0x10000>;
 			reg-names = "drv-0", "drv-1", "drv-2";
+			qcom,drv-count = <3>;
 			interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>,
 				     <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>,
 				     <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
-			qcom,drv-count = <3>;
 
 			apps_rsc_drv2: drv@2 {
 				qcom,drv-id = <2>;
 				qcom,tcs-offset = <0xd00>;
+				qcom,tcs-distance = <0x2a0>;
+
 				channel@0 {
-					qcom,tcs-offset = <0xd00>;
-					qcom,tcs-config = <ACTIVE_TCS    3>,
-							  <SLEEP_TCS     2>,
-							  <WAKE_TCS      2>,
-							  <FAST_PATH_TCS 0>,
-							  <CONTROL_TCS   0>;
+					 qcom,tcs-config = <ACTIVE_TCS    3>,
+							   <SLEEP_TCS     2>,
+							   <WAKE_TCS      2>,
+							   <CONTROL_TCS   0>,
+							   <FAST_PATH_TCS 1>;
 				};
 
 				apps_bcm_voter: bcm-voter {
