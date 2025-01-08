@@ -24,6 +24,3 @@
 	};
 };
 
-&thermal_zones {
-	/delete-node/ sys-therm-11;
-};
