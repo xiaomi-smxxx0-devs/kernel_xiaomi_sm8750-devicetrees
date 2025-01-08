@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/clock/qcom,gcc-kera.h>
@@ -124,6 +124,10 @@
 
 		resets = <&gcc GCC_QUSB2PHY_PRIM_BCR>;
 		reset-names = "phy_reset";
+
+		/* eUSB2 HPG version 1.0.2 update */
+		qcom,param-override-seq =
+			<0x00 0x58>;
 	};
 
 	usb_nop_phy: usb_nop_phy {
