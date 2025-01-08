@@ -272,16 +272,20 @@ ifeq ($(CONFIG_ARCH_KERA), y)
 ifeq ($(CONFIG_ARCH_QTI_VM), y)
 kera_tuivm-dtb-$(CONFIG_ARCH_QTI_VM) += kera-vm-rumi.dtb \
 				kera-vm-atp.dtb \
-				kera-vm-cdp.dtb \
-				kera-vm-mtp.dtb \
-				kera-vm-qrd.dtb \
-				kera-vm-rcm.dtb \
+				kera-vm-cdp-qca6750.dtb \
+				kera-vm-mtp-qca6750.dtb \
+				kera-vm-mtp-wcn7750.dtb \
+				kera-vm-qrd-wcn7750.dtb \
+				kera-vm-rcm-qca6750.dtb \
+				kera-vm-rcm-wcn7750.dtb \
 				kera-oemvm-rumi.dtb \
 				kera-oemvm-atp.dtb \
-				kera-oemvm-cdp.dtb \
-				kera-oemvm-mtp.dtb \
-				kera-oemvm-qrd.dtb \
-				kera-oemvm-rcm.dtb
+				kera-oemvm-cdp-qca6750.dtb \
+				kera-oemvm-mtp-qca6750.dtb \
+				kera-oemvm-mtp-wcn7750.dtb \
+				kera-oemvm-qrd-wcn7750.dtb \
+				kera-oemvm-rcm-qca6750.dtb \
+				kera-oemvm-rcm-wcn7750.dtb
 dtb-y += $(kera_tuivm-dtb-y)
 endif
 endif
