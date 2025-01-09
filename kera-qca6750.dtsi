@@ -6,6 +6,15 @@
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 
+&tlmm {
+	icnss_sw_ctrl: icnss_sw_ctrl {
+		mux {
+			pins = "gpio81";
+			function = "wcn_sw_ctrl";
+		};
+	};
+};
+
 &soc {
 	qcom,smp2p-wpss {
 		smp2p_wlan_1_in: qcom,smp2p-wlan-1-in {
@@ -46,7 +55,12 @@
 		wlan-en-gpio = <35>;
 		host-sol-gpio = <33>;
 		dev-sol-gpio = <32>;
-		wlan-sw-ctrl-gpio = <81>;
+		sw-ctrl-gpio = <81>;
+		/* List of GPIOs to be setup for interrupt wakeup capable */
+		mpm_wake_set_gpios = <81>;
+		pinctrl-names = "sw_ctrl";
+		pinctrl-0 = <&icnss_sw_ctrl>;
+
 		interrupts = <GIC_SPI 768 IRQ_TYPE_EDGE_RISING>,
 			     <GIC_SPI 769 IRQ_TYPE_EDGE_RISING>,
 			     <GIC_SPI 770 IRQ_TYPE_EDGE_RISING>,
@@ -85,6 +99,7 @@
 		qcom,iommu-dma-addr-pool = <0xb0000000 0x10000000>;
 		qcom,iommu-geometry = <0xb0000000 0x10010000>;
 		dma-coherent;
+		pin-ctrl-support;
 		qcom,fw-prefix;
 		qcom,wlan;
 		tsens = "sys-therm-3";
