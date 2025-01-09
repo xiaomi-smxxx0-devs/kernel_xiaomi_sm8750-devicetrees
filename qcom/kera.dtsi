@@ -1649,6 +1649,16 @@
 		feat_conf6: feat_conf6@0118 {
 			reg = <0x0118 0x4>;
 		};
+
+		gpu_speed_bin: gpu_speed_bin@138 {
+			reg = <0x138 0x2>;
+			bits = <0 9>;
+		};
+
+		gpu_gaming_bin: gpu_gaming_bin@14b {
+			reg = <0x14b 0x1>;
+			bits = <7 1>;
+		};
 	};
 
 	 qfprom_sys: qfprom@0 {
