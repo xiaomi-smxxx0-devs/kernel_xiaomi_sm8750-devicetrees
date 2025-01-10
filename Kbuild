@@ -9,7 +9,8 @@ dtbo-y += gpu/sun-gpu.dtbo \
 endif
 
 ifeq ($(CONFIG_ARCH_TUNA), y)
-dtbo-y += gpu/tuna-gpu.dtbo
+dtbo-y += gpu/tuna-gpu.dtbo \
+		gpu/tuna7-gpu.dtbo
 endif
 
 ifeq ($(CONFIG_ARCH_KERA), y)
