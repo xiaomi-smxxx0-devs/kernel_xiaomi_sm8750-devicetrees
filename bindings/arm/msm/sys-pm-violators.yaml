@@ -28,6 +28,7 @@ properties:
       - qcom,sys-pm-sun
       - qcom,sys-pm-tuna
       - qcom,sys-pm-kera
+      - qcom,sys-pm-sdxkova
 
   reg:
     maxItems: 1
@@ -55,6 +56,8 @@ allOf:
               - qcom,sys-pm-pineapple
               - qcom,sys-pm-parrot
               - qcom,sys-pm-ravelin
+              - qcom,sys-pm-sdxkova
+
     then:
       properties:
         reg:
