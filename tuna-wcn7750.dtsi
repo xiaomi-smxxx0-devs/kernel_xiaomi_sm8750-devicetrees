@@ -108,6 +108,7 @@
 		qcom,fw-prefix;
 		qcom,wlan;
 		tsens = "sys-therm-3";
+		wcn-hw-version = "wcn7750";
 		qcom,wlan-msa-fixed-region = <&wlan_msa_mem>;
 
 		vdd-cx-mx-supply = <&S3B>;
