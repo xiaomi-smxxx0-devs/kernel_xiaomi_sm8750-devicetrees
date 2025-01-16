@@ -35,6 +35,14 @@
 };
 
 &spmi0_debug_bus {
+	qcom,pmd802x-debug@4 {
+		compatible = "qcom,spmi-pmic";
+		reg = <4 SPMI_USID>;
+		#address-cells = <2>;
+		#size-cells = <0>;
+		qcom,can-sleep;
+	};
+
 	qcom,pmih010x-debug@7 {
 		compatible = "qcom,spmi-pmic";
 		reg = <7 SPMI_USID>;
@@ -69,6 +77,8 @@
 };
 
 &pmih010x_haptics {
+	qcom,vmax-mv = <1700>;
+	qcom,lra-period-us = <5880>;
 	nvmem-names = "hap_cfg_sdam";
 	nvmem = <&pmk8550_sdam_46>;
 };

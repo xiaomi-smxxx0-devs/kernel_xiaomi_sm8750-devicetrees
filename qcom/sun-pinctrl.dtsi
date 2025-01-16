@@ -2813,7 +2813,7 @@
 
 			config {
 				pins = "gpio20";
-				drive-strength = <6>;
+				drive-strength = <4>;
 				bias-disable;
 			};
 		};
@@ -2826,7 +2826,7 @@
 
 			config {
 				pins = "gpio21";
-				drive-strength = <6>;
+				drive-strength = <4>;
 				bias-pull-down;
 			};
 		};
@@ -2839,7 +2839,7 @@
 
 			config {
 				pins = "gpio22";
-				drive-strength = <6>;
+				drive-strength = <4>;
 				bias-pull-down;
 			};
 		};
@@ -2852,7 +2852,7 @@
 
 			config {
 				pins = "gpio23";
-				drive-strength = <6>;
+				drive-strength = <4>;
 				bias-pull-down;
 			};
 		};

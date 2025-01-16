@@ -11,13 +11,25 @@
 /delete-node/ &apps_smmu;
 /delete-node/ &tcsr_mutex;
 #include "msm-arm-smmu-sdxkova.dtsi"
-/{
+#include "sdxkova-dma-heaps.dtsi"
+
+/ {
 	qcom_tzlog: tz-log@14680720 {
 		compatible = "qcom,tz-log";
 		reg = <0x0 0x14680720 0x0 0x3000>;
 		qcom,hyplog-enabled;
 		hyplog-address-offset = <0x410>;
 		hyplog-size-offset = <0x414>;
+	};
+
+	qcom,mem-buf {
+		compatible = "qcom,mem-buf";
+		qcom,mem-buf-capabilities = "supplier";
+		qcom,vmid = <3>;
+	};
+
+	qcom,mem-buf-msgq {
+		compatible = "qcom,mem-buf-msgq";
 	};
 
 	/delete-node/ timer;
@@ -28,6 +40,24 @@
 			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>,
 			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>,
 			     <GIC_PPI 12 (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>;
+	};
+
+	cpus {
+		CPU0: cpu@0 {
+			cpu-idle-states = <&SILVER_OFF &SILVER_RAIL_OFF>;
+		};
+
+		CPU1: cpu@100 {
+			cpu-idle-states = <&SILVER_OFF &SILVER_RAIL_OFF>;
+		};
+
+		CPU2: cpu@200 {
+			cpu-idle-states = <&SILVER_OFF &SILVER_RAIL_OFF>;
+		};
+
+		CPU3: cpu@300 {
+			cpu-idle-states = <&SILVER_OFF &SILVER_RAIL_OFF>;
+		};
 	};
 
 	/delete-node/ reserved-memory;
@@ -45,9 +75,112 @@
 			size = <0x0 0x2000000>;
 			linux,cma-default;
 		};
+		qseecom_mem: qseecom_region {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x800000>;
+		};
+
+		qseecom_ta_mem: qseecom_ta_region {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x400000>;
+		};
+
+
 	};
 
+	/delete-node/ idle-states;
+
+	idle-states {
+		entry-method = "psci";
+
+		SILVER_OFF: silver-c3 { /* C3 */
+			compatible = "arm,idle-state";
+			idle-state-name = "pc";
+			entry-latency-us = <235>;
+			exit-latency-us = <428>;
+			min-residency-us = <1774>;
+			arm,psci-suspend-param = <0x40000003>;
+			local-timer-stop;
+		};
+
+		SILVER_RAIL_OFF: silver-c4 { /* C4 */
+			compatible = "arm,idle-state";
+			idle-state-name = "rail-pc";
+			entry-latency-us = <800>;
+			exit-latency-us = <750>;
+			min-residency-us = <4090>;
+			arm,psci-suspend-param = <0x40000004>;
+			local-timer-stop;
+		};
+
+		CLUSTER_PWR_DN: cluster-d4 { /* D4 */
+			compatible = "domain-idle-state";
+			idle-state-name = "l3-off";
+			entry-latency-us = <1050>;
+			exit-latency-us = <2500>;
+			min-residency-us = <5309>;
+			arm,psci-suspend-param = <0x41000044>;
+		};
+
+		CX_RET: cx-ret { /* Cx Ret */
+			compatible = "domain-idle-state";
+			idle-state-name = "cx-ret";
+			entry-latency-us = <2761>;
+			exit-latency-us = <3964>;
+			min-residency-us = <8467>;
+			arm,psci-suspend-param = <0x41001344>;
+		};
+
+		APSS_OFF: cluster-e3 { /* E3 */
+			compatible = "domain-idle-state";
+			idle-state-name = "llcc-off";
+			entry-latency-us = <2793>;
+			exit-latency-us = <4023>;
+			min-residency-us = <9826>;
+			arm,psci-suspend-param = <0x4100B344>;
+		};
+	};
+
+	/delete-node/ psci;
+
 	soc: soc {
+
+		psci {
+			compatible = "arm,psci-1.0";
+			method = "smc";
+
+			CPU_PD0: cpu-pd0 {
+				#power-domain-cells = <0>;
+				power-domains = <&CLUSTER_PD>;
+			};
+
+			CPU_PD1: cpu-pd1 {
+				#power-domain-cells = <0>;
+				power-domains = <&CLUSTER_PD>;
+			};
+
+			CPU_PD2: cpu-pd2 {
+				#power-domain-cells = <0>;
+				power-domains = <&CLUSTER_PD>;
+			};
+
+			CPU_PD3: cpu-pd3 {
+				#power-domain-cells = <0>;
+				power-domains = <&CLUSTER_PD>;
+			};
+
+			CLUSTER_PD: cluster-pd {
+				#power-domain-cells = <0>;
+				domain-idle-states = <&CLUSTER_PWR_DN &CX_RET &APSS_OFF>;
+			};
+		};
+
 		/delete-node/ rsc@17a00000;
 
 		apps_rsc: rsc@17a00000 {
@@ -57,21 +190,23 @@
 			      <0x0 0x17a10000 0x0 0x10000>,
 			      <0x0 0x17a20000 0x0 0x10000>;
 			reg-names = "drv-0", "drv-1", "drv-2";
+			qcom,drv-count = <3>;
 			interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>,
 				     <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>,
 				     <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
-			qcom,drv-count = <3>;
+			power-domains = <&CLUSTER_PD>;
 
 			apps_rsc_drv2: drv@2 {
 				qcom,drv-id = <2>;
 				qcom,tcs-offset = <0xd00>;
+				qcom,tcs-distance = <0x2a0>;
+
 				channel@0 {
-					qcom,tcs-offset = <0xd00>;
-					qcom,tcs-config = <ACTIVE_TCS    3>,
-							  <SLEEP_TCS     2>,
-							  <WAKE_TCS      2>,
-							  <FAST_PATH_TCS 0>,
-							  <CONTROL_TCS   0>;
+					 qcom,tcs-config = <ACTIVE_TCS    3>,
+							   <SLEEP_TCS     2>,
+							   <WAKE_TCS      2>,
+							   <CONTROL_TCS   0>,
+							   <FAST_PATH_TCS 1>;
 				};
 
 				apps_bcm_voter: bcm-voter {
@@ -135,6 +270,11 @@
 					};
 				};
 			};
+		};
+
+		cluster-device {
+			compatible = "qcom,lpm-cluster-dev";
+			power-domains = <&CLUSTER_PD>;
 		};
 	};
 
@@ -1248,7 +1388,9 @@
 	qcom_smcinvoke {
 		compatible = "qcom,smcinvoke";
 	};
-
+	qcom_mem_object {
+		compatible = "qcom,mem-object";
+	};
 };
 
 #include "sdxkova-regulators.dtsi"
