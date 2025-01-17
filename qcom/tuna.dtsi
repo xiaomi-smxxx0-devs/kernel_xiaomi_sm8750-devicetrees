@@ -666,6 +666,15 @@
 			clocks = <&aoss_qmp QDSS_CLK>;
 			clock-names = "qdss_clk";
 		};
+
+		scid_heuristics {
+			compatible = "qcom,scid-heuristics";
+			qcom,heuristics-scid = <32>;
+			/* Need to update different value for V2 device */
+			qcom,freq-threshold-idx = <10>, <13>, <19>, <19>, <21>;
+			qcom,frequency-threshold-residency = <1500>, <1500>, <1500>, <1500>, <1500>;
+			qcom,scid-heuristics-enabled;
+		};
 	};
 
 	gic-interrupt-router {
