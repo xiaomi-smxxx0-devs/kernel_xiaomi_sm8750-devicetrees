@@ -22,6 +22,10 @@
 	rpmh-regulator-smpb2 {
 		compatible = "qcom,rpmh-vrm-regulator";
 		qcom,resource-name = "smpb2";
+		qcom,regulator-type = "pmic5-ftsmps";
+		qcom,supported-modes = <RPMH_REGULATOR_MODE_RET
+					RPMH_REGULATOR_MODE_HPM>;
+		qcom,mode-threshold-currents = <0 50000>;
 
 		S2B: pmxr2230_s2: vreg-pmxr2230-s2 {
 			regulator-name = "pmxr2230_s2";
@@ -29,6 +33,7 @@
 			regulator-min-microvolt = <1240000>;
 			regulator-max-microvolt = <1408000>;
 			qcom,init-voltage = <1240000>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_RET>;
 		};
 	};
 
