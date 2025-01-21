@@ -16,3 +16,7 @@
 	qcom,msm-id = <686 0x10000>, <659 0x10000>;
 	qcom,board-id = <0x50001 0>;
 };
+
+&pcie1 {
+	status = "ok";
+};
