@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include "kera-audio-overlay.dtsi"
@@ -28,6 +28,10 @@
 
 &lpass_bt_swr {
 	status = "disabled";
+};
+
+&cdc_dmic67_gpios {
+	status = "okay";
 };
 
 &wcd9378_codec {
@@ -99,6 +103,10 @@
 		"TX DMIC2", "MIC BIAS1",
 		"TX DMIC3", "Digital Mic3",
 		"TX DMIC3", "MIC BIAS1",
+		"TX DMIC6", "Digital Mic6",
+		"TX DMIC6", "MIC BIAS1",
+		"TX DMIC7", "Digital Mic7",
+		"TX DMIC7", "MIC BIAS1",
 		"IN1_HPHL", "HPHL_OUT",
 		"IN2_HPHR", "HPHR_OUT",
 		"IN3_AUX", "AUX_OUT",
@@ -119,10 +127,14 @@
 		"VA DMIC1", "Digital Mic1",
 		"VA DMIC2", "Digital Mic2",
 		"VA DMIC3", "Digital Mic3",
+		"VA DMIC6", "Digital Mic6",
+		"VA DMIC7", "Digital Mic7",
 		"VA DMIC0", "VA MIC BIAS3",
 		"VA DMIC1", "VA MIC BIAS3",
 		"VA DMIC2", "VA MIC BIAS1",
-		"VA DMIC3", "VA MIC BIAS1";
+		"VA DMIC3", "VA MIC BIAS1",
+		"VA DMIC6", "VA MIC BIAS1",
+		"VA DMIC7", "VA MIC BIAS1";
 	asoc-codec  = <&stub_codec>, <&lpass_cdc>,
 			<&wcd9378_codec>,
 			<&wsa884x_0220>, <&wsa884x_0221>;
@@ -135,6 +147,7 @@
 	qcom,quin-mi2s-gpios = <&cdc_quin_mi2s_gpios>;
 	qcom,sen-mi2s-gpios = <&cdc_sen_mi2s_gpios>;
 	qcom,sep-mi2s-gpios = <&cdc_sep_mi2s_gpios>;
+	qcom,cdc-dmic67-gpios = <&cdc_dmic67_gpios>;
 	qcom,msm-mbhc-usbc-audio-supported = <0>;
 	qcom,msm-mbhc-hphl-swh = <1>;
 	qcom,msm-mbhc-gnd-swh = <1>;
