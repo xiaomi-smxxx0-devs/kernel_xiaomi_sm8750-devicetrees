@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/interconnect/qcom,icc.h>
@@ -2066,6 +2066,7 @@
 		compatible = "qcom,gh-secure-vm-loader";
 		qcom,pas-id = <28>;
 		qcom,vmid = <45>;
+		qcom,guest-cpus = "5-6";
 		qcom,firmware-name = "trustedvm";
 		memory-region = <&trust_ui_vm_mem>;
 		virtio-backends = <&trust_ui_vm_virt_be0>;

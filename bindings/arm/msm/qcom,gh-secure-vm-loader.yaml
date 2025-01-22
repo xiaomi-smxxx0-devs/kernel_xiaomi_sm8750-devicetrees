@@ -26,6 +26,10 @@ properties:
     $ref: '/schemas/types.yaml#/definitions/uint32'
     description: Peripheral authentication ID of the subsystem.
 
+  qcom,guest-cpus:
+    $ref: '/schemas/types.yaml#/definitions/string'
+    description: Guest CPUs.
+
   qcom,firmware-name:
     $ref: '/schemas/types.yaml#/definitions/string'
     description: Virtual machine name.
@@ -42,6 +46,7 @@ required:
   - compatible
   - qcom,pas-id
   - qcom,vmid
+  - qcom,guest-cpus
   - qcom,firmware-name
   - memory-region
   - virtio-backends
@@ -54,6 +59,7 @@ examples:
       compatible = "qcom,gh-secure-vm-loader";
       qcom,pas-id = <28>;
       qcom,vmid = <45>;
+      qcom,guest-cpus = "5-6";
       qcom,firmware-name = "trustedvm";
       memory-region = <&trust_ui_vm_mem>;
       virtio-backends = <&trust_ui_vm_virt_be0>;
