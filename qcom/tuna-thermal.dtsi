@@ -1244,7 +1244,7 @@
 		cooling-maps {
 			gpu0_cdev {
 				trip = <&gpu0_tj_cfg>;
-				cooling-device = <&msm_gpu 0 THERMAL_NO_LIMIT>;
+				cooling-device = <&msm_gpu 0 6>;
 			};
 		};
 	};
@@ -1283,7 +1283,7 @@
 		cooling-maps {
 			gpu1_cdev {
 				trip = <&gpu1_tj_cfg>;
-				cooling-device = <&msm_gpu 0 THERMAL_NO_LIMIT>;
+				cooling-device = <&msm_gpu 0 6>;
 			};
 		};
 	};
@@ -1322,7 +1322,7 @@
 		cooling-maps {
 			gpu2_cdev {
 				trip = <&gpu2_tj_cfg>;
-				cooling-device = <&msm_gpu 0 THERMAL_NO_LIMIT>;
+				cooling-device = <&msm_gpu 0 6>;
 			};
 		};
 	};
@@ -1361,7 +1361,7 @@
 		cooling-maps {
 			gpu3_cdev {
 				trip = <&gpu3_tj_cfg>;
-				cooling-device = <&msm_gpu 0 THERMAL_NO_LIMIT>;
+				cooling-device = <&msm_gpu 0 6>;
 			};
 		};
 	};
@@ -1400,7 +1400,7 @@
 		cooling-maps {
 			gpu4_cdev {
 				trip = <&gpu4_tj_cfg>;
-				cooling-device = <&msm_gpu 0 THERMAL_NO_LIMIT>;
+				cooling-device = <&msm_gpu 0 6>;
 			};
 		};
 	};
@@ -1439,7 +1439,7 @@
 		cooling-maps {
 			gpu5_cdev {
 				trip = <&gpu5_tj_cfg>;
-				cooling-device = <&msm_gpu 0 THERMAL_NO_LIMIT>;
+				cooling-device = <&msm_gpu 0 6>;
 			};
 		};
 	};

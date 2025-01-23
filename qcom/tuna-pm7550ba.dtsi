@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include "pm7550ba.dtsi"
@@ -231,6 +231,23 @@
 };
 
 &thermal_zones {
+	pm7550ba-ibat-lvl0 {
+		trips {
+			ibat-lvl0 {
+				temperature = <10000>;
+
+			};
+		};
+	};
+
+	pm7550ba-ibat-lvl1 {
+		trips {
+			ibat-lvl1 {
+				temperature = <11500>;
+			};
+		};
+	};
+
 	pm7550ba-2s-ibat-lvl0 {
 		polling-delay-passive = <0>;
 		polling-delay = <0>;
