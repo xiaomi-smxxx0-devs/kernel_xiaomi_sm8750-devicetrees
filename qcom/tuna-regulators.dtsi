@@ -13,9 +13,9 @@
 		S1B: pmxr2230_s1: vreg-pmxr2230-s1 {
 			regulator-name = "pmxr2230_s1";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1856000>;
+			regulator-min-microvolt = <1840000>;
 			regulator-max-microvolt = <2104000>;
-			qcom,init-voltage = <1856000>;
+			qcom,init-voltage = <1840000>;
 		};
 	};
 
@@ -26,9 +26,9 @@
 		S2B: pmxr2230_s2: vreg-pmxr2230-s2 {
 			regulator-name = "pmxr2230_s2";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <1256000>;
+			regulator-min-microvolt = <1240000>;
 			regulator-max-microvolt = <1408000>;
-			qcom,init-voltage = <1256000>;
+			qcom,init-voltage = <1240000>;
 		};
 	};
 
@@ -39,7 +39,7 @@
 		S3B: pmxr2230_s3: vreg-pmxr2230-s3 {
 			regulator-name = "pmxr2230_s3";
 			qcom,set = <RPMH_REGULATOR_SET_ALL>;
-			regulator-min-microvolt = <880000>;
+			regulator-min-microvolt = <864000>;
 			regulator-max-microvolt = <1040000>;
 			qcom,init-voltage = <952000>;
 		};
