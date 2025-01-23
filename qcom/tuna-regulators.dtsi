@@ -953,9 +953,10 @@
 		qcom,resource-name = "ldog2";
 		qcom,regulator-type = "pmic5-ldo";
 		qcom,supported-modes =
-			<RPMH_REGULATOR_MODE_LPM
+			<RPMH_REGULATOR_MODE_RET
+			 RPMH_REGULATOR_MODE_LPM
 			 RPMH_REGULATOR_MODE_HPM>;
-		qcom,mode-threshold-currents = <0 30000>;
+		qcom,mode-threshold-currents = <0 10000 30000>;
 
 		L2G: pm_v6g_l2: vreg-pm_v6g-l2 {
 			regulator-name = "pm_v6g_l2";
@@ -973,9 +974,10 @@
 		qcom,resource-name = "ldog3";
 		qcom,regulator-type = "pmic5-ldo";
 		qcom,supported-modes =
-			<RPMH_REGULATOR_MODE_LPM
+			<RPMH_REGULATOR_MODE_RET
+			 RPMH_REGULATOR_MODE_LPM
 			 RPMH_REGULATOR_MODE_HPM>;
-		qcom,mode-threshold-currents = <0 30000>;
+		qcom,mode-threshold-currents = <0 10000 30000>;
 
 		L3G: pm_v6g_l3: vreg-pm_v6g-l3 {
 			regulator-name = "pm_v6g_l3";
@@ -983,7 +985,7 @@
 			regulator-min-microvolt = <1800000>;
 			regulator-max-microvolt = <1800000>;
 			qcom,init-voltage = <1800000>;
-			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_LPM>;
 		};
 	};
 
@@ -1123,7 +1125,7 @@
 			regulator-min-microvolt = <1100000>;
 			regulator-max-microvolt = <2000000>;
 			qcom,init-voltage = <1776000>;
-			qcom,init-mode = <RPMH_REGULATOR_MODE_HPM>;
+			qcom,init-mode = <RPMH_REGULATOR_MODE_LPM>;
 		};
 	};
 
