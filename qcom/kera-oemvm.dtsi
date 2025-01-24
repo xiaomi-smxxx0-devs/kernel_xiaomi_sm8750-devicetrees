@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
@@ -40,14 +40,23 @@
 	};
 
 	idle-states {
-		CPU_PWR_DWN: c4 {  /* Using Medium C4 latencies */
+		CPU_PWR_DWN: c4 {  /* Using Gold C4 latencies */
 			compatible = "arm,idle-state";
-			status = "disabled";
+			idle-state-name = "rail-pc";
+			entry-latency-us = <550>;
+			exit-latency-us = <1050>;
+			min-residency-us = <7951>;
+			arm,psci-suspend-param = <0x40000004>;
+			local-timer-stop;
 		};
-
-		CLUSTER_PWR_DWN: ss3 { /* C4+CL5+SS3 */
+		CLUSTER_PWR_DWN: d4 { /* C4+D4 */
 			compatible = "arm,idle-state";
-			status = "disabled";
+			idle-state-name = "l3-pc";
+			entry-latency-us = <750>;
+			exit-latency-us = <2350>;
+			min-residency-us = <9144>;
+			arm,psci-suspend-param = <0x40000044>;
+			local-timer-stop;
 		};
 	};
 
