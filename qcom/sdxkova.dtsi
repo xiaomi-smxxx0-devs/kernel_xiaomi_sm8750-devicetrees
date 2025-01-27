@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/soc/qcom,ipcc.h>
@@ -179,6 +179,11 @@
 				#power-domain-cells = <0>;
 				domain-idle-states = <&CLUSTER_PWR_DN &CX_RET &APSS_OFF>;
 			};
+		};
+
+		show_resume_irqs@17200000 {
+			compatible = "qcom,show-resume-irqs";
+			reg = <0x0 0x17200000 0x0 0xf0000>;	/* GICD */
 		};
 
 		/delete-node/ rsc@17a00000;
