@@ -157,7 +157,6 @@
 			"wcd939x_codec", "wsa-codec1",
 			"wsa-codec2";
 	qcom,wsa-max-devs = <2>;
-	swr-haptics-unsupported;
 	qcom,pri-mi2s-gpios = <&cdc_pri_mi2s_gpios>;
 	qcom,wcd-disable-legacy-surge;
 	wcd939x-i2c-handle = <&wcd_usbss>;
