@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/thermal/thermal_qti.h>
@@ -1211,7 +1211,7 @@
 	};
 
 	gpu-0 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <10>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 5>;
 
@@ -1250,7 +1250,7 @@
 	};
 
 	gpu-1 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <10>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 6>;
 
@@ -1289,7 +1289,7 @@
 	};
 
 	gpu-2 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <10>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 7>;
 
@@ -1328,7 +1328,7 @@
 	};
 
 	gpu-3 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <10>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 8>;
 
@@ -1367,7 +1367,7 @@
 	};
 
 	gpu-4 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <10>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 9>;
 
@@ -1406,7 +1406,7 @@
 	};
 
 	gpu-5 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <10>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens2 10>;
 
@@ -1569,7 +1569,7 @@
 	};
 
 	mdmss-0 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <100>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens3 1>;
 
@@ -1628,7 +1628,7 @@
 	};
 
 	mdmss-1 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <100>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens3 2>;
 
@@ -1687,7 +1687,7 @@
 	};
 
 	mdmss-2 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <100>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens3 3>;
 
@@ -1746,7 +1746,7 @@
 	};
 
 	mdmss-3 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <100>;
 		polling-delay = <0>;
 		thermal-sensors = <&tsens3 4>;
 
