@@ -185,22 +185,22 @@
 
 	cdsp_mem: cdsp_region@98900000 {
 		no-map;
-		reg = <0x0 0x98900000 0x0 0x1900000>;
+		reg = <0x0 0x98900000 0x0 0x1400000>;
 	};
 
-	q6_cdsp_dtb_mem: q6_cdsp_dtb_region@9a200000 {
+	q6_cdsp_dtb_mem: q6_cdsp_dtb_region@99d00000 {
 		no-map;
-		reg = <0x0 0x9a200000 0x0 0x80000>;
+		reg = <0x0 0x99d00000 0x0 0x80000>;
 	};
 
-	q6_adsp_dtb_mem: q6_adsp_dtb_region@9a280000 {
+	q6_adsp_dtb_mem: q6_adsp_dtb_region@99d80000 {
 		no-map;
-		reg = <0x0 0x9a280000 0x0 0x80000>;
+		reg = <0x0 0x99d80000 0x0 0x80000>;
 	};
 
-	adspslpi_mem: adspslpi_region@9a300000 {
+	adspslpi_mem: adspslpi_region@99e00000 {
 		no-map;
-		reg = <0x0 0x9a300000 0x0 0x3a80000>;
+		reg = <0x0 0x99e00000 0x0 0x3200000>;
 	};
 
 	wlan_msa_mem: wlan_msa_region@a6400000 {
