@@ -1671,6 +1671,10 @@
 			reg = <0x0118 0x4>;
 		};
 
+		feat_conf18: feat_conf18@0148 {
+			reg = <0x0148 0x4>;
+		};
+
 		gpu_speed_bin: gpu_speed_bin@138 {
 			reg = <0x138 0x2>;
 			bits = <0 9>;
@@ -1684,8 +1688,8 @@
 
 	 qfprom_sys: qfprom@0 {
 		compatible = "qcom,qfprom-sys";
-		nvmem-cells = <&feat_conf6>;
-		nvmem-cell-names = "feat_conf6";
+		nvmem-cells = <&feat_conf6>, <&feat_conf18>;
+		nvmem-cell-names = "feat_conf6", "feat_conf18";
 	};
 
 	wpss_pas: remoteproc-wpss@97000000 {
@@ -2013,18 +2017,93 @@
 		qcom,freq-hw-domain = <&cpufreq_hw 0>, <&cpufreq_hw 1>, <&cpufreq_hw 2>;
 	};
 
+	pcie_crm_hw_0_bcm_voter: bcm_voter@0 {
+		compatible = "qcom,bcm-voter";
+		qcom,crm-name = "pcie_crm";
+		qcom,crm-client-idx = <0>;
+		qcom,crm-pwr-states = <5>;
+	};
+
+	disp_crm_hw_0_bcm_voter: bcm_voter@1 {
+		compatible = "qcom,bcm-voter";
+		qcom,crm-name = "disp_crm";
+		qcom,crm-client-idx = <0>;
+		qcom,crm-pwr-states = <2>;
+	};
+
+	disp_crm_hw_1_bcm_voter: bcm_voter@2 {
+		compatible = "qcom,bcm-voter";
+		qcom,crm-name = "disp_crm";
+		qcom,crm-client-idx = <1>;
+		qcom,crm-pwr-states = <2>;
+	};
+
+	disp_crm_hw_2_bcm_voter: bcm_voter@3 {
+		compatible = "qcom,bcm-voter";
+		qcom,crm-name = "disp_crm";
+		qcom,crm-client-idx = <2>;
+		qcom,crm-pwr-states = <2>;
+	};
+
+	disp_crm_hw_3_bcm_voter: bcm_voter@4 {
+		compatible = "qcom,bcm-voter";
+		qcom,crm-name = "disp_crm";
+		qcom,crm-client-idx = <3>;
+		qcom,crm-pwr-states = <2>;
+	};
+
+	disp_crm_hw_4_bcm_voter: bcm_voter@5 {
+		compatible = "qcom,bcm-voter";
+		qcom,crm-name = "disp_crm";
+		qcom,crm-client-idx = <4>;
+		qcom,crm-pwr-states = <2>;
+	};
+
+	disp_crm_hw_5_bcm_voter: bcm_voter@6 {
+		compatible = "qcom,bcm-voter";
+		qcom,crm-name = "disp_crm";
+		qcom,crm-client-idx = <5>;
+		qcom,crm-pwr-states = <2>;
+	};
+
+	disp_crm_sw_0_bcm_voter: bcm_voter@7 {
+		compatible = "qcom,bcm-voter";
+		qcom,crm-name = "disp_crm";
+		qcom,crm-sw-client;
+		qcom,crm-client-idx = <0>;
+		qcom,crm-pwr-states = <1>;
+	};
+
 	clk_virt: interconnect@0 {
 		compatible = "qcom,kera-clk_virt";
 		#interconnect-cells = <1>;
-		qcom,bcm-voter-names = "hlos";
-		qcom,bcm-voters = <&apps_bcm_voter>;
+		qcom,bcm-voter-names = "hlos",
+				       "pcie_crm_hw_0";
+		qcom,bcm-voters = <&apps_bcm_voter>,
+				  <&pcie_crm_hw_0_bcm_voter>;
 	};
 
 	mc_virt: interconnect@1 {
 		compatible = "qcom,kera-mc_virt";
 		#interconnect-cells = <1>;
-		qcom,bcm-voter-names = "hlos";
-		qcom,bcm-voters = <&apps_bcm_voter>;
+		qcom,bcm-voter-names = "hlos",
+				       "pcie_crm_hw_0",
+				       "disp_crm_hw_0",
+				       "disp_crm_hw_1",
+				       "disp_crm_hw_2",
+				       "disp_crm_hw_3",
+				       "disp_crm_hw_4",
+				       "disp_crm_hw_5",
+				       "disp_crm_sw_0";
+		qcom,bcm-voters = <&apps_bcm_voter>,
+				  <&pcie_crm_hw_0_bcm_voter>,
+				  <&disp_crm_hw_0_bcm_voter>,
+				  <&disp_crm_hw_1_bcm_voter>,
+				  <&disp_crm_hw_2_bcm_voter>,
+				  <&disp_crm_hw_3_bcm_voter>,
+				  <&disp_crm_hw_4_bcm_voter>,
+				  <&disp_crm_hw_5_bcm_voter>,
+				  <&disp_crm_sw_0_bcm_voter>;
 	};
 
 	config_noc: interconnect@1600000 {
@@ -2055,8 +2134,10 @@
 		compatible = "qcom,kera-pcie_anoc";
 		reg = <0x16c0000 0x11400>;
 		#interconnect-cells = <1>;
-		qcom,bcm-voter-names = "hlos";
-		qcom,bcm-voters = <&apps_bcm_voter>;
+		qcom,bcm-voter-names = "hlos",
+				       "pcie_crm_hw_0";
+		qcom,bcm-voters = <&apps_bcm_voter>,
+				  <&pcie_crm_hw_0_bcm_voter>;
 		clocks = <&gcc GCC_AGGRE_NOC_PCIE_AXI_CLK>,
 			<&gcc GCC_CFG_NOC_PCIE_ANOC_AHB_CLK>;
 	};
@@ -2083,16 +2164,46 @@
 		compatible = "qcom,kera-mmss_noc";
 		reg = <0x1780000 0x7d800>;
 		#interconnect-cells = <1>;
-		qcom,bcm-voter-names = "hlos";
-		qcom,bcm-voters = <&apps_bcm_voter>;
+		qcom,bcm-voter-names = "hlos",
+				       "disp_crm_hw_0",
+				       "disp_crm_hw_1",
+				       "disp_crm_hw_2",
+				       "disp_crm_hw_3",
+				       "disp_crm_hw_4",
+				       "disp_crm_hw_5",
+				       "disp_crm_sw_0";
+		qcom,bcm-voters = <&apps_bcm_voter>,
+				  <&disp_crm_hw_0_bcm_voter>,
+				  <&disp_crm_hw_1_bcm_voter>,
+				  <&disp_crm_hw_2_bcm_voter>,
+				  <&disp_crm_hw_3_bcm_voter>,
+				  <&disp_crm_hw_4_bcm_voter>,
+				  <&disp_crm_hw_5_bcm_voter>,
+				  <&disp_crm_sw_0_bcm_voter>;
 	};
 
 	gem_noc: interconnect@24100000 {
 		compatible = "qcom,kera-gem_noc";
 		reg = <0x24100000 0x163080>;
 		#interconnect-cells = <1>;
-		qcom,bcm-voter-names = "hlos";
-		qcom,bcm-voters = <&apps_bcm_voter>;
+		qcom,bcm-voter-names = "hlos",
+				       "pcie_crm_hw_0",
+				       "disp_crm_hw_0",
+				       "disp_crm_hw_1",
+				       "disp_crm_hw_2",
+				       "disp_crm_hw_3",
+				       "disp_crm_hw_4",
+				       "disp_crm_hw_5",
+				       "disp_crm_sw_0";
+		qcom,bcm-voters = <&apps_bcm_voter>,
+				  <&pcie_crm_hw_0_bcm_voter>,
+				  <&disp_crm_hw_0_bcm_voter>,
+				  <&disp_crm_hw_1_bcm_voter>,
+				  <&disp_crm_hw_2_bcm_voter>,
+				  <&disp_crm_hw_3_bcm_voter>,
+				  <&disp_crm_hw_4_bcm_voter>,
+				  <&disp_crm_hw_5_bcm_voter>,
+				  <&disp_crm_sw_0_bcm_voter>;
 	};
 
 	nsp_noc: interconnect@320c0000 {
