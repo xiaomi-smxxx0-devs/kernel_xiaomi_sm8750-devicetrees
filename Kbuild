@@ -20,6 +20,7 @@ dtbo-y += tuna-ese-cdp.dtbo
 dtbo-y += tuna-ese-mtp.dtbo
 dtbo-y += tuna-ese-qrd.dtbo
 dtbo-y += tuna-ese-mtp-kiwi-overlay.dtbo
+dtbo-y += tuna-ese-mtp-kiwi-harmonium-overlay.dtbo
 dtbo-y += tuna-ese-rcm-kiwi-overlay.dtbo
 dtbo-y += tuna-ese-mtp-qmp1000-overlay.dtbo
 dtbo-y += tuna-ese-oemvm-mtp-kiwi.dtbo
