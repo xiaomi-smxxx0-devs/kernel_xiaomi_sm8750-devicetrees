@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #define MHZ_TO_KBPS(mhz, w) ((mhz * 1000000 * w) / (1024))
@@ -63,6 +63,9 @@
 		<MHZ_TO_KBPS(3187, 4)>, /*    TURBO index=8  */
 		<MHZ_TO_KBPS(3686, 4)>, /*    TURBO index=9  */
 		<MHZ_TO_KBPS(4224, 4)>; /* TURBO_L1 index=10 */
+
+	nvmem-cells = <&gpu_gaming_bin>;
+	nvmem-cell-names = "gaming_bin";
 
 	zap-shader {
 		memory-region = <&gpu_microcode_mem>;
