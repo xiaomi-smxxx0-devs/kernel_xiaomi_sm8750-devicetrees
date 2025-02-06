@@ -2900,7 +2900,7 @@
 
 		qcom,prime-mask = <0x80>;
 		qcom,silver-mask = <0x07>;
-		qcom,esi-affinity-mask = <6 5 5 7 7 7 6 6>;
+		qcom,esi-affinity-mask = <6 5 4 7 7 6 6 7>;
 
 		lanes-per-direction = <2>;
 		clock-names =
