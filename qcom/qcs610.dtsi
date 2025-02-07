@@ -1,0 +1,12 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+ */
+
+#include "sm6150.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. QCS610";
+	qcom,msm-name = "QCS610";
+	qcom,msm-id = <401 0>;
+};
