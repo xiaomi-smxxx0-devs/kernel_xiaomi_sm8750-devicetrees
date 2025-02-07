@@ -152,8 +152,8 @@
 		qcom,iommu-group = <&cnss_pci_iommu_group0>;
 		memory-region = <&cnss_wlan_mem &cnss_pci0_iommu_region_partition>;
 
-		#address-cells = <1>;
-		#size-cells = <1>;
+		#address-cells = <2>;
+		#size-cells = <2>;
 
 		cnss_pci0_iommu_region_partition: cnss_pci0_iommu_region_partition {
 			/* address-cells =3 size-cells=2 from canoe-pcie.dtsi */
