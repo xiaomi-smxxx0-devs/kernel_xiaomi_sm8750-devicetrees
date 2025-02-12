@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 #include "tuna-audio-overlay.dtsi"
 &tx_swr_clk_active {
@@ -116,6 +116,7 @@
 		"IN1_HPHL", "HPHL_OUT",
 		"IN2_HPHR", "HPHR_OUT",
 		"IN3_EAR", "AUX_OUT",
+		"HAP_IN", "PCM_OUT",
 		"WSA SRC0_INP", "SRC0",
 		"WSA_TX DEC0_INP", "TX DEC0 MUX",
 		"WSA_TX DEC1_INP", "TX DEC1 MUX",
@@ -132,7 +133,7 @@
 		"VA_AIF3 CAP", "VA_SWR_CLK";
 	asoc-codec  = <&stub_codec>, <&lpass_cdc>, <&swr_haptics>,
 			<&wcd939x_codec>, <&wsa884x_0220>;
-	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc","swr_haptics",
+	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc","swr-haptics",
 			"wcd939x_codec", "wsa-codec1";
 	qcom,ext-disp-audio-rx = <1>;
 	qcom,wsa-max-devs = <1>;
