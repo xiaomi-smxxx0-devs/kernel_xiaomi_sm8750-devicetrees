@@ -1042,6 +1042,8 @@
 
 		interconnects = <&nsp_noc MASTER_CDSP_PROC &mc_virt SLAVE_EBI1>,
 				<&aggre2_noc MASTER_CRYPTO &mc_virt SLAVE_EBI1>;
+		interconnect-names = "rproc_ddr", "crypto_ddr";
+
 		/* Inputs from turing */
 		interrupts-extended = <&intc GIC_SPI 578 IRQ_TYPE_EDGE_RISING>,
 					<&cdsp_smp2p_in 0 0>,
@@ -2466,12 +2468,12 @@
 		reset-names = "core_reset";
 
 		qos0 {
-			mask = <0xc0>;
+			mask = <0xf0>;
 			vote = <44>;
 		};
 
 		qos1 {
-			mask = <0x3f>;
+			mask = <0x0f>;
 			vote = <44>;
 		};
 	};

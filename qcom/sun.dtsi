@@ -1791,6 +1791,15 @@
 		#clock-cells = <1>;
 		#power-domain-cells = <1>;
 		#reset-cells = <1>;
+
+		dispcc_mx: clock-controller@af02000 {
+			compatible = "qcom,sun-dispcc_mx";
+			clocks = <&rpmhcc RPMH_CXO_CLK>,
+				 <&sleep_clk>;
+			clock-names = "bi_tcxo",
+				      "sleep_clk";
+			#clock-cells = <1>;
+		};
 	};
 
 	evacc: clock-controller@abf0000 {
