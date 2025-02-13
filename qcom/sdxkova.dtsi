@@ -181,6 +181,11 @@
 			};
 		};
 
+		show_resume_irqs@17200000 {
+			compatible = "qcom,show-resume-irqs";
+			reg = <0x0 0x17200000 0x0 0xf0000>;	/* GICD */
+		};
+
 		/delete-node/ rsc@17a00000;
 
 		apps_rsc: rsc@17a00000 {
