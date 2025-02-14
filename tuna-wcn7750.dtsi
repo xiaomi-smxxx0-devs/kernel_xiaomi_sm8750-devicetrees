@@ -1,11 +1,20 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/interconnect/qcom,tuna.h>
+
+&tlmm {
+	icnss_sw_ctrl: icnss_sw_ctrl {
+		mux {
+			pins = "gpio80";
+			function = "wcn_sw_ctrl";
+		};
+	};
+};
 
 &soc {
 	qcom,smp2p-wpss {
@@ -54,7 +63,12 @@
 		wlan-en-gpio =<35>;
 		host-sol-gpio =<132>;
 		dev-sol-gpio =<32>;
-		wlan-sw-ctrl-gpio =<80>;
+		sw-ctrl-gpio =<80>;
+		/* List of GPIOs to be setup for interrupt wakeup capable */
+		mpm_wake_set_gpios = <80>;
+		pinctrl-names = "sw_ctrl";
+		pinctrl-0 = <&icnss_sw_ctrl>;
+
 		interrupts = <GIC_SPI 768 IRQ_TYPE_EDGE_RISING>,
 			     <GIC_SPI 769 IRQ_TYPE_EDGE_RISING>,
 			     <GIC_SPI 770 IRQ_TYPE_EDGE_RISING>,
@@ -90,19 +104,23 @@
 
 		qcom,iommu-group = <&icnss2_direct_link_iommu_group0>;
 		dma-coherent;
+		pin-ctrl-support;
 		qcom,fw-prefix;
 		qcom,wlan;
 		tsens = "sys-therm-3";
+		wcn-hw-version = "wcn7750";
 		qcom,wlan-msa-fixed-region = <&wlan_msa_mem>;
 
 		vdd-cx-mx-supply = <&S3B>;
-		qcom,vdd-cx-mx-config = <880000 1040000 0 0 0>;
+		qcom,vdd-cx-mx-config = <864000 1040000 0 0 0>;
 		vdd-1.8-xo-supply = <&S1B>;
-		qcom,vdd-1.8-xo-config = <1856000 2104000 0 0 0>;
+		qcom,vdd-1.8-xo-config = <1840000 2104000 0 0 0>;
 		vdd-1.3-rfa-supply = <&S2B>;
-		qcom,vdd-1.3-rfa-config = <1256000 1408000 0 0 0>;
+		qcom,vdd-1.3-rfa-config = <1240000 1408000 0 0 0>;
 		vdd-1.8-io-supply = <&L3G>;
 		qcom,vdd-1.8-io-config = <1800000 1800000 0 0 0>;
+		vdd-1.2-io-supply = <&L2G>;
+		qcom,vdd-1.2-io-config = <1200000 1200000 0 0 0>;
 
 		qcom,smem-states = <&smp2p_wlan_1_out 0>,
 				   <&smp2p_wlan_2_out 0>,
@@ -132,12 +150,12 @@
 		<30000 400000>,
 		/* high: 240-1200 Mbps snoc/anoc: 100 Mhz */
 		<100000 400000>,
-		/* very high: > 1200 Mbps snoc/anoc: 403 Mhz */
-		<175000 1612000>,
-		/* ultra high: DBS mode snoc/anoc: 403 Mhz */
-		<312500 1612000>,
-		/* super high: DBS mode snoc/anoc: 533 Mhz */
-		<587500 2171000>,
+		/* very high: > 1200 Mbps snoc/anoc: 200 Mhz */
+		<175000 800000>,
+		/* ultra high: DBS mode snoc/anoc: 200 Mhz */
+		<312500 800000>,
+		/* super high: DBS mode snoc/anoc: 403 Mhz */
+		<587500 1612000>,
 		/* low (latency critical): 18-60 Mbps snoc/anoc: 200 Mhz */
 		<7500 800000>,
 
