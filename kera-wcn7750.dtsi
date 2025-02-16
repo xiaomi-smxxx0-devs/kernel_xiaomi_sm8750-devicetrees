@@ -185,11 +185,15 @@
 		/* low (latency critical): 18-60 Mbps ddr: 451.2 MHz */
 		<7500 2188800>;
 
-		icnss_cdev_apss: qcom,icnss_cdev1 {
+		icnss_cdev_apss: icnss_cdev1 {
 			#cooling-cells = <2>;
 		};
 
-		icnss_cdev_wpss: qcom,icnss_cdev2 {
+		icnss_cdev_wpss: icnss_cdev2 {
+			#cooling-cells = <2>;
+		};
+
+		icnss_cdev_bw: icnss_cdev3 {
 			#cooling-cells = <2>;
 		};
 
