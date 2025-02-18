@@ -1863,7 +1863,7 @@
 	};
 
 	dispcc: clock-controller@af00000 {
-		compatible = "qcom,tuna-dispcc-v1", "syscon";
+		compatible = "qcom,tuna-dispcc", "syscon";
 		reg = <0xaf00000 0x20000>;
 		reg-name = "cc_base";
 		vdd_mm-supply = <&VDD_MM_LEVEL>;
@@ -1901,7 +1901,7 @@
 	};
 
 	gcc: clock-controller@100000 {
-		compatible = "qcom,tuna-gcc-v1", "syscon";
+		compatible = "qcom,tuna-gcc", "syscon";
 		reg = <0x100000 0x1f4200>;
 		reg-name = "cc_base";
 		vdd_cx-supply = <&VDD_CX_LEVEL>;
