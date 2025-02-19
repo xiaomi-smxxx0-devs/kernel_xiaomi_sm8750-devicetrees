@@ -5,6 +5,18 @@
 
 #define MHZ_TO_KBPS(mhz, w) ((mhz * 1000000 * w) / (1024))
 
+/* ACD Control register values */
+#define ACD_LEVEL_Turbo_L2	0xa8295ffd
+#define ACD_LEVEL_Turbo_L1	0xa82a5ffd
+#define ACD_LEVEL_Turbo		0x882c5ffd
+#define ACD_LEVEL_Nominal_L1	0x882d5ffd
+#define ACD_LEVEL_Nominal	0x882d5ffd
+#define ACD_LEVEL_SVS_L2	0xa82d5ffd
+#define ACD_LEVEL_SVS_L1	0x882f5ffd
+#define ACD_LEVEL_SVS		0Xc02d5ffd
+#define ACD_LEVEL_LowSVS	0Xc82f5ffd
+#define ACD_LEVEL_LowSVS_D1	0Xc82f5ffd
+
 &msm_gpu {
 	compatible = "qcom,adreno-gpu-gen7-17-0", "qcom,kgsl-3d0";
 	status = "ok";
@@ -169,5 +181,8 @@
 
 		iommus = <&kgsl_smmu 0x5 0x000>;
 		qcom,iommu-dma = "disabled";
+
+		mboxes = <&qmp_aop 0>;
+		mbox-names = "aop";
 	};
 };

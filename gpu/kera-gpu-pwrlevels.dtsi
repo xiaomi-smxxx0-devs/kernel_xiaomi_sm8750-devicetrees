@@ -26,6 +26,8 @@
 			qcom,bus-freq-ddr8 = <9>;
 			qcom,bus-min-ddr8 = <8>;
 			qcom,bus-max-ddr8 = <10>;
+
+			qcom,acd-level = <ACD_LEVEL_Turbo_L2>;
 		};
 
 		/* Turbo_L1 */
@@ -41,6 +43,8 @@
 			qcom,bus-freq-ddr8 = <9>;
 			qcom,bus-min-ddr8 = <8>;
 			qcom,bus-max-ddr8 = <10>;
+
+			qcom,acd-level = <ACD_LEVEL_Turbo_L1>;
 		};
 
 		/* Turbo */
@@ -56,6 +60,8 @@
 			qcom,bus-freq-ddr8 = <8>;
 			qcom,bus-min-ddr8 = <8>;
 			qcom,bus-max-ddr8 = <9>;
+
+			qcom,acd-level = <ACD_LEVEL_Turbo>;
 		};
 
 		/* Nom_L1 */
@@ -71,6 +77,8 @@
 			qcom,bus-freq-ddr8 = <8>;
 			qcom,bus-min-ddr8 = <8>;
 			qcom,bus-max-ddr8 = <8>;
+
+			qcom,acd-level = <ACD_LEVEL_Nominal_L1>;
 		};
 
 		/* Nom */
@@ -86,6 +94,8 @@
 			qcom,bus-freq-ddr8 = <7>;
 			qcom,bus-min-ddr8 = <6>;
 			qcom,bus-max-ddr8 = <8>;
+
+			qcom,acd-level = <ACD_LEVEL_Nominal>;
 		};
 
 		/* SVS_L2 */
@@ -101,6 +111,8 @@
 			qcom,bus-freq-ddr8 = <6>;
 			qcom,bus-min-ddr8 = <5>;
 			qcom,bus-max-ddr8 = <7>;
+
+			qcom,acd-level = <ACD_LEVEL_SVS_L2>;
 		};
 
 		/* SVS_L1 */
@@ -116,6 +128,8 @@
 			qcom,bus-freq-ddr8 = <6>;
 			qcom,bus-min-ddr8 = <5>;
 			qcom,bus-max-ddr8 = <7>;
+
+			qcom,acd-level = <ACD_LEVEL_SVS_L1>;
 		};
 
 		/* SVS */
@@ -131,6 +145,8 @@
 			qcom,bus-freq-ddr8 = <4>;
 			qcom,bus-min-ddr8 = <2>;
 			qcom,bus-max-ddr8 = <5>;
+
+			qcom,acd-level = <ACD_LEVEL_SVS>;
 		};
 
 		/* Low_SVS */
@@ -146,6 +162,8 @@
 			qcom,bus-freq-ddr8 = <2>;
 			qcom,bus-min-ddr8 = <2>;
 			qcom,bus-max-ddr8 = <4>;
+
+			qcom,acd-level = <ACD_LEVEL_LowSVS>;
 		};
 
 		/* Low_SVS_D1 */
@@ -161,6 +179,8 @@
 			qcom,bus-freq-ddr8 = <2>;
 			qcom,bus-min-ddr8 = <2>;
 			qcom,bus-max-ddr8 = <4>;
+
+			qcom,acd-level = <ACD_LEVEL_LowSVS_D1>;
 		};
 	};
 };
