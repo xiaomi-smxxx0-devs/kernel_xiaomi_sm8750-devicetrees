@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include <dt-bindings/soc/qcom,ipcc.h>
@@ -181,6 +181,11 @@
 			};
 		};
 
+		show_resume_irqs@17200000 {
+			compatible = "qcom,show-resume-irqs";
+			reg = <0x0 0x17200000 0x0 0xf0000>;	/* GICD */
+		};
+
 		/delete-node/ rsc@17a00000;
 
 		apps_rsc: rsc@17a00000 {
@@ -347,8 +352,6 @@
 };
 
 &tlmm {
-	/delete-property/ wakeup-parent;
-	/* TO DO: re-enable PDC dependency once we validate PDC changes */
 	gpio-reserved-ranges = <110 6>;
 	sdc1_emmc_on: sdc1_emmc_on {
 		clk {
