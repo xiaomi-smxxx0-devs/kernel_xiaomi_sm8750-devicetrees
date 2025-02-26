@@ -20,12 +20,12 @@
 	dcc: dcc_v2@100ff000 {
 		compatible = "qcom,dcc-v2";
 		reg = <0x100ff000 0x1000>,
-		      <0x10080000 0x8000>;
+		      <0x10084000 0x4000>;
 
 		qcom,transaction_timeout = <0>;
 
 		reg-names = "dcc-base", "dcc-ram-base";
-		dcc-ram-offset = <0x0>;
+		dcc-ram-offset = <0x4000>;
 	};
 
 	mem_dump {
