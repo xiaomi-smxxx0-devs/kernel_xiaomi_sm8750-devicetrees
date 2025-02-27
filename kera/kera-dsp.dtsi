@@ -8,6 +8,7 @@
 		compatible = "qcom,fastrpc";
 		qcom,glink-channels = "fastrpcglink-apps-dsp";
 		qcom,intents = <0x181 64>;
+		qcom,ch-sched-rt;
 		label = "adsp";
 		memory-region = <&adsp_mem_heap>;
 		qcom,vmids = <22 37>;
@@ -89,6 +90,7 @@
 		compatible = "qcom,fastrpc";
 		qcom,glink-channels = "fastrpcglink-apps-dsp";
 		qcom,intents = <0x3fA 64>;
+		qcom,ch-sched-rt;
 		label = "cdsp";
 		qcom,fastrpc-gids = <2908>;
 		qcom,rpc-latency-us = <235>;
