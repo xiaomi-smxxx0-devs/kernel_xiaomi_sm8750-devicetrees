@@ -166,6 +166,4 @@
 
 	ssusb_redriver = <&redriver>;
 
-	qcom,wcd_usbss = <&wcd_usbss>;
-
 };

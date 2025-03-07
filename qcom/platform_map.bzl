@@ -73,6 +73,60 @@ _platform_map = {
         ],
         "binary_compatible_with": ["tuna", "kera"],
     },
+    "sun-le": {
+        "dtb_list": [
+            # keep sorted
+            {"name": "sun.dtb"},
+            {
+                "name": "sunp.dtb",
+                "apq": True,
+            },
+            {
+                "name": "sunp-v2.dtb",
+                "apq": True,
+            },
+            {"name": "sun-v2.dtb"},
+            {"name": "sun-tp.dtb"},
+            {"name": "sun-tp-v2.dtb"},
+            {
+                "name": "sunp-tp.dtb",
+                "apq": True,
+            },
+            {
+                "name": "sunp-tp-v2.dtb",
+                "apq": True,
+            },
+        ],
+        "dtbo_list": [
+            # keep sorted
+            {"name": "sun-atp-overlay.dtbo"},
+            {"name": "sun-cdp-kiwi-overlay.dtbo"},
+            {"name": "sun-cdp-kiwi-v8-overlay.dtbo"},
+            {"name": "sun-cdp-nfc-overlay.dtbo"},
+            {"name": "sun-cdp-no-display-overlay.dtbo"},
+            {"name": "sun-cdp-overlay.dtbo"},
+            {"name": "sun-cdp-v8-overlay.dtbo"},
+            {"name": "sun-mtp-3.5mm-kiwi-v8-overlay.dtbo"},
+            {"name": "sun-mtp-3.5mm-overlay.dtbo"},
+            {"name": "sun-mtp-kiwi-overlay.dtbo"},
+            {"name": "sun-mtp-kiwi-v8-overlay.dtbo"},
+            {"name": "sun-mtp-nfc-overlay.dtbo"},
+            {"name": "sun-mtp-overlay.dtbo"},
+            {"name": "sun-mtp-qmp1000-overlay.dtbo"},
+            {"name": "sun-mtp-qmp1000-v8-overlay.dtbo"},
+            {"name": "sun-mtp-v8-overlay.dtbo"},
+            {"name": "sun-qrd-sku1-overlay.dtbo"},
+            {"name": "sun-qrd-sku1-v8-overlay.dtbo"},
+            {"name": "sun-qrd-sku2-v8-overlay.dtbo"},
+            {"name": "sun-rcm-kiwi-overlay.dtbo"},
+            {"name": "sun-rcm-kiwi-v8-overlay.dtbo"},
+            {"name": "sun-rcm-overlay.dtbo"},
+            {"name": "sun-rcm-v8-overlay.dtbo"},
+            {"name": "sunp-hdk-overlay.dtbo"},
+            {"name": "sun-rumi-overlay.dtbo"},
+        ],
+        "binary_compatible_with": ["tuna", "kera"],
+    },
     "tuna": {
         "dtb_list": [
             {"name": "tuna.dtb"},
