@@ -139,50 +139,57 @@
 
 		qcom,icc-path-count = <2>;
 		qcom,bus-bw-cfg-count = <9>;
-		qcom,bus-bw-cfg =
-		/** ICC Path 1 **/
-		<0 0>, /* no vote */
-		/* idle: 0-18 Mbps snoc/anoc: 100 Mhz */
-		<2250 400000>,
-		/* low: 18-60 Mbps snoc/anoc: 100 Mhz */
-		<7500 400000>,
-		/* medium: 60-240 Mbps snoc/anoc: 100 Mhz */
-		<30000 400000>,
-		/* high: 240-1200 Mbps snoc/anoc: 100 Mhz */
-		<100000 400000>,
-		/* very high: > 1200 Mbps snoc/anoc: 200 Mhz */
-		<175000 800000>,
-		/* ultra high: DBS mode snoc/anoc: 200 Mhz */
-		<312500 800000>,
-		/* super high: DBS mode snoc/anoc: 403 Mhz */
-		<587500 1612000>,
-		/* low (latency critical): 18-60 Mbps snoc/anoc: 200 Mhz */
-		<7500 800000>,
 
-		/** ICC Path 2 **/
-		<0 0>,
-		/* idle: 0-18 Mbps ddr: 547 MHz */
-		<2250 2188800>,
-		/* low: 18-60 Mbps ddr: 547 MHz */
-		<7500 2188800>,
-		/* medium: 60-240 Mbps ddr: 547 MHz */
-		<30000 2188800>,
-		/* high: 240-1200 Mbps ddr: 547 MHz */
-		<100000 2188800>,
-		/* very high: > 1200 Mbps ddr: 1555 MHz */
-		<175000 6220800>,
-		/* ultra high: DBS mode ddr: 2092 MHz */
-		<312500 8371200>,
-		/* super high: DBS mode ddr: 3.2 GHz */
-		<587500 14745600>,
-		/* low (latency critical): 18-60 Mbps ddr: 2092 MHz */
-		<7500 8371200>;
+		/* ddr_type = 8(LPDDR5) */
 
-		icnss_cdev_apss: qcom,icnss_cdev1 {
+		ddr_cfg@0 {
+			ddr_type = <8>;
+
+			qcom,bus-bw-cfg =
+			/** ICC Path 1 **/
+			<0 0>, /* no vote */
+			/* idle: 0-18 Mbps snoc/anoc: 100 Mhz */
+			<2250 400000>,
+			/* low: 18-60 Mbps snoc/anoc: 100 Mhz */
+			<7500 400000>,
+			/* medium: 60-240 Mbps snoc/anoc: 100 Mhz */
+			<30000 400000>,
+			/* high: 240-1200 Mbps snoc/anoc: 100 Mhz */
+			<100000 400000>,
+			/* very high: > 1200 Mbps snoc/anoc: 200 Mhz */
+			<175000 800000>,
+			/* ultra high: DBS mode snoc/anoc: 200 Mhz */
+			<312500 800000>,
+			/* super high: DBS mode snoc/anoc: 403 Mhz */
+			<587500 1612000>,
+			/* low (latency critical): 18-60 Mbps snoc/anoc: 200 Mhz */
+			<7500 800000>,
+
+			/** ICC Path 2 **/
+			<0 0>,
+			/* idle: 0-18 Mbps ddr: 547 MHz */
+			<2250 2188800>,
+			/* low: 18-60 Mbps ddr: 547 MHz */
+			<7500 2188800>,
+			/* medium: 60-240 Mbps ddr: 547 MHz */
+			<30000 2188800>,
+			/* high: 240-1200 Mbps ddr: 547 MHz */
+			<100000 2188800>,
+			/* very high: > 1200 Mbps ddr: 1555 MHz */
+			<175000 6220800>,
+			/* ultra high: DBS mode ddr: 2092 MHz */
+			<312500 8371200>,
+			/* super high: DBS mode ddr: 3.2 GHz */
+			<587500 14745600>,
+			/* low (latency critical): 18-60 Mbps ddr: 2092 MHz */
+			<7500 8371200>;
+		};
+
+		icnss_cdev_apss: icnss_cdev1 {
 			#cooling-cells = <2>;
 		};
 
-		icnss_cdev_wpss: qcom,icnss_cdev2 {
+		icnss_cdev_wpss: icnss_cdev2 {
 			#cooling-cells = <2>;
 		};
 

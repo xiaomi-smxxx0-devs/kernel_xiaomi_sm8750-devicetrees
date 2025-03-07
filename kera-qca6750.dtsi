@@ -125,11 +125,15 @@
 		qcom,qmp = <&aoss_qmp>;
 		qcom,vreg_ol_cpr ="s3b";
 
-		icnss_cdev_apss: qcom,icnss_cdev1 {
+		icnss_cdev_apss: icnss_cdev1 {
 			#cooling-cells = <2>;
 		};
 
-		icnss_cdev_wpss: qcom,icnss_cdev2 {
+		icnss_cdev_wpss: icnss_cdev2 {
+			#cooling-cells = <2>;
+		};
+
+		icnss_cdev_bw: icnss_cdev3 {
 			#cooling-cells = <2>;
 		};
 

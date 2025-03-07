@@ -146,50 +146,106 @@
 
 		qcom,icc-path-count = <2>;
 		qcom,bus-bw-cfg-count = <9>;
-		qcom,bus-bw-cfg =
-		/** ICC Path 1 **/
-		<0 0>, /* no vote */
-		/* idle: 0-18 Mbps snoc/anoc: 100 Mhz */
-		<2250 1200000>,
-		/* low: 18-60 Mbps snoc/anoc: 100 Mhz */
-		<7500 1200000>,
-		/* medium: 60-240 Mbps snoc/anoc: 100 Mhz */
-		<30000 1200000>,
-		/* high: 240-1200 Mbps snoc/anoc: 100 Mhz */
-		<100000 1200000>,
-		/* very high: > 1200 Mbps snoc/anoc: 403 Mhz */
-		<175000 3224000>,
-		/* ultra high: DBS mode snoc/anoc: 403 Mhz */
-		<312500 3224000>,
-		/* super high: DBS mode snoc/anoc: 533 Mhz */
-		<587500 4264000>,
-		/* low (latency critical): 18-60 Mbps snoc/anoc: 200 Mhz */
-		<7500 1600000>,
 
-		/** ICC Path 2 **/
-		<0 0>,
-		/* idle: 0-18 Mbps ddr: 451.2 MHz */
-		<2250 2188800>,
-		/* low: 18-60 Mbps ddr: 451.2 MHz */
-		<7500 2188800>,
-		/* medium: 60-240 Mbps ddr: 451.2 MHz */
-		<30000 2188800>,
-		/* high: 240-1200 Mbps ddr: 451.2 MHz */
-		<100000 2188800>,
-		/* very high: > 1200 Mbps ddr: 1555 MHz */
-		<175000 6220800>,
-		/* ultra high: DBS mode ddr: 2092 MHz */
-		<312500 8368000>,
-		/* super high: DBS mode ddr: 3.2 GHz */
-		<587500 12800000>,
-		/* low (latency critical): 18-60 Mbps ddr: 451.2 MHz */
-		<7500 2188800>;
+		/* ddr_type = 8(LPDDR5) */
 
-		icnss_cdev_apss: qcom,icnss_cdev1 {
+		ddr_cfg@0 {
+			ddr_type = <8>;
+
+			qcom,bus-bw-cfg =
+			/** ICC Path 1 **/
+			<0 0>, /* no vote */
+			/* idle: 0-18 Mbps snoc/anoc: 100 Mhz */
+			<2250 800000>,
+			/* low: 18-60 Mbps snoc/anoc: 100 Mhz */
+			<7500 800000>,
+			/* medium: 60-240 Mbps snoc/anoc: 100 Mhz */
+			<30000 800000>,
+			/* high: 240-1200 Mbps snoc/anoc: 100 Mhz */
+			<100000 800000>,
+			/* very high: > 1200 Mbps snoc/anoc: 200 Mhz */
+			<175000 1600000>,
+			/* ultra high: DBS mode snoc/anoc: 200 Mhz */
+			<312500 1600000>,
+			/* super high: DBS mode snoc/anoc: 403 Mhz */
+			<587500 3224000>,
+			/* low (latency critical): 18-60 Mbps snoc/anoc: 200 Mhz */
+			<7500 1600000>,
+
+			/** ICC Path 2 **/
+			<0 0>,
+			/* idle: 0-18 Mbps ddr: 547 MHz */
+			<2250 2500800>,
+			/* low: 18-60 Mbps ddr: 547 MHz */
+			<7500 2500800>,
+			/* medium: 60-240 Mbps ddr: 547 MHz */
+			<30000 2500800>,
+			/* high: 240-1200 Mbps ddr: 547 MHz */
+			<100000 2500800>,
+			/* very high: > 1200 Mbps ddr: 1555 MHz */
+			<175000 7108800>,
+			/* ultra high: DBS mode ddr: 2092 MHz */
+			<312500 9566400>,
+			/* super high: DBS mode ddr: 3.2 GHz */
+			<587500 14569200>,
+			/* low (latency critical): 18-60 Mbps ddr: 547 MHz */
+			<7500 2500800>;
+		};
+
+		/* ddr_type = 7(LPDDR4) */
+
+		ddr_cfg@1 {
+			ddr_type = <7>;
+
+			qcom,bus-bw-cfg =
+			/** ICC Path 1 **/
+			<0 0>, /* no vote */
+			/* idle: 0-18 Mbps snoc/anoc: 100 Mhz */
+			<2250 800000>,
+			/* low: 18-60 Mbps snoc/anoc: 100 Mhz */
+			<7500 800000>,
+			/* medium: 60-240 Mbps snoc/anoc: 100 Mhz */
+			<30000 800000>,
+			/* high: 240-1200 Mbps snoc/anoc: 100 Mhz */
+			<100000 800000>,
+			/* very high: > 1200 Mbps snoc/anoc: 200 Mhz */
+			<175000 1600000>,
+			/* ultra high: DBS mode snoc/anoc: 200 Mhz */
+			<312500 1600000>,
+			/* super high: DBS mode snoc/anoc: 403 Mhz */
+			<587500 3224000>,
+			/* low (latency critical): 18-60 Mbps snoc/anoc: 200 Mhz */
+			<7500 1600000>,
+
+			/** ICC Path 2 **/
+			<0 0>,
+			/* idle: 0-18 Mbps ddr: 547 MHz */
+			<2250 2500800>,
+			/* low: 18-60 Mbps ddr: 547 MHz */
+			<7500 2500800>,
+			/* medium: 60-240 Mbps ddr: 547 MHz */
+			<30000 2500800>,
+			/* high: 240-1200 Mbps ddr: 547 MHz */
+			<100000 2500800>,
+			/* very high: > 1200 Mbps ddr: 1555 MHz */
+			<175000 7108800>,
+			/* ultra high: DBS mode ddr: 2092 MHz */
+			<312500 9566400>,
+			/* super high: DBS mode ddr: 3.2 GHz */
+			<587500 14569200>,
+			/* low (latency critical): 18-60 Mbps ddr: 547 MHz */
+			<7500 2500800>;
+		};
+
+		icnss_cdev_apss: icnss_cdev1 {
 			#cooling-cells = <2>;
 		};
 
-		icnss_cdev_wpss: qcom,icnss_cdev2 {
+		icnss_cdev_wpss: icnss_cdev2 {
+			#cooling-cells = <2>;
+		};
+
+		icnss_cdev_bw: icnss_cdev3 {
 			#cooling-cells = <2>;
 		};
 
