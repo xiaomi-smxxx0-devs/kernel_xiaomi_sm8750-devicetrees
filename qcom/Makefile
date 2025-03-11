@@ -255,6 +255,8 @@ tuna_tuivm-dtb-$(CONFIG_ARCH_QTI_VM) += tuna-vm-rumi.dtb \
 				tuna-vm-qrd.dtb \
 				tuna-vm-rcm.dtb \
 				tuna-vm-rcm-kiwi.dtb \
+				tunap-vm.dtb \
+				tuna7-vm.dtb \
 				tuna-oemvm-rumi.dtb \
 				tuna-oemvm-atp.dtb \
 				tuna-oemvm-cdp.dtb \
@@ -263,7 +265,9 @@ tuna_tuivm-dtb-$(CONFIG_ARCH_QTI_VM) += tuna-vm-rumi.dtb \
 				tuna-oemvm-mtp-qmp1000.dtb \
 				tuna-oemvm-qrd.dtb \
 				tuna-oemvm-rcm.dtb \
-				tuna-oemvm-rcm-kiwi.dtb
+				tuna-oemvm-rcm-kiwi.dtb \
+				tunap-oemvm.dtb \
+				tuna7-oemvm.dtb
 dtb-y += $(tuna_tuivm-dtb-y)
 endif
 endif
