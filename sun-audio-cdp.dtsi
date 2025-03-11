@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2023-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include "sun-audio-overlay.dtsi"
@@ -135,4 +135,5 @@
 	qcom,sep-mi2s-gpios = <&cdc_sep_mi2s_gpios>;
 	qcom,usbss-hsj-connect-enabled;
 	qcom,msm-mbhc-hs-mic-max-threshold-mv = <1680>;
+	wcd939x-i2c-handle = <&wcd_usbss>;
 };
