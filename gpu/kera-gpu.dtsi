@@ -38,8 +38,6 @@
 	clock-names = "gcc_gpu_memnoc_gfx", "gpu_cc_ahb",
 		"gpu_cc_hlos1_vote_gpu_smmu", "apb_pclk";
 
-	qcom,gpu-model = "Adreno716";
-
 	qcom,min-access-length = <32>;
 
 	qcom,ubwc-mode = <4>;
