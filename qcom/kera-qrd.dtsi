@@ -80,9 +80,9 @@
 		#size-cells = <0>;
 		qcom,bus-type = "i2c";
 
-		qcom,smb1393@34 {
+		qcom,smb1393@35 {
 			compatible = "qcom,i2c-pmic";
-			reg = <0x34>;
+			reg = <0x35>;
 			qcom,can-sleep;
 		};
 	};
@@ -92,17 +92,17 @@
 	status = "ok";
 
 	smb1393_1_iin {
-		reg = <0x1053401>;
+		reg = <0x1053501>;
 		label = "smb1393_1_iin";
 	};
 
 	smb1393_1_ichg {
-		reg = <0x1053402>;
+		reg = <0x1053502>;
 		label = "smb1393_1_ichg";
 	};
 
 	smb1393_1_die_temp {
-		reg = <0x1053403>;
+		reg = <0x1053503>;
 		label = "smb1393_1_die_temp";
 	};
 };
