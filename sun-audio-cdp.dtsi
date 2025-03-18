@@ -136,4 +136,5 @@
 	qcom,usbss-hsj-connect-enabled;
 	qcom,msm-mbhc-hs-mic-max-threshold-mv = <1680>;
 	wcd939x-i2c-handle = <&wcd_usbss>;
+	qcom,wcn-bt-ext = <1>;
 };
