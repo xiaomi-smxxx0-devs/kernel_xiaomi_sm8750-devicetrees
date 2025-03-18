@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 &soc {
 };
@@ -13,7 +13,9 @@
 	st_fts@0 {
 		compatible = "st,fts";
 		reg = <0x0>;
+		st,irq-gpio = <&tlmm 162 0x2008>;
 		st,irq-flags = <8>;
+		st,reset-gpio = <&tlmm 161 0x00>;
 		spi-max-frequency = <1000000>;
 
 		st,touch-type = "primary";
