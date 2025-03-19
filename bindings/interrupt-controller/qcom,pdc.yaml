@@ -39,6 +39,7 @@ properties:
           - qcom,ravelin-pdc
           - qcom,tuna-pdc
           - qcom,kera-pdc
+          - qcom,sm6150-pdc
       - const: qcom,pdc
 
   reg:
