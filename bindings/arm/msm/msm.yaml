@@ -205,4 +205,19 @@ properties:
               - qcom,wdp
           - const: qcom,monacop
 
+      - description: Qualcomm Technologies, Inc. QCS610
+        items:
+          - enum:
+              - qcom,qcs610-iot
+              - qcom,iot
+              - qcom,qcs610-ipc
+              - qcom,ipc
+              - qcom,qcs610-opk
+              - qcom,opk
+          - const: qcom,qcs610
+
+      - description: Qualcomm Technologies, Inc. SM6150
+        items:
+          - const: qcom,sm6150
+
 additionalProperties: true
