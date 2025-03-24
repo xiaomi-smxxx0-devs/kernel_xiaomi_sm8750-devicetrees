@@ -13,6 +13,9 @@
 	st_fts@0 {
 		compatible = "st,fts";
 		reg = <0x0>;
+		st,irq-gpio = <&tlmm 176 0x2008>;
+		st,irq-flags = <8>;
+		st,reset-gpio = <&tlmm 189 0x00>;
 
 		st,touch-type = "primary";
 		st,qts_en;
