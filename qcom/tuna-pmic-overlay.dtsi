@@ -120,6 +120,14 @@
 		nvmem-names = "pon_log0", "pon_log1";
 		depends-on-supply = <&gh_watchdog>;
 	};
+
+	regulator_ocp_notifier: regulator-ocp-notifier {
+		compatible = "qcom,regulator-ocp-notifier";
+		interrupt-parent = <&spmi_bus>;
+		interrupts = <0x0 0x71 0x1 IRQ_TYPE_EDGE_RISING>;
+		nvmem-cells = <&ocp_log>;
+		nvmem-cell-names = "ocp_log";
+	};
 };
 
 &thermal_zones {
