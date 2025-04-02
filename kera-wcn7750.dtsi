@@ -70,6 +70,7 @@
 		sw-ctrl-gpio = <81>;
 		/* List of GPIOs to be setup for interrupt wakeup capable */
 		mpm_wake_set_gpios = <81>;
+		pin_sw-ctrl-gpio = <&tlmm 81 0>;
 		pinctrl-names = "sw_ctrl";
 		pinctrl-0 = <&icnss_sw_ctrl>;
 
