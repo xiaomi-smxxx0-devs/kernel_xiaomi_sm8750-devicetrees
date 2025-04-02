@@ -112,6 +112,18 @@ sun-overlays-dtb-$(CONFIG_ARCH_KERA) += $(KERA_BOARDS) $(NOAPQ_KERA_BOARDS) $(KE
 
 dtb-y += $(sun-dtb-y)
 
+QCS610_BASE_DTB += qcs610.dtb
+
+QCS610_BOARDS += \
+		 qcs610-iot-overlay.dtbo \
+		 qcs610-ipc-overlay.dtbo \
+		 qcs610-opk-overlay.dtbo
+
+qcs610-dtb-$(CONFIG_ARCH_SM6150) += \
+        $(call add-overlays, $(QCS610_BOARDS),$(QCS610_BASE_DTB))
+qcs610-overlays-dtb-$(CONFIG_ARCH_SM6150) += $(QCS610_BOARDS) $(QCS610_BASE_DTB)
+dtb-y += $(qcs610-dtb-y)
+
 PINEAPPLE_BASE_DTB += pineapple.dtb pineapple-v2.dtb
 PINEAPPLE_APQ_BASE_DTB += pineapplep.dtb pineapplep-v2.dtb
 

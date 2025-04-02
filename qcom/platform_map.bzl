@@ -127,6 +127,18 @@ _platform_map = {
         ],
         "binary_compatible_with": ["tuna", "kera"],
     },
+    "qcs610": {
+        "dtb_list": [
+            # keep sorted
+            {"name": "qcs610.dtb"},
+        ],
+        "dtbo_list": [
+            # keep sorted
+            {"name": "qcs610-iot-overlay.dtbo"},
+            {"name": "qcs610-ipc-overlay.dtbo"},
+            {"name": "qcs610-opk-overlay.dtbo"},
+        ],
+    },
     "tuna": {
         "dtb_list": [
             {"name": "tuna.dtb"},
