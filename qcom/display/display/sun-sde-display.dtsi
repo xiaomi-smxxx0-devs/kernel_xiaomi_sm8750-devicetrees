@@ -43,7 +43,7 @@
 		regulator-min-microvolt = <5500000>;
 		regulator-max-microvolt = <5500000>;
 		regulator-enable-ramp-delay = <233>;
-		gpio = <&pm8550_gpios 11 0>;
+		/* gpio = <&pm8550_gpios 11 0>; Xiaomi Removed MIUIROM-2139133 */
 		enable-active-high;
 		regulator-boot-on;
 		proxy-supply = <&display_panel_avdd>;
@@ -51,15 +51,15 @@
 		pinctrl-names = "default";
 	};
 
-	disp_rdump_memory: disp_rdump_region@0xd5500000 {
-		reg = <0xfc800000 0x00800000>;
+	disp_rdump_memory: disp_rdump_region@FC800000 {
+		reg = <0xFC800000 0x01400000>;
 		label = "disp_rdump_region";
 	};
 };
 
 &reserved_memory {
 	splash_memory: splash_region {
-		reg = <0x0 0xfc800000 0x0 0x02b00000>;
+		reg = <0x0 0xFC800000 0x0 0x02b00000>;
 		label = "cont_splash_region";
 	};
 	/*
@@ -147,11 +147,6 @@
 	vci-supply = <&L13B>;
 	vdd-supply = <&L11B>;
 	tvdd-supply = <&L4B>;
-};
-
-&mdss_mdp {
-	connectors = <&sde_dsi &sde_dsi1 &smmu_sde_unsec &smmu_sde_sec &sde_wb1 &sde_wb2
-			&sde_dp &sde_cesta>;
 };
 
 &dsi_vtdr6130_amoled_cmd {
