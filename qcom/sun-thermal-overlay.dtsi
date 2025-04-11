@@ -15,25 +15,6 @@
 };
 
 &thermal_zones {
-	socd {
-		cooling-maps {
-			socd_apc1 {
-				trip = <&socd_trip>;
-				cooling-device = <&APC1_MX_CX_PAUSE 1 1>;
-			};
-
-			socd_cdsp1 {
-				trip = <&socd_trip>;
-				cooling-device = <&cdsp_sw 4 4>;
-			};
-
-			socd_gpu0 {
-				trip = <&socd_trip>;
-				cooling-device = <&msm_gpu 4 4>;
-			};
-		};
-	};
-
 	pmih010x-bcl-lvl0 {
 		cooling-maps {
 			lbat_modem0 {
@@ -174,7 +155,7 @@
 		};
 	};
 
-	sys-therm-0 {
+	xo-therm {
 		cooling-maps {
 			apc1_cdev {
 				trip = <&trip_config0>;
@@ -244,23 +225,6 @@
 			display_cdev3 {
 				trip = <&display_test_config3>;
 				cooling-device = <&display_fps 3 3>;
-			};
-		};
-	};
-
-	sys-therm-2 {
-		trips {
-			sys_therm2_config0: sys-therm2-config0 {
-				temperature = <60000>;
-				hysteresis = <10000>;
-				type = "passive";
-			};
-		};
-
-		cooling-maps {
-			gpu_dump_skip {
-				trip = <&sys_therm2_config0>;
-				cooling-device = <&gpu_dump_skip_cdev 1 1>;
 			};
 		};
 	};

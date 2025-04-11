@@ -42,7 +42,11 @@ SUN_BOARDS += \
 		sun-rcm-overlay.dtbo \
 		sun-rcm-v8-overlay.dtbo \
 		sun-atp-overlay.dtbo \
-		sunp-hdk-overlay.dtbo
+		sunp-hdk-overlay.dtbo \
+		haotian-sm8750-overlay.dtbo \
+		dada-sm8750-overlay.dtbo \
+		xuanyuan-sm8750-overlay.dtbo \
+		miro-sm8750-overlay.dtbo
 
 NOAPQ_SUN_BOARDS += \
 		 sun-rumi-overlay.dtbo

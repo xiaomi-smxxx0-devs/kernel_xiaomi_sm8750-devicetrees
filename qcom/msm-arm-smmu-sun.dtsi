@@ -281,7 +281,7 @@
 			compatible = "qcom,qsmmuv500-tbu", "qcom,qtb500";
 			reg = <0x7d3000 0x1000>;
 			qcom,stream-id-range = <0xc00 0x400>;
-			qcom,iova-width = <32>;
+			qcom,iova-width = <34>;
 			interconnects = <&nsp_noc MASTER_CDSP_PROC &mc_virt SLAVE_EBI1>;
 			qcom,num-qtb-ports = <2>;
 		};
@@ -299,7 +299,7 @@
 			compatible = "qcom,qsmmuv500-tbu", "qcom,qtb500";
 			reg = <0x16cd000 0x1000>;
 			qcom,stream-id-range = <0x1400 0x400>;
-			qcom,iova-width = <32>;
+			qcom,iova-width = <36>;
 			interconnects = <&pcie_noc MASTER_PCIE_3 &mc_virt SLAVE_EBI1>;
 			qcom,num-qtb-ports = <1>;
 			qcom,opt-out-tbu-halting;
@@ -309,7 +309,7 @@
 			compatible = "qcom,qsmmuv500-tbu", "qcom,qtb500";
 			reg = <0x17d1000 0x1000>;
 			qcom,stream-id-range = <0x1800 0x400>;
-			qcom,iova-width = <32>;
+			qcom,iova-width = <36>;
 			interconnects = <&mmss_noc MASTER_VIDEO_EVA &mc_virt SLAVE_EBI1>;
 			qcom,num-qtb-ports = <2>;
 		};

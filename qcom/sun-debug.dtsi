@@ -23,9 +23,8 @@
 		      <0x10084000 0x4000>;
 		reg-names = "dcc-base", "dcc-ram-base";
 
-		qcom,transaction_timeout = <0x80>;
+		qcom,transaction_timeout = <0>;
 		dcc-ram-offset = <0x4000>;
-
 	};
 
 	mem_dump {

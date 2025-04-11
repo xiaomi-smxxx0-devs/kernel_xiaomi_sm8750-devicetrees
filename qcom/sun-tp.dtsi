@@ -25,7 +25,7 @@
 			};
 
 			cpu0-emerg0-cfg {
-				temperature = <118000>;
+				temperature = <95000>;
 			};
 
 			cpu0-emerg0-1-cfg {
@@ -105,7 +105,7 @@
 			};
 
 			cpu2-emerg0-cfg {
-				temperature = <118000>;
+				temperature = <95000>;
 			};
 
 			cpu2-emerg0-1-cfg {
@@ -125,7 +125,7 @@
 			};
 
 			cpu2-emerg1-cfg {
-				temperature = <118000>;
+				temperature = <95000>;
 			};
 
 			cpu2-emerg1-1-cfg {
@@ -185,7 +185,7 @@
 			};
 
 			cpu4-emerg0-cfg {
-				temperature = <118000>;
+				temperature = <95000>;
 			};
 
 			cpu4-emerg0-1-cfg {
@@ -205,7 +205,7 @@
 			};
 
 			cpu4-emerg1-cfg {
-				temperature = <118000>;
+				temperature = <95000>;
 			};
 
 			cpu4-emerg1-1-cfg {
@@ -289,7 +289,7 @@
 			};
 
 			cpu6-emerg0-cfg {
-				temperature = <118000>;
+				temperature = <95000>;
 			};
 
 			cpu6-emerg0-1-cfg {
@@ -309,7 +309,7 @@
 			};
 
 			cpu6-emerg1-cfg {
-				temperature = <118000>;
+				temperature = <95000>;
 			};
 
 			cpu6-emerg1-1-cfg {
@@ -329,7 +329,7 @@
 			};
 
 			cpu7-emerg0-cfg {
-				temperature = <118000>;
+				temperature = <95000>;
 			};
 
 			cpu7-emerg0-1-cfg {
@@ -349,7 +349,7 @@
 			};
 
 			cpu7-emerg1-cfg {
-				temperature = <118000>;
+				temperature = <95000>;
 			};
 
 			cpu7-emerg1-1-cfg {
@@ -489,7 +489,7 @@
 			};
 
 			tj_cfg {
-				temperature = <105000>;
+                temperature = <95000>;
 			};
 
 			reset-mon-cfg {
@@ -505,7 +505,7 @@
 			};
 
 			tj_cfg {
-				temperature = <105000>;
+                temperature = <95000>;
 			};
 
 			reset-mon-cfg {
@@ -521,7 +521,7 @@
 			};
 
 			tj_cfg {
-				temperature = <105000>;
+                temperature = <95000>;
 			};
 
 			reset-mon-cfg {
@@ -537,7 +537,7 @@
 			};
 
 			tj_cfg {
-				temperature = <105000>;
+                temperature = <95000>;
 			};
 
 			reset-mon-cfg {
@@ -553,7 +553,7 @@
 			};
 
 			tj_cfg {
-				temperature = <105000>;
+                temperature = <95000>;
 			};
 
 			reset-mon-cfg {
@@ -569,7 +569,7 @@
 			};
 
 			tj_cfg {
-				temperature = <105000>;
+                temperature = <95000>;
 			};
 
 			reset-mon-cfg {
@@ -585,7 +585,7 @@
 			};
 
 			tj_cfg {
-				temperature = <105000>;
+                temperature = <95000>;
 			};
 
 			reset-mon-cfg {
@@ -601,7 +601,7 @@
 			};
 
 			tj_cfg {
-				temperature = <105000>;
+                temperature = <95000>;
 			};
 
 			reset-mon-cfg {

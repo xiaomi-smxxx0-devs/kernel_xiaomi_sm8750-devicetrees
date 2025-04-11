@@ -3482,6 +3482,124 @@
 		};
 	};
 
+	tdm1_clk {
+		tdm1_clk_sleep: tdm1_clk_sleep {
+			mux {
+				pins = "gpio121";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio121";
+				drive-strength = <2>;   /* 2 mA */
+				bias-pull-down;         /* PULL DOWN */
+				input-enable;
+			};
+		};
+
+		tdm1_clk_active: tdm1_clk_active {
+			mux {
+				pins = "gpio121";
+				function = "i2s1_sck";
+			};
+
+			config {
+				pins = "gpio121";
+				drive-strength = <8>;   /* 8 mA */
+				bias-disable;           /* NO PULL */
+				output-high;
+			};
+		};
+	};
+
+	tdm1_ws {
+		tdm1_ws_sleep: tdm1_ws_sleep {
+			mux {
+				pins = "gpio123";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio123";
+				drive-strength = <2>;   /* 2 mA */
+				bias-pull-down;         /* PULL DOWN */
+				input-enable;
+			};
+		};
+
+		tdm1_ws_active: tdm1_ws_active {
+			mux {
+				pins = "gpio123";
+				function = "i2s1_ws";
+			};
+
+			config {
+				pins = "gpio123";
+				drive-strength = <8>;   /* 8 mA */
+				bias-disable;           /* NO PULL */
+				output-high;
+			};
+		};
+	};
+
+	tdm1_din {
+		tdm1_din_sleep: tdm1_din_sleep {
+			mux {
+				pins = "gpio122";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio122";
+				drive-strength = <2>;   /* 2 mA */
+				bias-pull-down;         /* PULL DOWN */
+				input-enable;
+			};
+		};
+
+		tdm1_din_active: tdm1_din_active {
+			mux {
+				pins = "gpio122";
+				function = "i2s1_data0";
+			};
+
+			config {
+				pins = "gpio122";
+				drive-strength = <8>;   /* 8 mA */
+				bias-disable;           /* NO PULL */
+			};
+		};
+	};
+
+	tdm1_dout {
+		tdm1_dout_sleep: tdm1_dout_sleep {
+			mux {
+				pins = "gpio124";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio124";
+				drive-strength = <2>;   /* 2 mA */
+				bias-pull-down;         /* PULL DOWN */
+				input-enable;
+			};
+		};
+
+		tdm1_dout_active: tdm1_dout_active {
+			mux {
+				pins = "gpio124";
+				function = "i2s1_data1";
+			};
+
+			config {
+				pins = "gpio124";
+				drive-strength = <8>;   /* 8 mA */
+				bias-disable;           /* NO PULL */
+			};
+		};
+	};
+
 	usb_phy_ps: usb_phy_ps {
 		usb3phy_portselect_default: usb3phy_portselect_default {
 			mux {
